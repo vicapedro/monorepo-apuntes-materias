@@ -1,0 +1,315 @@
+// ================================================================================
+// EXAMEN UNIDAD 1: INTRODUCCIÓN A SISTEMAS OPERATIVOS
+// ================================================================================
+// Temas: Virtualización, Hilos y Procesos, Estructuras de SO, Sincronización
+// Total: 25 preguntas organizadas por categorías temáticas
+// ================================================================================
+
+// ================================================================================
+// CATEGORÍA A: CONCEPTOS BÁSICOS DE VIRTUALIZACIÓN (8 preguntas)
+// ================================================================================
+
+::A1:: ¿Qué es la virtualización? {
+=Una tecnología que divide una computadora en diversas máquinas independientes # Correcto. La virtualización permite crear múltiples entornos virtuales independientes en un solo hardware físico.
+~Un tipo de software de bases de datos # Incorrecto. Las bases de datos son sistemas de gestión de información, no tecnologías de virtualización.
+~Un sistema operativo especializado # Incorrecto. La virtualización es una tecnología que puede implementarse en diferentes sistemas operativos.
+~Un lenguaje de programación # Incorrecto. Los lenguajes de programación son herramientas para crear software, no para dividir recursos de hardware.
+}
+
+::A2:: ¿Cuál de los siguientes NO es un objetivo de la virtualización? {
+~Mejorar la seguridad # Incorrecto. La virtualización SÍ mejora la seguridad mediante aislamiento entre entornos virtuales.
+~Escalabilidad # Incorrecto. La escalabilidad SÍ es un objetivo clave de la virtualización, permitiendo agregar recursos dinámicamente.
+~Disponibilidad # Incorrecto. La alta disponibilidad SÍ es un objetivo importante, permitiendo migración de VMs en caso de fallos.
+=Reducir la velocidad de procesamiento # Correcto. La virtualización NO busca reducir velocidad; aunque puede haber overhead, el objetivo es optimizar el uso de recursos.
+}
+
+::A3:: ¿Cuál fue uno de los primeros sistemas que implementó la virtualización de hardware en la década de 1960? {
+=IBM CP/CMS # Correcto. IBM CP/CMS fue desarrollado en los años 1960 para mainframes System/360 y System/370, siendo pionero en virtualización.
+~Xen # Incorrecto. Xen fue desarrollado por la Universidad de Cambridge y lanzado en 2003.
+~VMware ESX # Incorrecto. VMware ESX fue lanzado en 2001, décadas después.
+~Oracle VM VirtualBox # Incorrecto. VirtualBox fue desarrollado por Innotek GmbH y adquirido por Oracle en 2010.
+}
+
+::A4:: ¿Cuál de las siguientes opciones describe mejor una máquina virtual (VM)? {
+=Un entorno virtualizado que emula un sistema informático completo # Correcto. Una VM proporciona un entorno completo con CPU, memoria, almacenamiento y red virtualizados.
+~Un tipo de hardware especializado para virtualización # Incorrecto. Una VM es software, no hardware. El hardware especializado sería como procesadores con extensiones de virtualización.
+~Un programa que solo ejecuta scripts en la nube # Incorrecto. Las VMs pueden ejecutar sistemas operativos completos y cualquier tipo de aplicación, no solo scripts.
+~Un sistema de almacenamiento físico en la red # Incorrecto. Esto describe más bien un NAS o SAN, no una máquina virtual.
+}
+
+::A5:: ¿Cuál de las siguientes opciones es una ventaja de la virtualización? {
+=Reducción de costos # Correcto. La virtualización reduce costos al permitir mejor aprovechamiento del hardware, menos servidores físicos y menor consumo energético.
+~Mayor consumo de energía # Incorrecto. La virtualización REDUCE el consumo energético al consolidar cargas de trabajo en menos servidores físicos.
+~Aumento en la necesidad de servidores físicos # Incorrecto. La virtualización REDUCE la necesidad de servidores físicos mediante consolidación.
+~Mayor dependencia del hardware # Incorrecto. La virtualización REDUCE la dependencia del hardware específico mediante abstracción.
+}
+
+::A6:: ¿Cuál de las siguientes opciones es un ejemplo de virtualización de sistema operativo? {
+=Docker # Correcto. Docker utiliza contenedores que comparten el kernel del SO host, siendo un ejemplo de virtualización a nivel de SO.
+~VMware ESXi # Incorrecto. ESXi es un hipervisor tipo 1 que proporciona virtualización de hardware, no de SO.
+~Microsoft Hyper-V # Incorrecto. Hyper-V es un hipervisor que virtualiza hardware completo, no solo el SO.
+~IBM CP/CMS # Incorrecto. CP/CMS fue un sistema de virtualización de hardware para mainframes IBM.
+}
+
+::A7:: ¿Cuál es una de las principales ventajas de la virtualización de aplicaciones? {
+=Permite ejecutar aplicaciones en diferentes sistemas operativos sin conflictos # Correcto. La virtualización de aplicaciones encapsula las aplicaciones, evitando conflictos entre diferentes versiones y dependencias.
+~Requiere hardware especializado # Incorrecto. La virtualización de aplicaciones funciona en hardware estándar, sin requerimientos especiales.
+~Depende de redes físicas dedicadas # Incorrecto. Puede funcionar sobre infraestructura de red estándar, no requiere redes dedicadas.
+~Aumenta los costos operativos # Incorrecto. Generalmente REDUCE costos al simplificar despliegue y mantenimiento de aplicaciones.
+}
+
+::A8:: ¿Qué término describe la consolidación de múltiples entornos en un único sistema de alta disponibilidad? {
+=Virtualización de procesamiento # Correcto. Se refiere a la consolidación de múltiples cargas de trabajo de procesamiento en sistemas altamente disponibles.
+~Virtualización de almacenamiento # Incorrecto. Se enfoca en abstracción de recursos de almacenamiento, no en consolidación de entornos completos.
+~Virtualización de red # Incorrecto. Se centra en recursos de red, no en la consolidación general de entornos.
+~Virtualización de acceso # Incorrecto. Se enfoca en el acceso remoto de usuarios, no en consolidación de entornos.
+}
+
+// ================================================================================
+// CATEGORÍA B: HIPERVISORES Y TECNOLOGÍAS DE VIRTUALIZACIÓN (5 preguntas)
+// ================================================================================
+
+::B1:: ¿Qué tipo de hipervisor se ejecuta directamente sobre el hardware físico? {
+=Tipo I # Correcto. Los hipervisores Tipo I (bare-metal) se ejecutan directamente sobre el hardware sin necesidad de SO host.
+~Tipo II # Incorrecto. Los hipervisores Tipo II se ejecutan sobre un sistema operativo anfitrión.
+~Tipo III # Incorrecto. No existe clasificación estándar de hipervisor Tipo III.
+~Tipo IV # Incorrecto. No existe clasificación estándar de hipervisor Tipo IV.
+}
+
+::B2:: ¿Qué tipo de hipervisor requiere un sistema operativo anfitrión? {
+=Tipo II # Correcto. Los hipervisores Tipo II (hosted) requieren un SO anfitrión sobre el cual ejecutarse (ej VirtualBox, VMware Workstation).
+~Tipo I # Incorrecto. Los hipervisores Tipo I se ejecutan directamente sobre hardware sin SO anfitrión.
+~Tipo III # Incorrecto. No existe clasificación estándar de hipervisor Tipo III.
+~Tipo IV # Incorrecto. No existe clasificación estándar de hipervisor Tipo IV.
+}
+
+::B3:: ¿Qué técnica de virtualización mejora el rendimiento al permitir que el sistema operativo invitado se comunique con el hipervisor? {
+=Paravirtualización # Correcto. En paravirtualización, el SO invitado es modificado para comunicarse eficientemente con el hipervisor mediante hypercalls.
+~Virtualización completa # Incorrecto. En virtualización completa, el SO invitado no sabe que está virtualizado y no se comunica directamente con el hipervisor.
+~Emulación # Incorrecto. La emulación simula completamente el hardware pero es menos eficiente que la paravirtualización.
+~Virtualización de red # Incorrecto. Se refiere a la abstracción de recursos de red, no a la comunicación SO-hipervisor.
+}
+
+::B4:: ¿Qué tipo de virtualización permite ejecutar software diseñado para una plataforma en otra plataforma diferente? {
+=Emulación # Correcto. La emulación simula completamente una arquitectura diferente, permitiendo ejecutar software de una plataforma en otra.
+~Paravirtualización # Incorrecto. Requiere que el SO sea modificado para la plataforma de destino, no ejecuta software sin modificaciones.
+~Virtualización de red # Incorrecto. Se refiere a la abstracción de recursos de red, no a la compatibilidad entre plataformas.
+~Virtualización de aplicación # Incorrecto. Abstrae aplicaciones del SO subyacente pero generalmente en la misma plataforma.
+}
+
+::B5:: ¿Qué característica distingue a la virtualización nativa de la paravirtualización? {
+=No requiere modificaciones en el sistema operativo invitado # Correcto. La virtualización nativa (completa) permite ejecutar SO sin modificar, mientras paravirtualización requiere modificaciones.
+~El sistema operativo invitado debe ser modificado # Incorrecto. Esto describe la paravirtualización, no la virtualización nativa.
+~No puede ejecutarse en hardware físico # Incorrecto. La virtualización nativa se ejecuta sobre hardware físico a través del hipervisor.
+~Depende de una red externa para su funcionamiento # Incorrecto. No tiene dependencia específica de redes externas para funcionar.
+}
+
+// ================================================================================
+// CATEGORÍA C: TIPOS DE VIRTUALIZACIÓN ESPECIALIZADA (6 preguntas)
+// ================================================================================
+
+::C1:: ¿Qué solución de virtualización de almacenamiento es de código abierto y utilizada en entornos empresariales? {
+=Red Hat Ceph Storage # Correcto. Ceph es una solución de almacenamiento distribuido de código abierto muy utilizada en centros de datos empresariales.
+~Microsoft Azure Virtual Network # Incorrecto. Es una solución de red virtual en la nube, no de almacenamiento, y es propietaria de Microsoft.
+~VMware NSX # Incorrecto. NSX es una plataforma de virtualización de red de VMware, no de almacenamiento, y es propietaria.
+~Cisco ACI # Incorrecto. Application Centric Infrastructure es una solución de red definida por software de Cisco, no de almacenamiento.
+}
+
+::C2:: ¿Cuál es una desventaja de la virtualización de almacenamiento? {
+=Complejidad de gestión # Correcto. La virtualización de almacenamiento puede introducir capas adicionales de complejidad en la administración y configuración.
+~Mayor eficiencia en el uso de recursos # Incorrecto. Esta es una VENTAJA, no desventaja - permite mejor utilización del almacenamiento disponible.
+~Escalabilidad # Incorrecto. Esta es una VENTAJA - permite agregar capacidad de almacenamiento más fácilmente.
+~Protección de datos mejorada # Incorrecto. Esta es una VENTAJA - facilita implementar redundancia y backups.
+}
+
+::C3:: ¿Qué capa de virtualización permite a los usuarios acceder a aplicaciones y datos desde cualquier dispositivo y ubicación? {
+=Virtualización de acceso # Correcto. La virtualización de acceso (como VDI - Virtual Desktop Infrastructure) permite acceso remoto a aplicaciones desde cualquier dispositivo.
+~Virtualización de red # Incorrecto. Se refiere a la abstracción de recursos de red física en recursos lógicos, no al acceso de usuarios.
+~Virtualización de almacenamiento # Incorrecto. Abstrae el almacenamiento físico pero no proporciona acceso ubicuo a aplicaciones.
+~Virtualización de procesamiento # Incorrecto. Se refiere a la abstracción de recursos de CPU, no al acceso remoto de usuarios.
+}
+
+::C4:: ¿Cuál de los siguientes es un beneficio de la virtualización de red? {
+=Seguridad mejorada # Correcto. Permite crear segmentos de red aislados, VLANs dinámicas y aplicar políticas de seguridad más granulares.
+~Mayor consumo de recursos físicos # Incorrecto. La virtualización de red optimiza el uso de recursos físicos, no los aumenta.
+~Reducción de la disponibilidad de la red # Incorrecto. La virtualización mejora la disponibilidad mediante redundancia y failover automático.
+~Mayor dependencia del hardware # Incorrecto. La virtualización REDUCE la dependencia del hardware específico mediante abstracción.
+}
+
+::C5:: ¿Qué tipo de virtualización se enfoca en aislar aplicaciones del sistema operativo subyacente? {
+=Virtualización de aplicación # Correcto. Este tipo permite ejecutar aplicaciones en entornos aislados sin instalar en el SO host.
+~Virtualización de hardware # Incorrecto. Se enfoca en virtualizar recursos físicos completos, no solo aplicaciones.
+~Virtualización de red # Incorrecto. Se centra en recursos de conectividad, no en aislamiento de aplicaciones.
+~Virtualización de almacenamiento # Incorrecto. Abstrae recursos de almacenamiento, no aplicaciones.
+}
+
+::C6:: ¿Cuál es el principal beneficio de la virtualización de escritorio (VDI)? {
+=Centralización de la gestión y acceso remoto # Correcto. VDI permite gestionar escritorios centralizadamente y acceso desde cualquier dispositivo.
+~Mayor consumo de ancho de banda # Incorrecto. Aunque requiere ancho de banda, este no es un beneficio sino un requisito.
+~Dependencia de hardware especializado # Incorrecto. Esto sería una desventaja, no un beneficio.
+~Limitación a un solo usuario por sesión # Incorrecto. Esto es una limitación técnica, no un beneficio.
+}
+
+// ================================================================================
+// CATEGORÍA D: PROCESOS E HILOS (3 preguntas)
+// ================================================================================
+
+::D1:: ¿Cuál es la principal diferencia entre un proceso y un hilo? {
+=Los hilos comparten memoria dentro del mismo proceso, los procesos tienen espacios de memoria independientes # Correcto. Esta es la diferencia fundamental en gestión de memoria.
+~Los hilos son más lentos que los procesos # Incorrecto. Los hilos generalmente tienen menor overhead de creación y cambio de contexto.
+~Los procesos comparten todos los recursos, los hilos no # Incorrecto. Es al contrario - los hilos comparten recursos dentro del proceso.
+~No hay diferencia significativa entre ambos # Incorrecto. Hay diferencias importantes en aislamiento, recursos y rendimiento.
+}
+
+::D2:: ¿Qué modelo de threading mapea múltiples hilos de usuario a un solo hilo de kernel? {
+=Modelo Muchos-a-Uno (M\:1) # Correcto. En este modelo, múltiples hilos de usuario se gestionan por una biblioteca en espacio de usuario mapeados a un hilo de kernel.
+~Modelo Uno-a-Uno (1\:1) # Incorrecto. Este modelo mapea cada hilo de usuario a un hilo de kernel individual.
+~Modelo Muchos-a-Muchos (M\:N) # Incorrecto. Este modelo mapea M hilos de usuario a N hilos de kernel, no a uno solo.
+~Modelo de Dos Niveles # Incorrecto. Combina M\:N con 1\:1, no mapea todo a un solo hilo de kernel.
+}
+
+::D3:: ¿Cuál es una ventaja principal de usar hilos en lugar de procesos? {
+=Menor overhead de creación y cambio de contexto # Correcto. Los hilos son más ligeros y eficientes para crear y alternar que los procesos completos.
+~Mayor aislamiento entre tareas # Incorrecto. Los procesos ofrecen mayor aislamiento que los hilos.
+~Uso independiente de memoria # Incorrecto. Los hilos comparten memoria, lo que puede ser ventaja o desventaja según el caso.
+~Mayor protección contra fallos # Incorrecto. Un fallo en un hilo puede afectar todo el proceso.
+}
+
+// ================================================================================
+// CATEGORÍA E: SINCRONIZACIÓN Y CONCURRENCIA (2 preguntas)
+// ================================================================================
+
+::E1:: ¿Cuál de los siguientes es un problema clásico de sincronización? {
+=El problema del Productor-Consumidor # Correcto. Es uno de los problemas clásicos que ilustra la necesidad de sincronización entre hilos que producen y consumen datos.
+~El problema de la Virtualización # Incorrecto. No es un problema de sincronización, es un concepto de abstracción de hardware.
+~El problema del Sistema de Archivos # Incorrecto. Aunque puede haber concurrencia en sistemas de archivos, no es un "problema clásico" de sincronización.
+~El problema de la Red # Incorrecto. Los problemas de red no son problemas clásicos de sincronización de hilos.
+}
+
+::E2:: ¿Qué mecanismo de sincronización permite que solo el hilo que adquiere el recurso pueda liberarlo? {
+=Mutex (Mutual Exclusion) # Correcto. Un mutex solo puede ser liberado por el hilo que lo adquirió, garantizando exclusión mutua.
+~Semáforo # Incorrecto. Los semáforos pueden ser señalizados por cualquier hilo, no necesariamente el que los adquirió.
+~Variable de Condición # Incorrecto. Las variables de condición se usan para esperar condiciones, no para exclusión mutua directa.
+~Monitor # Incorrecto. Aunque los monitores incluyen exclusión mutua, el concepto específico descrito es el mutex.
+}
+
+// ================================================================================
+// CATEGORÍA F: ESTRUCTURAS DE SISTEMAS OPERATIVOS (3 preguntas)
+// ================================================================================
+
+::F1:: ¿Qué estructura de sistema operativo mantiene solo las funciones esenciales en modo kernel? {
+=Microkernel # Correcto. El microkernel mantiene solo servicios esenciales (IPC, scheduling básico) en modo kernel, moviendo otros servicios al espacio de usuario.
+~Estructura Monolítica # Incorrecto. En estructura monolítica, todos los servicios del SO se ejecutan en modo kernel.
+~Estructura por Capas # Incorrecto. Organiza el SO en capas jerárquicas, pero no necesariamente minimiza lo que está en modo kernel.
+~Estructura Híbrida # Incorrecto. Combina elementos de diferentes estructuras, no se caracteriza por minimizar el kernel.
+}
+
+::F2:: ¿Cuál es una ventaja de la estructura monolítica en sistemas operativos? {
+=Alto rendimiento debido a pocas llamadas entre módulos # Correcto. Al estar todo en modo kernel, la comunicación entre componentes es directa y rápida.
+~Facilidad de mantenimiento y depuración # Incorrecto. Esta es una DESventaja de la estructura monolítica - es difícil mantener y depurar.
+~Un fallo no puede afectar todo el sistema # Incorrecto. En estructura monolítica, un fallo SÍ puede afectar todo el sistema.
+~Facilidad para realizar modificaciones # Incorrecto. Las modificaciones son difíciles en estructura monolítica debido al alto acoplamiento.
+}
+
+::F3:: ¿Qué característica principal define a la estructura por capas en sistemas operativos? {
+=Cada capa utiliza servicios solo de la capa inmediatamente inferior # Correcto. La estructura por capas establece una jerarquía donde cada capa accede únicamente a los servicios de la capa inferior.
+~Todos los módulos pueden comunicarse directamente entre sí # Incorrecto. Esto describe más una estructura monolítica o híbrida.
+~Los servicios se ejecutan en procesos separados en espacio de usuario # Incorrecto. Esto describe más un microkernel.
+~No existe jerarquía entre los diferentes componentes # Incorrecto. La estructura por capas se basa precisamente en jerarquía.
+}
+
+// ================================================================================
+// CATEGORÍA G: APLICACIÓN Y ANÁLISIS (Niveles 3-4 de Bloom) - 6 preguntas
+// ================================================================================
+
+::G1:: Una empresa quiere consolidar 10 servidores físicos con baja utilización en un solo servidor potente. ¿Qué tipo de hipervisor sería MÁS apropiado y por qué? {
+=Tipo I porque ofrece mejor rendimiento y acceso directo al hardware para múltiples VMs # Correcto. Para consolidación de servidores, un hipervisor bare-metal es más eficiente.
+~Tipo II porque es más fácil de instalar sobre Windows Server # Incorrecto. Para consolidación empresarial, el rendimiento es más importante que la facilidad de instalación.
+~No importa el tipo, ambos ofrecen el mismo rendimiento # Incorrecto. Los Tipo I tienen mejor rendimiento al acceder directamente al hardware.
+~Mejor usar contenedores en lugar de VMs # Incorrecto. Para consolidar servidores con diferentes SO, las VMs son más apropiadas.
+}
+
+::G2:: Analice este escenario\: Una aplicación web experimenta problemas de rendimiento cuando múltiples usuarios acceden simultáneamente. ¿Qué concepto de concurrencia explica mejor este problema? {
+=Condiciones de carrera al acceder a recursos compartidos sin sincronización # Correcto. Múltiples hilos accediendo concurrentemente a recursos pueden crear condiciones de carrera.
+~Deadlock entre procesos del servidor web # Incorrecto. Un deadlock bloquearía completamente la aplicación, no solo reduciría rendimiento.
+~Falta de memoria virtual en el sistema # Incorrecto. Esto causaría errores de memoria, no problemas de concurrencia.
+~Problemas de red entre cliente y servidor # Incorrecto. Esto afectaría la conectividad, no específicamente la concurrencia.
+}
+
+::G3:: Un desarrollador necesita probar una aplicación en 5 distribuciones Linux diferentes. ¿Cuál sería la estrategia de virtualización MÁS eficiente? {
+=Usar contenedores Docker con imágenes base de cada distribución # Correcto. Los contenedores comparten kernel y son más eficientes para testing de múltiples distribuciones.
+~Crear 5 VMs completas con cada distribución # Incorrecto. Menos eficiente en recursos al virtualizar hardware completo.
+~Usar paravirtualización con Xen para todas # Incorrecto. Requiere modificar los SO invitados, innecesario para testing.
+~Instalar todas las distribuciones en hardware separado # Incorrecto. Costoso e ineficiente para testing temporal.
+}
+
+::G4:: Compare las estructuras monolítica y microkernel considerando un sistema embebido con recursos limitados vs un sistema de alta disponibilidad. {
+=Monolítica para embebido (menor overhead), microkernel para alta disponibilidad (mayor confiabilidad) # Correcto. Cada estructura tiene ventajas según el contexto de uso.
+~Microkernel para ambos casos por ser más moderno # Incorrecto. El microkernel tiene más overhead, no ideal para sistemas con recursos limitados.
+~Monolítica para ambos casos por ser más rápido # Incorrecto. Para alta disponibilidad, la confiabilidad del microkernel es más importante que la velocidad.
+~Estructura híbrida es siempre la mejor opción # Incorrecto. No siempre; depende de los requerimientos específicos.
+}
+
+::G5:: En un modelo de threading Muchos-a-Muchos (M\:N), ¿qué sucede cuando un hilo de usuario realiza una llamada bloqueante al sistema? {
+=El scheduler de hilos puede ejecutar otro hilo de usuario en el mismo hilo de kernel # Correcto. En M:N, otros hilos de usuario pueden continuar ejecutándose cuando uno se bloquea.
+~Todos los hilos del proceso se bloquean # Incorrecto. Esto ocurre en modelo M:1, no en M:N.
+~Se crea automáticamente un nuevo hilo de kernel # Incorrecto. El modelo M:N usa un pool fijo de hilos de kernel.
+~El hilo se termina automáticamente # Incorrecto. El hilo solo se bloquea temporalmente, no se termina.
+}
+
+::G6:: Analice por qué Docker (contenedores) no puede ejecutar Windows containers en un host Linux nativo. {
+=Los contenedores comparten el kernel del host, y Windows/Linux tienen kernels diferentes # Correcto. Los contenedores necesitan compartir el kernel, a diferencia de las VMs.
+~Docker no tiene soporte para sistemas Windows # Incorrecto. Docker sí soporta contenedores Windows, pero en hosts Windows.
+~Falta la capa de abstracción de hardware # Incorrecto. Los contenedores no virtualizan hardware, virtualizan el SO.
+~Es un problema de licenciamiento de Microsoft # Incorrecto. Es una limitación técnica, no legal.
+}
+
+// ================================================================================
+// CATEGORÍA H: EVALUACIÓN Y CREACIÓN (Niveles 5-6 de Bloom) - 4 preguntas
+// ================================================================================
+
+::H1:: Evalúe cuál sería la MEJOR solución para una startup que necesita desarrollo ágil con recursos limitados\: ¿VMs tradicionales o contenedores? Justifique considerando costos, tiempo y flexibilidad. {
+=Contenedores por menor uso de recursos, despliegue rápido y mejor CI/CD # Correcto. Para startups, la agilidad y eficiencia de recursos de contenedores es ideal.
+~VMs por mayor seguridad y aislamiento completo # Incorrecto. Aunque más seguras, las VMs requieren más recursos que una startup típica no tiene.
+~Híbrido usando ambas tecnologías simultáneamente # Incorrecto. Para una startup con recursos limitados, la complejidad híbrida no es ideal.
+~Servidores físicos dedicados para mayor rendimiento # Incorrecto. Más costoso y menos flexible para desarrollo ágil.
+}
+
+::H2:: Diseñe una estrategia de sincronización para un sistema bancario donde múltiples cajeros automáticos acceden concurrentemente a cuentas de clientes. ¿Qué mecanismos combinaría? {
+=Mutex para exclusión mutua por cuenta + semáforos para limitar transacciones concurrentes + timestamps para evitar deadlocks # Correcto. Combina múltiples mecanismos para un sistema robusto.
+~Solo mutex global para toda la base de datos # Incorrecto. Crearía un cuello de botella masivo.
+~Variables de condición únicamente # Incorrecto. Insuficiente para garantizar consistencia de datos financieros.
+~No usar sincronización, confiar en la base de datos # Incorrecto. La lógica de aplicación también requiere sincronización.
+}
+
+::H3:: Evalúe críticamente\: ¿Por qué los sistemas operativos modernos tienden hacia estructuras híbridas en lugar de microkernel puro, considerando las ventajas teóricas del microkernel? {
+=Trade-off entre confiabilidad del microkernel y rendimiento de la estructura monolítica # Correcto. Los sistemas híbridos balancean ventajas de ambos enfoques.
+~Los microkernels son solo teóricos, imposibles de implementar # Incorrecto. Existen implementaciones exitosas como QNX y Minix.
+~Las estructuras híbridas son más fáciles de programar # Incorrecto. Suelen ser más complejas que las puras.
+~Marketing de las empresas, no hay razones técnicas # Incorrecto. Hay razones técnicas válidas para el enfoque híbrido.
+}
+
+::H4:: Proponga una arquitectura de virtualización para un centro de datos que debe soportar\: aplicaciones críticas 24/7, entornos de desarrollo/testing, y cargas de trabajo variables. {
+=Hipervisores Tipo I para producción + contenedores para dev/test + orchestration para scaling automático # Correcto. Arquitectura multi-nivel adaptada a diferentes necesidades.
+~Solo VMs para todo, con diferentes niveles de recursos # Incorrecto. No aprovecha eficiencias de contenedores para dev/test.
+~Solo contenedores para todo por ser más eficientes # Incorrecto. Para aplicaciones críticas 24/7, el aislamiento de VMs puede ser necesario.
+// ================================================================================
+// RESUMEN POR CATEGORÍAS Y TAXONOMÍA DE BLOOM
+// ================================================================================
+// A: Conceptos Básicos de Virtualización - 8 preguntas (Bloom: Recordar/Comprender)
+// B: Hipervisores y Tecnologías - 5 preguntas (Bloom: Recordar/Comprender)
+// C: Tipos de Virtualización Especializada - 6 preguntas (Bloom: Comprender/Aplicar)
+// D: Procesos e Hilos - 3 preguntas (Bloom: Comprender)
+// E: Sincronización y Concurrencia - 2 preguntas (Bloom: Comprender)
+// F: Estructuras de Sistemas Operativos - 3 preguntas (Bloom: Comprender/Aplicar)
+// G: Aplicación y Análisis - 6 preguntas (Bloom: Aplicar/Analizar) ⭐ NUEVO
+// H: Evaluación y Creación - 4 preguntas (Bloom: Evaluar/Crear) ⭐ NUEVO
+// 
+// TOTAL: 37 preguntas
+//
+// DISTRIBUCIÓN BALANCEADA POR BLOOM:
+// Niveles 1-2 (Recordar/Comprender): 59% (22 preguntas)
+// Niveles 3-4 (Aplicar/Analizar): 27% (10 preguntas)  
+// Niveles 5-6 (Evaluar/Crear): 14% (5 preguntas)
+// ================================================================================
+
