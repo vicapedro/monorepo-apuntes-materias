@@ -1,0 +1,128 @@
+// Examen Windows Server y Administración de Redes - Opción Múltiple
+
+::Pregunta 1::
+¿Cuál es el objetivo principal de instalar Windows Server 2022 en una máquina virtual?
+{
+    ~%-100%Probar videojuegos en un entorno seguro. # Incorrecto. El objetivo es implementar una red corporativa.
+    ~%100%Implementar una red corporativa y practicar administración de servidores. # Correcto.
+    ~%-100%Crear copias de seguridad de archivos personales. # Incorrecto.
+    ~%-100%Instalar aplicaciones de oficina. # Incorrecto.
+}
+
+::Pregunta 2::
+¿Qué función cumple el servicio DHCP en una red corporativa?
+{
+    ~%100%Asigna direcciones IP automáticamente a los dispositivos. # Correcto.
+    ~%-100%Administra usuarios y contraseñas. # Incorrecto.
+    ~%-100%Controla el acceso a carpetas compartidas. # Incorrecto.
+    ~%-100%Supervisa el uso de CPU y memoria. # Incorrecto.
+}
+
+::Pregunta 3::
+¿Para qué sirve el servicio de Active Directory en Windows Server?
+{
+    ~%100%Centraliza la administración de usuarios, equipos y recursos. # Correcto.
+    ~%-100%Asigna direcciones IP dinámicamente. # Incorrecto.
+    ~%-100%Gestiona el almacenamiento de archivos. # Incorrecto.
+    ~%-100%Monitorea el tráfico de red. # Incorrecto.
+}
+
+::Pregunta 4::
+¿Cuál es el propósito de una Unidad Organizacional (OU) en Active Directory?
+{
+    ~%100%Organizar usuarios, equipos y otros objetos de forma jerárquica. # Correcto.
+    ~%-100%Asignar direcciones IP. # Incorrecto.
+    ~%-100%Crear discos duros virtuales. # Incorrecto.
+    ~%-100%Instalar actualizaciones de Windows. # Incorrecto.
+}
+
+::Pregunta 5::
+¿Qué permite hacer una política de grupo (GPO) en un dominio?
+{
+    ~%100%Aplicar configuraciones y restricciones a usuarios y equipos. # Correcto.
+    ~%-100%Crear nuevas cuentas de usuario. # Incorrecto.
+    ~%-100%Asignar direcciones IP. # Incorrecto.
+    ~%-100%Formatear discos duros. # Incorrecto.
+}
+
+::Pregunta 6::
+¿Cuál es el primer paso para unir una computadora con Windows 10 a un dominio?
+{
+    ~%100%Conectarla a la red corporativa y verificar la configuración IP y DNS. # Correcto.
+    ~%-100%Crear una cuenta de usuario local. # Incorrecto.
+    ~%-100%Instalar VirtualBox. # Incorrecto.
+    ~%-100%Formatear el disco duro. # Incorrecto.
+}
+
+::Pregunta 7::
+¿Para qué se utilizan los grupos de seguridad en Active Directory?
+{
+    ~%100%Gestionar permisos y acceso a recursos. # Correcto.
+    ~%-100%Actualizar el sistema operativo. # Incorrecto.
+    ~%-100%Crear máquinas virtuales. # Incorrecto.
+    ~%-100%Asignar direcciones IP. # Incorrecto.
+}
+
+::Pregunta 8::
+¿Qué herramienta se utiliza para monitorizar procesos y recursos en Windows Server?
+{
+    ~%100%Administrador de tareas. # Correcto.
+    ~%-100%Administrador de discos. # Incorrecto.
+    ~%-100%Administrador de dispositivos. # Incorrecto.
+    ~%-100%Administrador de impresión. # Incorrecto.
+}
+
+::Pregunta 9::
+¿Cuál es el comando para forzar la actualización de políticas de grupo en Windows Server?
+{
+    ~%-100%update-gpo # Incorrecto.
+    ~%100%gpupdate /force # Correcto.
+    ~%-100%refresh-policy # Incorrecto.
+    ~%-100%gpo-refresh # Incorrecto.
+}
+
+::Pregunta 10::
+¿Qué tipo de volumen requiere al menos tres discos dinámicos en Windows Server?
+{
+    ~%-100%Volumen simple # Incorrecto.
+    ~%-100%Volumen reflejado # Incorrecto.
+    ~%100%Volumen RAID-5 # Correcto.
+    ~%-100%Volumen extendido # Incorrecto.
+}
+
+::Pregunta 11::
+¿Cuál es la función principal del servicio DNS en una red Windows?
+{
+    ~%100%Resolver nombres de dominio a direcciones IP. # Correcto.
+    ~%-100%Asignar permisos a carpetas. # Incorrecto.
+    ~%-100%Crear usuarios y grupos. # Incorrecto.
+    ~%-100%Monitorizar el uso de CPU. # Incorrecto.
+}
+
+::Pregunta 13::
+¿Para qué sirve la herramienta "Administración de discos" en Windows Server?
+{
+    ~%100%Crear, eliminar y gestionar particiones y volúmenes. # Correcto.
+    ~%-100%Monitorizar procesos en ejecución. # Incorrecto.
+    ~%-100%Configurar políticas de grupo. # Incorrecto.
+    ~%-100%Administrar usuarios y grupos. # Incorrecto.
+}
+
+
+::Pregunta 14::
+¿Cual es la diferencia entre una Politica de Grupo y un Objeto de Politica de Grupo?
+{
+    ~%-100%Una es un conjunto de configuraciones y la otra es una unidad organizativa. # Incorrecto.
+    ~%-100%Una es un tipo de usuario y la otra es un tipo de grupo. # Incorrecto.
+    ~%-100%Una es una herramienta de administración y la otra es un servicio. # Incorrecto.
+    ~%100%Una define configuraciones y la otra aplica esas configuraciones a los objetos. # Correcto.
+}
+
+::Pregunta 15::
+¿Cuál es el propósito de definir Sitios en Active Directory?
+{
+    ~%100%Optimizar la autenticación y la replicación entre controladores de dominio. # Correcto.
+    ~%-100%Asignar permisos a carpetas compartidas. # Incorrecto.
+    ~%-100%Crear cuentas de usuario automáticamente. # Incorrecto.
+    ~%-100%Instalar actualizaciones de Windows en los equipos. # Incorrecto.
+}
