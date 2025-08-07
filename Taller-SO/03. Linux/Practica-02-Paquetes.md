@@ -22,12 +22,20 @@ La gestión de paquetes es una tarea fundamental en la administración de sistem
     - `sudo apt remove <paquete>`: Elimina un paquete instalado.
     - `sudo apt autoremove`: Elimina los paquetes que ya no son necesarios.
 
-## Ejercicio
+## Parte 1
 1. Actualiza la lista de paquetes disponibles.
 2. Instala el paquete `htop`.
 3. Ejecuta `htop` para verificar su instalación.
 4. Elimina el paquete `htop`.
 5. Ejecuta `sudo apt autoremove` para limpiar los paquetes innecesarios.
+
+## Parte 2
+1. Usando `apt search` busca `juego` o `game` 
+2. Revisa los resultados y elige un paquete relacionado con juegos.
+3. Revisa la descripción del paquete seleccionado y decide si deseas instalarlo.
+4. Instala el paquete seleccionado utilizando `sudo apt install <nombre_del_paquete>`.
+5. Ejecuta el paquete instalado para verificar su funcionamiento.
+6. Repite el proceso con otro paquete de tu elección, asegurándote de explorar diferentes tipos de software disponibles en los repositorios.
 
 ## Notas
 - Usa `man apt` para obtener más información sobre el comando `apt`.
