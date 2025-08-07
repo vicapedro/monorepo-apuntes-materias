@@ -197,3 +197,46 @@ La comunicación al interior de una red virtual es fundamental para la configura
 Al finalizar esta práctica, habrás instalado y configurado SQL Server en una máquina virtual y habrás alternado entre los modos de red Bridge y NAT con reenvío de puertos. Notarás que el modo NAT no permite conexiones entrantes por defecto y requiere configuración adicional para permitir el acceso a servicios como SQL Server.
 
 
+## Practica 5: Snapshots y desempeño
+### Objetivo: Comprender el impacto de los snapshots en el desempeño de las máquinas virtuales.
+### Requisitos:
+- VirtualBox instalado en tu sistema
+- Máquina virtual con Windows instalada
+### Introducción
+Los snapshots son una herramienta poderosa en la virtualización que permite capturar el estado de una máquina virtual en un momento específico. Sin embargo, el uso excesivo o inadecuado de snapshots puede afectar el desempeño de las máquinas virtuales. En esta práctica, se explorará cómo los snapshots impactan el rendimiento y la gestión de recursos en VirtualBox. Los estudiantes aprenderán a crear, gestionar y eliminar snapshots, así como a evaluar su efecto en el desempeño general de las máquinas virtuales.
+
+### Pasos:
+1. **Medir el desempeño inicial**:
+    - Inicia la máquina virtual con Windows.
+    - Abre el Administrador de tareas y anota el uso de CPU, memoria y disco.
+    - Realiza algunas tareas básicas (por ejemplo, abrir aplicaciones, navegar por Internet) y anota nuevamente el uso de recursos.
+    - Apaga la máquina virtual.
+2. **Crear un snapshot inicial**:
+    - Abre VirtualBox y selecciona la máquina virtual con Windows.
+    - Haz clic en el botón "Snapshots" en la parte superior derecha.
+    - Haz clic en el icono de la cámara para tomar un snapshot y así guardar el estado actual de la máquina virtual. Asigna un nombre descriptivo al snapshot (por ejemplo, "Estado inicial").
+    - Inicia la máquina virtual y realiza algunas tareas básicas (por ejemplo, abrir aplicaciones, navegar por Internet).
+    - Verifica el uso de recursos nuevamente en el Administrador de tareas y anota los valores.
+3. **Crear múltiples snapshots**:
+    - Realiza algunas tareas adicionales en la máquina virtual (por ejemplo, instalar una aplicación).
+    - Toma un nuevo snapshot y nómbralo (por ejemplo, "Aplicación instalada").
+    - Repite este proceso varias veces, creando al menos 3-4 snapshots en diferentes momentos.
+    - En cada paso, verifica el uso de recursos en el Administrador de tareas y anota los valores.
+4. **Evaluar el impacto de los snapshots**:
+    - Después de crear varios snapshots, apaga la máquina virtual.
+    - Inicia la máquina virtual y verifica el uso de recursos en el Administrador de tareas.
+    - Compara el uso de recursos antes y después de crear los snapshots.
+5. **Eliminar snapshots**:
+    - En VirtualBox, selecciona uno de los snapshots que has creado y haz clic en el icono de la papelera para eliminarlo.
+    - Confirma la eliminación del snapshot.
+    - Repite este proceso para eliminar todos los snapshots que has creado.
+6. **Medir el desempeño final**:
+    - Inicia la máquina virtual y verifica el uso de recursos en el Administrador de tareas.
+    - Compara el uso de recursos final con el uso inicial antes de crear los snapshots. 
+7. **Medición con herramientas de estres**:
+    - Repite los pasos 1 al 6 pero esta vez utilizando las herramienta de estrés `fio`, `sysbench` y `stress-ng` para medir el desempeño bajo carga, teniendo un snapshot y luego varios snapshots.
+    - Compara los resultados obtenidos con y sin snapshots, analizando el impacto en el rendimiento de la máquina virtual.
+### Resultados esperados:
+- Comprender cómo los snapshots afectan el rendimiento de las máquinas virtuales.
+- Evaluar el uso de recursos antes y después de crear snapshots.
+- Aprender a gestionar snapshots de manera efectiva para minimizar el impacto en el desempeño.

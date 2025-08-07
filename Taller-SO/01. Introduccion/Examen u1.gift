@@ -251,9 +251,9 @@
 }
 
 ::G5:: En un modelo de threading Muchos-a-Muchos (M\:N), ¿qué sucede cuando un hilo de usuario realiza una llamada bloqueante al sistema? {
-=El scheduler de hilos puede ejecutar otro hilo de usuario en el mismo hilo de kernel # Correcto. En M:N, otros hilos de usuario pueden continuar ejecutándose cuando uno se bloquea.
-~Todos los hilos del proceso se bloquean # Incorrecto. Esto ocurre en modelo M:1, no en M:N.
-~Se crea automáticamente un nuevo hilo de kernel # Incorrecto. El modelo M:N usa un pool fijo de hilos de kernel.
+=El scheduler de hilos puede ejecutar otro hilo de usuario en el mismo hilo de kernel # Correcto. En M\:N, otros hilos de usuario pueden continuar ejecutándose cuando uno se bloquea.
+~Todos los hilos del proceso se bloquean # Incorrecto. Esto ocurre en modelo M\:1, no en M\:N.
+~Se crea automáticamente un nuevo hilo de kernel # Incorrecto. El modelo M\:N usa un pool fijo de hilos de kernel.
 ~El hilo se termina automáticamente # Incorrecto. El hilo solo se bloquea temporalmente, no se termina.
 }
 
@@ -275,41 +275,16 @@
 ~Servidores físicos dedicados para mayor rendimiento # Incorrecto. Más costoso y menos flexible para desarrollo ágil.
 }
 
-::H2:: Diseñe una estrategia de sincronización para un sistema bancario donde múltiples cajeros automáticos acceden concurrentemente a cuentas de clientes. ¿Qué mecanismos combinaría? {
-=Mutex para exclusión mutua por cuenta + semáforos para limitar transacciones concurrentes + timestamps para evitar deadlocks # Correcto. Combina múltiples mecanismos para un sistema robusto.
-~Solo mutex global para toda la base de datos # Incorrecto. Crearía un cuello de botella masivo.
-~Variables de condición únicamente # Incorrecto. Insuficiente para garantizar consistencia de datos financieros.
-~No usar sincronización, confiar en la base de datos # Incorrecto. La lógica de aplicación también requiere sincronización.
-}
 
-::H3:: Evalúe críticamente\: ¿Por qué los sistemas operativos modernos tienden hacia estructuras híbridas en lugar de microkernel puro, considerando las ventajas teóricas del microkernel? {
+::H2:: Evalúe críticamente\: ¿Por qué los sistemas operativos modernos tienden hacia estructuras híbridas en lugar de microkernel puro, considerando las ventajas teóricas del microkernel? {
 =Trade-off entre confiabilidad del microkernel y rendimiento de la estructura monolítica # Correcto. Los sistemas híbridos balancean ventajas de ambos enfoques.
 ~Los microkernels son solo teóricos, imposibles de implementar # Incorrecto. Existen implementaciones exitosas como QNX y Minix.
 ~Las estructuras híbridas son más fáciles de programar # Incorrecto. Suelen ser más complejas que las puras.
 ~Marketing de las empresas, no hay razones técnicas # Incorrecto. Hay razones técnicas válidas para el enfoque híbrido.
 }
 
-::H4:: Proponga una arquitectura de virtualización para un centro de datos que debe soportar\: aplicaciones críticas 24/7, entornos de desarrollo/testing, y cargas de trabajo variables. {
+::H3:: Proponga una arquitectura de virtualización para un centro de datos que debe soportar\: aplicaciones críticas 24/7, entornos de desarrollo/testing, y cargas de trabajo variables. {
 =Hipervisores Tipo I para producción + contenedores para dev/test + orchestration para scaling automático # Correcto. Arquitectura multi-nivel adaptada a diferentes necesidades.
 ~Solo VMs para todo, con diferentes niveles de recursos # Incorrecto. No aprovecha eficiencias de contenedores para dev/test.
 ~Solo contenedores para todo por ser más eficientes # Incorrecto. Para aplicaciones críticas 24/7, el aislamiento de VMs puede ser necesario.
-// ================================================================================
-// RESUMEN POR CATEGORÍAS Y TAXONOMÍA DE BLOOM
-// ================================================================================
-// A: Conceptos Básicos de Virtualización - 8 preguntas (Bloom: Recordar/Comprender)
-// B: Hipervisores y Tecnologías - 5 preguntas (Bloom: Recordar/Comprender)
-// C: Tipos de Virtualización Especializada - 6 preguntas (Bloom: Comprender/Aplicar)
-// D: Procesos e Hilos - 3 preguntas (Bloom: Comprender)
-// E: Sincronización y Concurrencia - 2 preguntas (Bloom: Comprender)
-// F: Estructuras de Sistemas Operativos - 3 preguntas (Bloom: Comprender/Aplicar)
-// G: Aplicación y Análisis - 6 preguntas (Bloom: Aplicar/Analizar) ⭐ NUEVO
-// H: Evaluación y Creación - 4 preguntas (Bloom: Evaluar/Crear) ⭐ NUEVO
-// 
-// TOTAL: 37 preguntas
-//
-// DISTRIBUCIÓN BALANCEADA POR BLOOM:
-// Niveles 1-2 (Recordar/Comprender): 59% (22 preguntas)
-// Niveles 3-4 (Aplicar/Analizar): 27% (10 preguntas)  
-// Niveles 5-6 (Evaluar/Crear): 14% (5 preguntas)
-// ================================================================================
-
+}
