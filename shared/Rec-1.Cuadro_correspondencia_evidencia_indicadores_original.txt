@@ -1,0 +1,111 @@
+INSTITUTO TECNOLÓGICO DE CULIACÁN
+CUADRO DE EVIDENCIAS DE APRENDIZAJE E INSTRUMENTOS CON INDICADORES DE ALCANCE
+TIPO DE EVIDENCIA	INSTRUMENTO	CARACTERÍSTICAS	OBSERVACIONES	INDICADORES DE ALCANCE
+Conocimiento	Cuestionario de preguntas abiertas (oral o escrito).	La formulación de la pregunta debe ser comprensible para quien contesta.
+Tener claro qué se está preguntando y cuál es el nivel esperado de la respuesta.
+Si se pregunta sobre la opinión de algún tópico, se evalúa cómo se construye dicha opinión, más que si se está de acuerdo o no, es decir, la calidad de la argumentación.
+El formato de cuestionario oral puede ser útil como evaluación formativa. 	Si la población no es numerosa.
+Si se busca cierto desarrollo en las respuestas.
+Su diseño no es tan complicado aunque si su calificación.
+Permite evaluar capacidades relacionadas con el análisis y la comprensión.	a)Se adapta a situaciones y contextos complejos.
+b)Hace aportaciones a las actividades académicas desarrolladas.
+f)Realiza su trabajo de manera autónoma y autorregulada.
+
+	Cuestionario de opción múltiple.	Redactar el enunciado con claridad y términos que el participante pueda comprender.
+El enunciado puede plantearse como una situación susceptible de resolverse.
+Plantear cuatro opciones de respuesta.
+La forma gramatical de las opciones debe corresponder con el enunciado del reactivo.
+Las opciones deben tener una extensión parecida y estar redactadas de la misma forma.
+Todas las opciones deben aparecer como posibles respuestas correctas, aunque claramente se debe identificar la que en efecto lo es.
+Es recomendable identificar el tipo de reactivo en cuanto a lo que se evalúa, es decir si está a un nivel de conocimiento base (recuerdo), de comprensión (análisis) o de aplicación (solución de una situación determinada).
+Es poco recomendable plantear enunciados con negaciones, por la confusión que pueda generarse.
+Evitar las soluciones como “ninguna de las anteriores”.	Para poblaciones numerosas.
+Variar la letra o el número de la respuesta correcta.
+Fácil de calificar.
+De alcance limitado.
+Complejidad en el diseño.	a)Se adapta a situaciones y contextos complejos.
+f)Realiza su trabajo de manera autónoma y autorregulada.
+	Completamiento breve.	Las palabras que completan la frase deben ser conocidas por los participantes.
+La lógica de la estructura de la frase debe ser clara y precisa.
+También se puede plantear en forma de mapa conceptual, dejando ciertos espacios para ser llenados o a manera de crucigrama, por ejemplo.	Puede aplicarse para poblaciones numerosas, considerando la posibilidad de sistematizar la calificación.	a)Se adapta a situaciones y contextos complejos.
+f)Realiza su trabajo de manera autónoma y autorregulada.
+	Falso / Verdadero	Los enunicados deben ser claros.
+La falsedad o veracidad debe ser unívoca, aunque el planteamiento de la frase debe provocar reflexión.
+En términos formativos, pueden plantearse enunicados que generen polémica, sin que necesariamente haya respuestas correctas, lo que implica que se evalúa la capacidad de argumentación, escucha y construcción de acuerdos.	Equilibrar los reactivos falsos y verdaderos.
+Funciona para poblaciones numerosas.	a)Se adapta a situaciones y contextos complejos.
+f)Realiza su trabajo de manera autónoma y autorregulada.
+	Relación de columnas	Los reactivos deben ser de la misma naturaleza, de tal forma que las respuestas puedan caber en las diferentes opciones.
+Cuidar la correspondencia entre el tipo de frases y las respuestas posibles, sin dar la respuesta por el tipo de redacción.
+Desarrolla la capacidad de discriminación y de análisis.	Precisar las instrucciones a quien va a contestar. 
+Puede emplearse para poblaciones numerosas.
+	a)Se adapta a situaciones y contextos complejos.
+f)Realiza su trabajo de manera autónoma y autorregulada.
+	Análisis de casos o resolución de problemas	La presentación del caso o situación problemática debe ser cercana al participante.
+Las preguntas derivadas deben orientarse a reflejar la comprensión y la capacidad tanto analítica como resolutiva de quien responde.
+Es importante precisar criterios que permitan orientar el análisis de dicho caso y plantear elementos modélicos, si bien no del todo cerrados, si al menos orientadores para el momento de emitir juicios acerca de su análisis o resolución llevada a cabo por el alumno.	Para poblaciones pequeñas.
+Dificultad en su elaboración y también en su calificación.
+Gran potencial para convertirse en una evaluación situada y auténtica.
+
+
+	a)Se adapta a situaciones y contextos complejos.
+b)Hace aportaciones a las actividades académicas desarrolladas.
+d)Introduce recursos y experiencias que promueven un pensamiento crítico.
+f)Realiza su trabajo de manera autónoma y autorregulada.
+	Localización / identificación	Se presenta un elemento gráfico en el que es necesario identificar sus componentes.
+Puede ser un mapa, un dibujo de alguna herramienta o máquina o algún esquema o modelo.
+Tanto las indicaciones como el esquema deben ser precisos, identificables y visualmente claros.	Permite identificar el conocimiento general sobre estos elementos. Puede plantearse para poblaciones numerosas.
+
+
+	a)Se adapta a situaciones y contextos complejos.
+f)Realiza su trabajo de manera autónoma y autorregulada.
+Producto	Lista de cotejo	Contiene las características esperadas de la evidencia.
+Se plantea como ausencia o presencia de los requerimientos, sin niveles.
+También se le conoce como check list.
+
+	Funciona como un primer acercamiento a la evidencia.
+Su aplicación es relativamente sencilla.
+
+
+
+
+
+
+
+	a)Se adapta a situaciones y contextos complejos.
+b)Hace aportaciones a las actividades académicas desarrolladas.
+c)Propone o explica soluciones o procedimientos no vistos en clase.
+d)Introduce recursos y experiencias que promueven un pensamiento crítico.
+e)Incorpora  conocimientos y actividades interdisciplinarias 
+f)Realiza su trabajo de manera autónoma y autorregulada.
+	Rúbrica	Es un instrumento de evaluación que integra una serie de criterios y niveles para calificar algún tipo de evidencia. Se construye a partir de una escala ordinal y puede responder a un enfoque cualitativo que sirva de base a uno cuantitativo, asignando valores numéricos a cada uno de los niveles.
+La rúbrica nos permite desdoblar de tal manera al objeto de evaluación, que incluso sirve como una guía para su propia elaboración y disminuye las asignaciones arbitrarias de números, letras o adjetivos difusos.
+La rúbrica, en cuanto matriz de doble entrada, se compone de 5 elementos esenciales que reflejan una comprensión del objeto por parte del evaluador. Éstos son: 
+-La evidencia a ser evaluada: puede ser un ensayo, una presentación, una práctica en campo, un trabajo colaborativo, un proceso de elaboración de algún material y el material mismo, etcétera.
+-Los criterios: son las características más importantes que debe contenr la evidencia y que serán objeto de evaluación. Funcionan también como orientadores para que los alumnos enfoquen sus trabajos de una manera más pertinente. En otras palabras, modelan la evidencia esperada para poner de manifiesto el desarrollo de la competencia con la que se relaciona. Responden a la pregunta de qué quiero evaluar de esta evidencia; por ejemplo, la originalidad, la organización, la estructura, la forma de presentación, la integración, etcétera.
+-Los niveles: son los grados posibles en los que se puede ubicar dicha evidencia después de un proceso de valoración, desde el óptimo hasta el más incipiente. Son los rangos que puede alcanzar una evidencia en concreto. Estos niveles se pueden nombrar a partir de calificativos (sobrepasa la expectativa – insuficiente, completo-ausente) o convertirlos en puntajes, según la necesidad en términos de calificación numérica. 
+-El cruce entre los criterios y los niveles: los dos elementos anteriores conforman una matriz de doble entrada: los criterios se acomodan en la primera columna en forma vertical, y los niveles se definen de manera horizontal, formando tantas columnas como niveles se quiera (la sugerencia es elaborar un número par).
+-La descripción de cada criterio según el nivel: en cada recuadro que se forma a partir del cruce anterior, se redacta una pequeña descripción explicativa acerca de cómo tendría que se la evidencia en ese criterio y en ese nivel: las descripciones consideran algunas variables que permitan ir disminuyendo la calidad, alcance o precisión de dicha evidencia. Así, si definimos 10 criterios y 4 niveles, se tendrán que elaborar 40 descripciones en total que vayan de una evidencia modélica a una evidencia que requeriría volverse a realizar.	Su elaboración es compleja.
+Permite precisar los criterios y lo que se espera del producto con bastante certeza.
+
+
+	a)Se adapta a situaciones y contextos complejos.
+b)Hace aportaciones a las actividades académicas desarrolladas.
+c)Propone o explica soluciones o procedimientos no vistos en clase.
+d)Introduce recursos y experiencias que promueven un pensamiento crítico.
+e)Incorpora  conocimientos y actividades interdisciplinarias 
+f)Realiza su trabajo de manera autónoma y autorregulada.
+Desempeño y actitud	Guía de observación	Puede tomar la forma de una lista de cotejo, una rúbrica o un planteamiento más abierto, en el que no hay observables completamente definidos.
+
+
+
+	Implica habilidad y experiencia por parte del evaluador para su desarrollo.
+
+
+	a)Se adapta a situaciones y contextos complejos.
+b)Hace aportaciones a las actividades académicas desarrolladas.
+c)Propone o explica soluciones o procedimientos no vistos en clase.
+d)Introduce recursos y experiencias que promueven un pensamiento crítico.
+e)Incorpora  conocimientos y actividades interdisciplinarias 
+f)Realiza su trabajo de manera autónoma y autorregulada.
+	Guía de entrevista	Las preguntas deben ser claras y orientadas al objeto o los objetos que se pretenden evaluar.
+Se requiere experiencia en el manejo de tipos de entrevista y estrategias de comunicación verbal.	Se requiere experiencia en el manejo de entrevista de evaluación.	

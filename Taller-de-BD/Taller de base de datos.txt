@@ -1,0 +1,411 @@
+                                                               TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                        Dirección de Docencia e Innovación Educativa
+1. Datos Generales de la asignatura
+                         Nombre de la asignatura:          Taller de base de datos
+                             Clave de la asignatura:       SCA – 1025
+                                           SATCA1:         0–4–4
+                                            Carrera:       Ingeniería en Sistemas Computacionales
+2. Presentación
+  Caracterización de la asignatura
+       Esta asignatura aporta al perfil del Ingeniero en Sistemas Computacionales las competencias
+          para implementar bases de datos y apoyar la toma de decisiones, conforme a las normas
+          vigentes de manejo y seguridad de la información, utilizando tecnologías emergentes con el fin
+          de integrar soluciones computacionales con diferentes plataformas y/o dispositivos
+          considerando los aspectos legales, éticos, sociales y de desarrollo sustentable.
+       Consiste en el uso de lenguaje de definición de datos, lenguaje de manipulación de datos,
+          control de acceso, transacciones, SQL procedural, conectividad de base de datos
+       También proporciona las bases para otras asignaturas directamente vinculadas con el desarrollo
+          de software y uso de bases de datos. De manera particular, los temas cubiertos en esta
+          asignatura se aplican en la definición de esquemas de bases de datos relacionales y la
+          manipulación de la información considerando ambientes transaccionales multiusuario.
+       Para el buen desarrollo de esta asignatura es necesario contar con las competencias
+          desarrolladas en las materias previas de: fundamentos de bases de datos y tópicos avanzados
+          de programación en temas como diseño y modelado, manejo de SQL y aspectos de
+          conectividad entre bases de datos y lenguajes huésped.
+       Se aportan competencias a las asignaturas de Administración de Bases de Datos, Ingeniería de
+          Software, Gestión de Proyectos de Software y Programación Web, que se cursarán
+          posteriormente.
+  Intención didáctica
+  En el Tema 1 se instala el motor de un SGBD y una herramienta de administración para poder aplicar
+  el contenido temático del curso, posteriormente se conduce al alumno en la creación y modificación
+  de esquemas de bases de datos mediante el uso del lenguaje de definición de datos y elementos de
+  integridad.
+  En el tema 2, se desarrollan prácticas que incluyen el uso de instrucciones para manipulación de
+  registros, recuperación de datos y manejo de vistas.
+  En el tema 3, el alumno aprende a asignar roles, cuentas de usuarios y privilegios sobre un SGBD.
+  En el tema 4, se lleva al alumno a la operación multiusuario de la base de datos, el acceso concurrente
+  y el control de transacciones, se puede hacer énfasis en las anomalías derivadas de la concurrencia y
+  los mecanismos para tratarlas.
+1
+  Sistema de Asignación y Transferencia de Créditos Académicos
+©TecNM mayo 2016                                                                       Página | 1
+                                                              TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                       Dirección de Docencia e Innovación Educativa
+ En el tema 5, se estudia la creación y llamada de Stored Procedures, Functions y Triggers, con lo cual
+ se muestra al estudiante como los distintos SGBD pueden implementar codificaciones para
+ automatizar procesos que garanticen consistencia e integridad de datos independiente a los lenguajes
+ de programación.
+ En el tema 6, se muestra la conectividad de la base de datos con distintas tecnologías de conexión y su
+ integración con diversos lenguajes de programación.
+ Se realizará un proyecto integrador que involucre de manera práctica los conocimientos de todos los
+ temas del curso, mismo que incorpora competencias específicas que posteriormente serán parte de
+ proyectos relacionados con otras asignaturas y que requieran la implementación profesional de bases
+ de datos.
+ El enfoque indica que los temas se desarrollen en su totalidad con prácticas diseñadas para la aplicación
+ y desarrollo de las técnicas consideradas para cada tema, con lo que se introduce al estudiante en la
+ manipulación directa de los esquemas e instancias de bases de datos con la utilización de niveles de
+ seguridad en su acceso, mediante consolas y/o herramientas comerciales vigentes. Asimismo, propicia
+ la implementación de casos de estudio reales que ofrezcan múltiples escenarios, cabe observar que el
+ diseño de estas prácticas debe promover que el aprendizaje sea más significativo para el desarrollo de
+ las competencias.
+ En la parte de instalación se abordará únicamente como requisito para la realización de las prácticas y
+ se sugiere que se incluya un SGBD adicional. En el manejo del lenguaje de definición de datos, se
+ deben estudiar los comandos de creación y modificación de esquemas y aplicar los conceptos de
+ integridad y restricciones.
+ En relación al tema de Algebra Relacional de la asignatura Fundamentos de BD, se diseñan actividades
+ para traducirlo a consultas en SQL, que abarcan desde la estructura más sencilla de SELECT hasta las
+ expresiones más complejas que incluyen subconsultas, joins (reuniones) y funciones de agrupación
+ con su cálculo de predicado correspondiente.
+ En el tema de control de acceso se establece la creación de roles y usuarios así como la gestión de
+ privilegios de acceso a objetos como bases de datos, tablas y/o columnas.
+ El tema IV que se refiere a concurrencia considera el estudio y aplicación práctica de los conceptos y
+ propiedades ACID de las transacciones, así como el grado de consistencia; en particular se estudian
+ los niveles de aislamiento con que los diferentes gestores disminuyen las anomalías provocadas por la
+ concurrencia, se considera fuertemente el diseño de las planificaciones y la serialización para concluir
+ con deshacer o confirmar las operaciones.
+ La intención del tema V, es aplicar y comprender la utilidad de manejar SQL procedural, con la
+ integración de reglas de negocio que definan el comportamiento de la base de datos desde el mismo
+ gestor sin implicar el uso de una aplicación.
+ En el tema de conectividad de bases de datos con lenguajes de programación o plataformas, se pretende
+ que el estudiante conozca la conformación de cadenas de conexión y observe su funcionamiento, bien
+ sea desde algún lenguaje huésped o anfitrión en plataformas convencionales o móviles.
+©TecNM mayo 2016                                                                      Página | 2
+                                                               TECNOLÓGICO NACIONAL DE MÉXICO
+                                                         Secretaría Académica, de Investigación e Innovación
+                                                                        Dirección de Docencia e Innovación Educativa
+ En el transcurso de las actividades programadas es muy importante que el estudiante aprenda a valorar
+ las actividades que lleva a cabo y entienda que está construyendo su actividad profesional futura y en
+ consecuencia actúe de una manera profesional; de igual manera, aprecie la importancia del
+ conocimiento y los hábitos de trabajo; desarrolle la precisión y la curiosidad, la puntualidad, el
+ entusiasmo y el interés, la tenacidad, la flexibilidad y la autonomía.
+ El estudiante debe efectuar la realización de prácticas encaminadas a la implementación de los temas
+ de estudio, para lograr la competencia principal basada en la creación de soluciones a problemas que
+ requieren la implementación de reglas de negocios en bases de datos.
+ Las competencias genéricas que esta asignatura pretende fomentar son:
+ Capacidad de abstracción, análisis
+ Capacidad de aplicar los conocimientos en la práctica
+ Capacidad de comunicación escrita
+ Habilidades para buscar, procesar y analizar información procedente de fuentes diversas
+ Capacidad para actuar en nuevas situaciones
+ Capacidad para identificar, plantear y resolver problemas
+ Capacidad para tomar decisiones
+ El docente en general debe desempeñar su labor desde una visión conductual para fomentar la
+ inducción, el autoaprendizaje y la verificación de resultados
+3. Participantes en el diseño y seguimiento curricular del programa
+        Lugar y fecha de
+                                            Participantes                             Evento
+     elaboración o revisión
+                                 Representantes de los Institutos
+                                 Tecnológicos de:
+                                 Alvarado, Arandas, Campeche,
+                                 Celaya, Centla, Cerro Azul,          Reunión Nacional de Diseño e
+                                 Champotón, Ciudad Acuña, Ciudad      Innovación Curricular para el
+                                 Cuauhtémoc, Ciudad Juárez, Ciudad    Desarrollo      y     Formación       de
+    Instituto Tecnológico de
+                                 Madero,        Ciudad        Valles, Competencias Profesionales de las
+  Saltillo del 5 al 9 de octubre
+                                 Coatzacoalcos, Cocula, Colima,       Carreras de Ingeniería en Sistemas
+             de 2009.
+                                 Comitán, Durango, El Istmo,          Computacionales,              Ingeniería
+                                 Huetamo, La Laguna, La Paz, Lázaro   Informática      e     Ingeniería     en
+                                 Cárdenas, Lerdo, Libres, Linares,    Geociencias.
+                                 Macuspana, Matamoros, Mérida,
+                                 Mexicali, Morelia, Nuevo Laredo,
+                                 Nuevo León, Occidente del Estado
+                                 de Hidalgo, Ocotlán, Orizaba,
+©TecNM mayo 2016                                                                       Página | 3
+                                                             TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                       Dirección de Docencia e Innovación Educativa
+                              Oriente del Estado de Hidalgo,
+                              Parral, Piedras Negras, Pinotepa,
+                              Saltillo, San Luis Potosí, Sur de
+                              Guanajuato, Sur del Estado de
+                              Yucatán, Tapachula, Tepexi de
+                              Rodríguez,     Teziutlán,    Tijuana,
+                              Toluca,     Tuxtepec,       Veracruz,
+                              Villahermosa, Xalapa, Zacatecas y
+                              Zacatepec.
+                              Representantes de los Institutos
+                              Tecnológicos de:
+                              Alvarado, Arandas, Campeche,
+                              Celaya, Centla, Cerro Azul,
+                              Champotón, Ciudad Acuña, Ciudad
+                              Cuauhtémoc, Ciudad Juárez, Ciudad
+                              Madero,         Ciudad        Valles,
+                              Coatzacoalcos, Cocula, Colima,
+                              Comitán, Durango, El Istmo,            Reunión Nacional de Consolidación de
+                              Huetamo, La Laguna, La Paz, Lázaro     los Programas en Competencias
+     Instituto Tecnológico    Cárdenas, Lerdo, Libres, Macuspana,    Profesionales de las Carreras de
+ Superior de Poza Rica del 22 Matamoros,      Mérida,     Mexicali,  Ingeniería         en          Sistemas
+   al 26 de febrero de 2010.  Morelia, Nuevo Laredo, Nuevo           Computacionales,              Ingeniería
+                              León, Occidente del Estado de          Informática e Ingeniería Petrolera del
+                              Hidalgo, Orizaba, Oriente del Estado   SNEST.
+                              de Hidalgo, Parral, Piedras Negras,
+                              Pinotepa, Saltillo, San Luis Potosí,
+                              Sur de Guanajuato, Sur del Estado de
+                              Yucatán, Tapachula, Tepexi de
+                              Rodríguez,     Teziutlán,    Tijuana,
+                              Toluca,     Tuxtepec,       Veracruz,
+                              Villahermosa, Xalapa, Zacatecas y
+                              Zacatepec.
+                              Representantes de los Institutos
+                                                                     Reunión Nacional de Seguimiento
+                              Tecnológicos de:
+                                                                     Curricular de los Programas en
+   Instituto Tecnológico de   Acayucan,      Altamira,     Cajeme, Competencias Profesionales de las
+  Querétaro del 22 al 25 de   Campeche, Cananea, Cd. Acuña, Cd. Carreras de Ingeniería en Sistemas
+       octubre de 2012.       Cuauhtémoc, Cd. Juárez, Cd. Computacionales,                         Ingeniería
+                              Madero, Cd. Valles, Celaya, Centla, Informática         e     Ingeniería     en
+                              Cerro Azul, Chetumal, Chihuahua II, Tecnologías de la Información y
+                              Chilpancingo,             Coalcomán, Comunicaciones.
+                              Coatzacoalcos,     Cocula,   Colima,
+©TecNM mayo 2016                                                                      Página | 4
+                                                            TECNOLÓGICO NACIONAL DE MÉXICO
+                                                       Secretaría Académica, de Investigación e Innovación
+                                                                      Dirección de Docencia e Innovación Educativa
+                               Comalcalco, Delicias, Durango,
+                               Ébano, Escárcega, Huixquilucan, La
+                               Paz, León, Lerdo, Los Ríos,
+                               Macuspana, Mante, Milpa Alta,
+                               Minatitlán, Morelia, Nuevo Laredo,
+                               Nuevo León, Oaxaca, Oriente del
+                               Estado de México, Oriente del
+                               Estado de Hidalgo, Pachuca, Piedras
+                               Negras, Progreso, Puerto Vallarta,
+                               Purhepecha, Tacámbaro, Tehuacán,
+                               Tepexi de Rodríguez, Tepic,
+                               Teposcolula,    Teziutlán,   Tierra
+                               Blanca, Tijuana, Tlaxiaco, Toluca,
+                               Tuxtepec, Uruapan, Valladolid,
+                               Veracruz, Villahermosa, Zacatecas,
+                               Zacatecas     Norte,     Zacatepec,
+                               Zapopan, Zitácuaro y Zongólica.
+                               Representantes de los Institutos Reunión de Seguimiento Curricular de
+    Instituto Tecnológico de   Tecnológicos de:                     los    Programas      Educativos      de
+     Toluca, del 10 al 13 de
+        febrero de 2014.       Cerro Azul, Colima, Lerdo, Toluca y Ingenierías,       Licenciaturas        y
+                               Veracruz.                            Asignaturas  Comunes    del SNIT.
+4. Competencia(s) a desarrollar
+                             Competencia(s) específica(s) de la asignatura
+ Implementa bases de datos para apoyar la toma de decisiones considerando las reglas de negocio
+5. Competencias previas
+ Analiza requerimientos definidos por el cliente por la organización y diseña bases de datos para
+ generar soluciones al tratamiento de información de acuerdo a sus reglas de negocio
+6. Temario
+©TecNM mayo 2016                                                                     Página | 5
+                                                  TECNOLÓGICO NACIONAL DE MÉXICO
+                                            Secretaría Académica, de Investigación e Innovación
+                                                            Dirección de Docencia e Innovación Educativa
+ No.                     Temas                                  Subtemas
+                                           1.1 Instalación de un SGBD
+                                           1.2 Creación del esquema de la base de datos
+  1.   Lenguaje de definición de datos     a. Modificación del esquema de la base de
+                                                datos.
+                                           b. Aplicación de constraints
+                                           2.1 Inserción, eliminación y modificación de
+                                                registros
+                                           2.2 Consultas
+                                           2.3 Funciones, conversión, agrupamiento,
+  2.   Lenguaje de manipulación de datos        ordenamiento
+                                           2.4 Joins
+                                           2.5 Subconsultas
+                                           2.6 Operadores set
+                                           2.7 Vistas
+                                           3.1 Tipos de usuario
+                                           3.2 Creación de usuarios
+  3.   Control de acceso
+                                           3.3 Privilegios a usuarios
+                                           3.4 Roles
+                                           4.1 Conceptos
+                                           4.2 Propiedades de las transacciones
+  4.   Concurrencia                        4.3 Grados de consistencia
+                                           4.4 Niveles de aislamiento
+                                           4.5 Commit y rollback
+                                           5.1 Stored Procedures
+  5.   SQL Procedural                      5.2 Functions
+                                           5.3 Triggers
+                                           6.1 ODBC, ADO.NET, JDBC
+       Conectividad de Bases
+  6.                                       6.2 Conectividad desde un lenguaje huésped o en
+       de Datos
+                                                dispositivos móviles
+7. Actividades de aprendizaje de los temas
+©TecNM mayo 2016                                                           Página | 6
+                                                             TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                       Dirección de Docencia e Innovación Educativa
+                                      Lenguaje de Definición de Datos
+                     Competencias                                 Actividades de aprendizaje
+ Utiliza procedimientos de instalación de SGBD             Realizar la búsqueda, descarga e
+ para diversas plataformas.                                   instalación de un SGBD.
+                                                           Elaborar el reporte de instalación.
+ Construye esquemas de base de datos para                  Interpretar modelos de bases de datos.
+ proyectar las necesidades de un cliente en base a         Crear esquemas de base de datos a partir
+ las reglas sintácticas del lenguaje de definición            de especificaciones definidas.
+ de datos.                                                 Modificar el esquema de base de datos
+                                                              para aplicar las restricciones o reflejar
+                                                              cambios de diseño.
+                                                           Elaborar reporte de prácticas.
+                                    Lenguaje de Manipulación de Datos
+                     Competencias                                 Actividades de aprendizaje
+ Construye expresiones en SQL para resolver                Realizar operaciones de inserción,
+ necesidades de recuperación de información con               actualización y eliminación de registros
+ las reglas sintácticas del lenguaje de manipulación          en la base de datos,
+ de datos.                                                 Ejercitar la creación de consultas mediante
+                                                              un problemario.
+                                                           Analizar        los      requerimientos        de
+                                                              información, determinar las soluciones
+                                                              para construir la consulta en SQL que
+                                                              resuelve el problema.
+                                                           Elaborar reportes de las prácticas.
+                                             Control de acceso
+                     Competencias                                 Actividades de aprendizaje
+ Implementar mecanismos de seguridad básicos               Análisis de políticas de seguridad
+ para el acceso a datos mediante el otorgamiento o         Creación de mecanismos de seguridad
+ denegación de privilegios.                                   mediante creación usuarios y roles.
+                                                           Aplicar el concepto de autorizaciones a
+                                                              objetos de la base de datos.
+                                                           Elaborar ejercicios con la incorporación
+                                                              de las actividades previas de este tema.
+                                               Concurrencia
+                     Competencias                         Actividades de aprendizaje
+ Controla la concurrencia de la base de datos, para        Crear escenarios para generar y analizar
+ disminuir los problemas de desempeño y/o                     los problemas de la concurrencia.
+ consistencia                                              Configurar el SGBD en modo
+                                                              transaccional.
+                                                           Realizar ejercicios donde utilice los
+                                                              conceptos de granuralidad, grados de
+                                                              consistencia, niveles de aislamiento.
+                                                           Realice una evaluación de ¿cómo afecta al
+                                                              desempeño y consistencia, el nivel de
+                                                              aislamiento de la transacción?
+©TecNM mayo 2016                                                                      Página | 7
+                                                           TECNOLÓGICO NACIONAL DE MÉXICO
+                                                      Secretaría Académica, de Investigación e Innovación
+                                                                      Dirección de Docencia e Innovación Educativa
+                                                         Elaborar reportes de resultados.
+                                            Sql Procedural
+                   Competencias                         Actividades de aprendizaje
+ Aplicar SQL procedural para automatizar reglas          Realizar ejercicios que refuerzen la
+ de negocio y garantizar la integridad,                     sintaxis y estructura de los Stored
+ consistencia y seguridad de los datos; mediante            procedures, functions y triggers.
+ el uso de procedimientos almacenados, funciones         Resolver problemas que requieran el uso
+ y disparadores                                             de Stored procedures, functions y/o
+                                                            triggers.
+                                                         Implementar reglas de negocio y/o
+                                                            auditoría utilizando disparadores.
+                                                         Elaborar reportes.
+                                     Conectividad de bases de datos
+                   Competencias                         Actividades de aprendizaje
+ Establecer conexiones entre el SGBD y algún             Buscar, seleccionar, descargar e instalar
+ lenguaje de programación, mediante cadenas de              las diferentes librerías de conectividad
+ conexión y/o protocolos de comunicación                    para distintos SGBD.
+                                                         Realizar ejercicios de conectividad desde
+                                                            lenguajes huésped o anfitriones.
+                                                         Realizar         ejercicios      que      utilicen
+                                                            infraestructura de red para establecer
+                                                            conexiones entre un SGBD y protocolos
+                                                            de comunicación.
+                                                         Elaborar reportes de prácticas.
+8. Práctica(s)
+ Tema 1
+      Instalación de un SGBD.
+©TecNM mayo 2016                                                                     Página | 8
+                                                               TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                      Dirección de Docencia e Innovación Educativa
+      Creación y modificación de esquemas de base de datos
+ Tema 2
+      Manipulación de registros.
+      Creación de consultas mediante un problemario
+      Solución de problemas mediante instrucciones DML.
+ Tema 3
+      Mecanismos de seguridad; creación de usuarios y roles.
+      Autorizaciones a objetos de la base de datos.
+ Tema 4
+      Análisis de problemas de la concurrencia
+      Aplicación de conceptos de granuralidad, grados de consistencia, niveles de aislamiento.
+      Reporte de desempeño y consistencia de una base de datos, en referencia con el nivel de
+         aislamiento de las transacciones
+ Tema 5
+      Problemario acerca de Stored procedures, functions y triggers.
+      Implementación de reglas de negocio y/o auditoría utilizando disparadores.
+ Tema 6
+      Instalación de librerías de conectividad para distintos SGBD.
+      Conectividad desde lenguajes huésped y/o anfitriones.
+      Conectividad mediante entre un SGBD y protocolos de comunicación.
+9. Proyecto de asignatura
+ El objetivo del proyecto que planteé el docente que imparta esta asignatura, es demostrar el desarrollo
+ y alcance de la(s) competencia(s) de la asignatura, considerando las siguientes fases:
+  Fundamentación: marco referencial (teórico, conceptual, contextual, legal) en el cual se
+     fundamenta el proyecto de acuerdo con un diagnóstico realizado, mismo que permite a los
+     estudiantes lograr la comprensión de la realidad o situación objeto de estudio para definir un
+     proceso de intervención o hacer el diseño de un modelo.
+  Planeación: con base en el diagnóstico en esta fase se realiza el diseño del proyecto por parte de
+     los estudiantes con asesoría del docente; implica planificar un proceso: de intervención
+     empresarial, social o comunitario, el diseño de un modelo, entre otros, según el tipo de proyecto,
+     las actividades a realizar los recursos requeridos y el cronograma de trabajo.
+  Ejecución: consiste en el desarrollo de la planeación del proyecto realizada por parte de los
+     estudiantes con asesoría del docente, es decir en la intervención (social, empresarial), o
+     construcción del modelo propuesto según el tipo de proyecto, es la fase de mayor duración que
+     implica el desempeño de las competencias genéricas y especificas a desarrollar.
+  Evaluación: es la fase final que aplica un juicio de valor en el contexto laboral-profesión, social e
+     investigativo, ésta se debe realizar a través del reconocimiento de logros y aspectos a mejorar se
+     estará promoviendo el concepto de “evaluación para la mejora continua”, la metacognición, el
+     desarrollo del pensamiento crítico y reflexivo en los estudiantes.
+10. Evaluación por competencias
+©TecNM mayo 2016                                                                     Página | 9
+                                                             TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                      Dirección de Docencia e Innovación Educativa
+ La evaluación debe ser permanente y continua. Se debe hacer una evaluación diagnóstica, formativa y
+ sumativa. Se debe aplicar la autoevaluación, coevaluación y heteroevaluación.
+ Se debe generar un portafolio de evidencias, de preferencia en formato digital.
+ Instrumentos:
+ •        Tabla Comparativa
+ •        Examen práctico
+ •        Reporte de conclusiones por equipo o grupales
+ •        Reporte de práctica de laboratorio
+ •        Informe técnico y analítico
+ Herramientas:
+ •        Rubricas
+ •        Guía de observación
+ •        Matriz de valoración
+ •        Lista de cotejo
+ •        Guía de proyecto
+11. Fuentes de información
+ 1.- Post, Gerald V. (2006), “Sistemas de Administración para bases de datos”. 1ra. edición. McGraw-
+     Hill. México.
+ 2.- Raghu Ramakrishnan, Johannes Gehrke. (2007) Sistemas de gestión de bases de datos. 3er. edición.
+     McGraw-Hill. España.
+ 3.- Pratt Philip J., Last Mary Z. Sql. 1ra. Edición. Anaya Multimedia. España. 2009.
+ 4.- David Kroenke. “Procesamiento de Bases de Datos”. Editorial Prentice Hall
+ 5.- C. J. Date. 7a. Edición. “Introducción a los Sistemas de Bases de Datos”. Editorial Prentice-Hall.
+ 6.- Ramez Elmasri. Third Edition, “Fundamentals of Database Systems”. Editorial Addison-Wesley.
+ 7.- Catherine M. Ricardo, Iona College. “Database Illuminated”. Editorial Jones and Bartlett
+     Publishers.
+ 8.- Forrest Houlette. “Fundamentos de SQL”. Editorial McGraw-Hill Iberoamericana.
+ 9.- Thomas M. Connolly and Carolyn E. Begg. 2006, Sistemas de Bases de Datos: Un Enfoque Practico
+     Para Diseno, Implementacion y Gestion / Database Systems. Pearson Education.
+ 10.- Oracle PL/SQL User's Guide and Reference. Disponible desde Internet en:
+     http://docs.oracle.com/cd/B19306_01/appdev.102/b14261/toc.htm Con acceso el 25 de octubre de
+     2012.
+ 11.- Dubois, Paul. (2009) Mysql edición revisada y actualizada. Anaya Multimedia.
+ 12.- Microsoft. (2010) Centro de desarrollo de SQL Server. Disponible desde Internet en:
+     http://msdn.microsoft.com/es-mx/sqlserver/bb671064.aspx. Con acceso el 25 de octubre de 2012.
+ 13.- McLaughlin, Michael, (2008), Oracle Database 11g, PL/SQL Programming, Develop Robust,
+     Database-Driven PL/SQL Applications, Mc Graw Hill
+©TecNM mayo 2016                                                                    Página | 10

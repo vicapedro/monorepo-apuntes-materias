@@ -1,0 +1,259 @@
+# 3. Seguridad en Bases de Datos
+
+## 🎯 Competencia de la Unidad
+**Implementar políticas de seguridad en bases de datos mediante la gestión de usuarios, roles y permisos para garantizar la confidencialidad, integridad y disponibilidad de la información.**
+
+## 📋 Objetivos de Aprendizaje
+Al finalizar esta unidad, el estudiante será capaz de:
+- ✅ Diseñar e implementar políticas de seguridad para bases de datos
+- ✅ Gestionar usuarios, roles y permisos de forma granular
+- ✅ Aplicar técnicas de cifrado y auditoría
+- ✅ Evaluar y mitigar vulnerabilidades comunes en SGBD
+- ✅ Implementar respaldos seguros y recuperación ante desastres
+
+## 🔧 Contenido Temático
+
+### 3.1 Fundamentos de Seguridad en BD
+- **Principios de seguridad**
+  - Confidencialidad: Control de acceso a información sensible
+  - Integridad: Protección contra modificaciones no autorizadas
+  - Disponibilidad: Garantía de acceso cuando sea necesario
+  - Autenticación vs Autorización
+
+- **Amenazas y vulnerabilidades comunes**
+  - Inyección SQL y prevención
+  - Ataques de escalación de privilegios
+  - Acceso no autorizado a datos
+  - Pérdida o corrupción de información
+  - Ingeniería social y ataques internos
+
+- **Marco normativo y compliance**
+  - GDPR: Protección de datos personales
+  - SOX: Controles financieros
+  - HIPAA: Información médica
+  - PCI-DSS: Datos de tarjetas de crédito
+
+### 3.2 Gestión de Usuarios y Permisos
+- **Administración de usuarios**
+  - CREATE USER y DROP USER
+  - Políticas de contraseñas seguras
+  - Expiración y rotación de credenciales
+  - Autenticación multifactor (cuando está disponible)
+
+- **Roles y privilegios**
+  - CREATE ROLE y gestión de roles
+  - Principio de menor privilegio
+  - Privilegios a nivel de sistema, base de datos, tabla y columna
+  - GRANT y REVOKE con diferentes niveles
+  - Herencia de privilegios y roles anidados
+
+- **Control de acceso basado en roles (RBAC)**
+  - Diseño de jerarquías de roles
+  - Separación de responsabilidades
+  - Roles administrativos vs operacionales
+  - Auditoría de permisos asignados
+
+### 3.3 Cifrado y Protección de Datos
+- **Cifrado en reposo**
+  - Transparent Data Encryption (TDE)
+  - Cifrado de archivos de base de datos
+  - Gestión de claves de cifrado
+  - Cifrado de respaldos
+
+- **Cifrado en tránsito**
+  - SSL/TLS para conexiones
+  - Configuración de certificados
+  - Protocolos seguros de comunicación
+
+- **Cifrado a nivel de aplicación**
+  - Cifrado de campos sensibles
+  - Funciones de hash seguras
+  - Algoritmos simétricos y asimétricos
+
+### 3.4 Auditoría y Monitoreo
+- **Configuración de auditoría**
+  - Eventos a auditar (login, DDL, DML)
+  - Logs de auditoría y su análisis
+  - Alertas automáticas por actividad sospechosa
+
+- **Monitoreo de rendimiento y seguridad**
+  - Detección de patrones anómalos
+  - Análisis de intentos de acceso fallidos
+  - Monitoreo de privilegios elevados
+
+## 📝 Actividades y Prácticas
+
+### 🔬 Laboratorio 5: Implementación de Usuarios y Roles
+**Duración**: 4 horas  
+**Modalidad**: Individual
+
+**Objetivo**: Crear una estructura completa de usuarios y roles para un sistema empresarial.
+
+**Scenario**: Sistema ERP con diferentes departamentos:
+- Administradores de BD
+- Personal de Contabilidad
+- Gerentes de Ventas
+- Personal de Recursos Humanos
+- Auditores externos
+
+**Entregables**:
+- Scripts de creación de usuarios y roles
+- Matrix de permisos por rol y objeto de BD
+- Documentación de políticas de seguridad implementadas
+- Pruebas de acceso y verificación de restricciones
+
+### 🔬 Laboratorio 6: Cifrado y Auditoría
+**Duración**: 4 horas  
+**Modalidad**: Individual
+
+**Objetivo**: Implementar cifrado y configurar auditoría completa del sistema.
+
+**Entregables**:
+- Configuración de TDE en al menos un SGBD
+- Scripts de cifrado de campos sensibles
+- Configuración de auditoría para eventos críticos
+- Análisis de logs de auditoría generados
+
+### 🛡️ Reto de Seguridad: Evaluación de Vulnerabilidades
+**Duración**: 8 horas  
+**Modalidad**: Equipos de 3-4 personas
+
+**Problema**: Evaluar la seguridad de una base de datos "heredada" con múltiples vulnerabilidades:
+- Usuarios con privilegios excesivos
+- Contraseñas débiles o por defecto
+- Ausencia de cifrado
+- Configuraciones inseguras
+- Falta de auditoría
+
+**Entregables**:
+- Reporte de evaluación de seguridad con vulnerabilidades encontradas
+- Plan de mitigación priorizado por riesgo
+- Implementación de correcciones de seguridad
+- Políticas de seguridad documentadas
+- Procedimientos de respuesta a incidentes
+
+### 🏢 Proyecto Empresarial: Sistema Hospitalario Seguro
+**Duración**: 12 horas  
+**Modalidad**: Equipos de 4-5 personas
+
+**Problema**: Diseñar e implementar la seguridad completa para un sistema hospitalario que debe cumplir con HIPAA:
+- Protección de información médica sensible
+- Control de acceso por especialidad médica
+- Auditoría completa de acceso a expedientes
+- Cifrado de datos personales y médicos
+- Respaldos seguros y recuperación
+
+**Entregables**:
+- Análisis de compliance con HIPAA
+- Diseño completo de seguridad (usuarios, roles, permisos)
+- Implementación técnica en SGBD
+- Plan de auditoría y monitoreo
+- Procedimientos de backup y recovery seguros
+- Manual de políticas de seguridad para staff médico
+
+## 📊 Evaluación
+
+### Criterios de Evaluación
+- **Implementación técnica** (30%): Correcta configuración de usuarios, roles y permisos
+- **Análisis de seguridad** (25%): Identificación de vulnerabilidades y riesgos
+- **Compliance** (20%): Adherencia a marcos normativos
+- **Documentación** (15%): Políticas y procedimientos claros
+- **Innovación** (10%): Soluciones creativas de seguridad
+
+### Rúbrica de Evaluación
+| Criterio | Excelente (3) | Bueno (2) | Aceptable (1) | Insuficiente (0) |
+|----------|---------------|-----------|---------------|------------------|
+| **Gestión de Usuarios** | Estructura completa de roles con principio de menor privilegio | Roles adecuados con permisos apropiados | Roles básicos funcionales | Roles incorrectos o inseguros |
+| **Análisis de Riesgos** | Evaluación exhaustiva con matriz de riesgos priorizada | Identificación correcta de vulnerabilidades principales | Identificación básica de algunos riesgos | No identifica riesgos o análisis incorrecto |
+| **Implementación de Cifrado** | Cifrado completo (reposo, tránsito, aplicación) | Implementación de cifrado básico funcional | Cifrado parcial o básico | Sin cifrado o implementación incorrecta |
+| **Auditoría y Monitoreo** | Sistema completo de auditoría con alertas automáticas | Configuración de auditoría para eventos críticos | Auditoría básica funcional | Sin auditoría o configuración deficiente |
+| **Compliance** | Cumplimiento completo con marco normativo aplicable | Cumplimiento de requisitos principales | Cumplimiento parcial | No considera compliance |
+
+## 🔗 Recursos Adicionales
+
+### 📚 Lecturas Recomendadas
+- "Database Security" - Alfred Basta (Capítulos 1-6)
+- OWASP Database Security Cheat Sheet
+- NIST Cybersecurity Framework
+- Guías de seguridad específicas por SGBD (MySQL, PostgreSQL, SQL Server)
+
+### 🎥 Videos de Apoyo
+- "Database Security Fundamentals" (45 min)
+- "SQL Injection Prevention Techniques" (30 min)
+- "Database Encryption Best Practices" (35 min)
+- "Implementing Database Auditing" (25 min)
+
+### 🛠️ Herramientas de Seguridad
+- SQLMap: Testing de inyección SQL
+- Nessus: Escaneo de vulnerabilidades
+- Wireshark: Análisis de tráfico de red
+- HashiCorp Vault: Gestión de secretos y cifrado
+
+### 📋 Checklists de Seguridad
+- OWASP Database Security Verification Standard
+- CIS Benchmarks para SGBD
+- SANS Database Security Checklist
+
+## 🎯 Conexión con Siguientes Unidades
+- **Unidad 4 (Concurrencia)**: Seguridad en transacciones concurrentes
+- **Unidad 5 (Procedimientos)**: Seguridad en procedimientos almacenados
+- **Unidad 6 (Administración)**: Integración con estrategias administrativas
+
+---
+
+## 📈 Indicadores de Desempeño
+
+### Conocimientos
+- Comprende principios fundamentales de seguridad en BD
+- Conoce marcos normativos y de compliance aplicables
+- Entiende técnicas de cifrado y protección de datos
+
+### Habilidades
+- Implementa políticas de seguridad granulares
+- Configura auditoría y monitoreo efectivos
+- Evalúa y mitiga vulnerabilidades de seguridad
+
+### Actitudes
+- Adopta mentalidad de "security by design"
+- Mantiene vigilancia constante sobre amenazas
+- Balancea seguridad con usabilidad y rendimiento
+
+## 🧪 Evaluaciones GIFT
+
+### Ejemplo de Reactivos
+```gift
+::SEC-RBAC-01:: ¿Cuál es el principio de menor privilegio en bases de datos? {
+=Otorgar solo los permisos mínimos necesarios para que un usuario realice su trabajo # Correcto, minimiza la superficie de ataque
+~Dar permisos de administrador solo a usuarios de confianza # Incorrecto, no define "mínimos necesarios"
+~Crear pocos roles para simplificar la administración # Incorrecto, va en contra de la granularidad necesaria
+~Permitir acceso solo durante horario laboral # Incorrecto, es control temporal, no de privilegios
+}
+
+::SEC-ENCRYPT-02:: ¿Cuál es la ventaja principal del cifrado TDE (Transparent Data Encryption)? {
+=Cifra automáticamente los archivos de base de datos sin cambios en las aplicaciones # Correcto, es transparente para las aplicaciones
+~Es más rápido que otros tipos de cifrado # Incorrecto, puede tener impacto en rendimiento
+~Solo cifra datos en tránsito # Incorrecto, TDE cifra datos en reposo
+~Requiere menos recursos del sistema # Incorrecto, requiere procesamiento adicional
+}
+
+::SEC-AUDIT-03:: ¿Qué eventos son críticos de auditar en una base de datos financiera? {
+=~Consultas SELECT a tablas públicas # Incorrecto, no son críticas en términos de seguridad
+=Modificaciones a datos financieros (INSERT, UPDATE, DELETE) # Correcto, cambios a datos financieros son críticos
+=~Creación de índices # Incorrecto, no afecta directamente la seguridad de datos
+=Accesos administrativos y cambios de esquema # Correcto, pueden comprometer la integridad del sistema
+}
+```
+
+## 🔒 Casos de Estudio Reales
+
+### Caso 1: Breach de Equifax (2017)
+- **Problema**: Vulnerabilidad no parcheada permitió acceso a 147M registros
+- **Lecciones**: Importancia de gestión de parches y monitoreo
+
+### Caso 2: Cambridge Analytica (2018)
+- **Problema**: Acceso excesivo a datos personales por aplicaciones terceras
+- **Lecciones**: Principio de menor privilegio y control granular
+
+### Caso 3: Capital One (2019)
+- **Problema**: Configuración incorrecta en la nube expuso 100M registros
+- **Lecciones**: Seguridad en configuraciones de infraestructura

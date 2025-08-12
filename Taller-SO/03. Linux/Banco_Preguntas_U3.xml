@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- Banco de Preguntas - Unidad 3: Sistemas Operativos Libres (Linux) -->
+<!-- Taller de Sistemas Operativos | Ingeniería en Sistemas Computacionales -->
+<!-- 30 reactivos distribuidos según Taxonomía de Bloom -->
+
+<!-- ========== NIVEL 1-2: RECORDAR/COMPRENDER (8 preguntas - 27%) ========== -->
+
+<!-- PREGUNTA 1: Conceptos fundamentales Linux -->
+<question type="multichoice">
+    <name><text>U3-001: Historia del Software Libre</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Quién fundó el proyecto GNU y cuál era su objetivo principal?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Richard Stallman fundó el proyecto GNU en 1983 con el objetivo de crear un sistema operativo completamente libre.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Richard Stallman - crear un sistema operativo libre]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Richard Stallman fundó GNU para desarrollar software libre.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Linus Torvalds - crear el kernel Linux]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Linus Torvalds creó el kernel Linux, pero GNU fue fundado por Stallman.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Ken Thompson - desarrollar UNIX]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Ken Thompson desarrolló UNIX, no GNU.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 2: Distribuciones Linux -->
+<question type="truefalse">
+    <name><text>U3-002: Característica Debian</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Debian es conocida por priorizar la estabilidad sobre las versiones más recientes del software.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Verdadero. Debian se enfoca en estabilidad y confiabilidad, con ciclos de lanzamiento más largos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Debian prioriza estabilidad y confiabilidad.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Debian es reconocida por su enfoque en estabilidad.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 3: Estructura de directorios -->
+<question type="multichoice">
+    <name><text>U3-003: Sistema de archivos</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué directorio contiene los archivos de configuración del sistema en Linux?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>/etc contiene archivos de configuración del sistema y aplicaciones.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[/etc]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! /etc contiene archivos de configuración.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[/var]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. /var contiene datos variables como logs.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[/home]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. /home contiene directorios de usuarios.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[/usr]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. /usr contiene programas y bibliotecas de usuario.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 4: Permisos básicos -->
+<question type="truefalse">
+    <name><text>U3-004: Permisos de archivo</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En Linux, el permiso 755 significa que el propietario tiene permisos completos (rwx) y el grupo y otros tienen permisos de lectura y ejecución (rx).</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Correcto. 755 = rwxr-xr-x (propietario: 7=rwx, grupo: 5=rx, otros: 5=rx)</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! 755 = rwxr-xr-x]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 755 efectivamente significa rwxr-xr-x.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 5: Gestores de paquetes -->
+<question type="multichoice">
+    <name><text>U3-005: APT vs YUM</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles distribuciones utilizan el gestor de paquetes YUM/DNF?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>YUM/DNF es usado por distribuciones Red Hat como RHEL, CentOS y Fedora.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Red Hat Enterprise Linux]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! RHEL usa YUM/DNF.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[CentOS]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! CentOS usa YUM/DNF.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Fedora]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! Fedora usa DNF.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[Ubuntu]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Ubuntu usa APT.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[Debian]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Debian usa APT.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 6: Servicios systemd -->
+<question type="multichoice">
+    <name><text>U3-006: Systemd targets</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué target de systemd equivale al nivel de ejecución 3 (multiusuario sin GUI)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>multi-user.target equivale al runlevel 3 (modo multiusuario sin interfaz gráfica).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[multi-user.target]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! multi-user.target = runlevel 3]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[graphical.target]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. graphical.target = runlevel 5 (con GUI)]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[rescue.target]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. rescue.target = runlevel 1 (modo rescate)]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 7: Comandos básicos -->
+<question type="truefalse">
+    <name><text>U3-007: Comando ls</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>El comando 'ls -la' muestra todos los archivos incluyendo ocultos, con detalles completos en formato largo.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Correcto. -l = formato largo, -a = mostrar archivos ocultos (que empiezan con punto)</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! -l muestra detalles, -a muestra ocultos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. ls -la efectivamente muestra archivos ocultos con detalles.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 8: Arquitectura del kernel -->
+<question type="multichoice">
+    <name><text>U3-008: Kernel monolítico</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué característica define al kernel Linux como "monolítico"?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Un kernel monolítico ejecuta todos los servicios del sistema operativo en el espacio del kernel.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Todos los servicios del SO ejecutan en espacio kernel]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Kernel monolítico = servicios en kernel space]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Los drivers ejecutan en espacio de usuario]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esto sería característico de un microkernel.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Solo gestiona la comunicación entre procesos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Un kernel monolítico hace mucho más que IPC.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- ========== NIVEL 3-4: APLICAR/ANALIZAR (15 preguntas - 50%) ========== -->
+
+<!-- PREGUNTA 9: Aplicación de comandos -->
+<question type="cloze">
+    <name><text>U3-009: Comandos de búsqueda</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Complete los comandos para las siguientes tareas:</p>
+        <p>1. Buscar archivos .conf en /etc: <strong>find /etc -name {1:MULTICHOICE:="*.conf"~'*.conf'~*.conf}</strong></p>
+        <p>2. Buscar proceso "apache2": <strong>{1:MULTICHOICE:=ps aux | grep apache2~pgrep apache2}</strong></p>
+        <p>3. Encontrar archivos modificados en últimas 24h: <strong>find . -mtime {1:MULTICHOICE:=-1~-0}</strong></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>find es para archivos, ps/pgrep para procesos, -mtime para tiempo de modificación.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.2500000</penalty>
+    <hidden>0</hidden>
+</question>
+
+<!-- PREGUNTA 10: CodeRunner - Bash básico -->
+<question type="coderunner">
+    <name><text>U3-010: Script de información del sistema</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Escriba un script de bash que muestre:</p>
+        <ul>
+        <li>Fecha y hora actual</li>
+        <li>Usuario actual</li>
+        <li>Directorio actual</li>
+        <li>Espacio libre en disco (%)</li>
+        </ul>
+        <p>Use el formato: "Fecha: [fecha] | Usuario: [user] | Dir: [pwd] | Espacio: [%libre]"</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Use date, whoami, pwd, y df para obtener la información del sistema.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.1000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>bash</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <answerboxlines>10</answerboxlines>
+    <answerboxcolumns>80</answerboxcolumns>
+    <answerpreload>#!/bin/bash
+
+# Escriba su script aquí
+</answerpreload>
+    <useace>1</useace>
+    <template>{{ STUDENT_ANSWER }}</template>
+    <answer>
+        <text>#!/bin/bash
+
+fecha=$(date)
+usuario=$(whoami)
+directorio=$(pwd)
+espacio=$(df / | tail -1 | awk '{print $5}')
+
+echo "Fecha: $fecha | Usuario: $usuario | Dir: $directorio | Espacio: $espacio"</text>
+    </answer>
+    <language>bash</language>
+    <acelang>sh</acelang>
+    <sandbox>DEFAULT</sandbox>
+    <grader>EqualityGrader</grader>
+    <cputimelimitsecs>3</cputimelimitsecs>
+    <memlimitmb>32</memlimitmb>
+</question>
+
+<!-- PREGUNTA 11: Gestión de usuarios -->
+<question type="ddwtos">
+    <name><text>U3-011: Comandos de usuarios</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relacione los comandos con sus funciones:</p>
+        <p>[[1]] - Crear usuario</p>
+        <p>[[2]] - Cambiar contraseña</p>
+        <p>[[3]] - Modificar usuario</p>
+        <p>[[4]] - Eliminar usuario</p>
+        <p>[[5]] - Agregar a grupo</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Comandos básicos de administración de usuarios en Linux.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <dragbox><text>useradd</text><group>1</group></dragbox>
+    <dragbox><text>passwd</text><group>2</group></dragbox>
+    <dragbox><text>usermod</text><group>3</group></dragbox>
+    <dragbox><text>userdel</text><group>4</group></dragbox>
+    <dragbox><text>usermod -a -G</text><group>5</group></dragbox>
+</question>
+
+<!-- PREGUNTA 12: Análisis de procesos -->
+<question type="multichoice">
+    <name><text>U3-012: Señales de proceso</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un proceso no responde y necesita ser terminado forzadamente. ¿Qué comando y señal usaría?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>kill -9 (SIGKILL) termina procesos forzadamente sin posibilidad de captura.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.5000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[kill -9 [PID]]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! SIGKILL (-9) termina forzadamente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[kill -15 [PID]]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. SIGTERM (-15) es terminación elegante, no forzada.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[kill -1 [PID]]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. SIGHUP (-1) es para recargar configuración.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[killall apache]]></text>
+        <feedback format="html"><text><![CDATA[Parcialmente correcto pero no especifica señal forzada.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 13: Permisos avanzados -->
+<question type="cloze">
+    <name><text>U3-013: Permisos especiales</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Complete los comandos para configurar permisos especiales:</p>
+        <p>1. Establecer SUID en archivo: <strong>chmod {1:MULTICHOICE:=4755~u+s} archivo</strong></p>
+        <p>2. Establecer sticky bit en directorio: <strong>chmod {1:MULTICHOICE:=1755~+t} directorio</strong></p>
+        <p>3. Cambiar propietario recursivamente: <strong>chown -R {1:MULTICHOICE:=usuario:grupo~usuario.grupo} directorio</strong></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>SUID=4, SGID=2, Sticky=1. Se pueden usar notación octal o simbólica.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.5000000</defaultgrade>
+    <penalty>0.2500000</penalty>
+    <hidden>0</hidden>
+</question>
+
+<!-- PREGUNTA 14: Gestión de servicios -->
+<question type="multichoice">
+    <name><text>U3-014: Systemctl avanzado</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué comando muestra todos los servicios que fallaron al iniciar?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>systemctl --failed muestra solo los servicios en estado de fallo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.5000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[systemctl --failed]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! --failed muestra solo servicios fallidos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[systemctl list-units --all]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esto muestra todos los servicios, no solo los fallidos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[systemctl status --all]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Este comando no existe.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 15: Redirección y pipes -->
+<question type="multichoice">
+    <name><text>U3-015: Redirecciones</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué hace el comando: <code>ls -la 2>&1 | grep "^d" > directorios.txt</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>2>&1 redirige stderr a stdout, | envía a grep que filtra directorios, > guarda resultado en archivo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Lista archivos, filtra solo directorios y guarda en archivo]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Filtra directorios (^d) y redirige a archivo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Lista todos los archivos en directorios.txt]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. grep "^d" filtra solo directorios.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Busca errores y los guarda en archivo]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque redirige errores, filtra directorios.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 16: Configuración de red -->
+<question type="cloze">
+    <name><text>U3-016: Configuración IP</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Complete los comandos para configurar red:</p>
+        <p>1. Ver interfaces de red: <strong>{1:MULTICHOICE:=ip addr show~ifconfig~ip a}</strong></p>
+        <p>2. Configurar IP temporal: <strong>ip addr add {1:MULTICHOICE:=192.168.1.100/24~IP/MASK} dev eth0</strong></p>
+        <p>3. Ver tabla de enrutamiento: <strong>{1:MULTICHOICE:=ip route~route~ip r}</strong></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Comandos ip son modernos, ifconfig/route son tradicionales pero aún válidos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.5000000</defaultgrade>
+    <penalty>0.2500000</penalty>
+    <hidden>0</hidden>
+</question>
+
+<!-- PREGUNTA 17: Montaje de sistemas de archivos -->
+<question type="multichoice">
+    <name><text>U3-017: Comando mount</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué comando monta una partición ext4 con permisos de solo lectura?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La opción -o ro especifica montaje de solo lectura (read-only).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.5000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[mount -t ext4 -o ro /dev/sda1 /mnt]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! -o ro = solo lectura.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[mount -t ext4 -o rw /dev/sda1 /mnt]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. -o rw es lectura-escritura.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[mount /dev/sda1 /mnt --readonly]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La opción correcta es -o ro.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 18: CodeRunner - Python administración -->
+<question type="coderunner">
+    <name><text>U3-018: Monitor de espacio en disco</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Escriba un script Python que:</p>
+        <ul>
+        <li>Obtenga el uso de espacio del disco raíz (/)</li>
+        <li>Si el uso > 80%, imprima "ALERTA: Disco lleno"</li>
+        <li>Si uso < 80%, imprima "Espacio suficiente: X% usado"</li>
+        <li>Use la librería shutil.disk_usage()</li>
+        </ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>shutil.disk_usage() retorna (total, used, free) en bytes.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.1000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <answerboxlines>12</answerboxlines>
+    <answerboxcolumns>80</answerboxcolumns>
+    <answerpreload>import shutil
+
+# Escriba su código aquí
+</answerpreload>
+    <useace>1</useace>
+    <template>{{ STUDENT_ANSWER }}</template>
+    <answer>
+        <text>import shutil
+
+total, used, free = shutil.disk_usage('/')
+percent_used = (used / total) * 100
+
+if percent_used > 80:
+    print("ALERTA: Disco lleno")
+else:
+    print(f"Espacio suficiente: {percent_used:.1f}% usado")</text>
+    </answer>
+    <language>python3</language>
+    <acelang>python</acelang>
+    <sandbox>DEFAULT</sandbox>
+    <grader>EqualityGrader</grader>
+    <cputimelimitsecs>5</cputimelimitsecs>
+    <memlimitmb>64</memlimitmb>
+</question>
+
+<!-- PREGUNTA 19: Logs del sistema -->
+<question type="multichoice">
+    <name><text>U3-019: Análisis de logs</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué comando muestra los últimos intentos fallidos de login SSH?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>journalctl es el comando moderno para consultar logs de systemd con filtros específicos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[journalctl -u ssh | grep "Failed"]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! journalctl -u filtra por servicio SSH.]]></text></feedback>
+    </answer>
+    <answer fraction="75" format="html">
+        <text><![CDATA[grep "Failed" /var/log/auth.log]]></text>
+        <feedback format="html"><text><![CDATA[También correcto, método tradicional con archivos de log.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[tail -f /var/log/messages]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Este comando no filtra por SSH ni fallos.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 20: Firewall básico -->
+<question type="cloze">
+    <name><text>U3-020: UFW Firewall</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Complete los comandos de UFW:</p>
+        <p>1. Habilitar firewall: <strong>ufw {1:MULTICHOICE:=enable}</strong></p>
+        <p>2. Permitir SSH: <strong>ufw {1:MULTICHOICE:=allow} ssh</strong></p>
+        <p>3. Denegar puerto 23: <strong>ufw {1:MULTICHOICE:=deny} 23</strong></p>
+        <p>4. Ver estado: <strong>ufw {1:MULTICHOICE:=status}</strong></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>UFW (Uncomplicated Firewall) simplifica la configuración de iptables.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.2500000</penalty>
+    <hidden>0</hidden>
+</question>
+
+<!-- PREGUNTA 21: Compresión y archivos -->
+<question type="ddwtos">
+    <name><text>U3-021: Comandos de compresión</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relacione los comandos con sus funciones:</p>
+        <p>[[1]] - Crear archivo tar comprimido con gzip</p>
+        <p>[[2]] - Extraer archivo tar.gz</p>
+        <p>[[3]] - Comprimir con bzip2</p>
+        <p>[[4]] - Descomprimir archivo .zip</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Diferentes formatos de compresión requieren comandos específicos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <dragbox><text>tar -czf archivo.tar.gz directorio/</text><group>1</group></dragbox>
+    <dragbox><text>tar -xzf archivo.tar.gz</text><group>2</group></dragbox>
+    <dragbox><text>tar -cjf archivo.tar.bz2 directorio/</text><group>3</group></dragbox>
+    <dragbox><text>unzip archivo.zip</text><group>4</group></dragbox>
+</question>
+
+<!-- PREGUNTA 22: Monitoreo del sistema -->
+<question type="multichoice">
+    <name><text>U3-022: Comando top</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En la salida de 'top', ¿qué significa el valor 'load average: 1.5, 2.0, 1.8'?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Load average muestra la carga promedio del sistema en 1, 5 y 15 minutos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.5000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Carga promedio en 1, 5 y 15 minutos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Load average en intervalos de tiempo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Porcentaje de CPU usado por 3 procesos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. No representa porcentajes de CPU.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Memoria RAM disponible en GB]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Load average no está relacionado con memoria.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 23: Crontab -->
+<question type="cloze">
+    <name><text>U3-023: Programación de tareas</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Complete las expresiones cron:</p>
+        <p>1. Ejecutar cada día a las 2:30 AM: <strong>{1:MULTICHOICE:=30 2 * * *}</strong></p>
+        <p>2. Ejecutar cada lunes a las 6 PM: <strong>{1:MULTICHOICE:=0 18 * * 1~0 18 * * MON}</strong></p>
+        <p>3. Ejecutar cada 5 minutos: <strong>{1:MULTICHOICE:=*/5 * * * *}</strong></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Formato cron: minuto hora día mes día_semana. * = cualquier valor.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.5000000</defaultgrade>
+    <penalty>0.2500000</penalty>
+    <hidden>0</hidden>
+</question>
+
+<!-- ========== NIVEL 5-6: EVALUAR/CREAR (7 preguntas - 23%) ========== -->
+
+<!-- PREGUNTA 24: CodeRunner - Script de backup -->
+<question type="coderunner">
+    <name><text>U3-024: Script de backup avanzado</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Cree un script de bash que:</p>
+        <ul>
+        <li>Reciba un directorio como parámetro</li>
+        <li>Cree backup con fecha (backup_YYYY-MM-DD.tar.gz)</li>
+        <li>Verifique que el directorio existe</li>
+        <li>Muestre tamaño del archivo creado</li>
+        <li>Si no recibe parámetro, use /home</li>
+        </ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Use $1 para parámetros, ${1:-/home} para valor por defecto, date para timestamp.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.1000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>bash</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <answerboxlines>15</answerboxlines>
+    <answerboxcolumns>80</answerboxcolumns>
+    <answerpreload>#!/bin/bash
+
+# Script de backup avanzado
+</answerpreload>
+    <useace>1</useace>
+    <template>{{ STUDENT_ANSWER }}</template>
+    <answer>
+        <text>#!/bin/bash
+
+directorio=${1:-/home}
+fecha=$(date +%Y-%m-%d)
+archivo_backup="backup_$fecha.tar.gz"
+
+if [ ! -d "$directorio" ]; then
+    echo "Error: El directorio $directorio no existe"
+    exit 1
+fi
+
+tar -czf "$archivo_backup" "$directorio"
+tamaño=$(ls -lh "$archivo_backup" | awk '{print $5}')
+echo "Backup creado: $archivo_backup (Tamaño: $tamaño)"</text>
+    </answer>
+    <language>bash</language>
+    <acelang>sh</acelang>
+    <sandbox>DEFAULT</sandbox>
+    <grader>EqualityGrader</grader>
+    <cputimelimitsecs>5</cputimelimitsecs>
+    <memlimitmb>32</memlimitmb>
+</question>
+
+<!-- PREGUNTA 25: Evaluación de configuración -->
+<question type="multichoice">
+    <name><text>U3-025: Seguridad del sistema</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Evalúe esta configuración SSH y seleccione la medida de seguridad MÁS crítica a implementar:</p>
+        <pre>Port 22
+PermitRootLogin yes
+PasswordAuthentication yes
+Protocol 2</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Deshabilitar root login es crítico, seguido de cambiar puerto y usar keys en lugar de passwords.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.5000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Cambiar PermitRootLogin a no]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Deshabilitar root login es la medida más crítica.]]></text></feedback>
+    </answer>
+    <answer fraction="80" format="html">
+        <text><![CDATA[Cambiar puerto por defecto]]></text>
+        <feedback format="html"><text><![CDATA[Buena medida pero no tan crítica como deshabilitar root.]]></text></feedback>
+    </answer>
+    <answer fraction="60" format="html">
+        <text><![CDATA[Usar autenticación por claves]]></text>
+        <feedback format="html"><text><![CDATA[Importante pero el root login es más crítico.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Actualizar a Protocol 3]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Protocol 2 es el estándar actual.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 26: Diseño de solución -->
+<question type="multichoice">
+    <name><text>U3-026: Arquitectura de servidor</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Para el proyecto EcoTech Solutions (50 usuarios), ¿qué configuración de servicios priorizaría en un servidor Debian único?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Para PYME, priorizar servicios esenciales: web, correo, archivos, backup. Base de datos puede ser externa.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Apache (Servidor Web)]]></text>
+        <feedback format="html"><text><![CDATA[Esencial para presencia web empresarial.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Postfix (Correo)]]></text>
+        <feedback format="html"><text><![CDATA[Crítico para comunicación empresarial.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Samba (Compartir archivos)]]></text>
+        <feedback format="html"><text><![CDATA[Necesario para colaboración y compatibilidad Windows.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Scripts de backup automático]]></text>
+        <feedback format="html"><text><![CDATA[Fundamental para continuidad del negocio.]]></text></feedback>
+    </answer>
+    <answer fraction="-25" format="html">
+        <text><![CDATA[Servidor de juegos]]></text>
+        <feedback format="html"><text><![CDATA[No prioritario para entorno empresarial.]]></text></feedback>
+    </answer>
+    <answer fraction="-25" format="html">
+        <text><![CDATA[Servidor de streaming de video]]></text>
+        <feedback format="html"><text><![CDATA[Consumiría muchos recursos sin beneficio empresarial.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 27: CodeRunner - Monitoreo avanzado -->
+<question type="coderunner">
+    <name><text>U3-027: Sistema de alertas</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Cree un script Python que monitoree el sistema y genere alertas:</p>
+        <ul>
+        <li>CPU > 80%: "ALERTA CPU"</li>
+        <li>RAM > 85%: "ALERTA MEMORIA"</li>
+        <li>Disco > 90%: "ALERTA DISCO"</li>
+        <li>Si todo OK: "Sistema normal"</li>
+        <li>Use psutil para obtener métricas</li>
+        </ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>psutil.cpu_percent(), psutil.virtual_memory(), psutil.disk_usage() para métricas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.1000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <answerboxlines>20</answerboxlines>
+    <answerboxcolumns>80</answerboxcolumns>
+    <answerpreload>import psutil
+
+# Sistema de monitoreo y alertas
+</answerpreload>
+    <useace>1</useace>
+    <template>{{ STUDENT_ANSWER }}</template>
+    <answer>
+        <text>import psutil
+
+alertas = []
+
+cpu = psutil.cpu_percent(interval=1)
+if cpu > 80:
+    alertas.append("ALERTA CPU")
+
+memoria = psutil.virtual_memory()
+if memoria.percent > 85:
+    alertas.append("ALERTA MEMORIA")
+
+disco = psutil.disk_usage('/')
+if (disco.used / disco.total) * 100 > 90:
+    alertas.append("ALERTA DISCO")
+
+if alertas:
+    for alerta in alertas:
+        print(alerta)
+else:
+    print("Sistema normal")</text>
+    </answer>
+    <language>python3</language>
+    <acelang>python</acelang>
+    <sandbox>DEFAULT</sandbox>
+    <grader>EqualityGrader</grader>
+    <cputimelimitsecs>10</cputimelimitsecs>
+    <memlimitmb>128</memlimitmb>
+</question>
+
+<!-- PREGUNTA 28: Troubleshooting avanzado -->
+<question type="multichoice">
+    <name><text>U3-028: Diagnóstico de red</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un servidor web no responde. ¿Cuál sería la secuencia CORRECTA de diagnóstico?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Metodología: conectividad básica → servicios → configuración → logs → recursos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.5000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[ping → systemctl status apache2 → netstat -tulpn → journalctl]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Secuencia lógica: red → servicio → puertos → logs.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[journalctl → ping → systemctl status → netstat]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Mejor empezar con conectividad básica.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[netstat → journalctl → ping → systemctl status]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. ping debería ser el primer paso.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 29: Optimización del sistema -->
+<question type="cloze">
+    <name><text>U3-029: Performance tuning</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Complete los comandos para optimización del sistema:</p>
+        <p>1. Ver procesos que más CPU consumen: <strong>top -o {1:MULTICHOICE:=%CPU~+%CPU}</strong></p>
+        <p>2. Limpiar cache de memoria: <strong>echo {1:MULTICHOICE:=3~1~2} > /proc/sys/vm/drop_caches</strong></p>
+        <p>3. Ver I/O por proceso: <strong>{1:MULTICHOICE:=iotop~iostat}</strong></p>
+        <p>4. Cambiar prioridad de proceso: <strong>{1:MULTICHOICE:=nice~renice} -n 10 comando</strong></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Herramientas de monitoreo: top, iotop, iostat. nice/renice para prioridades. drop_caches libera memoria cache.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.2500000</penalty>
+    <hidden>0</hidden>
+</question>
+
+<!-- PREGUNTA 30: Proyecto integral -->
+<question type="multichoice">
+    <name><text>U3-030: Evaluación del proyecto EcoTech</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Al finalizar la migración de EcoTech Solutions, ¿qué métricas utilizaría para evaluar el ÉXITO del proyecto?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>KPIs empresariales: uptime, rendimiento, seguridad, costos, satisfacción usuario.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="20" format="html">
+        <text><![CDATA[Uptime > 99.5%]]></text>
+        <feedback format="html"><text><![CDATA[Fundamental para continuidad del negocio.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[Tiempo de respuesta < 2 segundos]]></text>
+        <feedback format="html"><text><![CDATA[Crítico para productividad de usuarios.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[Cero incidentes de seguridad]]></text>
+        <feedback format="html"><text><![CDATA[Protección de datos empresariales.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[Reducción 60% costos de licencias]]></text>
+        <feedback format="html"><text><![CDATA[Justificación económica del proyecto.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[Satisfacción usuario > 80%]]></text>
+        <feedback format="html"><text><![CDATA[Adopción exitosa de la nueva plataforma.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[Número de comandos aprendidos]]></text>
+        <feedback format="html"><text><![CDATA[Métrica académica, no empresarial.]]></text></feedback>
+    </answer>
+</question>
+
+</quiz>

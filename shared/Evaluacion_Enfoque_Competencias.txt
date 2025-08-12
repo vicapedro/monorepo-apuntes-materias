@@ -1,0 +1,1135 @@
+“EVALUACIÓN CON UN ENFOQUE
+     POR COMPETENCIAS”
+ CURSO-TALLER
+       MANUAL DEL PARTICIPANTE
+                              0
+Guía didáctica de trabajo (Planeación)
+  Competencia a desarrollar                        Estrategias de aprendizaje
+  Diseña sistemas e instrumentos de evaluación      Analizar sus propias dificultades ante la
+  basados en competencias.                            evaluación.
+                                                    Clarificación de describir e interpretar
+  Integra la visión de las competencias a su        Reflexionar sobre su “estilo” y “estrategias”
+  sistema de evaluación y diseño de estrategias.      para evaluar.
+                                                    Revisiones       grupales      y    delimitaciones
+  Contexto:                                           conceptuales
+                                                    Elaboración de instrumentos de evaluación
+  Se revisarán alternativas metodológicas para        compartida
+  trabajar dentro y fuera del aula para la          Compilación           permanente        para    la
+  estimulación de competencias educativas en          construcción del portfolio.
+  docentes y alumnos.
+                                                   Evidencias del aprendizaje
+  Temas
+                                                   1. Cuestionario inicial
+      Conceptos relacionados con la evaluación.
+                                                   2. Cuadro de conceptos relacionados.
+      Tipos de evaluación.
+      La evaluación por competencias.             3. Cuadro comparativo de evaluación tradicional
+      Propuesta metodológica.                     y auténtica.
+      Aplicaciones y recomendaciones.             4. El sistema base de evaluación de la materia:
+      Portafolio de evidencias.                   tres hexágonos.
+      Principios    para    el    enfoque     por
+                                                   5. Instrumentos de evaluación.
+       competencias y la evaluación.
+                                                   6. Estructura del portafolio de evidencias.
+                Este material fue elaborado para Centro Asertum SC, por los Mtros.
+                Leslie Cázares Aponte y José Fernando Cuevas, con fines educativos,
+                los derechos de autor están reservados y respaldados por editorial
+                Trillas, queda prohibida su reproducción parcial o total sin la
+                autorización de los autores, 2010.
+                                                                                                        1
+DESARROLLO DE LA GUÍA
+1. CONCEPTOS RELACIONADOS CON LA EVALUACIÓN
+Respondamos de manera individual el siguiente cuestionario inicial
+                               ¿Qué entendemos por evaluación?
+        ¿Cuál es la diferencia entre medir, calificar, acreditar, certificar y evaluar?
+               ¿Cuáles son las finalidades que tiene un proceso de evaluación?
+      ¿Cuáles son los principales problemas a los que nos enfrentamos para evaluar?
+                ¿Qué alternativas hemos desarrollado para dichos problemas?
+     De acuerdo a lo revisado en las anteriores sesiones, ¿cómo se puede visualizar la
+    evaluación desde la perspectiva constructivista y del desarrollo de competencias?
+Ahora en equipos, trabajemos sobre el siguiente cuadro, integrando las aportaciones
+individuales y planteando ejemplos que ayuden a diferenciar y relacionar dichos
+conceptos.
+    Medir          Calificar       Acreditar      Certificar      Evaluar        Evaluar por
+                                                                                competencias
+Ahora revisemos...
+La evaluación es uno de los temas más complejos del quehacer educativo porque en él
+intervienen factores institucionales, históricos, ideológicos, metodológicos y personales,
+que terminan siendo decisivos en la orientación que se le brinde dentro de un proceso
+educativo: la evaluación no sólo consiste en aplicar técnicas “novedosas”, sino que
+invita a reflexionar en torno a ella, desde nuestra práctica docente sin dejar de
+considerar el contexto que la circunda. La complejidad es la mejor oportunidad para
+trabajar con el desarrollo del pensamiento, generar propuestas, alternativas e ideas
+innovadoras.
+        Calificar, medir, acreditar, certificar, retroalimentar y tomar decisiones
+        son facetas de la evaluación, que integrándolas adecuadamente en un
+        proceso educativo, pueden acercar más a los procesos de formación con
+        las acciones comúnmente llevadas a cabo para asignar una calificación
+        del proceso mismo. “Cuando hablamos de evaluación, no estamos
+        atribuyendo al término siempre el mismo significado porque no existe
+        únicamente un solo tipo de evaluación”1 .
+1
+  Cappelletti Isabel, (coordinadora), Evaluación educativa, fundamentos y prácticas, Siglo XXI
+Editores, México, 2004. Pág. 9
+                                                                                             2
+La evaluación es un problema educativo que amerita idas y vueltas entre la práctica y la
+reflexión de carácter teórico; no es un asunto que se resuelva a partir de un método
+establecido, sino que implica búsqueda e innovación constante sin dejar de lado
+estrategias y experiencias tanto propias como documentadas. Si no miramos a la
+evaluación como un problema, la reducimos a un proceso que se aprende una sola vez y
+para siempre.
+En este sentido, la invitación es a reflexionar nuestras prácticas docentes para poner en
+cuestionamiento nuestros supuestos de operación. En el caso de la práctica evaluativo,
+podemos incluir interrogantes como ejercicio de reflexión, del tipo de ¿cómo evidenciar
+todos los aprendizajes obtenidos en los cursos? o ¿cómo diseñar y ejecutar con base en la
+recuperación de los desempeños que los alumnos desarrollaron durante el curso,
+inclusive considerando aquellos que no fueron previstos con antelidad por mí?
+En el terreno educativo, la evaluación se puede clasificar según el alcance de la misma:
+desde la que se enfoca al sistema educativo en su conjunto para la reorientación de las
+políticas educativas, hasta la que se efectúa en la intimidad del aula, pasando por la de
+carácter institucional (estudios de egresados, evaluación curricular, certificaciones
+ahora tan de moda), la de un departamento o facultad (en el caso de la educación
+superior) y la de un grado o especialidad en concreto. Aquí nos enfocaremos a la
+evaluación del aprendizaje, concretamente desde la perspectiva de las competencias
+según las hemos definido, y los elementos que intervienen en él.
+Pensamos que la evaluación es un proceso continuo, dinámico y flexible enfocado a la
+generación de conocimiento sobre el aprendizaje, la práctica docente y el programa en
+sí mismo, construido a partir de la sistematización de evidencias; conocimiento cuya
+intención es provocar reflexiones que transformen el trabajo cotidiano del aula y
+desarrollar, a su vez, aprendizajes para los actores. En este sentido, habrá que pensar
+en estrategias para involucrar al alumno en una corresponsabilidad en el desarrollo
+eficaz del curso, solicitándole que produzca traslados de sus aprendizajes en diferentes
+espacios dentro y fuera del aula. La evaluación deberá comprometer a los estudiantes a
+aplicar el conocimiento y las habilidades para desarrollar la competencia de transferir
+los aprendizajes nuevos, a partir de la construcción del propio convencimiento.
+La evaluación es inherente al proceso de aprendizaje, por lo que su diseño no debe verse
+como un componente aparte. Al concebirse como continua, la evaluación está presente
+desde el día en que inicia el programa, hasta que termina: es un recorrido que, no
+obstante debe ser planeado, plantea la necesidad de irse adecuando a las condiciones en
+que se va desarrollando el proceso educativo. Lo que se vislumbraba como adecuado al
+momento de planear, quizá hoy ya no sea lo más pertinente.
+La dimensión más compleja de la práctica docente es la evaluación, por diversas
+razones: la conceptualización que se ha hecho de ella como mera medición de logro; la
+separación del resto del proceso educativo; la dificultad para establecer mecanismos de
+sistematización y retroalimentación; el uso ideológico que se le ha dado en términos de
+control y distribución de un poder empleado no siempre para el desarrollo de los
+actores, y el cruce de elementos teóricos y metodológicos que implica su adecuada
+inserción en el aprendizaje y la práctica docente, por mencionar algunas de ellas.
+                                                                                        3
+Existen algunos criterios sobre los siguientes supuestos de acción docente para la
+reflexión en la evaluación, orientadas a la mejora y a la ejecución eficaz, frente al
+diseño y la aplicación de sistemas alternativos de evaluación:
+     Diseñar sistemas de evaluación apegados a las necesidades formativas de los
+        alumnos.
+     Pensar en torno a la evaluación como alternativa de reflexión sobre el proceso de
+        aprendizaje y la práctica docente.
+     Considerar que la evaluación aplica para un determinado momento del proceso
+        formativo de la persona.
+     Olvidar que se evalúa a la persona en su conjunto y más bien se opta por evaluar
+        los desempeños de esa persona de acuerdo a una determinada competencia y con
+        unos determinados productos.
+     Insertar medios alternativos a los tradicionalmente implementados en la
+        educación del nivel en el cual se imparte un curso, es decir, alternar, variar,
+        imaginar y soñar con nuevas formas de recuperar la evidencia de los alcances
+        obtenidos en un curso.
+Al plantear estas ideas podemos acercarnos a visualizar una evaluación alternativa, y
+sobre todo, con mayores posibilidades formativas para el alumno, que se traducirán en
+desempeños más significativos e interiorizados en la competencia de ser y transferir.
+Este planteamiento es un ejercicio, que hay que poner en juego, entrenarse y
+supervisarse: es una posibilidad y sobre todo un camino por explorar. Plantear estas
+ideas frente a docentes en formación, no siempre resulta un concepto de uso práctico.
+1.1 EVALUACIÓN AUTÉNTICA Y ALTERNATIVA
+        Para aplicar una evaluación auténtica y alternativa, lo primero que debemos
+considerar es cambiar el enfoque de la evaluación, su objetivo, su intención, sus
+procedimientos, las ponderaciones, los instrumentos y sobre todo nuestra postura ante
+la evaluación, centrarla en recuperar y recoger las evidencias que los alumnos realizan
+en un momento determinado de un proceso educativo tanto en los espacios escolares,
+como en la transferencia de sus saberes fuera del aula, enfocando en diseñar
+instrumentos que den cuenta numéricamente de lo que se vivió a lo largo de un curso de
+cualquier nivel educativo, en un contexto más amplio: Y ¿cómo?
+Existe una dificultad al acercarse a diseñar una evaluación innovadora y alternativa.
+Entenderemos por innovación, la respuesta o propuesta ante un problema real y
+trascendente de manera alternativa con recursos del contexto. Y esta dificultad es
+tratar de ver al conocimiento que se obtiene en un proceso educativo con un enfoque
+práctico; en el que se sepa hacer algo con el conocimiento más que con la
+memorización.
+Ahumada Acevedo (2005), enfoca esta situación problema, como una necesidad de
+recurrir a procedimientos evaluativos que aporten evidencias de que el estudiante está
+interrelacionando sus conocimientos previos con los nuevos aprendizajes que se le
+presentan; los aprendizajes integrales por competencias y los sistemas de evaluación
+para evidenciar sus resultados, serán una forma de certificar y comprobar que los
+                                                                                      4
+alumnos portan un repertorio de competencias que les será de fácil recuperación cuando
+lo soliciten-2
+REFLEXIÓN:
+¿Cómo defino mi estilo docente a partir de las acciones que llevo a cabo para
+evaluar?
+EJERCICIO
+APRENDER DE LA ENFERMEDAD
+   ¿Es posible esto? Cuando solemos reestablecernos de un proceso de enfermedad
+durante el periodo de recuperación, decimos: “hay que tener cuidado con esto y no
+hacer aquello para que no nos pase lo que nos pasó, evitar contagios, implementar
+prevenciones, vacunarnos, tomar complementos que nos fortalezcan.” Todo esto puede
+trasladarse igualmente a la evaluación. Veamos la analogía: ubiquemos esta reflexión,
+sobre los errores y los aciertos, como enfermedad y vacuna; pensemos en la patología,
+diagnosticarla para poder seguir un proceso de recuperación que nos permita alejarnos
+de la enfermedad. La evaluación posee sus enfermedades o la evaluación es una
+enfermedad con diversos síntomas. Revisemos algunas para no contraerlas y para
+prevenirnos:
+   Enfermedades o patologías frecuentes en la evaluación ¿Cuáles son los errores más
+frecuentes al evaluar?
+   Medir a la persona.
+   Calificar sus capacidades temporales para contestar un examen.
+   Ponderar lo que son requisitos de acreditación, como la asistencia o la entrega
+     puntual de trabajos.
+   Calificar desde el mero sentido común o en función de aficiones o gustos personales,
+     sin considerar criterios conocidos por todos de antemano.
+   Enseñar sólo en función de lo que se evalúa, provocando la reacción exacta en los
+     alumnos.
+   Importación o adquisición de métodos de evaluación preestablecidos sin pasarlos por
+     un proceso de reflexión crítica.
+   Solamente aplicar exámenes. Instrumento uniforme que                no    distingue las
+     particularidades en el aprendizaje de los alumnos.
+   Dejar trabajos que difícilmente podrán ser revisados, analizados y objetos de
+     retroalimentación.
+   Confundir la calificación con la percepción que tenemos sobre la persona.
+2
+  Ahumada Acevedo, Pedro, “Hacia una evaluación auténtica del aprendizaje”, Paidós educador,
+México, 2005, Pág. 24
+                                                                                          5
+Vacunas para las enfermedades
+ La evaluación educativa debe hacerse con rumbo y sentido, orientado a rescatar los
+   procesos y las evidencias que los alumnos hayan alcanzado en un determinado tiempo
+   y con una determinada expectativa.
+ Diseñar un marco interpretativo sobre la forma en que serán evaluados y medidos las
+   evidencias que construyan los alumnos.
+ Partir de un código ético para evaluar y dar sentido a las problemáticas educativas
+   que se presenten a lo largo del proceso educativo.
+ Considerar las normas institucionales y sociales que orientan la interpretación y los
+   resultados de la evaluación.
+ Evaluar, desde la perspectiva formativa, es dialogar y reflexionar sobre el proceso,
+   convirtiéndolo en dialógico y deliberativo.
+               Realicemos el ejercicio: Explicar la enfermedad que
+               pueda tener o afectar la evaluación por
+               competencias, y describir cuál sería la vacuna
+               indicada para evitar la enfermedad que poseemos.
+2. TIPOS DE EVALUACIÓN
+2.1 Diagnóstica
+  La importancia de la evaluación diagnóstica consiste en cambiar la racionalidad del
+diseño: en lugar de fundamentarse en objetivos y contenidos, se basa en personas
+concretas para que a partir de sus saberes previos, sus expectativas y sus intereses, se
+pueda articular una propuesta significativa para quien aprende. Conviene saber,
+asimismo, cuál es el contexto sociofamiliar de los alumnos, cuáles son sus estilos de
+aprendizaje y cuáles son las características de sus capacidades relacionadas con
+aprender a aprender: acaso esta información ya exista y haya sido generada por la
+institución educativa.
+2.2 Formativa
+  La evaluación formativa, entendida como aquella que va brindando seguimiento tanto
+al desarrollo de los aprendizajes, como a la pertinencia de la práctica docente, permite
+establecer los mecanismos de reorientación para el instructor mediador y para el
+alumno, de tal forma que se construyan en el camino las mejores estrategias para el
+logro de los objetivos planteados.
+                                                                                       6
+2.3 Sumativa
+   Por su parte, a la evaluación sumativa la vinculamos con aquellas acciones que se
+orientan a dar cuenta de productos, saberes, desempeños y actitudes que se
+contabilizan para el sistema de calificación que se trabaja en la institución. Si poner un
+número (o una letra) es un requisito, más allá de acuerdos o desacuerdos, habrá que
+establecerlo de la manera más exacta posible, dotándolo de un significado común y
+referido a criterios conocidos por todos. Uno de los principales conflictos con el uso de
+exámenes3, muy empleados en la evaluación sumaria, radica en que se parte de ciertos
+supuestos que dificultan una apreciación de la realidad formativa, dicho de otra forma:
+   Los exámenes miden capacidades temporales. El ánimo, la memoria, el manejo de
+     estrés o las capacidades de copiado, son privilegiados en los exámenes.
+   Los exámenes parten del supuesto de que todos los alumnos aprenden de igual
+     manera, a través de los mismos canales y con los mismos niveles de interés.
+     Acreditan los alumnos que coincidan con lo que los profesores en turno consideren lo
+     que es importante expresándolo de la forma en que el profesor pueda entender
+     mejor.
+    Esta clasificación funciona nada más como un ordenador de carácter metodológico: en
+realidad las tres pretenderían establecer diagnósticos y convertirse en esquemas
+formativos.
+3. LA EVALUACIÓN POR COMPETENCIAS
+         ¿Es diferente evaluar un proceso formativo basado en competencias? Si la
+respuesta es afirmativa, ¿qué caracteriza a este enfoque evaluatorio? Las preguntas no
+resultan ociosas porque las propuestas de la evaluación auténtica y alternativa han
+planteado diferencias importantes con relación a la evaluación.
+   La evaluación basada en competencias es distinta aunque recupera algunas estrategias
+ya empleadas por muchos docentes: partimos del supuesto que evaluar de acuerdo a
+este enfoque implica transformaciones en la práctica evaluativa, empezando porque el
+objeto de evaluación trasciende a la repetición de conceptos y a la mera esfera
+cognitiva, aunque los incluye, desde luego. En el entendido de que la competencia se va
+desarrollando al entrar en contacto con la propia tarea, proyecto o elaboración, su
+evaluación deberá entenderse también como un acompañamiento a este proceso, que
+atraviesa por diferentes contextos tanto personales como situacionales.
+   En el entendido de que las competencias son invisibles, se infieren dado su carácter
+subyacente: la evaluación se basará en lo que se le conoce como evidencias, es decir,
+actuaciones o construcciones de los alumnos relacionadas con la(s) competencia(s)
+prevista en la planeación, que nos permitan discurrir sobre el alcance de tal o cual
+competencia o, en su caso, de su nivel de desarrollo y de los caminos para su mejora.
+   A partir de la articulación de las evidencias se presupone que la competencia fue
+desarrollada de manera reflexiva, responsable y efectiva. Es importante pensar en
+esquemas de aprendizaje y evaluación más activos, en los que también el alumno pueda
+3
+   Para problematizar sobre el examen, se recomienda consultar el artículo Una polémica con
+relación al examen (1994) de Ángel Díaz Barriga.
+                                                                                          7
+entender qué significó la asignatura/módulo/unidad/proyecto, como funcionó y lo que
+logró hacer. A esta comprensión se refiere el aprendizaje reflexivo que es la base para
+la transferencia del aprendizaje y, por ende, de las competencias.
+3.1 TIPOS DE EVIDENCIAS
+  En este sentido, podemos ubicar tipos de evidencias que en la práctica se pueden
+construir de manera inveterada, es decir, una puede contener a otra. A manera de
+clarificación las presentamos por separado, retomando algunas propuestas de sistemas
+de competencias desarrollados en algunos países, incluido México:
+  Por conocimiento: toda competencia se fundamenta en un saber, que permite
+finalmente la extrapolación y el desarrollo de procesos de comprensión y análisis. En el
+lenguaje de las competencias laborales, se habla de conocimiento de base y
+circunstancial, es decir, aquél que se pone en juego dentro de determinada situación en
+la que se debe desarrollar tal o cual competencia. Es posible ubicar un saber declarativo
+o uno factual.
+  Por producto: es el resultado de una serie de acciones que llevan a cabo los
+estudiantes y que se concentran en un resultado tangible. Una evidencia por producto
+puede ser un ensayo, un reporte, una maqueta, un cartel, un proyecto, un invento,
+etcétera.
+  Por desempeño: se refiere a la actuación propiamente dicha de los estudiantes en
+determinadas actividades dentro del proceso educativo, como por ejemplo una
+exposición, la participación en un debate, la intervención en alguna simulación,
+etcétera. La constancia quedará asentada en el registro de observación que se haya
+diseñado.
+  Por actitud: son evidencias que se generan a partir de comportamientos que puedan
+ser visibles en el proceso; lo importante será determinar las actitudes relacionadas con
+la competencia a desarrollar y plantear las estrategias tanto para su formación como
+para su evaluación; ejemplos de actitudes que pueden vincularse con las competencias
+son: trabajo en equipo, responsabilidad, escucha, etcétera; finalmente, habrá que
+remitirse a la propuesta de formación valoral que se haya planteado en el diseño
+curricular.
+4. PROPUESTA METODOLÓGICA
+  Para articular un sistema de evaluación del aprendizaje, recuperamos seis
+cuestionamientos esenciales cuya interrelación permite construir una propuesta sólida y
+coherente de acuerdo al enfoque de las competencias. Es el modelo del hexágono, tal
+como se muestra enseguida; la sugerencia es que se elaboren tres hexágonos, uno para
+cada tipo de evaluación (diagnóstica, formativa y sumativa). Los cuestionamientos
+esenciales se definen así:
+4.1. OBJETOS Y FINALIDADES
+  ¿Qué?: refiere al objeto de evaluación, es decir, lo que vamos a evaluar. Aquí habrá
+que pensar en dos componentes básicos: por una parte, la evidencia, según la
+clasificación propuesta con anterioridad, y los llamados criterios, que caracterizan dicho
+objeto y que proponen un referente para poder establecer comparaciones, además de
+especificar con mayor precisión justamente qué es lo que se pretende evaluar. Si
+                                                                                         8
+determinamos que la evidencia a evaluar será un ensayo, tenemos que determinar
+cuáles son los componentes que debe tener un ensayo tipo, de tal forma que se oriente
+a los alumnos en su realización y se establezcan los parámetros para su evaluación,
+considerando que la idea es que dicha evidencia se vaya construyendo a lo largo del
+curso; de igual manera podríamos pensar en una presentación grupal, una maqueta, un
+informe de alguna investigación en campo, etcétera.
+  ¿Para qué?: este es un cuestionamiento que busca darle sentido a las acciones de
+evaluación; funciona también como filtro para que, a través de un proceso reflexivo,
+definamos objetos que en efecto guarden relación con los propósitos del programa y con
+las competencias a desarrollar. En ocasiones podemos plantear objetos de evaluación
+(asistencia, puntualidad, participación, tareas) que no necesariamente se vinculan con
+el núcleo de la propuesta; asimismo, conviene preguntarse sobre las capacidades reales
+que tenemos como docentes y sobre las condiciones en donde tiene efecto nuestra
+práctica (número de alumnos, requisitos institucionales, posibilidades de equipamiento,
+etcétera).
+4.2. TÉCNICAS E INSTRUMENTOS
+  ¿Cómo?: una vez teniendo claro qué vamos a evaluar y su sentido, debemos pensar en
+términos metodológicos, es decir, en la técnica más adecuada para llevar a cabo el
+proceso de evaluación; más que recuperar técnicas preestablecidas, consideramos que
+se debe buscar la creación de estrategias pertinentes. De lo que se trataría, entonces,
+es de definir el proceso o los pasos que vamos a seguir, de acuerdo a un enfoque ya sea
+cualitativo, cuantitativo o una combinación de ambos.
+  ¿Con qué?: aquí nos referimos a los instrumentos que se utilizarán para llevar a cabo el
+proceso. Ubicamos dos clases de instrumento: los de aplicación, que sirven para
+recuperar la información sobre las evidencias de los estudiantes, y los de
+sistematización, que nos permiten organizar la información recuperada y tomar
+decisiones al respecto. En los instrumentos se estructuran los criterios definidos: por
+ejemplo, si la evidencia determinada fue el ensayo, entonces emplearemos un
+instrumento que puede ser una escala en donde se anotan los criterios y se establecen
+niveles de logro o alcance; una es la evidencia y el otro es el instrumento, por lo que
+habría que diferenciar ambos: digamos que la primera la produce el alumno y el segundo
+lo diseña el docente (casi siempre).
+4.3. MOMENTOS Y AGENTES
+  ¿Cuándo?: entendida como una serie de acciones sistematizadas, conviene determinar
+los momentos en que se llevará a cabo cada evaluación, empezando por la diagnóstica e
+insertando las formativa y sumaria, según las necesidades del propio diseño. Es aquí
+donde cobra importancia la noción de que los procesos de la evaluación no son
+independientes a la planeación del programa en su conjunto; es necesario
+reconceptualizar a la evaluación para invertir tiempo en ella, más allá de las revisiones
+extractase que podamos realizar.
+                                                                                         9
+  ¿Quién?: se refiere al agente evaluador que bien puede ser el propio docente o un
+externo, ya sea un colega, una institución, una empresa donde se realizó alguna práctica
+o algunos potenciales usuarios de los productos: aquí estamos hablando de la
+heteroevaluación. Cuando los sujetos que evalúan son los compañeros, le llamamos
+coevaluación y cuando el propio alumno es quien evalúa, estaremos considerando la
+autoevaluación, una capacidad imprescindible que requiere ser desarrollada de manera
+intencional por el propio proceso evaluatorio: si nuestros alumnos aprenden a
+autoevaluarse, estaremos promoviendo procesos de autogestión, tan necesarios para el
+desempeño en la vida misma.
+  Lo más importante de los seis cuestionamientos es su coherencia interna, tanto de
+articulación metodológica como de sentido. De ahí que una vez terminado el hexágono,
+conviene revisarlo nuevamente y preguntarnos sobre la pertinencia de lo propuesto, en
+función de la consistencia que debe tener; desde luego, en la puesta en práctica nos
+daremos cuenta de lo que necesitamos modificar y de las transformaciones que estamos
+consiguiendo en el proceso de aprendizaje de los alumnos. Veamos un ejemplo de
+hexágono:
+                  EJEMPLO DE UN HEXÁGONO DE EVALUACIÓN
+                                                                                      10
+              EJEMPLO DE UN HEXÁGONO DE EVALUACIÓN
+                                       ¿QUÉ?
+                                  a) Comprensión de los
+                                  conceptos analizados.
+                                       Quién?
+                                  b) Avances   del diseño del                              ¿PARA
+  ¿QUIÉN?
+                                  sistema de evaluación                                      QUÉ?
+                                  para la materia.
+                                  c) Desempeño propio y
+               El facilitador del apoyo del facilitador.
+               programa (Hétero
+               evaluación).                                   a) Identificar niveles de
+                                                              comprensión y determinar
+               Los propios                                    nuevas          rutas       de
+               alumnos (Co-                                   aprendizaje.
+               evaluación y
+               autoevaluación).                               b)     Realizar    ajustes   y
+                                                              mejoras al sistema.
+                                                              c) Concientización propia y
+                                                              retroalimentación para el
+                                                              facilitador.
+                                    Evaluación formativa
+                                     Taller de evaluación
+                                       para docentes.            a) Aplicación de un
+                                                                 cuestionario y análisis
+          En dos momentos: una                                   grupal de las respuestas.
+          vez transcurrido el 40%
+          del curso y al momento                                 b) Presentaciones de los
+             de cubrir el 80%.                                   avances y
+                                       a) Cuestionario           retroalimentación grupal.
+                                       de preguntas
+                                       abiertas.                 c) Ejercicio “Círculo de
+                                                                 mejora conjunta”.
+                                       b) Rúbrica de
+                                       criterios.                d) Sistematización y
+                                                                 devolución.
+                                       c) Registro de
+                                       campo.
+                                       d) Matrices de                                   ¿CÓMO?
+¿CUÁNDO?                               sistematización.
+                                    ¿CON QUÉ?
+                                                                                                 11
+          EJEMPLO DE UN HEXÁGONO DE EVALUACIÓN
+                                     ¿QUÉ?
+                               a) Sistema integral de
+                               evaluación (40 puntos).
+                                    Quién?
+                               b) Ensayo    reflexivo sobre                                ¿PARA
+  ¿QUIÉN?
+                               la transformación de la                                      QUÉ?
+                               práctica docente en la
+                               dimensión de evaluación
+                               (30 puntos).
+           El facilitador del
+           programa.           c) Autovaloración del
+                               propio desempeño (30         a) Verificar el alcance de la
+           El propio alumno.   puntos).                     competencia propuesta.
+                                                            b) Valorar las propuestas y
+                                                            compromisos          de      los
+                                                            docentes-participantes.
+                                                            c) Fomentar la cultura de la
+                                                            autoevaluación,               el
+                                                            pensamiento autocrítico y la
+                                                            toma de conciencia.
+                                  Evaluación sumativa
+                                  Taller de evaluación
+                                     para docentes.            a) Revisión puntual de los
+            a) Dos semanas                                     sistemas de evaluación
+            después de                                         con base en criterios
+            finalizado el                                      previamente expuestos.
+            programa
+            presencial.              a) Rúbrica para           b) Análisis crítico de la
+                                     el sistema.               propuesta escrita de cada
+            b) Una vez                                         uno de los docentes-
+            transcurrido el          b) Rúbrica para           participantes.
+            80% del                  el ensayo.
+            programa.                                          c) Ejercicio de cierre.
+                                     c) Rúbrica y
+            c) En la sesión de       cuestionario de           d) Retroalimentación.
+            cierre.                  preguntas
+                                     abiertas para la
+                                     autoevaluación.
+                                                                                       ¿CÓMO?
+¿CUÁNDO?                             d) Matriz de
+                                     puntaje.
+                                  ¿CON QUÉ?
+                                                                                                12
+  Con base en el esquema propuesto, elaboremos tres hexágonos –diagnóstico, formativo y
+  sumativo- considerando la materia que nos corresponda trabajar el próximo periodo.
+  5. APLICACIONES Y RECOMENDACIONES
+  5.1. CONSIDERACIONES SEGÚN TIPOS DE EVALUACIÓN
+    En el cuadro siguiente, se establece la relación entre los tipos de evaluación y los
+  diversos componentes que la integran, de tal forma que se pueda apoyar el proceso del
+  diseño del sistema evaluatorio.
+                  TIPOS DE EVALUACIÓN Y COMPONENTES DEL SISTEMA
+                        DIAGNÓSTICA                    FORMATIVA                          SUMATIVA
+                 Con       la     evaluación   La evaluación formativa es la  Por su parte, la evaluación
+                 diagnóstica cambiamos la     mejor      compañera        del sumativa se orienta a la difícil
+                 racionalidad del diseño      aprendizaje     y      de    la tarea de verificar los logros
+DESCRIPCIÓN      curricular: cambiamos el     enseñanza: permite reorientar   alcanzados durante un periodo
+GENERAL          énfasis de una planeación    el camino dentro del mismo      determinado de aprendizaje. Si
+                 en escritorio, que no se     proceso formativo y funciona    bien usualmente se le relaciona
+                 anula sino se potencia, a    como una detonadora de          con un enfoque cuantitativo,
+                 un proceso colaborativo      capacidades metacognitivas.     parte necesariamente de uno
+                 con los actores esenciales                                   cualitativo para reflexionar en
+                 del aprendizaje, de tal                                      torno     a     las    cualidades
+                 forma que nos acerquemos                                     alcanzadas por las evidencias y
+                 con mayor certidumbre al                                     su proceso de transformación.
+                 principio de pertinencia.
+                  Expectativas                Avances de los proyectos       Evidencias terminadas
+                  Intereses y gustos: en      Aprendizajes desarrollados     Actitudes transformadas
+                   general sobre la vida       Procesos involucrados para     Desempeño personal
+                  Conocimientos: previos       aprender (metacognición)       Capacidades metacognitivas
+                   necesarios, del propio      Desempeño personal: en         Resultados grupales
+                   programa, relacionados.      términos de disposición        Aciertos y desaciertos de la
+OBJETOS           Prejuicios acerca del        hacia     el    aprendizaje,    práctica docente
+                   contenido: en cuanto a       compromiso,
+                   la dificultad, aridez,       responsabilidad,
+                   relevancia.                  contribuciones al proceso
+                  Competencias básicas:        grupal, entre otros.
+                   capacidades      lectoras,  Ambiente del grupo
+                   numéricas y aquellas        Práctica docente
+                   consideradas en función     Relación entre el docente y
+                   a la naturaleza de las       el grupo
+                   competencias           por  Perspectivas
+                   desarrollar.
+                  Estilos de aprendizaje
+                  Contexto sociofamiliar
+                  Rediseñar el programa       Reorientar el programa         Verificar logros
+                  Iniciar el acercamiento     Desarrollar     aprendizajes   Establecer alcances
+                   con el grupo                 sobre el propio proceso de     Analizar       factores     que
+FINALIDADES       Establecer compromisos       aprendizaje                     ayudaron u obstaculizaron el
+                  Plantear alcances           Transformar         prácticas   proceso
+                                                docentes                       Reflexionar sobre la actuación
+                                               Orientar las mejoras para el    de alumnos y docente
+                                                desarrollo de evidencias,      Acreditar
+                                                                                                         13
+                       DIAGNÓSTICA                   FORMATIVA                           SUMATIVA
+                                              analizando     el    proceso
+                                              mismo de construcción
+MÉTODOS Y          Abiertos, explorativos,  Exposiciones                      Exposiciones
+TÉCNICAS            cualitativos             Grupos de enfoque                 Análisis retrospectivos
+                   Pruebas escritas         Asesorías individuales o          Portafolio
+                   Grupos de enfoque           grupales                        Prácticas observadas
+                   Análisis de casos        Exámenes                          Exámenes
+                   Entrevista               Portafolio
+INSTRUMENTOS       Guías de observación     Registros de avance               Rúbricas
+                   Examen de preguntas      Pruebas       escritas    de      Listas de cotejo
+                    abiertas                    diversa índole                  Pruebas escritas
+                                                                                Guías de observación
+AGENTES            Docente                    Los alumnos entre sí            Heteroevaluación:       puede
+                   Institución                 (coevaluación),     a    sí      ser el mismo docente, un
+                   Los propios alumnos,        mismos (autoevaluación) y        colega, algunos sinodales o
+                    desde una perspectiva       al docente.                      personas externas a la
+                    coevaluativa          y    El docente.                      institución    escolar    que
+                    autoevaluativa.                                              hayan participado en la
+                                                                                 supervisión de prácticas,
+                                                                                 por ejemplo.
+                                                                              Autoevaluación: se sugiere
+                                                                                 que el mismo alumno dé
+                                                                                 cuenta de su desempeño
+                                                                                 desde      una    perspectiva
+                                                                                 cuantitativa,      con      la
+                                                                                 orientación de criterios.
+MOMENTOS        Al inicio del programa,     Al término de cada fase del     En función de las fechas
+                aunque       se    trabajen proyecto o de cada unidad       acordadas para la entrega
+                también          elementos  temática, procurando que se     definitiva de evidencias, una
+                diagnósticos en los otros   tuvieran 3 momentos en          vez que se haya desarrollado los
+                dos tipos de evaluación.    específico al semestre dentro   momentos         de     evaluación
+                                            de la propia clase y de         formativa precedentes, que
+                                            manera grupal, además del       vayan         apuntalando        la
+                                            seguimiento individual, en la   elaboración o preparación de
+                                            medida de lo posible.           las fechas límite.
+  5.2. CUADRO DE INSTRUMENTOS SEGÚN TIPO DE EVIDENCIA
+  Se presenta una tabla sucinta de las posibilidades de instrumentos y técnicas que se
+  pueden emplear para la evaluación de las capacidades. Para definir la más pertinente,
+  deberán considerarse las posibilidades institucionales y los propósitos que orientan dicho
+  proceso evaluatorio. Lo importante será ir consolidando un sistema de evaluación
+  consistente pero al mismo tiempo práctico, que permita dar cuenta de las competencias
+  de los alumnos y la forma en que las han ido construyendo: dicha evaluación implica la
+  generación y análisis de evidencias por conocimiento, por desempeño, por producto y
+  por actitud.
+                                                                                                        14
+TIPO DE      INSTRUMENTO      CARACTERÍSTICAS                              OBSERVACIONES
+EVIDENCIA
+                              La formulación de la pregunta debe ser       Si la población no es
+                              comprensible para quien contesta.            numerosa.
+             Cuestionario de  Tener claro qué se está preguntando y cuál   Si se busca cierto
+             preguntas        es el nivel esperado de la respuesta.        desarrollo     en    las
+             abiertas (oral o Si se pregunta sobre la opinión de algún     respuestas.
+             escrito).        tópico, se evalúa cómo se construye dicha    Su diseño no es tan
+                              opinión, más que si se está de acuerdo o no, complicado aunque sí
+                              es decir, la calidad de la argumentación.    su calificación.
+                              El formato de cuestionario oral puede ser    Permite          evaluar
+                              útil como evaluación formativa.              capacidades
+                                                                           relacionadas con el
+                                                                           análisis       y      la
+                                                                           comprensión.
+                              Redactar el enunciado con claridad y         Para       poblaciones
+                              términos que el participante pueda           numerosas.
+                              comprender.                                  Variar la letra o el
+                              El enunciado puede plantearse como una       número        de      la
+                              situación susceptible de resolverse.         respuesta correcta.
+             Cuestionario de  Plantear cuatro opciones de respuesta.       Fácil de calificar.
+             opción múltiple. La forma gramatical de las opciones debe     De alcance limitado.
+Conocimiento                  corresponder con el enunciado del reactivo.  Complejidad en el
+                              Las opciones deben tener una extensión       diseño.
+                              parecida y estar redactadas de la misma
+                              forma.
+                              Todas las opciones deben aparecer como
+                              posibles respuestas correctas, aunque
+                              claramente se debe identificar la que en
+                              efecto lo es.
+                              Es recomendable identificar el tipo de
+                              reactivo en cuanto a lo que se evalúa, es
+                              decir, si está a un nivel de conocimiento
+                              base (recuerdo), de comprensión (análisis) o
+                              de aplicación (solución de una situación
+                              determinada).
+                              Es poco recomendable plantear enunciados
+                              con negaciones, por la confusión que pueda
+                              generarse.
+                              Evitar las soluciones como “ninguna de las
+                              anteriores.”
+                              Las palabras que completan la frase deben    Puede aplicarse para
+                              ser conocidas para los participantes.        poblaciones
+             Completamiento   La lógica de la estructura de la frase debe  numerosas,
+             breve.           ser clara y precisa.                         considerando la
+                              También se puede plantear en forma de        posibilidad de
+                              mapa conceptual, dejando ciertos espacios    sistematizar la
+                              para ser llenados o a manera de crucigrama,  calificación.
+                              por ejemplo.
+                              Los enunciados deben ser claros.             Equilibrar los
+                              La falsedad o veracidad debe ser unívoca,    reactivos falsos y
+                              aunque el planteamiento de la frase debe     verdaderos.
+             Falso /          provocar reflexión.                          Funciona para
+             Verdadero.       En términos formativos, pueden plantearse    poblaciones
+                              enunciados que generen polémica, sin que     numerosas.
+                              necesariamente haya respuestas correctas,
+                              lo que implica que se evalúa la capacidad
+                              de argumentación, escucha y construcción
+                              de acuerdos.
+                                                                                                  15
+TIPO DE   INSTRUMENTO        CARACTERÍSTICAS                                 OBSERVACIONES
+EVIDENCIA
+                             Los reactivos deben ser de la misma             Precisar las
+          Relación de        naturaleza, de tal forma que las respuestas     instrucciones a quien
+          columnas.          puedan caber en las diferentes opciones.        va a contestar.
+                             Cuidar la correspondencia entre el tipo de      Puede emplearse
+                             frases y las respuestas posibles, sin dar la    para poblaciones
+                             respuesta por el tipo de redacción.             numerosas.
+                             Desarrolla la capacidad de discriminación y
+                             de análisis.
+                             La presentación del caso o situación            Para poblaciones
+                             problemática      debe     ser   cercana     al pequeñas.
+          Análisis de caso o participante.                                   Dificultad en su
+          resolución de      Las preguntas derivadas deben orientarse a      elaboración y
+          problemas.         reflejar la comprensión y la capacidad tanto    también en su
+                             analítica como resolutiva de quien              calificación.
+                             responde.                                       Gran potencial para
+                             Es importante precisar criterios que            convertirse en una
+                             permitan orientar el análisis de dicho caso y   evaluación situada y
+                             plantear elementos modélicos, si bien no        auténtica.
+                             del todo cerrados, sí al menos orientadores
+                             para el momento de emitir juicios acerca de
+                             su análisis o resolución llevada a cabo por el
+                             alumno.
+                             Se presenta un elemento gráfico en el que       Permite identificar el
+          Localización /     es necesario identificar sus componentes.       conocimiento general
+          Identificación     Puede ser un mapa, un dibujo de alguna          sobre estos
+                             herramienta o máquina o algún esquema o         elementos.
+                             modelo.                                         Puede plantearse
+                             Tanto las indicaciones como el esquema          para poblaciones
+                             deben ser precisos, identificables y            numerosas.
+                             visualmente claros.
+                             Contiene las características esperadas de la    Funciona como un
+          Lista de cotejo    evidencia.                                      primer acercamiento
+                             Se plantea como ausencia o presencia de los     a la evidencia.
+                             requerimientos, sin niveles.                    Su     aplicación   es
+                             También se le conoce como check list.           relativamente
+                                                                             sencilla.
+                             Es un instrumento de evaluación que integra     Su elaboración es
+                             una serie de criterios y niveles para calificar compleja.
+                             algún tipo de evidencia. Se construye a         Permite precisar los
+                             partir de una escala ordinal y puede            criterios y lo que se
+                             responder a un enfoque cualitativo que          espera del producto
+                             sirva de base a uno cuantitativo, asignando     con bastante certeza.
+                             valores numéricos a cada uno de los niveles.
+                             La rúbrica nos permite desdoblar de tal
+Producto                     manera al objeto de evaluación, que incluso
+          Rúbrica            sirve como una guía para su propia
+                             elaboración y disminuye las asignaciones
+                             arbitrarias de números, letras o adjetivos
+                             difusos.
+                             La rúbrica, en cuanto matriz de doble
+                             entrada, se compone de 5 elementos
+                             esenciales que reflejan una comprensión del
+                             objeto por parte del evaluador. Éstos son:
+                             La evidencia a ser evaluada: puede ser un
+                             ensayo, una presentación, una práctica en
+                             campo, un trabajo colaborativo, un proceso
+                             de elaboración de algún material y el
+                             material mismo, etcétera.
+                                                                                                  16
+TIPO DE     INSTRUMENTO CARACTERÍSTICAS                               OBSERVACIONES
+EVIDENCIA
+                        Los criterios: son las características más
+                        importantes que debe contener la evidencia
+                        y que serán objeto de evaluación.
+                        Funcionan también como orientadores para
+                        que los alumnos enfoquen sus trabajos de
+                        una manera más pertinente. En otras
+                        palabras, modelan la evidencia esperada
+                        para poner de manifiesto el desarrollo de la
+                        competencia con la que se relaciona.
+                        Responden a la pregunta de qué quiero
+                        evaluar de esta evidencia; por ejemplo, la
+                        originalidad, la organización, la estructura,
+                        la forma de presentación, la integración,
+                        etcétera.
+                        Los niveles: son los grados posibles en los
+                        que se puede ubicar dicha evidencia
+                        después de un proceso de valoración, desde
+                        el más óptimo hasta el más incipiente. Son
+                        los rangos que puede alcanzar una evidencia
+                        en concreto. Estos niveles se pueden
+                        nombrar a partir de calificativos (sobre pasa
+                        la expectativa – insuficiente, completo-
+                        ausente) o convertirlos en puntajes, según
+                        la necesidad en términos de calificación
+                        numérica.
+                        El cruce entre los criterios y los niveles:
+                        los dos elementos anteriores conforman una
+                        matriz de doble entrada: los criterios se
+                        acomodan en la primera columna en forma
+                        vertical, y los niveles se definen de manera
+                        horizontal, formando tantas columnas como
+                        niveles se quiera (la sugerencia es elaborar
+                        un número par).
+                        La descripción de cada criterio según el
+                        nivel: en cada recuadro que se forma a
+                        partir del cruce anterior, se redacta una
+                        pequeña descripción explicativa acerca de
+                        cómo tendría que ser la evidencia en ese
+                        criterio y en ese nivel: las descripciones
+                        consideran algunas variables que permitan
+                        ir disminuyendo la calidad, alcance o
+                        precisión de dicha evidencia. Así, si
+                        definimos 10 criterios y 4 niveles, se
+                        tendrán que elaborar 40 descripciones en
+                        total que vayan de una evidencia modélica
+                        a una evidencia que requeriría de volverse a
+                        realizar.
+            Guía de     Puede tomar la forma de una lista de          Implica habilidad y
+            observación cotejo, una rúbrica o un planteamiento más    experiencia por parte
+                        abierto, en el que no hay observables         del evaluador para su
+Desempeño y             completamente definidos.                      desarrollo.
+actitud     Guía de     Las preguntas deben ser claras y orientadas   Se           requiere
+            entrevista  al objeto o los objetos que se pretenden      experiencia en el
+                        evaluar.                                      manejo de entrevista
+                        Se requiere experiencia en el manejo de       de evaluación.
+                        tipos de entrevista y estrategias de
+                        comunicación verbal.
+                                                                                          17
+        EJEMPLO DE RÚBRICA PARA LA ELABORACIÓN DE LOS HEXÁGONOS DE
+                                                EVALUACIÓN
+ CRITERIOS             SOBREPASA EL                     CUMPLE EL                     SE DEBE          AUSENCIA
+                      REQUERIMIENTO                  REQUERIMIENTO                 REFORMULAR
+1.     Trabajo La       inducción      consigue   Se plantea una breve           Carece de algún      No presenta
+completo y     describir       un     panorama    inducción          (materia,   elemento       que   inducción.
+contextualiza  completo de las condiciones        semestre,         contexto)    permita           la
+do.            en las que se lleva a cabo la      para      entender          la correcta
+               evaluación.                        propuesta                 de   contextualización
+                                                  evaluación.                    del trabajo.
+2. Relación    Se identifica una estrecha         Considera                 un   No se identifican    Falta algún
+entre los tres relación y complementariedad       diagnóstico inicial, un        del todo los tres    tipo          de
+tipos       de entre los tres tipos de            proceso de evaluación          tipos            de  evaluación.
+evaluación.    evaluación.                        continua (formativa) y         evaluación y no
+                                                  la evaluación sumativa,        se      encuentran
+                                                  claramente                     claras          las
+                                                  identificadas y con            relaciones.
+                                                  cierta              relación.
+               Los diferentes componentes         El        modelo          de   No se considera      Carece        de
+3.             evaluados       se   encuentran    evaluación es integral,        algún componente     los
+Integralidad   implicados de tal forma que        en cuanto a que                de                la elementos
+del modelo.    refieren a la competencia de       considera          saberes,    competencia.         necesarios
+               una manera precisa.                productos,                                          para evaluar
+                                                  desempeños                   y                      competencia
+                                                  actitudes.                                          s.
+4. Claridad y  Los objetos de evaluación (los     Los        objetos         se  No existe total      Se       omiten
+pertinencia    qué's)       están    claramente   expresan con precisión         relación con la      en        algún
+de         los identificados         y        se  en       términos         de   competencia o se     caso         los
+objetos     de corresponden con el resto de       evidencias y criterios.        plantean         de  objetos       de
+evaluación.    las interrogantes, así como                                       manera difusa.       evaluación.
+               con        las     competencias
+               planteadas para la asignatura.
+5.             Las finalidades justifican de      Los para qué's en              Algunos objetos      No            se
+Justificación  manera contundente la acción       efecto      justifican      la de evaluación no     plantea        la
+precisa      a de evaluar, no sólo en cuanto      realización del proceso        se justifican del    justificación
+partir      de la importancia de que se           evaluativo, con relación       todo.                de lo que se
+finalidades.   aprenda sino también en            a las competencias                                  pretende
+               cuanto a la necesidad de           planteadas         en       la                      evaluar.
+               mejora        permanente      del  asignatura.
+               proceso de enseñanza.
+               Se identifican novedosas y         Los cómos establecen           Los métodos y las    Se
+6.             pertinentes estrategias de         un proceso lógico y            técnicas             confunden
+Pertinencia y  evaluación más allá de las         articulado para llevar a       planteadas           los métodos
+lógica      de usualmente utilizadas.             cabo la evaluación.            pueden precisarse    y      técnicas
+métodos      y                                                                   o ajustarse en       con       algún
+técnicas.                                                                        función         del  otro
+                                                                                 sistema              componente
+                                                                                 planteado.           del sistema.
+7.             Los instrumentos reflejan las      Los con qués describen         Ciertos              No            se
+Instrumentos   intenciones, objetos y métodos     los           instrumentos     instrumentos no      incluyen los
+adecuados y    de      evaluación;      resultan  pertinentes tanto de           son claros para el   instrumentos
+diseñados      creativos       y    pertinentes,  aplicación como de             tipo de alumno a     o             se
+en     función además de congruentes y            sistematización,          en   quien se dirige o    confunden
+                                                                                                                   18
+CRITERIOS              SOBREPASA EL                      CUMPLE EL                 SE DEBE           AUSENCIA
+                       REQUERIMIENTO                 REQUERIMIENTO              REFORMULAR
+de lo que se   sistemáticos.                      concordancia con la         incluye elementos     con          la
+pretende                                          metodología                 no contemplados       técnica.
+evaluar.                                          establecida.                en el resto de la
+                                                                              propuesta.
+8.             Se percibe una efectiva            Los       cuándos       se  Los momentos de       No         se
+Oportunidad    integración de los tres tipos de   relacionan       con     la la       evaluación   consideran
+de         los evaluación en cuanto a los         finalidad del tipo de       pueden ajustarse      momentos
+momentos.      momentos en los que se lleva       evaluación y permiten       en función de las     suficientes.
+               a cabo.                            vislumbrarla como un        finalidades.
+                                                  proceso          continuo.
+9.             Existe       una      pertinente   El quién establece          En algunos casos      Se       omite
+Pertinencia    participación de los sujetos       alternativas en cuanto      se            puede   quién es el
+del     sujeto evaluadores, más allá del          al agente evaluador, en     replantear         el responsable
+que evalúa.    docente.                           función del sentido del     sujeto que evalúa.    de           la
+                                                  proceso de evaluación                             evaluación.
+10. Precisión  Las evidencias se articulan de     Se      identifican    las  Parte      de    las  No se ubican
+de             tal forma que se consigue          evidencias        y     se  evidencias o de       criterios     o
+evidencias y   inferir     la     competencia     caracterizan a partir de    los criterios deben   evidencias
+criterios.     desarrollada,       con       las  criterios      claramente   ser precisados o      de manera
+               características necesarias en      redactados                y contextualizados.     diferenciada.
+               función de los propósitos del      planteados.
+               programa.       Los     criterios
+               permiten dar cuenta del nivel
+               requerido para considerar a
+               dicha      evidencia       como
+               demostración         de         la
+               competencia correspondiente
+                                                                                                               19
+                  EJEMPLO DE INSTRUMENTO DE AUTOEVALUACIÓN
+ NOMBRE______________________________________________________________
+Reflexiona sobre tu desempeño y marca en cada criterio el nivel alcanzado. Al
+   final realiza la sumatoria, considerando que la primera columna vale tres
+                                  puntos y la última cero.
+                                     Mi desempeño     Mi desempeño Pude haberme            Faltó
+                                     fue más allá de  fue suficiente, desempeñado     dedicación e
+                                      lo solicitado y cumpliendo en mejor, aunque      interés para
+                CRITERIO               observé con      general y/o     atendí este  trabajar sobre
+                                        atención e     atendiendo lo   criterio para  este elemento
+                                       interés estos     solicitado.      cumplir     del curso. Lo
+                                      componentes.                        apenas.     dejé de lado.
+1. Realicé las lecturas y estuve
+    atento     a    las    películas
+    sugeridas.
+2. Le dediqué tiempo a los
+    avances fuera del horario de
+    clase.
+3. Escuché las participaciones de
+    mis compañeros.
+4. Cuando participé, lo hice
+    abonando al proceso del grupo
+    y en función del tema.
+5. Cuando no asistí, busqué
+    ponerme al corriente.
+6. Fui integrando los diferentes
+    avances     desarrollados    en
+    clase, como los mapas y las
+    preguntas.
+7. He dedicado tiempo a la
+    investigación de Didáctica del
+    Derecho.
+8. Participé en los ejercicios
+    dentro de clase, colaborando
+    con la dinámica y con los
+    compañeros.
+9. Fui más allá del contenido
+    propuesto e investigué en
+    otras fuentes.
+10. He desarrollado mi programa
+    formativo     más    para    mi
+    aprendizaje que para cumplir.
+                                                                      TOTAL ____________
+          En la parte de atrás, describe por favor tu desempeño en la asignatura.
+                                                                                               20
+Ahora elaboremos los instrumentos correspondientes a nuestras materias (Evidencia 5).
+5.3. CONSIDERACIONES PARA LA RETROALIMENTACIÓN
+Se trata de una tarea esencial de la evaluación que además los educandos solicitan para
+saber al menos la percepción de su profesor sobre lo que logró desempeñar. Se trata de
+un proceso siempre agradecido y con resultados en los aprendizajes colaterales de
+docentes y alumnos; escuchar lo que ellos opinan sobre la calificación sobre su
+desempeño.
+   Ejemplo de sistema gráfico de retroalimentación de trabajos y diarios de
+                                         campo
+                                    Idea importante para el texto
+                                    Concepto interesante
+              ?                     Planteamiento         no     argumentado          o
+                                    sustentado
+                                    Cumple con         la   información       mínima
+                                    solicitada
+                                    Precisar, idea confusa
+                                    Reflexiona sobre esto, profundiza
+                                                                                     21
+6. EL PORTAFOLIO DE EVIDENCIAS
+           El portafolio de evidencias es una herramienta de evaluación que permite
+         llevar un seguimiento articulado y sistematizado de los procesos de
+         aprendizaje, reflejados en diversas producciones realizadas por cada uno de
+         los alumnos, así como de las observaciones y acompañamiento del docente.
+         En el portafolio –que puede tomar la forma de una carpeta con separaciones,
+         de un sobre grande o incluso una caja- se van integrando todos los trabajos
+         de diversa índole que el alumno genera (textos escritos, audiovisuales,
+         maquetas, materiales, etcétera) con las correspondientes anotaciones del
+         profesor y de sus propios compañeros, de acuerdo a criterios específicos que
+         favorezcan la organicidad y funcionalidad en términos de vislumbrar el
+         aprendizaje como un continuo.
+           El portafolio se inscribe dentro del concepto de evaluación auténtica, es
+         decir, aquella que le permite a la persona comprender su propio proceso de
+         aprendizaje, trascendiendo el mero concepto de calificación en un solo
+         momento (tipo examen), a través de la construcción de evidencias a lo largo
+         de un continuo, que representen los avances y el desarrollo de manera
+         plausible, y reflexionando sobre su proceso y las posibilidades de mejora.
+           De acuerdo a       Ferreiro   (2005),  el portafolio    tiene  las siguientes
+         peculiaridades:
+          Es personal.
+          Tiene una finalidad educativa previamente establecida con relación al
+             curso.
+          Es integrativo, pues contempla evidencias de aprendizaje relacionadas
+             entre sí y con una finalidad educativa preestablecida.
+          Se emplean diversas fuentes en su confección.
+          Debe permitir la reflexión.
+6.1. PROPÓSITOS DEL PORTAFOLIO DE EVIDENCIAS
+        Brindar seguimiento al proceso de construcción de aprendizajes.
+        Sistematizar las diversas producciones desarrolladas durante un proceso
+         educativo, de acuerdo a criterios y clasificaciones establecidas.
+        Promover la reflexión en el sujeto que aprende sobre sus resultados, pero
+         sobre todo, en el camino recorrido para llegar a ellos (evaluar la
+         metacognición).
+        Darle un sentido de unidad a todos los trabajos desarrollados.
+        Valorar el propio esfuerzo realizado, en función de la propia percepción y de
+         las observaciones tanto de los compañeros como del instructor-mediador.
+                                                                                      22
+6.2 ETAPAS DEL PORTAFOLIO DE EVIDENCIAS
+Para desarrollar el portafolio como herramienta de evaluación, habrá que considerar las
+siguientes etapas:
+a) Definiciones previas:
+                Determinar las evidencias que se considerarán como parte del proceso,
+                 planteando los diferentes tipos (conocimiento, producto, desempeño,
+                 actitud).
+                Definir los objetivos que se perseguirán con la herramienta.
+                Establecer las secciones que conformarán el portafolio.
+                Plantear el formato del portafolio (colores, tipos de divisiones,
+                 portadas, etc).
+b) Recolección, en donde el alumno debe mostrar: 4
+                Cumplimiento de las actividades de carácter obligatorio.
+                Preocupación porque exista coherencia entre los trabajos presentados y
+                 los aprendizajes propuestos.
+                Preocupación por mejorar los aspectos del aprendizaje considerados
+                 deficitarios.
+                Preocupación por profundizar los aspectos del aprendizaje considerados
+                 óptimos.
+                Preocupación por la entrega de material complementario de carácter no
+                 obligatorio.
+                Claridad para determinar los criterios de elaboración de sus propias
+                 pautas de autoevaluación (rubrics).
+                Claridad para la presentación de informes de avance de su aprendizaje.
+                Claridad en las explicaciones sobre los aprendizajes logrados.
+c) Selección:
+                El alumno elige ciertas evidencias que reflejen de mejor manera los
+                 aprendizajes desarrollados.
+                Justificar cuáles fueron las razones por las que seleccionaron dichas
+                 evidencias y/o trabajos.
+                Esta elección será importante porque después se llevará a cabo un
+                 proceso de presentación.
+4
+  Retomado de Ahumada, Pedro (2005). Hacia una evaluación auténtica del aprendizaje. Ed.
+Paidós. México.
+                                                                                      23
+d) Reflexión:
+                      El alumno deberá hacer referencia a los elementos seleccionados,
+                  en función de las evidencias por desarrollar y de los propósitos que los
+                  orientan.
+                      Es recomendable que los alumnos escriban una reflexión sobre los
+                  logros alcanzados o bien sobre las barreras que impidieron un mejor
+                  aprendizaje.
+e) Proyección:
+                      Es el momento en que el alumno puede mirar el portafolio como un
+                  todo y emitir juicios valorativos sobre la calidad de los aprendizajes.
+                      Puede llevarse a cabo una apertura de portafolios ante todo el
+                  grupo, con el fin de intercambiar experiencias y aprendizajes
+                  desarrollados.
+6.3. EVALUACIÓN DEL PORTAFOLIO
+Para desarrollar una evaluación pertinente del portafolio, habrá que recurrir a procesos
+tanto formativos como sumativos, es decir, retomar tanto los procesos susceptibles de
+mejora, como productos terminados o integrales. Veamos:
+       Cada quincena, es recomendable revisar los avances en función de las listas de
+        cotejo elaboradas previamente o de las rúbricas, en donde se plantean los
+        criterios de cada una de las evidencias.
+       Sugerir qué evidencias pueden ser mejoradas y/o complementadas, para que el
+        alumno pueda ir trabajando en ello; se sugiere mantener todos los trabajos para
+        ir verificando los avances que se van teniendo y comparar las producciones
+        parciales con las finales.
+       En la presentación definitiva, se puede establecer un proceso formal en el que se
+        inviten a personas externas a la clase para que presencien o en su caso evalúen
+        dichas presentaciones de los alumnos.
+6.4. TIPOS DE PORTAFOLIO Y DE EVIDENCIAS.
+TIPO 1 ESTRUCTURADO
+LO QUE ES
+Este tipo de portafolio es una herramienta didáctica en la que las evidencias y la
+estructura del portafolio se encuentran preestablecidas por el profesor, de manera tal
+que los alumnos “realizan” la propuesta de trabajo de manera clara y precisa. Tanto los
+criterios para su desarrollo como los de evaluación a partir de los cuales se determinará
+el cumplimiento de la evidencia, están diseñados con anterioridad para evitar el clásico
+síndrome del alumno inconforme: en este tipo de portafolio el docente se podrá sentir
+más seguro de calificar, pues la claridad de la estructura a desarrollar le permitirá hacer
+de su proceso evaluativo un ejercicio claro y puntual. Esto puede tener algunos riesgos
+en la creatividad de los realizadores, ya que la falta de movilidad en términos de
+                                                                                          24
+expresión de aprendizajes personales obtenidos de manera paralela a un proceso
+formativo, no serán considerados por el docente. Alumnos y profesores con un estilo
+personal conservador, se verán cobijados por este tipo de portafolios.
+ESTRUCTURA
+Componente         Especificaciones                                                              %
+Presentación       Se consideran datos completos del nombre del alumno, institución,             20
+                   nombre de materia, además de presentación del resto del documento en
+                   cuanto a higiene, organización, paginación tipo de letra, tipo de
+                   impresión y ortografía. En presentación se puede considerar la
+                   introducción al trabajo a desarrollar.
+Índice             En este se debe de ver reflejada de manera ordenada la construcción del       10
+                   portafolio y la especificación del tipo de evidencia, así como la página
+                   en donde se puede encontrar.
+EVIDENCIAS         Se predeterminan en la planeación las evidencias cerradas a trabajarse,       50
+CERRADAS           no se incluyen evidencias producto de actividades de aprendizaje o
+(especificar el    evidencias generadas por iniciativa de los alumnos.
+número
+solicitado por el
+profesor)
+Conclusiones       Se le solicita de manera “estructurada” cuáles serán los tipos de             20
+                   conclusiones que verterá el alumno en ellas; suelen ser solicitudes
+                   cuantitativas de los logros y hallazgos obtenidos en el proceso formativo.
+                   En este tipo de portafolios se les puede solicitar lo siguiente: lista de los
+                   10 aprendizajes relevantes obtenidos durante el curso, enlistar
+                   recomendaciones posteriores al tránsito por el análisis de un
+                   determinado fenómeno trabajado en clase, recomendaciones puntuales
+                   hacia el docente, sus compañeros de clase, hacia la institución, hacia
+                   determinados campos del sector laboral o social. Es decir, la conclusión
+                   debe de ser especificada en detalle no dejarla abierta.
+¿QUIÉNES LO PREFIEREN?
+Profesores y alumnos habituados a la diada dígame lo que quiere y yo lo hago, y te digo
+lo que quieres y tu lo haces. Es un portafolio que da seguridad tanto a alumnos como a
+profesores, tiene la gran ventaja de acercarse más a la objetividad que a la subjetividad
+como el portafolio que a continuación describiremos. Este portafolio será una tendencia
+que los profesores que vayan adquiriendo experiencia en el modelo de diseño de cursos
+por competencias, utilizarán con mayor frecuencia. El riesgo de este portafolio es la
+pasividad de algunos alumnos quienes por considerar tan solo el cumplir los mínimos
+desarrollados, no incursionan en el terreno del aprendizaje significativo.
+COMPETENCIAS QUE DESARROLLAN EN LOS ALUMNOS
+        Estructura secuencialmente las ideas fundamentales de un curso
+        Define lineamientos organizativos
+                                                                                                  25
+     Clasifica información sistemáticamente
+     Ordena aprendizajes relevantes.
+Ejemplos:
+                                             26
+         EJEMPLO DE RÚBRICA Y AUTOEVALUACIÓN PARA UN PORTAFOLIO
+               Altamente competente                Competente              Competente            Competencia      Aún no
+               (10)                                                        intermedio           en Desarrollo     competente
+                                                   (9)                     (8)                  (7)               (6)
+DESEMPEÑO:     Realizó la totalidad de las         Realizó las             Participó en las     Realizó las       No realizó las
+PARTICIPACIÓN  actividades de aprendizaje y las    actividades de          actividades de       actividades de    actividades
+EN             entregó en tiempo y forma.          aprendizaje con         aprendizaje, pero    aprendizaje de
+ACTIVIDADES    Realizó sus evidencias cerradas     algunos retrasos.       sus aportaciones     manera
+DE             con la lectura profunda de todas    Cumplió en el           no fueron            esporádica.
+APRENDIZAJE    las lecturas propuestas.            desarrollo de las       reflexivas y no      Expresó
+PARTICIPACIÓN  En clase se expresó con             solicitudes de las      manifestaban         dificultades en
+EN LA          claridad ante las interrogantes     evidencias cerradas,    profundidad y un     su desempeño,
+COMUNIDAD DE   conceptuales y reflexivas, sus      no fue más allá en la   ejercicio            no aportó ideas
+INDAGACIÓN     ideas apoyaron el diálogo           profundización de       metacognitivo de     relevantes para
+               constructivo y propositivo.         cada rubro.             transformación       la discusión.
+               Trajo materiales adicionales a      En clase se expresó     del pensamiento.
+               la materia para enriquecer el       fluidamente y sus
+               contenido de la misma.              ideas fueron
+                                                   significativas para la
+                                                   discusión grupal.
+PRODUCTO       El trabajo fue entregado en         El trabajo cumplió      El trabajo fue       El trabajo y la   No presentó
+TRABAJO Y      tiempo y forma, contó con           los         requisitos  entregado pero no    exposición no     trabajo
+EXPOSICIÓN DEL materiales de apoyo para su         fundamentales del       logró reflejar la    reflejaron    los
+PROYECTO DE    exposición. Logró que la            trabajo, reflejó un     totalidad de los     conceptos
+INTERVENCIÓN   comunidad       de      indagación  acercamiento a la       conceptos            fundamentales
+DEMOCRÁTICA    trabajara                educación  educación               manejados en la      de la educación
+               democrática                         democrática y su        educación            democrática.
+                                                   exposición          fue democrática.
+                                                   significativa para el
+                                                   grupo
+               Entregó       a     tiempo     sus  Entregó el mismo        Entregó          sus Entregó       sus No entregó
+               evidencias, imprimiendo un          día solicitado sus      evidencias pero la   evidencias pero   sus
+PRODUCTO Y     toque      personal       en     la evidencias.             organización de la   con retraso y     evidencias
+CONOCIMIENTO:  presentación de las mismas, en      Presentó             su información       no falta          de
+PORTAFOLIO DE  tiempo y forma.                     portafolio         con  fue clara.           organización en
+EVIDENCIAS     Su portafolio fue presentado        calidad               y Presentó             el contenido de
+               con un toque extra en estilo y      organización.           dificultades en el   la evidencia.
+               forma.                              El contenido de las     planteamiento del    El conocimiento
+               Cuenta       con      todas     sus evidencias y del        contenido            planteado aún
+               evidencias firmadas.                portafolio      refleja expuesto en la       no refleja un
+               El contenido reflejó un dominio     una          profunda   evidencia y en el    dominio       del
+               del conocimiento revisado para      reflexión y manejo      portafolio.          tema.
+               la realización de la evidencia      de temas teóricos
+                                                   revisados.
+               Llegó a todas las sesiones          Llegó y permaneció      Ocasionalmente       No participó en   No participó
+               temprano y permaneció en            en todas las sesiones   participó            clase,        fue nunca.
+ACTITUD:       clases con una actitud de           del seminario, con      inscribiendo ideas   reservado       y
+VALORES Y      apertura al nuevo conocimiento      una     actitud      de que provocaron la    cuando se le
+ACTITUDES      y     aportando       ideas    que  apertura al nuevo       auto reflexión y la  invitaba        a
+HACIA LOS      favorecían la actitud personal y    conocimiento.           reflexión grupal.    participar     no
+COMPAÑEROS Y   del grupo ante el crecimiento       Manifestó           los                      expresaba ideas.
+HACIA EL       intelectual.                        valores de respeto y
+MODERADOR DE   Manifestó los valores de            escucha ante su
+LA COMUNIDAD   respeto ante los miembros de la     comunidad            de
+DE INDAGACIÓN  comunidad       de      indagación  indagación.
+               incluidos        el       profesor,
+               expresando          escucha       y
+               tolerancia a diferentes puntos
+               de vista.
+                                                                                                                           27
+                      Reflexiones finales
+ La evaluación va más allá de la calificación: habrá que ayudar a que los
+  alumnos comprendan esta idea y busquen aprender para su desarrollo, no
+  para aprobar.
+ Es necesario compartir el sistema de evaluación con los alumnos y
+  transparentar los criterios, así como hacerlos partícipes del proceso.
+ Es recomendable buscar diversidad en las formas de evaluar, siempre
+  teniendo claro qué estamos evaluando y para qué lo estamos haciendo.
+ Toda evaluación debe acompañarse de retroalimentación, por lo que
+  habrá que planear cómo brindarla y de qué manera puede generar
+  mejoras.
+ Debemos tratar de plantear evaluaciones continuas, integrales y que
+  consideren tanto resultados como procesos.
+ La evaluación debe sistematizarse: por ello debemos enfocar con
+  precisión qué debemos y podemos evaluar.
+ Toda evaluación puede tener propósitos múltiples. Por ejemplo: un
+  examen que todos reprueban me indica ciertos elementos sobre mi forma
+  de explicar.
+ La evaluación que aplicamos debe ser evaluada para mejorarla de manera
+  permanente. Es un asunto de congruencia.
+ Recordemos que finalmente la evaluación debe ser un proceso de
+  reflexión sobre el aprendizaje y sobre la enseñanza.
+                                                                         28
+29

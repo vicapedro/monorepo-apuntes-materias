@@ -1,0 +1,384 @@
+                                                              TECNOLÓGICO NACIONAL DE MÉXICO
+                                                         Secretaría Académica, de Investigación e Innovación
+                                                                       Dirección de Docencia e Innovación Educativa
+1. Datos Generales de la asignatura
+                         Nombre de la asignatura: Conmutación y Enrutamiento en Redes de
+                                                        Datos.
+                            Clave de la asignatura: SCD - 1004
+                                           SATCA1: 2 - 3 - 5
+                                            Carrera: Ingeniería en Sistemas Computacionales.
+2. Presentación
+  Caracterización de la asignatura
+  Esta asignatura aporta al perfil del Ingeniero en Sistemas Computacionales las siguientes habilidades:
+       Implementa aplicaciones computacionales para solucionar problemas de diversos contextos,
+          integrando diferentes tecnologías, plataformas o dispositivos
+       Desarrolla y administra software para apoyar la productividad y competitividad de las
+          organizaciones cumpliendo con estándares de calidad.
+       Evalúa tecnologías de hardware para soportar aplicaciones de manera efectiva.
+       Diseña, configura y administra redes de computadoras para crear soluciones de conectividad
+          en la organización, aplicando las normas y estándares vigentes.
+  Desarrolla las capacidades básicas para el diseño e implementación de soluciones en redes de datos
+  LAN y WAN en base a las normas y estándares vigentes.
+  La importancia de esta asignatura radica en la necesidad que tienen las empresas de optimizar sus
+  procesos con el adecuado aprovechamiento de las tecnologías de la información, redes de datos, así
+  como la infraestructura que soporta dichas tecnologías.
+  Se ubica en el séptimo semestre, es subsecuente a la asignatura de Redes de Computadoras y desarrolla
+  las competencias necesarias para cursar la asignatura Administración de Redes
+  Intención didáctica
+  La asignatura se estructura en cuatro temas, agrupando los contenidos de acuerdo al nivel de
+  aplicación.
+  En el primer tema se establecen los fundamentos del direccionamiento IP y enrutamiento como base
+  para el diseño lógico en una Red WAN. En el segundo tema se abordan las tecnologías y métodos para
+  segmentar tráfico en una red LAN conmutada.
+  En el tercer tema se abordan las tecnologías WAN con la finalidad de que el alumno conozca y utilice
+  las tecnologías que actualmente implementan las organizaciones que interconectan sus sucursales a
+  distancia.
+  En el cuarto tema se tratarán los fundamentos teóricos de las redes inalámbricas, se analizarán los
+  dispositivos y su configuración, para después enfocar el tema de protocolos y los mecanismos de
+  seguridad, como parte integral de soluciones de conectividad en las empresas u organizaciones.
+1
+  Sistema de Asignación y Transferencia de Créditos Académicos
+©TecNM mayo 2016                                                                      Página | 1
+                                                               TECNOLÓGICO NACIONAL DE MÉXICO
+                                                          Secretaría Académica, de Investigación e Innovación
+                                                                         Dirección de Docencia e Innovación Educativa
+3. Participantes en el diseño y seguimiento curricular del programa
+        Lugar y fecha de
+                                            Participantes                              Evento
+     elaboración o revisión
+                                 Representantes de los Institutos
+                                 Tecnológicos de:
+                                 Alvarado, Arandas, Campeche,
+                                 Celaya, Centla, Cerro Azul,
+                                 Champotón, Ciudad Acuña, Ciudad
+                                 Cuauhtémoc, Ciudad Juárez, Ciudad
+                                 Madero,        Ciudad        Valles,
+                                 Coatzacoalcos, Cocula, Colima,
+                                 Comitán, Durango, El Istmo,           Reunión Nacional de Diseño e
+                                 Huetamo, La Laguna, La Paz, Lázaro    Innovación Curricular para el
+                                 Cárdenas, Lerdo, Libres, Linares,     Desarrollo      y     Formación       de
+    Instituto Tecnológico de
+                                 Macuspana, Matamoros, Mérida,         Competencias Profesionales de las
+  Saltillo del 5 al 9 de octubre
+                                 Mexicali, Morelia, Nuevo Laredo,      Carreras de Ingeniería en Sistemas
+             de 2009.
+                                 Nuevo León, Occidente del Estado      Computacionales,              Ingeniería
+                                 de Hidalgo, Ocotlán, Orizaba,         Informática      e     Ingeniería     en
+                                 Oriente del Estado de Hidalgo,        Geociencias.
+                                 Parral, Piedras Negras, Pinotepa,
+                                 Saltillo, San Luis Potosí, Sur de
+                                 Guanajuato, Sur del Estado de
+                                 Yucatán, Tapachula, Tepexi de
+                                 Rodríguez,    Teziutlán,    Tijuana,
+                                 Toluca,     Tuxtepec,      Veracruz,
+                                 Villahermosa, Xalapa, Zacatecas y
+                                 Zacatepec.
+                                 Representantes de los Institutos
+                                 Tecnológicos de:
+                                 Alvarado, Arandas, Campeche,          Reunión Nacional de Consolidación de
+                                 Celaya, Centla, Cerro Azul,           los Programas en Competencias
+      Instituto Tecnológico      Champotón, Ciudad Acuña, Ciudad       Profesionales de las Carreras de
+  Superior de Poza Rica del 22   Cuauhtémoc, Ciudad Juárez, Ciudad     Ingeniería         en          Sistemas
+    al 26 de febrero de 2010.    Madero,        Ciudad        Valles,  Computacionales,              Ingeniería
+                                 Coatzacoalcos, Cocula, Colima,        Informática e Ingeniería Petrolera del
+                                 Comitán, Durango, El Istmo,           SNEST.
+                                 Huetamo, La Laguna, La Paz, Lázaro
+                                 Cárdenas, Lerdo, Libres, Macuspana,
+                                 Matamoros,     Mérida,     Mexicali,
+©TecNM mayo 2016                                                                        Página | 2
+                                                           TECNOLÓGICO NACIONAL DE MÉXICO
+                                                      Secretaría Académica, de Investigación e Innovación
+                                                                     Dirección de Docencia e Innovación Educativa
+                            Morelia, Nuevo Laredo, Nuevo
+                            León, Occidente del Estado de
+                            Hidalgo, Orizaba, Oriente del Estado
+                            de Hidalgo, Parral, Piedras Negras,
+                            Pinotepa, Saltillo, San Luis Potosí,
+                            Sur de Guanajuato, Sur del Estado de
+                            Yucatán, Tapachula, Tepexi de
+                            Rodríguez,     Teziutlán,    Tijuana,
+                            Toluca,     Tuxtepec,       Veracruz,
+                            Villahermosa, Xalapa, Zacatecas y
+                            Zacatepec.
+                            Representantes de los Institutos
+                            Tecnológicos de:
+                            Acayucan,      Altamira,     Cajeme,
+                            Campeche, Cananea, Cd. Acuña, Cd.
+                            Cuauhtémoc, Cd. Juárez, Cd.
+                            Madero, Cd. Valles, Celaya, Centla,
+                            Cerro Azul, Chetumal, Chihuahua II,
+                            Chilpancingo,             Coalcomán,
+                            Coatzacoalcos, Cocula, Colima,
+                            Comalcalco, Delicias, Durango,         Reunión Nacional de Seguimiento
+                            Ébano, Escárcega, Huixquilucan, La     Curricular de los Programas en
+                            Paz, León, Lerdo, Los Ríos,            Competencias Profesionales de las
+  Instituto Tecnológico de
+                            Macuspana, Mante, Milpa Alta,          Carreras de Ingeniería en Sistemas
+  Querétaro del 22 al 25 de
+                            Minatitlán, Morelia, Nuevo Laredo,     Computacionales,              Ingeniería
+      octubre de 2012.
+                            Nuevo León, Oaxaca, Oriente del        Informática      e     Ingeniería     en
+                            Estado de México, Oriente del          Tecnologías de la Información y
+                            Estado de Hidalgo, Pachuca, Piedras    Comunicaciones.
+                            Negras, Progreso, Puerto Vallarta,
+                            Purhepecha, Tacámbaro, Tehuacán,
+                            Tepexi de Rodríguez, Tepic,
+                            Teposcolula,     Teziutlán,    Tierra
+                            Blanca, Tijuana, Tlaxiaco, Toluca,
+                            Tuxtepec, Uruapan, Valladolid,
+                            Veracruz, Villahermosa, Zacatecas,
+                            Zacatecas      Norte,      Zacatepec,
+                            Zapopan, Zitácuaro y Zongólica.
+                            Representantes de los Institutos Reunión de Seguimiento Curricular de
+  Instituto Tecnológico de  Tecnológicos de:                       los    Programas      Educativos      de
+   Toluca, del 10 al 13 de
+      febrero de 2014.      Cerro Azul, Colima, Lerdo, Toluca y Ingenierías,          Licenciaturas       y
+                            Veracruz.                              Asignaturas  Comunes    del SNIT.
+©TecNM mayo 2016                                                                    Página | 3
+                                                            TECNOLÓGICO NACIONAL DE MÉXICO
+                                                     Secretaría Académica, de Investigación e Innovación
+                                                                     Dirección de Docencia e Innovación Educativa
+4. Competencia(s) a desarrollar
+                            Competencia(s) específica(s) de la asignatura
+ Diseña, instala y configura redes LAN inalámbricas aplicando normas y estándares vigentes para la
+ solución de problemas de conectividad.
+5. Competencias previas
+ Diseña y elabora un proyecto de cableado estructurado aplicando normas y estándares vigentes para la
+ solución de problemas de conectividad.
+6. Temario
+ No.                     Temas                                           Subtemas
+   1   Direccionamiento IP y Enrutamiento.          1.1 Direccionamiento IP.
+                                                       1.1.1 Direccionamiento con clase
+                                                            (VLSM).
+                                                       1.1.2. Direccionamiento sin clase
+                                                            (CIDR).
+                                                    1.2 Enrutamiento estático y dinámico
+                                                            (vector-distancia, de enlace).
+                                                    1.3. Protocolos de enrutamiento (RIP,
+                                                       EIGRP, OSPF).
+   2   Conmutación de redes LAN.                    2.1. Segmentación de dominio de colisión y
+                                                            broadcast.
+                                                    2.2 Métodos de conmutación.
+                                                    2.3 Tecnologías de conmutación (VLAN, VTP,
+                                                         STP).
+   3   Tecnologías WAN.                             3.1 Introducción a redes WAN.
+                                                    3.2 Enlaces: dedicados y públicos.
+                                                    3.3 Topologías WAN.
+                                                    3.4 Tecnologías WAN: PPP, XDSL, frame relay,
+                                                         ISDN, ATM.
+                                                    3.5 Configuración de dispositivos WAN.
+                                                    3.6 Niveles de seguridad en redes VPN.
+   4   Tecnologías inalámbricas.                    4.1 Clasificación: WPAN, WLAN, WMAN,
+                                                       WWAN.
+                                                    4.2 Estándares y protocolos: bluetooth,
+                                                       Infrarrojo, Wi-Fi, Wi-Max.
+                                                    4.3 Dispositivos y configuración.
+                                                    4.4 Seguridad: WEP, WAP, WPA-PSK, WEP2,
+                                                       filtrado de MAC’s.
+©TecNM mayo 2016                                                                    Página | 4
+                                                             TECNOLÓGICO NACIONAL DE MÉXICO
+                                                       Secretaría Académica, de Investigación e Innovación
+                                                                      Dirección de Docencia e Innovación Educativa
+7. Actividades de aprendizaje de los temas
+                                  1. Direccionamiento IP y Enrutamiento.
+                   Competencias                                   Actividades de aprendizaje
+ Específica(s):                                         Investigar las diferentes clases de redes,
+                                                         identificar el rango de direcciones para cada
+    Establece un diseño y configuración en redes        clase y aplicar el cálculo de direcciones IP en
+     de datos para satisfacer las necesidades de         ejercicios prácticos.
+     conectividad y seguridad mediante el análisis      Realizar asignaciones de bloques de subredes
+     de la funcionalidad de los algoritmos y             a segmentos de una red LAN.
+     protocolos de enrutamiento.                        Analizar e interpretar diagramas lógicos y
+                                                         físicos de red.
+ Genéricas:                                             Discutir los problemas asociados al
+                                                         crecimiento acelerado de usuarios en Internet,
+    Capacidad de análisis y síntesis.                   y analizar las posibles alternativas de solución.
+    Capacidad de organizar y planificar.               Analizar los algoritmos y protocolos de
+                                                         enrutamiento desde un punto de vista de
+    Habilidad para buscar y analizar información
+                                                         desempeño. Concretar ese análisis en la
+     proveniente de fuentes diversas.                    selección del más adecuado para las
+    Solución de problemas.                              condiciones de la red diseñada.
+    Toma de decisiones.                                Realizar prácticas de configuración de routers
+    Trabajo en equipo.                                  para segmentar redes, considerando los
+    Capacidad de aplicar los conocimientos.             aspectos de control de tráfico y seguridad.
+    Habilidades de investigación.
+    Capacidad de generar nuevas ideas.
+    Liderazgo.
+    Habilidad para trabajar en forma.
+     Autónoma.
+    Búsqueda del logro.
+                                      2. Conmutación de redes LAN.
+                   Competencias                                   Actividades de aprendizaje
+ Específica(s):                                         Evaluar equipos de conmutación para redes
+                                                         LAN que le permitan seleccionar el más
+    Aplica las diferentes tecnologías y                 adecuado para las necesidades planteadas en
+     metodologías de conmutación para el diseño          un diseño de red.
+     de una red conmutada.
+©TecNM mayo 2016                                                                     Página | 5
+                                                             TECNOLÓGICO NACIONAL DE MÉXICO
+                                                       Secretaría Académica, de Investigación e Innovación
+                                                                      Dirección de Docencia e Innovación Educativa
+ Genéricas:                                             Identificar las características y funcionalidad
+                                                         de las redes locales virtuales (VLAN) y
+   Capacidad de análisis y síntesis.                    aplicarlas en la solución de problemas reales.
+   Capacidad de organizar y planificar.                Realizar prácticas de configuración de equipos
+   Habilidad para buscar y analizar información         de conmutación para segmentar redes
+    proveniente de fuentes diversas.
+   Solución de problemas.
+   Toma de decisiones.
+   Trabajo en equipo.
+   Capacidad de aplicar los conocimientos.
+   Habilidades de investigación.
+   Capacidad de generar nuevas ideas.
+   Liderazgo.
+   Habilidad para trabajar en forma.
+    Autónoma.
+   Búsqueda del logro.
+                                          3. Tecnologías WAN.
+                  Competencias                                    Actividades de aprendizaje
+ Específica(s):                                         Investigar los diferentes estándares que rigen
+                                                         las comunicaciones en una red WAN para
+   Analiza y configura enlaces WAN para                 realizar un análisis de las especificaciones
+    diseñar una red, utilizando diferentes               funcionales que permitan entender el concepto
+    tecnologías y topologías afines.                     e importancia de la interconectividad entre
+   Analiza los requerimientos de ancho de               equipos.
+    banda y tráfico, para elaborar un proyecto de       Desarrollar una metodología de trabajo para la
+    red de datos.                                        planeación, diseño e implementación de redes
+ Genéricas:                                              WAN que sirva como guía para proyectos
+                                                         planteados en el curso.
+   Capacidad de análisis y síntesis.                   Investigar los fundamentos teóricos que
+   Capacidad de organizar y planificar.                 describen las tecnologías WAN más utilizadas
+   Habilidad para buscar y analizar información         por los ISP. Comparar sus ventajas y
+    proveniente de fuentes diversas.                     desventajas para establecer criterios de
+   Solución de problemas.                               selección.
+   Toma de decisiones.                                 Utilizar herramientas de software para
+   Trabajo en equipo.                                   estimación de costos de una red WAN para
+   Capacidad de aplicar los conocimientos.              establecer su factibilidad económica.
+   Habilidades de investigación.                       Realizar prácticas de Configuración de
+   Capacidad de generar nuevas ideas.                   equipos de enrutamiento para las diferentes
+                                                         tecnologías WAN, que permitan satisfacer los
+©TecNM mayo 2016                                                                     Página | 6
+                                                            TECNOLÓGICO NACIONAL DE MÉXICO
+                                                      Secretaría Académica, de Investigación e Innovación
+                                                                     Dirección de Docencia e Innovación Educativa
+   Liderazgo.                                          requerimientos especificados en el diseño de la
+   Habilidad para trabajar en forma.                   red.
+    Autónoma.
+   Búsqueda del logro.
+                                      4. Tecnologías inalámbricas.
+                   Competencias                         Actividades de aprendizaje
+ Específica(s):                                        Investigar los fundamentos teóricos de las
+                                                        comunicaciones inalámbricas, comparar sus
+   Integra las tecnologías inalámbricas en un          características operacionales y sintetizarlas en
+    proyecto de planeación, diseño e                    una guía de selección.
+    implementación de redes WLAN/WAN para
+                                                       Analizar los estándares de las tecnologías
+    satisfacer las necesidades de comunicación.
+                                                        inalámbricas para reconocer la importancia del
+   Analiza y aplica los diferentes mecanismos          concepto de compatibilidad e
+    para implementar la seguridad en redes              interconectividad de equipos de comunicación
+    inalámbricas que mejoren la fiabilidad del          inalámbrica.
+    servicio en la transmisión de datos.
+                                                       Realizar prácticas de configuración de las
+ Genéricas:                                             diferentes arquitecturas de una red
+                                                        inalámbrica.
+   Capacidad de análisis y síntesis.                  Resolver problemas de conectividad
+   Capacidad de organizar y planificar.                planteados por el docente en dichas prácticas.
+   Habilidad para buscar y analizar información       Realizar prácticas de configuración de la
+    proveniente de fuentes diversas.                    seguridad en redes inalámbricas, utilizando las
+   Solución de problemas.                              herramientas suministradas por el equipo, así
+   Toma de decisiones.                                 como herramientas de software de terceros.
+   Trabajo en equipo.
+   Capacidad de aplicar los conocimientos.
+   Habilidades de investigación.
+   Capacidad de generar nuevas ideas.
+   Liderazgo.
+   Habilidad para trabajar en forma.
+    Autónoma.
+   Búsqueda del logro.
+©TecNM mayo 2016                                                                    Página | 7
+                                                               TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                      Dirección de Docencia e Innovación Educativa
+8. Práctica(s)
+    Calcular un esquema de direccionamiento IP (Subredes).
+    Optimización de direccionamiento IP (VLSM).
+    A partir de tablas de enrutamiento, diseñar diagramas de red.
+    Configuración de enrutamiento estático y dinámico.
+    Configuración de NAT.
+    Configuración de VLAN.
+    Utilizar herramientas de software para la simulación del comportamiento lógico de un diseño de
+     red.
+    Identificación visual de dispositivos inalámbricos y de interconexión de redes.
+9. Proyecto de asignatura
+ El objetivo del proyecto que planteé el docente que imparta esta asignatura, es demostrar el desarrollo
+ y alcance de la(s) competencia(s) de la asignatura, considerando las siguientes fases:
+  Fundamentación: marco referencial (teórico, conceptual, contextual, legal) en el cual se
+     fundamenta el proyecto de acuerdo con un diagnóstico realizado, mismo que permite a los
+     estudiantes lograr la comprensión de la realidad o situación objeto de estudio para definir un
+     proceso de intervención o hacer el diseño de un modelo.
+  Planeación: con base en el diagnóstico en esta fase se realiza el diseño del proyecto por parte de
+     los estudiantes con asesoría del docente; implica planificar un proceso: de intervención
+     empresarial, social o comunitario, el diseño de un modelo, entre otros, según el tipo de proyecto,
+     las actividades a realizar los recursos requeridos y el cronograma de trabajo.
+  Ejecución: consiste en el desarrollo de la planeación del proyecto realizada por parte de los
+     estudiantes con asesoría del docente, es decir en la intervención (social, empresarial), o
+     construcción del modelo propuesto según el tipo de proyecto, es la fase de mayor duración que
+     implica el desempeño de las competencias genéricas y especificas a desarrollar.
+  Evaluación: es la fase final que aplica un juicio de valor en el contexto laboral-profesión, social e
+     investigativo, ésta se debe realizar a través del reconocimiento de logros y aspectos a mejorar se
+     estará promoviendo el concepto de “evaluación para la mejora continua”, la metacognición, el
+     desarrollo del pensamiento crítico y reflexivo en los estudiantes.
+10. Evaluación por competencias
+ Para evaluar las actividades de aprendizaje se recomienda solicitar: mapas conceptuales, reportes de
+ prácticas, estudios de casos, exposiciones en clase, ensayos, problemarios, reportes de visitas,
+ portafolio de evidencias y cuestionarios, cuadro sinóptico.
+ Para verificar el nivel del logro de las competencias del estudiante se recomienda utilizar: listas de
+ cotejo, listas de verificación, matrices de valoración, guías de observación, coevaluación y
+ autoevaluación.
+©TecNM mayo 2016                                                                     Página | 8
+                                                           TECNOLÓGICO NACIONAL DE MÉXICO
+                                                     Secretaría Académica, de Investigación e Innovación
+                                                                    Dirección de Docencia e Innovación Educativa
+11. Fuentes de información
+ Impresas:
+ 1. CISCO Systems. (2004). Guía del Primer año CCNA 1 y 2, Academia de Networking de Cisco
+     Systems (Tercera ed.). Pearson/Cisco Press.
+ 2. CISCO Systems. (2004). Guía del Segundo año CCNA 3 y 4, Academia de Networking de Cisco
+     Systems (Tercera ed.). Pearson/Cisco Press.
+ 3. CISCO Systems. (2006). Fundamentos de LAN inalámbricas (Primera ed.). Pearson, Cisco Press.
+ 4. Harnedy, S. (2001). The MPLS Primer. An Introduction to Multiprotocol Label Switching
+     (Primera ed.). Prentice Hall.
+ 5. Herrera, E. (2004). Introducción a las telecomunicaciones Modernas (Primera ed.). Limusa.
+ 6. Johnson, A. (2009). Conceptos y protocolos de enrutamiento (Primera ed.). Pearson-PHH, Cisco
+     Press.
+ 7. Johnson, A. (2009). LAN inalámbrica y conmutada (Primera ed.). Pearson-PHH, Cisco Press.
+ 8. Limehouse Book Sprint Team. (2007). Redes inalámbricas en los países en desarrollo (Segunda
+     ed.).
+ 9. Tanenbaum, A. S. (2011). Redes de Computadoras (Quinta ed.). Pearson.
+ 10. Olifer, N. (2009). Redes de Computadoras (Primera ed.). Mc.Graw-Hill.
+ 11. Stallings, William. (2004). Comunicaciones y Redes de Computadoras. Prentice-Hall.
+ 12. Halsall, Fred. (1998). Comunicación de Datos, Redes de Computadores y Sistemas Abiertos.
+     Alhambra Mexicana, S. A.
+ Electrónicas:
+ 13. CISCO Systems. (2014). The Internet Protocol Journal. Obtenido de
+     http://www.cisco.com/web/about/ac123/ac147/about_cisco_the_internet_protocol_journal.html
+ 14. COFETEL (Comisión Federal de Telecomunicaciones). (2014). Industria. Obtenido de
+     http://www.cft.gob.mx:8080/portal/industria-2/industria-intermedia-nv/
+ 15. Corning Incorporated. (2014). Corning Telecommunications. Obtenido de
+     http://www.corning.com/products_services/telecommunications/index.aspx
+ 16. Corning Incorporated. (2014). CorningIncorporated. Obtenido de
+     http://www.youtube.com/user/CorningIncorporated
+ 17. IEEE. (2014). IEEE Standards Association. Obtenido de http://www.youtube.com/user/IEEESA
+ 18. IEEE. (2014). Technology Standards & Resources. Obtenido de
+     http://standards.ieee.org/findstds/index.html
+ 19. Panduit Corp. (2014). Panduit videos. Obtenido de http://www.youtube.com/user/PanduitVideos
+ 20. Panduit Corp. (2014). Panduit. Obtenido de
+     http://www.panduit.com/wcs/Satellite?pagename=PG_Wrapper&friendlyurl=/es/home
+ 21. TED. (2014). TED Topics Internet. Obtenido de http://www.ted.cnom/topics/Internet
+ 22. The Siemon Company. (2014). Siemon Company Videos. Obtenido de
+     http://www.youtube.com/user/SiemonNetworkCabling
+ 23. The Siemon Company. (2014). Siemon Network Cabling Solutions. Obtenido de
+     http://www.siemon.com/la/
+©TecNM mayo 2016                                                                   Página | 9
