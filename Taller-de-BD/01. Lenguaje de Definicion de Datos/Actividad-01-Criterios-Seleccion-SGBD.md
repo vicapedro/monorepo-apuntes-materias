@@ -1,18 +1,18 @@
 # Actividad 1: Criterios de Selección de SGBD
 
-## 🎯 Objetivo de la Actividad
+## Objetivo de la Actividad
 **Analizar y comparar diferentes SGBD aplicando criterios técnicos y empresariales para tomar decisiones fundamentadas de selección tecnológica.**
 
 **Duración estimada**: 2 horas  
 **Modalidad**: Individual con discusión grupal
 
-## 🎓 Competencias a Desarrollar
+## Competencias a Desarrollar
 - Evalúa características técnicas de diferentes SGBD
 - Analiza factores empresariales en decisiones tecnológicas
 - Aplica metodología de comparación sistemática
 - Justifica selecciones tecnológicas con criterios objetivos
 
-## 📚 Introducción
+## Introducción
 
 La selección de un Sistema Gestor de Base de Datos (SGBD) es una decisión estratégica que impacta el desarrollo, mantenimiento y escalabilidad de sistemas de información. Esta decisión debe basarse en criterios técnicos, económicos y organizacionales bien fundamentados.
 
@@ -22,7 +22,7 @@ Una empresa de desarrollo de software ha sido contratada para desarrollar sistem
 2. **Hospital regional** - Sistema de gestión de expedientes médicos
 3. **Banco comunitario** - Sistema de transacciones financieras
 
-## 🔧 Metodología de Trabajo
+## Metodología de Trabajo
 
 ### Fase 1: Investigación Dirigida (45 minutos)
 
@@ -108,7 +108,7 @@ Para cada uno de los tres clientes, determina:
 3. **Trade-offs** (1 min): Ventajas/desventajas identificadas
 4. **Implementación** (1 min): Siguientes pasos recomendados
 
-## 📋 Entregables
+## Entregables
 
 ### Documento Individual (2 páginas máximo)
 1. **Matriz comparativa completa** con investigación documentada
@@ -119,7 +119,7 @@ Para cada uno de los tres clientes, determina:
 - **Slides de apoyo** (máximo 5 slides)
 - **Demo opcional**: Capturas de pantalla de características clave
 
-## 🎯 Criterios de Evaluación
+## Criterios de Evaluación
 
 | Aspecto | Excelente (4) | Proficiente (3) | Básico (2) | Insuficiente (1) |
 |---------|---------------|-----------------|------------|------------------|
@@ -128,23 +128,23 @@ Para cada uno de los tres clientes, determina:
 | **Contextualización** | Recomendaciones perfectamente adaptadas al contexto empresarial | Recomendaciones bien adaptadas al contexto | Recomendaciones básicas considerando contexto | Recomendaciones genéricas sin contexto |
 | **Justificación** | Argumentos sólidos basados en evidencia técnica y empresarial | Buenos argumentos con base técnica | Argumentos básicos con algo de sustento | Argumentos débiles o sin sustento |
 
-## 🔗 Recursos de Apoyo
+## Recursos de Apoyo
 
-### 📚 Lecturas Preparatorias
+### Lecturas Preparatorias
 - "Choosing a Database Management System" - IEEE Computer Society
 - Documentación oficial: MySQL vs PostgreSQL Feature Comparison
 - Gartner Magic Quadrant for Operational Database Management Systems
 
-### 🌐 Recursos en Línea
+### Recursos en Línea
 - **MySQL**: https://dev.mysql.com/doc/refman/8.0/en/
 - **PostgreSQL**: https://www.postgresql.org/docs/
 - **SQL Server**: https://docs.microsoft.com/en-us/sql/
 
-### 🎥 Videos Recomendados
+### Videos Recomendados
 - "Database Selection Criteria for Modern Applications" (20 min)
 - "MySQL vs PostgreSQL vs SQL Server - Technical Comparison" (25 min)
 
-## 🧠 Preguntas Reflexivas Post-Actividad
+## Preguntas Reflexivas Post-Actividad
 
 1. **Análisis crítico**: ¿Encontraste algún criterio que inicialmente subestimaste pero resultó ser crucial?
 
@@ -154,14 +154,14 @@ Para cada uno de los tres clientes, determina:
 
 4. **Lecciones aprendidas**: Si fueras el CTO de una startup, ¿qué proceso seguirías para esta decisión?
 
-## 🔄 Conexión con Siguientes Actividades
+## Conexión con Siguientes Actividades
 
 Esta actividad prepara el contexto para:
 - **Actividad 2**: Instalación práctica de los SGBD seleccionados
 - **Actividad 3**: Implementación de esquemas comparativos
 - **Laboratorio 1**: Instalación comparativa con métricas de rendimiento
 
-## 📈 Indicadores de Impacto Desarrollados
+## Indicadores de Impacto Desarrollados
 
 - **A - Adaptación a contextos complejos**: Análisis multi-criterio por escenario empresarial
 - **B - Contribuciones académicas**: Investigación sistemática y presentación de hallazgos

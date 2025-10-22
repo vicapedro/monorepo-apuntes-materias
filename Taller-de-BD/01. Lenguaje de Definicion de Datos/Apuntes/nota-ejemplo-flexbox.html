@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notas con Flexbox</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+  }
+
+  .contenedor {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start; /* alinea arriba */
+    max-width: 900px;
+  }
+
+  .contenido {
+    flex: 2;
+  }
+
+  .nota-margen {
+    flex: 1;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-left: 4px solid #28a745;
+    font-size: 0.9rem;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  }
+
+  /* Responsivo: en móvil se acomoda abajo */
+  @media (max-width: 768px) {
+    .contenedor {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="contenedor">
+  <div class="contenido">
+    <p>
+      Aquí va el contenido principal del curso. Puedes escribir varias ideas, 
+      y la nota aparecerá al lado.
+    </p>
+    <p>
+      Con Flexbox es fácil mantener el diseño limpio y responsivo.
+    </p>
+  </div>
+
+  <div class="nota-margen">
+    📌 <strong>Nota:</strong>  
+    Este es un ejemplo de nota en el margen usando Flexbox.  
+    En móvil se mostrará debajo del texto.
+  </div>
+</div>
+
+</body>
+</html>

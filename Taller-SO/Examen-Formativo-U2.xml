@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- EXAMEN FORMATIVO UNIDAD 2: WINDOWS SERVER -->
+<!-- Temas: Instalación, Active Directory, DHCP, Administración de red, Políticas de grupo -->
+<!-- 15 reactivos basados en el contenido existente -->
+
+<!-- PREGUNTA 1: Objetivo de Windows Server -->
+<question type="multichoice">
+    <name><text>U2-001 Objetivo Windows Server</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el objetivo principal de instalar Windows Server 2022 en una máquina virtual?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Windows Server está diseñado específicamente para implementar infraestructura de red empresarial y servicios corporativos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Implementar una red corporativa y practicar administración de servidores]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Windows Server proporciona servicios empresariales y permite administración centralizada.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Probar videojuegos en un entorno seguro]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Windows Server no está diseñado para gaming, sino para servicios empresariales.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Crear copias de seguridad de archivos personales]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque puede hacer backups, su propósito principal es la infraestructura de red.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Instalar aplicaciones de oficina]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Windows Server se enfoca en servicios de red, no aplicaciones de usuario final.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 2: Servicio DHCP -->
+<question type="multichoice">
+    <name><text>U2-002 Servicio DHCP</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué función cumple el servicio DHCP en una red corporativa?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>DHCP (Dynamic Host Configuration Protocol) automatiza la configuración de red para los clientes.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Asigna direcciones IP automáticamente a los dispositivos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! DHCP distribuye configuraciones de red automáticamente, incluyendo IP, máscara y gateway.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Administra usuarios y contraseñas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La administración de usuarios es función de Active Directory.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Controla el acceso a carpetas compartidas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El control de acceso a recursos es función de los permisos NTFS y compartidos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Supervisa el uso de CPU y memoria]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El monitoreo de recursos es función del Administrador de tareas y Performance Monitor.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 3: Active Directory -->
+<question type="multichoice">
+    <name><text>U2-003 Active Directory</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Para qué sirve el servicio de Active Directory en Windows Server?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Active Directory Domain Services (AD DS) es el servicio de directorio central de Windows Server para gestión empresarial.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Centraliza la administración de usuarios, equipos y recursos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! AD DS proporciona administración centralizada de identidades y recursos de red.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Asigna direcciones IP dinámicamente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La asignación dinámica de IPs es función del servicio DHCP.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Gestiona el almacenamiento de archivos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El almacenamiento es gestionado por File Services o Storage Spaces.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Monitorea el tráfico de red]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El monitoreo de red requiere herramientas específicas como Network Monitor.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 4: Unidades Organizacionales -->
+<question type="multichoice">
+    <name><text>U2-004 Unidades Organizacionales</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el propósito de una Unidad Organizacional (OU) en Active Directory?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Las Organizational Units proporcionan estructura jerárquica y facilitan la administración delegada en AD.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Organizar usuarios, equipos y otros objetos de forma jerárquica]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Las OUs permiten organización lógica y aplicación granular de políticas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Asignar direcciones IP]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La asignación de IPs es función del servicio DHCP, no de las OUs.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Crear discos duros virtuales]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los VHDs se crean con herramientas de almacenamiento, no con OUs.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Instalar actualizaciones de Windows]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las actualizaciones se gestionan con WSUS o Windows Update for Business.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 5: Políticas de Grupo -->
+<question type="multichoice">
+    <name><text>U2-005 Políticas de Grupo</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué permite hacer una política de grupo (GPO) en un dominio?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Group Policy Objects (GPOs) son herramientas centralizadas para configurar y controlar entornos Windows.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Aplicar configuraciones y restricciones a usuarios y equipos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Las GPOs permiten configuración centralizada y aplicación automática de políticas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Crear nuevas cuentas de usuario]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La creación de usuarios se hace directamente en Active Directory Users and Computers.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Asignar direcciones IP]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La asignación de IPs es función del servicio DHCP.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Formatear discos duros]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El formateo de discos se hace con herramientas de administración de discos.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 6: Unir equipos al dominio -->
+<question type="multichoice">
+    <name><text>U2-006 Unir al Dominio</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el primer paso para unir una computadora con Windows 10 a un dominio?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Para unir un equipo al dominio, primero debe poder comunicarse con el controlador de dominio.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Configurar el DNS para que apunte al controlador de dominio]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! El DNS debe resolver el nombre del dominio y localizar los controladores de dominio.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Instalar Active Directory en el equipo cliente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. AD se instala solo en servidores, no en equipos cliente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Crear una cuenta de administrador local]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque útil, no es el primer paso para unirse al dominio.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Configurar una dirección IP estática]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Puede usarse DHCP, lo importante es la configuración DNS.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 7: Roles de Windows Server -->
+<question type="multichoice">
+    <name><text>U2-007 Roles Windows Server</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál de los siguientes es un rol principal de Windows Server 2022?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Windows Server incluye múltiples roles que pueden instalarse según las necesidades de la organización.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[File and Storage Services]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! File and Storage Services es uno de los roles fundamentales de Windows Server.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Microsoft Office]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Office es una suite de aplicaciones, no un rol de servidor.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Windows Media Player]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Media Player es una aplicación cliente, no un rol de servidor.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Internet Explorer]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. IE es un navegador web, no un rol de servidor.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 8: Características de Windows Server -->
+<question type="multichoice">
+    <name><text>U2-008 Características Windows Server</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es una característica distintiva de Windows Server comparado con Windows 10?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Windows Server está optimizado para servicios de red y administración centralizada, no para uso de escritorio.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Incluye roles y características específicas para servicios de red]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Windows Server incluye roles como AD DS, DHCP, DNS, File Services, etc.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Tiene mejor rendimiento en videojuegos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Windows Server no está optimizado para gaming.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Incluye aplicaciones de entretenimiento]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Windows Server se enfoca en servicios empresariales, no entretenimiento.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Es gratuito para uso doméstico]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Windows Server requiere licencias específicas y no está dirigido al uso doméstico.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 9: Verdadero/Falso - Server Core -->
+<question type="truefalse">
+    <name><text>U2-009 Server Core</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Server Core es una instalación mínima de Windows Server que se administra principalmente a través de línea de comandos.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Server Core reduce la superficie de ataque y el overhead al eliminar componentes gráficos innecesarios.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Server Core es una instalación mínima sin interfaz gráfica completa, ideal para servidores.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Server Core efectivamente es una instalación minimalista administrada por CLI.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 10: Múltiples respuestas - Herramientas administrativas -->
+<question type="multichoice">
+    <name><text>U2-010 Herramientas Administrativas</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles de las siguientes son herramientas administrativas de Windows Server? (Seleccione todas las correctas)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Windows Server incluye múltiples herramientas administrativas para gestionar diferentes aspectos del sistema.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Server Manager]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! Server Manager es la consola central para administración de servidores.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Active Directory Users and Computers]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! ADUC es la herramienta principal para gestionar objetos de Active Directory.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Group Policy Management Console]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! GPMC permite crear y administrar políticas de grupo.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[PowerShell]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! PowerShell es fundamental para administración automatizada de Windows Server.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[Microsoft Word]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Word es una aplicación de procesamiento de textos, no una herramienta administrativa.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 11: PowerShell -->
+<question type="multichoice">
+    <name><text>U2-011 PowerShell</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la principal ventaja de usar PowerShell para administrar Windows Server?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>PowerShell proporciona capacidades avanzadas de automatización y administración remota para Windows.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Permite automatización de tareas y administración remota]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! PowerShell habilita scripting, automatización y gestión remota de múltiples servidores.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Solo funciona con interfaces gráficas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. PowerShell es principalmente una interfaz de línea de comandos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Reemplaza completamente el uso del mouse]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. PowerShell es una herramienta adicional, no un reemplazo completo de la GUI.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Solo sirve para instalar aplicaciones]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. PowerShell tiene capacidades mucho más amplias que solo instalación de software.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 12: Drag and Drop - Servicios de red -->
+<question type="ddwtos">
+    <name><text>U2-012 Servicios de Red</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada servicio de Windows Server con su función principal:</p>
+        <p>[[1]] - Resuelve nombres de dominio a direcciones IP</p>
+        <p>[[2]] - Proporciona acceso centralizado a archivos</p>
+        <p>[[3]] - Permite impresión centralizada en la red</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Windows Server incluye servicios especializados para diferentes necesidades de infraestructura de red.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <dragbox><text>DNS Server</text><group>1</group></dragbox>
+    <dragbox><text>File Services</text><group>1</group></dragbox>
+    <dragbox><text>Print Services</text><group>1</group></dragbox>
+    <dragbox><text>Web Server (IIS)</text><group>1</group></dragbox>
+</question>
+
+<!-- PREGUNTA 13: Verdadero/Falso - Licenciamiento -->
+<question type="truefalse">
+    <name><text>U2-013 Licenciamiento</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Windows Server utiliza un modelo de licenciamiento por núcleo de procesador para las ediciones Standard y Datacenter.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>El licenciamiento de Windows Server 2022 se basa en el número de núcleos físicos del servidor.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Windows Server 2022 utiliza licenciamiento por núcleo, con mínimo de 8 núcleos por procesador.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El modelo actual sí es por núcleo de procesador.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 14: Hyper-V -->
+<question type="multichoice">
+    <name><text>U2-014 Hyper-V</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué es Hyper-V en Windows Server?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Hyper-V es la plataforma de virtualización nativa de Microsoft incluida en Windows Server.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Un hipervisor tipo 1 para crear y administrar máquinas virtuales]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Hyper-V es un hipervisor bare-metal integrado en Windows Server.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Un antivirus empresarial]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Hyper-V es para virtualización, no para seguridad antivirus.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Un sistema de archivos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los sistemas de archivos en Windows Server incluyen NTFS y ReFS.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Una herramienta de backup]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Para backup existe Windows Server Backup y otras herramientas.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 15: Administración remota -->
+<question type="multichoice">
+    <name><text>U2-015 Administración Remota</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el método recomendado para administrar remotamente Windows Server?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Windows Server ofrece múltiples opciones para administración remota, cada una con sus ventajas específicas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Remote Server Administration Tools (RSAT) desde un equipo cliente]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! RSAT permite administrar servidores remotos desde estaciones de trabajo Windows.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Conectarse físicamente a cada servidor]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La administración física no es práctica ni eficiente para múltiples servidores.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Solo usar comandos de MS-DOS]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque útiles, los comandos DOS son limitados comparados con herramientas modernas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Instalar software de terceros únicamente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Windows Server incluye herramientas nativas robustas para administración remota.]]></text></feedback>
+    </answer>
+</question>
+
+</quiz>

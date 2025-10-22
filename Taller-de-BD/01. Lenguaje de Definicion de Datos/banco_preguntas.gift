@@ -1,0 +1,234 @@
+// Banco de Preguntas - Taller de Base de Datos - Unidad 1
+// Lenguaje de Definición de Datos (DDL)
+// Omitiendo: Índices y Modelos de Datos
+// Formato GIFT, Opción Multiple, Alineado con Taxonomía de Bloom
+
+$CATEGORY: Unidad1/Instalacion_SGBD
+
+::INST01:: ¿Cuál es el primer criterio que debe considerarse al seleccionar un SGBD para un proyecto empresarial? {
+~El costo de las licencias #Incorrecto. Aunque importante, no es el primer criterio a evaluar.
+~La popularidad en el mercado #Incorrecto. La popularidad no garantiza que sea adecuado para el proyecto específico.
+=Los requisitos técnicos y de negocio del proyecto #¡Correcto! Los requisitos del proyecto determinan qué SGBD es más apropiado.
+~La facilidad de instalación #Incorrecto. Es un factor secundario, no el criterio principal de selección.
+}
+
+::INST02:: ¿Qué requisito de hardware es más crítico al instalar un SGBD para manejar grandes volúmenes de datos? {
+~Tarjeta de sonido de alta calidad #Incorrecto. La tarjeta de sonido no es relevante para el rendimiento de bases de datos.
+~Procesador gráfico avanzado #Incorrecto. El GPU no es crítico para operaciones tradicionales de bases de datos.
+=Memoria RAM suficiente y almacenamiento rápido #¡Correcto! RAM y almacenamiento son críticos para el rendimiento de BD.
+~Monitor de alta resolución #Incorrecto. El monitor no afecta el rendimiento del SGBD.
+}
+
+::INST03:: Al instalar SQL Server, ¿qué componente es esencial para la administración gráfica del SGBD? {
+~Microsoft Word #Incorrecto. Word es un procesador de textos, no herramienta de BD.
+~Windows Media Player #Incorrecto. No tiene relación con administración de bases de datos.
+=SQL Server Management Studio (SSMS) #¡Correcto! SSMS es la herramienta principal para administrar SQL Server.
+~Internet Explorer #Incorrecto. Aunque puede acceder a interfaces web, no es la herramienta principal.
+}
+
+::INST04:: ¿Cuál de estos SGBD es considerado open source y recomendado para proyectos con presupuesto limitado? {
+~Microsoft SQL Server #Incorrecto. SQL Server es un producto comercial con licencias costosas.
+~Oracle Database #Incorrecto. Oracle es un SGBD comercial de alto costo.
+=PostgreSQL #¡Correcto! PostgreSQL es open source, potente y gratuito.
+~Microsoft Access #Incorrecto. Aunque más económico, no es open source ni apropiado para proyectos grandes.
+}
+
+::INST05:: En un escenario donde necesitas instalar un SGBD para una aplicación web con 10,000 usuarios concurrentes, ¿qué factor de rendimiento priorizarías? {
+~Interfaz gráfica atractiva #Incorrecto. La interfaz no afecta el rendimiento con usuarios concurrentes.
+~Facilidad de instalación #Incorrecto. La instalación es un proceso único, no afecta la operación continua.
+=Capacidad de manejo de transacciones concurrentes #¡Correcto! Para 10,000 usuarios concurrentes, la gestión de transacciones es crítica.
+~Tamaño del archivo de instalación #Incorrecto. El tamaño del instalador no afecta el rendimiento operativo.
+}
+
+$CATEGORY: Unidad1/Creacion_Esquemas
+
+::ESQ01:: ¿Qué comando DDL se utiliza para crear una nueva base de datos? {
+~INSERT DATABASE #Incorrecto. INSERT se usa para agregar registros, no crear bases de datos.
+~MAKE DATABASE #Incorrecto. MAKE no es un comando SQL válido.
+=CREATE DATABASE #¡Correcto! CREATE DATABASE es el comando estándar para crear bases de datos.
+~NEW DATABASE #Incorrecto. NEW no es un comando SQL válido.
+}
+
+::ESQ02:: Al crear una tabla, ¿cuál es la sintaxis correcta para definir una columna como clave primaria? {
+~COLUMN id PRIMARY #Incorrecto. Esta no es la sintaxis correcta de SQL.
+~id INTEGER MAIN KEY #Incorrecto. MAIN KEY no es la sintaxis correcta.
+=id INTEGER PRIMARY KEY #¡Correcto! Esta es la sintaxis estándar para definir una clave primaria.
+~id INTEGER UNIQUE MAIN #Incorrecto. UNIQUE MAIN no es sintaxis válida.
+}
+
+::ESQ03:: ¿Cuál es el propósito principal de crear un esquema de base de datos? {
+~Mejorar la velocidad de internet #Incorrecto. Los esquemas no afectan la conectividad de red.
+~Reducir el costo del hardware #Incorrecto. Los esquemas son conceptos lógicos, no afectan hardware.
+=Organizar y estructurar los objetos de la base de datos #¡Correcto! Los esquemas organizan tablas, vistas, procedimientos, etc.
+~Cambiar el color de la interfaz #Incorrecto. Los esquemas no afectan aspectos visuales.
+}
+
+::ESQ04:: ¿Qué tipo de dato es más apropiado para almacenar la fecha de nacimiento de una persona? {
+~VARCHAR(50) #Incorrecto. Aunque funcional, no es el tipo más apropiado para fechas.
+~INTEGER #Incorrecto. Los enteros no representan adecuadamente fechas.
+=DATE o DATETIME #¡Correcto! Los tipos DATE/DATETIME están diseñados específicamente para fechas.
+~BOOLEAN #Incorrecto. Los booleanos solo representan verdadero/falso.
+}
+
+::ESQ05:: Al diseñar una tabla "Empleados", ¿qué comando utilizarías para agregar una nueva columna "telefono" después de la creación inicial? {
+~UPDATE TABLE empleados ADD telefono VARCHAR(15) #Incorrecto. UPDATE modifica datos, no estructura.
+~INSERT COLUMN telefono INTO empleados #Incorrecto. INSERT agrega registros, no columnas.
+=ALTER TABLE empleados ADD COLUMN telefono VARCHAR(15) #¡Correcto! ALTER TABLE modifica la estructura de tablas existentes.
+~CREATE COLUMN telefono IN empleados #Incorrecto. No es sintaxis SQL válida.
+}
+
+$CATEGORY: Unidad1/Modificacion_Esquemas
+
+::MOD01:: ¿Qué comando se utiliza para eliminar una tabla completa de la base de datos? {
+~DELETE TABLE tabla_name #Incorrecto. DELETE elimina registros, no la estructura de la tabla.
+~REMOVE TABLE tabla_name #Incorrecto. REMOVE no es un comando SQL estándar.
+=DROP TABLE tabla_name #¡Correcto! DROP TABLE elimina completamente la tabla y su estructura.
+~CLEAR TABLE tabla_name #Incorrecto. CLEAR no es un comando SQL válido.
+}
+
+::MOD02:: Si necesitas cambiar el tipo de dato de una columna existente, ¿cuál es el comando apropiado? {
+~UPDATE COLUMN nombre SET TYPE VARCHAR(100) #Incorrecto. Esta no es la sintaxis correcta.
+~CHANGE COLUMN nombre TO VARCHAR(100) #Incorrecto. CHANGE no es estándar en todos los SGBD.
+=ALTER TABLE tabla ALTER COLUMN nombre VARCHAR(100) #¡Correcto! ALTER TABLE con ALTER COLUMN modifica tipos de datos.
+~MODIFY DATA TYPE nombre VARCHAR(100) #Incorrecto. No es sintaxis SQL estándar.
+}
+
+::MOD03:: ¿Cuál es la diferencia principal entre DROP y TRUNCATE en una tabla? {
+~No hay diferencia, son sinónimos #Incorrecto. Son comandos diferentes con propósitos distintos.
+~TRUNCATE es más lento que DROP #Incorrecto. TRUNCATE suele ser más rápido para eliminar datos.
+=DROP elimina la estructura, TRUNCATE solo elimina los datos #¡Correcto! DROP elimina la tabla completa, TRUNCATE solo vacía los datos.
+~DROP solo funciona con tablas vacías #Incorrecto. DROP funciona independientemente del contenido.
+}
+
+::MOD04:: ¿Qué precaución es más importante antes de ejecutar un comando DROP TABLE en producción? {
+~Revisar el color de la interfaz #Incorrecto. Aspectos visuales no son relevantes para operaciones críticas.
+~Verificar la velocidad de internet #Incorrecto. La conectividad no es la preocupación principal.
+=Crear un respaldo completo de los datos #¡Correcto! Los respaldos son esenciales antes de operaciones destructivas.
+~Cambiar la contraseña del usuario #Incorrecto. Cambiar contraseñas no protege contra pérdida de datos.
+}
+
+::MOD05:: En un escenario donde necesitas renombrar una tabla "empleados_temp" a "empleados", ¿cuál es el comando más apropiado? {
+~UPDATE TABLE empleados_temp NAME TO empleados #Incorrecto. UPDATE no cambia nombres de objetos.
+~CHANGE TABLE empleados_temp TO empleados #Incorrecto. CHANGE no es comando estándar para renombrar tablas.
+=ALTER TABLE empleados_temp RENAME TO empleados #¡Correcto! Aunque la sintaxis puede variar según el SGBD, esta es la forma conceptual correcta.
+~COPY TABLE empleados_temp AS empleados #Incorrecto. Esto crearía una copia, no renombraría.
+}
+
+$CATEGORY: Unidad1/Constraints_Integridad
+
+::CON01:: ¿Qué tipo de constraint garantiza que una columna no tenga valores duplicados? {
+~PRIMARY KEY solamente #Incorrecto. PRIMARY KEY implica UNIQUE, pero UNIQUE también puede aplicarse independientemente.
+~FOREIGN KEY #Incorrecto. FOREIGN KEY establece relaciones, no previene duplicados en la misma tabla.
+=UNIQUE #¡Correcto! UNIQUE constraint previene valores duplicados en una columna.
+~NOT NULL #Incorrecto. NOT NULL previene valores nulos, no duplicados.
+}
+
+::CON02:: ¿Cuál es el propósito principal de un FOREIGN KEY constraint? {
+~Acelerar las consultas automaticamente #Incorrecto. Los índices aceleran consultas, no necesariamente las foreign keys.
+~Reducir el tamaño de la base de datos #Incorrecto. Las foreign keys no afectan el tamaño de almacenamiento.
+=Mantener la integridad referencial between tablas #¡Correcto! FOREIGN KEY asegura que las relaciones entre tablas sean válidas.
+~Encriptar los datos automáticamente #Incorrecto. Las foreign keys no proporcionan encriptación.
+}
+
+::CON03:: ¿Qué constraint aplicarías para asegurar que la edad de un empleado esté entre 18 y 65 años? {
+~UNIQUE (edad BETWEEN 18 AND 65) #Incorrecto. UNIQUE previene duplicados, no valida rangos.
+~PRIMARY KEY (edad >= 18 AND edad <= 65) #Incorrecto. PRIMARY KEY identifica registros únicos, no valida rangos.
+=CHECK (edad >= 18 AND edad <= 65) #¡Correcto! CHECK constraint valida que los valores cumplan condiciones específicas.
+~NOT NULL (edad BETWEEN 18 AND 65) #Incorrecto. NOT NULL solo previene valores nulos.
+}
+
+::CON04:: Si intentas insertar un registro que viola un FOREIGN KEY constraint, ¿qué ocurre? {
+~El registro se inserta con valor NULL en la foreign key #Incorrecto. La violación no se resuelve automáticamente con NULL.
+~Se crea automáticamente el registro referenciado #Incorrecto. El SGBD no crea registros automáticamente.
+=La operación de inserción es rechazada con error #¡Correcto! Los constraints de integridad rechazan operaciones que los violan.
+~Se inserta el registro pero se marca como inválido #Incorrecto. Los constraints impiden la inserción, no marcan registros.
+}
+
+::CON05:: ¿Cuál es la ventaja principal de definir constraints a nivel de base de datos en lugar de solo en la aplicación? {
+~Es más fácil de programar #Incorrecto. La facilidad de programación no es la ventaja principal.
+~Reduce el costo de las licencias #Incorrecto. Los constraints no afectan los costos de licenciamiento.
+=Garantiza la integridad independientemente de qué aplicación acceda a los datos #¡Correcto! Los constraints en BD protegen la integridad desde cualquier punto de acceso.
+~Mejora automáticamente el rendimiento #Incorrecto. Los constraints pueden afectar rendimiento, pero ese no es su propósito principal.
+}
+
+$CATEGORY: Unidad1/Aplicacion_Constraints
+
+::APL01:: ¿En qué momento se evalúa un CHECK constraint? {
+~Solo cuando se ejecuta un SELECT #Incorrecto. CHECK constraints no se evalúan en consultas SELECT.
+~Una vez al día automáticamente #Incorrecto. Los constraints se evalúan por operaciones, no por tiempo.
+=Durante operaciones INSERT y UPDATE #¡Correcto! CHECK constraints se evalúan cuando se modifican los datos.
+~Solo cuando se reinicia el servidor #Incorrecto. Los constraints operan continuamente, no solo al reiniciar.
+}
+
+::APL02:: ¿Qué acción puedes configurar cuando se elimina un registro padre que tiene registros hijos relacionados? {
+~IGNORE - ignora la eliminación silenciosamente #Incorrecto. IGNORE no es una acción estándar de foreign key.
+~BACKUP - crea un respaldo automático #Incorrecto. BACKUP no es una acción de foreign key.
+=CASCADE - elimina automáticamente los registros hijos #¡Correcto! CASCADE elimina registros relacionados automáticamente.
+~ENCRYPT - encripta los registros hijos #Incorrecto. ENCRYPT no es una acción de foreign key.
+}
+
+::APL03:: ¿Cuál es la diferencia entre un constraint UNIQUE y PRIMARY KEY? {
+~No hay diferencia, son exactamente iguales #Incorrecto. Aunque similares, tienen diferencias importantes.
+~UNIQUE permite duplicados, PRIMARY KEY no #Incorrecto. Ambos previenen duplicados.
+=PRIMARY KEY no permite NULL y solo puede haber uno por tabla, UNIQUE permite NULL y puede haber varios #¡Correcto! Esta es la diferencia clave entre ambos constraints.
+~PRIMARY KEY es más rápido que UNIQUE #Incorrecto. El rendimiento depende de la implementación específica.
+}
+
+::APL04:: ¿Qué constraint aplicarías para asegurar que el email de un usuario tenga formato válido? {
+~PRIMARY KEY con formato de email #Incorrecto. PRIMARY KEY identifica registros únicos, no valida formatos.
+~FOREIGN KEY referenciando tabla de emails válidos #Incorrecto. Sería demasiado complejo para validación de formato.
+=CHECK con expresión regular o función de validación #¡Correcto! CHECK constraint puede validar formatos usando expresiones.
+~UNIQUE para emails únicos solamente #Incorrecto. UNIQUE previene duplicados pero no valida formato.
+}
+
+::APL05:: En una tabla "Productos" con constraint CHECK (precio > 0), 
+¿qué pasaría si intentas actualizar un producto con precio \= -100? {
+~El precio se actualiza a 0 automáticamente #Incorrecto. Los constraints no modifican valores automáticamente.
+~Se actualiza el precio pero se genera una advertencia #Incorrecto. Los constraints bloquean operaciones que los violan.
+=La operación UPDATE es rechazada con un error #¡Correcto! El constraint CHECK impide la actualización con valor inválido.
+~El registro se marca como inválido pero se actualiza #Incorrecto. Los constraints impiden operaciones inválidas completamente.
+}
+
+$CATEGORY: Unidad1/Transformacion_ER_Relacional
+
+::TER01:: Analiza el siguiente modelo E-R\: Entidad ESTUDIANTE (N) se relaciona con CURSO (N) 
+mediante "inscribe". ¿Cuál es la transformación correcta al modelo relacional? {
+~Crear solo tabla ESTUDIANTE con atributos de CURSO incluidos #Incorrecto. Esto violaría la forma normal y duplicaría información.
+~Crear solo tabla CURSO con clave foránea a ESTUDIANTE #Incorrecto. No representaría correctamente la relación muchos-a-muchos implícita.
+=Crear tablas ESTUDIANTE, CURSO y tabla intermedia INSCRIPCION con claves foráneas #¡Correcto! Las relaciones M\:N requieren tabla intermedia para evitar redundancia.
+~Crear una sola tabla combinando todos los atributos #Incorrecto. Esto generaría redundancia masiva y problemas de integridad.
+}
+
+::TER02:: Evalúa esta situación\: En un modelo E-R tienes las entidades EMPLEADO y 
+DEPARTAMENTO con relación "pertenece" (N\:1). El diseñador propone crear tres tablas separadas.
+¿Cuál es tu evaluación? {
+~Es correcto, siempre se deben crear tablas separadas #Incorrecto. Las relaciones 1\:N no siempre requieren tabla intermedia.
+~Es incorrecto, se debe crear una sola tabla #Incorrecto. Aunque posible, no es la mejor práctica para esta cardinalidad.
+=Es innecesariamente complejo, la clave foránea en EMPLEADO es suficiente #¡Correcto! En relaciones N\:1, la clave foránea va en el lado "muchos".
+~Es correcto solo si hay atributos en la relación #Parcialmente correcto. Los atributos de relación justificarían tabla intermedia, pero no es la evaluación completa.
+}
+
+::TER03:: Diseña la solución para esta entidad\: PERSONA con atributo multivalor "teléfonos". 
+    ¿Cuál es la mejor estrategia de transformación? {
+~Crear campo teléfonos como VARCHAR concatenando todos los números #Incorrecto. Viola la primera forma normal y dificulta consultas.
+~Crear múltiples columnas telefono1, telefono2, telefono3 #Incorrecto. Número fijo de columnas limita flexibilidad y viola diseño normalizado.
+=Crear tabla separada TELEFONOS con clave foránea a PERSONA #¡Correcto! Los atributos multivalor requieren tabla separada para normalización.
+~Ignorar los teléfonos adicionales, solo guardar uno #Incorrecto. Se perdería información valiosa del modelo original.
+}
+
+::TER04:: Analiza este escenario complejo\: Entidad PRODUCTO con supertipos ELECTRONICO y ROPA, cada uno con atributos específicos. ¿Qué estrategia de transformación recomendarías para un sistema de e-commerce con consultas frecuentes? {
+~Una tabla por jerarquía con campos NULL para atributos específicos #Aceptable. Buena para consultas pero puede tener muchos NULLs si hay grandes diferencias.
+~Una tabla por subtipo sin tabla padre #Incorrecto. Se perdería la capacidad de consultar todos los productos uniformemente.
+=Una tabla padre PRODUCTO más tablas específicas ELECTRONICO y ROPA #¡Correcto! Mejor balance entre normalización y rendimiento para e-commerce.
+~Eliminar la jerarquía y crear entidades independientes #Incorrecto. Se perdería la relación conceptual y dificultaría la gestión.
+}
+
+::TER05:: Evalúa críticamente este diseño\: Un modelo E-R tiene entidad PEDIDO con relación 
+recursiva "referencia" (1\:N) donde un pedido puede referenciar otro pedido padre. 
+El diseñador propone crear tabla REFERENCIAS separada. ¿Cuál es tu análisis? {
+~Correcto, las relaciones recursivas siempre necesitan tabla separada #Incorrecto. Las relaciones recursivas 1\:N se pueden manejar con autoreferencia.
+~Incorrecto, las relaciones recursivas no se pueden implementar #Incorrecto. Las relaciones recursivas son perfectamente implementables.
+=Innecesariamente complejo, una clave foránea autoreferencial en PEDIDO es más eficiente #¡Correcto! Para relaciones recursivas 1\:N, la autoreferencia es más simple y eficiente.
+~Correcto solo si se necesita información adicional sobre la referencia #Parcialmente correcto. Si hay atributos de relación, justificaría tabla separada, pero no es el análisis completo.
+}
+

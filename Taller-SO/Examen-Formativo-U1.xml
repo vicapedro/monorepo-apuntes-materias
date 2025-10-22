@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- EXAMEN FORMATIVO UNIDAD 1: INTRODUCCIÓN A SISTEMAS OPERATIVOS -->
+<!-- Temas: Virtualización, Hilos y Procesos, Estructuras de SO, Sincronización -->
+<!-- 15 reactivos seleccionados del banco existente -->
+
+<!-- PREGUNTA 1: Conceptos básicos de virtualización -->
+<question type="multichoice">
+    <name><text>U1-001 Definición Virtualización</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué es la virtualización?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La virtualización es una tecnología fundamental que permite dividir recursos físicos en múltiples entornos virtuales independientes.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Una tecnología que divide una computadora en diversas máquinas independientes]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La virtualización permite crear múltiples entornos virtuales independientes en un solo hardware físico.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Un tipo de software de bases de datos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las bases de datos son sistemas de gestión de información, no tecnologías de virtualización.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Un sistema operativo especializado]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La virtualización es una tecnología que puede implementarse en diferentes sistemas operativos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Un lenguaje de programación]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los lenguajes de programación son herramientas para crear software, no para dividir recursos de hardware.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 2: Objetivos de virtualización -->
+<question type="multichoice">
+    <name><text>U1-002 Objetivos Virtualización</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál de los siguientes NO es un objetivo de la virtualización?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La virtualización busca mejorar eficiencia, seguridad y flexibilidad, no degradar el rendimiento.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Mejorar la seguridad]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La virtualización SÍ mejora la seguridad mediante aislamiento entre entornos virtuales.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Escalabilidad]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La escalabilidad SÍ es un objetivo clave de la virtualización.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Disponibilidad]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La alta disponibilidad SÍ es un objetivo importante en virtualización.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Reducir la velocidad de procesamiento]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La virtualización NO busca reducir velocidad; aunque puede haber overhead, el objetivo es optimizar recursos.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 3: Historia de virtualización -->
+<question type="multichoice">
+    <name><text>U1-003 Historia Virtualización</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál fue uno de los primeros sistemas que implementó la virtualización de hardware en la década de 1960?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La virtualización tiene sus orígenes en los mainframes de IBM de los años 1960, mucho antes de los sistemas modernos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[IBM CP/CMS]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! IBM CP/CMS fue desarrollado en los años 1960 para mainframes System/360 y System/370, siendo pionero en virtualización.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Xen]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Xen fue desarrollado por la Universidad de Cambridge y lanzado en 2003.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[VMware ESX]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. VMware ESX fue lanzado en 2001, décadas después.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Oracle VM VirtualBox]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. VirtualBox fue desarrollado por Innotek GmbH y adquirido por Oracle en 2010.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 4: Máquinas virtuales -->
+<question type="multichoice">
+    <name><text>U1-004 Máquinas Virtuales</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál de las siguientes opciones describe mejor una máquina virtual (VM)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Una máquina virtual es un entorno de software que emula un sistema informático completo con todos sus componentes.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Un entorno virtualizado que emula un sistema informático completo]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Una VM proporciona un entorno completo con CPU, memoria, almacenamiento y red virtualizados.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Un tipo de hardware especializado para virtualización]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Una VM es software, no hardware.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Un programa que solo ejecuta scripts en la nube]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las VMs pueden ejecutar sistemas operativos completos y cualquier tipo de aplicación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Un sistema de almacenamiento físico en la red]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esto describe más bien un NAS o SAN, no una máquina virtual.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 5: Ventajas virtualización -->
+<question type="multichoice">
+    <name><text>U1-005 Ventajas Virtualización</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál de las siguientes opciones es una ventaja de la virtualización?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La virtualización ofrece múltiples beneficios económicos y técnicos para las organizaciones.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Reducción de costos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La virtualización reduce costos al permitir mejor aprovechamiento del hardware y menor consumo energético.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Mayor consumo de energía]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La virtualización REDUCE el consumo energético al consolidar cargas de trabajo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Aumento en la necesidad de servidores físicos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La virtualización REDUCE la necesidad de servidores físicos mediante consolidación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Mayor dependencia del hardware]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La virtualización REDUCE la dependencia del hardware específico mediante abstracción.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 6: Tipos de virtualización -->
+<question type="multichoice">
+    <name><text>U1-006 Tipos Virtualización</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál de las siguientes opciones es un ejemplo de virtualización de sistema operativo?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Existen diferentes tipos de virtualización: de hardware, de sistema operativo, de aplicaciones, etc.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Docker]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Docker utiliza contenedores que comparten el kernel del SO host, siendo virtualización a nivel de SO.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[VMware ESXi]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. ESXi es un hipervisor tipo 1 que proporciona virtualización de hardware completo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Microsoft Hyper-V]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Hyper-V es un hipervisor que virtualiza hardware completo, no solo el SO.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Oracle VirtualBox]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. VirtualBox es virtualización de hardware tipo 2, no de sistema operativo.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 7: Hipervisores -->
+<question type="multichoice">
+    <name><text>U1-007 Hipervisores</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la principal diferencia entre un hipervisor tipo 1 y tipo 2?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los hipervisores se clasifican según su arquitectura y relación con el hardware y SO host.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Tipo 1 se ejecuta directamente en hardware, Tipo 2 sobre un SO host]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Tipo 1 (bare-metal) accede directamente al hardware, Tipo 2 requiere un SO anfitrión.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Tipo 1 es más lento que Tipo 2]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Tipo 1 generalmente es más eficiente al acceder directamente al hardware.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Tipo 2 es más seguro que Tipo 1]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Tipo 1 suele ser más seguro al tener menos superficie de ataque.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No hay diferencias significativas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las diferencias arquitectónicas son fundamentales y afectan rendimiento y uso.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 8: Procesos e hilos -->
+<question type="multichoice">
+    <name><text>U1-008 Procesos Hilos</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la principal diferencia entre un proceso y un hilo (thread)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los procesos e hilos son unidades de ejecución con diferentes niveles de aislamiento y compartición de recursos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Los hilos comparten memoria del proceso, los procesos están aislados]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Los hilos comparten el espacio de direcciones del proceso padre, mientras que los procesos están aislados.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Los procesos son más rápidos que los hilos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los hilos generalmente son más rápidos de crear y cambiar contexto.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Los hilos no pueden comunicarse entre sí]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los hilos pueden comunicarse fácilmente al compartir memoria.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No hay diferencias prácticas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las diferencias en compartición de recursos y aislamiento son fundamentales.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 9: Estados de proceso -->
+<question type="multichoice">
+    <name><text>U1-009 Estados Proceso</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿En qué estado se encuentra un proceso cuando está esperando que termine una operación de entrada/salida?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los procesos cambian de estado según su situación actual en el sistema: ejecutando, listo, bloqueado, etc.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Bloqueado (Blocked)]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Un proceso bloqueado espera que se complete un evento, como una operación de E/S.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Ejecutando (Running)]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Un proceso ejecutando está actualmente usando la CPU.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Listo (Ready)]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Un proceso listo está preparado para ejecutarse pero esperando ser planificado.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Terminado (Terminated)]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Un proceso terminado ha finalizado su ejecución completamente.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 10: Sincronización -->
+<question type="multichoice">
+    <name><text>U1-010 Sincronización</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el propósito principal de los mecanismos de sincronización en sistemas operativos?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La sincronización es crucial para coordinar el acceso a recursos compartidos y evitar condiciones de carrera.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Coordinar el acceso a recursos compartidos entre procesos/hilos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La sincronización evita condiciones de carrera y garantiza consistencia en recursos compartidos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Acelerar la ejecución de procesos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La sincronización puede introducir overhead, su propósito es la corrección, no la velocidad.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Reducir el uso de memoria]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La sincronización se enfoca en la coordinación, no en la optimización de memoria.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Simplificar la programación]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque ayuda a evitar errores, la sincronización puede complicar el diseño de programas.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 11: Verdadero/Falso - Multiprogramación -->
+<question type="truefalse">
+    <name><text>U1-011 Multiprogramación</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>La multiprogramación permite que múltiples programas residan en memoria simultáneamente, aunque solo uno se ejecute a la vez en un procesador de un solo núcleo.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La multiprogramación es la base de los sistemas operativos modernos, permitiendo mejor utilización de recursos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La multiprogramación permite cambio rápido entre programas para dar la ilusión de ejecución simultánea.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esa es precisamente la definición de multiprogramación.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 12: Verdadero/Falso - Kernel -->
+<question type="truefalse">
+    <name><text>U1-012 Kernel</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>El kernel monolítico incluye todos los servicios del sistema operativo en un solo programa que se ejecuta en modo privilegiado.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Existen diferentes arquitecturas de kernel: monolítico, microkernel, híbrido, cada una con ventajas y desventajas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! El kernel monolítico integra todos los servicios en un solo programa ejecutándose en modo kernel.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esa es exactamente la característica del kernel monolítico.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 13: Múltiples respuestas - Componentes SO -->
+<question type="multichoice">
+    <name><text>U1-013 Componentes SO</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles de los siguientes son componentes principales de un sistema operativo? (Seleccione todas las correctas)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Un sistema operativo se compone de varios subsistemas que gestionan diferentes aspectos del sistema.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Gestor de memoria]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! El gestor de memoria es fundamental para asignar y controlar el uso de RAM.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Sistema de archivos]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! El sistema de archivos organiza y gestiona el almacenamiento persistente.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Planificador de procesos]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! El planificador determina qué proceso debe ejecutarse y cuándo.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Gestor de dispositivos]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! El gestor de dispositivos controla la comunicación con hardware de E/S.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[Navegador web]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El navegador es una aplicación de usuario, no un componente del SO.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 14: Drag and Drop - Niveles de virtualización -->
+<question type="ddwtos">
+    <name><text>U1-014 Niveles Virtualización</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada nivel de virtualización con su descripción:</p>
+        <p>[[1]] - Virtualización completa del hardware</p>
+        <p>[[2]] - Virtualización a nivel del sistema operativo</p>
+        <p>[[3]] - Virtualización de aplicaciones específicas</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La virtualización se puede implementar en diferentes niveles de abstracción del sistema.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <dragbox><text>Hipervisor</text><group>1</group></dragbox>
+    <dragbox><text>Contenedores</text><group>1</group></dragbox>
+    <dragbox><text>Máquinas virtuales de aplicación</text><group>1</group></dragbox>
+    <dragbox><text>Emulación</text><group>1</group></dragbox>
+</question>
+
+<!-- PREGUNTA 15: Algoritmos de planificación -->
+<question type="multichoice">
+    <name><text>U1-015 Planificación</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la característica del algoritmo de planificación Round Robin?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los algoritmos de planificación determinan cómo se asigna tiempo de CPU a los procesos en sistemas multitarea.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Asigna un quantum de tiempo fijo a cada proceso de forma circular]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Round Robin asigna tiempo igual a todos los procesos rotando circularmente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Siempre ejecuta el proceso más corto primero]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso describe el algoritmo Shortest Job First (SJF).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Ejecuta procesos según su prioridad únicamente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso describe la planificación por prioridades.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No permite interrupciones durante la ejecución]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Round Robin es un algoritmo con desalojo (preemptive).]]></text></feedback>
+    </answer>
+</question>
+
+</quiz>

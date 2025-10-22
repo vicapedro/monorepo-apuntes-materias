@@ -1,0 +1,553 @@
+Slide 1:
+Consultas básicas
+
+Slide 2:
+SELECT [ALL | DISTINCT] [Top n] <select_list> 
+ FROM {<table_source>} [,…n] 
+ WHERE {<search_condition>} 
+Sintaxis Parcial
+Usando el SELECT
+Select List específica las Columnas
+WHERE específica los renglones
+FROM específica la Tabla
+
+Slide 3:
+Recuperando todas las Columnas con   *
+Con el * se pueden seleccionar todas las columnas de una tabla, el orden de aparición de las columnas depende de cómo se definieron con la instrucción create table.
+
+USE northwind
+SELECT *
+FROM employees
+
+Slide 4:
+Especificando columnas 
+employeeid
+lastname
+firstname
+title
+1
+Davolio
+Nancy
+Sales Representative
+2
+Fuller
+Andrew
+Vice President, Sales
+3
+Leverling
+Janet
+Sales Representative
+4
+Peacock
+Margaret
+Sales Representative
+5
+Buchanan
+Steven
+Sales Manager
+6
+Suyama
+Michael
+Sales Representative
+7
+King
+Robert
+Sales Representative
+8
+Callahan
+Laura
+Inside Sales Coordinator
+9
+Dodsworth
+Anne
+Sales Representative
+USE northwind
+SELECT employeeid, lastname, firstname, title
+FROM employees
+
+
+Slide 5:
+Usando la cláusula WHERE para especificar renglones
+employeeid
+lastname
+firstname
+title
+5
+Buchanan
+Steven
+Sales Manager
+USE northwind
+SELECT employeeid, lastname, firstname, title
+FROM employees
+WHERE employeeid = 5
+
+
+Slide 6:
+ Condición de Búsqueda del Where
+Usando operadores de comparación
+Usando comparación de String
+Usando operadores lógicos
+Recuperando un rango de valores
+Usando una lista de valores como criterio de búsqueda
+Recuperando valores desconocidos
+
+Slide 7:
+Tipos de condiciones de búsqueda
+Operadores de comparación (>, <, =, >=, <=, <>).
+Rangos			(Between, Not Between)
+Listas 				(In, Not in)
+Comparación de strings           (Like, Not Like)
+Valores desconocidos		 (Is Null, Is not Null)
+Negación			 ( NOT)
+Lógicos			(And, Or)
+
+
+Slide 8:
+Usando operadores de comparación
+lastname
+city
+Davolio
+Seattle
+Fuller
+Tacoma
+Leverling
+Kirkland
+Peacock
+Redmond
+Callahan
+Seattle
+USE northwind
+SELECT lastname, city
+FROM employees
+WHERE country = 'USA'
+
+
+Slide 9:
+Predicado LIKE
+También se pueden seleccionar registros basados en un conjunto de caracteres. Una instrucción SELECT  que contiene un predicado LIKE en la cláusula WHERE, el predicado LIKE contiene porciones de caracteres que se  comparan con otra porción de caracteres.
+
+Slide 10:
+Caracteres de control del LIKE
+	El predicado LIKE usa uno o mas de los caracteres de 
+control que se muestran a continuación:
+
+
+
+
+% 	Cualquier string de uno o mas caracteres
+_	Un carácter simple
+[ ] 	Cualquier carácter simple dentro del conjunto de 
+	valores en el conjunto.
+
+
+Slide 11:
+Ejemplo del LIKE
+
+
+
+
+...
+Stor_name
+
+
+...
+
+
+
+
+
+USE pubs
+SELECT stor_name FROM stores
+WHERE store_name  LIKE ‘%BOOK%’
+fricative bookshop
+Bookbeat
+
+Slide 12:
+Ejemplos del LIKE
+LIKE ´BR%´ todo lo que inicie con BR.
+LIKE ´%een´todo lo que termine con “een”
+LIKE ‘%en%´todos los nombre que contengan la letra “en” .
+LIKE ‘[CK]%´ todos los nombres que que inicien con C o con K.
+
+
+
+Slide 13:
+Comparando Strings
+companyname
+GROSELLA-Restaurante
+Lonesome Pine Restaurant
+Tortuga Restaurante
+USE northwind
+SELECT companyname
+FROM customers
+WHERE companyname LIKE '%Restaurant%'
+
+
+Slide 14:
+Operadores Lógicos
+Se pueden seleccionar renglones basados en una 
+condición de búsqueda, se pueden utilizar los operadores
+ relacionales AND, OR y el NOT en la cláusula WHERE.
+
+
+Slide 15:
+productid
+productname
+supplierid
+unitprice
+14
+Tofu
+6
+  23.25
+29
+Thüringer Rostbratwurst
+12
+123.79
+62
+Tarte au sucre
+29
+  49.3
+USE northwind
+SELECT productid, productname, supplierid, unitprice
+FROM products
+WHERE	(productname LIKE 'T%' OR productid = 46) AND
+	(unitprice > 16.00)
+
+Operadores Lógicos
+
+Slide 16:
+Rangos de valores
+productname
+unitprice
+Chai
+18
+Chang
+19
+Aniseed Syrup
+10
+Genen Shouyu
+15.5
+Pavlova
+17.45
+Sir Rodney’s Scones
+10
+.
+.
+.
+.
+.
+.
+USE northwind
+SELECT productname, unitprice
+FROM products
+WHERE unitprice BETWEEN 10 AND 20
+
+
+Slide 17:
+Lista de valores como condición de busqueda
+companyname
+country
+Tokyo Traders
+Japan
+Mayumi’s
+Japan
+Formaggi Fortini s.r.l.
+Italy
+Pasta Buttini s.r.l.
+Italy
+USE northwind
+SELECT companyname, country
+FROM suppliers
+WHERE country IN ('Japan', 'Italy')
+
+
+Slide 18:
+Recuperando valores desconocidos
+companyname
+fax
+Exotic Liquids
+NULL
+New Orleans Cajun Delights
+NULL
+Tokyo Traders
+NULL
+Cooperativa de Quesos ‘Las Cabras’
+NULL
+.
+
+.
+
+.
+
+USE northwind
+SELECT companyname, fax
+FROM suppliers
+WHERE fax IS NULL
+
+
+Slide 19:
+ Dando formato a la salida
+Ordenando datos
+Eliminando duplicados
+Cambiando el nombre de las columnas
+Usando literales
+
+Slide 20:
+Ordenando datos
+USE northwind
+SELECT productid, productname, categoryid, unitprice
+FROM products
+ORDER BY categoryid, unitprice DESC
+productid
+38
+43
+2
+.
+.
+.
+63
+8
+61
+.
+.
+.
+productname
+Cote de Blaye
+Ipoh Coffee
+Chang
+
+
+
+Vegie-spread
+Northwoods Cranberry Sauce
+Sirop d'érable
+
+
+
+categoryid
+1
+1
+1
+
+
+
+2
+2
+2
+
+
+
+unitprice
+263.5
+46
+19
+
+
+
+43.9
+40
+28.5
+
+
+
+
+
+Slide 21:
+Eliminando duplicados
+country
+Australia
+Brazil
+Canada
+Denmark
+Finland
+France
+Germany
+Italy
+Japan
+Netherlands
+Norway
+Singapore
+Spain
+Sweden
+UK
+USA
+USE northwind
+SELECT DISTINCT country
+FROM suppliers
+ORDER BY country
+
+
+Slide 22:
+Cambiando el nombre de las columnas
+First
+Nancy
+Andrew
+Janet
+Margaret
+Steven
+Michael
+Robert
+Laura
+Anne
+Last
+Davolio
+Fuller
+Leverling
+Peacock
+Buchanan
+Suyama
+King
+Callahan
+Dodsworth
+Employee ID:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+USE northwind
+SELECT firstname AS First,	lastname AS Last,
+	employeeid AS 'Employee ID:' 
+FROM employees
+
+
+Slide 23:
+Usando literales
+firstname
+Nancy
+Andrew
+Janet
+Margaret
+Steven
+Michael
+Robert
+Laura
+Anne
+lastname
+Davolio
+Fuller
+Leverling
+Peacock
+Buchanan
+Suyama
+King
+Callahan
+Dodsworth
+employeeid
+Identification number:	1
+Identification number:	2
+Identification number:	3
+Identification number:	4
+Identification number:	5
+Identification number:	6
+Identification number:	7
+Identification number:	8
+Identification number:	9
+USE northwind
+SELECT firstname, lastname,
+	'Identification number:', employeeid
+FROM employees
+
+
+Slide 24:
+ Lenguaje de Manipulación de Datos
+Insertando renglones
+Borrando renglones
+Actualizando renglones
+
+Slide 25:
+ Insertando renglones
+USE northwind
+INSERT customers
+	(customerid, companyname, contactname, contacttitle,
+	address, city, region, postalcode, country, phone,
+       fax)
+
+VALUES ('PECOF', 'Pecos Coffee Company', 'Michael Dunn',
+	'Owner', '1900 Oak Street', 'Vancouver', 'BC',
+	'V3F 2K1', 'Canada', '(604) 555-3392', 
+	'(604) 555-7293')
+
+Slide 26:
+Insertando datos cuando se usan valores por Default
+Cláusula DEFAULT
+Inserta el valor especificado en la columna
+Las columnas deben tener un valor por default o permitir nulos
+
+
+
+USE northwind
+INSERT shippers (companyname, phone)
+VALUES ('Kenya Coffee Co.', DEFAULT)
+
+Slide 27:
+Insertando datos parciales
+USE northwind
+INSERT shippers (companyname)
+VALUES ('Fitch & Mather')
+Agregando nuevos datos
+USE northwind
+SELECT *
+FROM shippers
+WHERE companyname = 'Fitch & Mather'
+Verificando nuevos datos
+
+shipperid
+37
+companyname
+Fitch & Mather
+phone
+NULL
+Pemite valores nulos
+37
+
+Slide 28:
+Borrando renglones
+DELETE  
+Se usa para eliminar uno o más renglones
+Siempre incluye una cláusula Where
+Cada renglón borrado es insertado en el Log
+TRUNCATE TABLE Statement
+Se usa para borrar todos los renglones de una tabla
+Es más rápida que un DELETE.
+
+Slide 29:
+Ejemplo del DELETE 
+USE pubs
+DELETE FROM authors 
+WHERE title=“Lenguaje C”
+
+
+Slide 30:
+Actualización de tablas 
+
+
+La instrucción UPDATE cambia los datos existentes en una tabla. Se puede utilizar la cláusula UPDATE para actualizar un renglón, un grupo de renglones o toda la tabla.La cláusula UPDATE opera sobre una sola tabla.
+
+
+Slide 31:
+Ejemplo
+USE pubs
+UPDATE discount 
+SET discount=discount+.10
+WHERE lowqty>=100
+
+
+Slide 32:
+Ejemplo
+USE pubs
+UPDATE authors 
+SET phone=‘203 987-6543’
+WHERE au_id=‘123-45-6789’
+
+Slide 33:
+Actualizando renglones
+La cláusula WHERE especifica los renglones a cambiar
+SET Especifica el nuevo dato
+USE northwind
+UPDATE products
+SET unitprice = (unitprice * 1.1)

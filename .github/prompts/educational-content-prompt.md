@@ -163,3 +163,6 @@
 - Create authentic contexts mirroring professional practice
 - Support autonomous and self-regulated learning
 - Use step-by-step guidance with Gagné's Model as reference framework
+
+Prefiere el uso de font awesome para iconos y emojis en lugar de imágenes estáticas.
+

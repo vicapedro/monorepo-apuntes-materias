@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- EXAMEN DIAGNÓSTICO - TALLER DE SISTEMAS OPERATIVOS -->
+<!-- Competencias previas: Arquitectura de Computadoras, Sistemas Operativos Básicos, Redes -->
+<!-- 20 reactivos - Diferentes tipos de pregunta -->
+
+<!-- PREGUNTA 1: OPCIÓN MÚLTIPLE - Conceptos básicos SO -->
+<question type="multichoice">
+    <name><text>Pregunta TSO001</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la función principal del kernel en un sistema operativo?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>El kernel es el núcleo del sistema operativo que gestiona los recursos del hardware y proporciona servicios a las aplicaciones.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Gestionar los recursos del hardware y proporcionar servicios del sistema]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! El kernel administra memoria, procesos, dispositivos y servicios del sistema.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Proporcionar la interfaz gráfica de usuario]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La interfaz gráfica es manejada por el sistema de ventanas, no el kernel.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Ejecutar aplicaciones de usuario directamente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las aplicaciones se ejecutan en modo usuario, no en el kernel.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Manejar únicamente la seguridad del sistema]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La seguridad es solo una de las muchas funciones del kernel.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 2: VERDADERO/FALSO - Procesos -->
+<question type="truefalse">
+    <name><text>Pregunta TSO002</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un proceso puede tener múltiples hilos (threads) que comparten el mismo espacio de memoria.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los hilos dentro de un proceso comparten recursos como memoria, archivos abiertos y variables globales.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Los hilos de un mismo proceso comparten el espacio de direcciones y otros recursos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los hilos sí comparten memoria y recursos dentro del mismo proceso.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 3: OPCIÓN MÚLTIPLE - Tipos de SO -->
+<question type="multichoice">
+    <name><text>Pregunta TSO003</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál de las siguientes opciones describe mejor un sistema operativo de tiempo real?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los sistemas operativos de tiempo real están diseñados para responder a eventos dentro de plazos de tiempo específicos y determinísticos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Garantiza respuestas dentro de plazos de tiempo específicos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Los SO de tiempo real priorizan la predictibilidad temporal sobre el rendimiento general.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Optimiza el uso de la CPU para máximo rendimiento]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esto describe más un SO de propósito general optimizado.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Permite múltiples usuarios simultáneos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esto describe un SO multiusuario, no específicamente de tiempo real.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Maneja únicamente una tarea a la vez]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los SO de tiempo real pueden ser multitarea.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 4: DRAG AND DROP - Componentes del SO -->
+<question type="ddwtos">
+    <name><text>Pregunta TSO004</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada componente del sistema operativo con su función:</p>
+        <p>[[1]] - Gestiona la asignación y liberación de memoria</p>
+        <p>[[2]] - Controla la ejecución y planificación de procesos</p>
+        <p>[[3]] - Maneja la comunicación con dispositivos de entrada/salida</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Cada componente del SO tiene responsabilidades específicas en la gestión de recursos del sistema.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <dragbox><text>Gestor de Memoria</text><group>1</group></dragbox>
+    <dragbox><text>Planificador de Procesos</text><group>1</group></dragbox>
+    <dragbox><text>Gestor de E/S</text><group>1</group></dragbox>
+    <dragbox><text>Sistema de Archivos</text><group>1</group></dragbox>
+</question>
+
+<!-- PREGUNTA 5: OPCIÓN MÚLTIPLE - Comandos básicos -->
+<question type="multichoice">
+    <name><text>Pregunta TSO005</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el comando correcto para listar archivos y directorios en sistemas Unix/Linux?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los comandos básicos de terminal son fundamentales para la administración de sistemas operativos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[ls]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! 'ls' es el comando estándar para listar archivos y directorios.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[dir]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 'dir' es el comando equivalente en Windows, no en Unix/Linux.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[list]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 'list' no es un comando estándar en Unix/Linux.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[show]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 'show' no es un comando para listar archivos en Unix/Linux.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 6: VERDADERO/FALSO - Memoria virtual -->
+<question type="truefalse">
+    <name><text>Pregunta TSO006</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>La memoria virtual permite que un programa use más memoria de la que físicamente está disponible en RAM.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La memoria virtual es una técnica que combina RAM y almacenamiento secundario para simular más memoria de la disponible físicamente.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La memoria virtual usa el disco duro como extensión de la RAM mediante paginación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esa es precisamente la función de la memoria virtual.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 7: OPCIÓN MÚLTIPLE - Sistemas de archivos -->
+<question type="multichoice">
+    <name><text>Pregunta TSO007</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál de los siguientes es un sistema de archivos nativo de Linux?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Cada sistema operativo tiene sistemas de archivos nativos optimizados para sus características específicas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[ext4]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! ext4 es el sistema de archivos estándar en la mayoría de distribuciones Linux.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[NTFS]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. NTFS es el sistema de archivos nativo de Windows.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[HFS+]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. HFS+ es el sistema de archivos de macOS.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[UFS]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. UFS es típico de sistemas Unix, no específicamente Linux.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 8: OPCIÓN MÚLTIPLE MÚLTIPLES RESPUESTAS - Virtualización -->
+<question type="multichoice">
+    <name><text>Pregunta TSO008</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles son ventajas de la virtualización? (Seleccione todas las correctas)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La virtualización ofrece múltiples beneficios tanto técnicos como económicos en entornos empresariales.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Consolidación de servidores]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! Permite ejecutar múltiples VMs en un solo servidor físico.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Aislamiento de aplicaciones]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! Cada VM está aislada de las demás, mejorando la seguridad.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Facilidad de backup y recuperación]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! Las VMs se pueden respaldar como archivos completos.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Portabilidad entre hardware]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! Las VMs pueden migrarse entre diferentes servidores físicos.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[Eliminación completa del overhead]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La virtualización introduce overhead del hypervisor.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 9: VERDADERO/FALSO - Redes -->
+<question type="truefalse">
+    <name><text>Pregunta TSO009</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>El protocolo TCP/IP es el conjunto de protocolos estándar utilizado en Internet y la mayoría de redes empresariales.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>TCP/IP es la suite de protocolos fundamental para la comunicación en redes modernas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! TCP/IP es el protocolo base de Internet y redes empresariales.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. TCP/IP es efectivamente el estándar de facto para redes.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 10: OPCIÓN MÚLTIPLE - Seguridad -->
+<question type="multichoice">
+    <name><text>Pregunta TSO010</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué significa que un archivo tenga permisos 755 en sistemas Unix/Linux?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los permisos en sistemas Unix se expresan en notación octal donde cada dígito representa permisos para propietario, grupo y otros.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Propietario: lectura/escritura/ejecución, Grupo y otros: lectura/ejecución]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! 7=rwx para propietario, 5=r-x para grupo y otros.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Todos los usuarios tienen permisos completos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso sería 777, no 755.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Solo el propietario puede acceder al archivo]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El grupo y otros también tienen permisos de lectura y ejecución.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Nadie puede ejecutar el archivo]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Todos pueden ejecutar el archivo (bit de ejecución activo).]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 11: DRAG AND DROP - Estados de proceso -->
+<question type="ddwtos">
+    <name><text>Pregunta TSO011</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada estado de proceso con su descripción:</p>
+        <p>[[1]] - El proceso está siendo ejecutado por la CPU</p>
+        <p>[[2]] - El proceso está esperando ser seleccionado por el planificador</p>
+        <p>[[3]] - El proceso está esperando que termine una operación de E/S</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los procesos pasan por diferentes estados durante su ciclo de vida en el sistema operativo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <dragbox><text>Ejecutando (Running)</text><group>1</group></dragbox>
+    <dragbox><text>Listo (Ready)</text><group>1</group></dragbox>
+    <dragbox><text>Bloqueado (Blocked)</text><group>1</group></dragbox>
+    <dragbox><text>Terminado (Terminated)</text><group>1</group></dragbox>
+</question>
+
+<!-- PREGUNTA 12: OPCIÓN MÚLTIPLE - Servicios del SO -->
+<question type="multichoice">
+    <name><text>Pregunta TSO012</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la diferencia principal entre un servicio (daemon en Linux) y un proceso de usuario normal?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los servicios del sistema tienen características específicas que los distinguen de los procesos de usuario.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Los servicios se ejecutan en segundo plano sin interfaz de usuario]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Los servicios/daemons ejecutan tareas del sistema sin interacción directa del usuario.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Los servicios solo pueden ser ejecutados por el administrador]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque muchos servicios requieren privilegios elevados, no es su característica definitoria.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Los servicios consumen menos memoria]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El consumo de memoria depende de la función específica, no del tipo de proceso.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Los servicios no pueden comunicarse con otros procesos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los servicios frecuentemente se comunican con otros procesos y servicios.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 13: VERDADERO/FALSO - Hardware -->
+<question type="truefalse">
+    <name><text>Pregunta TSO013</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un controlador de dispositivo (driver) es un programa que permite al sistema operativo comunicarse con un componente de hardware específico.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los controladores actúan como intermediarios entre el SO y el hardware, traduciendo comandos del sistema a instrucciones específicas del dispositivo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Los drivers traducen las solicitudes del SO al lenguaje específico de cada dispositivo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esa es exactamente la función de los controladores de dispositivo.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 14: OPCIÓN MÚLTIPLE - Arquitectura -->
+<question type="multichoice">
+    <name><text>Pregunta TSO014</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la principal diferencia entre arquitectura x86 y x64 (x86-64)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Las arquitecturas de procesador determinan las capacidades fundamentales del sistema en términos de memoria y procesamiento.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[x64 puede direccionar más de 4GB de RAM, x86 está limitado a 4GB]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! x64 usa direcciones de 64 bits permitiendo mucha más memoria que los 32 bits de x86.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[x64 es más lento que x86]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. x64 generalmente ofrece mejor rendimiento y capacidades.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[x86 es más seguro que x64]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. x64 incluye características de seguridad adicionales.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No hay diferencias significativas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las diferencias en capacidad de memoria y rendimiento son muy significativas.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 15: OPCIÓN MÚLTIPLE - Licencias -->
+<question type="multichoice">
+    <name><text>Pregunta TSO015</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la principal diferencia entre software propietario y software libre?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Las licencias de software determinan qué derechos tienen los usuarios sobre el código y su distribución.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[El software libre permite acceso al código fuente y modificación]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! El software libre garantiza las libertades de usar, estudiar, modificar y distribuir.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[El software propietario es siempre más seguro]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La seguridad depende de la implementación, no del modelo de licenciamiento.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[El software libre no se puede usar comercialmente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Muchas licencias de software libre permiten uso comercial.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No existe diferencia práctica]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las diferencias en libertades y restricciones son fundamentales.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 16: VERDADERO/FALSO - Backup -->
+<question type="truefalse">
+    <name><text>Pregunta TSO016</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un backup incremental solo respalda los archivos que han cambiado desde el último backup completo o incremental.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los diferentes tipos de backup (completo, incremental, diferencial) tienen estrategias distintas para optimizar tiempo y espacio.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Los backups incrementales son eficientes al respaldar solo cambios recientes.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esa es precisamente la definición de backup incremental.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 17: OPCIÓN MÚLTIPLE - Monitoreo -->
+<question type="multichoice">
+    <name><text>Pregunta TSO017</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál de las siguientes métricas es más importante para monitorear el rendimiento de un servidor?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>El monitoreo efectivo de servidores requiere observar múltiples métricas para identificar cuellos de botella.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Todas son importantes: CPU, memoria, disco y red]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Un enfoque holístico considera todas las métricas clave del sistema.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Solo el uso de CPU]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. CPU es importante pero no suficiente para un monitoreo completo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Solo el espacio en disco]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El disco es crucial pero debe monitorearse junto con otros recursos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Solo la memoria RAM]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La memoria es vital pero el rendimiento depende de múltiples factores.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 18: DRAG AND DROP - Tipos de virtualización -->
+<question type="ddwtos">
+    <name><text>Pregunta TSO018</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada tipo de virtualización con su descripción:</p>
+        <p>[[1]] - Virtualización completa del hardware</p>
+        <p>[[2]] - Virtualización a nivel de sistema operativo</p>
+        <p>[[3]] - Virtualización que requiere modificar el SO huésped</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Existen diferentes enfoques de virtualización, cada uno con sus ventajas y casos de uso específicos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <dragbox><text>Virtualización Completa</text><group>1</group></dragbox>
+    <dragbox><text>Contenedores</text><group>1</group></dragbox>
+    <dragbox><text>Paravirtualización</text><group>1</group></dragbox>
+    <dragbox><text>Emulación</text><group>1</group></dragbox>
+</question>
+
+<!-- PREGUNTA 19: OPCIÓN MÚLTIPLE - Administración -->
+<question type="multichoice">
+    <name><text>Pregunta TSO019</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la mejor práctica para la administración de contraseñas en sistemas operativos de servidor?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La seguridad de contraseñas es fundamental para proteger sistemas críticos contra accesos no autorizados.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Usar contraseñas complejas, rotarlas regularmente y considerar autenticación multifactor]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Una estrategia integral de seguridad incluye múltiples medidas de protección.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Usar la misma contraseña para todas las cuentas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esto aumenta significativamente el riesgo de seguridad.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Cambiar contraseñas solo cuando hay problemas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La rotación proactiva es una medida de seguridad preventiva.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Usar contraseñas simples para facilitar el acceso]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las contraseñas simples son fáciles de comprometer.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 20: OPCIÓN MÚLTIPLE - Planificación -->
+<question type="multichoice">
+    <name><text>Pregunta TSO020</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el principal objetivo de un algoritmo de planificación de procesos (scheduling)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los algoritmos de planificación determinan cómo el SO asigna tiempo de CPU a los diferentes procesos en ejecución.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Optimizar el uso de la CPU y mejorar la respuesta del sistema]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La planificación busca maximizar eficiencia y minimizar tiempos de respuesta.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Ejecutar solo un proceso a la vez]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los sistemas modernos ejecutan múltiples procesos concurrentemente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Dar prioridad solo a procesos del sistema]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La planificación debe balancear todos los tipos de procesos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Minimizar el uso de memoria]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esa es función del gestor de memoria, no del planificador.]]></text></feedback>
+    </answer>
+</question>
+
+</quiz>

@@ -1,0 +1,146 @@
+Slide 1:
+ 
+Subconsultas
+
+Slide 2:
+ Introduccion a las subconsultas
+Por qué usar subconsultas?
+Para descomponer una consulta compleja
+Para dar respuesta a una consultas que espera el resultado de otra consulta
+Por qué usar Join en vez de las subconsultas?
+SQL Server ejecuta mas rápido los joins
+
+Slide 3:
+Tipos de subconsultas
+Where <expresión> [NOT] IN (<subquery)
+Where <expresión> <operador de comparación> (<subquery)
+Where [NOT] EXISTS (<subquery>)
+
+
+
+
+Slide 4:
+Usando subconsultas
+Encierra entre paréntesis la subconsulta
+Usa solo una expresión o nombre de columna en la  
+lista de selección
+No pueden usarse subconsultas sobre campos text o image
+Los niveles de una subconsulta no tienen límite
+
+Slide 5:
+ Subconsultas anidadas
+Regresan un  valor simple
+Regresan una lista de valores
+
+Slide 6:
+USE northwind
+SELECT orderid, customerid
+FROM orders
+WHERE orderdate = (SELECT max(orderdate)
+	     FROM orders)
+Regresan un valor simple
+
+La cláusula WHERE  se  introduce  con un operador de comparación.
+
+
+
+Slide 7:
+USE northwind
+SELECT companyname
+FROM customers
+WHERE customerid IN
+	(SELECT customerid
+	 FROM orders
+	 WHERE orderdate >'1/1/95')
+Regresan una lista de valores
+
+La cláusula WHERE se usa con IN
+
+
+Slide 8:
+USE northwind
+SELECT companyname
+FROM customers
+WHERE customerid not IN
+	(SELECT customerid
+	 FROM orders
+	 WHERE orderdate >'1/1/95')
+Regresa una lista de valores
+
+La cláusula WHERE se usa con NOT  IN
+
+
+Slide 9:
+Subquery: Where [NOT] EXISTS (<subquery>)
+Realiza una prueba de existencia. La cláusula Where del select exterior realiza una prueba de existencia.
+USE pubs
+SELECT pub_name
+FROM publishers p
+WHERE EXISTS
+	(SELECT *
+	 FROM titles t
+	 WHERE t.pubid=p.pub_id and 	 type =‘computacion’)
+
+Slide 10:
+MODIFICANDO DE DATOS
+ Instrucción INSERT…SELECT
+Borrando renglones Basados en Otras Tablas
+Actualizando renglones basados en otras tablas
+
+Slide 11:
+USE northwind
+INSERT customers
+SELECT substring (firstname, 1, 3) +
+       substring (lastname, 1, 2),
+                 lastname, firstname, 	title,
+                 address, city, region, postalcode,
+                 country, homephone, NULL
+FROM employees
+Usando la cláusula Insert...Select 
+Todos los renglones que satisfacen el SELECT son insertados
+Verifica que la tabla que recibe los valores exista
+Asegura que los tipos de datos sean compatibles 
+Determina que valores son permitidos por DEFAULT o que valores son NULL
+
+Slide 12:
+Borrando renglones basados en otras tablas
+Usando una cláusula FROM adicional
+La primera cláusula FROM indica la tabla a modificar
+La segunda cláusula especifica el criterio para el enunciado DELETE
+Especificando condiciones en la cláusula WHERE
+La subconsulta determina que renglones borrar
+
+Slide 13:
+Delete con subconsultas
+
+DELETE sales WHERE title_id  IN 
+(SELECT title_id 
+  FROM titles 
+ WHERE type = 'business‘
+) 
+DELETE sales
+ FROM sales INNER JOIN titles 
+ON sales.title_id = titles.title_id AND type = 'business' 
+
+Slide 14:
+Actualizando renglones basados en otras tablas
+Usando el enunciado UPDATE 
+Actualiza un renglón a la vez
+Actualiza variables o columnas que siguen la cláusula SET
+Usando joins
+Usa la cláusula FROM
+Usando Subconsultas
+Regresa un valor simple para cada renglón
+
+Slide 15:
+Update con subconsultas
+UPDATE titles 
+SET price = price * 2 
+WHERE pub_id IN (
+SELECT pub_id 
+FROM publishers 
+WHERE pub_name = 'New Moon Books') 
+UPDATE titles 
+SET price = price * 2 
+FROM titles INNER JOIN publishers 
+ON titles.pub_id = publishers.pub_id AND pub_name = 'New Moon Books' 

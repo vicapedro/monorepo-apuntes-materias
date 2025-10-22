@@ -1,0 +1,35 @@
+
+Culiacán Sinaloa a ___7______ de _Febrero de 2025_____
+
+C._______Joaquín Guadalupe Salazar Araujo__________________________________________
+Jefe(a) de Laboratorio de:  ___Desarrollo de Software_____________________________
+P r e s e n t e
+
+	Con base a lo establecido por el Departamento de Ingeniería _en Sistemas computacionales_    con base a la planeación del curso, anexo la relación de prácticas de Laboratorio, así como las fechas tentativas a efectuarse durante el semestre _EneJun 2025____.
+
+Materia: __Taller de Sistemas Operativos___________ Carrera: _Ingeniería en Sistemas________
+Horario: ___11-12 hrs___________________                                 Grupo:   _____ SCA1026 - gA___________
+
+No.	NOMBRE DE LA PRÁCTICA	FECHA	NECESIDADES
+1	Creación de una máquina virtual	30/Feb	Computadoras con acceso a Internet y 16GB de RAM en todas las prácticas
+2	Gestión de Snapshots	6/Feb	
+3	Configuración de red	13/Feb	
+4	Comunicación al interior	20/Feb	
+5	Instalación de Windows Server	27/Mar	
+6	Instalación de Servicios de DHCP	3/Abr	
+7	Creación de Dominio de Windows	10/Abr	
+8	Unión de computadoras al Dominio	1/May	
+9	Creación de Grupos, Unidades organizacionales y Grupos de Seguridad	8/May	
+10	Seguridad y acceso a recursos	15/May	
+11	Políticas de grupo	22/May	
+12	Comandos básicos (Linux)	27/Feb	
+13	Instalación y actualización de paquetes	6/Mar	
+14	Administración de servicios	13/Mar	
+15	Bitácora del sistema y servicios	20/Mar	
+
+	En espera de haber cumplido con las expectativas propuestas, quedo de usted.
+
+ATENTAMENTE
+
+______Pedro Villa Casas______
+NOMBRE Y FIRMA

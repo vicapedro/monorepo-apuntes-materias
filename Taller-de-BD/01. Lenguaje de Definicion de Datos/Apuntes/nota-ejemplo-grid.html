@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notas con CSS Grid</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+  }
+
+  .contenedor {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 contenido, 1/3 nota */
+    gap: 1rem;
+    max-width: 900px;
+  }
+
+  .contenido {
+    background: #fff;
+  }
+
+  .nota-margen {
+    padding: 1rem;
+    background: #fdf6e3;
+    border-left: 4px solid #ff9800;
+    font-size: 0.9rem;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  }
+
+  /* Responsivo: se apila en una sola columna */
+  @media (max-width: 768px) {
+    .contenedor {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="contenedor">
+  <div class="contenido">
+    <p>
+      Aquí el contenido principal ocupa dos tercios del ancho disponible, 
+      y la nota ocupa un tercio.
+    </p>
+    <p>
+      Con Grid es muy fácil controlar las proporciones de cada parte.
+    </p>
+  </div>
+
+  <div class="nota-margen">
+    💡 <strong>Tip:</strong>  
+    Con Grid puedes ajustar fácilmente las columnas y crear diseños más complejos.
+  </div>
+</div>
+
+</body>
+</html>

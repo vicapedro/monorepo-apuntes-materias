@@ -1,0 +1,330 @@
+Slide 1:
+ 
+Consultas de
+ Agregación
+
+Slide 2:
+Sintaxis: SELECT 
+SELECT select_list 
+[ INTO new_table ] 
+FROM table_source 
+[ WHERE search_condition ] 
+[ GROUP BY group_by_expression ] 
+[ HAVING search_condition ] 
+[ ORDER BY order_expression [ ASC | DESC ] ] 
+Sintaxis Parcial
+
+Slide 3:
+GROUP BY
+employeeid
+lastname
+ciudad
+sueldo
+1
+Davolio
+Navolato
+1000
+2
+Fuller
+
+2000
+3
+Leverling
+Navolato
+500
+4
+Peacock
+Culiacán
+2000
+5
+Buchanan
+Culiacán
+700
+6
+Suyama
+Culiacán
+1000
+7
+King
+Los mochis
+1500
+8
+Callahan
+Los mochis
+1500
+9
+Dodsworth
+Los mochis
+2000
+SELECT employeeid, lastname, ciudad, sueldo
+FROM employees
+GROUP BY ciudad
+
+Navolato
+
+Slide 4:
+Funciones de agregación
+Permiten resumir una columna de resultados.
+Max, min, count, sum, avg
+
+Slide 5:
+Funciones de agregación
+AVG.- Devuelve el promedio de todos los valores, o sólo de los valores DISTINCT. Se ignoran los nulos.
+COUNT(expr).- Devuelve el numero de valores no nulos en la expresión. Se ignoran los valores nulos. Puede utilizarse en columnas numéricas y no numéricas.  Puede utilizarse con el DISTINCT.
+COUNT(*).- Se cuentan todas las filas incluso las que tienen valores nulos. No puede utilizarse con DISTINCT.
+MAX(expr).- Devuelve el valor máximo de la expresión. Puede utilizarse con columnas numéricas, de tipo carácter y datetime.
+
+Slide 6:
+Funciones de agregación
+MIN(expr).- Devuelve el valor mínimo en la expresión. MIN, puede utilizarse con columnas numéricas, de tipo carácter y datetime, pero no con columnas tipo bit. Con columnas tipo carácter, busca el valor mínimo en la secuencia. MIN, ignora los nulos.
+SUM(expr).- Devuelve la suma de todos los valores,  o solo de los valores DISTINCT. Se ignoran los nulos y sólo puede utilizarse en columnas numéricas.
+
+Slide 7:
+GROUP BY y SUM
+SELECT ciudad, sum(sueldo)
+FROM employees
+GROUP BY ciudad
+
+employeeid
+lastname
+ciudad
+sueldo
+1
+Davolio
+Navolato
+1000
+2
+Fuller
+
+2000
+3
+Leverling
+Navolato
+500
+4
+Peacock
+Culiacán
+2000
+5
+Buchanan
+Culiacán
+700
+6
+Suyama
+Culiacán
+1000
+7
+King
+Los mochis
+1500
+8
+Callahan
+Los mochis
+1500
+9
+Dodsworth
+Los mochis
+2000
+Navolato
+ciudad
+sueldo
+Navolato
+3500
+Culiacán
+3700
+Los mochis
+5000
+
+Slide 8:
+GROUP BY y COUNT
+SELECT ciudad, max(sueldo) as mayor
+FROM employees
+GROUP BY ciudad
+
+employeeid
+lastname
+ciudad
+sueldo
+1
+Davolio
+Navolato
+1000
+2
+Fuller
+
+2000
+3
+Leverling
+Navolato
+500
+4
+Peacock
+Culiacán
+2000
+5
+Buchanan
+Culiacán
+700
+6
+Suyama
+Culiacán
+1000
+7
+King
+Los mochis
+1500
+8
+Callahan
+Los mochis
+1500
+9
+Dodsworth
+Los mochis
+2000
+Navolato
+ciudad
+mayor
+Navolato
+2000
+Culiacán
+2000
+Los mochis
+2000
+
+Slide 9:
+Group by
+SELECT ColumnA, MAX(ColumnB) AS MaxB, SUM(ColumnC) AS SumC 
+FROM TableX 
+GROUP BY ColumnA 
+SELECT ColumnA, ColumnB, SUM(ColumnC) AS SumC FROM TableX 
+GROUP BY ColumnA   ERROR !!!
+
+Slide 10:
+Group By
+SELECT type, pub_id, avg(price), sum (price)
+FROM titles
+Where type in (‘negocios’, ‘computacion’)
+GROUP BY type, pub_id
+
+Slide 11:
+HAVING
+SELECT ciudad, sum(sueldo)
+FROM employees
+GROUP BY ciudad
+HAVING sum(sueldo)>4000
+
+employeeid
+lastname
+ciudad
+sueldo
+1
+Davolio
+Navolato
+1000
+2
+Fuller
+
+2000
+3
+Leverling
+Navolato
+500
+4
+Peacock
+Culiacán
+2000
+5
+Buchanan
+Culiacán
+700
+6
+Suyama
+Culiacán
+1000
+7
+King
+Los mochis
+1500
+8
+Callahan
+Los mochis
+1500
+9
+Dodsworth
+Los mochis
+2000
+Navolato
+ciudad
+sueldo
+Navolato
+3500
+Culiacán
+3700
+Los mochis
+5000
+
+Slide 12:
+
+HAVING
+SELECT ciudad, max(sueldo) as mayor
+FROM employees
+GROUP BY ciudad
+HAVING max(sueldo)>1500
+employeeid
+lastname
+ciudad
+sueldo
+1
+Davolio
+Navolato
+1000
+2
+Fuller
+
+2000
+3
+Leverling
+Navolato
+500
+4
+Peacock
+Culiacán
+2000
+5
+Buchanan
+Culiacán
+700
+6
+Suyama
+Culiacán
+1000
+7
+King
+Los mochis
+1500
+8
+Callahan
+Los mochis
+1500
+9
+Dodsworth
+Los mochis
+2000
+Navolato
+ciudad
+mayor
+Navolato
+2000
+Culiacán
+2000
+Los mochis
+2000
+
+Slide 13:
+Having
+La función del HAVING es filtrar grupos
+SELECT type, pub_id, avg(price), sum (price)
+FROM titles
+WHERE type in (‘negocios’, ‘computacion’)
+GROUP BY type, pub_id
+HAVING avg(price)>300

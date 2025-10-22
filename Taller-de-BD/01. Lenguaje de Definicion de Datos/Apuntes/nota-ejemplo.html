@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notas en el margen</title>
+
+<script src="https://unpkg.com/blockly/blockly.min.js"></script>
+
+
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 2rem;
+  }
+
+  .nota-margen {
+    float: right; /* hace que quede al margen derecho */
+    width: 200px;
+    margin: 0 0 1rem 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-left: 4px solid #007acc;
+    font-size: 0.9rem;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .contenido {
+    max-width: 600px;
+  }
+</style>
+</head>
+<body>
+
+<div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+<script>
+const toolbox = {
+  // There are two kinds of toolboxes. The simpler one is a flyout toolbox.
+  kind: 'flyoutToolbox',
+  // The contents is the blocks and other items that exist in your toolbox.
+  contents: [
+    {
+      kind: 'block',
+      type: 'controls_if'
+    },
+    {
+      kind: 'block',
+      type: 'controls_whileUntil'
+    }
+    // You can add more blocks to this array.
+  ]
+};
+
+// The toolbox gets passed to the configuration options during injection.
+const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
+</script>
+<div class="contenido">
+  <p>
+    En este párrafo estamos explicando un tema del curso. 
+    A la derecha se verá una nota marginal que complementa la lectura.
+  </p>
+
+  <div class="nota-margen">
+    💡 <strong>Tip:</strong>  
+    Recuerda que una consulta SQL siempre debe terminar con un punto y coma.
+  </div>
+
+  <p>
+    Continuamos con el resto del contenido. La nota queda visible en paralelo,
+    como ocurre en libros o manuales con recuadros en el margen.
+  </p>
+</div>
+
+<div style="background-image: url('imagen-fondo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 2rem; color: black; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); font-size: 2rem; font-weight: bold; text-align: left; border-radius: 8px;">
+  Este es el titulo nivel 1
+</div>
+
+
+</body>
+</html>

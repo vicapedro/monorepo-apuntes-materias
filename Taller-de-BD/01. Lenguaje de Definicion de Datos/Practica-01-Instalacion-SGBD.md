@@ -529,3 +529,49 @@ ps aux | grep sqlservr
    - ¿Cuál SGBD te pareció más fácil de instalar y por qué?
    - ¿Qué aspectos considerarías más importantes en una selección real?
    - ¿Qué recursos adicionales consultarías para una evaluación más profunda?
+
+### Rúbrica de Evaluación
+
+| Criterio | Excelente (3) | Bueno (2) | Aceptable (1) | Insuficiente (0) | Ponderación |
+|----------|---------------|-----------|---------------|------------------|-------------|
+| **Procedimientos de Instalación** | Documenta procedimientos completos y detallados para los 3 SGBD con pasos claros y secuenciales | Documenta procedimientos adecuados para los 3 SGBD con la mayoría de pasos necesarios | Documenta procedimientos básicos para 2-3 SGBD con algunos pasos faltantes | Documentación incompleta o procedimientos para menos de 2 SGBD | 25% |
+| **Evidencias Visuales** | Incluye capturas de pantalla claras y relevantes de todas las instalaciones exitosas y configuraciones | Incluye capturas adecuadas de la mayoría de instalaciones y configuraciones importantes | Incluye capturas básicas de algunas instalaciones con calidad aceptable | Capturas insuficientes, borrosas o no representativas del proceso | 20% |
+| **Análisis Comparativo** | Completa tabla comparativa con datos precisos, análisis técnico profundo y métricas de rendimiento documentadas | Completa tabla comparativa con datos adecuados y análisis técnico satisfactorio | Completa tabla comparativa con datos básicos y análisis técnico elemental | Tabla incompleta o análisis superficial sin sustento técnico | 20% |
+| **Resolución de Problemas** | Documenta problemas encontrados con soluciones detalladas, análisis de causas y alternativas evaluadas | Documenta problemas con soluciones apropiadas y explicación del proceso seguido | Documenta algunos problemas con soluciones básicas aplicadas | No documenta problemas o soluciones aplicadas insuficientes | 15% |
+| **Recomendaciones Empresariales** | Proporciona recomendaciones fundamentadas para los 3 casos con justificación técnica sólida y consideraciones de contexto | Proporciona recomendaciones apropiadas para los casos con justificación técnica adecuada | Proporciona recomendaciones básicas con justificación técnica elemental | Recomendaciones genéricas sin justificación técnica o contextual | 10% |
+| **Organización y Presentación** | Documento bien estructurado, formato profesional, redacción clara y sin errores ortográficos | Documento adecuadamente organizado con formato apropiado y redacción satisfactoria | Documento básicamente organizado con formato aceptable y redacción comprensible | Documento desorganizado, formato deficiente o múltiples errores de redacción | 5% |
+| **Reflexión y Aprendizaje** | Reflexión profunda sobre el proceso, identificación clara de aprendizajes y propuestas de mejora | Reflexión adecuada sobre el proceso con identificación de aprendizajes principales | Reflexión básica sobre el proceso con algunos aprendizajes identificados | Reflexión superficial o ausente, sin evidencia de aprendizaje significativo | 5% |
+
+**Puntaje Total: ___/21 puntos**
+
+#### Escala de Calificación:
+- **19-21 puntos**: Excelente (9-10)
+- **16-18 puntos**: Bueno (8-8.9)
+- **13-15 puntos**: Aceptable (7-7.9)
+- **0-12 puntos**: Insuficiente (0-6.9)
+
+#### Criterios Específicos de Evaluación:
+
+**Para Procedimientos de Instalación:**
+- Debe incluir comandos exactos ejecutados
+- Configuraciones específicas aplicadas
+- Pasos de verificación realizados
+- Tiempo de instalación documentado
+
+**Para Evidencias Visuales:**
+- Capturas de instaladores en ejecución
+- Pantallas de configuración completadas
+- Interfaces de administración funcionando
+- Resultados de scripts de testing
+
+**Para Análisis Comparativo:**
+- Métricas de rendimiento con valores numéricos
+- Comparación de recursos del sistema utilizados
+- Evaluación objetiva de facilidad de uso
+- Identificación de ventajas y desventajas específicas
+
+**Para Recomendaciones Empresariales:**
+- Consideración del contexto específico de cada caso
+- Justificación basada en criterios técnicos y económicos
+- Evaluación de escalabilidad y mantenimiento
+- Identificación de riesgos y mitigaciones

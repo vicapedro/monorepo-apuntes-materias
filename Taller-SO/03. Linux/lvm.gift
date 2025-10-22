@@ -1,0 +1,88 @@
+// Examen: LVM (Logical Volume Manager)
+// Formato GIFT, 10 preguntas, opción múltiple, alineado a la taxonomía de Bloom
+$CATEGORY: LVM
+
+
+::LVM01:: ¿Cuál es la principal ventaja de usar LVM sobre el particionado tradicional? {
+~No requiere comandos adicionales para crear particiones. #Incorrecto. LVM ofrece flexibilidad, no solo facilidad de comandos.
+~Permite la gestión dinámica y flexible del almacenamiento. #¡Correcto! LVM permite expandir, reducir y reorganizar volúmenes sin reiniciar.
+~Es más rápido en todos los casos. #Incorrecto. El rendimiento depende del uso y configuración.
+~No necesita configuración previa. #Incorrecto. LVM requiere configuración inicial.
+}
+
+::LVM02:: ¿Qué componente de LVM agrupa uno o más volúmenes físicos para formar un pool de almacenamiento? {
+~Volumen lógico (LV) #Incorrecto. El LV es la unidad virtual creada dentro del grupo.
+~Grupo de volúmenes (VG) #¡Correcto! El VG agrupa volúmenes físicos y permite crear volúmenes lógicos.
+~Volumen físico (PV) #Incorrecto. El PV es el disco o partición inicializada para LVM.
+~Sistema de archivos #Incorrecto. El sistema de archivos se monta sobre el LV.
+}
+
+::LVM03:: ¿Cuál de las siguientes NO es una ventaja de LVM en entornos virtualizados? {
+~Thin provisioning #Incorrecto. Es una ventaja clave en virtualización.
+~Snapshots instantáneos #Incorrecto. LVM permite snapshots rápidos.
+~Eliminación completa del overhead de rendimiento #¡Correcto! LVM introduce cierto overhead, no lo elimina completamente.
+~Clonación rápida de volúmenes #Incorrecto. Es una ventaja de LVM.
+}
+
+::LVM04:: ¿Qué comando se utiliza para inicializar un disco o partición como volumen físico en LVM? {
+~vgcreate #Incorrecto. Este comando crea un grupo de volúmenes.
+~pvcreate #¡Correcto! pvcreate inicializa un disco o partición para LVM.
+~lvcreate #Incorrecto. Este comando crea volúmenes lógicos.
+~mkfs.ext4 #Incorrecto. Este comando formatea el sistema de archivos.
+}
+
+::LVM05:: ¿Qué ocurre si se pierde la información de metadatos de LVM? {
+~Solo se pierde el último volumen lógico creado. #Incorrecto. La pérdida de metadatos puede afectar todo el grupo.
+~No hay impacto, los datos siguen accesibles. #Incorrecto. Sin metadatos, los volúmenes pueden quedar inaccesibles.
+~Puede inutilizar todos los volúmenes del grupo. #¡Correcto! Los metadatos son críticos para la integridad de LVM.
+~Solo afecta el rendimiento, no la disponibilidad. #Incorrecto. Puede afectar la disponibilidad total.
+}
+
+::LVM06:: ¿Cuál es el flujo correcto de creación de almacenamiento con LVM? {
+~Crear LV → Crear PV → Crear VG → Formatear #Incorrecto. El orden debe ser PV → VG → LV → Formatear.
+~Crear PV → Crear VG → Crear LV → Formatear #¡Correcto! Primero se inicializan los discos, luego se agrupan y finalmente se crean los volúmenes lógicos.
+~Formatear → Crear PV → Crear VG → Crear LV #Incorrecto. El formateo es el último paso.
+~Crear VG → Crear PV → Crear LV → Formatear #Incorrecto. El VG se crea después de los PV.
+}
+
+::LVM07:: ¿Qué tipo de volumen lógico permite la creación de copias puntuales para respaldos en LVM? {
+~Linear #Incorrecto. Linear solo almacena datos secuencialmente.
+~Striped #Incorrecto. Striped distribuye datos para rendimiento.
+~Snapshot #¡Correcto! Los snapshots permiten copias puntuales del estado del volumen.
+~Mirror #Incorrecto. Mirror replica datos para redundancia.
+}
+
+::LVM08:: ¿Cuál es una desventaja de LVM en equipos físicos? {
+~Complejidad adicional en la administración #¡Correcto! LVM requiere mayor conocimiento y cuidado.
+~No permite expansión de volúmenes #Incorrecto. LVM sí permite expansión.
+~No soporta sistemas de archivos modernos #Incorrecto. LVM es compatible con sistemas modernos.
+~No se puede usar en servidores #Incorrecto. LVM es ampliamente usado en servidores.
+}
+
+::LVM09:: ¿Qué comando se utiliza para agregar un nuevo volumen físico a un grupo de volúmenes existente? {
+~vgextend #¡Correcto! vgextend agrega un PV a un VG existente.
+~lvextend #Incorrecto. lvextend expande un volumen lógico.
+~pvcreate #Incorrecto. pvcreate inicializa el volumen físico.
+~vgcreate #Incorrecto. vgcreate crea un nuevo grupo de volúmenes.
+}
+
+::LVM10:: En un escenario donde necesitas expandir el espacio de /home que está lleno, ¿cuál es la secuencia correcta de comandos? {
+~lvextend → resize2fs → verificar espacio #¡Correcto! Primero se extiende el LV, luego el filesystem.
+~resize2fs → lvextend → verificar espacio #Incorrecto. No puedes redimensionar un filesystem más grande que su LV.
+~vgextend → lvextend → verificar espacio #Incorrecto. Falta el paso de redimensionar el filesystem.
+~umount → lvextend → mount → verificar #Incorrecto. ext4 soporta expansión en caliente.
+}
+
+::LVM_APP:: Tienes un servidor con /var/log lleno (montado en un LV de 2GB). Hay un disco nuevo de 5GB disponible. ¿Cuál es el procedimiento correcto? {
+~pvcreate /dev/sdc → vgextend vg_sistema /dev/sdc → lvextend -L +5G /dev/vg_sistema/lv_log → resize2fs /dev/vg_sistema/lv_log #¡Correcto! Secuencia completa para agregar disco y expandir volumen.
+~Solo lvextend -L +5G /dev/vg_sistema/lv_log #Incorrecto. Falta agregar el disco al VG primero.
+~Solo pvcreate /dev/sdc → vgextend vg_sistema /dev/sdc #Incorrecto. Falta expandir el LV y el filesystem.
+~mkfs.ext4 /dev/sdc → mount /dev/sdc /var/log #Incorrecto. Esto perdería datos y no usa LVM.
+}
+
+::LVM_EVAL:: Un administrador debe elegir entre LVM y particionado tradicional para un servidor web crítico. ¿Cuál es la mejor recomendación? {
+~Usar siempre LVM por ser más moderno #Incorrecto. La modernidad no garantiza la mejor opción.
+~Usar particionado tradicional por ser más simple #Incorrecto. Simplicidad no es el único factor.
+~Evaluar si se necesita flexibilidad futura vs. simplicidad de administración #¡Correcto! La decisión debe basarse en requisitos específicos y capacidades del equipo.
+~Usar RAID en lugar de cualquiera de los dos #Incorrecto. RAID y LVM resuelven problemas diferentes.
+}

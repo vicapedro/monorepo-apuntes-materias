@@ -1,0 +1,442 @@
+// BANCO DE REACTIVOS - EXAMEN DIAGNÓSTICO
+// Materia: Conmutación y Enrutamiento
+// Basado en competencias previas de "Redes de Computadoras"
+// Total: 50 preguntas (10 por tema)
+// Formato: GIFT para Moodle
+
+$CATEGORY: Diagnostico
+
+// ==============================================
+// TEMA 1: INTRODUCCIÓN A REDES DE DATOS
+// Competencia previa: Conceptos básicos y topologías
+// ==============================================
+
+$CATEGORY: Diagnostico/Tema1_Introduccion_Redes
+
+::T1P01_Origenes_Redes::¿Cuál fue uno de los principales motivadores para el desarrollo de las primeras redes de computadoras?{
+=Compartir recursos costosos como impresoras y almacenamiento#¡Correcto! El alto costo del hardware motivó el desarrollo de redes para compartir recursos.
+~Crear videojuegos en línea#Incorrecto. Los videojuegos en línea surgieron mucho después del desarrollo inicial de las redes.
+~Desarrollar redes sociales#Incorrecto. Las redes sociales son aplicaciones modernas, no el motivo original.
+~Minería de criptomonedas#Incorrecto. La minería de criptomonedas es un concepto muy reciente comparado con el origen de las redes.
+####Las primeras redes se desarrollaron en los años 60-70 principalmente para compartir recursos caros entre múltiples usuarios.
+}
+
+::T1P02_Clasificacion_Geografica::Según su alcance geográfico, ¿cómo se clasifica una red que conecta edificios en un campus universitario?{
+=MAN (Metropolitan Area Network)#¡Correcto! Una red de campus típicamente se clasifica como MAN por su alcance metropolitano.
+~LAN (Local Area Network)#Incorrecto. Una LAN se limita generalmente a un edificio o área pequeña.
+~WAN (Wide Area Network)#Incorrecto. Una WAN abarca áreas geográficas mucho más extensas como países o continentes.
+~PAN (Personal Area Network)#Incorrecto. Una PAN conecta dispositivos personales en un rango muy limitado (metros).
+####La clasificación geográfica de redes\: PAN < LAN < MAN < WAN según el área que cubren.
+}
+
+::T1P03_Topologia_Fisica_vs_Logica::¿Cuál es la principal diferencia entre topología física y topología lógica?{
+=La física se refiere al cableado real, la lógica al flujo de datos#¡Correcto! La topología física es la conexión física real, mientras que la lógica es cómo fluyen los datos.
+~No hay diferencia, son términos sinónimos#Incorrecto. Son conceptos diferentes aunque relacionados.
+~La física es para redes inalámbricas, la lógica para cableadas#Incorrecto. Ambas aplican tanto a redes cableadas como inalámbricas.
+~La física es más importante que la lógica#Incorrecto. Ambas son importantes y complementarias para el diseño de redes.
+####Un ejemplo\: Ethernet puede tener topología física de estrella pero topología lógica de bus.
+}
+
+::T1P04_Ventajas_Topologia_Estrella::¿Cuál es la principal ventaja de la topología en estrella?{
+=Fácil detección y aislamiento de fallas#¡Correcto! En estrella, si un nodo falla, no afecta al resto de la red.
+~Menor cantidad de cable requerido#Incorrecto. La topología en estrella requiere más cable que bus o anillo.
+~Mayor velocidad de transmisión#Incorrecto. La velocidad depende de la tecnología, no de la topología.
+~Menor costo de implementación#Incorrecto. Generalmente es más costosa por requerir más cable y un concentrador central.
+####La topología estrella centraliza la conectividad, facilitando el mantenimiento y diagnóstico.
+}
+
+::T1P05_Desventaja_Topologia_Bus::¿Cuál es la principal desventaja de la topología de bus?{
+=Una falla en el cable principal afecta toda la red#¡Correcto! El bus es un punto único de falla que puede paralizar toda la red.
+~Requiere más cable que otras topologías#Incorrecto. El bus requiere menos cable que la topología estrella.
+~Es incompatible con Ethernet#Incorrecto. Los primeros estándares Ethernet usaban topología de bus.
+~No soporta más de 10 dispositivos#Incorrecto. El límite de dispositivos depende del estándar específico, no de la topología.
+####En topología bus, todos los dispositivos comparten el mismo medio de transmisión.
+}
+
+::T1P06_Caracteristicas_Topologia_Anillo::En una topología de anillo, ¿cómo viajan los datos?{
+=En una dirección específica de nodo en nodo#¡Correcto! En anillo, los datos viajan en una dirección predeterminada hasta llegar al destino.
+~Simultáneamente a todos los nodos#Incorrecto. Esto sería más característico de una topología de bus.
+~Solo entre nodos adyacentes#Incorrecto. Los datos pueden viajar por todo el anillo hasta su destino.
+~De forma aleatoria entre nodos#Incorrecto. El flujo en anillo sigue un patrón ordenado y predecible.
+####Tecnologías como Token Ring implementaban esta topología con paso de testigo.
+}
+
+::T1P07_Evolucion_Redes::¿Qué característica NO era común en las primeras redes de computadoras?{
+=Conexión a Internet#¡Correcto! Internet como la conocemos se desarrolló posteriormente a las primeras redes locales.
+~Compartir impresoras#Incorrecto. Compartir impresoras fue uno de los primeros usos de las redes.
+~Transferir archivos#Incorrecto. La transferencia de archivos fue una aplicación fundamental desde el inicio.
+~Uso de protocolos propietarios#Incorrecto. Las primeras redes usaban principalmente protocolos propietarios.
+####Las primeras redes eran principalmente locales y aisladas, antes de la era de Internet.
+}
+
+::T1P08_Conceptos_Basicos_Red::¿Qué define mejor el concepto de "red de computadoras"?{
+=Interconexión de dispositivos para compartir recursos e información#¡Correcto! Una red permite compartir recursos físicos, datos y servicios entre dispositivos.
+~Conjunto de computadoras del mismo fabricante#Incorrecto. Las redes pueden incluir dispositivos de diferentes fabricantes.
+~Sistemas que solo funcionan con cables#Incorrecto. Las redes modernas incluyen tecnologías inalámbricas.
+~Dispositivos que usan el mismo sistema operativo#Incorrecto. Las redes son independientes del sistema operativo específico.
+####Una red puede incluir computadoras, servidores, impresoras, smartphones y otros dispositivos inteligentes.
+}
+
+::T1P09_Clasificacion_Propiedad::Según su propiedad o administración, ¿cómo se clasifican las redes?{
+~Públicas, privadas y gubernamentales#Incorrecto. Esta no es la clasificación estándar por propiedad.
+~Comerciales y educativas únicamente#Incorrecto. Esta clasificación es demasiado limitada.
+=Públicas, privadas, comunitarias e híbridas#¡Correcto! Las redes se pueden clasificar según quien las posee y administra.
+~Solo privadas y públicas#Incorrecto. Existen más categorías en la clasificación por propiedad.
+####Las redes comunitarias son administradas por comunidades locales, mientras que las híbridas combinan elementos públicos y privados.
+}
+
+::T1P10_Aplicaciones_Redes::¿Cuál de las siguientes NO es una aplicación tradicional de las redes de computadoras?{
+~Correo electrónico#Incorrecto. El email es una de las aplicaciones más antiguas de las redes.
+~Transferencia de archivos#Incorrecto. FTP fue una de las primeras aplicaciones de red.
+~Acceso remoto#Incorrecto. El acceso remoto (telnet, ssh) es una aplicación fundamental de redes.
+=Inteligencia artificial#¡Correcto! La IA es una aplicación moderna que aprovecha las redes, pero no es una aplicación tradicional de red.
+####Las aplicaciones tradicionales incluyen\: email, FTP, telnet, compartir impresoras y archivos.
+}
+
+// ==============================================
+// TEMA 2: NORMAS Y ESTÁNDARES DE REDES DE DATOS
+// Competencia previa: Modelos OSI, TCP/IP, IEEE 802
+// ==============================================
+
+$CATEGORY: Diagnostico/Tema2_Normas_Estandares
+
+::T2P01_Capas_Modelo_OSI::¿Cuántas capas tiene el modelo de referencia OSI?{
+~5 capas#Incorrecto. El modelo OSI tiene más capas que el modelo TCP/IP.
+~6 capas#Incorrecto. Estás cerca, pero el modelo OSI tiene una capa más.
+=7 capas#¡Correcto! El modelo OSI tiene 7 capas\: Física, Enlace, Red, Transporte, Sesión, Presentación y Aplicación.
+~8 capas#Incorrecto. El modelo OSI no tiene 8 capas.
+####Física, Enlace, Red, Transporte, Sesión, Presentación, Aplicación.
+}
+
+::T2P02_Capa_Fisica_OSI::¿Cuál es la función principal de la capa física en el modelo OSI?{
+=Transmisión de bits por el medio físico#¡Correcto! La capa física se encarga de la transmisión eléctrica, óptica o de radio de los bits.
+~Enrutamiento de paquetes#Incorrecto. El enrutamiento es función de la capa de red (capa 3).
+~Control de flujo de datos#Incorrecto. El control de flujo es función de las capas superiores como transporte.
+~Cifrado de información#Incorrecto. El cifrado típicamente ocurre en la capa de presentación o aplicación.
+####La capa física define voltajes, frecuencias, conectores y medios de transmisión.
+}
+
+::T2P03_Modelo_TCP_IP_Capas::¿Cuántas capas tiene el modelo TCP/IP original?{
+=4 capas#¡Correcto! TCP/IP tiene 4 capas\: Acceso a Red, Internet, Transporte y Aplicación.
+~3 capas#Incorrecto. El modelo TCP/IP tiene más de 3 capas.
+~5 capas#Incorrecto. Confundes con variaciones modernas del modelo.
+~7 capas#Incorrecto. 7 capas corresponde al modelo OSI, no TCP/IP.
+####Las 4 capas TCP/IP son\: Network Access, Internet, Transport, Application.
+}
+
+::T2P04_Protocolo_Capa_Red::¿Cuál es el protocolo principal de la capa de red en el modelo TCP/IP?{
+~TCP#Incorrecto. TCP es un protocolo de la capa de transporte.
+=IP (Internet Protocol)#¡Correcto! IP es el protocolo fundamental de la capa de red para el enrutamiento.
+~HTTP#Incorrecto. HTTP es un protocolo de la capa de aplicación.
+~Ethernet#Incorrecto. Ethernet opera en las capas física y de enlace de datos.
+####IP proporciona direccionamiento lógico y enrutamiento de paquetes entre redes.
+}
+
+::T2P05_IEEE_802_3::¿Qué tecnología de red está definida por el estándar IEEE 802.3?{
+=Ethernet#¡Correcto! IEEE 802.3 define los estándares para Ethernet en todas sus variantes.
+~Wi-Fi#Incorrecto. Wi-Fi está definido por IEEE 802.11.
+~Token Ring#Incorrecto. Token Ring estaba definido por IEEE 802.5.
+~Bluetooth#Incorrecto. Bluetooth tiene sus propios estándares, no es IEEE 802.3.
+####IEEE 802.3 incluye desde 10BASE-T hasta 400 Gigabit Ethernet y más.
+}
+
+::T2P06_IEEE_802_11::El estándar IEEE 802.11 define principalmente\:{
+~Redes de fibra óptica#Incorrecto. La fibra óptica puede usarse en varios estándares, no es específico de 802.11.
+=Redes inalámbricas Wi-Fi#¡Correcto! IEEE 802.11 es la familia de estándares para redes inalámbricas.
+~Redes de área amplia#Incorrecto. Las WAN usan diversos estándares, no específicamente 802.11.
+~Redes telefónicas#Incorrecto. Las redes telefónicas tienen sus propios estándares.
+####IEEE 802.11 incluye variantes como 802.11a/b/g/n/ac/ax con diferentes velocidades y frecuencias.
+}
+
+::T2P07_Encapsulacion_Datos::¿Cómo se llama el proceso de agregar headers de cada capa al enviar datos?{
+=Encapsulación#¡Correcto! La encapsulación agrega información de control de cada capa a los datos.
+~Desencapsulación#Incorrecto. La desencapsulación es el proceso inverso al recibir datos.
+~Fragmentación#Incorrecto. La fragmentación divide paquetes grandes en fragmentos más pequeños.
+~Multiplexación#Incorrecto. La multiplexación permite compartir un canal entre múltiples comunicaciones.
+####Cada capa agrega su header\: Datos → Segmento → Paquete → Trama → Bits.
+}
+
+::T2P08_PDU_Capa_Enlace::¿Cómo se llama la PDU (Protocol Data Unit) en la capa de enlace de datos?{
+~Paquete#Incorrecto. Paquete es la PDU de la capa de red.
+=Trama o Frame#¡Correcto! En la capa de enlace, los datos se organizan en tramas o frames.
+~Segmento#Incorrecto. Segmento es la PDU de la capa de transporte.
+~Bit#Incorrecto. Bit es la PDU de la capa física.
+####Cada capa tiene su PDU\: Aplicación (Datos), Transporte (Segmento), Red (Paquete), Enlace (Trama), Física (Bit).
+}
+
+::T2P09_Funcion_Capa_Transporte::¿Cuál es una función principal de la capa de transporte?{
+~Enrutamiento entre redes#Incorrecto. El enrutamiento es función de la capa de red.
+=Control de flujo y corrección de errores#¡Correcto! La capa de transporte garantiza la entrega confiable y el control de flujo.
+~Conversión de formatos de datos#Incorrecto. La conversión de formatos es función de la capa de presentación.
+~Acceso al medio físico#Incorrecto. El acceso al medio es función de la capa de enlace.
+####TCP proporciona comunicación confiable, mientras UDP ofrece comunicación rápida pero no confiable.
+}
+
+::T2P10_Diferencia_OSI_TCP::¿Cuál es una diferencia clave entre los modelos OSI y TCP/IP?{
+~OSI tiene menos capas que TCP/IP#Incorrecto. OSI tiene más capas (7) que TCP/IP (4).
+~TCP/IP es solo teórico#Incorrecto. TCP/IP es el modelo práctico usado en Internet.
+=OSI es un modelo de referencia, TCP/IP es un modelo práctico#¡Correcto! OSI es teórico/referencial, TCP/IP es la implementación real de Internet.
+~No hay diferencias significativas#Incorrecto. Hay diferencias importantes en estructura y aplicación.
+####OSI ayuda a entender las funciones de red, mientras TCP/IP define los protocolos reales de Internet.
+}
+
+// ==============================================
+// TEMA 3: DISPOSITIVOS DE RED
+// Competencia previa: Dispositivos por capa OSI
+// ==============================================
+
+$CATEGORY: Diagnostico/Tema3_Dispositivos_Red
+
+::T3P01_Dispositivo_Capa_Fisica::¿Cuál de los siguientes es un dispositivo que opera principalmente en la capa física?{
+=Hub (Concentrador)#¡Correcto! Un hub opera en la capa física, simplemente repite las señales eléctricas.
+~Switch#Incorrecto. Un switch opera en la capa de enlace de datos (capa 2).
+~Router#Incorrecto. Un router opera en la capa de red (capa 3).
+~Gateway#Incorrecto. Un gateway típicamente opera en capas superiores.
+####Los hubs son dispositivos obsoletos que han sido reemplazados por switches debido a sus limitaciones.
+}
+
+::T3P02_Funcion_Switch::¿Cuál es la función principal de un switch en una red?{
+~Conectar diferentes redes#Incorrecto. Conectar diferentes redes es función de un router.
+=Crear dominios de colisión separados para cada puerto#¡Correcto! Cada puerto del switch es un dominio de colisión independiente.
+~Amplificar señales eléctricas#Incorrecto. Amplificar señales es función de repetidores o hubs.
+~Asignar direcciones IP#Incorrecto. Asignar IPs es función de un servidor DHCP.
+####Los switches aprenden direcciones MAC y envían tramas solo al puerto correcto, mejorando la eficiencia.
+}
+
+::T3P03_Diferencia_Hub_Switch::¿Cuál es la principal diferencia entre un hub y un switch?{
+~El hub es más rápido#Incorrecto. Los switches son más eficientes que los hubs.
+~No hay diferencia funcional#Incorrecto. Hay diferencias importantes en su funcionamiento.
+=El hub envía datos a todos los puertos, el switch solo al puerto destino#¡Correcto! Esta es la diferencia fundamental entre ambos dispositivos.
+~El switch solo funciona con fibra óptica#Incorrecto. Los switches funcionan con diversos medios de transmisión.
+####Los hubs crean un solo dominio de colisión, mientras los switches crean un dominio por puerto.
+}
+
+::T3P04_Funcion_Router::¿Cuál es la función principal de un router?{
+=Conectar diferentes redes y determinar la mejor ruta#¡Correcto! Los routers conectan redes diferentes y determinan rutas óptimas.
+~Amplificar señales de red#Incorrecto. Los routers no son amplificadores de señal.
+~Convertir protocolos#Incorrecto. Aunque pueden hacerlo, no es su función principal.
+~Almacenar páginas web#Incorrecto. Almacenar páginas web es función de un servidor web.
+####Los routers usan tablas de enrutamiento para determinar el mejor camino para los paquetes.
+}
+
+::T3P05_Direcciones_MAC_IP::¿Qué dispositivo trabaja principalmente con direcciones MAC?{
+=Switch#¡Correcto! Los switches aprenden y usan direcciones MAC para enviar tramas.
+~Router#Incorrecto. Los routers trabajan principalmente con direcciones IP.
+~Hub#Incorrecto. Los hubs no procesan direcciones, solo repiten señales.
+~Modem#Incorrecto. Los modems convierten señales, no procesan direcciones MAC.
+####Las direcciones MAC son únicas por tarjeta de red y se usan en la capa de enlace.
+}
+
+::T3P06_Dispositivo_Capa_Red::¿Qué dispositivo opera principalmente en la capa de red (capa 3) del modelo OSI?{
+~Switch#Incorrecto. Los switches operan en la capa de enlace (capa 2).
+=Router#¡Correcto! Los routers operan en la capa de red usando direcciones IP.
+~Hub#Incorrecto. Los hubs operan en la capa física (capa 1).
+~Access Point#Incorrecto. Los APs típicamente operan en las capas 1 y 2.
+####Los routers toman decisiones basadas en direcciones IP de red y subred.
+}
+
+::T3P07_Bridge_Funcion::¿Cuál era la función principal de un bridge (puente)?{
+~Conectar redes de diferentes protocolos#Incorrecto. Eso sería función de un gateway.
+=Conectar dos segmentos de red del mismo tipo#¡Correcto! Los bridges conectaban segmentos de la misma red para extender el dominio.
+~Convertir señales analógicas a digitales#Incorrecto. Eso es función de un modem.
+~Proporcionar acceso a Internet#Incorrecto. El acceso a Internet requiere routers y ISPs.
+####Los bridges han sido prácticamente reemplazados por switches que ofrecen múltiples puertos.
+}
+
+::T3P08_Access_Point::¿Cuál es la función de un Access Point (AP)?{
+~Enrutar paquetes entre redes#Incorrecto. El enrutamiento es función de routers.
+=Proporcionar acceso inalámbrico a una red cableada#¡Correcto! Los APs conectan dispositivos inalámbricos a redes cableadas.
+~Convertir protocolos de red#Incorrecto. La conversión de protocolos es función de gateways.
+~Almacenar datos de usuarios#Incorrecto. El almacenamiento es función de servidores.
+####Los APs actúan como bridges entre el mundo inalámbrico (Wi-Fi) y las redes cableadas.
+}
+
+::T3P09_Gateway_Funcion::¿Cuándo se requiere un gateway en una red?{
+~Para conectar dispositivos del mismo fabricante#Incorrecto. Los dispositivos del mismo fabricante generalmente son compatibles.
+~Solo para redes inalámbricas#Incorrecto. Los gateways se usan en diversos tipos de redes.
+=Para conectar redes con diferentes protocolos o arquitecturas#¡Correcto! Los gateways traducen entre protocolos diferentes.
+~Para amplificar señales débiles#Incorrecto. La amplificación es función de repetidores.
+####Los gateways pueden operar en cualquier capa del modelo OSI, según los protocolos que traduzcan.
+}
+
+::T3P10_Repetidor_Funcion::¿Cuál es la función de un repetidor en una red?{
+~Filtrar tráfico no deseado#Incorrecto. El filtrado es función de firewalls o switches.
+~Almacenar y reenviar paquetes#Incorrecto. Store-and-forward es función de switches.
+=Amplificar y regenerar señales débiles#¡Correcto! Los repetidores extienden el alcance de las señales de red.
+~Asignar direcciones de red#Incorrecto. La asignación de direcciones es función de servidores DHCP.
+####Los repetidores permiten extender la distancia máxima de una red regenerando las señales.
+}
+
+// ==============================================
+// TEMA 4: CABLEADO ESTRUCTURADO
+// Competencia previa: Normas, componentes, especificaciones
+// ==============================================
+
+$CATEGORY: Diagnostico/Tema4_Cableado_Estructurado
+
+::T4P01_Estandar_Cableado::¿Cuál es el estándar principal para cableado estructurado?{
+~IEEE 802.3#Incorrecto. IEEE 802.3 define Ethernet, no el cableado estructurado.
+=TIA/EIA-568#¡Correcto! TIA/EIA-568 es el estándar principal para cableado estructurado en edificios comerciales.
+~ISO 9001#Incorrecto. ISO 9001 es un estándar de calidad, no de cableado.
+~IEEE 802.11#Incorrecto. IEEE 802.11 define redes inalámbricas.
+####TIA/EIA-568 define pinouts, distancias, componentes y testing para cableado estructurado.
+}
+
+::T4P02_Categoria_Cable_UTP::¿Cuál es la categoría mínima de cable UTP recomendada para redes Gigabit Ethernet?{
+~Categoría 3#Incorrecto. Cat 3 es insuficiente para Gigabit Ethernet.
+~Categoría 4#Incorrecto. Cat 4 no es adecuada para aplicaciones modernas.
+=Categoría 5e#¡Correcto! Cat 5e es la categoría mínima para soportar 1000BASE-T (Gigabit Ethernet).
+~Categoría 7#Incorrecto. Cat 7 es superior pero no es el mínimo requerido.
+####Cat 5e soporta hasta 1 Gbps a 100 metros, mientras Cat 6 puede soportar 10 Gbps a distancias menores.
+}
+
+::T4P03_Distancia_Maxima_UTP::¿Cuál es la distancia máxima recomendada para cable UTP en cableado horizontal?{
+~50 metros#Incorrecto. 50m es menor que el límite estándar.
+~75 metros#Incorrecto. 75m sigue siendo menor que el estándar.
+=90 metros#¡Correcto! 90 metros es la distancia máxima para cableado horizontal según TIA/EIA-568.
+~150 metros#Incorrecto. 150m excede las especificaciones estándar para UTP.
+####Los 90m permiten 10m adicionales para patch cords (5m en cada extremo) totalizando 100m máximo.
+}
+
+::T4P04_Conector_RJ45::¿Qué tipo de conector se usa comúnmente con cable UTP?{
+~BNC#Incorrecto. BNC se usaba con cable coaxial en redes antiguas.
+=RJ-45#¡Correcto! RJ-45 es el conector estándar para cable UTP en redes Ethernet.
+~ST#Incorrecto. ST es un conector para fibra óptica.
+~USB#Incorrecto. USB no se usa para conexiones de red estructurada.
+####RJ-45 tiene 8 pines que corresponden a los 4 pares de cables en UTP.
+}
+
+::T4P05_Pinout_T568A_T568B::¿Cuál es la diferencia principal entre T568A y T568B?{
+~T568A es para fibra, T568B para cobre#Incorrecto. Ambos son estándares para cable UTP.
+~T568A es más rápido#Incorrecto. Ambos estándares tienen el mismo rendimiento.
+=El orden de los pares de cables en los pines#¡Correcto! La diferencia está en qué pares van en qué pines del conector.
+~T568B es obsoleto#Incorrecto. Ambos estándares siguen siendo válidos.
+####En T568A\: pines 1-2 son verde, 3-6 son naranja. En T568B\: pines 1-2 son naranja, 3-6 son verde.
+}
+
+::T4P06_Cable_Directo_Cruzado::¿Cuándo se usa un cable cruzado (crossover)?{
+~Para conectar computadora a switch#Incorrecto. Esto requiere cable directo (straight-through).
+=Para conectar directamente dos computadoras#¡Correcto! El cable cruzado conecta dispositivos similares sin switch intermedio.
+~Para todas las conexiones de red#Incorrecto. El cable cruzado tiene usos específicos.
+~Solo para conexiones de fibra óptica#Incorrecto. Los cables cruzados son para UTP, no fibra.
+####Los switches modernos tienen Auto-MDI/MDIX que detecta automáticamente el tipo de cable necesario.
+}
+
+::T4P07_Rack_Funciones::¿Cuál es el propósito principal de un rack en cableado estructurado?{
+~Almacenar computadoras personales#Incorrecto. Los racks no están diseñados para PCs de usuario.
+=Organizar y centralizar equipos de red y paneles de conexión#¡Correcto! Los racks organizan switches, paneles, servidores y otros equipos.
+~Proporcionar energía eléctrica#Incorrecto. Aunque pueden tener PDUs, no es su propósito principal.
+~Enfriar los equipos#Incorrecto. El enfriamiento es secundario, no la función principal.
+####Los racks estándar tienen 19 pulgadas de ancho y altura medida en "U" (units) de 1.75 pulgadas.
+}
+
+::T4P08_Panel_Parcheo::¿Qué función cumple un patch panel?{
+~Amplificar señales de red#Incorrecto. Los patch panels son pasivos, no amplifican.
+~Convertir protocolos#Incorrecto. La conversión de protocolos requiere dispositivos activos.
+=Proporcionar puntos de conexión organizados para el cableado#¡Correcto! Los patch panels organizan y centralizan las conexiones de cable.
+~Filtrar interferencias#Incorrecto. Aunque pueden ayudar con organización, no filtran activamente.
+####Los patch panels permiten flexibilidad para cambios y facilitan el mantenimiento del cableado.
+}
+
+::T4P09_Fibra_Optica_Ventaja::¿Cuál es una ventaja principal de la fibra óptica sobre el cable UTP?{
+~Menor costo de instalación#Incorrecto. La fibra óptica es generalmente más cara.
+~Más fácil de instalar#Incorrecto. La fibra requiere técnicas de instalación más especializadas.
+=Mayor distancia de transmisión#¡Correcto! La fibra puede transmitir a kilómetros vs. 100m del UTP.
+~Compatibilidad universal#Incorrecto. La fibra requiere equipos específicos para fibra.
+####La fibra óptica también ofrece mayor ancho de banda e inmunidad a interferencias electromagnéticas.
+}
+
+::T4P10_Certificacion_Cableado::¿Por qué es importante certificar el cableado estructurado?{
+~Es solo un requisito legal#Incorrecto. Aunque puede haber regulaciones, hay razones técnicas importantes.
+~Para aumentar el costo del proyecto#Incorrecto. La certificación agrega valor, no solo costo.
+=Para garantizar que cumple especificaciones de rendimiento#¡Correcto! La certificación verifica que el cableado soportará las aplicaciones previstas.
+~Solo es necesario para fibra óptica#Incorrecto. Tanto UTP como fibra deben certificarse.
+####Las pruebas incluyen atenuación, diafonía, impedancia y otros parámetros críticos para el rendimiento.
+}
+
+// ==============================================
+// TEMA 5: PLANIFICACIÓN Y DISEÑO DE RED LAN
+// Competencia previa: Metodología, análisis, diseño
+// ==============================================
+
+$CATEGORY: Diagnostico/Tema5_Planificacion_Diseno
+
+::T5P01_Memoria_Tecnica::¿Qué debe incluir una memoria técnica de diseño de red?{
+~Solo el costo total del proyecto#Incorrecto. La memoria técnica incluye mucho más que costos.
+~Únicamente los diagramas de red#Incorrecto. Los diagramas son parte importante pero no lo único.
+=Análisis de requisitos, diseño lógico y físico, y especificaciones#¡Correcto! Una memoria técnica completa incluye análisis, diseño y especificaciones detalladas.
+~Solo la lista de equipos#Incorrecto. La lista de equipos es una parte, no el documento completo.
+####Una memoria técnica profesional incluye\: objetivos, análisis de necesidades, diseño lógico, físico, especificaciones, costos y cronograma.
+}
+
+::T5P02_Analisis_Necesidades::¿Cuál es el primer paso en el diseño de una red LAN?{
+~Comprar los equipos#Incorrecto. La compra viene después del diseño completo.
+~Instalar el cableado#Incorrecto. La instalación es una fase posterior.
+=Análisis de necesidades y requerimientos#¡Correcto! Entender qué necesita la organización es fundamental antes de diseñar.
+~Configurar los switches#Incorrecto. La configuración viene después del diseño e instalación.
+####El análisis debe incluir\: número de usuarios, aplicaciones, tráfico, crecimiento futuro y presupuesto.
+}
+
+::T5P03_Diseno_Logico::¿Qué elementos incluye el diseño lógico de una red?{
+~Solo la ubicación física de equipos#Incorrecto. La ubicación física es parte del diseño físico.
+=Topología, direccionamiento IP y VLANs#¡Correcto! El diseño lógico define cómo los datos fluirán por la red.
+~Únicamente las marcas de equipos#Incorrecto. Las marcas son consideraciones del diseño físico.
+~Solo el presupuesto#Incorrecto. El presupuesto es importante pero no es diseño lógico.
+####El diseño lógico es independiente del hardware específico y se enfoca en la funcionalidad.
+}
+
+::T5P04_Direccionamiento_IP::En el diseño de red, ¿por qué es importante planificar el direccionamiento IP?{
+~Solo para cumplir regulaciones#Incorrecto. Hay razones técnicas más importantes que regulaciones.
+~Para aumentar la velocidad#Incorrecto. El direccionamiento no afecta directamente la velocidad física.
+=Para organizar la red y facilitar el enrutamiento#¡Correcto! Un buen esquema de direccionamiento facilita administración y enrutamiento.
+~Es opcional en redes pequeñas#Incorrecto. Siempre es importante planificar el direccionamiento.
+####Un esquema lógico de direccionamiento facilita troubleshooting, seguridad y crecimiento futuro.
+}
+
+::T5P05_Diseno_Fisico_Elementos::¿Qué elementos incluye el diseño físico de una red?{
+=Ubicación de equipos, cableado y distribución de energía#¡Correcto! El diseño físico especifica dónde y cómo se instala todo físicamente.
+~Solo las direcciones IP#Incorrecto. Las IPs son parte del diseño lógico.
+~Únicamente los protocolos a usar#Incorrecto. Los protocolos son consideraciones lógicas.
+~Solo las políticas de seguridad#Incorrecto. Las políticas son configuraciones, no diseño físico.
+####El diseño físico debe considerar\: espacios, ventilación, energía, seguridad física y accesibilidad.
+}
+
+::T5P06_Seleccion_Equipos::Al seleccionar equipos para una red LAN, ¿qué factor es MÁS importante?{
+~La marca más cara#Incorrecto. El precio no garantiza que sea la mejor opción para cada caso.
+~El color de los equipos#Incorrecto. El color es irrelevante para el funcionamiento.
+=Los requerimientos técnicos y presupuesto#¡Correcto! Los equipos deben cumplir necesidades técnicas dentro del presupuesto disponible.
+~La disponibilidad inmediata#Incorrecto. Aunque importante, no es el factor más crítico.
+####Considerar\: puertos necesarios, velocidades, características (VLANs, QoS), escalabilidad y soporte.
+}
+
+::T5P07_Pruebas_Conectividad::¿Cuál es el propósito de las pruebas de conectividad en una red nueva?{
+~Solo para generar documentación#Incorrecto. Las pruebas tienen propósitos técnicos importantes.
+~Para justificar el costo#Incorrecto. Las pruebas no están relacionadas con justificación de costos.
+=Verificar que la red funciona según especificaciones#¡Correcto! Las pruebas confirman que todo funciona como se diseñó.
+~Son opcionales en redes pequeñas#Incorrecto. Todas las redes deben probarse antes de entrar en producción.
+####Las pruebas incluyen\: conectividad física, ping, throughput, aplicaciones y redundancia.
+}
+
+::T5P08_Documentacion_Red::¿Por qué es importante documentar una red LAN?{
+~Solo para cumplir auditorías#Incorrecto. Hay razones operativas más importantes.
+~Para aumentar el costo del proyecto#Incorrecto. La documentación agrega valor operativo.
+=Para facilitar mantenimiento y troubleshooting#¡Correcto! La documentación es esencial para administración y resolución de problemas.
+~Es innecesaria en redes simples#Incorrecto. Todas las redes se benefician de documentación adecuada.
+####La documentación debe incluir\: diagramas, configuraciones, direccionamiento, políticas y procedimientos.
+}
+
+::T5P09_Escalabilidad_Red::Al diseñar una red, ¿por qué considerar la escalabilidad?{
+~Para usar todos los puertos disponibles#Incorrecto. No es necesario usar todos los puertos inmediatamente.
+~Solo si el presupuesto es ilimitado#Incorrecto. La escalabilidad debe considerarse independientemente del presupuesto.
+=Para permitir crecimiento futuro sin rediseño completo#¡Correcto! Una red escalable puede crecer sin cambios mayores en la infraestructura.
+~Es solo para redes grandes#Incorrecto. Todas las redes pueden necesitar crecer.
+####Considerar\: puertos adicionales, capacidad de switches, ancho de banda y estructura de direccionamiento.
+}
+
+::T5P10_Liberacion_Red::¿Qué significa "liberar" una red después de la instalación?{
+~Desconectar todos los cables#Incorrecto. Liberar no significa desconectar.
+~Eliminar toda la configuración#Incorrecto. Esto destruiría el trabajo realizado.
+=Entregarla en producción después de pruebas exitosas#¡Correcto! Liberar significa poner la red en funcionamiento operativo.
+~Vender los equipos#Incorrecto. Los equipos son para uso de la organización.
+####La liberación incluye\: pruebas finales, documentación entregada, capacitación de usuarios y soporte inicial.
+}

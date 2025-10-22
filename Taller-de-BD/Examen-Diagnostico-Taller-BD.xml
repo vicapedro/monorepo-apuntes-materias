@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- EXAMEN DIAGNÓSTICO - TALLER DE BASE DE DATOS -->
+<!-- Competencias previas: Fundamentos de BD - Diseño, Modelado ER, Álgebra Relacional, Normalización -->
+<!-- 20 reactivos - Diferentes tipos de pregunta -->
+
+<!-- PREGUNTA 1: OPCIÓN MÚLTIPLE - Conceptos básicos de BD -->
+<question type="multichoice">
+    <name><text>Pregunta BD001</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la principal ventaja de utilizar un Sistema de Gestión de Bases de Datos (SGBD) comparado con el almacenamiento en archivos tradicionales?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los SGBD ofrecen múltiples ventajas sobre archivos tradicionales, siendo la integridad y consistencia de datos una de las principales.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Garantiza la integridad y consistencia de los datos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Los SGBD aseguran la integridad referencial y consistencia de datos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Ocupa menos espacio en disco]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los SGBD pueden requerir más espacio debido a metadatos y estructuras adicionales.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Es más rápido para operaciones simples]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Para operaciones simples, los archivos pueden ser más rápidos, pero los SGBD ofrecen optimización para operaciones complejas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No requiere conocimientos técnicos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los SGBD requieren conocimientos especializados para su administración.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 2: VERDADERO/FALSO - Modelo Entidad-Relación -->
+<question type="truefalse">
+    <name><text>Pregunta BD002</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En el modelo Entidad-Relación de Chen, una relación puede tener atributos propios además de conectar entidades.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>En el modelo ER de Chen, las relaciones pueden tener atributos que describen características específicas de la asociación entre entidades.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Las relaciones en el modelo ER pueden tener atributos propios que describen la asociación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las relaciones sí pueden tener atributos descriptivos de la asociación entre entidades.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 3: OPCIÓN MÚLTIPLE - Cardinalidad en ER -->
+<question type="multichoice">
+    <name><text>Pregunta BD003</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En un diagrama ER, si una PERSONA puede tener múltiples TELÉFONOS pero cada TELÉFONO pertenece a una sola PERSONA, ¿cuál es la cardinalidad de esta relación?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La cardinalidad describe cuántas instancias de una entidad pueden relacionarse con instancias de otra entidad.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Uno a muchos (1:N)]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Una persona puede tener múltiples teléfonos, pero cada teléfono pertenece a una sola persona.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Muchos a muchos (N:M)]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. No es N:M porque cada teléfono pertenece a una sola persona.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Uno a uno (1:1)]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. No es 1:1 porque una persona puede tener múltiples teléfonos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Muchos a uno (N:1)]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La notación correcta para esta relación es 1:N desde PERSONA hacia TELÉFONO.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 4: DRAG AND DROP - Elementos del modelo ER -->
+<question type="ddwtos">
+    <name><text>Pregunta BD004</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Arrastra los elementos del modelo ER de Chen a su representación gráfica correspondiente:</p>
+        <p>[[1]] - Se representa con rectángulos</p>
+        <p>[[2]] - Se representa con rombos</p>
+        <p>[[3]] - Se representa con óvalos</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>En el modelo ER de Chen cada elemento tiene una representación gráfica específica.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <dragbox><text>Entidades</text><group>1</group></dragbox>
+    <dragbox><text>Relaciones</text><group>1</group></dragbox>
+    <dragbox><text>Atributos</text><group>1</group></dragbox>
+    <dragbox><text>Restricciones</text><group>1</group></dragbox>
+</question>
+
+<!-- PREGUNTA 5: OPCIÓN MÚLTIPLE - Atributos en ER -->
+<question type="multichoice">
+    <name><text>Pregunta BD005</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la característica principal de un atributo clave (key) en una entidad?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los atributos clave son fundamentales para identificar de manera única cada instancia de una entidad.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Identifica de manera única cada instancia de la entidad]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La clave primaria identifica unívocamente cada tupla de la entidad.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Puede tener valores nulos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los atributos clave no pueden ser nulos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Puede repetirse en diferentes instancias]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los valores de clave deben ser únicos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Es opcional en toda entidad]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Toda entidad debe tener al menos un atributo clave.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 6: VERDADERO/FALSO - Normalización -->
+<question type="truefalse">
+    <name><text>Pregunta BD006</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>El objetivo principal de la normalización es eliminar la redundancia de datos y las anomalías de actualización.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La normalización busca organizar los datos de manera eficiente eliminando redundancias innecesarias.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La normalización elimina redundancias y previene anomalías de inserción, actualización y eliminación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Ese es precisamente el objetivo principal de la normalización.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 7: OPCIÓN MÚLTIPLE - Primera Forma Normal -->
+<question type="multichoice">
+    <name><text>Pregunta BD007</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Para que una tabla esté en Primera Forma Normal (1FN), debe cumplir con:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La Primera Forma Normal establece los requisitos básicos para la estructura de una tabla relacional.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Todos los atributos deben ser atómicos (indivisibles)]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! En 1FN no se permiten valores multivaluados o compuestos en los atributos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No debe tener dependencias parciales]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La eliminación de dependencias parciales corresponde a la Segunda Forma Normal.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No debe tener dependencias transitivas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La eliminación de dependencias transitivas corresponde a la Tercera Forma Normal.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Debe tener una clave candidata múltiple]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esto no es un requisito de la Primera Forma Normal.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 8: OPCIÓN MÚLTIPLE MÚLTIPLES RESPUESTAS - Operaciones Álgebra Relacional -->
+<question type="multichoice">
+    <name><text>Pregunta BD008</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles de las siguientes son operaciones básicas del álgebra relacional? (Seleccione todas las correctas)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>El álgebra relacional tiene operaciones básicas y derivadas para manipular relaciones.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Selección (σ)]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! La selección es una operación básica que filtra tuplas.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Proyección (π)]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! La proyección selecciona columnas específicas.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Unión (∪)]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! La unión combina tuplas de dos relaciones compatibles.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Producto cartesiano (×)]]></text>
+        <feedback format="html"><text><![CDATA[Correcto! El producto cartesiano es una operación básica del álgebra relacional.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[Ordenamiento (ORDER BY)]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El ordenamiento no es una operación básica del álgebra relacional puro.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 9: VERDADERO/FALSO - Dependencias funcionales -->
+<question type="truefalse">
+    <name><text>Pregunta BD009</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Una dependencia funcional A → B significa que para cada valor de A existe exactamente un valor de B.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Las dependencias funcionales son fundamentales para entender la normalización y el diseño de bases de datos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! En una dependencia funcional, A determina funcionalmente a B.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esa es precisamente la definición de dependencia funcional.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 10: OPCIÓN MÚLTIPLE - Entidades débiles -->
+<question type="multichoice">
+    <name><text>Pregunta BD010</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la característica principal de una entidad débil en el modelo ER?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Las entidades débiles dependen de otras entidades para su identificación única.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[No puede ser identificada únicamente por sus propios atributos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Las entidades débiles necesitan la clave de otra entidad para ser identificadas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No puede tener relaciones con otras entidades]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las entidades débiles sí pueden tener relaciones, de hecho dependen de ellas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No puede tener atributos propios]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Las entidades débiles sí pueden tener atributos propios.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Siempre tiene cardinalidad muchos a muchos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La cardinalidad no define si una entidad es débil.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 11: DRAG AND DROP - Formas normales -->
+<question type="ddwtos">
+    <name><text>Pregunta BD011</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada forma normal con su característica principal:</p>
+        <p>[[1]] - Elimina grupos repetitivos y atributos multivaluados</p>
+        <p>[[2]] - Elimina dependencias parciales de la clave primaria</p>
+        <p>[[3]] - Elimina dependencias transitivas</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Cada forma normal tiene objetivos específicos en la eliminación de redundancias.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <dragbox><text>Primera Forma Normal (1FN)</text><group>1</group></dragbox>
+    <dragbox><text>Segunda Forma Normal (2FN)</text><group>1</group></dragbox>
+    <dragbox><text>Tercera Forma Normal (3FN)</text><group>1</group></dragbox>
+    <dragbox><text>Forma Normal Boyce-Codd (FNBC)</text><group>1</group></dragbox>
+</question>
+
+<!-- PREGUNTA 12: OPCIÓN MÚLTIPLE - Álgebra relacional operaciones -->
+<question type="multichoice">
+    <name><text>Pregunta BD012</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En álgebra relacional, ¿cuál es el resultado de aplicar la operación de INTERSECCIÓN (∩) entre dos relaciones?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La intersección es una operación derivada del álgebra relacional que combina información de dos relaciones.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Las tuplas que están presentes en ambas relaciones]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La intersección devuelve solo las tuplas comunes a ambas relaciones.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Todas las tuplas de la primera relación]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso sería simplemente la primera relación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Las tuplas de ambas relaciones sin duplicados]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso sería la operación de UNIÓN.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Las tuplas que están en la primera pero no en la segunda]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso sería la operación de DIFERENCIA.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 13: VERDADERO/FALSO - Integridad referencial -->
+<question type="truefalse">
+    <name><text>Pregunta BD013</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>La integridad referencial garantiza que una clave foránea siempre haga referencia a una clave primaria existente en la tabla referenciada.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La integridad referencial es fundamental para mantener la consistencia entre tablas relacionadas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La integridad referencial previene referencias a tuplas inexistentes.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esa es exactamente la función de la integridad referencial.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 14: OPCIÓN MÚLTIPLE - Tipos de atributos -->
+<question type="multichoice">
+    <name><text>Pregunta BD014</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la diferencia entre un atributo simple y un atributo compuesto en el modelo ER?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los atributos pueden clasificarse según su estructura y características en el modelo ER.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Simple es indivisible, compuesto puede dividirse en sub-atributos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Los atributos simples son atómicos, los compuestos tienen estructura interna.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Simple es obligatorio, compuesto es opcional]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esto se refiere a atributos obligatorios vs opcionales, no a simple vs compuesto.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Simple es único, compuesto puede repetirse]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esto se refiere a unicidad, no a la estructura del atributo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No hay diferencia, son sinónimos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Son conceptos diferentes en el modelo ER.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 15: OPCIÓN MÚLTIPLE - Segunda forma normal -->
+<question type="multichoice">
+    <name><text>Pregunta BD015</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Para que una tabla esté en Segunda Forma Normal (2FN), además de estar en 1FN, debe cumplir:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La Segunda Forma Normal se enfoca en eliminar dependencias parciales de la clave primaria.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[No debe tener dependencias funcionales parciales respecto a la clave primaria]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! En 2FN todos los atributos no clave deben depender completamente de la clave primaria.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[No debe tener dependencias transitivas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La eliminación de dependencias transitivas corresponde a la Tercera Forma Normal.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Todos los atributos deben ser atómicos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso es requisito de la Primera Forma Normal.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Debe tener una sola clave candidata]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El número de claves candidatas no define la Segunda Forma Normal.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 16: VERDADERO/FALSO - Modelo relacional -->
+<question type="truefalse">
+    <name><text>Pregunta BD016</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En el modelo relacional, una relación es equivalente a una tabla, una tupla a una fila y un atributo a una columna.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>El modelo relacional utiliza terminología específica que tiene equivalencias con la implementación física.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Esta es la correspondencia entre el modelo teórico y la implementación física.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esas son exactamente las equivalencias en el modelo relacional.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 17: OPCIÓN MÚLTIPLE - Operaciones álgebra relacional -->
+<question type="multichoice">
+    <name><text>Pregunta BD017</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el propósito de la operación SELECCIÓN (σ) en álgebra relacional?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La selección es una de las operaciones fundamentales para filtrar información en el álgebra relacional.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Filtrar tuplas que cumplen una condición específica]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La selección extrae tuplas que satisfacen un predicado dado.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Elegir columnas específicas de una relación]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso es la función de la operación PROYECCIÓN (π).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Combinar dos relaciones]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso lo hacen operaciones como JOIN o producto cartesiano.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Ordenar las tuplas de una relación]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El ordenamiento no es una operación básica del álgebra relacional.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 18: DRAG AND DROP - Anomalías de normalización -->
+<question type="ddwtos">
+    <name><text>Pregunta BD018</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada anomalía con su descripción:</p>
+        <p>[[1]] - Dificultad para agregar datos sin tener información completa</p>
+        <p>[[2]] - Inconsistencias al modificar datos redundantes</p>
+        <p>[[3]] - Pérdida no deseada de información al eliminar tuplas</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Las anomalías son problemas que surgen en tablas mal normalizadas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <dragbox><text>Anomalía de Inserción</text><group>1</group></dragbox>
+    <dragbox><text>Anomalía de Actualización</text><group>1</group></dragbox>
+    <dragbox><text>Anomalía de Eliminación</text><group>1</group></dragbox>
+    <dragbox><text>Anomalía de Concurrencia</text><group>1</group></dragbox>
+</question>
+
+<!-- PREGUNTA 19: OPCIÓN MÚLTIPLE - Diseño conceptual -->
+<question type="multichoice">
+    <name><text>Pregunta BD019</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el orden correcto de las fases en el diseño de una base de datos?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>El diseño de bases de datos sigue una metodología estructurada en fases secuenciales.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Conceptual → Lógico → Físico]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Se inicia con el modelo conceptual (ER), luego lógico (relacional) y finalmente físico (implementación).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Físico → Lógico → Conceptual]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Este orden sería inverso al metodológicamente correcto.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Lógico → Conceptual → Físico]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El diseño conceptual debe preceder al lógico.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Conceptual → Físico → Lógico]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El diseño lógico debe realizarse antes que el físico.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- PREGUNTA 20: OPCIÓN MÚLTIPLE - Tercera forma normal -->
+<question type="multichoice">
+    <name><text>Pregunta BD020</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el principal problema que resuelve la Tercera Forma Normal (3FN)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La Tercera Forma Normal aborda problemas específicos de dependencias entre atributos no clave.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Elimina las dependencias transitivas entre atributos no clave]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La 3FN elimina dependencias A → B → C donde C depende transitivamente de A.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Elimina atributos multivaluados]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso lo resuelve la Primera Forma Normal.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Elimina dependencias parciales de la clave]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso lo resuelve la Segunda Forma Normal.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Garantiza que toda clave sea minimal]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Eso no es específico de la Tercera Forma Normal.]]></text></feedback>
+    </answer>
+</question>
+
+</quiz>

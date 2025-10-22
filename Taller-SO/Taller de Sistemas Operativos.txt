@@ -1,0 +1,468 @@
+                                                                TECNOLÓGICO NACIONAL DE MÉXICO
+                                                          Secretaría Académica, de Investigación e Innovación
+                                                                        Dirección de Docencia e Innovación Educativa
+1. Datos Generales de la asignatura
+                          Nombre de la asignatura: Taller de Sistemas Operativos
+                            Clave de la asignatura: SCA – 1026
+                                            SATCA1: 0 - 4 - 4
+                                             Carrera: Ingeniería en Sistemas Computacionales
+2. Presentación
+  Caracterización de la asignatura
+       Esta asignatura aporta al perfil del egresado las habilidades para:
+             Implementa aplicaciones computacionales para solucionar problemas de diversos
+              contextos, integrando diferentes tecnologías, plataformas o dispositivos
+             Diseña, configura y administra redes de computadoras para crear soluciones de
+              conectividad en la organización, aplicando las normas y estándares vigentes.
+       El estudiante obtendrá los conocimientos y habilidades necesarias para la administración de
+  diferentes sistemas operativos, con el propósito de brindar diferentes alternativas de solución a
+  problemas reales en la industria.
+       La aportación de dicha materia, pretende emplear, competencias previas adquiridas de la
+  asignatura de sistemas operativos, con el fin de que el estudiante posea un criterio base para la elección
+  del sistema operativo a emplear.
+       A su vez, las competencias que desarrolla el estudiante al finalizar dicha materia, le permitirán
+  instalar y administrar sistemas operativos para la implementación futura de servicios de red y su
+  monitorización.
+  Intención didáctica
+       El presente temario, se encuentra organizado en cuatro temas integrados por contenidos teórico-
+  prácticos, que contemplan situaciones que son aplicables en la industria.
+       En el tema 1, se retoman temas vistos en la asignatura de sistemas operativos con el fin de recordar
+  conceptos previos analizados en el ámbito de la multiprogramación y el reconocimiento de las
+  diferencias entre los modelos de multiprogramación (conmutación de contextos y multitarea
+  cooperativa) empleados en sistemas operativos de propósito general y de servidor. También se ve el
+  tema de virtualización, donde se brindan las competencias necesarias para diferenciar entre los dos
+  niveles de hypervisor, así como identificar su aplicación, para brindar soluciones de creación de
+  máquinas virtuales y la instalación de sistemas operativos dentro de las mismas.
+1
+  Sistema de Asignación y Transferencia de Créditos Académicos
+©TecNM mayo 2016                                                                       Página | 1
+                                                                TECNOLÓGICO NACIONAL DE MÉXICO
+                                                          Secretaría Académica, de Investigación e Innovación
+                                                                         Dirección de Docencia e Innovación Educativa
+       En este rubro, se recomienda que el profesor, emplee las alternativas disponibles para solventar el
+ procedimiento de instalación, configuración y monitorización de los sistemas operativos a usar.
+       El tema 2, se estructura de tal forma que el estudiante identifique los requerimientos de instalación
+ de algún sistema operativo propietario (a elección del profesor o recomendación del estudiante), lo
+ implemente y comience a usarlo de forma básica, con el propósito de que adquiera las competencias
+ necesarias para la futura administración y monitorización del mismo.
+       Se propone que el profesor, muestre a los estudiantes los procedimientos que se emplean en la
+ administración del sistema (manejo de archivos y directorios, administración de usuarios, grupos de
+ trabajo y permisos, configuración de RAID, LVM, Memoria, etc.), así como procedimientos para la
+ realización de respaldos y recuperación de datos, con respecto a la medición y desempeño, es
+ recomendable que el estudiante investigue sobre como miden el desempeño de un sistema operativo
+ sitios especializados, cuales herramientas son empleadas en dichas pruebas y de ser posible,
+ implementarlas y usarlas en el sistema operativo.
+       Para la normatividad y políticas de uso, es recomendable que el estudiante investigue que
+ normativas se emplean comúnmente en centros de cómputo y a su vez, que políticas son empleadas
+ para el acceso a los servicios del servidor.
+       En el tema 3, el estudiante debe identificar los requerimientos de instalación de algún sistema
+ operativo de software libre (a elección del profesor o recomendación del estudiante), lo implemente y
+ comience a usarlo de forma básica, con el propósito de que adquiera las competencias necesarias para
+ la futura administración y monitorización del mismo.
+       Se propone que el profesor, muestre a los estudiantes los procedimientos que se emplean en la
+ administración del sistema (manejo de archivos y directorios, administración de usuarios, grupos de
+ trabajo y permisos, configuración de RAID, LVM, Memoria, etc.), así como procedimientos para la
+ realización de respaldos y recuperación de datos, con respecto a la medición y desempeño, es
+ recomendable que el estudiante investigue sobre como miden el desempeño de un sistema operativo
+ sitios especializados, cuales herramientas son empleadas en dichas pruebas y de ser posible,
+ implementarlas y usarlas en el sistema operativo.
+       Para la normatividad y políticas de uso, es recomendable que el estudiante investigue que
+ normativas se emplean comúnmente en centros de cómputo y a su vez, que políticas son empleadas
+ para el acceso a los servicios del servidor.
+      En el tema 4, el profesor explicará las características y conceptos básicos sobre como los sistemas
+      operativos y los procesos llevan a cabo la interoperabilidad y que mecanismos se emplean para
+      ello. Se propone que el estudiante programe un proceso que emplee RPC y/o Sockets para
+      compartir datos entre ellos y sea ejecutado entre los sistemas operativos empleados durante el
+      curso, así como configurar un NFS que los estudiantes monten en sus sistemas operativos e
+      identifiquen a partir de sus competencias previas de manejo de sistemas de archivos y permisos de
+      lectura-escritura.
+©TecNM mayo 2016                                                                        Página | 2
+                                                               TECNOLÓGICO NACIONAL DE MÉXICO
+                                                          Secretaría Académica, de Investigación e Innovación
+                                                                         Dirección de Docencia e Innovación Educativa
+3. Participantes en el diseño y seguimiento curricular del programa
+        Lugar y fecha de
+                                            Participantes                              Evento
+     elaboración o revisión
+                                 Representantes de los Institutos
+                                 Tecnológicos de:
+                                 Alvarado, Arandas, Campeche,
+                                 Celaya, Centla, Cerro Azul,
+                                 Champotón, Ciudad Acuña, Ciudad
+                                 Cuauhtémoc, Ciudad Juárez, Ciudad
+                                 Madero,        Ciudad        Valles,
+                                 Coatzacoalcos, Cocula, Colima,
+                                 Comitán, Durango, El Istmo,           Reunión Nacional de Diseño e
+                                 Huetamo, La Laguna, La Paz, Lázaro    Innovación Curricular para el
+                                 Cárdenas, Lerdo, Libres, Linares,     Desarrollo      y     Formación       de
+    Instituto Tecnológico de
+                                 Macuspana, Matamoros, Mérida,         Competencias Profesionales de las
+  Saltillo del 5 al 9 de octubre
+                                 Mexicali, Morelia, Nuevo Laredo,      Carreras de Ingeniería en Sistemas
+             de 2009.
+                                 Nuevo León, Occidente del Estado      Computacionales,              Ingeniería
+                                 de Hidalgo, Ocotlán, Orizaba,         Informática      e     Ingeniería     en
+                                 Oriente del Estado de Hidalgo,        Geociencias.
+                                 Parral, Piedras Negras, Pinotepa,
+                                 Saltillo, San Luis Potosí, Sur de
+                                 Guanajuato, Sur del Estado de
+                                 Yucatán, Tapachula, Tepexi de
+                                 Rodríguez,    Teziutlán,    Tijuana,
+                                 Toluca,     Tuxtepec,      Veracruz,
+                                 Villahermosa, Xalapa, Zacatecas y
+                                 Zacatepec.
+                                 Representantes de los Institutos
+                                 Tecnológicos de:
+                                 Alvarado, Arandas, Campeche,          Reunión Nacional de Consolidación de
+                                 Celaya, Centla, Cerro Azul,           los Programas en Competencias
+      Instituto Tecnológico      Champotón, Ciudad Acuña, Ciudad       Profesionales de las Carreras de
+  Superior de Poza Rica del 22   Cuauhtémoc, Ciudad Juárez, Ciudad     Ingeniería         en          Sistemas
+    al 26 de febrero de 2010.    Madero,        Ciudad        Valles,  Computacionales,              Ingeniería
+                                 Coatzacoalcos, Cocula, Colima,        Informática e Ingeniería Petrolera del
+                                 Comitán, Durango, El Istmo,           SNEST.
+                                 Huetamo, La Laguna, La Paz, Lázaro
+                                 Cárdenas, Lerdo, Libres, Macuspana,
+                                 Matamoros,     Mérida,     Mexicali,
+©TecNM mayo 2016                                                                        Página | 3
+                                                           TECNOLÓGICO NACIONAL DE MÉXICO
+                                                      Secretaría Académica, de Investigación e Innovación
+                                                                     Dirección de Docencia e Innovación Educativa
+                            Morelia, Nuevo Laredo, Nuevo
+                            León, Occidente del Estado de
+                            Hidalgo, Orizaba, Oriente del Estado
+                            de Hidalgo, Parral, Piedras Negras,
+                            Pinotepa, Saltillo, San Luis Potosí,
+                            Sur de Guanajuato, Sur del Estado de
+                            Yucatán, Tapachula, Tepexi de
+                            Rodríguez,     Teziutlán,    Tijuana,
+                            Toluca,     Tuxtepec,       Veracruz,
+                            Villahermosa, Xalapa, Zacatecas y
+                            Zacatepec.
+                            Representantes de los Institutos
+                            Tecnológicos de:
+                            Acayucan,      Altamira,     Cajeme,
+                            Campeche, Cananea, Cd. Acuña, Cd.
+                            Cuauhtémoc, Cd. Juárez, Cd.
+                            Madero, Cd. Valles, Celaya, Centla,
+                            Cerro Azul, Chetumal, Chihuahua II,
+                            Chilpancingo,             Coalcomán,
+                            Coatzacoalcos, Cocula, Colima,
+                            Comalcalco, Delicias, Durango,         Reunión Nacional de Seguimiento
+                            Ébano, Escárcega, Huixquilucan, La     Curricular de los Programas en
+                            Paz, León, Lerdo, Los Ríos,            Competencias Profesionales de las
+  Instituto Tecnológico de
+                            Macuspana, Mante, Milpa Alta,          Carreras de Ingeniería en Sistemas
+  Querétaro del 22 al 25 de
+                            Minatitlán, Morelia, Nuevo Laredo,     Computacionales,              Ingeniería
+      octubre de 2012.
+                            Nuevo León, Oaxaca, Oriente del        Informática      e     Ingeniería     en
+                            Estado de México, Oriente del          Tecnologías de la Información y
+                            Estado de Hidalgo, Pachuca, Piedras    Comunicaciones.
+                            Negras, Progreso, Puerto Vallarta,
+                            Purhepecha, Tacámbaro, Tehuacán,
+                            Tepexi de Rodríguez, Tepic,
+                            Teposcolula,     Teziutlán,    Tierra
+                            Blanca, Tijuana, Tlaxiaco, Toluca,
+                            Tuxtepec, Uruapan, Valladolid,
+                            Veracruz, Villahermosa, Zacatecas,
+                            Zacatecas      Norte,      Zacatepec,
+                            Zapopan, Zitácuaro y Zongólica.
+                            Representantes de los Institutos Reunión de Seguimiento Curricular de
+  Instituto Tecnológico de  Tecnológicos de:                       los    Programas      Educativos      de
+   Toluca, del 10 al 13 de
+      febrero de 2014.      Cerro Azul, Colima, Lerdo, Toluca y Ingenierías,          Licenciaturas       y
+                            Veracruz.                              Asignaturas  Comunes    del SNIT.
+©TecNM mayo 2016                                                                    Página | 4
+                                                             TECNOLÓGICO NACIONAL DE MÉXICO
+                                                      Secretaría Académica, de Investigación e Innovación
+                                                                       Dirección de Docencia e Innovación Educativa
+4. Competencia(s) a desarrollar
+                             Competencia(s) específica(s) de la asignatura
+ Conoce, identifica, selecciona y administra diferentes sistemas operativos con el fin de resolver
+ problemáticas reales, así como aplicar procedimientos de interoperabilidad entre diferentes sistemas
+ operativos.
+5. Competencias previas
+        Aplica los paradigmas de diseño de los sistemas operativos actuales y emergentes, para el
+         manejo de los recursos del sistema.
+6. Temario
+ No.                      Temas                                            Subtemas
+                                                     1.1.Clasificación y Estructuras genéricas de los
+                                                           Sistemas Operativas vigentes
+                                                     1.2. Procesos y Multiprogramación
+  1.   Introducción a los sistemas operativos        1.3. Virtualización
+                                                          1.3.1. Componentes y Niveles de
+                                                                Virtualización
+                                                          1.3.2. VPS (Virtual Private Server)
+                                                     2.1. Características y Análisis de los Sistemas
+                                                           Operativos Propietarios
+                                                     2.2. Requerimientos de instalación
+                                                     2.3.Configuración Básica
+                                                          2.3.1. Métodos de Instalación
+                                                          2.3.2. Instalación del Sistema Operativo
+                                                          2.3.3. Configuración del Sistema y Ámbito
+                                                                del servidor
+  2.                                                      2.3.4. Configuración de seguridad base y red
+                                                     2.4. Comandos Básicos y aplicaciones
+                                                          2.4.1. Manejo de Archivos y Directorios
+                                                          2.4.2. Instalación y Configuración de
+       Sistemas Operativos propietarios para                    aplicaciones
+       servidores                                    2.5. Administración del Sistema
+                                                          2.5.1. Tipos de Recursos
+                                                          2.5.2. Administración y monitorización de
+                                                                procesos, red, memoria, sistemas de
+                                                                archivos, servicios (impresión, etc.),
+                                                                usuarios, grupos y permisos.
+©TecNM mayo 2016                                                                      Página | 5
+                                                        TECNOLÓGICO NACIONAL DE MÉXICO
+                                                  Secretaría Académica, de Investigación e Innovación
+                                                                   Dirección de Docencia e Innovación Educativa
+                                                 2.6. Medición y Desempeño del Sistema
+                                                      Operativo
+                                                 2.7. Seguridad e Integridad
+                                                      2.7.1. Planificación de seguridad
+                                                      2.7.2. Planificación y ejecución de
+                                                           mantenimiento
+                                                      2.7.3. Mecanismos de Recuperación ante
+                                                           fallos (FS, Procesadores, Memoria)
+                                                 2.8. Normatividad y Políticas de uso
+                                                 3.1. Características y Análisis de los Sistemas
+                                                      Operativos Propietarios
+                                                 3.2. Requerimientos de instalación
+                                                 3.3.Configuración Básica
+                                                      3.3.1. Métodos de Instalación
+                                                      3.3.2. Instalación del Sistema Operativo
+                                                      3.3.3. Configuración del Sistema y Ámbito
+                                                           del servidor
+                                                      3.3.4. Configuración de seguridad base y red
+                                                 3.4. Comandos Básicos y aplicaciones
+                                                      3.4.1. Manejo de Archivos y Directorios
+                                                      3.4.2. Niveles de Ejecución
+                                                      3.4.3. Instalación y Configuración de
+ 3.  Sistemas Operativos de software libre para            aplicaciones
+     servidores                                  3.5. Administración del Sistema
+                                                      3.5.1. Tipos de Recursos
+                                                      3.5.2. Administración y monitorización de
+                                                           procesos, red, memoria, sistemas de
+                                                           archivos, servicios (impresión, etc.),
+                                                           usuarios, grupos y permisos.
+                                                 3.6. Medición y Desempeño del Sistema
+                                                      Operativo
+                                                 3.7. Seguridad e Integridad
+                                                      3.7.1. Planificación de seguridad
+                                                      3.7.2. Planificación y ejecución de
+                                                           mantenimiento
+                                                      3.7.3. Mecanismos de Recuperación ante
+                                                           fallos (FS, Procesadores, Memoria)
+                                                 3.8. Normatividad y Políticas de uso
+                                                 4.1.Interoperabilidad entre sistemas operativos
+                                                      4.1.1. Sistemas de Archivos y Recursos
+ 4.
+     Interoperabilidad entre sistemas operativos           (NFS, Impresoras )
+                                                      4.1.2. Comunicación entre procesos
+                                                           (Sockets, RPC)
+©TecNM mayo 2016                                                                  Página | 6
+                                                                TECNOLÓGICO NACIONAL DE MÉXICO
+                                                         Secretaría Académica, de Investigación e Innovación
+                                                                         Dirección de Docencia e Innovación Educativa
+7. Actividades de aprendizaje de los temas
+                                 1. Introducción a los sistemas operativos
+                    Competencias                                    Actividades de aprendizaje
+ Específica(s):                                            Investigar, en equipo, la clasificación y
+                                                            estructura genérica de los sistemas operativos
+    Identifica los diferentes tipos de sistemas            vigentes, plasmar los resultados en un cuadro
+     operativos que se emplean en la industria para
+     su aplicación según la problemática a                  comparativo en formato electrónico y exponer
+     resolver.                                              en plenaria grupal.
+                                                           Investigar componentes y niveles de
+ Genéricas:                                                 virtualización ejemplificando un proceso;
+                                                            plasmar los resultados en un reporte de
+        Habilidad para buscar, procesar y
+                                                            práctica de ejercicios.
+         analizar información procedente de
+         fuentes diversas.
+        Capacidad de aplicar los conocimientos
+         en la practica
+        Capacidad de comunicación oral y escrita
+        Capacidad de conocimiento de una
+         segunda lengua
+        Habilidades en el uso de las tecnologías
+         de la información y comunicación.
+        Capacidad de trabajo en equipo
+                           2. Sistemas Operativos propietarios para servidores
+                    Competencias                                    Actividades de aprendizaje
+ Específica(s):                                            Investigar las características y requerimientos
+                                                            de instalación de los sistemas operativos
+    Instala, configura y administra un sistema             propietarios vigentes, plasmar los resultados
+     operativo propietario que ayude a resolver una
+     necesidad determinada, considerando la                 en un cuadro comparativo digital y exponerlo
+     planeación       de      mantenimientos       y        en plenaria.
+     recuperaciones en caso de error.                      Instalar un sistema operativo propietario y
+                                                            elaborar un reporte del procedimiento de
+                                                            instalación.
+ Genéricas:
+                                                           Investigar la terminología del manejo y
+        Habilidad para buscar, procesar y                  administración del sistema operativo y
+         analizar información procedente de                 elaborar un glosario con los principales
+         fuentes diversas.                                  comandos.
+©TecNM mayo 2016                                                                        Página | 7
+                                                              TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                       Dirección de Docencia e Innovación Educativa
+       Capacidad de aplicar los conocimientos           Investigar sobre los métodos y técnicas
+        en la practica                                    empleadas para la medición del rendimiento y
+       Capacidad de comunicación oral y escrita          desempeño del sistema operativo instalado y
+       Capacidad de conocimiento de una                  elaborar un resumen; socializarlo en plenaria.
+        segunda lengua
+                                                         Investigar sobre políticas, procedimientos de
+       Habilidades en el uso de las tecnologías
+        de la información y comunicación.                 mantenimiento y recuperación ante fallos y
+       Capacidad de trabajo en equipo                    elaborar un resumen; socializarlo en plenaria.
+                       3. Sistemas Operativos de software libre para servidores
+                   Competencias                                   Actividades de aprendizaje
+ Específica(s):                                          Investigar las características y requerimientos
+                                                          de instalación de los sistemas operativos de
+   Instala, configura y administra un sistema            software libre vigentes, plasmar los resultados
+    operativo de software libre que ayude a
+    resolver una necesidad determinada,                   en un cuadro comparativo digital y exponerlo
+    considerando        la      planeación       de       en plenaria.
+    mantenimientos y recuperaciones en caso de           Instalar un sistema operativo de software libre
+    error.                                                y elaborar un reporte del procedimiento de
+                                                          instalación.
+ Genéricas:                                              Investigar la terminología del manejo y
+                                                          administración del sistema operativo y
+       Habilidad para buscar, procesar y                 elaborar un glosario con los principales
+        analizar información procedente de                comandos.
+        fuentes diversas.                                Investigar sobre los métodos y técnicas
+       Capacidad de aplicar los conocimientos            empleadas para la medición del rendimiento y
+        en la practica
+                                                          desempeño del sistema operativo instalado y
+       Capacidad de comunicación oral y escrita
+       Capacidad de conocimiento de una                  elaborar un resumen; socializarlo en plenaria.
+        segunda lengua
+                                                          Investigar sobre políticas, procedimientos de
+       Habilidades en el uso de las tecnologías
+                                                          mantenimiento y recuperación ante fallos y
+        de la información y comunicación.
+       Capacidad de trabajo en equipo                    elaborar un resumen; socializarlo en plenaria
+                             4. Interoperabilidad entre sistemas operativos
+                   Competencias                           Actividades de aprendizaje
+ Específica(s):                                          Investigar y analizar los mecanismos de
+                                                          interoperabilidad, así como la capacidad de
+   Identifica y aplica diferentes mecanismos de          compartir recursos entre sistemas operativos
+    interoperabilidad y exposición de recursos
+©TecNM mayo 2016                                                                      Página | 8
+                                                             TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                      Dirección de Docencia e Innovación Educativa
+     entre diferentes sistemas operativos con el fin      vigente; plasmar los resultados en una
+     de presentarlos frente a los usuarios y/o            presentación a presentar por equipo en
+     aplicaciones.                                        plenaria grupal.
+                                                         Realizar la interoperabildad entre sistemas
+ Genéricas:                                               operativos diferentes y elaborar un reporte de
+                                                          práctica.
+        Habilidad para buscar, procesar y
+         analizar información procedente de
+         fuentes diversas.
+        Capacidad de aplicar los conocimientos
+         en la practica
+        Capacidad de comunicación oral y escrita
+        Capacidad de conocimiento de una
+         segunda lengua
+        Habilidades en el uso de las tecnologías
+         de la información y comunicación.
+        Capacidad de trabajo en equipo
+8. Práctica(s)
+     1. Elaborar algunos procesos básicos en el sistema operativo (procesos pesados y threads), para
+         reforzar el conocimiento sobre multiprogramación.
+     2. Instalar y Configurar una maquina virtual.
+     3. Instalar el sistema operativo propietario ya sea en un Servidor, Maquina Virtual o PC
+     4. Instalar y Configurar diferentes aplicaciones que resuelvan algunas necesidades de la
+         organización.
+     5. Configurar, Monitorear y Administrar el sistema operativo propietario. (Red, Memoria,
+         Procesos, Procesador, Sistemas de Archivos, RAID, LVM, etc.)
+     6. Planear las estrategias de seguridad, uso y mantenimientos al sistema operativo propietario.
+     7. Aplicar mecanismos del sistema operativo propietario para respaldar y restaurar información
+         en diferentes dispositivos de almacenamiento.
+     8. Instalar el sistema operativo de software libre ya sea en un Servidor, Maquina Virtual o PC
+     9. Instalar y Configurar diferentes aplicaciones que resuelvan algunas necesidades de la
+         organización.
+     10. Configurar, Monitorear y Administrar el sistema operativo de software libre. (Red, Memoria,
+         Procesos, Procesador, Sistemas de Archivos, RAID, LVM, etc.)
+     11. Planear las estrategias de seguridad, uso y mantenimientos al sistema operativo de software
+         libre.
+     12. Aplicar mecanismos del sistema operativo de software libre para respaldar y restaurar
+         información en diferentes dispositivos de almacenamiento.
+     13. Configurar y publicar un sistema de archivos por red frente a otros sistemas operativos.
+     14. Crear un proceso que comunique y comparta recursos con otro proceso empleando diferentes
+         sistemas operativos mediante Sockets y RPC.
+©TecNM mayo 2016                                                                     Página | 9
+                                                               TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                       Dirección de Docencia e Innovación Educativa
+9. Proyecto de asignatura
+ El objetivo del proyecto que planteé el docente que imparta esta asignatura, es demostrar el desarrollo
+ y alcance de la(s) competencia(s) de la asignatura, considerando las siguientes fases:
+  Fundamentación: marco referencial (teórico, conceptual, contextual, legal) en el cual se
+     fundamenta el proyecto de acuerdo con un diagnóstico realizado, mismo que permite a los
+     estudiantes lograr la comprensión de la realidad o situación objeto de estudio para definir un
+     proceso de intervención o hacer el diseño de un modelo.
+  Planeación: con base en el diagnóstico en esta fase se realiza el diseño del proyecto por parte de
+     los estudiantes con asesoría del docente; implica planificar un proceso: de intervención
+     empresarial, social o comunitario, el diseño de un modelo, entre otros, según el tipo de proyecto,
+     las actividades a realizar los recursos requeridos y el cronograma de trabajo.
+  Ejecución: consiste en el desarrollo de la planeación del proyecto realizada por parte de los
+     estudiantes con asesoría del docente, es decir en la intervención (social, empresarial), o
+     construcción del modelo propuesto según el tipo de proyecto, es la fase de mayor duración que
+     implica el desempeño de las competencias genéricas y especificas a desarrollar.
+  Evaluación: es la fase final que aplica un juicio de valor en el contexto laboral-profesión, social e
+     investigativo, ésta se debe realizar a través del reconocimiento de logros y aspectos a mejorar se
+     estará promoviendo el concepto de “evaluación para la mejora continua”, la metacognición, el
+     desarrollo del pensamiento crítico y reflexivo en los estudiantes.
+10. Evaluación por competencias
+ Para evaluar las actividades de aprendizaje se recomienda solicitar: mapas conceptuales, cuadros
+ comparativos, resúmenes, cuadros sinópticos, reportes de investigación, estudios de casos,
+ exposiciones en clase, reportes de visitas, portafolio de evidencias, glosarios, entre otros.
+ Para verificar el nivel del logro de las competencias del estudiante se recomienda utilizar: listas de
+ cotejo, listas de verificación, matrices de valoración, rúbricas, entre otros, mediante la
+ heteroevaluación, coevaluación y autoevaluación.
+©TecNM mayo 2016                                                                     Página | 10
+                                                            TECNOLÓGICO NACIONAL DE MÉXICO
+                                                      Secretaría Académica, de Investigación e Innovación
+                                                                     Dirección de Docencia e Innovación Educativa
+11. Fuentes de información
+     1. Aeleen, F. (2002). Essential system administration. Beijin: O'Reilly and Associates.
+     2. Amaris, C., Abbate, A., Droubi, O., Yardeni, G., Noel, M., & Morimoto, R. (2012). Windows
+         Server 2012 Unleashed. Pearson Education.
+     3. Amaris, C., Mistry, R., Droubi, O., & Noel, M. (2008). Windows Server 2008 Unleashed.
+         Sams Publishing.
+     4. Colouris, G., Dollimore, J., & Kindberg, T. (2001). Sistemas Distribuidos: Conceptos y
+         Diseño. Pearson Education.
+     5. Dee-Ann, L. (2001). La Biblia de Aministración de Sistemas Linux. Madrid: Anaya
+         Multimedia.
+     6. Gomez Lopez, J. (24 de Octubre de 2012). ASO. Recuperado el 24 de Octubre de 2012, de
+         AdminSO: http://www.adminso.es/index.php/Página_Principal
+     7. Gomez Lopez, J., & Gomez Lopez, O. D. (2011). Administracion de Sistemas Operativos.
+         CFGS. Ra-Ma.
+     8. Gomez Lopez, J., Padilla Soriano, N., & Gil-Martinez Abarca, J. A. (2006). Administración
+         de Sistemas Operativos Windows y Linux. Un enfoque practico. RA-MA.
+     9. Loukides, M. (1992). System performance tunning. Sebastopol, CA: O'Reilly and Associates.
+     10. Mann, S., L. Mitchell, E., & Krell , M. (2003). Linux system security. Upper Saddle River,
+         New Jersey: Prentice Hall.
+     11. Márquez García, F. M. (2004). Unix: Programación Avanzada. Madrid: RAMA.
+     12. Maxwell, S. (2001). RedHat Linux, Herramientas para la administración de redes. Mac Graw
+         Hill.
+     13. Nemeth, E., Snyder, G., & R. Hein, T. (2002). Linux Administration HandBook. Upper
+         Saddle River, New Jersey: Prentice Hall.
+     14. Olczak, A. (2001). The Korn Shell: Unix and Linux programming manual. Harlow: Addison-
+         Wesley.
+     15. Roberts, E., Kovach Eric, Abbate , A., & Morimoto, R. (2003). Microsoft Windows Server
+         2003 Insider Solutions. Sams Publishing.
+     16. Sun Microsystems. (2005). Fast Track Solaris 10 Modulo 1. Santa Clara, CA.: Sun
+         Microsystems.
+     17. Sun Microsystems. (2005). Fast Track Solaris 10 Modulo 2. Santa Clara, CA: Sun
+         Microsystems.
+     18. Tanenbamu, A. (2003). Redes de Computadoras. México: Pearson/Prentice-Hall.
+     19. Tanenbaum S., A., & Van Steen, M. (2007). Sistemas Distribuidos: principios y paradigmas.
+         Pearson Prentice Hall.
+     20. Villar Fernandez, E. E., Alcayde Garcia, A., & Gómez López, J. (2011). Seguridad en
+         sistemas operativos Windows y Linux. Ra-Ma.
+©TecNM mayo 2016                                                                   Página | 11

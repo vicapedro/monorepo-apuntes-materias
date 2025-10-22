@@ -30,26 +30,9 @@ When creating any educational content, instructional design, or assessment instr
 - ✅ **Bibliographic consistency** with institutional requirements
 - ✅ **Activity alignment** with official learning objectives
 
-## Repository Architecture
-
-Multi-course academic materials repository with **competency-based pedagogy** using Gagné's 9 Events model. Competency-based learning focuses on mastering specific skills and knowledge, ensuring students can apply what they learn in real-world scenarios. 
-
 ## Assessment and its instruments
 Assessment and its instruments in an educational context based on the development of competencies in students. Offer initial prototypes of different types of evidence along with their instruments supported by the impact indicators.
 Each evidence has different impact indicators distributed across activities according to  "correspondencia_evidencia_indicadores.md"
-
-```
-[Subject]/
-├── [Subject].txt                 # Reference material
-├── Diseño_Instruccional.md       # Course design (required)
-├── [#. Unit]/                    # Sequential units
-│   ├── *.md                      # Theory content
-│   ├── *.xml                     # Moodle XML assessments
-│   ├── A*.md                     # Activity assessments
-│   ├── Actividad*.md             # Teaching activities
-│   ├── Practica*.md              # Lab exercises
-│   └── Portafolio.md             # Evidence portfolio
-```
 
 ## Critical Patterns
 
@@ -246,12 +229,10 @@ When splitting `Practicas.md` → create individual `Practica-##-Topic.md` + `Pr
 
 ## Integration Points
 
-- **LMS**: Moodle integration for activities
+- **LMS**: Moodle integration for activities  
 - **Assessment**: Moodle XML format for comprehensive question variety and LMS compatibility
 - **Simulators**: Packet Tracer (networking), VirtualBox (systems)
 - **Languages**: Spanish content, technical English terminology
-
-When creating content: Start with learning objectives → map to Gagné's events → create hands-on exercises → add assessments → design evidence collection.
 
 ## Instrumentación Didáctica TecNM
 
@@ -481,9 +462,9 @@ Sección C: Evaluación y Diseño (35 pts - Evaluar/Crear)
 - **Integrate technology tools** that enhance active engagement
 - **Design assessments** that match the methodology used
 
-It is important that you support the teacher in guiding them step-by-step through the development of the instructional design as requested, using the Gagné Model as a reference. This may require establishing the active strategy or methodology for the topic, unit, or competency, defining which activities will be considered for formative and summative assessment, the evidence matrix (activity, evidence, weighting, analysis of impact indicators, and assessment instrument), describing activities, developing possible evidence, and developing assessment instruments with their criteria.
+Support teachers step-by-step through instructional design development using the Gagné Model, including: methodology selection, formative/summative assessment definition, evidence matrix creation (activity, evidence, weighting, indicators, instruments), and assessment instrument development.
 
-Remember, it's important to design learning experiences that integrate active methodologies, collaborative projects, and the use of digital tools so students can build their own knowledge. This creates flexible learning environments that respond to the needs of diverse students. In addition to technical competencies, this fosters the development of socio-emotional and soft skills, such as leadership and teamwork through participation and critical thinking.
+Design learning experiences integrating active methodologies, collaborative projects, and digital tools to build student knowledge while fostering socio-emotional skills like leadership, teamwork, and critical thinking.
 
 ## Step-by-Step Instructional Design Workflow
 
@@ -494,6 +475,8 @@ Remember, it's important to design learning experiences that integrate active me
 - **Subject/course** being worked on
 - **Unit, topic, or competency** to be developed
 - **Educational context**: Face-to-face classes, Moodle as LMS, Teams for communication
+- **Course duration**: Standard academic period of 16 weeks, sessions typically 1 hour (60 minutes), 4-6 sessions per week, according to Satca hours
+- **Session duration**: 1 hour (60 minutes)
 
 ### Instructional Design Process (Gagné Model-Based):
 
@@ -609,12 +592,6 @@ Create matrix with **10 columns** for each unit (unit total must equal 100%):
 - **Observation guides with behavioral indicators**
 - **Scoring procedures and feedback templates**
 
-### Technology Integration Guidelines:
-- **Moodle LMS**: Consider platform capabilities for activity design
-- **Microsoft Teams**: Leverage for communication and collaboration
-- **Moodle XML format**: Use for LMS-compatible assessments with comprehensive question variety
-- **Digital tools**: Integrate to enhance active engagement
-
 ### Quality Assurance Checklist:
 - [ ] Gagné's 9 Events model applied
 - [ ] Hexagon Model dimensions documented (¿Qué?, ¿Por qué?, ¿Cómo?, ¿Con qué?, ¿Cuándo?, ¿Quién?)
@@ -637,5 +614,160 @@ Create matrix with **10 columns** for each unit (unit total must equal 100%):
 - **Develop critical thinking** through problem-solving scenarios
 - **Balance technical competencies** with soft skills development
 
-**Support the teacher step-by-step through this entire process, using Gagné's Model as the reference framework throughout all phases.**
+## Laboratory Practice Planning Template
 
+When generating laboratory practice planning documents (Planeación de Prácticas de Laboratorio), use this structured approach:
+
+### Template: Laboratory Practice Planning
+
+**CRITICAL: Laboratory practice planning MUST be coherent with:**
+1. **Official Program** - Extract competencies and topics exactly
+2. **Instructional Design** - Align with evidence matrix and assessment calendar
+3. **Resource availability** - Consider institutional limitations and requirements
+
+### Required Document Structure:
+
+```markdown
+# Planeación de Prácticas de Laboratorio - [Subject Name]
+
+**Fecha:** [City], [State] a [Day] de [Month] de [Year]
+
+**Para:** C. [Laboratory Head Name]  
+**Jefe(a) de Laboratorio de:** [Laboratory Name]  
+**Presente**
+
+Con base a lo establecido por el Departamento de [Department Name] con base a la planeación del curso, anexo la relación de prácticas de Laboratorio, así como las fechas tentativas a efectuarse durante el semestre [Semester Period].
+
+## 📋 Información General
+[Administrative data table]
+
+## 🔬 Relación de Prácticas Programadas
+[Practices table with dates, units, and resources]
+
+## 🎯 Competencias a Desarrollar por Práctica
+[Competency alignment by unit]
+
+**ATENTAMENTE**
+**[Teacher Name]**
+```
+
+### Practice Planning Guidelines:
+- **Sequential numbering** by learning progression
+- **Realistic scheduling** across 16-18 week semester
+- **Resource optimization** across multiple practices  
+- **Competency alignment** with official program
+- **Buffer time** for complex implementations
+
+
+# Template: Laboratory Practice Planning (Planeación de Prácticas de Laboratorio)
+
+## Template Structure for Laboratory Practice Planning:
+
+```markdown
+# Planeación de Prácticas de Laboratorio - [Subject Name]
+
+**Fecha:** [City], [State] a [Day] de [Month] de [Year]
+
+**Para:** C. [Laboratory Head Name]  
+**Jefe(a) de Laboratorio de:** [Laboratory Name]  
+**Presente**
+
+Con base a lo establecido por el Departamento de [Department Name] con base a la planeación del curso, anexo la relación de prácticas de Laboratorio, así como las fechas tentativas a efectuarse durante el semestre [Semester Period].
+
+---
+
+## 📋 Información General
+
+| **Campo** | **Información** |
+|-----------|-----------------|
+| **Materia** | [Subject Full Name] |
+| **Carrera** | [Career Program] |
+| **Clave** | [Subject Code] |
+| **Horario** | [Schedule Hours] |
+| **Grupo** | [Group Code] |
+| **Semestre** | [Academic Period] |
+
+---
+
+## 🔬 Relación de Prácticas Programadas
+
+| **No.** | **Nombre de la Práctica** | **Fecha Tentativa** |  **Necesidades/Recursos** |
+|---------|---------------------------|---------------------|---------------------------|
+| 1 | [Practice Name] | [Date] | [Unit #] | [Summarized Required Resources] |
+| 2 | [Practice Name] | [Date] | [Unit #] | [Summarized Required Resources] |
+| ... | ... | ... | ... |
+
+
+---
+
+**En espera de haber cumplido con las expectativas propuestas, quedo de usted.**
+
+**ATENTAMENTE**
+
+**[Teacher Name]**  
+**NOMBRE Y FIRMA**
+```
+
+## Instructions for Laboratory Practice Planning Generation:
+
+### Required Information to Collect:
+1. **Administrative Data:**
+   - Subject name and code
+   - Teacher name
+   - Laboratory head name
+   - Academic period/semester
+   - Group code and schedule
+
+2. **Practice Information (Extract from Official Program and Instructional Design):**
+   - Practice names aligned with unit competencies
+   - Sequential numbering by unit
+   - Realistic scheduling across semester
+   - Required resources and equipment
+
+3. **Resource Requirements:**
+   - Hardware specifications (RAM, processors, etc.)
+   - Software requirements
+   - Internet connectivity needs
+   - Special equipment or materials
+
+### Practice Planning Rules:
+
+#### **Coherence Requirements:**
+- **MUST align with Official Program** competencies and topics
+- **MUST match Instructional Design** evidence matrix
+- **MUST follow logical learning progression**
+- **MUST consider prerequisite knowledge**
+
+#### **Scheduling Guidelines:**
+- **Distribute evenly** across semester weeks
+- **Group by units** for logical sequence
+- **Allow buffer time** between complex practices
+- **Consider holiday periods** and institutional calendar
+
+#### **Resource Planning:**
+- **Specify minimum requirements** for all practices
+- **Note special needs** for specific practices
+- **Include software licensing** requirements
+- **Consider scalability** for group sizes
+
+#### **Practice Naming Convention:**
+- Use **descriptive, professional names**
+- **Align with competency objectives**
+- **Indicate complexity level** when appropriate
+- **Follow institutional standards**
+
+### Quality Validation Checklist:
+- [ ] All practices align with official program competencies
+- [ ] Scheduling is realistic and evenly distributed
+- [ ] Resource requirements are clearly specified
+- [ ] Practice names are professional and descriptive
+- [ ] Prerequisites are respected in sequencing
+- [ ] Buffer time included for complex practices
+- [ ] Administrative information is complete
+- [ ] Format follows institutional standards
+
+### Integration with Other Documents:
+- **Cross-reference** with Instructional Design evidence matrix
+- **Align practice dates** with assessment calendar  
+- **Coordinate** with other subject laboratory schedules
+- **Ensure** resource availability across programs
