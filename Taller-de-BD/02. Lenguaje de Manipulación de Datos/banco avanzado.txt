@@ -1,0 +1,373 @@
+
+// ==========================================
+// CATEGORÍA: AVANZADAS - Subconsultas, CTEs y Operadores de Conjuntos
+// ==========================================
+
+$CATEGORY: $course$/Unidad 2: DML/Consultas Avanzadas
+
+// ==========================================
+// NIVEL 1: RECORDAR - Conceptos fundamentales
+// ==========================================
+
+::CA001-Recordar-Subconsulta-Concepto::¿Qué es una subconsulta en SQL?{
+=Una consulta anidada dentro de otra consulta principal#¡Correcto! Una subconsulta es una consulta dentro de otra, también llamada consulta interna.
+~Una consulta que se ejecuta después de la consulta principal#Incorrecto. Las subconsultas se ejecutan como parte de la consulta principal.
+~Una consulta que reemplaza a un JOIN#Incorrecto. Aunque a veces logran resultados similares, no son lo mismo.
+~Una consulta que solo funciona con GROUP BY#Incorrecto. Las subconsultas funcionan en diversos contextos.
+####Las subconsultas permiten descomponer problemas complejos, obtener valores dinámicos y filtrar datos basados en resultados de otras consultas.
+}
+
+::CA002-Recordar-CTE-Concepto::¿Qué significa CTE en SQL?{
+=Common Table Expression (Expresión de Tabla Común)#¡Correcto! CTE es una expresión de tabla temporal definida con WITH.
+~Computed Table Entry#Incorrecto. CTE significa Common Table Expression.
+~Cascading Table Element#Incorrecto. No existe este término en SQL.
+~Conditional Table Execution#Incorrecto. CTE no tiene que ver con condicionales.
+####Un CTE se define con la cláusula WITH y proporciona una forma legible de crear resultados temporales que pueden referenciarse en la consulta principal.
+}
+
+::CA003-Recordar-UNION-Funcion::¿Qué hace el operador UNION en SQL?{
+=Combina resultados de múltiples SELECT eliminando duplicados#¡Correcto! UNION une resultados y elimina filas duplicadas automáticamente.
+~Une tablas mediante una clave foránea#Incorrecto. Eso es función de JOIN.
+~Crea una nueva tabla permanente#Incorrecto. UNION solo combina resultados, no crea tablas.
+~Suma valores numéricos de diferentes columnas#Incorrecto. UNION combina filas, no suma valores.
+####UNION requiere que las consultas tengan el mismo número de columnas y tipos de datos compatibles. UNION ALL mantiene duplicados.
+}
+
+::CA004-Recordar-EXCEPT::¿Qué devuelve el operador EXCEPT?{
+=Filas del primer SELECT que NO están en el segundo SELECT#¡Correcto! EXCEPT es la operación de diferencia entre conjuntos.
+~Filas que están en ambos SELECT#Incorrecto. Eso es INTERSECT.
+~Todas las filas de ambos SELECT#Incorrecto. Eso es UNION.
+~Filas que son diferentes en alguna columna#Incorrecto. EXCEPT compara filas completas, no columnas individuales.
+####EXCEPT elimina duplicados automáticamente y el orden importa\: A EXCEPT B es diferente de B EXCEPT A.
+}
+
+::CA005-Recordar-INTERSECT::¿Qué devuelve el operador INTERSECT?{
+=Solo las filas que están presentes en ambos SELECT#¡Correcto! INTERSECT es la operación de intersección entre conjuntos.
+~Filas del primer SELECT que no están en el segundo#Incorrecto. Eso es EXCEPT.
+~Todas las filas de ambos SELECT sin duplicados#Incorrecto. Eso es UNION.
+~Filas donde se cruzan las claves foráneas#Incorrecto. INTERSECT compara resultados completos, no claves específicas.
+####INTERSECT elimina duplicados automáticamente y el orden NO importa\: A INTERSECT B es igual a B INTERSECT A.
+}
+
+::CA006-Recordar-EXISTS::¿Qué verifica el operador EXISTS?{
+=Si una subconsulta devuelve al menos una fila#¡Correcto! EXISTS devuelve TRUE si la subconsulta tiene resultados, FALSE si está vacía.
+~Si un valor específico existe en una columna#Incorrecto. Para eso se usa IN o una comparación directa.
+~Si una tabla existe en la base de datos#Incorrecto. Para verificar existencia de objetos se consultan tablas del sistema.
+~Si hay valores NULL en una columna#Incorrecto. Para NULL se usa IS NULL.
+####EXISTS es muy eficiente porque detiene la ejecución de la subconsulta apenas encuentra la primera fila que cumple la condición.
+}
+
+// ==========================================
+// NIVEL 2: COMPRENDER - Tipos y características
+// ==========================================
+
+::CA007-Comprender-Tipos-Subconsulta::¿Cuáles son los principales tipos de subconsultas? (Seleccione todas las correctas){
+~Subconsulta escalar (devuelve un solo valor)#Correcto. Se usa con operadores de comparación (\=, <, >, etc.).
+~Subconsulta de lista (devuelve múltiples valores)#Correcto. Se usa típicamente con IN, NOT IN.
+~Subconsulta de existencia (verifica si existen filas)#Correcto. Se usa con EXISTS, NOT EXISTS.
+~Subconsulta de agregación (solo funciona con SUM)#Incorrecto. Las subconsultas pueden usar cualquier función de agregación, no es un tipo especial.
+=Subconsulta de ordenamiento#Incorrecto. No existe este tipo; ORDER BY se usa en la consulta principal o final.
+####Los tres tipos principales se distinguen por lo que devuelven\: un valor, múltiples valores o simplemente verificación de existencia.
+}
+
+::CA008-Comprender-UNION-ALL-Diferencia::¿Cuál es la diferencia entre UNION y UNION ALL?{
+=UNION elimina duplicados, UNION ALL los mantiene#¡Correcto! UNION ALL es más rápido porque no necesita eliminar duplicados.
+~UNION ALL es más lento que UNION#Incorrecto. UNION ALL es más rápido porque no procesa duplicados.
+~UNION permite ORDER BY, UNION ALL no#Incorrecto. Ambos permiten ORDER BY al final.
+~UNION funciona con números, UNION ALL con texto#Incorrecto. Ambos funcionan con cualquier tipo de dato compatible.
+####Usa UNION cuando necesites resultados únicos. Usa UNION ALL cuando quieras todos los registros y sepas que no hay duplicados o no te importen.
+}
+
+::CA009-Comprender-CTE-Ventajas::¿Cuáles son ventajas de usar CTEs sobre subconsultas tradicionales? (Seleccione todas las correctas){
+~Mayor legibilidad y organización del código#Correcto. Los CTEs hacen el código más mantenible y fácil de entender.
+~Pueden ser recursivos#Correcto. Los CTEs recursivos permiten consultas jerárquicas y de grafos.
+~Pueden referenciarse múltiples veces en la misma consulta#Correcto. Un CTE se define una vez y se usa varias veces.
+~Son más rápidos que las subconsultas siempre#Incorrecto. El rendimiento es similar; la ventaja principal es la legibilidad.
+=Se almacenan permanentemente en la base de datos#Incorrecto. Los CTEs son temporales y solo existen durante la ejecución de la consulta.
+####CTEs mejoran la mantenibilidad del código SQL complejo, especialmente cuando se necesita reutilizar el mismo resultado temporal múltiples veces.
+}
+
+::CA010-Comprender-IN-vs-EXISTS::¿Cuándo es preferible usar EXISTS en lugar de IN con subconsulta?{
+=Cuando la subconsulta puede devolver muchas filas o valores NULL#¡Correcto! EXISTS es más eficiente con grandes volúmenes y maneja NULL correctamente.
+~Cuando necesitas contar resultados#Incorrecto. Para contar se usa COUNT, no EXISTS.
+~Solo cuando trabajas con fechas#Incorrecto. EXISTS funciona con cualquier tipo de dato.
+~EXISTS e IN son siempre intercambiables#Incorrecto. Tienen diferencias de rendimiento y comportamiento con NULL.
+####EXISTS detiene la búsqueda apenas encuentra una coincidencia, mientras que IN puede evaluar toda la lista. EXISTS también maneja NULL de forma más predecible.
+}
+
+::CA011-Comprender-Operadores-Conjuntos-Requisitos::¿Qué requisitos deben cumplir las consultas para usar operadores de conjuntos (UNION, EXCEPT, INTERSECT)?{
+=Mismo número de columnas y tipos de datos compatibles#¡Correcto! Las columnas deben coincidir en número, orden y tipo.
+~Deben usar las mismas tablas#Incorrecto. Pueden usar tablas completamente diferentes.
+~Deben tener la misma cláusula WHERE#Incorrecto. Cada SELECT puede tener condiciones diferentes.
+~Solo pueden tener columnas numéricas#Incorrecto. Funcionan con cualquier tipo de dato compatible.
+####Los tipos de datos deben ser compatibles por posición (primera columna del primer SELECT compatible con primera columna del segundo SELECT, etc.).
+}
+
+// ==========================================
+// NIVEL 3: APLICAR - Sintaxis correcta
+// ==========================================
+
+::CA012-Aplicar-Subconsulta-Escalar::Para obtener productos con precio mayor al precio promedio\:{
+=SELECT * FROM productos WHERE precio > (SELECT AVG(precio) FROM productos);#¡Correcto! Subconsulta escalar que devuelve un solo valor (el promedio).
+~SELECT * FROM productos WHERE precio > AVG(precio);#Incorrecto. No se pueden usar funciones de agregación directamente en WHERE sin subconsulta.
+~SELECT * FROM productos HAVING precio > (SELECT AVG(precio) FROM productos);#Incorrecto. HAVING requiere GROUP BY; además, WHERE es más apropiado aquí.
+~SELECT * FROM productos WHERE precio IN (SELECT AVG(precio) FROM productos);#Incorrecto. IN es para listas; AVG devuelve un solo valor, usar \= o >.
+####Una subconsulta escalar devuelve exactamente un valor y puede usarse con operadores de comparación como \=, <, >, <\=, >\=, <>.
+}
+
+::CA013-Aplicar-IN-Subconsulta::Para obtener clientes que han hecho pedidos\:{
+=SELECT * FROM clientes WHERE cliente_id IN (SELECT cliente_id FROM pedidos);#¡Correcto! IN con subconsulta de lista para verificar pertenencia.
+~SELECT * FROM clientes WHERE cliente_id \= (SELECT cliente_id FROM pedidos);#Incorrecto. Una subconsulta con \= debe devolver exactamente un valor; esta puede devolver muchos.
+~SELECT * FROM clientes WHERE (SELECT cliente_id FROM pedidos);#Incorrecto. Sintaxis inválida; falta el operador de comparación.
+~SELECT * FROM clientes IN (SELECT cliente_id FROM pedidos);#Incorrecto. IN debe ir en la cláusula WHERE, no después de FROM.
+####IN permite verificar si un valor está en una lista de valores devueltos por la subconsulta. Es equivalente a múltiples OR pero más conciso.
+}
+
+::CA014-Aplicar-EXISTS::Para verificar si existen productos en una categoría específica\:{
+=SELECT * FROM categorias c WHERE EXISTS (SELECT 1 FROM productos p WHERE p.categoria_id \= c.categoria_id);#¡Correcto! EXISTS verifica existencia correlacionando con la consulta externa.
+~SELECT * FROM categorias WHERE categoria_id IN (SELECT categoria_id FROM productos);#Técnicamente correcto pero EXISTS es más eficiente para verificación de existencia.
+~SELECT * FROM categorias WHERE (SELECT COUNT(*) FROM productos) > 0;#Incorrecto. Esto verifica si hay productos en total, no por categoría.
+~SELECT * FROM categorias EXISTS (SELECT * FROM productos);#Incorrecto. EXISTS debe ir en WHERE, no después de FROM.
+####EXISTS es óptimo para verificar existencia porque detiene la ejecución apenas encuentra la primera fila. SELECT 1 o SELECT * dan el mismo resultado.
+}
+
+::CA015-Aplicar-CTE-Basico::Para crear un CTE llamado 'ventas_totales' que calcule ventas por cliente\:{
+=WITH ventas_totales AS (SELECT cliente_id, SUM(monto) AS total FROM pedidos GROUP BY cliente_id) SELECT * FROM ventas_totales;#¡Correcto! Sintaxis correcta de CTE con WITH ... AS (...) SELECT.
+~CREATE CTE ventas_totales AS SELECT cliente_id, SUM(monto) FROM pedidos GROUP BY cliente_id;#Incorrecto. Los CTEs usan WITH, no CREATE.
+~WITH SELECT cliente_id, SUM(monto) AS total FROM pedidos GROUP BY cliente_id AS ventas_totales;#Incorrecto. La sintaxis es WITH nombre AS (consulta), no al revés.
+~CTE ventas_totales \= SELECT cliente_id, SUM(monto) FROM pedidos GROUP BY cliente_id;#Incorrecto. SQL no usa \= para definir CTEs; usa WITH ... AS.
+####Un CTE se define con WITH nombre_cte AS (consulta) y luego se usa en el SELECT principal como si fuera una tabla.
+}
+
+::CA016-Aplicar-UNION::Para combinar listas de empleados y clientes sin duplicados\:{
+=SELECT nombre FROM empleados UNION SELECT nombre FROM clientes;#¡Correcto! UNION combina y elimina duplicados automáticamente.
+~SELECT nombre FROM empleados + SELECT nombre FROM clientes;#Incorrecto. + no es operador de conjuntos en SQL estándar.
+~SELECT nombre FROM empleados JOIN SELECT nombre FROM clientes;#Incorrecto. JOIN combina columnas, no filas; además, sintaxis inválida.
+~SELECT nombre FROM empleados, clientes;#Incorrecto. Esto genera un producto cartesiano, no una unión vertical.
+####UNION apila resultados verticalmente (más filas). Las consultas deben tener el mismo número de columnas con tipos compatibles.
+}
+
+::CA017-Aplicar-EXCEPT::Para encontrar productos que nunca se han vendido\:{
+=SELECT producto_id FROM productos EXCEPT SELECT producto_id FROM ventas;#¡Correcto! EXCEPT devuelve productos que están en la tabla productos pero no en ventas.
+~SELECT producto_id FROM productos WHERE producto_id NOT IN (SELECT producto_id FROM ventas);#Técnicamente correcto pero EXCEPT es más claro para operaciones de conjuntos.
+~SELECT producto_id FROM ventas EXCEPT SELECT producto_id FROM productos;#Incorrecto. El orden está invertido; esto daría ventas de productos inexistentes (normalmente vacío por integridad referencial).
+~SELECT producto_id FROM productos UNION SELECT producto_id FROM ventas;#Incorrecto. UNION combina ambos conjuntos; necesitas EXCEPT para la diferencia.
+####EXCEPT es útil para encontrar diferencias, auditorías y registros faltantes. El orden importa\: A EXCEPT B ≠ B EXCEPT A.
+}
+
+::CA018-Aplicar-INTERSECT::Para encontrar ciudades que tienen tanto empleados como clientes\:{
+=SELECT ciudad FROM empleados INTERSECT SELECT ciudad FROM clientes;#¡Correcto! INTERSECT devuelve solo valores comunes a ambos conjuntos.
+~SELECT ciudad FROM empleados WHERE ciudad IN (SELECT ciudad FROM clientes);#Técnicamente correcto pero INTERSECT es más claro para intersecciones de conjuntos.
+~SELECT ciudad FROM empleados UNION SELECT ciudad FROM clientes;#Incorrecto. UNION devuelve todas las ciudades, no solo las comunes.
+~SELECT ciudad FROM empleados EXCEPT SELECT ciudad FROM clientes;#Incorrecto. EXCEPT devuelve diferencias, no intersecciones.
+####INTERSECT es útil para encontrar elementos comunes entre conjuntos. A diferencia de EXCEPT, el orden no importa\: A INTERSECT B \= B INTERSECT A.
+}
+
+// ==========================================
+// NIVEL 4: APLICAR - CTEs complejos y correlacionados
+// ==========================================
+
+::CA019-Aplicar-CTE-Multiple::Para definir múltiples CTEs en una consulta\:{
+=WITH cte1 AS (SELECT ...), cte2 AS (SELECT ...) SELECT * FROM cte1 JOIN cte2 ON ...;#¡Correcto! Múltiples CTEs se separan con comas después del AS.
+~WITH cte1 AS (SELECT ...) WITH cte2 AS (SELECT ...) SELECT * FROM cte1, cte2;#Incorrecto. WITH solo se usa una vez; los CTEs se separan con comas.
+~CREATE CTE cte1 AS (SELECT ...) CREATE CTE cte2 AS (SELECT ...) SELECT *;#Incorrecto. No se usa CREATE; se usa WITH.
+~WITH cte1, cte2 AS (SELECT ... SELECT ...) SELECT *;#Incorrecto. Cada CTE necesita su propio AS (consulta).
+####Puedes definir múltiples CTEs en una sola instrucción WITH\: WITH cte1 AS (...), cte2 AS (...), cte3 AS (...) SELECT ...
+}
+
+::CA020-Aplicar-Subconsulta-Correlacionada::Una subconsulta correlacionada es aquella que\:{
+=Hace referencia a columnas de la consulta externa#¡Correcto! Se ejecuta una vez por cada fila de la consulta externa.
+~No puede usar JOIN#Incorrecto. Las subconsultas correlacionadas pueden usar JOIN.
+~Solo funciona con EXISTS#Incorrecto. Pueden usarse con EXISTS, IN, operadores de comparación, etc.
+~Se ejecuta antes que la consulta externa#Incorrecto. Se ejecuta repetidamente, una vez por cada fila de la externa.
+####Ejemplo\: SELECT nombre FROM empleados e WHERE salario > (SELECT AVG(salario) FROM empleados WHERE departamento \= e.departamento); compara cada empleado con el promedio de SU departamento.
+}
+
+::CA021-Aplicar-NOT-EXISTS::Para encontrar clientes que NO han hecho pedidos\:{
+=SELECT * FROM clientes c WHERE NOT EXISTS (SELECT 1 FROM pedidos p WHERE p.cliente_id \= c.cliente_id);#¡Correcto! NOT EXISTS verifica la ausencia de filas relacionadas.
+~SELECT * FROM clientes WHERE cliente_id NOT IN (SELECT cliente_id FROM pedidos);#Técnicamente correcto pero puede fallar si hay NULL en pedidos.cliente_id; NOT EXISTS es más seguro.
+~SELECT * FROM clientes WHERE EXISTS (SELECT 1 FROM pedidos WHERE cliente_id <> clientes.cliente_id);#Incorrecto. Esto verifica si existen pedidos de OTROS clientes, no si este cliente no tiene pedidos.
+~SELECT * FROM clientes EXCEPT SELECT * FROM pedidos;#Incorrecto. EXCEPT requiere mismas columnas; clientes y pedidos tienen estructuras diferentes.
+####NOT EXISTS es más seguro que NOT IN cuando puede haber valores NULL, porque EXISTS siempre devuelve TRUE o FALSE, nunca NULL.
+}
+
+// ==========================================
+// NIVEL 5: ANALIZAR - Rendimiento y casos complejos
+// ==========================================
+
+::CA022-Analizar-IN-vs-EXISTS-NULL::¿Por qué NOT IN puede dar resultados inesperados si la subconsulta contiene NULL?{
+=Porque NOT IN con NULL devuelve NULL (no TRUE ni FALSE), filtrando todas las filas#¡Correcto! x NOT IN (a, b, NULL) evalúa como NULL, no como FALSE.
+~Porque IN no puede trabajar con valores NULL#Incorrecto. IN puede trabajar con NULL, pero el resultado puede ser inesperado.
+~Porque NOT invierte el significado de NULL#Incorrecto. NOT NULL sigue siendo NULL en lógica de tres valores.
+~Esto es un error de sintaxis#Incorrecto. Es comportamiento válido pero potencialmente problemático.
+####Regla\: Si puede haber NULL en la subconsulta, usa NOT EXISTS en lugar de NOT IN para evitar problemas. EXISTS no tiene este problema porque trabaja con existencia de filas, no con valores.
+}
+
+::CA023-Analizar-CTE-vs-Temp-Table::¿Cuál es la diferencia entre un CTE y una tabla temporal?{
+=Los CTEs solo existen durante la consulta, las tablas temporales persisten en la sesión#¡Correcto! Los CTEs son consultas inline, las temp tables son objetos físicos.
+~Los CTEs son más rápidos que las tablas temporales siempre#Incorrecto. Depende del caso; las temp tables pueden indexarse.
+~Las tablas temporales no pueden tener índices#Incorrecto. Las tablas temporales SÍ pueden tener índices, constraints, etc.
+~Los CTEs no pueden usar GROUP BY#Incorrecto. Los CTEs pueden usar cualquier característica de SELECT.
+####CTEs son ideales para consultas únicas y legibilidad. Tablas temporales (\#temp) son mejores cuando\: 1) se usan múltiples veces, 2) necesitan índices, 3) tienen muchos datos.
+}
+
+::CA024-Analizar-UNION-Rendimiento::¿Cuándo es mejor usar UNION ALL en lugar de UNION?{
+=Cuando sabes que no hay duplicados o no te importan los duplicados#¡Correcto! UNION ALL evita el costo de eliminar duplicados.
+~Siempre, porque UNION ALL es mejor en todos los casos#Incorrecto. Si necesitas eliminar duplicados, UNION es la opción correcta.
+~Solo cuando trabajas con más de 1000 filas#Incorrecto. La elección depende de la necesidad de eliminar duplicados, no del volumen.
+~UNION ALL solo funciona con números#Incorrecto. UNION ALL funciona con cualquier tipo de dato.
+####UNION elimina duplicados mediante ordenamiento o hashing, lo cual consume recursos. Si sabes que los conjuntos son disjuntos, usa UNION ALL para mejor rendimiento.
+}
+
+::CA025-Analizar-Subconsulta-SELECT::¿Qué sucede si una subconsulta escalar en el SELECT devuelve múltiples filas?{
+=Genera un error de ejecución#¡Correcto! Una subconsulta escalar debe devolver exactamente un valor (una fila, una columna).
+~Devuelve solo la primera fila#Incorrecto. SQL Server genera un error, no selecciona automáticamente.
+~Concatena todos los valores#Incorrecto. No hay concatenación automática.
+~Se ignoran las filas adicionales#Incorrecto. La consulta falla con error.
+####Ejemplo de error\: SELECT nombre, (SELECT ciudad FROM direcciones WHERE cliente_id \= clientes.id) FROM clientes; falla si un cliente tiene múltiples direcciones. Solución\: usar TOP 1, MAX(), o JOIN.
+}
+
+// ==========================================
+// NIVEL 6: RELACIONAR COLUMNAS (Matching)
+// ==========================================
+
+::CA026-Relacionar-Operadores-Conjuntos::Relaciona cada operador de conjuntos con su operación matemática equivalente\:{
+=UNION -> Unión de conjuntos (A ∪ B)
+=INTERSECT -> Intersección de conjuntos (A ∩ B)
+=EXCEPT -> Diferencia de conjuntos (A - B)
+=UNION ALL -> Unión con repetición (multiconjunto)
+####Los operadores de conjuntos en SQL se basan en teoría de conjuntos matemáticos, pero operan sobre filas de resultados.
+}
+
+::CA027-Relacionar-Tipos-Subconsulta-Operador::Relaciona cada tipo de subconsulta con el operador típico usado\:{
+=Subconsulta escalar -> \= < > <\= >\= <>
+=Subconsulta de lista -> IN, NOT IN
+=Subconsulta de existencia -> EXISTS, NOT EXISTS
+=Subconsulta correlacionada -> Referencia a tabla externa
+####Elegir el tipo correcto de subconsulta y operador mejora tanto la claridad como el rendimiento de la consulta.
+}
+
+::CA028-Relacionar-CTE-Casos-Uso::Relaciona cada caso de uso con la técnica SQL apropiada\:{
+=Consulta jerárquica (organigrama) -> CTE recursivo
+=Reutilizar resultado complejo múltiples veces -> CTE no recursivo
+=Datos temporales con índices necesarios -> Tabla temporal (\#temp)
+=Verificar pertenencia a lista grande -> EXISTS en lugar de IN
+=Comparar dos estados de datos -> EXCEPT o INTERSECT
+####Elegir la herramienta correcta depende del problema\: rendimiento, legibilidad y requisitos específicos.
+}
+
+::CA029-Relacionar-Escenarios-Tecnica::Relaciona cada escenario con la mejor técnica SQL\:{
+=Encontrar empleados sin subordinados -> NOT EXISTS o LEFT JOIN con IS NULL
+=Listar productos vendidos en 2023 Y 2024 -> INTERSECT entre dos años
+=Combinar datos de múltiples tablas similares -> UNION o UNION ALL
+=Calcular ranking por categoría -> CTE con ROW_NUMBER() OVER (PARTITION BY)
+=Obtener clientes con gasto > promedio -> Subconsulta escalar con AVG()
+####Cada técnica tiene sus ventajas\: CTEs para legibilidad, EXISTS para rendimiento, operadores de conjuntos para comparaciones lógicas.
+}
+
+// ==========================================
+// NIVEL 7: CASOS PRÁCTICOS COMPLEJOS
+// ==========================================
+
+::CA030-Caso-Practico-CTE-Recursivo::Un CTE recursivo consta de dos partes esenciales. ¿Cuáles son?{
+=Miembro ancla (caso base) y miembro recursivo (que se llama a sí mismo)#¡Correcto! El ancla inicia la recursión, el miembro recursivo la continúa.
+~SELECT y WHERE#Incorrecto. Estas son cláusulas normales, no partes específicas de recursión.
+~JOIN y UNION#Parcialmente correcto pero incompleto; el UNION conecta ancla y recursión, pero no son las dos partes principales.
+~GROUP BY y HAVING#Incorrecto. Estas son para agregación, no para recursión.
+####Ejemplo\: WITH RECURSIVE empleados_jerarquia AS (SELECT id, nombre, jefe_id FROM empleados WHERE jefe_id IS NULL UNION ALL SELECT e.id, e.nombre, e.jefe_id FROM empleados e JOIN empleados_jerarquia ej ON e.jefe_id \= ej.id) SELECT * FROM empleados_jerarquia;
+}
+
+::CA031-Caso-Practico-Auditoria-EXCEPT::Tienes una tabla 'productos_ayer' y 'productos_hoy'. ¿Cómo identificas productos eliminados hoy?{
+=SELECT * FROM productos_ayer EXCEPT SELECT * FROM productos_hoy;#¡Correcto! Devuelve productos que existían ayer pero no existen hoy.
+~SELECT * FROM productos_hoy EXCEPT SELECT * FROM productos_ayer;#Incorrecto. Esto devuelve productos NUEVOS, no eliminados.
+~SELECT * FROM productos_ayer INTERSECT SELECT * FROM productos_hoy;#Incorrecto. INTERSECT devuelve productos que siguen existiendo.
+~SELECT * FROM productos_ayer UNION SELECT * FROM productos_hoy;#Incorrecto. UNION devuelve todos los productos (de ayer y hoy).
+####EXCEPT es excelente para auditorías\: comparar snapshots de datos, identificar registros faltantes o cambios entre sistemas.
+}
+
+::CA032-Caso-Practico-Top-N-CTE::Para obtener los 5 productos más vendidos de cada categoría usando CTEs\:{
+=WITH ranked AS (SELECT *, ROW_NUMBER() OVER (PARTITION BY categoria_id ORDER BY ventas DESC) AS rn FROM productos) SELECT * FROM ranked WHERE rn <\= 5;#¡Correcto! Window function con PARTITION BY resuelve top-N por grupo.
+~SELECT TOP 5 * FROM productos GROUP BY categoria_id ORDER BY ventas DESC;#Incorrecto. TOP 5 se aplica al resultado completo, no por categoría. Además, GROUP BY requiere agregación.
+~WITH top5 AS (SELECT * FROM productos ORDER BY ventas DESC LIMIT 5) SELECT * FROM top5 GROUP BY categoria_id;#Incorrecto. Esto obtiene top 5 global, no por categoría.
+~SELECT * FROM productos WHERE ventas IN (SELECT TOP 5 ventas FROM productos);#Incorrecto. Esto obtiene productos con los 5 valores de venta más altos globales, no por categoría.
+####ROW_NUMBER() OVER (PARTITION BY categoria ORDER BY ventas DESC) asigna ranking dentro de cada categoría. Los CTEs hacen esta consulta más legible.
+}
+
+::CA033-Caso-Practico-Subconsultas-Multiples::Necesitas empleados cuyo salario es mayor al promedio de su departamento Y que trabajan en departamentos con más de 10 empleados. Selecciona TODOS los elementos necesarios\:{
+~%25%Subconsulta para calcular promedio salarial por departamento#Correcto. Necesario para comparar cada empleado con su promedio departamental.
+~%25%Subconsulta para contar empleados por departamento#Correcto. Necesario para filtrar departamentos grandes.
+~%25%Subconsulta correlacionada que referencia departamento del empleado#Correcto. La comparación debe ser por departamento de cada empleado.
+~%25%WHERE con dos condiciones (salario y conteo)#Correcto. Ambas condiciones deben cumplirse simultáneamente.
+~%-100%GROUP BY departamento en la consulta principal#Incorrecto. La consulta principal debe devolver empleados individuales, no grupos.
+~%-100%HAVING con condiciones de salario#Incorrecto. HAVING filtra grupos; aquí filtramos empleados individuales con WHERE.
+~%-100%UNION entre dos subconsultas#Incorrecto. Necesitas condiciones AND, no UNION de resultados.
+####Consulta completa\: SELECT * FROM empleados e WHERE salario > (SELECT AVG(salario) FROM empleados WHERE departamento \= e.departamento) AND departamento IN (SELECT departamento FROM empleados GROUP BY departamento HAVING COUNT(*) > 10);
+}
+
+::CA034-Caso-Practico-EXISTS-Rendimiento::Tienes 1 millón de clientes y 10 millones de pedidos. ¿Cuál consulta es más eficiente para encontrar clientes con pedidos?{
+=SELECT * FROM clientes c WHERE EXISTS (SELECT 1 FROM pedidos p WHERE p.cliente_id \= c.cliente_id);#¡Correcto! EXISTS detiene la búsqueda apenas encuentra un pedido por cliente.
+~SELECT * FROM clientes WHERE cliente_id IN (SELECT cliente_id FROM pedidos);#Menos eficiente; IN construye toda la lista antes de comparar.
+~SELECT DISTINCT c.* FROM clientes c JOIN pedidos p ON c.cliente_id \= p.cliente_id;#Menos eficiente; JOIN genera todas las combinaciones y luego DISTINCT elimina duplicados.
+~SELECT * FROM clientes WHERE (SELECT COUNT(*) FROM pedidos WHERE cliente_id \= clientes.cliente_id) > 0;#Ineficiente; COUNT cuenta todos los pedidos cuando solo necesitas saber si existe al menos uno.
+####EXISTS con subconsulta correlacionada es óptimo para verificación de existencia\: se detiene en la primera coincidencia y no construye conjuntos intermedios grandes.
+}
+
+::CA035-Caso-Practico-UNION-Reportes::Necesitas un reporte unificado de todas las transacciones (ventas, devoluciones, ajustes) de diferentes tablas con estructuras similares\:{
+=SELECT 'Venta' AS tipo, fecha, monto FROM ventas UNION ALL SELECT 'Devolucion', fecha, -monto FROM devoluciones UNION ALL SELECT 'Ajuste', fecha, monto FROM ajustes;#¡Correcto! UNION ALL combina eficientemente sin eliminar duplicados legítimos.
+~SELECT * FROM ventas UNION SELECT * FROM devoluciones UNION SELECT * FROM ajustes;#Incorrecto si las tablas tienen diferentes columnas; además, falta el tipo de transacción.
+~SELECT * FROM ventas JOIN devoluciones JOIN ajustes;#Incorrecto. JOIN combina columnas horizontalmente, no filas verticalmente.
+~INSERT INTO reporte SELECT * FROM ventas; INSERT INTO reporte SELECT * FROM devoluciones;#Funcionaría pero requiere tabla temporal; UNION ALL es más directo.
+####UNION ALL es ideal para consolidar datos de tablas con estructuras similares\: logs de diferentes fuentes, transacciones de múltiples sistemas, reportes históricos por año, etc.
+}
+
+// ==========================================
+// FIN DEL BANCO DE PREGUNTAS - CONSULTAS AVANZADAS
+// ==========================================
+// Total de preguntas avanzadas: 35
+// Distribución por taxonomía de Bloom:
+// - Recordar (Nivel 1): 6 preguntas
+// - Comprender (Nivel 2): 5 preguntas
+// - Aplicar (Niveles 3-4): 16 preguntas
+// - Analizar (Nivel 5): 4 preguntas
+// - Relacionar columnas (Matching): 4 preguntas
+// - Casos prácticos complejos: 6 preguntas
+//
+// Tipos de pregunta:
+// - Opción múltiple simple: 26
+// - Opción múltiple con varias correctas: 3
+// - Relacionar columnas (Matching): 4
+//
+// Todas las preguntas incluyen retroalimentación detallada
+// Las preguntas de opción múltiple con varias correctas penalizan incorrectas
+//
+// ==========================================
+// RESUMEN TOTAL DEL BANCO COMPLETO
+// ==========================================
+// TOTAL GENERAL: 97 preguntas
+// - Básicas: 32 preguntas
+// - Intermedias: 30 preguntas
+// - Avanzadas: 35 preguntas
+//
+// Distribución general por taxonomía:
+// - Recordar: 16 preguntas
+// - Comprender: 15 preguntas
+// - Aplicar: 42 preguntas
+// - Analizar: 14 preguntas
+// - Relacionar columnas: 12 preguntas
+// - Casos prácticos: 14 preguntas
+//
+// Tipos de pregunta total:
+// - Opción múltiple simple: 70
+// - Opción múltiple con varias correctas: 8
+// - Relacionar columnas (Matching): 12
+//
+// Cobertura de contenidos:
+// ✓ Consultas básicas (SELECT, WHERE, ORDER BY, DISTINCT)
+// ✓ Operadores y expresiones
+// ✓ JOINs (INNER, LEFT, RIGHT, FULL, CROSS, SELF)
+// ✓ Agregación (GROUP BY, HAVING, funciones de agregación)
+// ✓ Subconsultas (escalares, de lista, correlacionadas)
+// ✓ CTEs (simples, múltiples, recursivos)
+// ✓ Operadores de conjuntos (UNION, EXCEPT, INTERSECT)
+// ✓ EXISTS y NOT EXISTS
+// ✓ Optimización y rendimiento

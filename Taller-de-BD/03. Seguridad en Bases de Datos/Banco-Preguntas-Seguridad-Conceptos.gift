@@ -1,0 +1,678 @@
+// ==========================================
+// BANCO DE PREGUNTAS - SEGURIDAD EN BASES DE DATOS
+// ==========================================
+// Materia: Taller de Base de Datos
+// Unidad 3: Seguridad en Bases de Datos
+// Tema: Conceptos Generales de Seguridad
+// Formato: GIFT (Moodle)
+// Fecha: 26 de noviembre de 2025
+//
+// Contenidos cubiertos:
+// - Principio del mínimo privilegio
+// - Logins y roles del servidor
+// - Users y tipos de usuarios
+// - Autenticación y autorización
+// - Mejores prácticas de seguridad
+//
+// Estructura por Taxonomía de Bloom:
+// - Nivel 1: Recordar (5 preguntas)
+// - Nivel 2: Comprender (5 preguntas)
+// - Nivel 3-4: Aplicar (5 preguntas)
+// - Nivel 5: Analizar (5 preguntas)
+// - Nivel 6: Evaluar (5 preguntas)
+// - Relacionar columnas (5 preguntas)
+//
+// Total: 30 preguntas
+// ==========================================
+
+$CATEGORY: $course$/Unidad 3: Seguridad/Conceptos Generales
+
+// ==========================================
+// NIVEL 1: RECORDAR - Definiciones y conceptos básicos
+// ==========================================
+
+::SEG001-Recordar-Minimo-Privilegio::¿Qué establece el principio del mínimo privilegio en seguridad de bases de datos?{
+=Los usuarios deben tener únicamente los permisos necesarios para realizar su trabajo#¡Correcto! El principio del mínimo privilegio minimiza el riesgo otorgando solo los permisos esenciales.
+~Los usuarios deben tener acceso completo a todas las bases de datos#Incorrecto. Esto violaría el principio de mínimo privilegio y aumentaría los riesgos de seguridad.
+~Todos los usuarios deben ser administradores para facilitar el trabajo#Incorrecto. Otorgar privilegios administrativos a todos los usuarios es una mala práctica de seguridad.
+~Los privilegios deben asignarse de forma aleatoria#Incorrecto. Los privilegios deben asignarse de manera planificada según las necesidades reales de cada usuario.
+####El principio del mínimo privilegio es fundamental en seguridad\: cada usuario, programa o proceso debe tener acceso solo a la información y recursos necesarios para su función legítima.
+}
+
+::SEG002-Recordar-Login-Definicion::En SQL Server, ¿qué es un Login?{
+=Una cuenta de autenticación a nivel de servidor que permite conectarse al motor de base de datos#¡Correcto! Un Login es la credencial de acceso al servidor SQL Server.
+~Un usuario dentro de una base de datos específica#Incorrecto. Eso es un User, no un Login. El Login es a nivel servidor.
+~Un rol de seguridad predefinido#Incorrecto. Los roles son diferentes; el Login es la cuenta de autenticación.
+~Una contraseña encriptada#Incorrecto. El Login es la cuenta completa, no solo la contraseña.
+####Login (nivel servidor) → permite conectarse al servidor. User (nivel base de datos) → permite acceder a objetos dentro de una base de datos específica.
+}
+
+::SEG003-Recordar-User-Definicion::En SQL Server, ¿qué es un User (usuario de base de datos)?{
+=Una entidad de seguridad dentro de una base de datos específica asociada a un Login#¡Correcto! El User es la identidad dentro de una base de datos particular.
+~Una cuenta que permite conectarse al servidor SQL Server#Incorrecto. Eso es un Login. El User existe dentro de una base de datos.
+~Un grupo de permisos predefinidos#Incorrecto. Eso describe mejor un rol, no un usuario.
+~Un sinónimo de Login#Incorrecto. Login y User son conceptos diferentes aunque relacionados.
+####Relación\: Login (servidor) → se mapea a → User (base de datos). Un Login puede tener múltiples Users en diferentes bases de datos.
+}
+
+::SEG004-Recordar-Tipos-Autenticacion::¿Cuáles son los dos modos de autenticación principales en SQL Server?{
+=Autenticación de Windows y Autenticación de SQL Server#¡Correcto! Estos son los dos modos de autenticación soportados.
+~Autenticación básica y autenticación avanzada#Incorrecto. Estos no son los nombres correctos de los modos de autenticación en SQL Server.
+~Autenticación local y autenticación remota#Incorrecto. La ubicación no define el modo de autenticación.
+~Autenticación por contraseña y autenticación biométrica#Incorrecto. SQL Server no tiene autenticación biométrica nativa.
+####Autenticación de Windows usa Active Directory (recomendada por Microsoft). Autenticación SQL Server usa credenciales almacenadas en SQL Server (usuario/contraseña).
+}
+
+::SEG005-Recordar-Roles-Servidor::¿Qué es un rol de servidor en SQL Server?{
+=Un conjunto de permisos predefinidos a nivel de servidor que pueden asignarse a logins#¡Correcto! Los roles de servidor agrupan permisos administrativos del servidor.
+~Un tipo especial de tabla del sistema#Incorrecto. Los roles no son tablas, son entidades de seguridad.
+~Un usuario con privilegios especiales#Incorrecto. Los usuarios y roles son conceptos diferentes.
+~Una base de datos del sistema#Incorrecto. Los roles no son bases de datos.
+####Ejemplos de roles de servidor\: sysadmin (control total), securityadmin (gestiona logins), dbcreator (crea bases de datos), public (rol por defecto para todos).
+}
+
+// ==========================================
+// NIVEL 2: COMPRENDER - Diferencias y relaciones
+// ==========================================
+
+::SEG006-Comprender-Login-vs-User::¿Cuál es la principal diferencia entre un Login y un User en SQL Server?{
+=Login es a nivel de servidor, User es a nivel de base de datos#¡Correcto! Esta es la diferencia fundamental entre ambos conceptos.
+~Login es para administradores, User es para usuarios normales#Incorrecto. Ambos pueden tener diferentes niveles de privilegios.
+~Login se usa en Windows, User se usa en Linux#Incorrecto. Ambos conceptos existen independientemente del sistema operativo.
+~No hay diferencia, son sinónimos#Incorrecto. Son conceptos diferentes aunque relacionados.
+####Flujo\: 1) Login se autentica en el servidor, 2) Login se mapea a User en base de datos específica, 3) User tiene permisos sobre objetos de esa base de datos.
+}
+
+::SEG007-Comprender-Windows-vs-SQL-Auth::¿Cuál es la ventaja principal de usar Autenticación de Windows en lugar de Autenticación SQL?{
+=Mayor seguridad mediante integración con Active Directory y políticas centralizadas#¡Correcto! Windows Authentication aprovecha las políticas de seguridad del dominio.
+~Es más fácil de configurar#Incorrecto. Ambos métodos son relativamente sencillos de configurar.
+~Permite conexiones desde cualquier sistema operativo#Incorrecto. Autenticación SQL es más compatible con sistemas no-Windows.
+~No requiere contraseñas#Incorrecto. Windows Authentication sí usa credenciales, pero del dominio.
+####Ventajas de Windows Authentication\: Single Sign-On, políticas de contraseña centralizadas, auditoría integrada, Kerberos, no almacena contraseñas en SQL Server.
+}
+
+::SEG008-Comprender-Roles-Fijos-Servidor::¿Cuáles son características de los roles fijos de servidor en SQL Server? (Seleccione todas las correctas){
+~%33.33%Son roles predefinidos por SQL Server que no pueden eliminarse#Correcto. Los roles fijos de servidor vienen incorporados en SQL Server.
+~%33.33%Tienen permisos predefinidos a nivel de servidor#Correcto. Cada rol fijo tiene un conjunto específico de permisos.
+~%33.33%Ejemplos incluyen sysadmin, securityadmin, dbcreator#Correcto. Estos son roles fijos de servidor estándar.
+~%-100%Pueden personalizarse completamente#Incorrecto. Los roles fijos no pueden modificarse; para personalización se crean roles definidos por usuario.
+~%-100%Solo funcionan con autenticación SQL#Incorrecto. Los roles funcionan con ambos tipos de autenticación.
+####Roles fijos de servidor principales\: sysadmin (todo), securityadmin (logins), serveradmin (configuración servidor), setupadmin (linked servers), processadmin (procesos), diskadmin (archivos disco), dbcreator (bases de datos), bulkadmin (BULK INSERT), public (todos los logins).
+}
+
+::SEG009-Comprender-Contained-Users::¿Qué son los contained users (usuarios contenidos) en SQL Server?{
+=Usuarios de base de datos que no requieren un Login a nivel servidor#¡Correcto! Los contained users existen solo dentro de la base de datos.
+~Usuarios que están bloqueados en una base de datos específica#Incorrecto. No se trata de restricciones sino de arquitectura de seguridad.
+~Usuarios temporales que se eliminan automáticamente#Incorrecto. Los contained users son permanentes hasta que se eliminen explícitamente.
+~Usuarios que solo pueden leer datos, no modificarlos#Incorrecto. Los contained users pueden tener cualquier nivel de permisos.
+####Ventaja de contained users\: portabilidad de base de datos (no dependen de logins del servidor). Útil para bases de datos AlwaysOn, migraciones y aplicaciones multi-tenant.
+}
+
+::SEG010-Comprender-Principio-Separacion-Deberes::¿Qué implica el principio de separación de deberes en seguridad de bases de datos?{
+=Dividir responsabilidades críticas entre diferentes usuarios para evitar fraude#¡Correcto! Ningún usuario individual debe tener control completo sobre procesos críticos.
+~Todos los usuarios deben tener las mismas responsabilidades#Incorrecto. La separación implica distribuir, no igualar responsabilidades.
+~Los administradores no deben tener acceso a datos de usuarios#Incorrecto. Esto es demasiado restrictivo y no refleja el principio.
+~Cada usuario debe trabajar en una base de datos diferente#Incorrecto. La separación es de funciones, no de bases de datos.
+####Ejemplo\: Usuario A crea órdenes de compra, Usuario B las aprueba, Usuario C procesa pagos. Ninguno puede completar todo el ciclo solo, previniendo fraude.
+}
+
+// ==========================================
+// NIVEL 3-4: APLICAR - Sintaxis y comandos
+// ==========================================
+
+::SEG011-Aplicar-Crear-Login-SQL::¿Cuál es la sintaxis correcta para crear un Login con autenticación SQL?{
+=CREATE LOGIN empleado1 WITH PASSWORD \= 'P@ssw0rd123';#¡Correcto! Sintaxis básica para crear un SQL Server login.
+~CREATE USER empleado1 WITH PASSWORD \= 'P@ssw0rd123';#Incorrecto. CREATE USER crea usuarios de base de datos, no logins de servidor.
+~ADD LOGIN empleado1 PASSWORD 'P@ssw0rd123';#Incorrecto. No existe el comando ADD LOGIN; se usa CREATE LOGIN.
+~NEW LOGIN empleado1 \= 'P@ssw0rd123';#Incorrecto. Sintaxis inválida; SQL Server usa CREATE LOGIN.
+####Opciones adicionales\: DEFAULT_DATABASE, DEFAULT_LANGUAGE, CHECK_POLICY (política de contraseñas Windows), CHECK_EXPIRATION (caducidad). Ejemplo completo\: CREATE LOGIN empleado1 WITH PASSWORD \= 'P@ssw0rd!', DEFAULT_DATABASE \= Ventas, CHECK_POLICY \= ON;
+}
+
+::SEG012-Aplicar-Crear-User::Para crear un usuario en una base de datos y mapearlo a un login existente\:{
+=USE MiDB; CREATE USER usuario1 FOR LOGIN login1;#¡Correcto! Primero cambias a la base de datos, luego creas el user mapeado al login.
+~CREATE USER usuario1 WITH LOGIN login1;#Incorrecto. La sintaxis correcta usa FOR LOGIN, no WITH LOGIN.
+~USE MiDB; ADD USER usuario1 FROM LOGIN login1;#Incorrecto. No se usa ADD USER ni FROM LOGIN.
+~CREATE DATABASE USER usuario1 FOR login1;#Incorrecto. No existe CREATE DATABASE USER; es CREATE USER.
+####Proceso completo\: 1) CREATE LOGIN a nivel servidor, 2) USE base_de_datos, 3) CREATE USER FOR LOGIN. El usuario hereda el contexto de seguridad del login.
+}
+
+::SEG013-Aplicar-Asignar-Rol-Servidor::¿Cómo se asigna un login al rol de servidor dbcreator?{
+=ALTER SERVER ROLE dbcreator ADD MEMBER login1;#¡Correcto! Sintaxis moderna (SQL Server 2012+) para asignar roles de servidor.
+~EXEC sp_addsrvrolemember 'login1', 'dbcreator';#Técnicamente funciona (sintaxis antigua) pero ALTER SERVER ROLE es la recomendada actualmente.
+~GRANT dbcreator TO login1;#Incorrecto. GRANT se usa para permisos, no para roles de servidor (aunque sí para roles de base de datos).
+~ADD MEMBER login1 TO SERVER ROLE dbcreator;#Incorrecto. Sintaxis inválida; el orden correcto es ALTER SERVER ROLE ... ADD MEMBER.
+####Para remover\: ALTER SERVER ROLE dbcreator DROP MEMBER login1; o sp_dropsrvrolemember. Sintaxis antigua (aún funciona)\: sp_addsrvrolemember.
+}
+
+::SEG014-Aplicar-Crear-Contained-User::¿Cómo se crea un contained user con autenticación SQL en una base de datos contenida?{
+=USE MiDB; CREATE USER usuario_contenido WITH PASSWORD \= 'P@ss123';#¡Correcto! En bases de datos contenidas, el usuario se crea sin LOGIN.
+~CREATE CONTAINED USER usuario_contenido PASSWORD 'P@ss123';#Incorrecto. No existe CREATE CONTAINED USER; es CREATE USER con WITH PASSWORD.
+~USE MiDB; CREATE LOGIN usuario_contenido WITH PASSWORD \= 'P@ss123';#Incorrecto. Los contained users no usan LOGIN; se crean directamente como USER.
+~ALTER DATABASE MiDB ADD USER usuario_contenido;#Incorrecto. Los usuarios se crean con CREATE USER, no ALTER DATABASE.
+####Requisito previo\: la base de datos debe tener containment habilitado\: ALTER DATABASE MiDB SET CONTAINMENT \= PARTIAL; Los contained users no aparecen en sys.server_principals.
+}
+
+::SEG015-Aplicar-Denegar-Permiso::Para denegar explícitamente el permiso DELETE en una tabla a un usuario\:{
+=DENY DELETE ON Empleados TO usuario1;#¡Correcto! DENY niega explícitamente un permiso, prevaleciendo sobre GRANT.
+~REVOKE DELETE ON Empleados FROM usuario1;#Incorrecto. REVOKE elimina un permiso otorgado, pero no lo niega explícitamente.
+~REMOVE DELETE ON Empleados FOR usuario1;#Incorrecto. No existe REMOVE en SQL Server; se usa DENY o REVOKE.
+~DENY usuario1 DELETE ON Empleados;#Incorrecto. El orden correcto es DENY permiso ON objeto TO principal.
+####Jerarquía de permisos\: DENY prevalece sobre GRANT. Si un usuario tiene GRANT via rol pero DENY directo, el DENY gana. REVOKE simplemente elimina GRANT o DENY previo.
+}
+
+// ==========================================
+// NIVEL 5: ANALIZAR - Escenarios y troubleshooting
+// ==========================================
+
+::SEG016-Analizar-Minimo-Privilegio-Violacion::Un desarrollador solicita permisos de sysadmin "para facilitar pruebas". ¿Qué principio de seguridad se violaría si se concede?{
+=Principio del mínimo privilegio#¡Correcto! Sysadmin otorga privilegios excesivos innecesarios para desarrollo.
+~Principio de disponibilidad#Incorrecto. La disponibilidad se refiere a que el sistema esté accesible cuando se necesita.
+~Principio de integridad#Incorrecto. La integridad se refiere a la exactitud y consistencia de los datos.
+~Principio de autenticación#Incorrecto. La autenticación verifica identidad, no niveles de privilegios.
+####Solución correcta\: Otorgar db_owner en base de datos de desarrollo, o permisos específicos (CREATE TABLE, ALTER, etc.). NUNCA sysadmin excepto para DBAs de producción.
+}
+
+::SEG017-Analizar-Login-Sin-Acceso::Un login existe en el servidor pero el usuario no puede acceder a una base de datos. ¿Cuál es la causa más probable?{
+=No existe un User mapeado al Login en esa base de datos#¡Correcto! El login puede autenticarse al servidor pero necesita user en cada base de datos.
+~La contraseña del login es incorrecta#Incorrecto. Si la contraseña fuera incorrecta, no podría conectarse al servidor.
+~El servidor está apagado#Incorrecto. Si el servidor estuviera apagado, no habría conexión alguna.
+~El login está en modo de auditoría#Incorrecto. No existe un "modo de auditoría" que prevenga acceso a bases de datos.
+####Solución\: USE MiBaseDatos; CREATE USER usuario1 FOR LOGIN login1; Luego asignar permisos o roles apropiados al user.
+}
+
+::SEG018-Analizar-Conflicto-Permisos::Un usuario tiene GRANT SELECT via rol db_datareader pero DENY SELECT directo en una tabla específica. ¿Qué ocurre?{
+=El usuario NO puede hacer SELECT en esa tabla (DENY prevalece)#¡Correcto! DENY explícito siempre prevalece sobre cualquier GRANT.
+~El usuario SÍ puede hacer SELECT (GRANT prevalece)#Incorrecto. DENY tiene mayor precedencia que GRANT.
+~El resultado es indeterminado#Incorrecto. Las reglas de precedencia son claras\: DENY gana.
+~Se genera un error de conflicto#Incorrecto. No hay error; DENY simplemente prevalece silenciosamente.
+####Precedencia de permisos\: 1) DENY explícito (gana siempre), 2) GRANT explícito, 3) GRANT vía rol, 4) Sin permisos (denegado por defecto). Para resolver conflictos\: REVOKE DELETE ON tabla FROM usuario;
+}
+
+::SEG019-Analizar-Orphaned-Users::Después de restaurar una base de datos en otro servidor, los usuarios no pueden acceder aunque existen. ¿Por qué?{
+=Los usuarios están huérfanos (orphaned) porque sus SIDs no coinciden con logins del nuevo servidor#¡Correcto! Los SIDs de logins son diferentes entre servidores.
+~Los usuarios fueron eliminados durante la restauración#Incorrecto. Los usuarios sí existen en la base de datos restaurada.
+~La base de datos está en modo offline#Incorrecto. Si estuviera offline, no se podría intentar acceso.
+~Los permisos se perdieron en el backup#Incorrecto. Los permisos de usuarios se restauran con la base de datos.
+####Solución\: sp_change_users_login 'Auto_Fix', 'usuario1'; o ALTER USER usuario1 WITH LOGIN \= login1; Verifica orphaned users\: sp_change_users_login 'Report';
+}
+
+::SEG020-Analizar-Escalacion-Privilegios::¿Cuáles acciones pueden causar escalación no intencionada de privilegios? (Seleccione todas las correctas){
+~%25%Otorgar db_owner cuando solo se necesita db_datareader#Correcto. db_owner tiene permisos excesivos innecesarios.
+~%25%Agregar usuarios al rol sysadmin sin justificación#Correcto. sysadmin es el máximo nivel; debe reservarse para DBAs.
+~%25%Dar CONTROL a nivel de base de datos en lugar de permisos específicos#Correcto. CONTROL es equivalente a db_owner, demasiado amplio.
+~%25%Usar GRANT WITH GRANT OPTION permitiendo que usuarios otorguen permisos#Correcto. Permite propagación descontrolada de permisos.
+~%-100%Crear usuarios con autenticación Windows#Incorrecto. El tipo de autenticación no causa escalación de privilegios por sí mismo.
+~%-100%Hacer backups regulares de la base de datos#Incorrecto. Los backups son una buena práctica de seguridad, no causan escalación.
+####Prevención\: Aplicar mínimo privilegio, auditar permisos regularmente, usar roles personalizados con permisos granulares, documentar justificación de privilegios elevados.
+}
+
+// ==========================================
+// NIVEL 6: EVALUAR - Mejores prácticas y decisiones
+// ==========================================
+
+::SEG021-Evaluar-Modo-Autenticacion::Para un entorno empresarial con Active Directory, ¿qué modo de autenticación es más recomendable y por qué?{
+=Solo autenticación Windows (Windows Authentication Mode) por seguridad centralizada#¡Correcto! Windows-only aprovecha políticas AD y elimina cuentas SQL menos seguras.
+~Modo mixto (Windows y SQL) para máxima flexibilidad#Técnicamente funcional pero menos seguro; modo mixto debe usarse solo si hay requisitos específicos.
+~Solo autenticación SQL para independencia de Windows#Incorrecto. Esto pierde las ventajas de integración con Active Directory.
+~Autenticación anónima para facilitar acceso#Incorrecto. La autenticación anónima no es soportada ni recomendada.
+####Modo Windows (recomendado cuando es posible)\: Kerberos, políticas de contraseña centralizadas, auditoría integrada, SSO. Modo mixto\: solo cuando se necesita acceso desde sistemas no-Windows o aplicaciones legacy.
+}
+
+::SEG022-Evaluar-Politica-Contraseñas::¿Cuál es la mejor práctica para políticas de contraseñas de logins SQL?{
+=Habilitar CHECK_POLICY y CHECK_EXPIRATION para aplicar políticas Windows#¡Correcto! Esto asegura contraseñas fuertes y rotación regular.
+~Deshabilitar políticas para que los usuarios elijan contraseñas fáciles de recordar#Incorrecto. Esto compromete gravemente la seguridad.
+~Usar la misma contraseña para todos los logins#Incorrecto. Una contraseña compartida es una vulnerabilidad crítica.
+~Almacenar contraseñas en texto plano para recuperación#Incorrecto. Las contraseñas deben estar siempre hasheadas, nunca en texto plano.
+####Comando con políticas habilitadas\: CREATE LOGIN app_user WITH PASSWORD \= 'C0mpl3x!P@ss', CHECK_POLICY \= ON, CHECK_EXPIRATION \= ON; Esto aplica las políticas de contraseña de Windows (complejidad, longitud, historial, caducidad).
+}
+
+::SEG023-Evaluar-Roles-vs-Permisos-Directos::¿Cuándo es preferible usar roles en lugar de asignar permisos directamente a usuarios?{
+=Casi siempre; los roles facilitan gestión, auditoría y cumplimiento del mínimo privilegio#¡Correcto! Los roles son la mejor práctica para administración escalable.
+~Solo cuando hay más de 100 usuarios#Incorrecto. Los roles son beneficiosos incluso con pocos usuarios.
+~Nunca; los permisos directos son más seguros#Incorrecto. Los permisos directos son más difíciles de gestionar y auditar.
+~Solo en bases de datos pequeñas#Incorrecto. Los roles son especialmente importantes en sistemas grandes.
+####Ventajas de roles\: 1) Cambiar permisos de un grupo (ALTER ROLE), 2) Auditar quién tiene qué acceso, 3) Onboarding rápido (ADD MEMBER), 4) Segregación de deberes clara, 5) Menos errores que permisos directos dispersos.
+}
+
+::SEG024-Evaluar-Auditoria-Seguridad::¿Cuáles elementos son esenciales en una estrategia de auditoría de seguridad? (Seleccione todas las correctas){
+~%25%Registrar intentos fallidos de login#Correcto. Detecta ataques de fuerza bruta o credenciales comprometidas.
+~%25%Auditar cambios en permisos y roles#Correcto. Rastrea escalación de privilegios y cambios no autorizados.
+~%25%Monitorear acceso a datos sensibles (tablas críticas)#Correcto. Cumplimiento regulatorio y detección de fugas.
+~%25%Revisar periódicamente usuarios inactivos para deshabilitarlos#Correcto. Reduce superficie de ataque (cuentas abandonadas).
+~%-100%Compartir logs de auditoría públicamente#Incorrecto. Los logs de auditoría son sensibles y deben protegerse.
+~%-100%Deshabilitar auditoría para mejorar rendimiento#Incorrecto. La auditoría es crítica para seguridad; el impacto en rendimiento es mínimo con configuración adecuada.
+####Herramientas SQL Server\: SQL Server Audit (nivel servidor y base de datos), Extended Events, SQL Server Profiler (legacy), triggers de auditoría DDL, tablas de log personalizadas.
+}
+
+::SEG025-Evaluar-Separacion-Entornos::¿Cómo debe manejarse la seguridad entre entornos de desarrollo, pruebas y producción?{
+=Logins y permisos completamente separados; desarrolladores sin acceso a producción#¡Correcto! Segregación estricta protege datos de producción.
+~Usar los mismos logins en todos los entornos para simplicidad#Incorrecto. Esto permite que errores de desarrollo afecten producción.
+~Desarrolladores deben tener sysadmin en producción para troubleshooting#Incorrecto. Violación grave de seguridad; usar cuentas separadas de soporte.
+~No hay diferencia; la seguridad es igual en todos los entornos#Incorrecto. Producción requiere controles mucho más estrictos.
+####Mejores prácticas\: 1) Desarrollo\: permisos amplios en datos ficticios, 2) Pruebas\: datos anonimizados, acceso controlado, 3) Producción\: acceso estrictamente necesario, auditoría completa, datos reales protegidos. Usar connection strings diferentes, never hardcodear credenciales.
+}
+
+// ==========================================
+// RELACIONAR COLUMNAS (Matching)
+// ==========================================
+
+::SEG026-Relacionar-Roles-Servidor-Permisos::Relaciona cada rol fijo de servidor con su función principal\:{
+=sysadmin -> Control total del servidor SQL Server
+=securityadmin -> Administra logins y permisos a nivel servidor
+=dbcreator -> Puede crear, alterar y restaurar bases de datos
+=bulkadmin -> Puede ejecutar BULK INSERT
+=public -> Rol predeterminado para todos los logins
+####Otros roles\: serveradmin (configuración servidor), setupadmin (linked servers), processadmin (matar procesos), diskadmin (gestión archivos).
+}
+
+::SEG027-Relacionar-Roles-BD-Permisos::Relaciona cada rol fijo de base de datos con sus permisos\:{
+=db_owner -> Control total en la base de datos
+=db_datareader -> Puede leer todos los datos (SELECT en todas las tablas)
+=db_datawriter -> Puede modificar datos (INSERT, UPDATE, DELETE)
+=db_ddladmin -> Puede ejecutar comandos DDL (CREATE, ALTER, DROP)
+=db_securityadmin -> Administra permisos y roles en la base de datos
+####Otros roles de BD\: db_accessadmin (gestiona acceso), db_backupoperator (backups), db_denydatareader (niega SELECT), db_denydatawriter (niega modificación).
+}
+
+::SEG028-Relacionar-Comandos-Funciones::Relaciona cada comando SQL con su función en seguridad\:{
+=CREATE LOGIN -> Crea cuenta de autenticación a nivel servidor
+=CREATE USER -> Crea usuario en base de datos específica
+=ALTER SERVER ROLE -> Asigna o remueve miembros de roles de servidor
+=GRANT -> Otorga permisos explícitamente
+=DENY -> Niega permisos explícitamente (prevalece sobre GRANT)
+=REVOKE -> Elimina permisos previamente otorgados o negados
+####Flujo típico\: CREATE LOGIN → CREATE USER FOR LOGIN → ALTER ROLE db_datareader ADD MEMBER usuario → o GRANT SELECT ON tabla TO usuario.
+}
+
+::SEG029-Relacionar-Tipos-Usuarios::Relaciona cada tipo de usuario con su característica principal\:{
+=Usuario mapeado a Login SQL -> Autenticación SQL Server (usuario/contraseña)
+=Usuario mapeado a Login Windows -> Autenticación integrada de Windows/AD
+=Contained User -> No requiere login a nivel servidor
+=Usuario sin login -> Para certificados, claves asimétricas, o procesos internos
+=dbo -> Usuario propietario de base de datos (esquema predeterminado)
+####El usuario 'guest' permite acceso sin user mapeado (deshabilitado por defecto por seguridad). Los contained users mejoran portabilidad de bases de datos.
+}
+
+::SEG030-Relacionar-Principios-Practicas::Relaciona cada principio de seguridad con su práctica de implementación\:{
+=Mínimo privilegio -> Otorgar solo permisos necesarios para la función del usuario
+=Defensa en profundidad -> Múltiples capas de seguridad (red, servidor, BD, aplicación)
+=Separación de deberes -> Dividir responsabilidades críticas entre diferentes usuarios
+=Auditoría y monitoreo -> Registrar accesos y cambios para detección de anomalías
+=Autenticación fuerte -> Políticas de contraseña complejas y MFA cuando sea posible
+####Implementar todos estos principios simultáneamente crea un entorno robusto de seguridad que protege contra amenazas internas y externas.
+}
+
+
+// ==========================================
+// FIN DEL BANCO DE PREGUNTAS - SEGURIDAD CONCEPTOS GENERALES
+// ==========================================
+// Total de preguntas: 30
+// Distribución por taxonomía de Bloom:
+// - Recordar (Nivel 1): 5 preguntas
+// - Comprender (Nivel 2): 5 preguntas
+// - Aplicar (Niveles 3-4): 5 preguntas
+// - Analizar (Nivel 5): 5 preguntas
+// - Evaluar (Nivel 6): 5 preguntas
+// - Relacionar columnas (Matching): 5 preguntas
+// 
+// Tipos de pregunta:
+// - Opción múltiple simple: 23
+// - Opción múltiple con varias correctas: 2
+// - Relacionar columnas (Matching): 5
+//
+// Todas las preguntas incluyen retroalimentación detallada
+// Las preguntas de opción múltiple con varias correctas penalizan incorrectas
+//
+// Cobertura de contenidos:
+// ✓ Principio del mínimo privilegio
+// ✓ Logins (SQL y Windows)
+// ✓ Users (mapeados, contained, sin login)
+// ✓ Roles de servidor (fijos y personalizados)
+// ✓ Roles de base de datos (fijos)
+// ✓ Autenticación y autorización
+// ✓ Permisos (GRANT, DENY, REVOKE)
+// ✓ Mejores prácticas de seguridad
+// ✓ Troubleshooting (orphaned users, conflictos)
+// ✓ Auditoría y cumplimiento
+
+
+// ==========================================
+// BANCO DE PREGUNTAS - SEGURIDAD EN BASES DE DATOS
+// ==========================================
+// Materia: Taller de Base de Datos
+// Unidad 3: Seguridad en Bases de Datos
+// Tema: Roles, Schemas y Grants
+// Formato: GIFT (Moodle)
+// Fecha: 26 de noviembre de 2025
+//
+// Contenidos cubiertos:
+// - Roles de base de datos (fijos y definidos por usuario)
+// - Schemas (esquemas de base de datos)
+// - GRANT, DENY, REVOKE (permisos)
+// - Ownership chains (cadenas de propiedad)
+// - Permisos granulares
+//
+// Estructura por Taxonomía de Bloom:
+// - Nivel 1: Recordar (5 preguntas)
+// - Nivel 2: Comprender (5 preguntas)
+// - Nivel 3-4: Aplicar (5 preguntas)
+// - Nivel 5: Analizar (5 preguntas)
+// - Nivel 6: Evaluar (5 preguntas)
+// - Relacionar columnas (5 preguntas)
+//
+// Total: 30 preguntas
+// ==========================================
+
+$CATEGORY: $course$/Unidad 3: Seguridad/Roles, Schemas y Grants
+
+// ==========================================
+// NIVEL 1: RECORDAR - Definiciones y conceptos básicos
+// ==========================================
+
+::RSG001-Recordar-Schema-Definicion::¿Qué es un schema (esquema) en SQL Server?{
+=Un contenedor lógico para objetos de base de datos como tablas, vistas y procedimientos#¡Correcto! Un schema agrupa y organiza objetos de base de datos.
+~Una copia de seguridad de la base de datos#Incorrecto. Las copias de seguridad son backups, no schemas.
+~Un tipo de usuario de base de datos#Incorrecto. Los schemas y usuarios son conceptos diferentes aunque relacionados.
+~Una plantilla para crear nuevas tablas#Incorrecto. Los schemas no son plantillas, son contenedores organizacionales.
+####Los schemas permiten\: 1) Organizar objetos lógicamente, 2) Simplificar permisos (se otorgan a nivel schema), 3) Evitar conflictos de nombres (Sales.Customer vs HR.Customer), 4) Separar responsabilidades.
+}
+
+::RSG002-Recordar-Rol-BD-Definido-Usuario::¿Qué es un rol de base de datos definido por el usuario?{
+=Un rol personalizado creado por el DBA con permisos específicos para necesidades particulares#¡Correcto! Los roles custom permiten implementar permisos granulares según necesidades.
+~Un rol que viene preinstalado en SQL Server#Incorrecto. Esos son roles fijos, no definidos por usuario.
+~Un usuario con privilegios especiales#Incorrecto. Los roles y usuarios son entidades diferentes.
+~Una tabla del sistema que almacena información de usuarios#Incorrecto. Los roles no son tablas.
+####Ventaja de roles definidos por usuario\: flexibilidad total para implementar el principio del mínimo privilegio según las necesidades exactas de la organización.
+}
+
+::RSG003-Recordar-GRANT::¿Qué hace el comando GRANT en SQL Server?{
+=Otorga permisos explícitos a usuarios o roles sobre objetos de base de datos#¡Correcto! GRANT concede permisos de forma explícita.
+~Elimina permisos previamente otorgados#Incorrecto. Eso es REVOKE, no GRANT.
+~Niega permisos explícitamente#Incorrecto. Eso es DENY, no GRANT.
+~Crea nuevos usuarios en la base de datos#Incorrecto. Para crear usuarios se usa CREATE USER.
+####Sintaxis básica\: GRANT permiso ON objeto TO principal; Ejemplo\: GRANT SELECT ON Empleados TO usuario1;
+}
+
+::RSG004-Recordar-Schema-Predeterminado::¿Cuál es el schema predeterminado en SQL Server si no se especifica uno?{
+=dbo (database owner)#¡Correcto! dbo es el schema por defecto para objetos y usuarios.
+~public#Incorrecto. public es un rol, no un schema predeterminado.
+~master#Incorrecto. master es una base de datos del sistema, no un schema.
+~default#Incorrecto. No existe un schema llamado "default" por defecto.
+####Cuando creas una tabla sin especificar schema (CREATE TABLE Empleados...), se crea en dbo por defecto\: dbo.Empleados. Puedes cambiar el schema predeterminado de un usuario\: ALTER USER usuario1 WITH DEFAULT_SCHEMA \= Ventas;
+}
+
+::RSG005-Recordar-WITH-GRANT-OPTION::¿Qué permite la cláusula WITH GRANT OPTION en un comando GRANT?{
+=Que el usuario receptor pueda otorgar ese mismo permiso a otros usuarios#¡Correcto! WITH GRANT OPTION permite la propagación de permisos.
+~Que el permiso se otorgue de forma temporal#Incorrecto. Los permisos con GRANT son permanentes hasta que se revoquen.
+~Que el permiso se aplique a todas las bases de datos#Incorrecto. Los permisos son específicos por base de datos.
+~Que el permiso se otorgue automáticamente a nuevos usuarios#Incorrecto. Los permisos no se otorgan automáticamente.
+####Ejemplo\: GRANT SELECT ON Ventas TO gerente WITH GRANT OPTION; Ahora 'gerente' puede ejecutar\: GRANT SELECT ON Ventas TO empleado1; Cuidado\: puede causar propagación descontrolada de permisos.
+}
+
+// ==========================================
+// NIVEL 2: COMPRENDER - Diferencias y relaciones
+// ==========================================
+
+::RSG006-Comprender-Rol-vs-Schema::¿Cuál es la diferencia principal entre un rol y un schema?{
+=Un rol agrupa usuarios con permisos similares; un schema agrupa objetos de base de datos#¡Correcto! Diferentes propósitos\: roles para seguridad, schemas para organización.
+~Son lo mismo, solo nombres diferentes#Incorrecto. Son conceptos completamente diferentes.
+~Un rol es permanente, un schema es temporal#Incorrecto. Ambos son permanentes hasta que se eliminen explícitamente.
+~Un rol solo funciona en Windows, un schema solo en SQL Server#Incorrecto. Ambos son conceptos de SQL Server independientes del sistema operativo.
+####Ejemplo\: Schema 'Ventas' contiene tablas (Clientes, Pedidos). Rol 'VentasReadOnly' contiene usuarios que pueden leer esas tablas\: GRANT SELECT ON SCHEMA\:\:Ventas TO VentasReadOnly;
+}
+
+::RSG007-Comprender-GRANT-vs-DENY::¿Cuál es la diferencia entre GRANT y DENY?{
+=GRANT otorga permisos, DENY los niega explícitamente (DENY prevalece sobre GRANT)#¡Correcto! DENY es más fuerte que GRANT en la jerarquía de permisos.
+~GRANT es permanente, DENY es temporal#Incorrecto. Ambos son permanentes hasta que se revoquen.
+~No hay diferencia, son sinónimos#Incorrecto. Tienen comportamientos opuestos.
+~GRANT funciona solo con usuarios, DENY solo con roles#Incorrecto. Ambos funcionan con usuarios y roles.
+####Escenario\: Usuario en rol 'Lectores' (GRANT SELECT). Usuario tiene DENY SELECT directo. Resultado\: NO puede hacer SELECT (DENY gana). Para resolver\: REVOKE DELETE FROM usuario;
+}
+
+::RSG008-Comprender-Permisos-Schema::¿Cuáles son ventajas de otorgar permisos a nivel de schema en lugar de tabla por tabla? (Seleccione todas las correctas){
+~%33.33%Simplifica administración (un GRANT cubre múltiples objetos)#Correcto. GRANT SELECT ON SCHEMA\:\:Ventas otorga SELECT en todas sus tablas.
+~%33.33%Los nuevos objetos creados en el schema heredan permisos automáticamente#Correcto. Si agregas tabla nueva a schema, los permisos ya aplican.
+~%33.33%Reduce errores y facilita auditoría de permisos#Correcto. Menos comandos GRANT individuales \= menos complejidad.
+~%-100%Los permisos son más rápidos de ejecutar#Incorrecto. El rendimiento es equivalente; la ventaja es administrativa.
+~%-100%Los schemas son más seguros que las tablas#Incorrecto. No es cuestión de seguridad sino de granularidad de permisos.
+####Ejemplo\: GRANT SELECT ON SCHEMA\:\:HR TO rol_rrhh; Ahora rol_rrhh puede hacer SELECT en HR.Empleados, HR.Nomina, y cualquier tabla futura en HR.
+}
+
+::RSG009-Comprender-Ownership-Chain::¿Qué es una ownership chain (cadena de propiedad) en SQL Server?{
+=Una secuencia de objetos con el mismo propietario donde los permisos se verifican solo en el primer objeto#¡Correcto! Si todos los objetos tienen el mismo owner, se simplifica verificación de permisos.
+~Una lista de usuarios con permisos encadenados#Incorrecto. Las ownership chains se refieren a objetos, no usuarios.
+~Un tipo especial de constraint entre tablas#Incorrecto. No es un constraint, es un concepto de seguridad.
+~Un backup incremental de la base de datos#Incorrecto. No tiene relación con backups.
+####Ejemplo\: Vista 'VentasSummary' (owner\: dbo) consulta tabla 'Ventas' (owner\: dbo). Usuario con permiso solo en la vista puede ejecutarla sin permiso directo en la tabla (ownership chain intacta). Si los owners difieren (broken chain), se requieren permisos en ambos.
+}
+
+::RSG010-Comprender-Roles-Aplicacion::¿Cuál es el propósito de los roles de aplicación (application roles) en SQL Server?{
+=Permitir que las aplicaciones se conecten con permisos específicos independientes del usuario final#¡Correcto! Los app roles permiten seguridad a nivel de aplicación, no de usuario.
+~Crear aplicaciones automáticamente#Incorrecto. Los app roles no crean aplicaciones, controlan permisos.
+~Mejorar el rendimiento de las consultas#Incorrecto. Los app roles son para seguridad, no rendimiento.
+~Reemplazar la autenticación de usuarios#Incorrecto. Los app roles se activan después de autenticarse con credenciales normales.
+####Uso típico\: Aplicación web donde todos los usuarios del sitio se conectan con el mismo login, pero la aplicación activa un app role con sp_setapprole para obtener permisos específicos. Evita que usuarios accedan directamente a la BD sin pasar por la aplicación.
+}
+
+// ==========================================
+// NIVEL 3-4: APLICAR - Sintaxis y comandos
+// ==========================================
+
+::RSG011-Aplicar-Crear-Schema::¿Cuál es la sintaxis correcta para crear un schema llamado 'Finanzas' con propietario 'usuario_finanzas'?{
+=CREATE SCHEMA Finanzas AUTHORIZATION usuario_finanzas;#¡Correcto! Sintaxis estándar para crear schema con owner específico.
+~CREATE SCHEMA Finanzas OWNER usuario_finanzas;#Incorrecto. Se usa AUTHORIZATION, no OWNER.
+~NEW SCHEMA Finanzas FOR usuario_finanzas;#Incorrecto. SQL Server usa CREATE SCHEMA, no NEW SCHEMA.
+~ADD SCHEMA Finanzas TO usuario_finanzas;#Incorrecto. No existe ADD SCHEMA; se usa CREATE SCHEMA.
+####Si no especificas AUTHORIZATION, el schema es propiedad del usuario que lo crea. También puedes crear objetos en el mismo comando\: CREATE SCHEMA Finanzas AUTHORIZATION dbo CREATE TABLE Presupuestos (id INT);
+}
+
+::RSG012-Aplicar-Crear-Rol-Usuario::Para crear un rol de base de datos llamado 'Analistas' y agregar un miembro\:{
+=CREATE ROLE Analistas; ALTER ROLE Analistas ADD MEMBER usuario1;#¡Correcto! Primero creas el rol, luego agregas miembros.
+~CREATE ROLE Analistas WITH MEMBER usuario1;#Incorrecto. CREATE ROLE no tiene cláusula WITH MEMBER.
+~ADD ROLE Analistas INCLUDE usuario1;#Incorrecto. No existe ADD ROLE; se usa CREATE ROLE.
+~NEW DATABASE ROLE Analistas FOR usuario1;#Incorrecto. Sintaxis inválida; se usa CREATE ROLE y ALTER ROLE.
+####Para remover miembro\: ALTER ROLE Analistas DROP MEMBER usuario1; Para eliminar el rol\: DROP ROLE Analistas; (primero debe estar vacío o usar CASCADE en algunos SGBD).
+}
+
+::RSG013-Aplicar-GRANT-Schema::Para otorgar permisos de SELECT en todos los objetos del schema 'Ventas' al rol 'VentasRO'\:{
+=GRANT SELECT ON SCHEMA\:\:Ventas TO VentasRO;#¡Correcto! ON SCHEMA\:\: otorga permisos a nivel de schema completo.
+~GRANT SELECT ON Ventas TO VentasRO;#Incorrecto. Falta especificar ON SCHEMA\:\: para permisos a nivel schema.
+~GRANT SELECT ON SCHEMA Ventas TO VentasRO;#Incorrecto. Sintaxis incorrecta; requiere \:\: después de SCHEMA.
+~GRANT SCHEMA Ventas SELECT TO VentasRO;#Incorrecto. Orden incorrecto; es GRANT permiso ON objeto TO principal.
+####Esto otorga SELECT en todas las tablas, vistas y funciones con valores de tabla dentro del schema Ventas. Los nuevos objetos creados en el schema heredan automáticamente este permiso.
+}
+
+::RSG014-Aplicar-REVOKE::Para eliminar un permiso de INSERT previamente otorgado a un usuario en una tabla\:{
+=REVOKE INSERT ON Empleados FROM usuario1;#¡Correcto! REVOKE elimina permisos previamente otorgados.
+~REMOVE INSERT ON Empleados FROM usuario1;#Incorrecto. No existe REMOVE; se usa REVOKE.
+~DELETE INSERT ON Empleados FOR usuario1;#Incorrecto. DELETE es para datos, no permisos.
+~DENY INSERT ON Empleados TO usuario1;#Incorrecto. DENY niega explícitamente; REVOKE solo elimina el GRANT.
+####Diferencia importante\: REVOKE elimina GRANT (vuelve al estado neutral). DENY niega explícitamente (prevalece sobre cualquier GRANT). Si usuario tiene DENY, hacer REVOKE de DENY lo vuelve neutral (sin permiso explícito).
+}
+
+::RSG015-Aplicar-Permisos-Multiples::Para otorgar SELECT, INSERT y UPDATE en una tabla a un rol\:{
+=GRANT SELECT, INSERT, UPDATE ON Productos TO rol_editores;#¡Correcto! Puedes otorgar múltiples permisos en un solo comando.
+~GRANT SELECT + INSERT + UPDATE ON Productos TO rol_editores;#Incorrecto. Se separan con comas, no con +.
+~GRANT ALL ON Productos TO rol_editores;#Técnicamente funciona pero otorga TODOS los permisos (incluso DELETE, ALTER); menos granular que especificar solo los necesarios.
+~GRANT SELECT; GRANT INSERT; GRANT UPDATE ON Productos TO rol_editores;#Funcionaría pero requiere tres comandos; menos eficiente.
+####Para otorgar permisos en múltiples tablas a la vez, usa nivel schema\: GRANT SELECT ON SCHEMA\:\:dbo TO rol_lectores; o ejecuta múltiples comandos individuales.
+}
+
+// ==========================================
+// NIVEL 5: ANALIZAR - Escenarios y troubleshooting
+// ==========================================
+
+::RSG016-Analizar-Conflicto-Schema-Role::Un usuario es miembro de 'rol_lectores' (GRANT SELECT en schema Ventas) pero tiene DENY SELECT en tabla Ventas.Clientes específicamente. ¿Puede hacer SELECT en Ventas.Clientes?{
+=No, porque DENY prevalece sobre GRANT independientemente del nivel#¡Correcto! DENY siempre gana, sin importar si viene de rol o es directo.
+~Sí, porque el permiso del schema es más general#Incorrecto. DENY tiene precedencia máxima.
+~Depende del orden en que se otorgaron los permisos#Incorrecto. El orden no importa; DENY siempre prevalece.
+~Genera un error de conflicto#Incorrecto. No hay error; simplemente DENY prevalece silenciosamente.
+####Solución\: REVOKE DELETE ON Ventas.Clientes FROM usuario1; Esto elimina el DENY y permite que el GRANT del rol aplique. Jerarquía\: DENY > GRANT directo > GRANT vía rol > sin permiso (denegado por defecto).
+}
+
+::RSG017-Analizar-Schema-Ownership::Tienes schema 'Reportes' propiedad de 'dbo'. Creas vista 'Reportes.VentasMensuales' que consulta tabla 'Ventas.Pedidos' (también dbo). ¿Qué permisos necesita un usuario para ejecutar la vista?{
+=Solo permiso en la vista (ownership chain intacta porque ambos objetos son dbo)#¡Correcto! Mismos owners \= ownership chain \= no se verifica permiso en tabla subyacente.
+~Permiso en vista y en tabla Pedidos#Incorrecto. Con ownership chain intacta, solo se verifica el primer objeto.
+~Solo permiso en la tabla Pedidos#Incorrecto. El usuario ejecuta la vista, necesita permiso en ella.
+~Permiso en el schema Reportes completo#Incorrecto. Puede tener permiso solo en la vista específica.
+####Si cambias owner de la vista (ALTER AUTHORIZATION ON Reportes.VentasMensuales TO otro_usuario), rompes la ownership chain y ahora SÍ se requiere permiso en ambos objetos.
+}
+
+::RSG018-Analizar-Rol-Vacio::Creaste un rol 'Auditores' y otorgaste GRANT SELECT ON SCHEMA\:\:dbo TO Auditores, pero un usuario miembro no puede hacer SELECT. ¿Por qué?{
+=El usuario probablemente tiene DENY SELECT en algún objeto o nivel superior#¡Correcto! DENY del usuario prevalece sobre GRANT del rol.
+~Los roles no funcionan con permisos de schema#Incorrecto. Los roles sí pueden tener permisos a nivel schema.
+~El rol necesita ser reactivado después de agregar miembros#Incorrecto. Los cambios en membresía de roles aplican inmediatamente.
+~El schema dbo es especial y no permite permisos#Incorrecto. dbo permite permisos como cualquier schema.
+####Troubleshooting\: 1) Verifica DENY directo\: SELECT * FROM sys.database_permissions WHERE grantee_principal_id \= USER_ID('usuario'); 2) Verifica membresía efectiva del rol\: EXEC sp_helprolemember 'Auditores'; 3) Prueba permisos efectivos\: EXECUTE AS USER \= 'usuario'; SELECT * FROM tabla; REVERT;
+}
+
+::RSG019-Analizar-Schema-vs-Tabla-Permisos::Un usuario tiene GRANT SELECT ON SCHEMA\:\:Ventas pero DENY SELECT en Ventas.ClientesVIP específicamente. ¿Puede leer Ventas.Pedidos?{
+=Sí, puede leer Ventas.Pedidos; DENY solo afecta Ventas.ClientesVIP#¡Correcto! DENY específico no afecta otros objetos del schema.
+~No, DENY en una tabla bloquea todo el schema#Incorrecto. DENY es granular; solo afecta el objeto especificado.
+~Puede leer solo si los permisos se otorgaron en cierto orden#Incorrecto. El orden no importa; DENY es específico por objeto.
+~Depende del propietario del schema#Incorrecto. La ownership no afecta cómo aplican DENY específicos.
+####Permisos efectivos\: Ventas.Pedidos → GRANT (heredado de schema), Ventas.ClientesVIP → DENY (explícito, prevalece), Ventas.Facturas → GRANT (heredado de schema).
+}
+
+::RSG020-Analizar-Herencia-Nuevos-Objetos::Otorgaste GRANT SELECT ON SCHEMA\:\:Inventario TO rol_almacen hace un mes. Hoy creaste tabla Inventario.Ubicaciones. ¿El rol puede hacer SELECT en esta nueva tabla?{
+=Sí, los permisos a nivel schema se aplican automáticamente a objetos nuevos#¡Correcto! Esta es una ventaja clave de permisos a nivel schema.
+~No, necesitas otorgar permisos explícitamente en la nueva tabla#Incorrecto. Los permisos de schema son dinámicos.
+~Solo si la tabla se crea en las próximas 24 horas#Incorrecto. No hay límite temporal; los permisos de schema aplican siempre.
+~Depende de quién creó la tabla#Incorrecto. La herencia de permisos de schema es independiente del creador.
+####Esto facilita administración\: configuras permisos de schema una vez y aplican a todas las tablas futuras. Contraste\: permisos a nivel tabla requieren GRANT manual para cada nueva tabla.
+}
+
+// ==========================================
+// NIVEL 6: EVALUAR - Mejores prácticas y decisiones
+// ==========================================
+
+::RSG021-Evaluar-Estrategia-Schemas::¿Cuál es la mejor estrategia de uso de schemas para una aplicación empresarial?{
+=Organizar por área funcional (Ventas, Finanzas, RRHH) con permisos a nivel schema#¡Correcto! Facilita administración, auditoría y cumplimiento.
+~Poner todas las tablas en dbo para simplicidad#Incorrecto. Esto dificulta organización y gestión de permisos granulares.
+~Crear un schema por cada tabla#Incorrecto. Demasiada granularidad; dificulta administración.
+~Usar schemas solo para vistas, no para tablas#Incorrecto. Los schemas benefician todos los tipos de objetos.
+####Ventajas de schemas por área funcional\: 1) Permisos simples (GRANT SELECT ON SCHEMA\:\:Ventas), 2) Organización lógica clara, 3) Separación de deberes, 4) Auditoría facilitada, 5) Compatibilidad con múltiples aplicaciones compartiendo BD.
+}
+
+::RSG022-Evaluar-Roles-vs-Permisos-Directos::Para una empresa con 50 empleados y 5 departamentos, ¿cuál es la mejor práctica de seguridad?{
+=Crear roles por departamento y asignar usuarios a roles apropiados#¡Correcto! Los roles facilitan administración escalable y auditoria.
+~Otorgar permisos directamente a cada usuario individual#Incorrecto. Difícil de mantener; propenso a errores y inconsistencias.
+~Dar a todos los usuarios db_owner para evitar problemas#Incorrecto. Violación grave del principio del mínimo privilegio.
+~Crear 50 roles individuales, uno por empleado#Incorrecto. Elimina el beneficio de los roles; mejor usar permisos directos en ese caso.
+####Estructura recomendada\: Roles 'Ventas_RO', 'Ventas_RW', 'Finanzas_RO', 'Finanzas_Admin', etc. Cuando cambia empleado de departamento\: ALTER ROLE viejo DROP MEMBER empleado; ALTER ROLE nuevo ADD MEMBER empleado; Más fácil que REVOKE/GRANT múltiples permisos.
+}
+
+::RSG023-Evaluar-GRANT-WITH-GRANT-OPTION::¿En qué escenario es apropiado usar WITH GRANT OPTION?{
+=Cuando un administrador de área (no DBA) necesita gestionar permisos de su equipo#¡Correcto! Delegación controlada de administración de permisos.
+~Siempre, para dar máxima flexibilidad#Incorrecto. WITH GRANT OPTION puede causar propagación descontrolada.
+~Nunca, es una vulnerabilidad de seguridad#Incorrecto. Tiene casos de uso válidos cuando se controla adecuadamente.
+~Solo para el rol sysadmin#Incorrecto. Sysadmin ya tiene todos los permisos por defecto.
+####Ejemplo apropiado\: GRANT SELECT ON SCHEMA\:\:Ventas TO gerente_ventas WITH GRANT OPTION; El gerente puede dar acceso a su equipo sin involucrar al DBA. Riesgo\: auditar quién otorgó qué permisos a quién. Mitigación\: documentar política y usar auditoría SQL Server.
+}
+
+::RSG024-Evaluar-Permisos-Granulares::¿Cuáles son mejores prácticas para permisos granulares? (Seleccione todas las correctas){
+~%25%Otorgar permisos específicos (SELECT, INSERT) en lugar de ALL#Correcto. Minimiza superficie de ataque siguiendo mínimo privilegio.
+~%25%Usar schemas para agrupar objetos relacionados y simplificar permisos#Correcto. GRANT a nivel schema reduce complejidad.
+~%25%Documentar justificación de permisos elevados (db_owner, CONTROL)#Correcto. Auditoría y cumplimiento requieren documentación.
+~%25%Revisar y remover permisos de usuarios inactivos periódicamente#Correcto. Limpieza de permisos obsoletos reduce vulnerabilidades.
+~%-100%Otorgar sysadmin a desarrolladores para agilizar trabajo#Incorrecto. Violación grave de seguridad; usar db_owner en BD desarrollo máximo.
+~%-100%Usar solo permisos directos, nunca roles#Incorrecto. Los roles son mejores prácticas para administración escalable.
+####Auditoría de permisos\: SELECT dp.permission_name, OBJECT_NAME(dp.major_id), USER_NAME(dp.grantee_principal_id) FROM sys.database_permissions dp WHERE dp.class_desc \= 'OBJECT_OR_COLUMN';
+}
+
+::RSG025-Evaluar-Schema-Ownership::¿Quién debe ser el propietario (owner) de schemas en producción?{
+=El usuario 'dbo' o una cuenta de servicio específica, no usuarios individuales#¡Correcto! Ownership estable previene problemas al eliminar usuarios.
+~El primer usuario que creó objetos en el schema#Incorrecto. Ownership por usuarios individuales crea dependencias problemáticas.
+~Cada desarrollador debe ser owner de sus propios schemas#Incorrecto. En producción, ownership debe ser institucional, no personal.
+~No importa quién sea el owner#Incorrecto. Ownership afecta ownership chains y puede causar problemas si el usuario se elimina.
+####Problema con ownership personal\: Si 'juan' es owner de schema 'Ventas' y juan renuncia/se elimina, puede romper ownership chains y causar errores. Solución\: ALTER AUTHORIZATION ON SCHEMA\:\:Ventas TO dbo; antes de eliminar usuarios.
+}
+
+// ==========================================
+// RELACIONAR COLUMNAS (Matching)
+// ==========================================
+
+::RSG026-Relacionar-Comandos-Permisos::Relaciona cada comando de permisos con su función\:{
+=GRANT -> Otorga permisos explícitamente
+=DENY -> Niega permisos explícitamente (prevalece sobre GRANT)
+=REVOKE -> Elimina permisos previamente otorgados o negados
+=GRANT WITH GRANT OPTION -> Permite que el receptor otorgue el permiso a otros
+=ALTER ROLE ADD MEMBER -> Agrega un usuario a un rol de base de datos
+####Precedencia\: DENY > GRANT directo > GRANT vía rol > sin permiso (denegado por defecto).
+}
+
+::RSG027-Relacionar-Tipos-Permisos::Relaciona cada tipo de permiso con su alcance\:{
+=SELECT, INSERT, UPDATE, DELETE -> Permisos DML (manipulación de datos)
+=CREATE TABLE, ALTER, DROP -> Permisos DDL (definición de objetos)
+=EXECUTE -> Permiso para procedimientos almacenados y funciones
+=CONTROL -> Permiso equivalente a ownership (casi todos los permisos)
+=VIEW DEFINITION -> Permiso para ver definición de objetos (sp_helptext)
+####Jerarquía de permisos\: CONTROL DATABASE > CONTROL SCHEMA > CONTROL objeto > permisos específicos (SELECT, etc.).
+}
+
+::RSG028-Relacionar-Schemas-Uso::Relaciona cada schema con su uso típico\:{
+=dbo -> Schema predeterminado, objetos del sistema y generales
+=sys -> Schema del sistema (vistas de catálogo, funciones internas)
+=INFORMATION_SCHEMA -> Vistas estándar SQL para metadatos
+=guest -> Schema para el usuario guest (deshabilitado por defecto)
+=Schemas personalizados -> Organización por área funcional (Ventas, Finanzas, HR)
+####Mejores prácticas\: Crear schemas personalizados por área de negocio en lugar de amontonar todo en dbo.
+}
+
+::RSG029-Relacionar-Roles-Permisos-BD::Relaciona cada permiso con el rol fijo de base de datos apropiado\:{
+=db_owner -> Control total en la base de datos
+=db_datareader -> SELECT en todas las tablas
+=db_datawriter -> INSERT, UPDATE, DELETE en todas las tablas
+=db_ddladmin -> CREATE, ALTER, DROP de objetos (excepto permisos)
+=db_securityadmin -> GRANT, DENY, REVOKE de permisos y gestión de roles
+=db_backupoperator -> BACKUP DATABASE y BACKUP LOG
+####Roles adicionales\: db_accessadmin (gestiona acceso de usuarios), db_denydatareader (niega SELECT), db_denydatawriter (niega modificaciones).
+}
+
+::RSG030-Relacionar-Escenarios-Solucion::Relaciona cada escenario con la solución de permisos apropiada\:{
+=Usuarios de un departamento necesitan leer todas las tablas -> GRANT SELECT ON SCHEMA\:\:Departamento TO rol_departamento
+=Usuario necesita ejecutar SP pero no ver tablas subyacentes -> GRANT EXECUTE ON procedimiento TO usuario (ownership chain)
+=Desarrollador necesita crear objetos en desarrollo -> ALTER ROLE db_ddladmin ADD MEMBER dev_user
+=Auditor necesita ver definiciones sin modificar -> GRANT VIEW DEFINITION ON SCHEMA\:\:dbo TO auditor
+=Aplicación necesita permisos fijos independientes de usuario -> Usar application role con sp_setapprole
+####Cada escenario requiere análisis del principio de mínimo privilegio para determinar los permisos exactos necesarios.
+}
+
+// ==========================================
+// FIN DEL BANCO DE PREGUNTAS - ROLES, SCHEMAS Y GRANTS
+// ==========================================
+// Total de preguntas: 30
+// Distribución por taxonomía de Bloom:
+// - Recordar (Nivel 1): 5 preguntas
+// - Comprender (Nivel 2): 5 preguntas
+// - Aplicar (Niveles 3-4): 5 preguntas
+// - Analizar (Nivel 5): 5 preguntas
+// - Evaluar (Nivel 6): 5 preguntas
+// - Relacionar columnas (Matching): 5 preguntas
+// 
+// Tipos de pregunta:
+// - Opción múltiple simple: 23
+// - Opción múltiple con varias correctas: 2
+// - Relacionar columnas (Matching): 5
+//
+// Todas las preguntas incluyen retroalimentación detallada
+// Las preguntas de opción múltiple con varias correctas penalizan incorrectas
+//
+// Cobertura de contenidos:
+// ✓ Schemas (definición, creación, ownership, organización)
+// ✓ Roles de base de datos (fijos y definidos por usuario)
+// ✓ GRANT (sintaxis, WITH GRANT OPTION, niveles)
+// ✓ DENY (precedencia, conflictos)
+// ✓ REVOKE (diferencia con DENY)
+// ✓ Permisos a nivel schema vs. tabla
+// ✓ Ownership chains (cadenas de propiedad)
+// ✓ Application roles
+// ✓ Permisos granulares y específicos
+// ✓ Mejores prácticas de administración de permisos
+// ✓ Troubleshooting de permisos
+// ✓ Auditoría y documentación
+//
+// TOTAL ACUMULADO UNIDAD 3 - SEGURIDAD:
+// Banco 1 (Conceptos Generales): 30 preguntas
+// Banco 2 (Roles, Schemas, Grants): 30 preguntas
+// TOTAL: 60 preguntas sobre seguridad en bases de datos

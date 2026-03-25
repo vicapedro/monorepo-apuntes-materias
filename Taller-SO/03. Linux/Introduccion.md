@@ -12,7 +12,7 @@ Además de las distribuciones de Linux, existen varios sistemas operativos libre
 En esta sección, se analizarán las características más destacadas de los sistemas operativos libres mencionados anteriormente, así como sus ventajas y desventajas en diferentes contextos de uso.
 
 
-## 1. BSD (Berkeley Software Distribution)
+### 1. BSD (Berkeley Software Distribution)
 Los sistemas BSD son una familia de sistemas operativos derivados del Unix original desarrollado en la Universidad de California, Berkeley. Son libres y de código abierto, y no están basados en Linux.
 
 **Ventajas:**
@@ -25,7 +25,7 @@ Los sistemas BSD son una familia de sistemas operativos derivados del Unix origi
 - Menor soporte de hardware comparado con Linux.
 - Comunidad de usuarios más pequeña.
 
-### FreeBSD:
+#### FreeBSD:
 
 Enfocado en rendimiento, estabilidad y escalabilidad.
 
@@ -33,7 +33,7 @@ Ampliamente utilizado en servidores y sistemas embebidos.
 
 Soporta una amplia gama de hardware.
 
-### OpenBSD:
+#### OpenBSD:
 
 Enfocado en seguridad y corrección de código.
 
@@ -41,7 +41,7 @@ Incluye características como ASLR (Address Space Layout Randomization) y W^X (W
 
 Popular en entornos donde la seguridad es crítica.
 
-### NetBSD:
+#### NetBSD:
 
 Diseñado para ser altamente portable.
 
@@ -49,13 +49,13 @@ Funciona en una amplia variedad de arquitecturas, desde servidores hasta disposi
 
 Lema: "Of course it runs NetBSD".
 
-### DragonFly BSD:
+#### DragonFly BSD:
 
 Derivado de FreeBSD, pero con un enfoque en escalabilidad y rendimiento en sistemas multiprocesador.
 
 Utiliza un sistema de archivos único llamado HAMMER.
 
-## 2. ReactOS
+### 2. ReactOS
 Un sistema operativo de código abierto diseñado para ser compatible con aplicaciones y controladores de Windows.
 
 Su objetivo es ser un reemplazo libre de Windows NT.
@@ -70,7 +70,7 @@ Aunque todavía está en desarrollo, es funcional para muchas tareas básicas.
 - Todavía en desarrollo, no tan estable como otros sistemas.
 - Limitado en funcionalidades avanzadas.
 
-## 3. Haiku
+### 3. Haiku
 Un sistema operativo de código abierto inspirado en BeOS.
 
 Diseñado para ser rápido, eficiente y fácil de usar.
@@ -85,7 +85,7 @@ Ofrece un sistema de archivos con bases de datos integradas (BFS) y un enfoque e
 - Menor soporte de hardware y software.
 - Comunidad de usuarios pequeña.
 
-## 4. GNU/Hurd
+### 4. GNU/Hurd
 El proyecto GNU desarrolló su propio kernel llamado Hurd, que se puede usar con las herramientas GNU.
 
 Aunque no es tan popular como Linux, es un sistema operativo completamente libre.
@@ -100,7 +100,7 @@ Hurd utiliza un diseño de micronúcleo, a diferencia del núcleo monolítico de
 - Menos popular y menos desarrollado que Linux.
 - Menor soporte de hardware y software.
 
-## 5. Minix
+### 5. Minix
 Un sistema operativo basado en un micronúcleo, diseñado originalmente con fines educativos.
 
 Fue creado por Andrew S. Tanenbaum para enseñar conceptos de sistemas operativos.
@@ -115,7 +115,7 @@ Aunque no es tan popular como otros sistemas, es interesante por su diseño mini
 - No tan popular ni ampliamente utilizado.
 - Limitado en funcionalidades avanzadas.
 
-## 6. Redox OS
+### 6. Redox OS
 Un sistema operativo moderno escrito en Rust.
 
 Diseñado para ser seguro, modular y eficiente.
@@ -130,7 +130,7 @@ Aunque todavía está en desarrollo, es prometedor por su enfoque en seguridad y
 - Todavía en desarrollo.
 - Comunidad de usuarios pequeña.
 
-## 7. illumos
+### 7. illumos
 Una bifurcación de OpenSolaris, que a su vez es la versión de código abierto de Solaris (desarrollado por Sun Microsystems).
 
 Incluye características avanzadas como ZFS (sistema de archivos) y DTrace (herramienta de diagnóstico).
@@ -148,7 +148,7 @@ Distribuciones basadas en illumos:
 - Menor soporte de hardware y software.
 - Comunidad de usuarios más pequeña.
 
-## 8. AROS (AROS Research Operating System)
+### 8. AROS (AROS Research Operating System)
 Un sistema operativo de código abierto compatible con AmigaOS.
 
 Diseñado para ser ligero y eficiente.
@@ -163,7 +163,7 @@ Funciona en una variedad de hardware, incluyendo x86 y ARM.
 - Menor soporte de hardware y software.
 - Comunidad de usuarios pequeña.
 
-## 9. SerenityOS
+### 9. SerenityOS
 Un sistema operativo moderno desarrollado desde cero.
 
 Diseñado para ser simple, elegante y funcional.
@@ -178,7 +178,7 @@ Incluye un entorno de escritorio personalizado y aplicaciones propias.
 - Todavía en desarrollo.
 - Comunidad de usuarios pequeña.
 
-## 10. FreeDOS
+### 10. FreeDOS
 Un sistema operativo libre compatible con MS-DOS.
 
 Ideal para ejecutar software antiguo o para sistemas embebidos.
@@ -193,7 +193,7 @@ Aunque no es un sistema moderno, es útil en contextos específicos.
 - No es un sistema moderno.
 - Limitado en funcionalidades avanzadas.
 
-## 11. Plan 9 from Bell Labs
+### 11. Plan 9 from Bell Labs
 Desarrollado por los creadores de Unix, es un sistema operativo distribuido y orientado a la red.
 
 Conocido por su enfoque innovador en sistemas de archivos y recursos.
@@ -208,7 +208,7 @@ Aunque no es ampliamente utilizado, es interesante desde un punto de vista acad�
 - No ampliamente utilizado.
 - Comunidad de usuarios pequeña.
 
-## 12. TempleOS
+### 12. TempleOS
 Un sistema operativo creado por Terry A. Davis como un "templo" para Dios.
 
 Diseñado para ser simple y rápido, con un enfoque en la programación en tiempo real.

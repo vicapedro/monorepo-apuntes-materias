@@ -1,0 +1,1012 @@
+// Banco de Preguntas - Consultas Básicas SQL
+// Taller de Base de Datos - Unidad 2: DML
+// Alineado con Taxonomía de Bloom (Recordar, Comprender, Aplicar, Analizar)
+// Formato: GIFT (Moodle)
+
+// ==========================================
+// CATEGORÍA: BÁSICAS - Introducción a SQL
+// ==========================================
+
+$CATEGORY: $course$/Unidad 2: DML/Consultas Básicas
+
+// ==========================================
+// NIVEL 1: RECORDAR - Conceptos fundamentales
+// ==========================================
+
+::CB001-Recordar-Clausula-SELECT::¿Cuál es la función principal de la cláusula SELECT en SQL?{
+=Especificar qué columnas se desean recuperar de una tabla#¡Correcto! SELECT indica las columnas que aparecerán en el resultado.
+~Filtrar las filas que cumplen una condición#Incorrecto. Eso es función de la cláusula WHERE.
+~Ordenar los resultados de la consulta#Incorrecto. Eso es función de la cláusula ORDER BY.
+~Eliminar registros duplicados#Incorrecto. Eso es función del modificador DISTINCT.
+####La cláusula SELECT es fundamental en SQL y define QUÉ columnas queremos ver en el resultado de nuestra consulta.
+}
+
+::CB002-Recordar-Asterisco::¿Qué significa el símbolo * en una consulta SELECT?{
+=Seleccionar todas las columnas de la tabla#Correcto. El asterisco (*) es un comodín que representa todas las columnas.
+~Multiplicar valores de columnas#Incorrecto. Para multiplicar se usa el operador * en expresiones, no en SELECT *.
+~Indicar columnas opcionales#Incorrecto. No existe este concepto en SQL.
+~Seleccionar solo las columnas numéricas#Incorrecto. El asterisco no discrimina por tipo de dato.
+####SELECT * devuelve todas las columnas en el orden en que están definidas en la estructura de la tabla.
+}
+
+::CB003-Recordar-WHERE::¿Qué cláusula de SQL se utiliza para filtrar filas según una condición?{
+=WHERE#¡Correcto! WHERE es la cláusula que filtra filas.
+~FILTER#Incorrecto. No existe una cláusula FILTER en SQL estándar.
+~HAVING#Incorrecto. HAVING filtra grupos después de GROUP BY, no filas individuales.
+~SELECT#Incorrecto. SELECT especifica columnas, no filtra filas.
+####La cláusula WHERE permite filtrar las filas de una tabla antes de que se procesen otras operaciones.
+}
+
+::CB004-Recordar-Operadores-Comparacion::¿Cuáles de los siguientes son operadores de comparación válidos en SQL? (Seleccione todas las correctas){
+~%50%\= (igual)#Correcto. Operador de igualdad.
+~%50%<> (diferente)#Correcto. Operador de desigualdad (not equal).
+~%-100%\=\= (doble igual)#Incorrecto. En SQL se usa un solo signo igual (\=), no \=\= como en otros lenguajes de programación.
+~%50%>\= (mayor o igual)#Correcto. Mayor o igual que.
+~%-100%<\=> (comparación)#Incorrecto. No existe este operador. El correcto es <\= (menor o igual).
+~%50%< (menor que)#Correcto. Menor que.
+####Los operadores de comparación en SQL son\: \= (igual), <> o !\= (diferente), < (menor), > (mayor), <\= (menor o igual), >\= (mayor o igual). Nota\: se usa un solo \= para comparar, no \=\= como en otros lenguajes.
+}
+
+::CB005-Recordar-NULL::¿Cómo se verifica si una columna tiene un valor NULL en SQL?{
+=IS NULL#¡Correcto! IS NULL es el operador correcto.
+~\= NULL#Incorrecto. No se puede usar \= con NULL porque NULL no es igual a nada, ni siquiera a sí mismo.
+~\=\= NULL#Incorrecto. SQL usa IS NULL para verificar valores nulos.
+~NULL()#Incorrecto. NULL no es una función.
+####NULL representa un valor desconocido o ausente. Para verificar NULL siempre se usa IS NULL o IS NOT NULL, nunca \= NULL.
+}
+
+// ==========================================
+// NIVEL 2: COMPRENDER - Interpretación de sintaxis
+// ==========================================
+
+::CB006-Comprender-DISTINCT::¿Qué hace la palabra clave DISTINCT en una consulta SELECT?{
+=Elimina filas duplicadas del resultado#¡Correcto! DISTINCT elimina combinaciones duplicadas de valores en las columnas seleccionadas.
+~Ordena los resultados alfabéticamente#Incorrecto. Para ordenar se usa ORDER BY.
+~Cuenta las filas diferentes#Incorrecto. Para contar se usa COUNT(), aunque COUNT(DISTINCT columna) sí cuenta valores únicos.
+~Selecciona solo valores numéricos#Incorrecto. DISTINCT funciona con cualquier tipo de dato.
+####DISTINCT se aplica a la combinación completa de columnas en el SELECT y elimina filas donde todos los valores seleccionados son idénticos.
+}
+
+::CB007-Comprender-ORDER-BY::Dada la consulta\: SELECT nombre, apellido FROM empleados ORDER BY apellido, nombre; ¿Cómo se ordenarán los resultados?{
+=Primero por apellido y luego por nombre cuando los apellidos sean iguales#¡Correcto! ORDER BY ordena por la primera columna y usa las siguientes como criterio de desempate.
+~Primero por nombre y luego por apellido#Incorrecto. El orden de las columnas en ORDER BY determina la prioridad de ordenamiento.
+~Alfabéticamente por la columna que tenga más datos#Incorrecto. ORDER BY sigue estrictamente el orden especificado.
+~Solo por apellido, ignorando el nombre#Incorrecto. Todas las columnas en ORDER BY se consideran secuencialmente.
+####ORDER BY puede tener múltiples columnas. Se ordena por la primera columna, y cuando hay valores iguales, se usa la segunda columna como desempate, y así sucesivamente.
+}
+
+::CB008-Comprender-LIKE::¿Qué resultados devolverá la condición WHERE nombre LIKE 'Mar%'?{
+=Todos los nombres que comienzan con 'Mar'#¡Correcto! El % al final significa "cualquier cadena después de Mar".
+~Solo el nombre 'Mar'#Incorrecto. Si solo quisieras 'Mar' exacto, usarías \= 'Mar', no LIKE con %.
+~Todos los nombres que contienen 'Mar' en cualquier posición#Incorrecto. Para eso sería '%Mar%' (con % antes y después).
+~Todos los nombres que terminan con 'Mar'#Incorrecto. Para eso sería '%Mar' (con % antes).
+####El comodín % en LIKE representa "cero o más caracteres". 'Mar%' coincide con 'Mar', 'María', 'Marco', 'Martínez', etc.
+}
+
+::CB009-Comprender-BETWEEN::La condición WHERE precio BETWEEN 10 AND 50 es equivalente a\:{
+=WHERE precio >\= 10 AND precio <\= 50#¡Correcto! BETWEEN es inclusivo en ambos extremos.
+~WHERE precio > 10 AND precio < 50#Incorrecto. BETWEEN incluye los valores de los límites (10 y 50).
+~WHERE precio >\= 10 OR precio <\= 50#Incorrecto. Debería ser AND, no OR, y BETWEEN es inclusivo.
+~WHERE precio > 10 AND precio <\= 50#Incorrecto. BETWEEN incluye el límite inferior (10).
+####BETWEEN a AND b es inclusivo\: incluye los valores a y b. Es equivalente a >\= a AND <\= b.
+}
+
+::CB010-Comprender-Alias::¿Cuál es el propósito de usar alias en una consulta SQL?{
+=Dar nombres más legibles o descriptivos a columnas o tablas en el resultado#¡Correcto! Los alias mejoran la legibilidad sin cambiar la estructura de la base de datos.
+~Cambiar permanentemente el nombre de las columnas en la base de datos#Incorrecto. Los alias solo afectan al resultado de la consulta, no modifican la estructura de la BD.
+~Mejorar el rendimiento de la consulta#Incorrecto. Los alias no tienen impacto significativo en el rendimiento.
+~Permitir el uso de espacios en nombres de columnas#Incorrecto. Aunque los alias pueden contener espacios, su propósito principal es la claridad.
+####Los alias se crean con AS (opcional en algunos SGBD) y solo existen durante la ejecución de la consulta. Ejemplo\: SELECT precio AS Precio_Unitario.
+}
+
+// ==========================================
+// NIVEL 3: APLICAR - Escribir consultas correctas
+// ==========================================
+
+::CB011-Aplicar-SELECT-Basico::Para recuperar solo las columnas 'nombre' y 'salario' de la tabla 'empleados', la consulta correcta es\:{
+=SELECT nombre, salario FROM empleados;#¡Correcto! Sintaxis perfecta para seleccionar columnas específicas.
+~SELECT empleados FROM nombre, salario;#Incorrecto. El orden es SELECT columnas FROM tabla.
+~GET nombre, salario FROM empleados;#Incorrecto. SQL usa SELECT, no GET.
+~SELECT nombre AND salario FROM empleados;#Incorrecto. Las columnas se separan con comas, no con AND.
+####La sintaxis básica es\: SELECT columna1, columna2, ... FROM nombre_tabla;
+}
+
+::CB012-Aplicar-WHERE-Simple::¿Cuál consulta recupera todos los productos con precio mayor a 100?{
+=SELECT * FROM productos WHERE precio > 100;#¡Correcto! WHERE precio > 100 filtra correctamente.
+~SELECT * FROM productos HAVING precio > 100;#Incorrecto. HAVING se usa con GROUP BY, para filas individuales usa WHERE.
+~SELECT * WHERE precio > 100 FROM productos;#Incorrecto. WHERE debe ir después de FROM.
+~SELECT precio > 100 FROM productos;#Incorrecto. SELECT necesita nombres de columnas, no condiciones.
+####La cláusula WHERE va después de FROM y contiene la condición de filtrado. Sintaxis\: SELECT ... FROM tabla WHERE condición;
+}
+
+::CB013-Aplicar-IN-Operator::Para seleccionar clientes de España, México o Argentina, ¿qué consulta es más eficiente?{
+=SELECT * FROM clientes WHERE pais IN ('España', 'México', 'Argentina');#¡Correcto! IN es la forma más clara y eficiente para listas de valores.
+~SELECT * FROM clientes WHERE pais \= 'España' OR pais \= 'México' OR pais \= 'Argentina';#Técnicamente correcto pero menos eficiente y menos legible que IN.
+~SELECT * FROM clientes WHERE pais \= 'España' AND pais \= 'México' AND pais \= 'Argentina';#Incorrecto. AND requiere que TODAS las condiciones sean verdaderas simultáneamente (imposible para una columna).
+~SELECT * FROM clientes WHERE pais LIKE 'España,México,Argentina';#Incorrecto. LIKE no funciona así; buscaría esa cadena literal completa.
+####IN permite especificar múltiples valores de forma concisa. Es equivalente a múltiples OR pero más legible.
+}
+
+::CB014-Aplicar-NOT-NULL::Para obtener solo clientes que SÍ tienen registrado un número de fax, la consulta correcta es\:{
+=SELECT * FROM clientes WHERE fax IS NOT NULL;#¡Correcto! IS NOT NULL filtra valores no nulos.
+~SELECT * FROM clientes WHERE fax <> NULL;#Incorrecto. No se puede usar <> con NULL; debe ser IS NOT NULL.
+~SELECT * FROM clientes WHERE fax !\= '';#Incorrecto. Cadena vacía ('') no es lo mismo que NULL.
+~SELECT * FROM clientes WHERE fax;#Incorrecto. Esta sintaxis no es válida en SQL estándar.
+####Para verificar valores no nulos siempre usar IS NOT NULL, nunca operadores de comparación como \= o <>.
+}
+
+::CB015-Aplicar-ORDER-DESC::Para obtener los 5 productos más caros, ¿qué consulta es correcta en SQL Server?{
+=SELECT TOP 5 * FROM productos ORDER BY precio DESC;#¡Correcto! TOP 5 con ORDER BY DESC obtiene los más caros.
+~SELECT * FROM productos ORDER BY precio DESC LIMIT 5;#Incorrecto para SQL Server. LIMIT es de MySQL/PostgreSQL. En SQL Server usa TOP.
+~SELECT TOP 5 * FROM productos ORDER BY precio ASC;#Incorrecto. ASC ordena de menor a mayor; necesitas DESC para los más caros.
+~SELECT * FROM productos WHERE precio \= TOP 5;#Incorrecto. TOP no se usa así en WHERE.
+####En SQL Server\: TOP n va después de SELECT. En MySQL/PostgreSQL\: LIMIT n va al final de la consulta. DESC ordena descendente (mayor a menor).
+}
+
+// ==========================================
+// NIVEL 4: APLICAR - Expresiones y cálculos
+// ==========================================
+
+::CB016-Aplicar-Expresiones::Para calcular el precio con IVA (16%) y mostrarlo como 'Precio_Final', la consulta correcta es\:{
+=SELECT nombre, precio * 1.16 AS Precio_Final FROM productos;#¡Correcto! Expresión correcta y uso adecuado de alias.
+~SELECT nombre, precio + 16% AS Precio_Final FROM productos;#Incorrecto. La sintaxis de porcentaje no es válida; usar precio * 1.16 o precio * (1 + 0.16).
+~SELECT nombre, precio * 0.16 AS Precio_Final FROM productos;#Incorrecto. Esto calcula solo el 16% del precio, no el precio total con IVA.
+~SELECT nombre AS precio * 1.16 FROM productos;#Incorrecto. AS se usa para nombrar el resultado, no antes de la expresión.
+####Las expresiones aritméticas se pueden usar en SELECT. Para sumar 16%\: precio * 1.16. Los alias se asignan con AS después de la expresión.
+}
+
+::CB017-Aplicar-Concatenacion::En SQL Server, para mostrar nombre completo combinando 'nombre' y 'apellido' separados por espacio\:{
+=SELECT nombre + ' ' + apellido AS Nombre_Completo FROM empleados;#¡Correcto! En SQL Server el operador + concatena cadenas.
+~SELECT nombre || ' ' || apellido AS Nombre_Completo FROM empleados;#Incorrecto para SQL Server. || es el operador de PostgreSQL/Oracle. SQL Server usa +.
+~SELECT CONCAT(nombre, ' ', apellido) AS Nombre_Completo FROM empleados;#Técnicamente correcto en SQL Server 2012+, pero + es más tradicional en T-SQL.
+~SELECT nombre & ' ' & apellido AS Nombre_Completo FROM empleados;#Incorrecto. & no es operador de concatenación en SQL.
+####SQL Server usa + para concatenar cadenas. PostgreSQL/Oracle usan ||. CONCAT() es estándar en SQL\:2016 y funciona en versiones modernas de múltiples SGBD.
+}
+
+::CB018-Aplicar-Literales::¿Cuál consulta muestra una columna literal con el texto 'Empleado\:' seguido del nombre?{
+=SELECT 'Empleado\:'+ nombre FROM empleados;#¡Correcto! Los literales de texto se escriben entre comillas simples.
+~SELECT Empleado\:, nombre FROM empleados;#Incorrecto. Texto literal debe ir entre comillas.
+~SELECT "Empleado\:" + nombre FROM empleados;#Parcialmente incorrecto. Comillas dobles pueden funcionar en algunos SGBD, pero las simples son estándar. Además falta separación con coma.
+~SELECT 'Empleado\:' \= nombre FROM empleados;#Incorrecto. \= es operador de comparación, no de selección.
+####Los literales de texto en SQL van entre comillas simples ('texto'). Se pueden combinar con columnas separándolos con comas en el SELECT.
+}
+
+// ==========================================
+// NIVEL 5: ANALIZAR - Consultas complejas
+// ==========================================
+
+::CB019-Analizar-Precedencia::¿Qué filas devolverá\: SELECT * FROM productos WHERE categoria \= 1 OR categoria \= 2 AND precio > 50?{
+=Productos de categoría 1 (cualquier precio) O productos de categoría 2 con precio > 50#¡Correcto! AND tiene mayor precedencia que OR, por lo que se evalúa primero.
+~Productos de categoría 1 o 2, ambos con precio > 50#Incorrecto. Sin paréntesis, AND se evalúa antes que OR.
+~Productos de categoría 1 con precio > 50, o productos de categoría 2#Incorrecto. La precedencia es AND primero, luego OR.
+~Solo productos de categoría 2 con precio > 50#Incorrecto. También incluye todos los productos de categoría 1.
+####Precedencia de operadores\: AND se evalúa antes que OR. Para cambiar precedencia, usar paréntesis\: (categoria \= 1 OR categoria \= 2) AND precio > 50
+}
+
+::CB020-Analizar-LIKE-Comodines::La condición WHERE email LIKE '%@gmail.com' devolverá\:{
+=Todos los emails que terminan con '@gmail.com'#¡Correcto! % al inicio significa "cualquier cadena antes de @gmail.com".
+~Solo el email '@gmail.com'#Incorrecto. El % representa una o más caracteres antes de @gmail.com.
+~Emails que contienen '@gmail.com' en cualquier parte#Incorrecto. Para eso sería '%@gmail.com%' (con % antes Y después).
+~Emails que comienzan con '@gmail.com'#Incorrecto. Para eso sería '@gmail.com%' (% al final).
+####LIKE con comodines\: %texto busca strings que terminan con 'texto', texto% busca strings que comienzan con 'texto', %texto% busca 'texto' en cualquier posición.
+}
+
+::CB021-Analizar-Multiple-Condiciones::[markdown]Analiza\: SELECT * FROM empleados WHERE (salario > 3000 AND departamento \= 'Ventas') OR (salario > 5000 AND departamento \= 'IT'); ¿Qué empleados se seleccionan?{
+=Empleados de Ventas con salario > 3000, o empleados de IT con salario > 5000#¡Correcto! Los paréntesis agrupan correctamente las condiciones.
+~Empleados con salario > 3000 de cualquier departamento#Incorrecto. La primera condición requiere departamento \= 'Ventas'.
+~Solo empleados de IT con salario > 5000#Incorrecto. También incluye empleados de Ventas con salario > 3000.
+~Empleados con salario entre 3000 y 5000#Incorrecto. No es una condición de rango, son dos condiciones diferentes con OR.
+####Los paréntesis en condiciones complejas son fundamentales para controlar la lógica de evaluación. AND dentro de paréntesis se evalúa primero, luego se aplica el OR entre grupos.
+}
+
+// ==========================================
+// NIVEL 6: RELACIONAR COLUMNAS (Matching)
+// ==========================================
+
+::CB022-Relacionar-Clausulas::Relaciona cada cláusula de SQL con su función\:{
+=SELECT -> Especifica las columnas a recuperar
+=FROM -> Indica la tabla de origen de los datos
+=WHERE -> Filtra filas según condiciones
+=ORDER BY -> Ordena los resultados
+=DISTINCT -> Elimina duplicados del resultado
+####Orden típico de una consulta SQL\: SELECT [DISTINCT] columnas FROM tabla WHERE condición ORDER BY columna;
+}
+
+::CB023-Relacionar-Operadores::Relaciona cada operador con su significado\:{
+=\= -> Igualdad
+=<> -> Desigualdad (diferente de)
+=LIKE -> Comparación con patrones
+=IN -> Pertenece a una lista de valores
+=BETWEEN -> Valor dentro de un rango
+=IS NULL -> Verifica si el valor es nulo
+####Estos operadores se usan principalmente en la cláusula WHERE para filtrar filas según diferentes tipos de condiciones.
+}
+
+::CB024-Relacionar-Comodines::Relaciona cada patrón LIKE con los valores que coinciden\:{
+='A%' -> Comienza con A
+='%Z' -> Termina con Z
+='%SQL%' -> Contiene SQL en cualquier posición
+='_at' -> Tres caracteres que terminan en 'at' (como 'cat', 'bat')
+='[ABC]%' -> Comienza con A, B o C
+####Los comodines en LIKE\: % representa cero o más caracteres, _ representa exactamente un carácter, [lista] representa un carácter de la lista.
+}
+
+::CB025-Relacionar-Funciones-Clausulas::Relaciona cada tarea con la cláusula o palabra clave correcta\:{
+=Eliminar filas duplicadas -> DISTINCT
+=Limitar número de filas en SQL Server -> TOP
+=Dar nombre alternativo a una columna -> AS (alias)
+=Filtrar filas individuales -> WHERE
+=Ordenar resultados -> ORDER BY
+=Seleccionar todas las columnas -> * (asterisco)
+####Cada elemento de SQL tiene un propósito específico. Conocer cuándo usar cada uno es fundamental para escribir consultas efectivas.
+}
+
+// ==========================================
+// NIVEL 7: ANALIZAR - Detección de errores
+// ==========================================
+
+::CB026-Analizar-Error-Sintaxis::¿Qué error tiene esta consulta? SELECT nombre, apellido WHERE edad > 18 FROM clientes;{
+=WHERE debe ir después de FROM, no antes#¡Correcto! El orden correcto es SELECT ... FROM ... WHERE ...
+~Falta la palabra clave AS para los alias#Incorrecto. No hay alias en esta consulta, y AS es opcional.
+~No se puede usar > con edad#Incorrecto. El operador > es válido para comparar números.
+~SELECT debe ir al final#Incorrecto. SELECT siempre va al inicio de la consulta.
+####El orden correcto de las cláusulas es\: SELECT columnas FROM tabla WHERE condición ORDER BY columna;
+}
+
+::CB027-Analizar-Error-NULL::¿Por qué esta consulta puede no funcionar como se espera? SELECT * FROM productos WHERE precio \= NULL;{
+=NULL no se puede comparar con \=, debe usarse IS NULL#¡Correcto! NULL no es igual a nada, ni siquiera a sí mismo.
+~La sintaxis es correcta, funcionará bien#Incorrecto. Esta consulta no devolverá filas aunque haya precios NULL.
+~Falta especificar el tipo de dato de NULL#Incorrecto. NULL no tiene tipo específico, pero el problema es el operador \=.
+~Se debe usar <> NULL en lugar de \= NULL#Incorrecto. Tampoco funcionaría; se debe usar IS NULL o IS NOT NULL.
+####En SQL, NULL representa "desconocido". La comparación x \= NULL siempre resulta en NULL (no TRUE ni FALSE), por eso no filtra filas. Siempre usar IS NULL o IS NOT NULL.
+}
+
+::CB028-Analizar-Error-DISTINCT::¿Qué problema tiene? SELECT DISTINCT nombre, apellido, * FROM empleados;{
+=No se puede usar DISTINCT con columnas específicas y * en la misma consulta#¡Correcto! DISTINCT se aplica a todas las columnas del SELECT; usar * y columnas específicas juntas no es válido.
+~DISTINCT debe ir después de FROM#Incorrecto. DISTINCT va inmediatamente después de SELECT.
+~Se necesitan alias para todas las columnas#Incorrecto. Los alias son opcionales.
+~Falta la cláusula WHERE#Incorrecto. WHERE es opcional.
+####Si usas DISTINCT, especifica todas las columnas que necesitas o usa *, pero no mezcles ambos. Correcto\: SELECT DISTINCT nombre, apellido FROM ... o SELECT DISTINCT * FROM ...
+}
+
+// ==========================================
+// NIVEL 8: APLICAR - Casos prácticos
+// ==========================================
+
+::CB029-Caso-Practico-Busqueda::Necesitas encontrar todos los clientes cuyo nombre comienza con "Mar" y que viven en México o España. ¿Cuál consulta es correcta?{
+=SELECT * FROM clientes WHERE nombre LIKE 'Mar%' AND (pais \= 'México' OR pais \= 'España');#¡Correcto! Paréntesis correctos para agrupar el OR.
+~SELECT * FROM clientes WHERE nombre LIKE 'Mar%' AND pais \= 'México' OR pais \= 'España';#Incorrecto. Sin paréntesis, incluiría TODOS los clientes de España (sin importar el nombre).
+~SELECT * FROM clientes WHERE nombre \= 'Mar%' AND pais IN ('México', 'España');#Incorrecto. Se debe usar LIKE, no \=, para patrones con %.
+~SELECT * FROM clientes WHERE nombre LIKE 'Mar*' AND pais IN ('México', 'España');#Incorrecto. El comodín correcto es %, no * (aunque * funciona en Access).
+####Al combinar AND y OR, los paréntesis son cruciales. Sin ellos, AND tiene precedencia y la consulta podría devolver resultados no deseados.
+}
+
+::CB030-Caso-Practico-Rango::Necesitas productos con precio entre 50 y 100, excluyendo los que tienen inventario NULL. ¿Cuál consulta es más apropiada?{
+=SELECT * FROM productos WHERE precio BETWEEN 50 AND 100 AND inventario IS NOT NULL;#¡Correcto! BETWEEN es inclusivo y IS NOT NULL maneja correctamente los nulos.
+~SELECT * FROM productos WHERE precio >\= 50 AND precio <\= 100 AND inventario <> NULL;#Incorrecto. <> NULL no funciona; debe ser IS NOT NULL.
+~SELECT * FROM productos WHERE precio BETWEEN 50 TO 100 AND inventario IS NOT NULL;#Incorrecto. La sintaxis correcta es BETWEEN ... AND ..., no BETWEEN ... TO ...
+~SELECT * FROM productos WHERE precio IN (50, 100) AND inventario;#Incorrecto. IN (50, 100) solo incluiría exactamente 50 o 100, no el rango. Además, "AND inventario" no es sintaxis válida.
+####BETWEEN a AND b incluye ambos límites (a y b). Para excluir NULL siempre usar IS NOT NULL, nunca operadores de comparación.
+}
+
+::CB031-Caso-Practico-Top-Ordenado::Necesitas los 10 empleados con mayor salario. ¿Cuál es la consulta correcta en SQL Server?{
+=SELECT TOP 10 * FROM empleados ORDER BY salario DESC;#¡Correcto! TOP 10 limita resultados y DESC ordena de mayor a menor.
+~SELECT * FROM empleados ORDER BY salario DESC LIMIT 10;#Incorrecto para SQL Server. LIMIT es sintaxis de MySQL/PostgreSQL. En SQL Server usa TOP.
+~SELECT TOP 10 * FROM empleados ORDER BY salario;#Incorrecto. Sin DESC ordenará de menor a mayor (ASC es el predeterminado).
+~SELECT * FROM empleados WHERE salario \= TOP 10;#Incorrecto. TOP no se usa así en WHERE.
+####En SQL Server\: SELECT TOP n ... ORDER BY columna DESC. En MySQL/PostgreSQL\: SELECT ... ORDER BY columna DESC LIMIT n. DESC es crucial para obtener los mayores.
+}
+
+::CB032-Caso-Practico-Multiples-Filtros::Necesitas clientes de la ciudad 'Madrid' o 'Barcelona', con un límite de crédito mayor a 5000 y que tengan email registrado (no NULL). Selecciona TODOS los elementos necesarios\:{
+~%25%ciudad IN ('Madrid', 'Barcelona')#Correcto. IN es eficiente para múltiples valores.
+~%25%limite_credito > 5000#Correcto. Filtra el límite de crédito.
+~%25%email IS NOT NULL#Correcto. Verifica que email no sea nulo.
+~%-100%ciudad \= 'Madrid' OR ciudad \= 'Barcelona'#Correcto pero menos eficiente que IN. Se acepta pero IN es mejor práctica.
+~%-100%email <> NULL#Incorrecto. Debe ser IS NOT NULL, no <> NULL.
+~%-100%limite_credito >\= 5000#Incorrecto. El requisito dice "mayor a 5000" (>), no "mayor o igual" (>\=).
+~%-100%ciudad LIKE 'Madrid' OR ciudad LIKE 'Barcelona'#Incorrecto. Funciona pero es ineficiente; IN es la mejor opción.
+####La consulta completa sería\: SELECT * FROM clientes WHERE ciudad IN ('Madrid', 'Barcelona') AND limite_credito > 5000 AND email IS NOT NULL;
+}
+
+// ==========================================
+// FIN DEL BANCO DE PREGUNTAS - CONSULTAS BÁSICAS
+// ==========================================
+// Total de preguntas básicas: 32
+// Distribución por taxonomía de Bloom:
+// - Recordar (Nivel 1): 5 preguntas
+// - Comprender (Nivel 2): 5 preguntas
+// - Aplicar (Niveles 3-4): 13 preguntas
+// - Analizar (Niveles 5-7): 6 preguntas
+// - Casos prácticos: 4 preguntas
+// 
+// Tipos de pregunta:
+// - Opción múltiple simple: 24
+// - Opción múltiple con varias correctas: 3
+// - Relacionar columnas (Matching): 4
+// - Respuesta corta: 1
+//
+// Todas las preguntas incluyen retroalimentación detallada
+// Las preguntas de opción múltiple con varias correctas penalizan incorrectas
+
+// ==========================================
+// CATEGORÍA: INTERMEDIAS - JOIN, GROUP BY, HAVING
+// ==========================================
+
+$CATEGORY: $course$/Unidad 2: DML/Consultas Intermedias
+
+// ==========================================
+// NIVEL 1: RECORDAR - Conceptos de JOIN y agregación
+// ==========================================
+
+::CI001-Recordar-JOIN-Concepto::¿Cuál es el propósito principal de un JOIN en SQL?{
+=Combinar datos de múltiples tablas en una sola consulta#¡Correcto! JOIN permite relacionar y combinar información de diferentes tablas.
+~Eliminar filas duplicadas de una tabla#Incorrecto. Eso es función de DISTINCT.
+~Agrupar filas con valores similares#Incorrecto. Eso es función de GROUP BY.
+~Ordenar los resultados de una consulta#Incorrecto. Eso es función de ORDER BY.
+####Los JOINs son fundamentales para trabajar con bases de datos relacionales, permitiendo recuperar información relacionada almacenada en diferentes tablas.
+}
+
+::CI002-Recordar-INNER-JOIN::¿Qué registros devuelve un INNER JOIN?{
+=Solo los registros que tienen coincidencias en ambas tablas#¡Correcto! INNER JOIN es el más restrictivo, solo devuelve coincidencias.
+~Todos los registros de la tabla izquierda#Incorrecto. Eso es LEFT JOIN.
+~Todos los registros de ambas tablas#Incorrecto. Eso es FULL OUTER JOIN.
+~Todos los registros de la tabla derecha#Incorrecto. Eso es RIGHT JOIN.
+####INNER JOIN es el tipo de join más común y solo incluye filas donde existe una coincidencia en la condición ON de ambas tablas.
+}
+
+::CI003-Recordar-GROUP-BY::¿Cuál es la función de la cláusula GROUP BY?{
+=Agrupar filas que tienen el mismo valor en una o más columnas#¡Correcto! GROUP BY organiza filas en grupos para aplicar funciones de agregación.
+~Ordenar los resultados alfabéticamente#Incorrecto. Para ordenar se usa ORDER BY.
+~Filtrar filas según una condición#Incorrecto. Eso es función de WHERE.
+~Combinar resultados de múltiples tablas#Incorrecto. Eso es función de JOIN.
+####GROUP BY es esencial para crear resúmenes y reportes, agrupando datos similares para calcular totales, promedios, conteos, etc.
+}
+
+::CI004-Recordar-Funciones-Agregacion::¿Cuáles son funciones de agregación válidas en SQL? (Seleccione todas las correctas){
+~%20%SUM()#Correcto. Suma valores numéricos.
+~%20%COUNT()#Correcto. Cuenta filas o valores.
+~%20%AVG()#Correcto. Calcula promedio.
+~%20%MAX()#Correcto. Encuentra el valor máximo.
+~%20%MIN()#Correcto. Encuentra el valor mínimo.
+~%-100%TOTAL()#Incorrecto. No existe esta función en SQL estándar; se usa SUM().
+~%-100%AVERAGE()#Incorrecto. La función correcta es AVG(), no AVERAGE().
+####Las funciones de agregación principales son\: SUM, COUNT, AVG, MAX y MIN. También existen otras como VAR, STDEV, etc.
+}
+
+::CI005-Recordar-HAVING::¿Cuál es la diferencia entre WHERE y HAVING?{
+=WHERE filtra filas antes de agrupar, HAVING filtra grupos después de agrupar#¡Correcto! WHERE actúa sobre filas individuales, HAVING sobre grupos.
+~WHERE y HAVING son sinónimos, se pueden usar indistintamente#Incorrecto. Tienen funciones diferentes en el proceso de consulta.
+~WHERE se usa con JOIN, HAVING se usa con GROUP BY#Parcialmente incorrecto. WHERE puede usarse sin JOIN, y HAVING requiere GROUP BY.
+~WHERE filtra tablas, HAVING filtra columnas#Incorrecto. WHERE filtra filas, HAVING filtra grupos.
+####El orden de ejecución es\: FROM → WHERE (filtrar filas) → GROUP BY (agrupar) → HAVING (filtrar grupos) → SELECT → ORDER BY.
+}
+
+// ==========================================
+// NIVEL 2: COMPRENDER - Interpretación de JOINs
+// ==========================================
+
+::CI006-Comprender-LEFT-JOIN::En un LEFT JOIN entre tablas A y B, ¿qué sucede con las filas de A que no tienen coincidencia en B?{
+=Se incluyen en el resultado con valores NULL para las columnas de B#¡Correcto! LEFT JOIN garantiza que todas las filas de la tabla izquierda aparezcan.
+~Se eliminan del resultado#Incorrecto. Eso sería un INNER JOIN.
+~Se duplican hasta encontrar coincidencia#Incorrecto. No se duplican filas sin coincidencia.
+~Generan un error en la consulta#Incorrecto. Es comportamiento normal y esperado.
+####LEFT JOIN (o LEFT OUTER JOIN) incluye TODAS las filas de la tabla izquierda. Donde no hay coincidencia, las columnas de la tabla derecha se rellenan con NULL.
+}
+
+::CI007-Comprender-ON-Clausula::En la sintaxis JOIN ... ON, ¿qué especifica la cláusula ON?{
+=La condición que relaciona las tablas (normalmente claves primarias y foráneas)#¡Correcto! ON define cómo se relacionan las filas de ambas tablas.
+~Las columnas que se quieren mostrar en el resultado#Incorrecto. Eso se especifica en SELECT.
+~El orden en que se deben combinar las tablas#Incorrecto. El orden se determina por la posición de las tablas.
+~Los valores que deben ser NULL#Incorrecto. ON especifica la condición de unión, no valores NULL.
+####La cláusula ON es fundamental en los JOIN y típicamente compara la clave primaria de una tabla con la clave foránea de otra.
+}
+
+::CI008-Comprender-COUNT-vs-COUNT-STAR::¿Cuál es la diferencia entre COUNT(*) y COUNT(columna)?{
+=COUNT(*) cuenta todas las filas, COUNT(columna) solo cuenta valores no NULL#¡Correcto! COUNT(*) incluye filas con NULL, COUNT(columna) los ignora.
+~COUNT(*) es más lento que COUNT(columna)#Incorrecto. El rendimiento es similar en la mayoría de los casos.
+~COUNT(*) solo cuenta números, COUNT(columna) cuenta todo#Incorrecto. Ambos cuentan filas/valores independientemente del tipo.
+~Son completamente equivalentes#Incorrecto. Difieren en el manejo de valores NULL.
+####COUNT(*) cuenta el número total de filas en un grupo. COUNT(columna) cuenta solo las filas donde columna NO es NULL.
+}
+
+::CI009-Comprender-Agregacion-Sin-GROUP::¿Qué sucede si usas una función de agregación sin GROUP BY?{
+=Se calcula sobre todas las filas de la tabla, devolviendo un solo resultado#¡Correcto! Sin GROUP BY, toda la tabla es un solo grupo.
+~Genera un error de sintaxis#Incorrecto. Es perfectamente válido usar agregación sin GROUP BY.
+~Se calcula por cada fila individualmente#Incorrecto. Las funciones de agregación siempre resumen múltiples filas.
+~Solo funciona con COUNT(*)#Incorrecto. Todas las funciones de agregación pueden usarse sin GROUP BY.
+####Ejemplo válido\: SELECT COUNT(*), AVG(precio) FROM productos; devuelve una sola fila con el total de productos y el precio promedio de todos.
+}
+
+::CI010-Comprender-FULL-OUTER-JOIN::¿Qué registros incluye un FULL OUTER JOIN?{
+=Todos los registros de ambas tablas, con NULL donde no hay coincidencias#¡Correcto! FULL OUTER JOIN es la unión más inclusiva.
+~Solo los registros que coinciden en ambas tablas#Incorrecto. Eso es INNER JOIN.
+~Solo los registros de la tabla izquierda#Incorrecto. Eso es LEFT JOIN.
+~Solo los registros sin coincidencias#Incorrecto. Incluye todos, con y sin coincidencias.
+####FULL OUTER JOIN combina LEFT JOIN y RIGHT JOIN\: incluye todas las filas de ambas tablas, rellenando con NULL donde no hay coincidencias.
+}
+
+// ==========================================
+// NIVEL 3: APLICAR - Escribir JOINs y agregaciones
+// ==========================================
+
+::CI011-Aplicar-INNER-JOIN-Sintaxis::Para obtener clientes y sus pedidos (relacionados por cliente_id), la sintaxis correcta es\:{
+=SELECT * FROM clientes INNER JOIN pedidos ON clientes.cliente_id \= pedidos.cliente_id;#¡Correcto! Sintaxis perfecta de INNER JOIN.
+~SELECT * FROM clientes, pedidos WHERE cliente_id \= cliente_id;#Incorrecto. Ambiguo; debe especificar tabla.columna en la condición.
+~SELECT * FROM clientes JOIN pedidos;#Incorrecto. Falta la cláusula ON que especifica la condición de unión.
+~SELECT * FROM clientes WHERE cliente_id IN (SELECT cliente_id FROM pedidos);#Incorrecto. Esto es una subconsulta, no un JOIN. Además, no devuelve columnas de pedidos.
+####La sintaxis moderna de JOIN requiere\: FROM tabla1 INNER JOIN tabla2 ON condición. Es más clara y legible que la sintaxis antigua con comas.
+}
+
+::CI012-Aplicar-GROUP-BY-Simple::Para contar cuántos empleados hay por departamento\:{
+=SELECT departamento, COUNT(*) FROM empleados GROUP BY departamento;#¡Correcto! GROUP BY departamento agrupa y COUNT(*) cuenta cada grupo.
+~SELECT departamento, COUNT(*) FROM empleados;#Incorrecto. Falta GROUP BY; esto generaría error o resultado incorrecto.
+~SELECT COUNT(*) FROM empleados WHERE departamento;#Incorrecto. Sintaxis inválida; WHERE necesita una condición completa.
+~SELECT departamento FROM empleados GROUP BY COUNT(*);#Incorrecto. GROUP BY requiere nombres de columnas, no funciones de agregación.
+####Cuando usas funciones de agregación con columnas no agregadas, DEBES incluir esas columnas en GROUP BY.
+}
+
+::CI013-Aplicar-HAVING-Filtro::Para obtener departamentos con más de 5 empleados\:{
+=SELECT departamento, COUNT(*) FROM empleados GROUP BY departamento HAVING COUNT(*) > 5;#¡Correcto! HAVING filtra los grupos después de contar.
+~SELECT departamento, COUNT(*) FROM empleados WHERE COUNT(*) > 5 GROUP BY departamento;#Incorrecto. WHERE no puede usar funciones de agregación; debe ser HAVING.
+~SELECT departamento FROM empleados GROUP BY departamento WHERE COUNT(*) > 5;#Incorrecto. WHERE debe ir antes de GROUP BY, y no puede usar funciones de agregación.
+~SELECT departamento, COUNT(*) > 5 FROM empleados GROUP BY departamento;#Incorrecto. La condición debe ir en HAVING, no en SELECT.
+####Regla fundamental\: WHERE filtra filas ANTES de agrupar, HAVING filtra grupos DESPUÉS de agrupar y calcular agregaciones.
+}
+
+::CI014-Aplicar-LEFT-JOIN-NULL::Para obtener TODOS los clientes, incluyendo los que no tienen pedidos\:{
+=SELECT * FROM clientes LEFT JOIN pedidos ON clientes.cliente_id \= pedidos.cliente_id;#¡Correcto! LEFT JOIN incluye todos los clientes, con NULL si no tienen pedidos.
+~SELECT * FROM clientes INNER JOIN pedidos ON clientes.cliente_id \= pedidos.cliente_id;#Incorrecto. INNER JOIN solo devuelve clientes que SÍ tienen pedidos.
+~SELECT * FROM pedidos LEFT JOIN clientes ON clientes.cliente_id \= pedidos.cliente_id;#Incorrecto. Esto devuelve todos los pedidos; para todos los clientes, clientes debe estar a la izquierda.
+~SELECT * FROM clientes WHERE cliente_id NOT IN (SELECT cliente_id FROM pedidos);#Incorrecto. Esto devuelve solo clientes SIN pedidos, no todos los clientes.
+####En LEFT JOIN, la tabla a la IZQUIERDA (antes de LEFT JOIN) es la que se incluye completa. La tabla derecha puede tener NULL.
+}
+
+::CI015-Aplicar-SUM-AVG::Para calcular el total de ventas y el promedio por producto\:{
+=SELECT producto_id, SUM(cantidad) AS total, AVG(precio) AS promedio FROM ventas GROUP BY producto_id;#¡Correcto! SUM suma cantidades, AVG promedia precios, agrupado por producto.
+~SELECT SUM(cantidad), AVG(precio) FROM ventas;#Parcialmente correcto pero incompleto. Calcula totales generales, no por producto.
+~SELECT producto_id, SUM(cantidad), AVG(precio) FROM ventas;#Incorrecto. Falta GROUP BY producto_id.
+~SELECT producto_id, TOTAL(cantidad), AVERAGE(precio) FROM ventas GROUP BY producto_id;#Incorrecto. Las funciones correctas son SUM y AVG, no TOTAL y AVERAGE.
+####Cuando calculas agregaciones para diferentes grupos (productos), debes usar GROUP BY con la columna de agrupación.
+}
+
+// ==========================================
+// NIVEL 4: APLICAR - JOINs múltiples y complejos
+// ==========================================
+
+::CI016-Aplicar-Multiple-JOIN::Para obtener información de pedidos con datos de clientes Y productos\:{
+=SELECT * FROM pedidos JOIN clientes ON pedidos.cliente_id \= clientes.cliente_id JOIN productos ON pedidos.producto_id \= productos.producto_id;#¡Correcto! Múltiples JOINs se encadenan, cada uno con su condición ON.
+~SELECT * FROM pedidos JOIN clientes JOIN productos ON pedidos.cliente_id \= clientes.cliente_id;#Incorrecto. Falta la condición ON para el JOIN con productos.
+~SELECT * FROM pedidos, clientes, productos;#Incorrecto. Sin condiciones de JOIN, esto genera un producto cartesiano (todas las combinaciones posibles).
+~SELECT * FROM pedidos WHERE cliente_id IN clientes AND producto_id IN productos;#Incorrecto. Sintaxis inválida; IN requiere subconsultas o listas de valores.
+####Puedes encadenar múltiples JOINs\: FROM tabla1 JOIN tabla2 ON condición1 JOIN tabla3 ON condición2. Cada JOIN necesita su propia condición ON.
+}
+
+::CI017-Aplicar-GROUP-Multiple-Columns::Para ver ventas totales por año y por mes\:{
+=SELECT YEAR(fecha) AS anio, MONTH(fecha) AS mes, SUM(monto) FROM ventas GROUP BY YEAR(fecha), MONTH(fecha);#¡Correcto! GROUP BY puede agrupar por múltiples columnas o expresiones.
+~SELECT YEAR(fecha), MONTH(fecha), SUM(monto) FROM ventas GROUP BY fecha;#Incorrecto. Agrupar por fecha completa crearía grupos por día, no por año-mes.
+~SELECT YEAR(fecha), MONTH(fecha), SUM(monto) FROM ventas;#Incorrecto. Falta GROUP BY para las columnas no agregadas.
+~SELECT SUM(monto) FROM ventas GROUP BY YEAR(fecha) GROUP BY MONTH(fecha);#Incorrecto. Solo puede haber una cláusula GROUP BY; las columnas se separan por comas.
+####GROUP BY puede incluir múltiples columnas o expresiones separadas por comas\: GROUP BY col1, col2, YEAR(col3).
+}
+
+::CI018-Aplicar-DISTINCT-COUNT::Para contar cuántos productos DIFERENTES ha comprado cada cliente\:{
+=SELECT cliente_id, COUNT(DISTINCT producto_id) FROM pedidos GROUP BY cliente_id;#¡Correcto! COUNT(DISTINCT columna) cuenta valores únicos.
+~SELECT cliente_id, COUNT(producto_id) FROM pedidos GROUP BY cliente_id;#Incorrecto. Sin DISTINCT, cuenta todas las compras, incluyendo repeticiones del mismo producto.
+~SELECT DISTINCT cliente_id, COUNT(producto_id) FROM pedidos GROUP BY cliente_id;#Incorrecto. DISTINCT en SELECT es innecesario cuando usas GROUP BY.
+~SELECT cliente_id, DISTINCT COUNT(producto_id) FROM pedidos GROUP BY cliente_id;#Incorrecto. Sintaxis inválida; DISTINCT va dentro de COUNT.
+####COUNT(DISTINCT columna) es muy útil para contar valores únicos. Ejemplo\: contar clientes únicos, productos únicos, etc.
+}
+
+// ==========================================
+// NIVEL 5: ANALIZAR - Consultas complejas
+// ==========================================
+
+::CI019-Analizar-JOIN-Orden::Dadas las tablas clientes (1000 filas) y pedidos (10000 filas), ¿qué JOIN es más eficiente para obtener clientes que SÍ tienen pedidos?{
+=INNER JOIN (el resultado será menor o igual al número de clientes)#¡Correcto! INNER JOIN es óptimo porque solo devuelve coincidencias.
+~LEFT JOIN con WHERE pedido_id IS NOT NULL#Técnicamente funcional pero menos eficiente que INNER JOIN directo.
+~FULL OUTER JOIN#Incorrecto. FULL OUTER JOIN es innecesario y menos eficiente; incluye filas sin coincidencias.
+~RIGHT JOIN con clientes a la derecha#Incorrecto. Funcionaría pero es confuso; mejor usar INNER JOIN o LEFT JOIN con clientes a la izquierda.
+####Para obtener solo coincidencias, INNER JOIN es la opción más clara y eficiente. LEFT/RIGHT JOIN son para cuando necesitas incluir filas sin coincidencia.
+}
+
+::CI020-Analizar-WHERE-vs-HAVING::Analiza\: SELECT ciudad, COUNT(*) FROM empleados WHERE salario > 2000 GROUP BY ciudad HAVING COUNT(*) > 5; ¿Qué hace esta consulta?{
+=Cuenta empleados con salario > 2000 por ciudad, mostrando solo ciudades con más de 5 empleados en ese rango#¡Correcto! WHERE filtra antes de agrupar, HAVING filtra después.
+~Cuenta todos los empleados por ciudad y muestra ciudades con salario total > 2000#Incorrecto. WHERE filtra filas individuales, no totales de grupos.
+~Muestra ciudades con más de 5 empleados, sin importar el salario#Incorrecto. WHERE salario > 2000 excluye empleados con salario menor o igual a 2000.
+~Genera un error porque no se puede usar WHERE y HAVING juntos#Incorrecto. WHERE y HAVING se pueden y deben usar juntos cuando se necesita filtrar antes y después de agrupar.
+####Orden de ejecución\: 1) WHERE filtra empleados con salario > 2000, 2) GROUP BY agrupa por ciudad, 3) COUNT cuenta empleados en cada ciudad, 4) HAVING filtra ciudades con count > 5.
+}
+
+::CI021-Analizar-NULL-en-JOIN::En un LEFT JOIN, ¿cómo identificas las filas de la tabla izquierda que NO tienen coincidencia en la derecha?{
+=Verificando si las columnas de la tabla derecha son NULL#¡Correcto! WHERE tabla_derecha.clave_primaria IS NULL identifica filas sin coincidencia.
+~Contando el número de filas devueltas#Incorrecto. Esto no distingue entre filas con y sin coincidencia.
+~Usando HAVING COUNT(*) \= 0#Incorrecto. HAVING requiere GROUP BY y no es la forma correcta de detectar NULLs en JOINs.
+~Comparando las claves primarias#Incorrecto. La comparación de claves está en ON; para detectar no-coincidencias se verifica NULL.
+####Técnica útil\: SELECT * FROM tabla_izq LEFT JOIN tabla_der ON condición WHERE tabla_der.id IS NULL; devuelve solo filas sin coincidencia.
+}
+
+::CI022-Analizar-Agregacion-Anidada::¿Por qué esta consulta genera error? SELECT departamento, MAX(COUNT(*)) FROM empleados GROUP BY departamento;{
+=No se pueden anidar funciones de agregación directamente en SQL estándar#¡Correcto! SQL no permite MAX(COUNT(*)). Se necesita una subconsulta o CTE.
+~Falta la cláusula HAVING#Incorrecto. El problema no es la ausencia de HAVING sino la anidación de funciones de agregación.
+~MAX solo funciona con números, no con COUNT#Incorrecto. MAX funciona con cualquier valor numérico, incluyendo resultados de COUNT.
+~GROUP BY debe incluir COUNT(*)#Incorrecto. GROUP BY no puede incluir funciones de agregación.
+####Para encontrar el departamento con más empleados, usa subconsulta\: SELECT departamento, COUNT(*) AS total FROM empleados GROUP BY departamento ORDER BY total DESC LIMIT 1; (o TOP 1 en SQL Server).
+}
+
+// ==========================================
+// NIVEL 6: RELACIONAR COLUMNAS (Matching)
+// ==========================================
+
+::CI023-Relacionar-Tipos-JOIN::Relaciona cada tipo de JOIN con su característica principal\:{
+=INNER JOIN -> Solo registros con coincidencias en ambas tablas
+=LEFT JOIN -> Todos los registros de la tabla izquierda
+=RIGHT JOIN -> Todos los registros de la tabla derecha
+=FULL OUTER JOIN -> Todos los registros de ambas tablas
+=CROSS JOIN -> Producto cartesiano (todas las combinaciones)
+####Elegir el tipo correcto de JOIN es fundamental para obtener los resultados esperados. INNER es el más restrictivo, FULL OUTER el más inclusivo.
+}
+
+::CI024-Relacionar-Funciones-Agregacion::Relaciona cada función de agregación con lo que calcula\:{
+=COUNT(*) -> Número total de filas
+=COUNT(columna) -> Número de valores no NULL
+=SUM(columna) -> Suma de valores numéricos
+=AVG(columna) -> Promedio de valores
+=MAX(columna) -> Valor máximo
+=MIN(columna) -> Valor mínimo
+####Todas las funciones de agregación (excepto COUNT(*)) ignoran valores NULL en sus cálculos.
+}
+
+::CI025-Relacionar-Clausulas-Orden::Relaciona cada cláusula con su orden de ejecución en una consulta con JOIN y agregación\:{
+=1. FROM y JOIN -> Primero se obtienen y combinan las tablas
+=2. WHERE -> Se filtran filas individuales
+=3. GROUP BY -> Se agrupan las filas
+=4. Funciones de agregación -> Se calculan sobre cada grupo
+=5. HAVING -> Se filtran grupos
+=6. SELECT -> Se seleccionan las columnas finales
+=7. ORDER BY -> Se ordenan los resultados
+####Comprender el orden de ejecución es crucial para escribir consultas correctas y eficientes.
+}
+
+::CI026-Relacionar-Escenarios-JOIN::Relaciona cada escenario con el tipo de JOIN apropiado\:{
+=Obtener clientes y sus pedidos (solo clientes con pedidos) -> INNER JOIN
+=Listar todos los clientes y sus pedidos si los tienen -> LEFT JOIN
+=Obtener todos los productos y las categorías que los contienen -> RIGHT JOIN (productos a la derecha)
+=Encontrar clientes que NO han hecho pedidos -> LEFT JOIN con WHERE pedido_id IS NULL
+=Todas las combinaciones posibles de productos y colores -> CROSS JOIN
+####Elegir el JOIN correcto depende de si necesitas incluir o excluir filas sin coincidencias.
+}
+
+// ==========================================
+// NIVEL 7: CASOS PRÁCTICOS COMPLEJOS
+// ==========================================
+
+::CI027-Caso-Practico-TOP-por-Grupo::Necesitas obtener los 3 productos más vendidos de cada categoría. ¿Cuál aproximación es correcta?{
+=Usar ROW_NUMBER() OVER (PARTITION BY categoria ORDER BY ventas DESC) y filtrar por rn <\= 3#¡Correcto! Window functions (funciones de ventana) son la solución moderna para top-N por grupo.
+~Hacer un GROUP BY categoria LIMIT 3#Incorrecto. LIMIT/TOP se aplica al resultado completo, no por grupo.
+~Usar MAX(ventas) GROUP BY categoria#Incorrecto. Esto solo devuelve el máximo, no los top 3.
+~Hacer 3 consultas separadas con UNION#Incorrecto y muy ineficiente. Window functions son la solución correcta.
+####Ejemplo completo\: WITH ranked AS (SELECT *, ROW_NUMBER() OVER (PARTITION BY categoria ORDER BY ventas DESC) AS rn FROM productos) SELECT * FROM ranked WHERE rn <\= 3;
+}
+
+::CI028-Caso-Practico-Agregacion-Condicional::Necesitas contar cuántos empleados ganan más de 3000 y cuántos ganan menos, por departamento. ¿Qué técnica usas?{
+=COUNT con CASE WHEN dentro\: COUNT(CASE WHEN salario > 3000 THEN 1 END)#¡Correcto! Agregación condicional con CASE permite múltiples conteos en una consulta.
+~Dos consultas separadas con diferentes WHERE#Incorrecto y ineficiente. Mejor usar agregación condicional.
+~HAVING con dos condiciones diferentes#Incorrecto. HAVING filtra grupos, no cuenta condicionalmente.
+~GROUP BY con salario > 3000#Incorrecto. Esto agruparía por verdadero/falso, no contaría.
+####Ejemplo\: SELECT departamento, COUNT(CASE WHEN salario > 3000 THEN 1 END) AS altos, COUNT(CASE WHEN salario <\= 3000 THEN 1 END) AS bajos FROM empleados GROUP BY departamento;
+}
+
+::CI029-Caso-Practico-Self-JOIN::Necesitas encontrar pares de empleados que trabajan en el mismo departamento. ¿Qué técnica usas?{
+=Self JOIN\: FROM empleados e1 JOIN empleados e2 ON e1.departamento \= e2.departamento AND e1.id < e2.id#¡Correcto! Self JOIN compara la tabla consigo misma; la condición id < id evita duplicados.
+~GROUP BY departamento HAVING COUNT(*) > 1#Incorrecto. Esto cuenta empleados por departamento, no genera pares.
+~INNER JOIN entre empleados y departamentos#Incorrecto. Necesitas comparar empleados entre sí, no con departamentos.
+~CROSS JOIN empleados#Incorrecto sin condiciones. CROSS JOIN genera todas las combinaciones, necesitas filtrar por departamento.
+####Self JOIN es útil para comparar filas de la misma tabla\: empleados con mismo jefe, productos de misma categoría, etc. La condición e1.id < e2.id evita pares duplicados (A,B) y (B,A).
+}
+
+::CI030-Caso-Practico-Multiple-Condiciones::Necesitas clientes de Madrid o Barcelona que han gastado más de 10000 en total y han hecho al menos 5 pedidos. Selecciona TODOS los elementos necesarios\:{
+~%20%JOIN entre clientes y pedidos#Correcto. Necesario para relacionar clientes con sus compras.
+~%20%WHERE ciudad IN ('Madrid', 'Barcelona')#Correcto. Filtra clientes por ciudad ANTES de agrupar.
+~%20%GROUP BY cliente_id#Correcto. Agrupa por cliente para calcular totales.
+~%20%HAVING SUM(monto) > 10000#Correcto. Filtra grupos con gasto total > 10000.
+~%20%HAVING COUNT(*) >\= 5#Correcto. Filtra grupos con al menos 5 pedidos.
+~%-100%WHERE SUM(monto) > 10000#Incorrecto. WHERE no puede usar funciones de agregación; debe ser HAVING.
+~%-100%GROUP BY ciudad#Incorrecto. Debe agrupar por cliente_id para ver totales por cliente.
+~%-100%ORDER BY monto DESC LIMIT 1#Incorrecto. Esto limitaría a 1 resultado; necesitamos todos los que cumplan las condiciones.
+####Consulta completa\: SELECT c.cliente_id, c.ciudad, SUM(p.monto) AS total, COUNT(*) AS pedidos FROM clientes c JOIN pedidos p ON c.cliente_id \= p.cliente_id WHERE c.ciudad IN ('Madrid', 'Barcelona') GROUP BY c.cliente_id, c.ciudad HAVING SUM(p.monto) > 10000 AND COUNT(*) >\= 5;
+}
+
+// ==========================================
+// FIN DEL BANCO DE PREGUNTAS - CONSULTAS INTERMEDIAS
+// ==========================================
+// Total de preguntas intermedias: 30
+// Distribución por taxonomía de Bloom:
+// - Recordar (Nivel 1): 5 preguntas
+// - Comprender (Nivel 2): 5 preguntas
+// - Aplicar (Niveles 3-4): 13 preguntas
+// - Analizar (Nivel 5): 4 preguntas
+// - Relacionar columnas (Matching): 4 preguntas
+// - Casos prácticos complejos: 4 preguntas
+// 
+// Tipos de pregunta:
+// - Opción múltiple simple: 20
+// - Opción múltiple con varias correctas: 2
+// - Relacionar columnas (Matching): 4
+//
+// Todas las preguntas incluyen retroalimentación detallada
+// Las preguntas de opción múltiple con varias correctas penalizan incorrectas
+//
+// TOTAL ACUMULADO DEL BANCO COMPLETO: 62 preguntas (32 básicas + 30 intermedias)
+
+// ==========================================
+// CATEGORÍA: AVANZADAS - Subconsultas, CTEs y Operadores de Conjuntos
+// ==========================================
+
+$CATEGORY: $course$/Unidad 2: DML/Consultas Avanzadas
+
+// ==========================================
+// NIVEL 1: RECORDAR - Conceptos fundamentales
+// ==========================================
+
+::CA001-Recordar-Subconsulta-Concepto::¿Qué es una subconsulta en SQL?{
+=Una consulta anidada dentro de otra consulta principal#¡Correcto! Una subconsulta es una consulta dentro de otra, también llamada consulta interna.
+~Una consulta que se ejecuta después de la consulta principal#Incorrecto. Las subconsultas se ejecutan como parte de la consulta principal.
+~Una consulta que reemplaza a un JOIN#Incorrecto. Aunque a veces logran resultados similares, no son lo mismo.
+~Una consulta que solo funciona con GROUP BY#Incorrecto. Las subconsultas funcionan en diversos contextos.
+####Las subconsultas permiten descomponer problemas complejos, obtener valores dinámicos y filtrar datos basados en resultados de otras consultas.
+}
+
+::CA002-Recordar-CTE-Concepto::¿Qué significa CTE en SQL?{
+=Common Table Expression (Expresión de Tabla Común)#¡Correcto! CTE es una expresión de tabla temporal definida con WITH.
+~Computed Table Entry#Incorrecto. CTE significa Common Table Expression.
+~Cascading Table Element#Incorrecto. No existe este término en SQL.
+~Conditional Table Execution#Incorrecto. CTE no tiene que ver con condicionales.
+####Un CTE se define con la cláusula WITH y proporciona una forma legible de crear resultados temporales que pueden referenciarse en la consulta principal.
+}
+
+::CA003-Recordar-UNION-Funcion::¿Qué hace el operador UNION en SQL?{
+=Combina resultados de múltiples SELECT eliminando duplicados#¡Correcto! UNION une resultados y elimina filas duplicadas automáticamente.
+~Une tablas mediante una clave foránea#Incorrecto. Eso es función de JOIN.
+~Crea una nueva tabla permanente#Incorrecto. UNION solo combina resultados, no crea tablas.
+~Suma valores numéricos de diferentes columnas#Incorrecto. UNION combina filas, no suma valores.
+####UNION requiere que las consultas tengan el mismo número de columnas y tipos de datos compatibles. UNION ALL mantiene duplicados.
+}
+
+::CA004-Recordar-EXCEPT::¿Qué devuelve el operador EXCEPT?{
+=Filas del primer SELECT que NO están en el segundo SELECT#¡Correcto! EXCEPT es la operación de diferencia entre conjuntos.
+~Filas que están en ambos SELECT#Incorrecto. Eso es INTERSECT.
+~Todas las filas de ambos SELECT#Incorrecto. Eso es UNION.
+~Filas que son diferentes en alguna columna#Incorrecto. EXCEPT compara filas completas, no columnas individuales.
+####EXCEPT elimina duplicados automáticamente y el orden importa\: A EXCEPT B es diferente de B EXCEPT A.
+}
+
+::CA005-Recordar-INTERSECT::¿Qué devuelve el operador INTERSECT?{
+=Solo las filas que están presentes en ambos SELECT#¡Correcto! INTERSECT es la operación de intersección entre conjuntos.
+~Filas del primer SELECT que no están en el segundo#Incorrecto. Eso es EXCEPT.
+~Todas las filas de ambos SELECT sin duplicados#Incorrecto. Eso es UNION.
+~Filas donde se cruzan las claves foráneas#Incorrecto. INTERSECT compara resultados completos, no claves específicas.
+####INTERSECT elimina duplicados automáticamente y el orden NO importa\: A INTERSECT B es igual a B INTERSECT A.
+}
+
+::CA006-Recordar-EXISTS::¿Qué verifica el operador EXISTS?{
+=Si una subconsulta devuelve al menos una fila#¡Correcto! EXISTS devuelve TRUE si la subconsulta tiene resultados, FALSE si está vacía.
+~Si un valor específico existe en una columna#Incorrecto. Para eso se usa IN o una comparación directa.
+~Si una tabla existe en la base de datos#Incorrecto. Para verificar existencia de objetos se consultan tablas del sistema.
+~Si hay valores NULL en una columna#Incorrecto. Para NULL se usa IS NULL.
+####EXISTS es muy eficiente porque detiene la ejecución de la subconsulta apenas encuentra la primera fila que cumple la condición.
+}
+
+// ==========================================
+// NIVEL 2: COMPRENDER - Tipos y características
+// ==========================================
+
+::CA007-Comprender-Tipos-Subconsulta::¿Cuáles son los principales tipos de subconsultas? (Seleccione todas las correctas){
+~%33.33%Subconsulta escalar (devuelve un solo valor)#Correcto. Se usa con operadores de comparación (\=, <, >, etc.).
+~%33.33%Subconsulta de lista (devuelve múltiples valores)#Correcto. Se usa típicamente con IN, NOT IN.
+~%33.33%Subconsulta de existencia (verifica si existen filas)#Correcto. Se usa con EXISTS, NOT EXISTS.
+~%-100%Subconsulta de agregación (solo funciona con SUM)#Incorrecto. Las subconsultas pueden usar cualquier función de agregación, no es un tipo especial.
+~%-100%Subconsulta de ordenamiento#Incorrecto. No existe este tipo; ORDER BY se usa en la consulta principal o final.
+####Los tres tipos principales se distinguen por lo que devuelven\: un valor, múltiples valores o simplemente verificación de existencia.
+}
+
+::CA008-Comprender-UNION-ALL-Diferencia::¿Cuál es la diferencia entre UNION y UNION ALL?{
+=UNION elimina duplicados, UNION ALL los mantiene#¡Correcto! UNION ALL es más rápido porque no necesita eliminar duplicados.
+~UNION ALL es más lento que UNION#Incorrecto. UNION ALL es más rápido porque no procesa duplicados.
+~UNION permite ORDER BY, UNION ALL no#Incorrecto. Ambos permiten ORDER BY al final.
+~UNION funciona con números, UNION ALL con texto#Incorrecto. Ambos funcionan con cualquier tipo de dato compatible.
+####Usa UNION cuando necesites resultados únicos. Usa UNION ALL cuando quieras todos los registros y sepas que no hay duplicados o no te importen.
+}
+
+::CA009-Comprender-CTE-Ventajas::¿Cuáles son ventajas de usar CTEs sobre subconsultas tradicionales? (Seleccione todas las correctas){
+~%33.33%Mayor legibilidad y organización del código#Correcto. Los CTEs hacen el código más mantenible y fácil de entender.
+~%33.33%Pueden ser recursivos#Correcto. Los CTEs recursivos permiten consultas jerárquicas y de grafos.
+~%33.33%Pueden referenciarse múltiples veces en la misma consulta#Correcto. Un CTE se define una vez y se usa varias veces.
+~%-100%Son más rápidos que las subconsultas siempre#Incorrecto. El rendimiento es similar; la ventaja principal es la legibilidad.
+~%-100%Se almacenan permanentemente en la base de datos#Incorrecto. Los CTEs son temporales y solo existen durante la ejecución de la consulta.
+####CTEs mejoran la mantenibilidad del código SQL complejo, especialmente cuando se necesita reutilizar el mismo resultado temporal múltiples veces.
+}
+
+::CA010-Comprender-IN-vs-EXISTS::¿Cuándo es preferible usar EXISTS en lugar de IN con subconsulta?{
+=Cuando la subconsulta puede devolver muchas filas o valores NULL#¡Correcto! EXISTS es más eficiente con grandes volúmenes y maneja NULL correctamente.
+~Cuando necesitas contar resultados#Incorrecto. Para contar se usa COUNT, no EXISTS.
+~Solo cuando trabajas con fechas#Incorrecto. EXISTS funciona con cualquier tipo de dato.
+~EXISTS e IN son siempre intercambiables#Incorrecto. Tienen diferencias de rendimiento y comportamiento con NULL.
+####EXISTS detiene la búsqueda apenas encuentra una coincidencia, mientras que IN puede evaluar toda la lista. EXISTS también maneja NULL de forma más predecible.
+}
+
+::CA011-Comprender-Operadores-Conjuntos-Requisitos::¿Qué requisitos deben cumplir las consultas para usar operadores de conjuntos (UNION, EXCEPT, INTERSECT)?{
+=Mismo número de columnas y tipos de datos compatibles#¡Correcto! Las columnas deben coincidir en número, orden y tipo.
+~Deben usar las mismas tablas#Incorrecto. Pueden usar tablas completamente diferentes.
+~Deben tener la misma cláusula WHERE#Incorrecto. Cada SELECT puede tener condiciones diferentes.
+~Solo pueden tener columnas numéricas#Incorrecto. Funcionan con cualquier tipo de dato compatible.
+####Los tipos de datos deben ser compatibles por posición (primera columna del primer SELECT compatible con primera columna del segundo SELECT, etc.).
+}
+
+// ==========================================
+// NIVEL 3: APLICAR - Sintaxis correcta
+// ==========================================
+
+::CA012-Aplicar-Subconsulta-Escalar::Para obtener productos con precio mayor al precio promedio\:{
+=SELECT * FROM productos WHERE precio > (SELECT AVG(precio) FROM productos);#¡Correcto! Subconsulta escalar que devuelve un solo valor (el promedio).
+~SELECT * FROM productos WHERE precio > AVG(precio);#Incorrecto. No se pueden usar funciones de agregación directamente en WHERE sin subconsulta.
+~SELECT * FROM productos HAVING precio > (SELECT AVG(precio) FROM productos);#Incorrecto. HAVING requiere GROUP BY; además, WHERE es más apropiado aquí.
+~SELECT * FROM productos WHERE precio IN (SELECT AVG(precio) FROM productos);#Incorrecto. IN es para listas; AVG devuelve un solo valor, usar \= o >.
+####Una subconsulta escalar devuelve exactamente un valor y puede usarse con operadores de comparación como \=, <, >, <\=, >\=, <>.
+}
+
+::CA013-Aplicar-IN-Subconsulta::Para obtener clientes que han hecho pedidos\:{
+=SELECT * FROM clientes WHERE cliente_id IN (SELECT cliente_id FROM pedidos);#¡Correcto! IN con subconsulta de lista para verificar pertenencia.
+~SELECT * FROM clientes WHERE cliente_id \= (SELECT cliente_id FROM pedidos);#Incorrecto. Una subconsulta con \= debe devolver exactamente un valor; esta puede devolver muchos.
+~SELECT * FROM clientes WHERE (SELECT cliente_id FROM pedidos);#Incorrecto. Sintaxis inválida; falta el operador de comparación.
+~SELECT * FROM clientes IN (SELECT cliente_id FROM pedidos);#Incorrecto. IN debe ir en la cláusula WHERE, no después de FROM.
+####IN permite verificar si un valor está en una lista de valores devueltos por la subconsulta. Es equivalente a múltiples OR pero más conciso.
+}
+
+::CA014-Aplicar-EXISTS::Para verificar si existen productos en una categoría específica\:{
+=SELECT * FROM categorias c WHERE EXISTS (SELECT 1 FROM productos p WHERE p.categoria_id \= c.categoria_id);#¡Correcto! EXISTS verifica existencia correlacionando con la consulta externa.
+~SELECT * FROM categorias WHERE categoria_id IN (SELECT categoria_id FROM productos);#Técnicamente correcto pero EXISTS es más eficiente para verificación de existencia.
+~SELECT * FROM categorias WHERE (SELECT COUNT(*) FROM productos) > 0;#Incorrecto. Esto verifica si hay productos en total, no por categoría.
+~SELECT * FROM categorias EXISTS (SELECT * FROM productos);#Incorrecto. EXISTS debe ir en WHERE, no después de FROM.
+####EXISTS es óptimo para verificar existencia porque detiene la ejecución apenas encuentra la primera fila. SELECT 1 o SELECT * dan el mismo resultado.
+}
+
+::CA015-Aplicar-CTE-Basico::Para crear un CTE llamado 'ventas_totales' que calcule ventas por cliente\:{
+=WITH ventas_totales AS (SELECT cliente_id, SUM(monto) AS total FROM pedidos GROUP BY cliente_id) SELECT * FROM ventas_totales;#¡Correcto! Sintaxis correcta de CTE con WITH ... AS (...) SELECT.
+~CREATE CTE ventas_totales AS SELECT cliente_id, SUM(monto) FROM pedidos GROUP BY cliente_id;#Incorrecto. Los CTEs usan WITH, no CREATE.
+~WITH SELECT cliente_id, SUM(monto) AS total FROM pedidos GROUP BY cliente_id AS ventas_totales;#Incorrecto. La sintaxis es WITH nombre AS (consulta), no al revés.
+~CTE ventas_totales \= SELECT cliente_id, SUM(monto) FROM pedidos GROUP BY cliente_id;#Incorrecto. SQL no usa \= para definir CTEs; usa WITH ... AS.
+####Un CTE se define con WITH nombre_cte AS (consulta) y luego se usa en el SELECT principal como si fuera una tabla.
+}
+
+::CA016-Aplicar-UNION::Para combinar listas de empleados y clientes sin duplicados\:{
+=SELECT nombre FROM empleados UNION SELECT nombre FROM clientes;#¡Correcto! UNION combina y elimina duplicados automáticamente.
+~SELECT nombre FROM empleados + SELECT nombre FROM clientes;#Incorrecto. + no es operador de conjuntos en SQL estándar.
+~SELECT nombre FROM empleados JOIN SELECT nombre FROM clientes;#Incorrecto. JOIN combina columnas, no filas; además, sintaxis inválida.
+~SELECT nombre FROM empleados, clientes;#Incorrecto. Esto genera un producto cartesiano, no una unión vertical.
+####UNION apila resultados verticalmente (más filas). Las consultas deben tener el mismo número de columnas con tipos compatibles.
+}
+
+::CA017-Aplicar-EXCEPT::Para encontrar productos que nunca se han vendido\:{
+=SELECT producto_id FROM productos EXCEPT SELECT producto_id FROM ventas;#¡Correcto! EXCEPT devuelve productos que están en la tabla productos pero no en ventas.
+~SELECT producto_id FROM productos WHERE producto_id NOT IN (SELECT producto_id FROM ventas);#Técnicamente correcto pero EXCEPT es más claro para operaciones de conjuntos.
+~SELECT producto_id FROM ventas EXCEPT SELECT producto_id FROM productos;#Incorrecto. El orden está invertido; esto daría ventas de productos inexistentes (normalmente vacío por integridad referencial).
+~SELECT producto_id FROM productos UNION SELECT producto_id FROM ventas;#Incorrecto. UNION combina ambos conjuntos; necesitas EXCEPT para la diferencia.
+####EXCEPT es útil para encontrar diferencias, auditorías y registros faltantes. El orden importa\: A EXCEPT B ≠ B EXCEPT A.
+}
+
+::CA018-Aplicar-INTERSECT::Para encontrar ciudades que tienen tanto empleados como clientes\:{
+=SELECT ciudad FROM empleados INTERSECT SELECT ciudad FROM clientes;#¡Correcto! INTERSECT devuelve solo valores comunes a ambos conjuntos.
+~SELECT ciudad FROM empleados WHERE ciudad IN (SELECT ciudad FROM clientes);#Técnicamente correcto pero INTERSECT es más claro para intersecciones de conjuntos.
+~SELECT ciudad FROM empleados UNION SELECT ciudad FROM clientes;#Incorrecto. UNION devuelve todas las ciudades, no solo las comunes.
+~SELECT ciudad FROM empleados EXCEPT SELECT ciudad FROM clientes;#Incorrecto. EXCEPT devuelve diferencias, no intersecciones.
+####INTERSECT es útil para encontrar elementos comunes entre conjuntos. A diferencia de EXCEPT, el orden no importa\: A INTERSECT B \= B INTERSECT A.
+}
+
+// ==========================================
+// NIVEL 4: APLICAR - CTEs complejos y correlacionados
+// ==========================================
+
+::CA019-Aplicar-CTE-Multiple::Para definir múltiples CTEs en una consulta\:{
+=WITH cte1 AS (SELECT ...), cte2 AS (SELECT ...) SELECT * FROM cte1 JOIN cte2 ON ...;#¡Correcto! Múltiples CTEs se separan con comas después del AS.
+~WITH cte1 AS (SELECT ...) WITH cte2 AS (SELECT ...) SELECT * FROM cte1, cte2;#Incorrecto. WITH solo se usa una vez; los CTEs se separan con comas.
+~CREATE CTE cte1 AS (SELECT ...) CREATE CTE cte2 AS (SELECT ...) SELECT *;#Incorrecto. No se usa CREATE; se usa WITH.
+~WITH cte1, cte2 AS (SELECT ... SELECT ...) SELECT *;#Incorrecto. Cada CTE necesita su propio AS (consulta).
+####Puedes definir múltiples CTEs en una sola instrucción WITH\: WITH cte1 AS (...), cte2 AS (...), cte3 AS (...) SELECT ...
+}
+
+::CA020-Aplicar-Subconsulta-Correlacionada::Una subconsulta correlacionada es aquella que\:{
+=Hace referencia a columnas de la consulta externa#¡Correcto! Se ejecuta una vez por cada fila de la consulta externa.
+~No puede usar JOIN#Incorrecto. Las subconsultas correlacionadas pueden usar JOIN.
+~Solo funciona con EXISTS#Incorrecto. Pueden usarse con EXISTS, IN, operadores de comparación, etc.
+~Se ejecuta antes que la consulta externa#Incorrecto. Se ejecuta repetidamente, una vez por cada fila de la externa.
+####Ejemplo\: SELECT nombre FROM empleados e WHERE salario > (SELECT AVG(salario) FROM empleados WHERE departamento \= e.departamento); compara cada empleado con el promedio de SU departamento.
+}
+
+::CA021-Aplicar-NOT-EXISTS::Para encontrar clientes que NO han hecho pedidos\:{
+=SELECT * FROM clientes c WHERE NOT EXISTS (SELECT 1 FROM pedidos p WHERE p.cliente_id \= c.cliente_id);#¡Correcto! NOT EXISTS verifica la ausencia de filas relacionadas.
+~SELECT * FROM clientes WHERE cliente_id NOT IN (SELECT cliente_id FROM pedidos);#Técnicamente correcto pero puede fallar si hay NULL en pedidos.cliente_id; NOT EXISTS es más seguro.
+~SELECT * FROM clientes WHERE EXISTS (SELECT 1 FROM pedidos WHERE cliente_id <> clientes.cliente_id);#Incorrecto. Esto verifica si existen pedidos de OTROS clientes, no si este cliente no tiene pedidos.
+~SELECT * FROM clientes EXCEPT SELECT * FROM pedidos;#Incorrecto. EXCEPT requiere mismas columnas; clientes y pedidos tienen estructuras diferentes.
+####NOT EXISTS es más seguro que NOT IN cuando puede haber valores NULL, porque EXISTS siempre devuelve TRUE o FALSE, nunca NULL.
+}
+
+// ==========================================
+// NIVEL 5: ANALIZAR - Rendimiento y casos complejos
+// ==========================================
+
+::CA022-Analizar-IN-vs-EXISTS-NULL::¿Por qué NOT IN puede dar resultados inesperados si la subconsulta contiene NULL?{
+=Porque NOT IN con NULL devuelve NULL (no TRUE ni FALSE), filtrando todas las filas#¡Correcto! x NOT IN (a, b, NULL) evalúa como NULL, no como FALSE.
+~Porque IN no puede trabajar con valores NULL#Incorrecto. IN puede trabajar con NULL, pero el resultado puede ser inesperado.
+~Porque NOT invierte el significado de NULL#Incorrecto. NOT NULL sigue siendo NULL en lógica de tres valores.
+~Esto es un error de sintaxis#Incorrecto. Es comportamiento válido pero potencialmente problemático.
+####Regla\: Si puede haber NULL en la subconsulta, usa NOT EXISTS en lugar de NOT IN para evitar problemas. EXISTS no tiene este problema porque trabaja con existencia de filas, no con valores.
+}
+
+::CA023-Analizar-CTE-vs-Temp-Table::¿Cuál es la diferencia entre un CTE y una tabla temporal?{
+=Los CTEs solo existen durante la consulta, las tablas temporales persisten en la sesión#¡Correcto! Los CTEs son consultas inline, las temp tables son objetos físicos.
+~Los CTEs son más rápidos que las tablas temporales siempre#Incorrecto. Depende del caso; las temp tables pueden indexarse.
+~Las tablas temporales no pueden tener índices#Incorrecto. Las tablas temporales SÍ pueden tener índices, constraints, etc.
+~Los CTEs no pueden usar GROUP BY#Incorrecto. Los CTEs pueden usar cualquier característica de SELECT.
+####CTEs son ideales para consultas únicas y legibilidad. Tablas temporales (\#temp) son mejores cuando\: 1) se usan múltiples veces, 2) necesitan índices, 3) tienen muchos datos.
+}
+
+::CA024-Analizar-UNION-Rendimiento::¿Cuándo es mejor usar UNION ALL en lugar de UNION?{
+=Cuando sabes que no hay duplicados o no te importan los duplicados#¡Correcto! UNION ALL evita el costo de eliminar duplicados.
+~Siempre, porque UNION ALL es mejor en todos los casos#Incorrecto. Si necesitas eliminar duplicados, UNION es la opción correcta.
+~Solo cuando trabajas con más de 1000 filas#Incorrecto. La elección depende de la necesidad de eliminar duplicados, no del volumen.
+~UNION ALL solo funciona con números#Incorrecto. UNION ALL funciona con cualquier tipo de dato.
+####UNION elimina duplicados mediante ordenamiento o hashing, lo cual consume recursos. Si sabes que los conjuntos son disjuntos, usa UNION ALL para mejor rendimiento.
+}
+
+::CA025-Analizar-Subconsulta-SELECT::¿Qué sucede si una subconsulta escalar en el SELECT devuelve múltiples filas?{
+=Genera un error de ejecución#¡Correcto! Una subconsulta escalar debe devolver exactamente un valor (una fila, una columna).
+~Devuelve solo la primera fila#Incorrecto. SQL Server genera un error, no selecciona automáticamente.
+~Concatena todos los valores#Incorrecto. No hay concatenación automática.
+~Se ignoran las filas adicionales#Incorrecto. La consulta falla con error.
+####Ejemplo de error\: SELECT nombre, (SELECT ciudad FROM direcciones WHERE cliente_id \= clientes.id) FROM clientes; falla si un cliente tiene múltiples direcciones. Solución\: usar TOP 1, MAX(), o JOIN.
+}
+
+// ==========================================
+// NIVEL 6: RELACIONAR COLUMNAS (Matching)
+// ==========================================
+
+::CA026-Relacionar-Operadores-Conjuntos::Relaciona cada operador de conjuntos con su operación matemática equivalente\:{
+=UNION -> Unión de conjuntos (A ∪ B)
+=INTERSECT -> Intersección de conjuntos (A ∩ B)
+=EXCEPT -> Diferencia de conjuntos (A - B)
+=UNION ALL -> Unión con repetición (multiconjunto)
+####Los operadores de conjuntos en SQL se basan en teoría de conjuntos matemáticos, pero operan sobre filas de resultados.
+}
+
+::CA027-Relacionar-Tipos-Subconsulta-Operador::Relaciona cada tipo de subconsulta con el operador típico usado\:{
+=Subconsulta escalar -> \= < > <\= >\= <>
+=Subconsulta de lista -> IN, NOT IN
+=Subconsulta de existencia -> EXISTS, NOT EXISTS
+=Subconsulta correlacionada -> Referencia a tabla externa
+####Elegir el tipo correcto de subconsulta y operador mejora tanto la claridad como el rendimiento de la consulta.
+}
+
+::CA028-Relacionar-CTE-Casos-Uso::Relaciona cada caso de uso con la técnica SQL apropiada\:{
+=Consulta jerárquica (organigrama) -> CTE recursivo
+=Reutilizar resultado complejo múltiples veces -> CTE no recursivo
+=Datos temporales con índices necesarios -> Tabla temporal (\#temp)
+=Verificar pertenencia a lista grande -> EXISTS en lugar de IN
+=Comparar dos estados de datos -> EXCEPT o INTERSECT
+####Elegir la herramienta correcta depende del problema\: rendimiento, legibilidad y requisitos específicos.
+}
+
+::CA029-Relacionar-Escenarios-Tecnica::Relaciona cada escenario con la mejor técnica SQL\:{
+=Encontrar empleados sin subordinados -> NOT EXISTS o LEFT JOIN con IS NULL
+=Listar productos vendidos en 2023 Y 2024 -> INTERSECT entre dos años
+=Combinar datos de múltiples tablas similares -> UNION o UNION ALL
+=Calcular ranking por categoría -> CTE con ROW_NUMBER() OVER (PARTITION BY)
+=Obtener clientes con gasto > promedio -> Subconsulta escalar con AVG()
+####Cada técnica tiene sus ventajas\: CTEs para legibilidad, EXISTS para rendimiento, operadores de conjuntos para comparaciones lógicas.
+}
+
+// ==========================================
+// NIVEL 7: CASOS PRÁCTICOS COMPLEJOS
+// ==========================================
+
+::CA030-Caso-Practico-CTE-Recursivo::Un CTE recursivo consta de dos partes esenciales. ¿Cuáles son?{
+=Miembro ancla (caso base) y miembro recursivo (que se llama a sí mismo)#¡Correcto! El ancla inicia la recursión, el miembro recursivo la continúa.
+~SELECT y WHERE#Incorrecto. Estas son cláusulas normales, no partes específicas de recursión.
+~JOIN y UNION#Parcialmente correcto pero incompleto; el UNION conecta ancla y recursión, pero no son las dos partes principales.
+~GROUP BY y HAVING#Incorrecto. Estas son para agregación, no para recursión.
+####Ejemplo\: WITH RECURSIVE empleados_jerarquia AS (SELECT id, nombre, jefe_id FROM empleados WHERE jefe_id IS NULL UNION ALL SELECT e.id, e.nombre, e.jefe_id FROM empleados e JOIN empleados_jerarquia ej ON e.jefe_id \= ej.id) SELECT * FROM empleados_jerarquia;
+}
+
+::CA031-Caso-Practico-Auditoria-EXCEPT::Tienes una tabla 'productos_ayer' y 'productos_hoy'. ¿Cómo identificas productos eliminados hoy?{
+=SELECT * FROM productos_ayer EXCEPT SELECT * FROM productos_hoy;#¡Correcto! Devuelve productos que existían ayer pero no existen hoy.
+~SELECT * FROM productos_hoy EXCEPT SELECT * FROM productos_ayer;#Incorrecto. Esto devuelve productos NUEVOS, no eliminados.
+~SELECT * FROM productos_ayer INTERSECT SELECT * FROM productos_hoy;#Incorrecto. INTERSECT devuelve productos que siguen existiendo.
+~SELECT * FROM productos_ayer UNION SELECT * FROM productos_hoy;#Incorrecto. UNION devuelve todos los productos (de ayer y hoy).
+####EXCEPT es excelente para auditorías\: comparar snapshots de datos, identificar registros faltantes o cambios entre sistemas.
+}
+
+::CA032-Caso-Practico-Top-N-CTE::Para obtener los 5 productos más vendidos de cada categoría usando CTEs\:{
+=WITH ranked AS (SELECT *, ROW_NUMBER() OVER (PARTITION BY categoria_id ORDER BY ventas DESC) AS rn FROM productos) SELECT * FROM ranked WHERE rn <\= 5;#¡Correcto! Window function con PARTITION BY resuelve top-N por grupo.
+~SELECT TOP 5 * FROM productos GROUP BY categoria_id ORDER BY ventas DESC;#Incorrecto. TOP 5 se aplica al resultado completo, no por categoría. Además, GROUP BY requiere agregación.
+~WITH top5 AS (SELECT * FROM productos ORDER BY ventas DESC LIMIT 5) SELECT * FROM top5 GROUP BY categoria_id;#Incorrecto. Esto obtiene top 5 global, no por categoría.
+~SELECT * FROM productos WHERE ventas IN (SELECT TOP 5 ventas FROM productos);#Incorrecto. Esto obtiene productos con los 5 valores de venta más altos globales, no por categoría.
+####ROW_NUMBER() OVER (PARTITION BY categoria ORDER BY ventas DESC) asigna ranking dentro de cada categoría. Los CTEs hacen esta consulta más legible.
+}
+
+::CA033-Caso-Practico-Subconsultas-Multiples::Necesitas empleados cuyo salario es mayor al promedio de su departamento Y que trabajan en departamentos con más de 10 empleados. Selecciona TODOS los elementos necesarios\:{
+~%25%Subconsulta para calcular promedio salarial por departamento#Correcto. Necesario para comparar cada empleado con su promedio departamental.
+~%25%Subconsulta para contar empleados por departamento#Correcto. Necesario para filtrar departamentos grandes.
+~%25%Subconsulta correlacionada que referencia departamento del empleado#Correcto. La comparación debe ser por departamento de cada empleado.
+~%25%WHERE con dos condiciones (salario y conteo)#Correcto. Ambas condiciones deben cumplirse simultáneamente.
+~%-100%GROUP BY departamento en la consulta principal#Incorrecto. La consulta principal debe devolver empleados individuales, no grupos.
+~%-100%HAVING con condiciones de salario#Incorrecto. HAVING filtra grupos; aquí filtramos empleados individuales con WHERE.
+~%-100%UNION entre dos subconsultas#Incorrecto. Necesitas condiciones AND, no UNION de resultados.
+####Consulta completa\: SELECT * FROM empleados e WHERE salario > (SELECT AVG(salario) FROM empleados WHERE departamento \= e.departamento) AND departamento IN (SELECT departamento FROM empleados GROUP BY departamento HAVING COUNT(*) > 10);
+}
+
+::CA034-Caso-Practico-EXISTS-Rendimiento::Tienes 1 millón de clientes y 10 millones de pedidos. ¿Cuál consulta es más eficiente para encontrar clientes con pedidos?{
+=SELECT * FROM clientes c WHERE EXISTS (SELECT 1 FROM pedidos p WHERE p.cliente_id \= c.cliente_id);#¡Correcto! EXISTS detiene la búsqueda apenas encuentra un pedido por cliente.
+~SELECT * FROM clientes WHERE cliente_id IN (SELECT cliente_id FROM pedidos);#Menos eficiente; IN construye toda la lista antes de comparar.
+~SELECT DISTINCT c.* FROM clientes c JOIN pedidos p ON c.cliente_id \= p.cliente_id;#Menos eficiente; JOIN genera todas las combinaciones y luego DISTINCT elimina duplicados.
+~SELECT * FROM clientes WHERE (SELECT COUNT(*) FROM pedidos WHERE cliente_id \= clientes.cliente_id) > 0;#Ineficiente; COUNT cuenta todos los pedidos cuando solo necesitas saber si existe al menos uno.
+####EXISTS con subconsulta correlacionada es óptimo para verificación de existencia\: se detiene en la primera coincidencia y no construye conjuntos intermedios grandes.
+}
+
+::CA035-Caso-Practico-UNION-Reportes::Necesitas un reporte unificado de todas las transacciones (ventas, devoluciones, ajustes) de diferentes tablas con estructuras similares\:{
+=SELECT 'Venta' AS tipo, fecha, monto FROM ventas UNION ALL SELECT 'Devolucion', fecha, -monto FROM devoluciones UNION ALL SELECT 'Ajuste', fecha, monto FROM ajustes;#¡Correcto! UNION ALL combina eficientemente sin eliminar duplicados legítimos.
+~SELECT * FROM ventas UNION SELECT * FROM devoluciones UNION SELECT * FROM ajustes;#Incorrecto si las tablas tienen diferentes columnas; además, falta el tipo de transacción.
+~SELECT * FROM ventas JOIN devoluciones JOIN ajustes;#Incorrecto. JOIN combina columnas horizontalmente, no filas verticalmente.
+~INSERT INTO reporte SELECT * FROM ventas; INSERT INTO reporte SELECT * FROM devoluciones;#Funcionaría pero requiere tabla temporal; UNION ALL es más directo.
+####UNION ALL es ideal para consolidar datos de tablas con estructuras similares\: logs de diferentes fuentes, transacciones de múltiples sistemas, reportes históricos por año, etc.
+}
+
+// ==========================================
+// FIN DEL BANCO DE PREGUNTAS - CONSULTAS AVANZADAS
+// ==========================================
+// Total de preguntas avanzadas: 35
+// Distribución por taxonomía de Bloom:
+// - Recordar (Nivel 1): 6 preguntas
+// - Comprender (Nivel 2): 5 preguntas
+// - Aplicar (Niveles 3-4): 16 preguntas
+// - Analizar (Nivel 5): 4 preguntas
+// - Relacionar columnas (Matching): 4 preguntas
+// - Casos prácticos complejos: 6 preguntas
+// 
+// Tipos de pregunta:
+// - Opción múltiple simple: 26
+// - Opción múltiple con varias correctas: 3
+// - Relacionar columnas (Matching): 4
+//
+// Todas las preguntas incluyen retroalimentación detallada
+// Las preguntas de opción múltiple con varias correctas penalizan incorrectas
+//
+// ==========================================
+// RESUMEN TOTAL DEL BANCO COMPLETO
+// ==========================================
+// TOTAL GENERAL: 97 preguntas
+// - Básicas: 32 preguntas
+// - Intermedias: 30 preguntas  
+// - Avanzadas: 35 preguntas
+//
+// Distribución general por taxonomía:
+// - Recordar: 16 preguntas
+// - Comprender: 15 preguntas
+// - Aplicar: 42 preguntas
+// - Analizar: 14 preguntas
+// - Relacionar columnas: 12 preguntas
+// - Casos prácticos: 14 preguntas
+//
+// Tipos de pregunta total:
+// - Opción múltiple simple: 70
+// - Opción múltiple con varias correctas: 8
+// - Relacionar columnas (Matching): 12
+//
+// Cobertura de contenidos:
+// ✓ Consultas básicas (SELECT, WHERE, ORDER BY, DISTINCT)
+// ✓ Operadores y expresiones
+// ✓ JOINs (INNER, LEFT, RIGHT, FULL, CROSS, SELF)
+// ✓ Agregación (GROUP BY, HAVING, funciones de agregación)
+// ✓ Subconsultas (escalares, de lista, correlacionadas)
+// ✓ CTEs (simples, múltiples, recursivos)
+// ✓ Operadores de conjuntos (UNION, EXCEPT, INTERSECT)
+// ✓ EXISTS y NOT EXISTS
+// ✓ Optimización y rendimiento

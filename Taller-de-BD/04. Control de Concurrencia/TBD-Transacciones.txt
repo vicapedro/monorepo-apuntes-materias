@@ -1,0 +1,390 @@
+Slide 1:
+¿Qué es una transacción de mantenimiento (TM) ?
+select  * from ci_uso_aulas 
+insert into ci_uso_aulas values(100,20,10)
+Update Control Set Atr1=0 where Codigo=10
+Delete Movtos Where Fecha>Fecha_Dada
+¿Es una transacción de mantenimiento?
+Pero si representan 4 transacciones autocommit (autoacompletada)
+transacción autocommit
+transacción autocommit
+transacción autocommit
+transacción autocommit
+Cada una de estas transacciones no  requieren de nuestra intervención puesto que el sistema se encarga de todo.
+Una TM es un conjunto de operaciones(solicitudes) que van a ser tratadas como una única unidad.
+Instituto Tecnológico de Culiacán 
+
+Slide 2:
+Para que un conjunto de transacciones autocompletadas sean tratadas como una unidad, éstas deben marcarse como una transacción explícita.
+Una transacción explícita se inicia con una instrucción Begin Tran y se termina explícitamente con una instrucción Commit o Rollback Tran.
+Begin tran
+select  * from ci_uso_aulas 
+insert into ci_uso_aulas values(100,20,10)
+Update Control Set Atr1=0 where Codigo=10
+Delete Movtos Where Fecha>Fecha_Dada
+Commit tran
+¿Qué sucede con la TM si una de las sentencias falla? 
+1. La TM se aborta en su totalidad. 
+2. La TM Continua con la ejecución de la siguiente sentencia
+Mucha gente lo interpreta de esta manera, nada mas alejado de la realidad
+Instituto Tecnológico de Culiacán 
+
+Slide 3:
+Instituto Tecnológico de Culiacán 
+Si la atomicidad es controlada por el SMBD y no por el usuario, entonces sólo las fallas del sistema realizarán un  UNDO.
+begin tran 
+
+update authors set state = 'FL’ where state ='KS'
+update jobs set min_lvl =min_lvl -10
+
+commit tran
+
+La tabla Jobs tiene un CHECK, no permite el cambio. La actualización fracasa.
+La actualización, se realiza con éxito
+La transacción se compromete
+
+Slide 4:
+Instituto Tecnológico de Culiacán 
+Comprobar lo errores de la transacción
+BEGIN TRAN 
+update authors set state = 'FL’ where state ='KS‘
+IF @@ERROR<> 0
+BEGIN 
+   ROLLBACK TRAN
+   RETURN
+END
+update jobs set min_lvl =min_lvl -10
+IF @@ ERROR<> 0
+BEGIN 
+   ROLLBACK TRAN
+   RETURN
+END
+COMMIT TRAN
+Cuando SQL Server completa con éxito la ejecución de una instrucción o sentencia Transact-SQL, en la variable global @@ERROR se establece el valor 0. 
+
+Slide 5:
+Instituto Tecnológico de Culiacán 
+SQL Server proporciona una gran cantidad de variables globales, que son muy efectivas para usar Transact-SQL regular. 
+
+Las variables globales representan un tipo especial de variable, debido a que el servidor siempre mantiene los valores de estas variables. Todas las variables globales representan información específica del servidor o una sesión de usuario actual.
+
+Los nombres de las variables globales comienzan con un prefijo @@. No necesita declararlos, ya que el servidor los mantiene constantemente. Son funciones definidas por el sistema y no puede declararlas.
+
+@@TRANCOUNT regresa el nivel de anidamiento de las transacciones. Cada inicio de transacción incrementa en 1 la variable @@trancount.
+@@ROWCOUNT regresa el número de renglones afectados por el último comado.
+
+Slide 6:
+¿Qué se garantiza con el uso de TM?
+BD en estado consistente
+Inicia TM
+BD en nuevo estado consistente
+Finaliza TM
+Ejecución de TM
+BD en estado consistente
+Cada transacción asegura el trabajo de proteger la integridad del estado de un sistema al proveer cuatro garantías básicas conocidas como las propiedades ACID:
+ Atomicidad (atomicity)
+Una TM tiene que ser atómica lo que significa que es indivisible; todas las operaciones deben ejecutarse o ninguna en lo absoluto .
+Instituto Tecnológico de Culiacán 
+
+Slide 7:
+Consistencia (consistency)
+Una TM mantendrá la consistencia de la base de datos. Esto es, si la base de datos se encuentra en un estado consistente antes de ejecutar la TM, una vez que ésta termine la consistencia de la base de datos deberá conservarse.
+En términos de base de datos esto significa que se satisfacen todas las restricciones en cuanto a su integridad que incluyen:
+Todos los valores de la llave primaria son únicos.
+La base de datos mantiene integridad referencial lo que significa que los registros solo referencian información que existe.
+Ciertos predicados se mantienen. Por ejemplo,
+ La suma de los gastos es menor o igual al presupuesto.
+Instituto Tecnológico de Culiacán 
+
+Slide 8:
+ Durabilidad (durability)
+ Aislamiento (isolation) 
+Durante la ejecución de una transacción, esta no debe revelar sus resultados a otras transacciones concurrentes antes de su compromiso. Si varias transacciones se ejecutan concurrentemente, los resultados deben ser los mismos que si ellas se hubieran ejecutado en forma secuencial (Seriabilidad). La seriabilidad consiste en asegurarse que los cambios siguen un orden adecuado.
+Es la propiedad de las transacciones que asegura que una vez que una transacción realiza su compromiso, sus resultados son permanentes y no pueden ser borrados de la base de datos, se asegura que los resultados de una transacción sobrevivirán a fallas del sistema.
+Instituto Tecnológico de Culiacán 
+
+Slide 9:
+Pag_Folios	
+Folio           int	
+Usuario       int	
+Estado        char	
+Esquema de la tabla Pag_Folios
+Insert into Pag_Folios(0,0,’D’)
+Insert into Pag_Folios(0,0,´E’)
+Instituto Tecnológico de Culiacán 
+
+Slide 10:
+Conexión 1
+begin tran
+   Update Pag_Folio set usuario=4918 where estado=‘D'
+Conexión 2
+begin tran
+  	
+Qué sucede si ejecutamos las siguientes transacciones ?
+El select en conexión 2 realiza un escaneo de todas las tuplas para validar si cumplen con la condición, pero al encontrar una tupla con bloqueo exclusivo no puede ponerle candado compartido y se bloquea.
+Instituto Tecnológico de Culiacán 
+
+Slide 11:
+Conexión 1
+begin tran
+   Update Pag_Folio set usuario=4918 where estado=‘D'
+Conexión 2
+begin tran
+   select * from pag_folio  With (Index=Idx_estado) where estado='E‘ 
+Previo a ejecutar  las TM  de ambas conexiones creamos un índice no cloustered a la tabla Pag_folio con el atributo Estado, ¿Qué sucede si ejecutamos las transacciones ? 
+El select en conexión 2 NO realiza un escaneo de todas las tuplas de la tabla, ya que hace uso de índice especificado y va directo a las tuplas que no tienen candados exclusivos y las puede acceder.
+create index Idx_estado on pag_folio(Estado)
+, ¿Qué sucede si ejecutamos las transacciones ? 
+Instituto Tecnológico de Culiacán 
+
+Slide 12:
+Conexión 1
+BEGIN TRAN
+   Update Pag_Folio Set Folio=Folio+1 where Estado='E‘
+-- continua la transacción, tratando de leer Pag_Folio2
+   Select * From Pag_Folio2 where Estado='E‘
+  -- Aun no ejecute el commit tran
+Commit tran
+
+Conexión 2
+BEGIN TRAN
+   Update Pag_Folio2 Set Folio=Folio+1 where Estado='E‘
+-- continua la transacción, tratando de leer Pag_Folio
+   Select * From Pag_Folio where Estado='E‘
+ -- Aun no ejecute el commit tran
+Commit Tran
+
+Por que para realizar la modificación ambas TM obtienen un candado exclusivo sobre la tupla, debido a que las TM se mantienen abiertas el candado continua.
+Un Deadlock se presenta cuando 2 o más TM requieren de un recurso que se encuentra bloqueado por  otra TM y ésta nunca libera el recurso.
+El select es bloqueado ya que intenta obtener un bloqueo compartido  sobre la tupla de Pag_Folio2 y ésta tiene un bloqueo exclusivo puesto por otra transacción.
+El select es bloqueado ya que intenta obtener un bloqueo compartido  sobre la tupla de Pag_Folio y ésta tiene un bloqueo exclusivo puesto por otra transacción.
+En este punto se genera un deadlock ya que cada uno espera por el otro para que libere el recurso.
+Aquí SQL Server interviene cancelando la transacción más débil y provoca un error.
+Deadlock (abrazo mortal)
+Deadlock
+¿Por qué?
+Instituto Tecnológico de Culiacán 
+
+Slide 13:
+Candados (locks)
+Las sentencias select que se ejecutan en las conexiones del ejemplo anterior, por default  no tienen limite de tiempo para esperar a que se libere el recurso.
+Si desea establecer limite para esperar por el recurso use: 
+ 
+SET LOCK_TIMEOUT VALOR (milisegundo) 
+set lock_timeout 1000
+declare @v int
+select * from CTL_FolioS  where estado='VERACRUZ'
+Set @V=@@ERROR
+if @v=1222
+   print 'No logro recuperar la tupla'
+else
+   print 'Recupero la tupla'
+set lock_timeout -1    -- Establece el valor por default
+Si transcurre el tiempo y no se obtiene el recurso se genera el error 1222.
+Instituto Tecnológico de Culiacán 
+
+Slide 14:
+
+exec sp_lock
+
+set nocount off
+select * from escuelas
+select * from sysobjects where id in (1794821456,85575343)
+select * from pag_folio
+
+begin tran
+   Update Pag_Folio set usuario=4913
+commit tran
+
+
+
+CREATE PROCEDURE [dbo].[Recurso] AS
+set lock_timeout 5000
+declare @v int, @fOLIO INT
+select @FOLIO=FOLIO from Ctl_Folios  where estado=‘Veracruz'
+Set @V=@@ERROR
+select @V
+set lock_timeout -1    -- Establece el valor por default
+-- EJECUTO EL PROCEDMIENTO
+DECLARE @R INT
+sET  eXEC @R=RECURSO
+PRINT @R
+Instituto Tecnológico de Culiacán 
+
+Slide 15:
+use Sales
+Begin tran
+   Declare @Folio int
+   select @Folio=Folio from ctl_folios Where Estado='Sinaloa'
+   Set @Folio=@Folio+1
+   Insert into FOLIOS_USADOS Values(@Folio)
+   Update CTL_folios Set Folio=@Folio where Estado='Sinaloa'
+Commit tran
+En el contexto real de las propiedades ACID, la que más ha causado problemas es la de Isolation(Aislamiento). Analice el siguiente ejemplo.
+Create table dbo.FoliosUsados ( 
+   Folio int primary key)
+Update CTL_FOLIOS Set Folio=0
+Begin tran
+   
+   select @Folio=Folio from CTL_FOLIOS Where Estado='Sinaloa'
+   Set @Folio=@Folio+1
+   Insert into FOLIOS_USADOS Values(@Folio)
+   Update ctl_Folios Set Folio=@Folio where Estado='Sinaloa'
+Commit tran
+Instituto Tecnológico de Culiacán 
+
+Slide 16:
+Para evitar que dos o más TM accedan al mismo recurso (al mismo tiempo ), se  debe aplicar bloqueo.
+Instituto Tecnológico de Culiacán 
+use Sales
+Begin tran
+   Declare @Folio int
+   select @Folio=Folio from ctl_folios WITH (UPDLOCK)Where Estado='Sinaloa'
+   Set @Folio=@Folio+1
+   Insert into FOLIOS_USADOS Values(@Folio)
+   Update CTL_folios Set Folio=@Folio where Estado='Sinaloa'
+Commit tran
+Begin tran
+   
+   select @Folio=Folio from CTL_FOLIOS WITH (UPDLOCK) Where Estado='Sinaloa'
+   Set @Folio=@Folio+1
+   Insert into FOLIOS_USADOS Values(@Folio)
+   Update ctl_Folios Set Folio=@Folio where Estado='Sinaloa'
+Commit tran
+
+Slide 17:
+Transacciones de Mantenimiento Anidadas
+SQL Server permite manejar transacciones anidadas. Esto significa que podemos tenet TM dentro de TM (se puede iniciar una nueva TM sin que la TM anterior haya terminado su ejecución).
+Asociada a esta ídea de anidamiento existe una variable global  @@TRANCOUNT que tiene el valor de 0 si  no hay ninguna TM activa, 1 si existe una TM activa, 2 si existe una TM anidada, 3 si existen dos TM anidadas y así sucesivamente.
+Instituto Tecnológico de Culiacán 
+Begin Tran 
+Update titles ….
+   BEGIN TRAN 
+     UPDATE TITLES ….
+   COMMIT TRAN
+COMMIT TRAN    
+@@TRANCOUNT=1
+@@TRANCOUNT=2
+@@TRANCOUNT=1
+@@TRANCOUNT=0
+Las transacciones anidadas son sintácticas. 
+El commit tiene un impacto real hasta al final
+
+Slide 18:
+Niveles de aislamiento
+Los niveles de aislamiento te permiten el control del nivel de consistencia que podrás obtener cuando manipulas datos, teniendo en mente que varios procesos puede ejecutarse concurrentemente.
+SQL Server permite cuatro niveles de aislamiento:
+Read uncommited
+Read Commited
+Repeatable read
+ Serializable
+Snapshot
+
+Instituto Tecnológico de Culiacán 
+
+Slide 19:
+El nivel de aislamientos que se seleccione puede presentar (o no presentar) problemas de consistencia tales como:
+1. Lecturas sucias:
+2. Actualizaciones perdidas: 
+3. Análisis inconsistente (lecturas no repetidas):
+4. Fantasmas:
+Una TM actualiza datos pero aún no realiza el commit tran cuando otra TM lee los mismos datos.
+Una TM “B” puede sobre escribir sobre lo realizado por la TM “A” 
+En dos lecturas separadas dentro de la misma TM obtenemos diferentes valores (hablando del mismo recurso).
+Éstos se presentan cuando una TM está realizando una acción contra un rango de tuplas, mientras otra TM realiza una acción incompatible sobre tuplas en el mismo rango.
+Ejemplo de fantasmas: una TM borra todos las tuplas basada en una condición y durante el borrado otra TM inserta una nueva tupla que satisface la condición. La nueva tupla es considerada una tupla fantasma.   
+Instituto Tecnológico de Culiacán 
+
+Slide 20:
+SQL permite establecer el nivel de aislamiento usando la siguiente instrucción:
+SET TRANSACTION ISOLATION LEVEL <isolation level>
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Estableciendo este nivel de aislamiento los lectores no solicitan bloqueos compartidos, así los lectores nunca están en conflicto con sesiones que modifican datos. Los lectores pueden leer datos que se encuentran con bloqueo  exclusivo. 
+Lecturas sucias pueden presentarse. READ UNCOMMITTED es el peor nivel de aislamiento en terminos de consistencia pero el mejor en términos de concurrencia. 
+Conexión 1
+begin tran
+   Update Ctl_Folios Set Usuario=4918
+   Select * From Ctl_Folios
+Conexión 2
+SET TRANSACTION ISOLATION LEVEL  READ UNCOMMITTED
+select * from Ctl_Folios
+La TM en la conexión 1 no termina su ejecución y en la conexión 2 podemos acceder a los datos que modificó. 
+Instituto Tecnológico de Culiacán 
+
+Slide 21:
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+Con este nivel de aislamiento (default de SQL Server) los procesos requieren bloqueos compartidos para leer datos y liberarlos tan pronto como el dato ha sido leido (no cuando la transacción termine).
+Lecturas sucias no se presentan ya que los cambios que puedes leer son aquellos que han terminado con la ejecución de un commit.
+Conexión 1
+begin tran
+   Update Ctl_folios Set Usuario=4918
+   Select * From ctl_folios
+Conexión 2
+SET TRANSACTION ISOLATION LEVEL  READ COMMITTED
+select * from ctl_folios
+La TM en la conexión 1 no termina su ejecución y la conexión 2 queda bloqueada hasta que conexión termine con commit o rollback. 
+Instituto Tecnológico de Culiacán 
+
+Slide 22:
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+Este nivel de aislamiento permite realizar lecturas repetibles, requiere de candados compartidos cuando lee datos, lo que significa que lecturas sucias no se pueden presentar. Se garantiza obtener lecturas repetibles debido a que ningún otro proceso será capaz de obtener un candado exclusivo entre tus lecturas. Actualizaciones perdidas no suceden con este nivel de aislamiento.
+Si dos procesos que leen datos preservan candados compartidos hasta el final de la transacción, un intento por modificar el dato por ambos causará un deadlock, debido a que cada uno requiere un candado exclusivo que será bloqueado por el otro.
+Conexión 1
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+BEGIN TRAN
+   Select Folio from pag_folio where estado='E'
+-- mas instrucciones
+   Select Folio from pag_folio where estado='E'
+Conexión 2
+UPDATE Pag_Folio Set fOLIO=0 where estado='E’
+Desde conexión 1 ejecute hasta antes del segundo select, en conexión 2 ejecute el código y se bloqueará, regrese a conexión 1 y ejecute el último select y obtendrá la misma lectura que en el primer select.
+Instituto Tecnológico de Culiacán 
+
+Slide 23:
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
+El nivel de aislamiento SERIALIZABLE es similar al nivel de aislamiento REPEATABLE READ con una característica adicional, las TM activas ponen candados(puestos sobre índices) a un rango de claves basados sobre la condición de un filtro. El rango de candados aplica tanto para lectores como para escritores.   
+El rango de claves bloqueadas incluye claves que se encuentran físicamente (claves que aún no existen físicamente) cuando se hace el acceso. 
+Conexión 1
+create nonclustered index IdxFolios on Folios (Folio)
+set transaction isolation level serializable
+begin tran
+   update dbo.folios set Usuario=10 where folio between 1 and 50
+commit tran
+
+Conexión 2
+insert into folios(folio,usuario,estatus) values(20,0,‘D')
+
+El insert se bloquea debido a que en conexión1 se especificó el nivel de asilamiento serializable  y se encuantra actualizando las tuplas que FOLIO esten en el rango de 1 a 50, el 20 que se desea insertar esta en ese rango y no lo permite.
+No permite tuplas fantasma
+Instituto Tecnológico de Culiacán 
+
+Slide 24:
+SET TRANSACTION ISOLATION LEVEL SNAPSHOT	 
+SQL SERVER  requiere que enciendas la opción de la BD que permita trabajar este nivel asilamiento. 
+ALTER DATABASE NOM_DB SET ALLOW_SNAPSHOT_ISOLATION ON
+Conexión 1
+ALTER DATABASE SALES
+SET ALLOW_SNAPSHOT_ISOLATION ON
+Begin tran
+   update dbo.ctl_folios set Usuario=9999 where EstADO='SINALOA'
+Cuando una sentencia lee datos durante la ejecución de una TM con el nivel de aislamiento SNAPSHOT, la sentencia accesará la última versión consistente  de los datos que estaba disponible cuando inicio la TM. 
+Cada vez que  una TM modifica una tupla y hay otra(s) TM ejecutándose en con nvel de aislamiento SNAPSHOT, SQL Server necesita una versión consistente de la tupla antes de la modificación(sin tener en cuenta si la TM que modifica esta ejecutandose en este nivel de aislamiento).  
+La tupla que se almacenó previo a la modificación la podemos ver con:
+Select * From Sys.dm_tran_version_store
+El valor de usuario es cambiado de 0 a 4918., como se encendio en la BD la opción que permite aislamiento SNAPSHOT, esta TM tiene que guardar la tupla antes de la modificación. 
+Conexión 2
+SET TRANSACTION ISOLATION LEVEL snapshot
+BEGIN TRAN
+Select  Usuario From Ctl_Folios where Estatus=‘SINALOA’
+Se mostrará el usuario 10, ya que ese estado es el más reciente cuando inicio esta TM.
+Instituto Tecnológico de Culiacán 
+
+Slide 25:
+Conexión 1 ejecute el 
+commit tran
+Select  Usuario From Folios where Estatus=‘D’
+Conexión 2 ejecute la sentencia
+Select  Usuario From Folios where Estatus=‘D’
+Obtenemos usuario igual a 4918
+Obtenemos usuario igual a 10, recuarde que esta TM inicio su ejecución con la última versión consistente.
+Instituto Tecnológico de Culiacán 

@@ -1,0 +1,496 @@
+Slide 1:
+Cursores
+
+Slide 2:
+
+Es una entidad que se relaciona con un conjunto de resultados y establece una posición sobre un sólo renglón dentro de ese conjunto.
+El conjunto de renglones que regresa un select, es conocido como un result set. 
+El cursor es un mecanismo que permite interactuar sobre un subconjunto del result set.
+Concepto
+
+Slide 3:
+Cursores – Sintaxis –
+
+DECLARE cursor_name CURSOR 
+[ LOCAL | GLOBAL ] 
+[ FORWARD_ONLY | SCROLL ] 
+[ STATIC | KEYSET | DYNAMIC |] 
+[ READ_ONLY | SCROLL_LOCKS |] 
+[ TYPE_WARNING ] 
+FOR select_statement 
+[ FOR UPDATE [ OF column_name [ ,...n ] ] ] 
+
+Slide 4:
+Cursores: un cursor, permite
+Posicionarse en un renglón especifico del result set.
+Recuperar un renglón a partir de una posición del result set.
+Modificar renglones del result set.
+Establecer niveles de visibilidad para cambios hechos por otros usuarios sobre los datos del result set.
+
+
+Slide 5:
+Cursores
+API server cursores
+Transact-SQL server cursores
+Client cursores
+
+Slide 6:
+Cursores Transact-SQL
+
+
+DECLARE autor CURSOR FOR 
+        SELECT * FROM autores
+        ORDER BY au_lname
+1
+Open autor
+2
+FETCH NEXT FROM autor
+3
+UPDATE autores set phone=‘415-988’
+WHERE CURREN OF autor
+4
+CLOSE autor
+5
+DEALLOCATE autor
+6
+
+Slide 7:
+Cursores 
+DECLARE cursor_loan CURSOR FOR 
+        SELECT * FROM loan        
+
+
+
+
+
+
+
+
+
+
+Result Set
+OPEN cursor_loan
+
+FETCH NEXT FROM loan_cursor
+
+WHILE @@FETCH_STATUS = 0 BEGIN FETCH NEXT FROM authors_cursor END 
+CLOSE loan_cursor
+
+DEALLOCATE loan_cursor
+
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+1
+4
+11
+123
+02/15/91
+03/17/91
+
+
+
+
+
+
+
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+1
+4
+11
+123
+02/15/91
+03/17/91
+
+
+
+
+
+
+
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+1
+4
+11
+123
+02/15/91
+03/17/91
+
+
+
+
+
+
+
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+1
+4
+11
+123
+02/15/91
+03/17/91
+
+
+
+
+
+
+
+
+
+
+Slide 8:
+FETCH
+Obtiene una fila específica de un cursor Transact-SQL del servidor.
+Sintaxis:
+FETCH 
+        [ [ NEXT | PRIOR | FIRST | LAST 
+                | ABSOLUTE { n | @nvar } 
+                | RELATIVE { n | @nvar } 
+            ] 
+            FROM 
+        ] 
+ { cursor_name }  
+[ INTO @variable_name [ ,...n ] ] 
+
+
+Slide 9:
+
+FETCH_STATUS = 0 LA CAPTURA HA TENIDO ÉXITO
+FETCH_STATUS = -1 NO HAY MAS FILAS
+FETCH_STATUS = -2 LA FILA NO EXISTE EN EL CURSOR
+
+Slide 10:
+
+
+DECLARE CURSOR1 FOR 
+SELECT OUTDATE
+FROM LOAN 
+FOR UPDATE OF OUTDATE
+……
+……
+UPDATE  loan 
+SET outdate=“10/02/07”
+WHERE CURRENT OF  CURSOR 
+
+
+Slide 11:
+copy_no
+title_no
+mem_no
+outdate
+Loan_cursor
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+1
+4
+11
+123
+02/15/91
+03/17/91
+
+
+
+
+
+
+
+Actualización de la tabla por medio del cursor
+
+UPDATE  loan 
+SET outdate=“10/02/07”
+WHERE CURRENT OF  CURSOR 
+
+
+copy_no
+title_no
+mem_no
+outdate
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+1
+4
+11
+123
+10/02/07
+03/17/91
+
+
+
+
+
+
+
+Slide 12:
+Cursores – estáticos --
+Es sólo lectura. Las filas y los valores del cursor no cambian.
+La copia de los datos se almacena en TempBD.
+las modificaciones realizadas en las tablas base no se reflejarán en los datos obtenidos por el cursor.
+El cursor no admite modificaciones.
+
+UPDATE  loan 
+SET outdate=“10/02/07”
+WHERE CURRENT OF  CURSOR 
+
+
+
+
+Slide 13:
+Cursores dinámicos
+Define un cursor que, al desplazarse por él, refleja en su conjunto de resultados todos los cambios realizados en los datos de las filas. 
+Los valores de los datos, el orden y la pertenencia de las filas pueden cambiar en cada búsqueda. 
+La opción de recuperación ABSOLUTE no se puede utilizar en los cursores dinámicos.
+
+Slide 14:
+Cursores Globales y Locales
+Por defecto los cursores son globales, para la conexión donde se declaran.
+Puede usarse dentro de un procedimiento almacenado y usarse fuera de él.
+Un cursor es local al ámbito donde se declaran, ejemplo: procedimiento almacenado, trigger, etc.
+Un cursor puede pasarse como  parámetro.
+
+
+Slide 15:
+Cursores Globales y Locales –sintaxis-
+DECLARE cursor_name CURSOR 
+[ LOCAL | GLOBAL ]
+ALTER DATABASE  <<bd>> CURSOR_DEFAULT LOCAL | GLOBAL
+
+Slide 16:
+SCROLL Y FORWARD_ONLY
+SCROLL .-  Especifica que están disponibles todas las opciones de recuperación (FIRST, LAST, PRIOR, NEXT, RELATIVE, ABSOLUTE). 
+FORDWARD_ONLY .-  la única opción de recuperación que se admite es NEXT. 
+Son mutuamente excluyentes.
+El valor por defecto de un cursor es FORDWARD_ONLY
+Si se declara el cursor con STATIC, DYNAMIC O KEYSET, el valor por defecto es SCROLL.
+
+
+
+Slide 17:
+READ_ONLY
+No es posible realizar modificaciones en la tabla a través del cursor.
+No se puede hacer referencia al cursor mediante la cláusula WHERE_CURRENT OF
+
+Slide 18:
+Variables
+Un cursor no puede ser pasado como parámetro a un procedimiento almacenado.
+Un cursor puede ser devuelto por un procedimiento almacenado por medio de un parámetro tipo OUTPUT.
+Cuando un procedimiento almacenado regresa un cursor es posible utilizar la función CURSOR_STATUS().
+Una función escalar que permite al que llama a un procedimiento almacenado determinar si el procedimiento ha devuelto un cursor y el conjunto de resultados de un determinado parámetro. 
+
+Slide 19:
+Variables global
+
+Regresa el número de renglones que contiene un cursor.
+
+OPEN GLOBAL GlobalCursor
+SELECT @@CURSOR_ROWS AS NumberOfGLOBALCursorRows
+
+Slide 20:
+SET CURSOR_CLOSE_ON_COMMIT 
+Determina si un cursor se cierra o no al confirmar una transacción.

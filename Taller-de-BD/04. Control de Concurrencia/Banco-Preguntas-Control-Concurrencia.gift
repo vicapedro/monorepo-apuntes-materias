@@ -1,0 +1,371 @@
+// ==========================================
+// BANCO DE PREGUNTAS - CONTROL DE CONCURRENCIA
+// ==========================================
+// Materia: Taller de Base de Datos
+// Unidad 4: Control de Concurrencia
+// Tema: Transacciones, ACID, Bloqueos, Deadlocks
+// Formato: GIFT (Moodle)
+// Fecha: 26 de noviembre de 2025
+//
+// Contenidos cubiertos:
+// - Transacciones explícitas y autocommit
+// - Propiedades ACID
+// - Control de errores (@@ERROR, @@TRANCOUNT)
+// - Bloqueos (locks) y concurrencia
+// - Deadlocks (abrazo mortal)
+// - Niveles de aislamiento
+// - Hints (UPDLOCK, NOLOCK, etc.)
+// - Timeout de bloqueos
+//
+// Estructura por Taxonomía de Bloom con etiquetas:
+// - Nivel 1: Recordar (5 preguntas)
+// - Nivel 2: Comprender (5 preguntas)
+// - Nivel 3-4: Aplicar (5 preguntas)
+// - Nivel 5: Analizar (5 preguntas)
+// - Nivel 6: Evaluar (5 preguntas)
+// - Relacionar columnas (5 preguntas)
+//
+// Total: 30 preguntas
+// ==========================================
+
+$CATEGORY: $course$/Unidad 4: Control de Concurrencia/Transacciones y ACID
+
+// ==========================================
+// NIVEL 1: RECORDAR - Definiciones básicas
+// ==========================================
+
+// [tag:Bloom-Recordar] [tag:Transacciones] [tag:Conceptual]
+::CC001-Transaccion-Autocommit::¿Qué es una transacción autocommit en SQL Server?{
+=Una transacción que se confirma automáticamente después de cada sentencia individual#¡Correcto! Cada INSERT, UPDATE, DELETE, SELECT se trata como transacción independiente.
+~Una transacción que requiere BEGIN TRAN y COMMIT TRAN explícitos#Incorrecto. Esas son transacciones explícitas, no autocommit.
+~Una transacción que se revierte automáticamente si hay error#Incorrecto. Las transacciones autocommit se confirman si no hay error; no se revierten automáticamente.
+~Una transacción que solo funciona con tablas temporales#Incorrecto. Las transacciones autocommit funcionan con cualquier tipo de tabla.
+####Por defecto, SQL Server opera en modo autocommit\: cada sentencia es una transacción independiente que se confirma automáticamente si tiene éxito. Para agrupar múltiples operaciones, se usa BEGIN TRAN.
+}
+
+// [tag:Bloom-Recordar] [tag:ACID] [tag:Atomicidad]
+::CC002-ACID-Atomicidad::¿Qué garantiza la propiedad de Atomicidad en ACID?{
+=Que todas las operaciones de una transacción se ejecutan completamente o ninguna se ejecuta#¡Correcto! Atomicidad significa "todo o nada".
+~Que la base de datos mantiene su integridad referencial#Incorrecto. Eso es Consistencia, no Atomicidad.
+~Que las transacciones concurrentes no interfieren entre sí#Incorrecto. Eso es Aislamiento (Isolation).
+~Que los cambios confirmados son permanentes#Incorrecto. Eso es Durabilidad (Durability).
+####Atomicidad asegura que una transacción es indivisible\: si una operación falla, TODAS deben deshacerse con ROLLBACK. Ejemplo\: transferencia bancaria (débito + crédito deben ser atómicos).
+}
+
+// [tag:Bloom-Recordar] [tag:Variables-Globales] [tag:TRANCOUNT]
+::CC003-TRANCOUNT::¿Qué indica la variable @@TRANCOUNT en SQL Server?{
+=El nivel de anidamiento de transacciones activas#¡Correcto! Incrementa con BEGIN TRAN, decrementa con COMMIT, se pone en 0 con ROLLBACK.
+~El número total de transacciones ejecutadas en la sesión#Incorrecto. @@TRANCOUNT indica el nivel de anidamiento actual, no el total histórico.
+~El número de filas afectadas por la última operación#Incorrecto. Eso es @@ROWCOUNT, no @@TRANCOUNT.
+~El código de error de la última transacción#Incorrecto. Eso es @@ERROR, no @@TRANCOUNT.
+####@@TRANCOUNT\: 0 \= sin transacción activa, 1 \= una transacción, 2 \= transacción anidada. Se usa para verificar si hay transacción activa antes de COMMIT o ROLLBACK.
+}
+
+// [tag:Bloom-Recordar] [tag:Bloqueos] [tag:Locks]
+::CC004-Bloqueo-Exclusivo::¿Qué es un bloqueo exclusivo (exclusive lock) en SQL Server?{
+=Un bloqueo que impide que otras transacciones lean o modifiquen el recurso bloqueado#¡Correcto! Los bloqueos exclusivos se obtienen con UPDATE, DELETE, INSERT.
+~Un bloqueo que permite lecturas pero no escrituras#Incorrecto. Eso describe un bloqueo compartido (shared lock).
+~Un bloqueo que solo afecta a la sesión actual#Incorrecto. Los bloqueos exclusivos afectan a todas las sesiones concurrentes.
+~Un bloqueo que dura solo milisegundos#Incorrecto. La duración del bloqueo depende de la transacción, no del tipo de bloqueo.
+####Bloqueo exclusivo (X)\: Se adquiere en UPDATE, DELETE, INSERT. Ninguna otra transacción puede leer (con aislamiento default) ni modificar el recurso hasta que se libere con COMMIT o ROLLBACK.
+}
+
+// [tag:Bloom-Recordar] [tag:Deadlock] [tag:Conceptual]
+::CC005-Deadlock-Definicion::¿Qué es un deadlock (abrazo mortal) en bases de datos?{
+=Una situación donde dos o más transacciones esperan indefinidamente por recursos bloqueados entre sí#¡Correcto! Cada transacción bloquea un recurso que la otra necesita.
+~Un error de sintaxis en una transacción#Incorrecto. Deadlock no es error de sintaxis, es problema de concurrencia.
+~Una transacción que tarda mucho tiempo en ejecutarse#Incorrecto. Lentitud no implica deadlock; deadlock es espera circular.
+~Un bloqueo que no se libera después de COMMIT#Incorrecto. COMMIT siempre libera bloqueos; deadlock ocurre cuando transacciones se bloquean mutuamente.
+####Ejemplo deadlock\: T1 bloquea tabla A, intenta acceder B. T2 bloquea tabla B, intenta acceder A. Cada una espera por la otra infinitamente. SQL Server detecta deadlocks y cancela la transacción "víctima" (error 1205).
+}
+
+// ==========================================
+// NIVEL 2: COMPRENDER - Diferencias y relaciones
+// ==========================================
+
+// [tag:Bloom-Comprender] [tag:Transacciones] [tag:Explicita-vs-Autocommit]
+::CC006-Explicita-vs-Autocommit::¿Cuál es la diferencia entre una transacción explícita y autocommit?{
+=Explícita requiere BEGIN TRAN y COMMIT/ROLLBACK; autocommit se confirma automáticamente#¡Correcto! Las transacciones explícitas permiten agrupar múltiples operaciones.
+~Explícita es más rápida que autocommit#Incorrecto. El rendimiento depende del contexto, no del tipo de transacción.
+~Autocommit solo funciona con SELECT#Incorrecto. Autocommit funciona con cualquier sentencia DML.
+~Explícita no puede usar ROLLBACK#Incorrecto. Las transacciones explícitas SÍ pueden usar ROLLBACK; es su propósito principal.
+####Autocommit\: INSERT; (se confirma solo). Explícita\: BEGIN TRAN; INSERT; UPDATE; COMMIT TRAN; (ambas operaciones se confirman juntas o se revierten juntas).
+}
+
+// [tag:Bloom-Comprender] [tag:ACID] [tag:Aislamiento-vs-Consistencia]
+::CC007-Aislamiento-vs-Consistencia::¿Cuál es la diferencia entre Aislamiento (I) y Consistencia (C) en ACID?{
+=Aislamiento evita interferencia entre transacciones concurrentes; Consistencia mantiene reglas de integridad#¡Correcto! Aislamiento es sobre concurrencia, Consistencia sobre integridad de datos.
+~Son sinónimos, ambos significan lo mismo#Incorrecto. Son propiedades diferentes con objetivos distintos.
+~Aislamiento es para lecturas, Consistencia para escrituras#Incorrecto. Ambas propiedades afectan tanto lecturas como escrituras.
+~Consistencia solo aplica a claves primarias#Incorrecto. Consistencia incluye todas las restricciones (FK, CHECK, reglas de negocio).
+####Consistencia\: BD pasa de estado válido a estado válido (constraints satisfechos). Aislamiento\: transacciones concurrentes no ven cambios no confirmados de otras (evita dirty reads, lecturas fantasma).
+}
+
+// [tag:Bloom-Comprender] [tag:Variables-Globales] [tag:ERROR-vs-ROWCOUNT]
+::CC008-ERROR-vs-ROWCOUNT::¿Cuál es la diferencia entre @@ERROR y @@ROWCOUNT?{
+=@@ERROR contiene el código de error; @@ROWCOUNT el número de filas afectadas#¡Correcto! @@ERROR \= 0 significa éxito; @@ROWCOUNT indica impacto de la operación.
+~Ambas variables devuelven el mismo valor#Incorrecto. Son variables completamente diferentes con propósitos distintos.
+~@@ERROR es para SELECT, @@ROWCOUNT para UPDATE#Incorrecto. Ambas variables aplican a cualquier tipo de sentencia.
+~@@ROWCOUNT solo funciona con DELETE#Incorrecto. @@ROWCOUNT funciona con SELECT, INSERT, UPDATE, DELETE.
+####Uso típico\: UPDATE Productos SET Precio \= Precio * 1.1 WHERE Categoria \= 'A'; IF @@ERROR <> 0 RAISERROR('Error'); IF @@ROWCOUNT \= 0 PRINT 'Ningún producto actualizado';
+}
+
+// [tag:Bloom-Comprender] [tag:Control-Errores] [tag:Comportamiento-Default]
+::CC009-Comportamiento-Error-Default::¿Qué sucede por defecto si una sentencia falla dentro de una transacción explícita en SQL Server?{
+=La transacción continúa ejecutándose; el usuario debe verificar @@ERROR y hacer ROLLBACK manualmente#¡Correcto! SQL Server NO aborta automáticamente la transacción.
+~La transacción se aborta automáticamente con ROLLBACK#Incorrecto. Esto solo ocurre con errores graves o si se usa TRY-CATCH.
+~SQL Server ignora el error y continúa sin cambios#Incorrecto. El error se registra en @@ERROR; la sentencia fallida no se ejecuta pero la transacción continúa.
+~La base de datos se bloquea hasta intervención manual#Incorrecto. La BD no se bloquea; la transacción simplemente queda abierta.
+####BEGIN TRAN; UPDATE T1 SET x\=1; -- éxito; UPDATE T2 SET y\=999 WHERE invalido; -- falla; COMMIT TRAN; -- ¡Se confirma el cambio en T1! Para evitarlo\: verificar IF @@ERROR <> 0 ROLLBACK TRAN;
+}
+
+// [tag:Bloom-Comprender] [tag:Bloqueos] [tag:Compartido-vs-Exclusivo]
+::CC010-Bloqueo-Compartido-vs-Exclusivo::¿Cuáles son las diferencias entre bloqueos compartidos y exclusivos? (Seleccione todas las correctas){
+~%33.33%Compartido permite múltiples lectores concurrentes; exclusivo no#Correcto. Múltiples transacciones pueden tener bloqueos compartidos simultáneamente.
+~%33.33%Compartido se adquiere con SELECT; exclusivo con UPDATE/DELETE/INSERT#Correcto. Las lecturas usan shared locks, las escrituras exclusive locks.
+~%33.33%Exclusivo impide cualquier acceso; compartido permite lecturas#Correcto. Exclusive lock bloquea todo acceso (lectura y escritura).
+~%-100%Compartido es más lento que exclusivo#Incorrecto. La velocidad depende del contexto, no del tipo de bloqueo.
+~%-100%Solo las transacciones explícitas usan bloqueos#Incorrecto. Incluso transacciones autocommit usan bloqueos durante su ejecución.
+####Compatibilidad de bloqueos\: Compartido (S) + Compartido (S) \= Compatible. Compartido (S) + Exclusivo (X) \= NO compatible. Exclusivo (X) + Exclusivo (X) \= NO compatible.
+}
+
+// ==========================================
+// NIVEL 3-4: APLICAR - Sintaxis y comandos
+// ==========================================
+
+// [tag:Bloom-Aplicar] [tag:Transacciones] [tag:Sintaxis-BEGIN-COMMIT]
+::CC011-Sintaxis-Transaccion-Basica::¿Cuál es la sintaxis correcta para una transacción explícita con control de errores?{
+=BEGIN TRAN; operaciones; IF @@ERROR <> 0 ROLLBACK TRAN ELSE COMMIT TRAN;#¡Correcto! Verificar @@ERROR después de operaciones críticas.
+~START TRANSACTION; operaciones; END TRANSACTION;#Incorrecto. SQL Server usa BEGIN TRAN, no START TRANSACTION (sintaxis MySQL).
+~BEGIN; operaciones; COMMIT;#Incorrecto. Sintaxis incompleta; debe ser BEGIN TRAN y verificar errores.
+~TRANSACTION START; operaciones; TRANSACTION END;#Incorrecto. Sintaxis inválida en SQL Server.
+####Ejemplo completo\: BEGIN TRAN; UPDATE Cuentas SET Saldo \= Saldo - 1000 WHERE ID \= 1; IF @@ERROR <> 0 BEGIN ROLLBACK TRAN; RETURN; END; UPDATE Cuentas SET Saldo \= Saldo + 1000 WHERE ID \= 2; IF @@ERROR <> 0 ROLLBACK TRAN ELSE COMMIT TRAN;
+}
+
+// [tag:Bloom-Aplicar] [tag:UPDLOCK] [tag:Hints]
+::CC012-UPDLOCK-Sintaxis::Para evitar race conditions al leer y actualizar un registro, ¿qué hint se debe usar?{
+=SELECT ... FROM tabla WITH (UPDLOCK) WHERE ...#¡Correcto! UPDLOCK adquiere bloqueo de actualización desde el SELECT.
+~SELECT ... FROM tabla WITH (NOLOCK) WHERE ...#Incorrecto. NOLOCK evita bloqueos (dirty reads); no previene race conditions.
+~SELECT ... FROM tabla WITH (READLOCK) WHERE ...#Incorrecto. No existe READLOCK; el hint correcto es UPDLOCK.
+~SELECT ... FROM tabla LOCK UPDATE WHERE ...#Incorrecto. Sintaxis inválida; se usa WITH (UPDLOCK).
+####Caso de uso\: BEGIN TRAN; SELECT @Folio \= Folio FROM Control WITH (UPDLOCK) WHERE ID \= 1; SET @Folio \= @Folio + 1; UPDATE Control SET Folio \= @Folio WHERE ID \= 1; COMMIT TRAN; UPDLOCK previene que otra sesión lea el mismo valor.
+}
+
+// [tag:Bloom-Aplicar] [tag:LOCK_TIMEOUT] [tag:Timeout-Bloqueos]
+::CC013-LOCK_TIMEOUT::Para establecer un timeout de 5 segundos en bloqueos, ¿qué comando se usa?{
+=SET LOCK_TIMEOUT 5000;#¡Correcto! LOCK_TIMEOUT se especifica en milisegundos.
+~SET LOCK_TIMEOUT 5;#Incorrecto. El valor se especifica en milisegundos, no segundos.
+~SET TIMEOUT 5000;#Incorrecto. El comando es SET LOCK_TIMEOUT, no SET TIMEOUT.
+~LOCK_TIMEOUT \= 5 SECONDS;#Incorrecto. Sintaxis inválida; se usa SET LOCK_TIMEOUT con milisegundos.
+####Valores especiales\: SET LOCK_TIMEOUT -1; (espera indefinida, default). SET LOCK_TIMEOUT 0; (no espera, error inmediato). Verificar timeout\: IF @@ERROR \= 1222 PRINT 'Timeout de bloqueo';
+}
+
+// [tag:Bloom-Aplicar] [tag:Savepoint] [tag:Transacciones-Anidadas]
+::CC014-Savepoint::Para revertir parcialmente una transacción sin deshacer todo, ¿qué se usa?{
+=SAVE TRANSACTION punto_guardado; ... ROLLBACK TRANSACTION punto_guardado;#¡Correcto! SAVEPOINT permite rollback parcial.
+~CHECKPOINT nombre; ... ROLLBACK TO nombre;#Incorrecto. CHECKPOINT no es para savepoints en transacciones.
+~BEGIN NESTED TRAN; ... ROLLBACK NESTED;#Incorrecto. No existe BEGIN NESTED TRAN; las transacciones anidadas usan BEGIN TRAN normal.
+~MARK POINT nombre; ... RESTORE POINT nombre;#Incorrecto. Sintaxis inválida; se usa SAVE TRANSACTION.
+####Ejemplo\: BEGIN TRAN; INSERT INTO T1 ...; SAVE TRANSACTION punto1; INSERT INTO T2 ...; IF @@ERROR <> 0 ROLLBACK TRANSACTION punto1; -- solo deshace INSERT en T2; COMMIT TRAN; -- confirma INSERT en T1
+}
+
+// [tag:Bloom-Aplicar] [tag:TRY-CATCH] [tag:Manejo-Errores]
+::CC015-TRY-CATCH-Transaccion::¿Cuál es la estructura correcta para manejar errores en transacciones con TRY-CATCH?{
+=BEGIN TRY BEGIN TRAN; operaciones; COMMIT TRAN; END TRY BEGIN CATCH ROLLBACK TRAN; END CATCH#¡Correcto! TRY-CATCH captura errores automáticamente y permite ROLLBACK en CATCH.
+~TRY BEGIN TRAN; operaciones; COMMIT; CATCH ROLLBACK;#Incorrecto. Sintaxis inválida; debe ser BEGIN TRY ... END TRY BEGIN CATCH ... END CATCH.
+~BEGIN TRAN TRY operaciones CATCH ROLLBACK COMMIT TRAN;#Incorrecto. Sintaxis completamente inválida.
+~START TRY TRAN; operaciones; END TRY; ERROR ROLLBACK;#Incorrecto. No existe START TRY TRAN; se usa BEGIN TRY.
+####Ejemplo completo\: BEGIN TRY BEGIN TRAN; UPDATE T SET x\=1; INSERT INTO T2 VALUES(1); COMMIT TRAN; END TRY BEGIN CATCH IF @@TRANCOUNT > 0 ROLLBACK TRAN; PRINT ERROR_MESSAGE(); END CATCH;
+}
+
+// ==========================================
+// NIVEL 5: ANALIZAR - Escenarios y troubleshooting
+// ==========================================
+
+// [tag:Bloom-Analizar] [tag:Deadlock] [tag:Deteccion-Causas]
+::CC016-Analizar-Deadlock::Dos transacciones generan deadlock. T1 actualiza tabla A y luego lee B. T2 actualiza tabla B y luego lee A. ¿Cuál es la causa?{
+=Orden inverso de adquisición de bloqueos (T1 bloquea A→B, T2 bloquea B→A)#¡Correcto! El deadlock ocurre por adquisición de recursos en orden diferente.
+~Las transacciones son demasiado largas#Incorrecto. La duración no causa deadlock; el orden de bloqueos sí.
+~Falta índice en las tablas#Incorrecto. Índices pueden reducir bloqueos pero no son la causa directa del deadlock.
+~Las tablas están en bases de datos diferentes#Incorrecto. Deadlocks pueden ocurrir en la misma BD; el problema es el orden de bloqueos.
+####Solución\: Asegurar que todas las transacciones adquieran bloqueos en el MISMO orden. Por ejemplo, ambas transacciones deben acceder A primero, luego B. SQL Server detecta deadlocks y cancela una transacción (error 1205).
+}
+
+// [tag:Bloom-Analizar] [tag:Race-Condition] [tag:Folios-Consecutivos]
+::CC017-Analizar-Race-Condition::Dos sesiones leen folio\=100, lo incrementan a 101 e insertan. ¿Qué problema ocurre?{
+=Ambas intentan insertar folio 101, causando error de PRIMARY KEY duplicada#¡Correcto! Race condition\: ambas leen el mismo valor antes de que la otra actualice.
+~Se inserta folio 101 dos veces sin error#Incorrecto. PRIMARY KEY no permite duplicados; generará error.
+~El folio se incrementa a 102 automáticamente#Incorrecto. No hay incremento automático; se requiere lógica explícita.
+~SQL Server previene esto automáticamente#Incorrecto. Sin bloqueos apropiados (UPDLOCK), SQL Server no previene este escenario.
+####Solución\: BEGIN TRAN; SELECT @folio \= Folio FROM Control WITH (UPDLOCK) WHERE ID \= 1; SET @folio \= @folio + 1; INSERT INTO Usados VALUES(@folio); UPDATE Control SET Folio \= @folio WHERE ID \= 1; COMMIT TRAN;
+}
+
+// [tag:Bloom-Analizar] [tag:Bloqueos] [tag:Table-Scan-vs-Index]
+::CC018-Analizar-Table-Scan-Bloqueo::Conexión 1 actualiza fila con Estado\='D'. Conexión 2 hace SELECT con Estado\='E' pero se bloquea. ¿Por qué?{
+=El SELECT hace table scan y encuentra filas bloqueadas por Conexión 1#¡Correcto! Sin índice, el SELECT escanea toda la tabla y se bloquea en filas con exclusive locks.
+~Conexión 2 tiene un error de sintaxis#Incorrecto. No hay error de sintaxis; es problema de bloqueos.
+~SQL Server permite solo una consulta a la vez#Incorrecto. SQL Server soporta múltiples consultas concurrentes.
+~La tabla está corrupta#Incorrecto. No hay corrupción; es comportamiento normal de bloqueos sin índice.
+####Solución\: CREATE INDEX Idx_Estado ON Tabla(Estado); Ahora SELECT con Estado\='E' usa el índice y va directo a esas filas sin escanear las bloqueadas con Estado\='D'. O usar hint\: SELECT WITH (INDEX\=Idx_Estado).
+}
+
+// [tag:Bloom-Analizar] [tag:TRANCOUNT] [tag:Transacciones-Anidadas]
+::CC019-Analizar-TRANCOUNT-Anidado::¿Qué valor tiene @@TRANCOUNT después de\: BEGIN TRAN; BEGIN TRAN; COMMIT TRAN; ROLLBACK TRAN;?{
+=0 (ROLLBACK siempre pone @@TRANCOUNT en 0 independientemente del nivel)#¡Correcto! ROLLBACK deshace TODAS las transacciones anidadas.
+~1 (porque solo se hizo un ROLLBACK)#Incorrecto. ROLLBACK no decrementa; pone @@TRANCOUNT directamente en 0.
+~2 (porque hay dos BEGIN TRAN)#Incorrecto. ROLLBACK canceló todo.
+~-1 (porque hay más ROLLBACK que COMMIT)#Incorrecto. @@TRANCOUNT nunca es negativo; mínimo es 0.
+####BEGIN TRAN; -- @@TRANCOUNT \= 1; BEGIN TRAN; -- @@TRANCOUNT \= 2; COMMIT TRAN; -- @@TRANCOUNT \= 1 (solo decrementa, NO confirma cambios aún); ROLLBACK TRAN; -- @@TRANCOUNT \= 0 (deshace TODO).
+}
+
+// [tag:Bloom-Analizar] [tag:Atomicidad] [tag:Comportamiento-Error]
+::CC020-Analizar-Atomicidad-Violada::BEGIN TRAN; UPDATE T1 (éxito); UPDATE T2 (falla); COMMIT TRAN; ¿Qué sucede sin control de errores?{
+=El cambio en T1 se confirma; T2 no se modifica; se viola atomicidad#¡Correcto! Sin verificar @@ERROR, COMMIT se ejecuta confirmando cambios parciales.
+~Ambas operaciones se deshacen automáticamente#Incorrecto. SQL Server NO deshace automáticamente sin TRY-CATCH o verificación de @@ERROR.
+~T2 se reintenta automáticamente hasta tener éxito#Incorrecto. No hay reintento automático; la sentencia simplemente falla.
+~Se genera un deadlock#Incorrecto. No hay deadlock; simplemente un error en una sentencia.
+####Correcto\: BEGIN TRAN; UPDATE T1 ...; IF @@ERROR <> 0 BEGIN ROLLBACK TRAN; RETURN; END; UPDATE T2 ...; IF @@ERROR <> 0 ROLLBACK TRAN ELSE COMMIT TRAN; Esto garantiza atomicidad.
+}
+
+// ==========================================
+// NIVEL 6: EVALUAR - Mejores prácticas y decisiones
+// ==========================================
+
+// [tag:Bloom-Evaluar] [tag:Durabilidad] [tag:Transaction-Log]
+::CC021-Evaluar-Durabilidad::¿Cómo garantiza SQL Server la propiedad de Durabilidad (D) en ACID?{
+=Escribiendo cambios al transaction log antes de COMMIT y usando ese log para recuperación#¡Correcto! El log garantiza que cambios confirmados sobrevivan a fallas del sistema.
+~Haciendo backup automático después de cada transacción#Incorrecto. Los backups son periódicos, no por transacción.
+~Guardando copias de datos en múltiples servidores#Incorrecto. Eso es replicación/alta disponibilidad, no durabilidad de transacción individual.
+~Bloqueando la base de datos durante COMMIT#Incorrecto. No se bloquea toda la BD; el log asegura durabilidad.
+####Proceso\: 1) Transacción ejecuta cambios en memoria, 2) Cambios se escriben al transaction log (secuencial, rápido), 3) COMMIT marca transacción como confirmada en log, 4) Cambios se escriben a archivos de datos (asíncrono). Si hay crash después de COMMIT, la recuperación lee el log.
+}
+
+// [tag:Bloom-Evaluar] [tag:Niveles-Aislamiento] [tag:Mejores-Practicas]
+::CC022-Evaluar-Nivel-Aislamiento::Para un reporte que tolera datos ligeramente desactualizados y requiere máximo rendimiento, ¿qué nivel de aislamiento es apropiado?{
+=READ UNCOMMITTED o hint NOLOCK (permite dirty reads, sin bloqueos)#¡Correcto! Prioriza rendimiento sobre consistencia absoluta.
+~SERIALIZABLE (máximo aislamiento)#Incorrecto. SERIALIZABLE es el más restrictivo y lento; inapropiado para reportes de alto rendimiento.
+~REPEATABLE READ#Incorrecto. REPEATABLE READ mantiene bloqueos compartidos; reduce rendimiento innecesariamente.
+~No usar transacciones#Incorrecto. Las transacciones son necesarias incluso para lecturas; la cuestión es el nivel de aislamiento.
+####SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED; o SELECT * FROM Ventas WITH (NOLOCK); Lee datos sin bloqueos (dirty reads posibles). Apropiado para dashboards, reportes estadísticos no críticos. NUNCA usar para datos financieros o transaccionales.
+}
+
+// [tag:Bloom-Evaluar] [tag:Deadlock] [tag:Prevencion]
+::CC023-Evaluar-Prevencion-Deadlock::¿Cuáles son estrategias efectivas para prevenir deadlocks? (Seleccione todas las correctas){
+~%25%Acceder a recursos en el mismo orden en todas las transacciones#Correcto. Orden consistente elimina ciclos de espera circular.
+~%25%Mantener transacciones cortas y rápidas#Correcto. Menos tiempo con bloqueos \= menos probabilidad de deadlock.
+~%25%Usar índices apropiados para reducir bloqueos a nivel de tabla#Correcto. Índices permiten bloqueos a nivel de fila en lugar de tabla.
+~%25%Implementar manejo de reintentos para transacciones que fallen por deadlock#Correcto. Capturar error 1205 y reintentar la transacción.
+~%-100%Aumentar LOCK_TIMEOUT a valores muy altos#Incorrecto. LOCK_TIMEOUT no previene deadlocks; solo controla cuánto esperar.
+~%-100%Deshabiitar transacciones explícitas#Incorrecto. Las transacciones son necesarias; deshabilitar no es solución.
+####Código de reintento\: BEGIN TRY BEGIN TRAN; ... COMMIT TRAN; END TRY BEGIN CATCH IF ERROR_NUMBER() \= 1205 BEGIN WAITFOR DELAY '00\:00\:01'; -- reintentar END ROLLBACK TRAN; END CATCH;
+}
+
+// [tag:Bloom-Evaluar] [tag:Control-Errores] [tag:TRY-CATCH-vs-ERROR]
+::CC024-Evaluar-TRY-CATCH-vs-ERROR::¿Cuándo es preferible usar TRY-CATCH en lugar de verificar @@ERROR manualmente?{
+=En código complejo con múltiples operaciones críticas que requieren manejo centralizado de errores#¡Correcto! TRY-CATCH simplifica manejo de errores y captura automáticamente.
+~Solo cuando se usan transacciones anidadas#Incorrecto. TRY-CATCH es útil en cualquier transacción compleja, anidada o no.
+~Nunca; @@ERROR es siempre mejor#Incorrecto. TRY-CATCH es más robusto y moderno que verificación manual de @@ERROR.
+~Solo en procedimientos almacenados, no en scripts ad-hoc#Incorrecto. TRY-CATCH funciona en cualquier contexto T-SQL.
+####TRY-CATCH ventajas\: 1) Captura automática de errores, 2) Código más limpio (no repetir IF @@ERROR después de cada sentencia), 3) Acceso a funciones de error (ERROR_MESSAGE(), ERROR_NUMBER(), ERROR_LINE()), 4) Manejo centralizado. @@ERROR útil para compatibilidad con versiones antiguas.
+}
+
+// [tag:Bloom-Evaluar] [tag:Concurrencia] [tag:UPDLOCK-vs-XLOCK]
+::CC025-Evaluar-UPDLOCK-Uso::¿En qué escenario es apropiado usar UPDLOCK en lugar de dejar que UPDATE adquiera el bloqueo exclusivo?{
+=Cuando se lee un valor para calcular una actualización basada en ese valor (patrón SELECT-UPDATE)#¡Correcto! UPDLOCK previene race conditions en lecturas que preceden a actualizaciones.
+~Siempre que se haga SELECT#Incorrecto. UPDLOCK solo es necesario cuando el SELECT precede a una actualización del mismo registro.
+~Solo cuando hay deadlocks frecuentes#Incorrecto. UPDLOCK previene race conditions específicas, no deadlocks generales.
+~Cuando se quiere máxima velocidad de lectura#Incorrecto. UPDLOCK reduce concurrencia; para velocidad se usa NOLOCK.
+####Caso de uso\: SELECT @stock \= Stock FROM Productos WITH (UPDLOCK) WHERE ID \= 1; IF @stock > 10 UPDATE Productos SET Stock \= @stock - 10 WHERE ID \= 1; Sin UPDLOCK, otra sesión podría modificar Stock entre SELECT y UPDATE.
+}
+
+// ==========================================
+// RELACIONAR COLUMNAS (Matching)
+// ==========================================
+
+// [tag:Bloom-Aplicar] [tag:ACID] [tag:Propiedades]
+::CC026-Relacionar-ACID-Propiedades::Relaciona cada propiedad ACID con su descripción\:{
+=Atomicidad -> Todas las operaciones se ejecutan o ninguna se ejecuta
+=Consistencia -> La BD mantiene integridad referencial y reglas de negocio
+=Aislamiento -> Transacciones concurrentes no interfieren entre sí
+=Durabilidad -> Cambios confirmados sobreviven a fallas del sistema
+####ACID es el estándar para garantizar confiabilidad en transacciones de bases de datos relacionales.
+}
+
+// [tag:Bloom-Aplicar] [tag:Variables-Globales] [tag:Funciones-Sistema]
+::CC027-Relacionar-Variables-Globales::Relaciona cada variable global con su función\:{
+=@@TRANCOUNT -> Nivel de anidamiento de transacciones activas
+=@@ERROR -> Código de error de la última operación ejecutada
+=@@ROWCOUNT -> Número de filas afectadas por la última sentencia
+=@@IDENTITY -> Último valor de identidad insertado
+=@@LOCK_TIMEOUT -> Tiempo de espera actual para bloqueos (milisegundos)
+####Estas variables son esenciales para control de errores y monitoreo en T-SQL.
+}
+
+// [tag:Bloom-Aplicar] [tag:Bloqueos] [tag:Tipos-Locks]
+::CC028-Relacionar-Tipos-Bloqueos::Relaciona cada tipo de bloqueo con su uso típico\:{
+=Shared (S) -> Lectura de datos (SELECT)
+=Exclusive (X) -> Modificación de datos (INSERT, UPDATE, DELETE)
+=Update (U) -> Prevenir deadlocks en patrón SELECT → UPDATE
+=Intent Shared (IS) -> Indica intención de adquirir bloqueos compartidos en niveles inferiores
+=Schema Modification (Sch-M) -> Modificación de estructura de tabla (ALTER TABLE, DROP)
+####Los bloqueos garantizan integridad en entornos multiusuario pero pueden causar contención si no se gestionan apropiadamente.
+}
+
+// [tag:Bloom-Aplicar] [tag:Hints] [tag:Table-Hints]
+::CC029-Relacionar-Hints-Uso::Relaciona cada hint con su propósito principal\:{
+=NOLOCK -> Leer datos sin bloqueos (permite dirty reads)
+=UPDLOCK -> Adquirir bloqueo de actualización en SELECT
+=ROWLOCK -> Forzar bloqueos a nivel de fila en lugar de tabla
+=HOLDLOCK -> Mantener bloqueos compartidos hasta final de transacción
+=READPAST -> Saltar filas bloqueadas en lugar de esperar
+####Hints permiten control fino sobre comportamiento de bloqueos pero deben usarse con cuidado para evitar inconsistencias.
+}
+
+// [tag:Bloom-Analizar] [tag:Escenarios] [tag:Problemas-Concurrencia]
+::CC030-Relacionar-Problemas-Soluciones::Relaciona cada problema de concurrencia con su solución apropiada\:{
+=Dirty Read (lectura sucia) -> Usar nivel de aislamiento READ COMMITTED o superior
+=Non-Repeatable Read -> Usar nivel de aislamiento REPEATABLE READ
+=Phantom Read (lectura fantasma) -> Usar nivel de aislamiento SERIALIZABLE
+=Lost Update (actualización perdida) -> Usar hint UPDLOCK en SELECT antes de UPDATE
+=Deadlock frecuente -> Acceder a recursos en orden consistente en todas las transacciones
+####Cada problema de concurrencia requiere una estrategia específica de aislamiento o control de bloqueos.
+}
+
+// ==========================================
+// FIN DEL BANCO DE PREGUNTAS - CONTROL DE CONCURRENCIA
+// ==========================================
+// Total de preguntas: 30
+// Distribución por taxonomía de Bloom:
+// - Recordar (Nivel 1): 5 preguntas
+// - Comprender (Nivel 2): 5 preguntas
+// - Aplicar (Niveles 3-4): 5 preguntas
+// - Analizar (Nivel 5): 5 preguntas
+// - Evaluar (Nivel 6): 5 preguntas
+// - Relacionar columnas (Matching): 5 preguntas
+// 
+// Tipos de pregunta:
+// - Opción múltiple simple: 23
+// - Opción múltiple con varias correctas: 2
+// - Relacionar columnas (Matching): 5
+//
+// Etiquetado implementado:
+// - [tag:Bloom-X] para nivel de Taxonomía de Bloom
+// - [tag:Tema] para tema específico (Transacciones, ACID, Bloqueos, etc.)
+// - [tag:Tipo] para tipo de contenido (Conceptual, Sintaxis, Troubleshooting)
+//
+// Todas las preguntas incluyen retroalimentación detallada
+// Las preguntas de opción múltiple con varias correctas penalizan incorrectas
+//
+// Cobertura de contenidos:
+// ✓ Transacciones (autocommit, explícitas, anidadas)
+// ✓ Propiedades ACID completas
+// ✓ Variables globales (@@ERROR, @@TRANCOUNT, @@ROWCOUNT)
+// ✓ Control de errores (manual y TRY-CATCH)
+// ✓ Bloqueos (compartidos, exclusivos, update)
+// ✓ Deadlocks (detección, prevención, resolución)
+// ✓ Hints (UPDLOCK, NOLOCK, ROWLOCK, etc.)
+// ✓ LOCK_TIMEOUT y timeouts de bloqueos
+// ✓ Savepoints y rollback parcial
+// ✓ Niveles de aislamiento
+// ✓ Problemas de concurrencia (dirty reads, phantoms, lost updates)
+// ✓ Mejores prácticas y troubleshooting

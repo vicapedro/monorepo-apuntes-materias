@@ -1,0 +1,928 @@
+Slide 1:
+ 
+ Triggers
+
+Slide 2:
+Qué es un trigger?
+Un trigger es un procedimiento almacenado especial:
+Se invoca cuando se ejecuta un INSERT, UPDATE o  DELETE sobre la tabla con la cual se asocia.
+No puede ser llamado directamente.
+El código del trigger y la instrucción que lo invocó, forman parte de la misma transacción.
+
+Slide 3:
+Para qué sirven los Triggers?
+Realizar cambios en cascada.- Los triggers pueden realizar cambios en cascada, sin embargo esos cambios pueden ser realizados de forma mas eficiente utilizando integridad referencial. 
+Garantizar la consistencia de los datos.- Se usan para garantizar la integridad Referencial, donde un CHECK no lo puede realizar.
+Compara antes o después de las instrucciones de modificación de datos.
+
+Slide 4:
+Consideraciones para usar Triggers
+
+Los Constraints se verifican antes que los triggers.
+Una tabla, puede tener varios triggers. 
+El propietario de la tabla debe tener permisos para crear triggers.  
+No se pueden crear Triggers sobre Tablas Temporales.
+Los Triggers no pueden regresar valores.
+
+Slide 5:
+Sintaxis 
+
+CREATE TRIGGER trigger_name 
+ON { table | view } 
+[ WITH ENCRYPTION ] 
+{ 
+    { { FOR | AFTER | INSTEAD OF } { [ INSERT ] [ , ] [ UPDATE ] } 
+       AS 
+        [ { IF UPDATE ( column ) 
+            [ { AND | OR } UPDATE ( column ) ] 
+                [ ...n ] 
+        | IF ( COLUMNS_UPDATED ( ) { bitwise_operator } updated_bitmask ) 
+                { comparison_operator } column_bitmask [ ...n ] 
+        } ] 
+        sql_statement [ ...n ] 
+    } 
+} 
+
+Slide 6:
+Tipos de triggers
+AFTER triggers. Son ejecutados despues de que la accion INSERT, UPDATE O DELETE se ha realizado. Soolamente se pueden definir AFTER trigger para tablas.
+INSTEAD OF triggers. Son ejecutados antes de que la instrucción se realice. INSTEAD OF triggers, peden ser definidos sobre vistas con una o mas tablas base.
+
+
+Slide 7:
+Creación de Triggers
+Instrucción CREATE TRIGGER 
+CREATE TRIGGER member_delete ON member FOR DELETE
+AS
+Código TRANSACT-SQL
+END
+
+Slide 8:
+ Cómo trabajan los Triggers???
+Cómo trabaja un trigger  INSERT ?
+Cómo trabaja un Trigger DELETE? 
+Cómo trabaja un Trigger UPDATE ?
+
+
+Slide 9:
+Se realiza una instrucción INSERT a una tabla con un  
+ INSERT Trigger Definido
+
+Se ejecuta la instrucción INSERT
+
+La acción del Trigger es Ejecutada
+1
+2
+3
+Como trabaja un Trigger FOR INSERT 
+
+Slide 10:
+
+
+
+
+
+
+
+
+
+
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+603
+4
+11
+123
+02/15/91
+03/17/91
+
+
+
+
+
+
+Acciones ejecutadas por un TRIGGER 
+Código del Trigger 
+USE library
+CREATE TRIGGER loan_insert
+ON loan
+FOR INSERT
+AS
+UPDATE c SET on_loan = 'Y'
+FROM copy c INNER JOIN inserted I
+ON c.isbn = i.sbn and c.copy_no = i.copy_no
+Como trabaja un Trigger FOR INSERT
+
+Slide 11:
+Como trabaja un Trigger FOR INSERT 
+INSERT loan VALUES
+(603, 4, 11, 123, GETDATE(), (GETDATE() + 30))
+
+
+
+
+
+
+
+
+
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+3
+1
+2
+1
+1001
+1004
+1002
+1001
+1002
+1003
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/28/91
+02/28/91
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+4
+1
+1004
+1001
+02/13/91
+02/27/91
+
+
+
+
+
+
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+603
+4
+11
+123
+02/15/91
+03/17/91
+
+
+
+
+
+
+inserted
+603
+4
+11
+123
+02/15/91
+03/17/91
+Insert statement logged
+Instrucción INSERT en una  tabla con un INSERT Trigger Definido
+
+UPDATE c SET on_loan = 'Y'
+FROM copy c INNER JOIN inserted I
+ON c.isbn = isbn and c.copy_no = i.copy_no
+copy
+isbn
+copy_no
+title_no
+on_loan
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+Y
+Y
+N
+N
+603
+4
+11
+Y
+
+
+
+
+
+
+
+Slide 12:
+Trigger FOR DELETE
+ 
+Instrucción DELETE sobre una  tabla con un DELETE
+Trigger Definido
+
+Instrucción DELETE se registra
+
+Acción del Trigger se ejecuta
+1
+2
+3
+
+Slide 13:
+Trigger FOR DELETE
+
+
+
+
+
+
+
+
+
+
+
+
+USE library
+CREATE TRIGGER loan_delete
+	ON loan
+	FOR DELETE
+AS
+	UPDATE c SET on_loan = 'N'
+		FROM copy c INNER JOIN deleted d
+		ON c.isbn = d.isbn AND c.copy_no = d.copy.no
+DELETE loan
+WHERE isbn = 4
+AND copy_no = 1
+
+Slide 14:
+DELETE loan
+WHERE isbn = 4
+AND copy_no = 1
+Como trabaja un Trigger FOR DELETE
+
+
+
+
+
+
+
+
+
+DELETE a una tabla con DELETE Trigger Definido
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+4
+1
+1004
+1001
+02/13/91
+02/27/91
+
+
+
+
+
+
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+1001
+1001
+1002
+1003
+02/13/91
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/27/91
+02/28/91
+02/28/91
+4
+1
+1004
+1001
+02/13/91
+02/27/91
+
+
+
+
+
+
+loan
+isbn
+copy_no
+title_no
+mem_no
+outdate
+duedate
+1
+4
+3
+1
+2
+1
+1001
+1004
+1002
+1001
+1002
+1003
+02/13/91
+02/14/91
+02/14/91
+02/27/91
+02/28/91
+02/28/91
+Deleted
+4
+1
+1004
+1001
+02/13/91
+02/27/91
+DELETE statement logged
+UPDATE c SET on_loan = 'N'
+	FROM copy c INNER JOIN deleted d
+	ON c.isbn = d.isbn AND c.copy_no = d.copy.no
+copy
+isbn
+copy_no
+title_no
+on_loan
+1
+4
+4
+3
+1
+1
+2
+1
+1001
+1004
+1004
+1002
+Y
+Y
+N
+N
+4
+1
+1004
+N
+
+
+
+
+
+
+Slide 15:
+Como trabaja un Trigger FOR UPDATE
+
+
+
+
+
+
+
+
+
+
+
+
+Se realiza una instrucción UPDATE sobre  una Tabla 
+con un  UPDATE Trigger Definido
+
+Lainstrucción UPDATE se registra como un  INSERT
+ y como un DELETE 
+
+ Acción del Trigger Ejecutada
+1
+2
+3
+
+Slide 16:
+Como trabaja un Trigger FOR UPDATE 
+Instrucción UPDATE sobre una tabla con un trigger UPDATE definido
+
+
+
+
+
+
+
+
+
+UPDATE member
+SET member_no = 10021
+WHERE member_no = 1234
+Instrucción UPDATE registrada como  INSERT y DELETE 
+member
+member_no
+lastname
+firstname
+middleinitial
+photograph
+10020
+10021
+10022
+10023
+Anderson
+Barr
+Barr
+Anderson
+Andrew
+Andrew
+Bill
+Bill
+A
+R
+NULL
+B
+~~~
+~~~
+~~~
+
+1234
+Barr
+Andrew
+R
+~~~
+
+
+
+
+
+
+inserted
+10021
+Barr
+Andrew
+R
+~~~
+
+deleted
+1234
+Barr
+Andrew
+R
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+Accion del Trigger Ejecutada
+USE library
+GO
+CREATE TRIGGER member_update
+	ON member
+	FOR UPDATE
+AS
+IF UPDATE (member_no)
+BEGIN
+	RAISERROR ('Transaction cannot be processed.\
+	***** Member number cannot be modified.', 10, 1)
+	ROLLBACK TRANSACTION
+AS
+IF UPDATE (member_no)
+BEGIN
+	RAISERROR ('Transaction cannot be processed.\
+	***** Member number cannot be modified.', 10, 1)
+	ROLLBACK TRANSACTION
+  Transaction cannot be processed.
+  ***** Member number cannot be modified
+
+
+
+
+
+member
+member_no
+lastname
+firstname
+middleinitial
+photograph
+10020
+10021
+10022
+10023
+Anderson
+Barr
+Barr
+Anderson
+Andrew
+Andrew
+Bill
+Bill
+A
+R
+NULL
+B
+~~~
+~~~
+~~~
+
+1234
+Barr
+Andrew
+R
+~~~
+
+
+
+
+
+
+
+Slide 17:
+  Ejemplos de Triggers
+Forzando la integridad de los datos
+Asegurando condiciones 
+
+Slide 18:
+Forzando la integridad de los datos
+CREATE TRIGGER reservation_delete
+	ON loan FOR INSERT
+AS
+IF (SELECT r.member_no FROM reservation r JOIN
+	inserted i ON r.member_no = i.member_no
+	AND r.isbn = i.isbn ) > 0
+BEGIN
+	DELETE r FROM reservation r INNER JOIN inserted i 	ON r.member_no = i.member_no AND r.isbn = i.isbn
+END
+loan
+isbn
+copy_no
+mem_no
+1
+4
+4
+3
+1
+1
+1
+2
+1
+2
+1
+7
+4
+3
+1
+4
+1
+7
+
+
+
+Inserted
+reservation
+isbn
+1
+1
+2
+3
+4
+4
+
+mem_no
+1
+2
+1
+1
+7
+7
+
+log_date
+07/14/98
+07/12/98
+06/07/98
+07/14/98
+07/14/98
+07/14/98
+
+remarks
+~~~
+~~~
+~~~
+~~~
+~~~
+~~~
+
+Renglón eliminado
+
+Slide 19:
+Asegurar condiciones
+'Transaction cannot be processed'
+'This member still has books on loan'
+member
+member_no
+lastname
+firstname
+1
+2
+3
+4
+Anderson
+Barr
+Barr
+Anderson
+Andrew
+Andrew
+Bill
+Bill
+2
+Barr
+Andrew
+
+
+
+ Usuarios con prestamos no pueden ser borrados
+IF (Select Count (*) FROM loan INNER JOIN deleted
+	  ON loan.member_no = deleted.member_no) > 0
+ROLLBACK TRANSACTION
+DELETE
+sobre la tabla member
+El código del trigger
+Verifica la tabla loan
+loan
+isbn
+copy_no
+title_no
+mem_no
+1
+4
+4
+3
+1
+1
+2
+1
+1
+4
+4
+3
+1
+1
+2
+3
+2
+
+
+
+Transaction
+rolled back
+member
+member_no
+lastname
+firstname
+1
+3
+4
+Anderson
+Barr
+Anderson
+Andrew
+Bill
+Bill
+
+
+
+
+
+
+
+
+
+
+
+
+
+member
+member_no
+lastname
+firstname
+1
+2
+3
+4
+Anderson
+Barr
+Barr
+Anderson
+Andrew
+Andrew
+Bill
+Bill
+
+2
+Barr
+Andrew
+
+
+
+
+Slide 20:
+Triggers INSTEAD OFF
+Puede tener solo un tigger para cada accion INSERT, DELETE Y UPDATE.
+No se pueden combinar con claves foraneas definidas con CASCADE.
+No pueden ser recursivos.
+Fueron diseñados para trabajar con vistas.
+
+Slide 21:
+Triggers INSTEAD OFF
+CREATE TRIGGER DEL_union
+ON vista_union
+INSTEAD OF DELETE
+AS 
+DELETE tabla_1 
+WHERE tabla_1.a IN (SELECT a1 FROM DELETED)
+DELETE tabla_2 
+WHERE tabla_2.a IN (SELECT a2 FROM DELETED)
+
+CREATE VIEW vista_union AS
+SELECT tabla_1.a as a1, b, c,
+       tabla_2.a as a2, message
+FROM tabla_1 JOIN tabla_2
+ON tabla_1.a=tabla_2.a
+
+
+
+Slide 22:
+Consideraciones de Performance 
+Los Triggers trabajan rápidamente por que las tablas  inserted and deleted  están en Cache
+El tiempo de ejecución es determinado por:
+El Número de tablas que son referenciadas
+El Número de renglones que son afectados
+Las acciones contenidas en un trigger son partes implícitas de una  Transacción
+
+Slide 23:
+Alterando y Eliminando Triggers
+Alterar un Trigger
+Cambia la definición sin eliminar el  trigger
+Pueden activar o desactivar un trigger
+
+
+
+
+
+Eliminar un Trigger: DROP TRIGGER <<nombre>>
+ALTER TRIGGER loan_insert
+ ON loan
+ FOR INSERT
+ AS
+ 	UPDATE copy
+ 	SET on_loan = 'y'
+ 	FROM copy INNER JOIN inserted
+ 	  ON copy.isbn = inserted.isbn
+ 	  AND copy.copy_no = inserted.copy_no

@@ -1,0 +1,684 @@
+// ==========================================
+// BANCO DE PREGUNTAS - PROCEDIMIENTOS Y FUNCIONES ALMACENADAS
+// ==========================================
+// Materia: Taller de Base de Datos
+// Unidad 5: Procedimientos y Funciones Almacenadas
+// Formato: GIFT (Moodle)
+// Fecha: 1 de diciembre de 2025
+//
+// Contenidos cubiertos:
+// - Procedimientos almacenados (CREATE, ALTER, DROP, EXECUTE)
+// - Funciones escalares y de tabla
+// - Parámetros de entrada y salida (INPUT, OUTPUT)
+// - Variables locales y manejo de errores
+// - Estructuras de control y transacciones
+// - TRY-CATCH, RAISERROR, @@ERROR
+// - Mejores prácticas y optimización
+//
+// Estructura por Taxonomía de Bloom con etiquetas:
+// - Nivel 1-2: Recordar y Comprender (10 preguntas)
+// - Nivel 3-4: Aplicar (10 preguntas)
+// - Nivel 5-6: Analizar y Evaluar (10 preguntas)
+// - Relacionar columnas (5 preguntas)
+//
+// Total: 35 preguntas
+// ==========================================
+
+$CATEGORY: $course$/Unidad 5: Procedimientos y Funciones/Conceptos Básicos
+
+// ==========================================
+// NIVEL 1-2: RECORDAR Y COMPRENDER
+// ==========================================
+
+// [tag:Bloom-Recordar] [tag:Procedimientos] [tag:Definicion]
+::PF001-Definicion-Procedimiento::¿Qué es un procedimiento almacenado en SQL Server?{
+=Un conjunto de instrucciones T-SQL precompiladas y almacenadas en la base de datos que se ejecutan como una unidad#¡Correcto! Los procedimientos almacenados encapsulan lógica de negocio y mejoran el rendimiento mediante precompilación.
+~Una función que siempre retorna un valor de tabla#Incorrecto. Esa es la definición de función de tabla, no procedimiento almacenado.
+~Una tabla temporal que se crea automáticamente al conectarse#Incorrecto. Las tablas temporales son diferentes de los procedimientos almacenados.
+~Un trigger que se ejecuta automáticamente antes de INSERT#Incorrecto. Los triggers son objetos diferentes; los procedimientos se ejecutan explícitamente.
+####Características de procedimientos almacenados 1) Grupo de instrucciones T-SQL compiladas, 2) Plan de ejecución almacenado en caché, 3) Aceptan parámetros de entrada/salida, 4) Pueden modificar datos (INSERT, UPDATE, DELETE), 5) Mejoran rendimiento y seguridad. Ventajas: encapsulación de lógica, reutilización de código, reducción de tráfico de red, control de seguridad mediante permisos EXECUTE.
+}
+
+// [tag:Bloom-Recordar] [tag:Funciones] [tag:Tipos]
+::PF002-Tipos-Funciones::¿Cuáles son los dos tipos principales de funciones definidas por el usuario en SQL Server?{
+=Funciones escalares (retornan un solo valor) y funciones de tabla (retornan una tabla)#¡Correcto! SQL Server diferencia entre funciones que retornan valores únicos vs. conjuntos de filas.
+~Funciones públicas y funciones privadas#Incorrecto. SQL Server no usa esa clasificación; la distinción es escalar vs. tabla.
+~Funciones compiladas y funciones interpretadas#Incorrecto. Todas las funciones se compilan; esa no es una clasificación válida.
+~Funciones de sistema y funciones temporales#Incorrecto. La clasificación principal es por tipo de retorno: escalar o tabla.
+####Funciones escalares: CREATE FUNCTION fnCalcularIVA(@monto DECIMAL) RETURNS DECIMAL AS BEGIN RETURN @monto * 0.16; END; Uso: SELECT dbo.fnCalcularIVA(1000); -- retorna 160. Funciones de tabla: CREATE FUNCTION fnClientesCiudad(@ciudad VARCHAR(50)) RETURNS TABLE AS RETURN (SELECT * FROM Clientes WHERE Ciudad = @ciudad); Uso: SELECT * FROM dbo.fnClientesCiudad('Monterrey');
+}
+
+// [tag:Bloom-Recordar] [tag:Parametros] [tag:OUTPUT]
+::PF003-Parametro-OUTPUT::¿Qué permite la palabra clave OUTPUT en un parámetro de procedimiento almacenado?{
+=Que el procedimiento devuelva un valor a través del parámetro al código que lo invoca#¡Correcto! OUTPUT permite retornar valores sin usar RETURN (que solo acepta INT).
+~Que el procedimiento imprima el valor en la consola automáticamente#Incorrecto. Para imprimir se usa PRINT, no OUTPUT.
+~Que el parámetro sea opcional con valor por defecto#Incorrecto. Para parámetros opcionales se usa = valor_default, no OUTPUT.
+~Que el parámetro acepte múltiples valores simultáneamente#Incorrecto. Para múltiples valores se usan table-valued parameters o XML, no OUTPUT.
+####Ejemplo: CREATE PROCEDURE sp_Calcular @Subtotal DECIMAL, @IVA DECIMAL OUTPUT AS BEGIN SET @IVA \= @Subtotal * 0.16; END; Ejecución: DECLARE @Impuesto DECIMAL; EXEC sp_Calcular 1000, @Impuesto OUTPUT; SELECT @Impuesto; -- retorna 160. Diferencia con RETURN: RETURN solo acepta INT y se usa para códigos de estado; OUTPUT puede retornar cualquier tipo de dato.
+}
+
+// [tag:Bloom-Recordar] [tag:Sintaxis] [tag:CREATE-PROCEDURE]
+::PF004-Sintaxis-CREATE::¿Cuál es la sintaxis básica correcta para crear un procedimiento almacenado en SQL Server?{
+=CREATE PROCEDURE nombre AS BEGIN sentencias; END;#¡Correcto! CREATE PROCEDURE (o CREATE PROC) seguido de BEGIN-END para delimitar el cuerpo.
+~PROCEDURE nombre() \{ sentencias; \}#Incorrecto. T-SQL usa BEGIN-END, no llaves, y no requiere paréntesis vacíos.
+~CREATE STORED PROCEDURE nombre AS sentencias;#Incorrecto. Se usa CREATE PROCEDURE, no CREATE STORED PROCEDURE (aunque PROC es abreviatura válida).
+~DEFINE PROCEDURE nombre \= sentencias;#Incorrecto. Sintaxis inválida; se usa CREATE PROCEDURE.
+####Sintaxis completa: CREATE PROC[EDURE] nombre [@parametro tipo_dato [= default] [OUTPUT]] [WITH RECOMPILE | ENCRYPTION] AS BEGIN sentencias; END; Ejemplo básico: CREATE PROCEDURE usp_ObtenerClientes AS BEGIN SELECT * FROM Clientes; END; Ejecución: EXEC usp_ObtenerClientes; o EXECUTE usp_ObtenerClientes;
+}
+
+// [tag:Bloom-Comprender] [tag:Ventajas] [tag:Rendimiento]
+::PF005-Ventajas-SP::¿Cuáles son las principales ventajas de usar procedimientos almacenados? (Seleccione todas las correctas){
+~%25%Encapsulación de lógica de negocio y reutilización de código#Correcto. Las reglas de negocio se centralizan y pueden cambiar en un solo lugar.
+~%25%Mejora del rendimiento mediante precompilación y caché del plan de ejecución#Correcto. El plan compilado se almacena y reutiliza en ejecuciones subsecuentes.
+~%25%Reducción del tráfico de red al ejecutar múltiples instrucciones en el servidor#Correcto. Se envía una sola llamada en lugar de múltiples sentencias SQL.
+~%25%Control de seguridad mediante permisos EXECUTE sin acceso directo a tablas#Correcto. Los usuarios pueden ejecutar procedimientos sin tener permisos en las tablas subyacentes.
+~%-100%Eliminación completa de la necesidad de índices en las tablas#Incorrecto. Los procedimientos almacenados NO eliminan la necesidad de índices; de hecho, se benefician de ellos.
+~%-100%Garantía automática de transacciones sin necesidad de BEGIN TRAN#Incorrecto. Las transacciones deben ser explícitas; los procedimientos no las crean automáticamente.
+####Proceso de ejecución: 1) Creación → Parsing sintáctico, 2) Compilación → Optimización del plan, 3) Almacenamiento → Plan en caché, 4) Ejecución → Reutilización del plan. Ejemplo de seguridad: GRANT EXECUTE ON usp_InsertarCliente TO Usuario1; -- Usuario1 puede insertar clientes sin acceso directo a la tabla.
+}
+
+// [tag:Bloom-Comprender] [tag:Procedimientos-vs-Funciones] [tag:Diferencias]
+::PF006-Procedimiento-vs-Funcion::¿Cuáles son las diferencias principales entre procedimientos almacenados y funciones? (Seleccione todas las correctas){
+~%20%Procedimientos pueden modificar datos (INSERT, UPDATE, DELETE); funciones no pueden modificar tablas base#Correcto. Las funciones tienen restricciones sobre operaciones DML en tablas permanentes.
+~%20%Funciones pueden usarse dentro de SELECT; procedimientos no#Correcto. Las funciones escalares y de tabla pueden aparecer en consultas SELECT.
+~%20%Funciones deben retornar un valor; procedimientos pueden o no retornar#Correcto. RETURN en funciones es obligatorio; en procedimientos es opcional.
+~%20%Procedimientos pueden usar TRY-CATCH; funciones no pueden#Correcto. Las funciones tienen restricciones sobre manejo estructurado de excepciones.
+~%20%Procedimientos pueden tener parámetros OUTPUT; funciones retornan con RETURNS#Correcto. Diferentes mecanismos de retorno de valores.
+~%-100%Solo las funciones pueden recibir parámetros de entrada#Incorrecto. Ambos pueden recibir parámetros de entrada.
+~%-100%Procedimientos son siempre más rápidos que funciones#Incorrecto. El rendimiento depende del contexto; funciones inline de tabla pueden ser muy eficientes.
+####Restricciones de funciones: NO pueden: 1) INSERT/UPDATE/DELETE en tablas base, 2) Usar TRY-CATCH, 3) Crear tablas temporales (#temp), 4) Ejecutar procedimientos almacenados, 5) Usar RAISERROR. SÍ pueden: modificar variables de tabla (@tabla), usar dentro de SELECT/WHERE/HAVING.
+}
+
+// [tag:Bloom-Comprender] [tag:Parametros] [tag:Valores-Default]
+::PF007-Parametros-Default::¿Cómo se define un parámetro con valor por defecto en un procedimiento almacenado?{
+=CREATE PROCEDURE sp_Buscar @Ciudad VARCHAR(50) \\= 'Monterrey' AS ...#¡Correcto! El operador \\= asigna valor por defecto al parámetro.
+~CREATE PROCEDURE sp_Buscar @Ciudad VARCHAR(50) DEFAULT 'Monterrey' AS ...#Incorrecto. T-SQL usa \\=, no la palabra clave DEFAULT.
+~CREATE PROCEDURE sp_Buscar [@Ciudad VARCHAR(50) \\= 'Monterrey'] AS ...#Incorrecto. Los parámetros no se encierran en corchetes.
+~CREATE PROCEDURE sp_Buscar @Ciudad VARCHAR(50) OR NULL AS ...#Incorrecto. Sintaxis inválida; se usa \\= para valores por defecto.
+####Ejecución con valor por defecto: EXEC sp_Buscar; -- usa 'Monterrey' por defecto. Ejecución explícita: EXEC sp_Buscar @Ciudad = 'Guadalajara'; Múltiples parámetros opcionales: CREATE PROCEDURE sp_Reporte @FechaInicio DATE = NULL, @FechaFin DATE = NULL AS BEGIN IF @FechaInicio IS NULL SET @FechaInicio = DATEADD(MONTH, -1, GETDATE()); ... END;
+}
+
+// [tag:Bloom-Comprender] [tag:RETURN] [tag:Codigo-Estado]
+::PF008-RETURN-Procedimiento::¿Qué tipo de valor puede retornar la sentencia RETURN en un procedimiento almacenado?{
+=Un valor entero (INT) que típicamente indica éxito (0) o código de error#¡Correcto! RETURN está diseñado para códigos de estado numéricos.
+~Cualquier tipo de dato (VARCHAR, DECIMAL, DATE, etc.)#Incorrecto. RETURN solo acepta INT; para otros tipos usar OUTPUT o SELECT.
+~Un conjunto de filas (result set)#Incorrecto. Para retornar filas se usa SELECT; RETURN solo acepta INT.
+~Valores booleanos (TRUE/FALSE)#Incorrecto. SQL Server no tiene tipo booleano nativo; RETURN acepta INT.
+####Convención estándar: RETURN 0 = éxito, RETURN -1 o valores negativos = error. Captura del valor: DECLARE @status INT; EXEC @status = sp_ValidarCliente 123; IF @status = 0 PRINT 'Éxito' ELSE PRINT 'Error'; Alternativas para retornar otros tipos: 1) Parámetros OUTPUT, 2) SELECT (result set), 3) Variables de tabla.
+}
+
+// [tag:Bloom-Comprender] [tag:Ejecucion] [tag:EXEC]
+::PF009-Ejecutar-Procedimiento::¿Cuáles son las formas válidas de ejecutar un procedimiento almacenado en SQL Server? (Seleccione todas las correctas){
+~%33.33%EXECUTE nombre_procedimiento;#Correcto. EXECUTE (o EXEC) es la forma explícita estándar.
+~%33.33%EXEC nombre_procedimiento @param1 \\= valor1, @param2 \\= valor2;#Correcto. Paso de parámetros por referencia (nombre).
+~%33.33%nombre_procedimiento; (si es la primera instrucción del batch)#Correcto. Se puede omitir EXEC si es la primera sentencia.
+~%-100%CALL nombre_procedimiento();#Incorrecto. CALL es sintaxis de otros RDBMS (MySQL), no T-SQL.
+~%-100%RUN nombre_procedimiento;#Incorrecto. RUN no es comando válido en T-SQL.
+~%-100%START nombre_procedimiento;#Incorrecto. START no es comando válido para ejecutar procedimientos.
+####Formas de ejecución: 1) EXEC sp_Nombre; (básico), 2) EXEC sp_Nombre 'valor1', 123; (por posición), 3) EXEC sp_Nombre @p1='valor1', @p2=123; (por referencia), 4) INSERT INTO tabla EXEC sp_Nombre; (insertar resultados), 5) DECLARE @ret INT; EXEC @ret = sp_Nombre; (capturar RETURN). Ejecutar en servidor remoto: EXEC ServidorRemoto.BD.dbo.sp_Nombre @param;
+}
+
+// [tag:Bloom-Comprender] [tag:Modificacion] [tag:ALTER-vs-DROP]
+::PF010-ALTER-vs-DROP::¿Por qué es preferible usar ALTER PROCEDURE en lugar de DROP/CREATE para modificar un procedimiento?{
+=ALTER preserva permisos, mantiene dependencias y no requiere volver a otorgar permisos a usuarios#¡Correcto! ALTER mantiene la integridad de seguridad y dependencias.
+~ALTER es más rápido que DROP/CREATE#Incorrecto. La velocidad es similar; la ventaja principal es preservación de permisos.
+~DROP/CREATE no está permitido en procedimientos en producción#Incorrecto. Está permitido, pero no es recomendable por pérdida de permisos.
+~ALTER permite agregar parámetros; DROP/CREATE no#Incorrecto. Ambos permiten agregar parámetros; la diferencia está en permisos.
+####Ejemplo de pérdida de permisos con DROP/CREATE\\: -- Usuario1 tiene EXECUTE en sp_Reporte, GRANT EXECUTE ON sp_Reporte TO Usuario1; DROP PROCEDURE sp_Reporte; CREATE PROCEDURE sp_Reporte AS ...; -- Usuario1 YA NO tiene permisos, hay que otorgarlos nuevamente. Con ALTER\\: ALTER PROCEDURE sp_Reporte AS ...; -- Usuario1 CONSERVA los permisos. SQL Server 2016+\\: CREATE OR ALTER PROCEDURE combina ambos enfoques.
+}
+
+// ==========================================
+// NIVEL 3-4: APLICAR
+// ==========================================
+
+// [tag:Bloom-Aplicar] [tag:Sintaxis] [tag:Crear-Procedimiento-Basico]
+::PF011-Crear-Procedimiento-Parametros::¿Cuál es la sintaxis correcta para crear un procedimiento que recibe dos parámetros de entrada?{
+=CREATE PROCEDURE sp_Buscar @Nombre VARCHAR(100), @Ciudad VARCHAR(50) AS BEGIN SELECT * FROM Clientes WHERE Nombre LIKE @Nombre AND Ciudad \\= @Ciudad; END;#¡Correcto! Sintaxis completa con múltiples parámetros y BEGIN-END.
+~CREATE PROC sp_Buscar (@Nombre VARCHAR(100), @Ciudad VARCHAR(50)) AS SELECT * FROM Clientes WHERE Nombre LIKE @Nombre AND Ciudad \\= @Ciudad;#Incorrecto. Los parámetros no se encierran en paréntesis y falta BEGIN-END.
+~PROCEDURE sp_Buscar @Nombre, @Ciudad AS BEGIN SELECT * FROM Clientes; END;#Incorrecto. Falta CREATE y tipo de dato de parámetros.
+~CREATE PROCEDURE sp_Buscar $Nombre VARCHAR(100), $Ciudad VARCHAR(50) AS BEGIN ... END;#Incorrecto. Variables en T-SQL usan @, no $.
+####Ejemplo completo con valores por defecto\\: CREATE PROCEDURE usp_BuscarClientes @Nombre VARCHAR(100) \\= NULL, @Ciudad VARCHAR(50) \\= NULL, @Activo BIT \\= 1 AS BEGIN SET NOCOUNT ON; SELECT ClienteID, Nombre, Ciudad FROM Clientes WHERE (@Nombre IS NULL OR Nombre LIKE '%' + @Nombre + '%') AND (@Ciudad IS NULL OR Ciudad \\= @Ciudad) AND Activo \\= @Activo; END;
+}
+
+// [tag:Bloom-Aplicar] [tag:OUTPUT] [tag:Retornar-Valores]
+::PF012-Usar-OUTPUT::¿Cuál es la sintaxis correcta para usar un parámetro OUTPUT en un procedimiento almacenado?{
+=Definición\\: CREATE PROCEDURE sp_Calc @Entrada INT, @Salida INT OUTPUT AS SET @Salida \\= @Entrada * 2; Ejecución\\: DECLARE @Resultado INT; EXEC sp_Calc 5, @Resultado OUTPUT; SELECT @Resultado;#¡Correcto! OUTPUT se especifica en definición y en ejecución.
+~Definición\\: CREATE PROCEDURE sp_Calc @Entrada INT, OUTPUT @Salida INT AS SET @Salida \\= @Entrada * 2; Ejecución\\: EXEC sp_Calc 5, @Resultado;#Incorrecto. OUTPUT va después del tipo de dato, y también debe especificarse en EXEC.
+~Definición\\: CREATE PROCEDURE sp_Calc @Entrada INT, @Salida INT AS RETURN @Salida; Ejecución\\: DECLARE @Resultado INT; EXEC @Resultado \\= sp_Calc 5;#Incorrecto. RETURN solo acepta INT y es diferente de OUTPUT.
+~Definición\\: CREATE PROCEDURE sp_Calc @Entrada INT RETURNS @Salida INT AS SET @Salida \\= @Entrada * 2; Ejecución\\: SELECT sp_Calc(5);#Incorrecto. Esa es sintaxis de función, no procedimiento.
+####Ejemplo con múltiples OUTPUT\\: CREATE PROCEDURE usp_Estadisticas @ProductoID INT, @TotalVentas INT OUTPUT, @Ingresos MONEY OUTPUT AS BEGIN SELECT @TotalVentas \\= SUM(Cantidad), @Ingresos \\= SUM(Cantidad * Precio) FROM Ventas WHERE ProductoID \\= @ProductoID; END; Uso\\: DECLARE @Ventas INT, @Dinero MONEY; EXEC usp_Estadisticas 101, @Ventas OUT, @Dinero OUT; PRINT 'Ventas\\: ' + CAST(@Ventas AS VARCHAR);
+}
+
+// [tag:Bloom-Aplicar] [tag:Control-Flujo] [tag:IF-ELSE]
+::PF013-IF-ELSE-Sintaxis::¿Cuál es la sintaxis correcta para una estructura IF-ELSE con múltiples sentencias en T-SQL?{
+=IF condicion BEGIN sentencias; END ELSE BEGIN sentencias; END;#¡Correcto! BEGIN-END agrupan múltiples sentencias en cada rama.
+~IF (condicion) \\{ sentencias; \\} ELSE \\{ sentencias; \\}#Incorrecto. T-SQL usa BEGIN-END, no llaves.
+~IF condicion THEN sentencias; ELSE sentencias; END IF;#Incorrecto. Sintaxis de PL/SQL (Oracle), no T-SQL.
+~IF condicion DO sentencias; ELSE DO sentencias; DONE;#Incorrecto. Sintaxis inválida en T-SQL.
+####Ejemplo completo\\: DECLARE @Stock INT \\= 5; IF @Stock > 10 BEGIN PRINT 'Stock suficiente'; UPDATE Productos SET Estado \\= 'Disponible'; END ELSE IF @Stock > 0 BEGIN PRINT 'Stock bajo'; INSERT INTO Alertas (Mensaje) VALUES ('Reabastecer'); END ELSE BEGIN PRINT 'Sin stock'; UPDATE Productos SET Estado \\= 'Agotado'; END; Para una sola sentencia BEGIN-END es opcional pero recomendado.
+}
+
+// [tag:Bloom-Aplicar] [tag:Funciones] [tag:Funcion-Escalar]
+::PF014-Crear-Funcion-Escalar::¿Cuál es la sintaxis correcta para crear una función escalar que calcule el 16% de IVA?{
+=CREATE FUNCTION dbo.fnCalcularIVA(@monto DECIMAL(10,2)) RETURNS DECIMAL(10,2) AS BEGIN RETURN @monto * 0.16; END;#¡Correcto! Función escalar con RETURNS tipo_dato y RETURN valor en BEGIN-END.
+~CREATE FUNCTION dbo.fnCalcularIVA(@monto DECIMAL) AS RETURN @monto * 0.16;#Incorrecto. Falta cláusula RETURNS especificando tipo de retorno y BEGIN-END.
+~FUNCTION dbo.fnCalcularIVA(@monto DECIMAL) RETURNS DECIMAL \\= @monto * 0.16;#Incorrecto. Falta CREATE y sintaxis de BEGIN-END.
+~CREATE PROCEDURE dbo.fnCalcularIVA @monto DECIMAL, @iva DECIMAL OUTPUT AS SET @iva \\= @monto * 0.16;#Incorrecto. Eso es un procedimiento con OUTPUT, no una función.
+####Uso de función escalar\\: SELECT dbo.fnCalcularIVA(1000); -- retorna 160.00. En consulta\\: SELECT Producto, Precio, dbo.fnCalcularIVA(Precio) AS IVA, Precio + dbo.fnCalcularIVA(Precio) AS Total FROM Productos; IMPORTANTE\\: Funciones escalares deben usar schema (dbo.) al invocar. ADVERTENCIA\\: Evitar funciones escalares en SELECT con muchas filas (bajo rendimiento); preferir funciones de tabla inline.
+}
+
+// [tag:Bloom-Aplicar] [tag:Funciones] [tag:Funcion-Tabla-Inline]
+::PF015-Funcion-Tabla-Inline::¿Cuál es la sintaxis correcta para crear una función de tabla inline?{
+=CREATE FUNCTION dbo.fnClientesCiudad(@ciudad VARCHAR(50)) RETURNS TABLE AS RETURN (SELECT * FROM Clientes WHERE Ciudad \\= @ciudad);#¡Correcto! Función de tabla inline con RETURNS TABLE y consulta única.
+~CREATE FUNCTION dbo.fnClientesCiudad(@ciudad VARCHAR(50)) RETURNS TABLE AS BEGIN SELECT * FROM Clientes WHERE Ciudad \\= @ciudad; END;#Incorrecto. Funciones inline NO usan BEGIN-END; solo la consulta SELECT.
+~CREATE FUNCTION dbo.fnClientesCiudad(@ciudad VARCHAR(50)) AS SELECT * FROM Clientes WHERE Ciudad \\= @ciudad;#Incorrecto. Falta cláusula RETURNS TABLE y paréntesis en consulta.
+~CREATE FUNCTION dbo.fnClientesCiudad(@ciudad VARCHAR(50)) RETURNS @resultado TABLE AS BEGIN INSERT INTO @resultado SELECT * FROM Clientes; RETURN; END;#Incorrecto. Esa es función multi-statement, no inline.
+####Uso de función de tabla inline\\: SELECT * FROM dbo.fnClientesCiudad('Monterrey'); En JOIN\\: SELECT c.Nombre, o.* FROM Clientes c CROSS APPLY dbo.fnClientesCiudad(c.Ciudad) o; Ventaja inline vs. multi-statement\\: Las funciones inline se integran al plan de ejecución como una vista (mejor rendimiento); multi-statement se ejecutan aparte y retornan tabla temporal.
+}
+
+// [tag:Bloom-Aplicar] [tag:Manejo-Errores] [tag:RAISERROR]
+::PF016-RAISERROR-Sintaxis::¿Cuál es la sintaxis correcta para generar un error personalizado con RAISERROR?{
+=RAISERROR('Stock insuficiente', 16, 1);#¡Correcto! RAISERROR requiere mensaje, severidad (0-25) y estado (1-127).
+~THROW ERROR 'Stock insuficiente';#Incorrecto. THROW tiene sintaxis diferente\\: THROW error_number, message, state;
+~RAISE ERROR 'Stock insuficiente' LEVEL 16;#Incorrecto. Sintaxis inválida; se usa RAISERROR, no RAISE ERROR.
+~ERROR('Stock insuficiente');#Incorrecto. No existe función ERROR() para generar errores.
+####Sintaxis completa\\: RAISERROR (mensaje | msg_id, severidad, estado [, argumentos]) [WITH opcion]; Ejemplo con parámetros\\: RAISERROR('Cliente %s no encontrado en %s', 16, 1, 'Juan', 'Monterrey'); Marcadores\\: %d (entero), %s (cadena), %f (float). Niveles de severidad\\: 0-10 (informativos), 11-16 (errores de usuario), 17-19 (recursos), 20-25 (sistema crítico). THROW moderno\\: THROW 50001, 'Mensaje', 1; requiere error_number >= 50000.
+}
+
+// [tag:Bloom-Aplicar] [tag:Manejo-Errores] [tag:TRY-CATCH]
+::PF017-TRY-CATCH-Estructura::¿Cuál es la estructura correcta de TRY-CATCH en un procedimiento con transacciones?{
+=BEGIN TRY BEGIN TRAN; operaciones; COMMIT TRAN; END TRY BEGIN CATCH IF @@TRANCOUNT > 0 ROLLBACK TRAN; THROW; END CATCH;#¡Correcto! TRY contiene transacción; CATCH verifica @@TRANCOUNT antes de ROLLBACK y re-lanza error.
+~TRY BEGIN TRAN; operaciones; COMMIT; CATCH ROLLBACK;#Incorrecto. Sintaxis inválida; debe ser BEGIN TRY ... END TRY BEGIN CATCH ... END CATCH.
+~BEGIN TRY operaciones; END TRY BEGIN CATCH PRINT ERROR_MESSAGE();#Incorrecto. Falta manejo de transacción en CATCH.
+~IF ERROR BEGIN ROLLBACK; END ELSE BEGIN COMMIT; END;#Incorrecto. No existe IF ERROR; se usa estructura TRY-CATCH.
+####Funciones de error en CATCH\\: ERROR_NUMBER() (código de error), ERROR_MESSAGE() (texto), ERROR_SEVERITY() (severidad), ERROR_STATE() (estado), ERROR_LINE() (línea), ERROR_PROCEDURE() (nombre de procedimiento). Ejemplo completo\\: BEGIN TRY BEGIN TRAN; UPDATE Cuentas SET Saldo \\= Saldo - 100 WHERE ID \\= 1; UPDATE Cuentas SET Saldo \\= Saldo + 100 WHERE ID \\= 2; COMMIT; END TRY BEGIN CATCH IF @@TRANCOUNT > 0 ROLLBACK; DECLARE @Msg NVARCHAR(4000) \\= ERROR_MESSAGE(); RAISERROR(@Msg, 16, 1); END CATCH;
+}
+
+// [tag:Bloom-Aplicar] [tag:SET-NOCOUNT] [tag:Mejores-Practicas]
+::PF018-SET-NOCOUNT-ON::¿Para qué se usa SET NOCOUNT ON al inicio de un procedimiento almacenado?{
+=Para suprimir mensajes de "n filas afectadas" y reducir tráfico de red#¡Correcto! SET NOCOUNT ON elimina mensajes informativos innecesarios.
+~Para contar el número de filas retornadas por SELECT#Incorrecto. @@ROWCOUNT cuenta filas; NOCOUNT suprime mensajes.
+~Para evitar que el procedimiento retorne resultados#Incorrecto. NOCOUNT no afecta result sets; solo suprime mensajes de conteo.
+~Para desactivar temporalmente triggers en las tablas#Incorrecto. Para deshabilitar triggers se usa DISABLE TRIGGER, no NOCOUNT.
+####Ejemplo de uso\\: CREATE PROCEDURE usp_InsertarCliente @Nombre VARCHAR(100) AS BEGIN SET NOCOUNT ON; -- Mejor práctica, INSERT INTO Clientes (Nombre) VALUES (@Nombre); SELECT @@IDENTITY AS NuevoID; -- Retornar ID generado, END; Sin SET NOCOUNT ON\\: Cliente recibe mensaje "(1 row affected)" antes del result set. Con SET NOCOUNT ON\\: Cliente solo recibe el result set. Impacto\\: Reduce tráfico de red y mejora rendimiento ligeramente.
+}
+
+// [tag:Bloom-Aplicar] [tag:Transacciones] [tag:BEGIN-COMMIT-ROLLBACK]
+::PF019-Transaccion-Procedimiento::¿Cuál es la forma correcta de implementar una transacción en un procedimiento almacenado?{
+=BEGIN TRY BEGIN TRANSACTION; operaciones; COMMIT TRANSACTION; END TRY BEGIN CATCH IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION; THROW; END CATCH;#¡Correcto! Patrón recomendado con TRY-CATCH y verificación de @@TRANCOUNT.
+~BEGIN TRANSACTION; operaciones; COMMIT TRANSACTION;#Incorrecto. Falta manejo de errores; si ocurre error la transacción queda abierta.
+~START TRANSACTION; operaciones; END TRANSACTION;#Incorrecto. Sintaxis inválida en T-SQL; se usa BEGIN TRANSACTION / COMMIT.
+~TRANSACTION BEGIN; operaciones; TRANSACTION END;#Incorrecto. Sintaxis inválida; orden correcto es BEGIN/COMMIT TRANSACTION.
+####Ejemplo completo de transferencia bancaria\\: CREATE PROCEDURE usp_Transferir @CuentaOrigen INT, @CuentaDestino INT, @Monto MONEY AS BEGIN SET NOCOUNT ON; BEGIN TRY BEGIN TRAN; UPDATE Cuentas SET Saldo \\= Saldo - @Monto WHERE CuentaID \\= @CuentaOrigen; IF (SELECT Saldo FROM Cuentas WHERE CuentaID \\= @CuentaOrigen) < 0 RAISERROR('Saldo insuficiente', 16, 1); UPDATE Cuentas SET Saldo \\= Saldo + @Monto WHERE CuentaID \\= @CuentaDestino; COMMIT TRAN; RETURN 0; END TRY BEGIN CATCH IF @@TRANCOUNT > 0 ROLLBACK TRAN; THROW; RETURN -1; END CATCH END;
+}
+
+// [tag:Bloom-Aplicar] [tag:Variables] [tag:DECLARE-SET]
+::PF020-Declarar-Asignar-Variables::¿Cuál es la sintaxis correcta para declarar y asignar valores a variables locales en T-SQL?{
+=DECLARE @Edad INT, @Nombre VARCHAR(100); SET @Edad \\= 25; SET @Nombre \\= 'Juan';#¡Correcto! DECLARE para declaración; SET o SELECT para asignación.
+~VAR @Edad INT \\= 25; VAR @Nombre VARCHAR(100) \\= 'Juan';#Incorrecto. T-SQL no usa VAR; se usa DECLARE.
+~DECLARE @Edad AS INT; DECLARE @Nombre AS VARCHAR(100); @Edad \\= 25;#Incorrecto. No se usa AS en declaración y falta SET/SELECT para asignar.
+~INT @Edad \\= 25; VARCHAR(100) @Nombre \\= 'Juan';#Incorrecto. Sintaxis inválida; debe iniciar con DECLARE.
+####Formas de asignación\\: SET (una variable)\\: SET @Edad \\= 25; SELECT (múltiples variables)\\: SELECT @Edad \\= 25, @Nombre \\= 'Juan'; SELECT desde tabla\\: SELECT @Nombre \\= Nombre FROM Clientes WHERE ID \\= 1; Diferencia SET vs SELECT\\: SET requiere escalar; SELECT puede asignar desde consulta. Si consulta retorna 0 filas\\: SET deja NULL; SELECT mantiene valor previo.
+}
+
+// ==========================================
+// NIVEL 5-6: ANALIZAR Y EVALUAR
+// ==========================================
+
+// [tag:Bloom-Analizar] [tag:Alcance] [tag:Variables-Locales]
+::PF021-Analizar-Alcance-Variables::Un procedimiento declara @Total INT y lo calcula. Después de ejecutar el procedimiento, se intenta SELECT @Total desde otra ventana. ¿Qué sucede?{
+=Error\\: la variable @Total no existe en esa sesión (alcance local al procedimiento/batch)#¡Correcto! Las variables locales (@var) solo existen dentro del batch/procedimiento donde se declaran.
+~Se retorna el valor calculado por el procedimiento#Incorrecto. Variables locales no persisten fuera del procedimiento.
+~Se retorna NULL automáticamente#Incorrecto. La variable no existe; genera error "Must declare the scalar variable", no retorna NULL.
+~Se retorna 0 como valor por defecto#Incorrecto. No hay valor por defecto; la variable simplemente no existe en otro contexto.
+####Variables locales (@var)\\: Alcance limitado al batch/procedimiento/función donde se declaran. Para compartir valores entre sesiones\\: 1) Usar parámetros OUTPUT, 2) Usar tablas temporales globales (##temp - no recomendado), 3) Usar tablas permanentes, 4) Retornar con SELECT (result set). Ejemplo\\: CREATE PROC sp_Calc AS DECLARE @X INT \\= 10; SELECT @X; -- Retorna 10 dentro del proc, EXEC sp_Calc; -- Funciona, SELECT @X; -- ERROR\\: Must declare the scalar variable "@X"
+}
+
+// [tag:Bloom-Analizar] [tag:Funciones] [tag:Restricciones]
+::PF022-Analizar-Funciones-Restricciones::Una función escalar intenta ejecutar INSERT en una tabla permanente. ¿Qué sucede?{
+=Error\\: las funciones no pueden ejecutar sentencias DML (INSERT/UPDATE/DELETE) en tablas base#¡Correcto! Funciones tienen restricciones sobre modificación de datos permanentes.
+~El INSERT se ejecuta correctamente sin problemas#Incorrecto. SQL Server genera error; funciones no pueden modificar tablas base.
+~El INSERT se ejecuta pero dentro de una transacción implícita#Incorrecto. No se permite la operación; genera error de compilación/ejecución.
+~Solo funciona si la función se marca con SCHEMABINDING#Incorrecto. SCHEMABINDING no permite modificación de datos; es para vincular schema.
+####Restricciones completas de funciones\\: NO pueden\\: 1) INSERT/UPDATE/DELETE en tablas base, 2) Usar TRY-CATCH, 3) Crear tablas temporales (#temp), 4) Ejecutar procedimientos almacenados, 5) RAISERROR, 6) Usar transacciones explícitas. SÍ pueden\\: 1) Modificar variables de tabla (@tabla), 2) SELECT de tablas, 3) Llamar otras funciones, 4) Usar variables locales. Razón\\: Funciones deben ser determinísticas y sin efectos secundarios para uso en índices calculados y vistas indexadas.
+}
+
+// [tag:Bloom-Analizar] [tag:Rendimiento] [tag:Funciones-Escalares-SELECT]
+::PF023-Analizar-Rendimiento-Funciones::¿Por qué se recomienda evitar funciones escalares en SELECT de consultas grandes?{
+=Las funciones escalares se ejecutan fila por fila (no se incorporan al plan de ejecución), causando bajo rendimiento#¡Correcto! Funciones escalares no se "inlinean"; se ejecutan por cada fila.
+~Las funciones escalares consumen más memoria que las de tabla#Incorrecto. El problema principal es ejecución fila por fila, no memoria.
+~Las funciones escalares no pueden usar índices#Incorrecto. Pueden usar índices, pero eso no soluciona la ejecución fila por fila.
+~Las funciones escalares siempre causan deadlocks#Incorrecto. No causan deadlocks necesariamente; el problema es rendimiento.
+####Ejemplo problemático\\: SELECT Producto, Precio, dbo.fnCalcularDescuento(Precio, CategoriaID) AS Descuento FROM Productos; -- 100,000 filas \\= 100,000 ejecuciones de la función. Alternativas\\: 1) Función de tabla inline\\: SELECT p.*, d.Descuento FROM Productos p CROSS APPLY dbo.fnDescuentos(p.Precio, p.CategoriaID) d; 2) JOIN con tabla de descuentos, 3) Cálculo directo en SELECT. Benchmark\\: Función escalar\\: 30 seg. Función inline\\: 2 seg. JOIN directo\\: 1 seg.
+}
+
+// [tag:Bloom-Analizar] [tag:Seguridad] [tag:SQL-Injection]
+::PF024-Analizar-SQL-Injection::¿Qué problema de seguridad tiene este procedimiento\\: CREATE PROC sp_Buscar @Nombre VARCHAR(50) AS EXEC('SELECT * FROM Clientes WHERE Nombre \\= ''' + @Nombre + '''');?{
+=Vulnerable a inyección SQL; un usuario malicioso puede ejecutar código arbitrario concatenando comandos#¡Correcto! Concatenar parámetros en SQL dinámico sin parametrizar es inseguro.
+~No hay problema; es sintaxis válida y segura#Incorrecto. Es sintaxis válida pero INSEGURA; permite SQL injection.
+~El procedimiento no puede retornar resultados de esa forma#Incorrecto. Retorna resultados, pero de forma insegura.
+~Solo funciona con parámetros OUTPUT#Incorrecto. Funciona sin OUTPUT, pero el problema es seguridad, no funcionalidad.
+####Ataque de ejemplo\\: EXEC sp_Buscar @Nombre \\= '''; DROP TABLE Clientes; --'; Ejecuta\\: SELECT * FROM Clientes WHERE Nombre \\= ''; DROP TABLE Clientes; --'; SOLUCIÓN 1 (evitar dinámico)\\: CREATE PROC sp_Buscar @Nombre VARCHAR(50) AS SELECT * FROM Clientes WHERE Nombre \\= @Nombre; SOLUCIÓN 2 (parametrizar)\\: EXEC sp_executesql N'SELECT * FROM Clientes WHERE Nombre \\= @p1', N'@p1 VARCHAR(50)', @Nombre; NUNCA concatenar entrada de usuario directamente.
+}
+
+// [tag:Bloom-Analizar] [tag:Transacciones] [tag:Anidadas]
+::PF025-Analizar-Transacciones-Anidadas::Procedimiento A inicia transacción y llama a procedimiento B que también inicia transacción. ¿Qué sucede con @@TRANCOUNT?{
+=@@TRANCOUNT se incrementa a 2; COMMIT en B solo decrementa, COMMIT en A confirma todo#¡Correcto! Las transacciones "anidadas" en SQL Server son un contador, no transacciones independientes.
+~Se crean dos transacciones independientes que se confirman por separado#Incorrecto. SQL Server no soporta transacciones verdaderamente anidadas.
+~Procedimiento B genera error al intentar BEGIN TRAN dentro de transacción existente#Incorrecto. No genera error; simplemente incrementa @@TRANCOUNT.
+~COMMIT en B confirma solo cambios de B; COMMIT en A confirma solo cambios de A#Incorrecto. Solo el COMMIT final (@@TRANCOUNT \\= 0) confirma TODO.
+####Comportamiento\\: BEGIN TRAN; -- @@TRANCOUNT \\= 1, BEGIN TRAN; -- @@TRANCOUNT \\= 2, COMMIT; -- @@TRANCOUNT \\= 1 (NO confirma cambios aún), COMMIT; -- @@TRANCOUNT \\= 0 (AHORA confirma todo), ROLLBACK siempre pone @@TRANCOUNT \\= 0 y deshace TODO. Patrón seguro\\: CREATE PROC sp_B AS DECLARE @TranIniciada BIT \\= 0; IF @@TRANCOUNT \\= 0 BEGIN BEGIN TRAN; SET @TranIniciada \\= 1; END; operaciones; IF @TranIniciada \\= 1 COMMIT;
+}
+
+// [tag:Bloom-Evaluar] [tag:Mejores-Practicas] [tag:Prefijo-sp]
+::PF026-Evaluar-Prefijo-sp::¿Por qué se recomienda NO usar el prefijo "sp_" para procedimientos almacenados de usuario?{
+=SQL Server busca primero en la base de datos master los procedimientos con prefijo sp_, causando overhead de rendimiento#¡Correcto! El prefijo sp_ está reservado para procedimientos de sistema.
+~El prefijo sp_ está prohibido y genera error de sintaxis#Incorrecto. No genera error, pero no es recomendable.
+~Los procedimientos con sp_ no pueden recibir parámetros#Incorrecto. Pueden recibir parámetros; el problema es rendimiento.
+~El prefijo sp_ impide usar OUTPUT en parámetros#Incorrecto. Pueden usar OUTPUT; el problema es búsqueda en master.
+####Proceso de búsqueda\\: EXEC sp_MiProcedimiento; 1) SQL Server busca en master.dbo.sp_MiProcedimiento, 2) No lo encuentra, 3) Busca en BD_actual.dbo.sp_MiProcedimiento, 4) Lo encuentra y ejecuta. Overhead\\: Búsqueda doble en cada ejecución. RECOMENDACIONES\\: Usar usp_ (User Stored Procedure), proc_, o sin prefijo. Ejemplo\\: CREATE PROCEDURE usp_ObtenerClientes AS ... Procedimientos de sistema reales (sp_help, sp_who, sp_helptext) SÍ usan sp_ y están en master.
+}
+
+// [tag:Bloom-Evaluar] [tag:OUTPUT-vs-SELECT] [tag:Retornar-Valores]
+::PF027-Evaluar-OUTPUT-vs-SELECT::¿Cuándo es más apropiado usar parámetros OUTPUT vs. retornar valores con SELECT en un procedimiento?{
+=OUTPUT para valores escalares específicos y tipados; SELECT para conjuntos de resultados o múltiples result sets#¡Correcto! Cada mecanismo tiene casos de uso apropiados según tipo y cantidad de datos.
+~Siempre usar OUTPUT porque es más eficiente que SELECT#Incorrecto. SELECT es apropiado para retornar conjuntos; eficiencia depende del caso.
+~SELECT solo funciona para consultas de lectura, no para valores calculados#Incorrecto. SELECT puede retornar valores calculados o de variables.
+~OUTPUT es obligatorio para retornar más de un valor#Incorrecto. SELECT puede retornar múltiples valores y múltiples result sets.
+####OUTPUT (tipado fuerte, valores específicos)\\: CREATE PROC sp_Stats @ProductoID INT, @Total INT OUTPUT, @Ingresos MONEY OUTPUT AS SELECT @Total \\= SUM(Qty), @Ingresos \\= SUM(Qty*Price) FROM Sales WHERE ProductoID \\= @ProductoID; Uso\\: DECLARE @T INT, @I MONEY; EXEC sp_Stats 101, @T OUT, @I OUT; SELECT (flexible, result sets)\\: CREATE PROC sp_Reporte AS SELECT * FROM Clientes; SELECT * FROM Pedidos; -- Retorna 2 result sets, Ventaja SELECT\\: Cliente puede ignorar valores no necesarios.
+}
+
+// [tag:Bloom-Evaluar] [tag:Recompilacion] [tag:WITH-RECOMPILE]
+::PF028-Evaluar-WITH-RECOMPILE::¿En qué escenario es apropiado usar WITH RECOMPILE en un procedimiento almacenado?{
+=Cuando los parámetros varían significativamente en distribución de datos, causando planes de ejecución subóptimos#¡Correcto! RECOMPILE evita reutilización de planes ineficientes por parameter sniffing.
+~Siempre, para garantizar el mejor plan de ejecución en cada llamada#Incorrecto. Recompilar tiene overhead de compilación; solo usar cuando necesario.
+~Nunca, porque siempre reduce rendimiento#Incorrecto. En casos específicos (parámetros muy variables), mejora rendimiento.
+~Solo cuando el procedimiento tiene más de 100 líneas de código#Incorrecto. La longitud del código no determina necesidad de recompilación.
+####Problema de parameter sniffing\\: CREATE PROC sp_Buscar @Estado VARCHAR(2) AS SELECT * FROM Clientes WHERE Estado \\= @Estado; Primera ejecución\\: EXEC sp_Buscar 'CA'; -- 1M filas, plan con table scan, Ejecuciones siguientes\\: EXEC sp_Buscar 'WY'; -- 100 filas, PERO usa plan de table scan (ineficiente). SOLUCIÓN 1\\: CREATE PROC sp_Buscar @Estado VARCHAR(2) WITH RECOMPILE AS ... SOLUCIÓN 2\\: OPTION(RECOMPILE) en consulta específica. SOLUCIÓN 3\\: OPTION(OPTIMIZE FOR UNKNOWN).
+}
+
+// [tag:Bloom-Evaluar] [tag:Funciones-vs-Procedimientos] [tag:Cuando-Usar]
+::PF029-Evaluar-Funcion-vs-Procedimiento::¿En qué escenario es más apropiado crear una función en lugar de un procedimiento almacenado?{
+=Cuando se necesita usar el resultado dentro de una consulta SELECT, WHERE o JOIN#¡Correcto! Las funciones se pueden incorporar en consultas; procedimientos no.
+~Cuando se necesita modificar múltiples tablas en una transacción#Incorrecto. Para modificaciones usar procedimiento; funciones no pueden modificar datos.
+~Cuando se requiere manejo complejo de errores con TRY-CATCH#Incorrecto. Las funciones NO pueden usar TRY-CATCH; usar procedimiento.
+~Cuando se necesita ejecutar otros procedimientos almacenados#Incorrecto. Las funciones NO pueden ejecutar procedimientos; solo procedimientos pueden.
+####Casos para FUNCIONES\\: 1) Cálculos reutilizables en SELECT\\: SELECT Precio, dbo.fnIVA(Precio), Precio + dbo.fnIVA(Precio) FROM Productos; 2) Constraints calculados\\: CHECK (dbo.fnValidarEmail(Email) \\= 1), 3) Columnas computadas\\: ALTER TABLE ADD Total AS Cantidad * dbo.fnPrecioUnitario(ProductoID); Casos para PROCEDIMIENTOS\\: 1) Modificar datos, 2) Transacciones complejas, 3) TRY-CATCH, 4) Múltiples result sets, 5) Lógica de negocio compleja.
+}
+
+// [tag:Bloom-Evaluar] [tag:Encriptacion] [tag:WITH-ENCRYPTION]
+::PF030-Evaluar-WITH-ENCRYPTION::¿Cuáles son las ventajas y desventajas de usar WITH ENCRYPTION al crear un procedimiento?{
+=Ventaja\\: Protege código fuente de visualización no autorizada. Desventaja\\: No se puede usar sp_helptext; dificulta mantenimiento y debugging#¡Correcto! WITH ENCRYPTION oculta código pero complica soporte.
+~WITH ENCRYPTION mejora el rendimiento del procedimiento significativamente#Incorrecto. La encriptación NO mejora rendimiento; solo oculta código.
+~WITH ENCRYPTION es obligatorio para procedimientos que modifican datos sensibles#Incorrecto. No es obligatorio; es opcional para protección de propiedad intelectual.
+~WITH ENCRYPTION permite que solo el propietario ejecute el procedimiento#Incorrecto. Eso se controla con permisos (GRANT/DENY), no con ENCRYPTION.
+####Ejemplo\\: CREATE PROCEDURE dbo.sp_AlgoritmoPropio WITH ENCRYPTION AS BEGIN -- Código propietario secreto, END; Intentar ver código\\: EXEC sp_helptext 'dbo.sp_AlgoritmoPropio'; -- ERROR\\: "The text for object is encrypted." Ver en sys.syscomments\\: SELECT text FROM sys.syscomments WHERE id \\= OBJECT_ID('dbo.sp_AlgoritmoPropio'); -- Retorna texto encriptado. ADVERTENCIA\\: Hacer backup del código fuente antes de encriptar; no hay forma oficial de desencriptar.
+}
+
+// ==========================================
+// RELACIONAR COLUMNAS (Matching)
+// ==========================================
+
+// [tag:Bloom-Aplicar] [tag:Componentes] [tag:Sintaxis]
+::PF031-Relacionar-Componentes-Sintaxis::Relaciona cada componente de CREATE PROCEDURE con su descripción\\:{
+=CREATE PROCEDURE nombre -> Declara el nombre único del procedimiento almacenado
+=@parametro tipo_dato -> Define un parámetro de entrada con su tipo de dato
+=@parametro OUTPUT -> Define un parámetro que retorna un valor al llamador
+=WITH RECOMPILE -> Fuerza recompilación del plan en cada ejecución
+=WITH ENCRYPTION -> Encripta el texto del procedimiento en syscomments
+=AS BEGIN ... END -> Delimita el cuerpo de instrucciones T-SQL del procedimiento
+####Sintaxis completa\\: CREATE PROCEDURE nombre [@param tipo [\\= default] [OUTPUT]] [WITH RECOMPILE | ENCRYPTION] AS BEGIN sentencias; END; Ejemplo\\: CREATE PROCEDURE usp_Calcular @Entrada INT, @Salida INT OUTPUT WITH RECOMPILE AS BEGIN SET @Salida \\= @Entrada * 2; END;
+}
+
+// [tag:Bloom-Aplicar] [tag:Funciones-Error] [tag:TRY-CATCH]
+::PF032-Relacionar-Funciones-Error::Relaciona cada función de error con la información que retorna en un bloque CATCH\\:{
+=ERROR_NUMBER() -> Retorna el código numérico del error ocurrido
+=ERROR_MESSAGE() -> Retorna el texto descriptivo del mensaje de error
+=ERROR_SEVERITY() -> Retorna el nivel de severidad del error (1-25)
+=ERROR_STATE() -> Retorna el número de estado del error
+=ERROR_LINE() -> Retorna el número de línea donde ocurrió el error
+=ERROR_PROCEDURE() -> Retorna el nombre del procedimiento o función donde ocurrió el error
+####Uso en CATCH\\: BEGIN CATCH PRINT 'Error ' + CAST(ERROR_NUMBER() AS VARCHAR) + ' en línea ' + CAST(ERROR_LINE() AS VARCHAR); PRINT ERROR_MESSAGE(); DECLARE @Severidad INT \\= ERROR_SEVERITY(); IF @Severidad > 16 RAISERROR('Error crítico', 16, 1) WITH LOG; END CATCH;
+}
+
+// [tag:Bloom-Comprender] [tag:Tipos-Objetos] [tag:Diferencias]
+::PF033-Relacionar-Objetos-BD::Relaciona cada objeto de base de datos con su característica principal\\:{
+=Procedimiento almacenado -> Puede modificar datos y ejecutar transacciones complejas
+=Función escalar -> Retorna un único valor y puede usarse en expresiones SELECT
+=Función de tabla inline -> Retorna una tabla y se integra al plan de ejecución como vista
+=Función multi-statement -> Retorna tabla poblada mediante múltiples sentencias INSERT
+=Trigger -> Se ejecuta automáticamente en respuesta a eventos INSERT/UPDATE/DELETE
+=Vista -> Es una consulta SELECT almacenada que se ejecuta dinámicamente
+####Ejemplos\\: Procedimiento\\: EXEC usp_Insertar; Función escalar\\: SELECT dbo.fnIVA(100); Función tabla inline\\: SELECT * FROM dbo.fnClientes('MTY'); Función multi-statement\\: DECLARE @t TABLE(...); INSERT @t ...; RETURN @t; Trigger\\: CREATE TRIGGER tr_AuditInsert ON Clientes FOR INSERT AS ... Vista\\: CREATE VIEW vw_ClientesActivos AS SELECT * FROM Clientes WHERE Activo\\=1;
+}
+
+// [tag:Bloom-Analizar] [tag:Variables-Sistema] [tag:Funciones]
+::PF034-Relacionar-Variables-Sistema::Relaciona cada variable o función del sistema con su propósito\\:{
+=@@ERROR -> Retorna el código de error de la última instrucción ejecutada
+=@@ROWCOUNT -> Retorna el número de filas afectadas por la última instrucción
+=@@IDENTITY -> Retorna el último valor de identidad insertado en la sesión
+=@@TRANCOUNT -> Retorna el nivel de anidamiento de transacciones activas
+=SCOPE_IDENTITY() -> Retorna último valor de identidad en el alcance actual
+=IDENT_CURRENT('tabla') -> Retorna último valor de identidad de una tabla específica
+####Diferencias críticas\\: @@IDENTITY\\: Última identidad en CUALQUIER tabla de la sesión (puede incluir triggers). SCOPE_IDENTITY()\\: Última identidad en alcance actual (procedimiento/batch actual, NO cuenta triggers). IDENT_CURRENT('Tabla')\\: Última identidad en tabla específica (cualquier sesión). Uso recomendado\\: INSERT INTO Clientes ...; SELECT SCOPE_IDENTITY() AS NuevoID; -- Más seguro que @@IDENTITY
+}
+
+// [tag:Bloom-Evaluar] [tag:Mejores-Practicas] [tag:Prefijos]
+::PF035-Relacionar-Prefijos-Convencion::Relaciona cada prefijo de nomenclatura con su uso recomendado\\:{
+=usp_ -> User Stored Procedure (procedimientos de usuario)
+=fn -> Scalar Function (función escalar)
+=tvf_ -> Table-Valued Function (función de tabla)
+=tr_ -> Trigger
+=vw_ -> View (vista)
+=sp_ -> System Procedure (EVITAR para procedimientos de usuario)
+####Convenciones de nomenclatura\\: CREATE PROCEDURE usp_ObtenerClientes; CREATE FUNCTION dbo.fnCalcularDescuento(); CREATE FUNCTION dbo.tvf_ClientesPorCiudad(); CREATE TRIGGER tr_AuditClientes; CREATE VIEW vw_ClientesActivos; EVITAR sp_ para procedimientos de usuario (reservado para sistema, causa búsqueda en master). Beneficios\\: 1) Identificación rápida de tipo de objeto, 2) Organización en listados alfabéticos, 3) Evitar conflictos de nombres, 4) Facilitar mantenimiento.
+}
+
+// ==========================================
+// FIN DEL BANCO DE PREGUNTAS
+// ==========================================
+// Total de preguntas: 35
+// Distribución por taxonomía de Bloom:
+// - Recordar y Comprender (Nivel 1-2): 10 preguntas (PF001-PF010)
+// - Aplicar (Nivel 3-4): 10 preguntas (PF011-PF020)
+// - Analizar y Evaluar (Nivel 5-6): 10 preguntas (PF021-PF030)
+// - Relacionar columnas (Matching): 5 preguntas (PF031-PF035)
+// 
+// Tipos de pregunta:
+// - Opción múltiple simple: 24
+// - Opción múltiple con varias correctas: 6 (con penalización)
+// - Relacionar columnas (Matching): 5
+//
+// Etiquetado implementado:
+// - [tag:Bloom-X] para nivel de Taxonomía de Bloom
+// - [tag:Tema] para tema específico
+// - [tag:Subtema] para aspecto particular
+//
+// Todas las preguntas incluyen retroalimentación detallada con:
+// - Explicaciones de por qué la respuesta es correcta/incorrecta
+// - Ejemplos de código cuando es relevante
+// - Referencias a mejores prácticas
+// - Advertencias sobre errores comunes
+//
+// Cobertura de contenidos:
+// ✓ Procedimientos almacenados (definición, creación, modificación)
+// ✓ Funciones escalares y de tabla
+// ✓ Parámetros INPUT y OUTPUT
+// ✓ Variables locales y su alcance
+// ✓ Control de flujo (IF-ELSE)
+// ✓ Manejo de errores (@@ERROR, RAISERROR, TRY-CATCH)
+// ✓ Transacciones en procedimientos
+// ✓ Mejores prácticas (SET NOCOUNT ON, prefijos, encriptación)
+// ✓ Rendimiento y optimización
+// ✓ Seguridad (SQL injection, permisos)
+// ✓ Triggers (definición, tipos, tablas INSERTED/DELETED)
+// ✓ Triggers AFTER e INSTEAD OF
+// ✓ Triggers INSERT, UPDATE, DELETE
+// ✓ Performance y mejores prácticas de triggers
+
+// ==========================================
+// SECCIÓN: TRIGGERS
+// ==========================================
+
+$CATEGORY: $course$/Unidad 5: Procedimientos y Funciones/Triggers
+
+// ==========================================
+// NIVEL 1-2: RECORDAR Y COMPRENDER (TRIGGERS)
+// ==========================================
+
+// [tag:Bloom-Recordar] [tag:Triggers] [tag:Definicion]
+::TR001-Definicion-Trigger::¿Qué es un trigger en SQL Server?{
+=Un procedimiento almacenado especial que se ejecuta automáticamente en respuesta a eventos INSERT, UPDATE o DELETE en una tabla o vista#¡Correcto! Los triggers son procedimientos que se disparan automáticamente ante operaciones DML.
+~Una función que retorna valores cuando se consulta una tabla#Incorrecto. Esa descripción corresponde a funciones de tabla, no a triggers.
+~Un comando que permite modificar la estructura de una tabla#Incorrecto. Los comandos DDL modifican estructura; los triggers responden a eventos.
+~Un índice especial que mejora el rendimiento de las consultas#Incorrecto. Los índices son diferentes de los triggers.
+####Características principales de triggers\: 1) Se invoca AUTOMÁTICAMENTE (no puede ser llamado directamente), 2) Responde a eventos DML (INSERT, UPDATE, DELETE), 3) Forma parte de la MISMA TRANSACCIÓN que la instrucción que lo disparó, 4) No puede retornar valores como procedimientos almacenados normales. Ejemplo básico\: CREATE TRIGGER tr_AuditarVentas ON Ventas FOR INSERT AS BEGIN INSERT INTO AuditoriaVentas SELECT *, GETDATE() FROM inserted; END;
+}
+
+// [tag:Bloom-Recordar] [tag:Triggers] [tag:Tipos]
+::TR002-Tipos-Triggers::¿Cuáles son los dos tipos principales de triggers según el momento de ejecución en SQL Server?{
+=AFTER (o FOR) triggers que se ejecutan después de la operación, e INSTEAD OF triggers que se ejecutan en lugar de la operación#¡Correcto! SQL Server diferencia triggers por su momento de ejecución relativo a la operación DML.
+~BEFORE triggers y AFTER triggers#Incorrecto. SQL Server NO tiene triggers BEFORE (aunque otros DBMS sí); usa AFTER e INSTEAD OF.
+~SYSTEM triggers y USER triggers#Incorrecto. Esa no es la clasificación principal de triggers en SQL Server.
+~INSERT triggers y DELETE triggers#Incorrecto. Esa clasificación es por tipo de evento, no por momento de ejecución.
+####AFTER (FOR) triggers\: Se ejecutan DESPUÉS de que la operación se completó. Solo pueden definirse en TABLAS. Ejemplo\: CREATE TRIGGER tr_PostInsert ON Productos FOR INSERT AS BEGIN ... END; INSTEAD OF triggers\: Se ejecutan EN LUGAR de la operación original. Pueden definirse en TABLAS o VISTAS. La operación DML original NO se ejecuta. Ejemplo\: CREATE TRIGGER tr_ReemplazarDelete ON VistaClientes INSTEAD OF DELETE AS BEGIN ... END;
+}
+
+// [tag:Bloom-Recordar] [tag:Triggers] [tag:Tablas-Especiales]
+::TR003-Tablas-INSERTED-DELETED::¿Qué son las tablas INSERTED y DELETED en el contexto de triggers?{
+=Tablas temporales especiales que contienen las filas afectadas por la operación DML (nuevas en INSERTED, antiguas en DELETED)#¡Correcto! Son tablas en memoria con la misma estructura que la tabla base.
+~Tablas permanentes del sistema donde SQL Server guarda historial de cambios#Incorrecto. Son tablas TEMPORALES creadas solo durante la ejecución del trigger.
+~Índices especiales que optimizan el rendimiento de los triggers#Incorrecto. No son índices, son tablas temporales con datos.
+~Variables de tipo tabla que el usuario debe crear manualmente#Incorrecto. SQL Server las crea automáticamente.
+####Disponibilidad por operación\: INSERT → INSERTED contiene filas nuevas, DELETED vacía. UPDATE → INSERTED contiene valores nuevos, DELETED contiene valores antiguos. DELETE → DELETED contiene filas eliminadas, INSERTED vacía. Ejemplo\: CREATE TRIGGER tr_AuditUpdate ON Empleados FOR UPDATE AS BEGIN INSERT INTO Auditoria SELECT d.EmpleadoID, d.Salario AS SalarioAntiguo, i.Salario AS SalarioNuevo FROM deleted d INNER JOIN inserted i ON d.EmpleadoID \= i.EmpleadoID; END;
+}
+
+// [tag:Bloom-Recordar] [tag:Triggers] [tag:Sintaxis]
+::TR004-Sintaxis-CREATE-TRIGGER::¿Cuál es la sintaxis básica correcta para crear un trigger en SQL Server?{
+=CREATE TRIGGER nombre ON tabla FOR INSERT|UPDATE|DELETE AS BEGIN sentencias; END;#¡Correcto! CREATE TRIGGER seguido de tabla objetivo, evento y cuerpo BEGIN-END.
+~TRIGGER nombre() ON tabla WHEN INSERT BEGIN sentencias; END;#Incorrecto. T-SQL usa FOR/AFTER/INSTEAD OF, no WHEN.
+~CREATE TRIGGER nombre AS BEGIN sentencias; END; ON tabla;#Incorrecto. ON tabla debe ir antes de FOR/AFTER/INSTEAD OF.
+~DEFINE TRIGGER nombre FOR tabla.INSERT AS sentencias;#Incorrecto. Sintaxis inválida; se usa CREATE TRIGGER.
+####Sintaxis completa\: CREATE TRIGGER nombre ON tabla|vista [WITH ENCRYPTION] FOR|AFTER|INSTEAD OF eventos AS BEGIN sentencias; END; Ejemplo con múltiples eventos\: CREATE TRIGGER tr_MultiEvento ON Productos FOR INSERT, UPDATE AS BEGIN SET NOCOUNT ON; -- código del trigger END;
+}
+
+// [tag:Bloom-Comprender] [tag:Triggers] [tag:Uso-Apropiado]
+::TR005-Cuando-Usar-Triggers::¿Cuándo es apropiado usar triggers? (Seleccione todas las correctas){
+~%25%Cuando se requiere auditoría automática de cambios en datos sensibles#Correcto. Los triggers garantizan que todos los cambios se registren sin importar cómo se modifiquen los datos.
+~%25%Para implementar cascadas complejas no soportadas por FOREIGN KEY CASCADE#Correcto. Los triggers permiten lógica de cascada más compleja que las opciones estándar.
+~%25%Para validar reglas de negocio que involucran múltiples tablas#Correcto. Los triggers pueden verificar condiciones en tablas relacionadas antes de permitir cambios.
+~%25%Para mantener columnas calculadas o datos derivados actualizados automáticamente#Correcto. Los triggers actualizan datos dependientes cuando cambian los datos base.
+~%-100%Para reemplazar completamente las restricciones CHECK y FOREIGN KEY#Incorrecto. Se deben PREFERIR constraints cuando sea posible; los triggers son para casos más complejos.
+~%-100%Como primera opción para cualquier validación de datos#Incorrecto. Las constraints son más eficientes y declarativas; los triggers son para casos que las constraints no pueden manejar.
+####Preferencias de implementación (orden)\: 1) CONSTRAINTS (PRIMARY KEY, FOREIGN KEY, CHECK, UNIQUE) - más eficientes y declarativas, 2) DEFAULT values y computed columns - para valores automáticos simples, 3) TRIGGERS - solo cuando constraints no son suficientes. Ejemplo apropiado\: Trigger para prevenir eliminación de clientes con pedidos activos cuando la relación no puede manejarse con FK CASCADE.
+}
+
+// [tag:Bloom-Comprender] [tag:Triggers] [tag:AFTER-vs-INSTEAD-OF]
+::TR006-AFTER-vs-INSTEAD-OF::¿Cuáles son las diferencias entre triggers AFTER e INSTEAD OF? (Seleccione todas las correctas){
+~%20%AFTER se ejecuta después de la operación DML; INSTEAD OF se ejecuta en lugar de ella#Correcto. Diferencia fundamental en el momento y comportamiento de ejecución.
+~%20%AFTER solo en tablas; INSTEAD OF en tablas o vistas#Correcto. INSTEAD OF es especialmente útil para hacer vistas actualizables.
+~%20%La operación DML se ejecuta con AFTER; NO se ejecuta con INSTEAD OF#Correcto. Con INSTEAD OF el trigger debe implementar toda la lógica.
+~%20%Pueden existir múltiples AFTER por evento; solo un INSTEAD OF por evento#Correcto. Restricción de SQL Server para INSTEAD OF.
+~%20%INSTEAD OF no puede combinarse con CASCADE en foreign keys#Correcto. Restricción de compatibilidad en SQL Server.
+~%-100%AFTER es más rápido que INSTEAD OF en todos los casos#Incorrecto. El rendimiento depende de la lógica implementada, no del tipo de trigger.
+~%-100%Solo INSTEAD OF puede acceder a las tablas INSERTED y DELETED#Incorrecto. Ambos tipos tienen acceso a estas tablas especiales.
+####Ejemplo AFTER\: CREATE TRIGGER tr_After_Insert ON Prestamos FOR INSERT AS UPDATE Libros SET EnPrestamo \= 'S' FROM Libros L INNER JOIN inserted i ON L.ISBN \= i.ISBN; Ejemplo INSTEAD OF\: CREATE TRIGGER tr_Instead_Delete ON VistaClientes INSTEAD OF DELETE AS BEGIN DELETE Pedidos WHERE ClienteID IN (SELECT ClienteID FROM deleted); DELETE Clientes WHERE ClienteID IN (SELECT ClienteID FROM deleted); END;
+}
+
+// [tag:Bloom-Comprender] [tag:Triggers] [tag:Tablas-Especiales]
+::TR007-Disponibilidad-INSERTED-DELETED::Según el tipo de operación DML, ¿cuándo están disponibles las tablas INSERTED y DELETED?{
+=INSERT\: INSERTED contiene nuevas filas, DELETED vacía | UPDATE\: ambas disponibles (DELETED\=antiguos, INSERTED\=nuevos) | DELETE\: DELETED contiene filas eliminadas, INSERTED vacía#¡Correcto! La disponibilidad depende del tipo de operación DML.
+~INSERT\: ambas disponibles | UPDATE\: solo INSERTED | DELETE\: solo DELETED#Incorrecto. En INSERT la tabla DELETED está vacía, y en UPDATE ambas están disponibles.
+~Las dos tablas siempre están disponibles con el mismo contenido#Incorrecto. Su contenido depende del tipo de operación.
+~Solo INSERTED está disponible en todos los casos#Incorrecto. DELETED también está disponible en UPDATE y DELETE.
+####Tabla de disponibilidad\: | Operación | INSERTED | DELETED | |-----------|----------|----------| | INSERT | ✓ Nuevas filas | ✗ Vacía | | UPDATE | ✓ Valores nuevos | ✓ Valores antiguos | | DELETE | ✗ Vacía | ✓ Filas eliminadas | Ejemplo UPDATE\: SELECT i.Salario - d.Salario AS Incremento FROM inserted i INNER JOIN deleted d ON i.EmpleadoID \= d.EmpleadoID;
+}
+
+// [tag:Bloom-Comprender] [tag:Triggers] [tag:Transacciones]
+::TR008-Triggers-Transacciones::¿Qué relación tienen los triggers con las transacciones?{
+=El código del trigger y la instrucción que lo disparó forman parte de la MISMA transacción; un ROLLBACK en el trigger deshace todo#¡Correcto! Los triggers son transaccionales por naturaleza.
+~Los triggers siempre crean una nueva transacción independiente#Incorrecto. Los triggers NO crean transacciones nuevas; se unen a la existente.
+~Los triggers no pueden usar ROLLBACK TRANSACTION#Incorrecto. Los triggers SÍ pueden hacer ROLLBACK, lo que deshace todo incluida la operación original.
+~Cada trigger se ejecuta en una transacción separada del INSERT/UPDATE/DELETE#Incorrecto. Comparten la misma transacción.
+####Ejemplo de validación con ROLLBACK\: CREATE TRIGGER tr_ValidarStock ON Ventas FOR INSERT AS BEGIN IF EXISTS (SELECT 1 FROM inserted i INNER JOIN Inventario inv ON i.ProductoID \= inv.ProductoID WHERE inv.Stock < i.Cantidad) BEGIN RAISERROR('Stock insuficiente', 16, 1); ROLLBACK TRANSACTION; -- Deshace el INSERT y todo en la transacción RETURN; END; -- Si pasa validación, actualizar stock UPDATE inv SET Stock \= Stock - i.Cantidad FROM Inventario inv INNER JOIN inserted i ON inv.ProductoID \= i.ProductoID; END;
+}
+
+// ==========================================
+// NIVEL 3-4: APLICAR (TRIGGERS)
+// ==========================================
+
+// [tag:Bloom-Aplicar] [tag:Triggers] [tag:INSERT-Trigger]
+::TR009-Implementar-INSERT-Trigger::Dado el siguiente escenario de biblioteca cuando se registra un préstamo en la tabla 'loan', automáticamente marcar el libro como prestado (on_loan\='Y') en la tabla 'copy'. ¿Cuál es la implementación correcta?{
+=CREATE TRIGGER loan_insert ON loan FOR INSERT AS BEGIN UPDATE c SET on_loan\\='Y' FROM copy c INNER JOIN inserted i ON c.isbn\\=i.isbn AND c.copy_no\\=i.copy_no; END;#¡Correcto! Join con INSERTED para obtener las filas insertadas y actualizar las copias correspondientes.
+~CREATE TRIGGER loan_insert ON loan FOR INSERT AS BEGIN UPDATE copy SET on_loan\\='Y' WHERE isbn\\=(SELECT isbn FROM inserted); END;#Incorrecto. Esta sintaxis solo funcionaría si inserted tuviera UNA fila; debe procesarse como conjunto.
+~CREATE TRIGGER loan_insert ON loan AFTER INSERT AS BEGIN UPDATE copy SET on_loan\\='Y'; END;#Incorrecto. Esto marcaría TODAS las copias como prestadas, no solo las involucradas en el INSERT.
+~CREATE TRIGGER loan_insert ON copy FOR INSERT AS BEGIN UPDATE loan SET on_loan\\='Y' FROM inserted; END;#Incorrecto. El trigger debe estar en la tabla loan, no en copy, y la lógica está invertida.
+####Proceso completo - 1) Usuario ejecuta INSERT INTO loan con valores, 2) SQL Server copia la fila insertada a la tabla INSERTED, 3) El trigger se ejecuta hace JOIN entre copy e inserted para identificar qué copia fue prestada, 4) Actualiza on_loan solo para esa copia específica. Visualización - INSERTED contiene filas nuevas, luego JOIN, luego UPDATE copy para las copias correspondientes.
+}
+
+// [tag:Bloom-Aplicar] [tag:Triggers] [tag:DELETE-Trigger]
+::TR010-Implementar-DELETE-Trigger::Para implementar un trigger que al devolver un libro (eliminar de 'loan') marque el libro como disponible (on_loan\='N') en 'copy' cuál es el código correcto?{
+=CREATE TRIGGER loan_delete ON loan FOR DELETE AS BEGIN UPDATE c SET on_loan\\='N' FROM copy c INNER JOIN deleted d ON c.isbn\\=d.isbn AND c.copy_no\\=d.copy_no; END;#¡Correcto! Join con DELETED (contiene filas eliminadas) para actualizar las copias correspondientes.
+~CREATE TRIGGER loan_delete ON loan FOR DELETE AS BEGIN UPDATE copy SET on_loan\\='N' FROM inserted; END;#Incorrecto. En DELETE la tabla INSERTED está vacía; debe usar DELETED.
+~CREATE TRIGGER loan_delete ON copy FOR DELETE AS BEGIN UPDATE loan SET on_loan\\='N'; END;#Incorrecto. El trigger debe estar en loan, no en copy, y la lógica está invertida.
+~CREATE TRIGGER loan_delete ON loan FOR DELETE AS BEGIN UPDATE c SET on_loan\\='N' FROM copy c WHERE c.isbn IN (SELECT isbn FROM loan); END;#Incorrecto. Esto marcaría como disponibles copias que aún tienen otros préstamos; debe usar DELETED.
+####Diferencia clave INSERT vs DELETE\: INSERT usa tabla INSERTED (filas nuevas), DELETE usa tabla DELETED (filas eliminadas). Proceso\: 1) Usuario ejecuta\: DELETE FROM loan WHERE isbn\='4' AND copy_no\=1; 2) SQL Server copia fila eliminada a DELETED, 3) Trigger hace JOIN entre copy y deleted, 4) Actualiza on_loan\='N'. Tabla DELETED\: |isbn|copy_no|member_no|...| |4|1|123|...| → UPDATE copy SET on_loan\='N' WHERE isbn\='4' AND copy_no\=1.
+}
+
+// [tag:Bloom-Aplicar] [tag:Triggers] [tag:UPDATE-Trigger]
+::TR011-Trigger-UPDATE-Validacion::Para prevenir que se modifique el número de miembro (member_no) en la tabla 'member', ¿cuál trigger es correcto?{
+=CREATE TRIGGER member_update ON member FOR UPDATE AS BEGIN IF UPDATE(member_no) BEGIN RAISERROR('No se puede modificar member_no',16,1); ROLLBACK; END; END;#¡Correcto! UPDATE(columna) detecta si se intentó modificar esa columna, RAISERROR notifica y ROLLBACK revierte.
+~CREATE TRIGGER member_update ON member FOR UPDATE AS BEGIN IF member_no IS NULL BEGIN ROLLBACK; END; END;#Incorrecto. Esta condición verifica NULL, no cambios en member_no.
+~CREATE TRIGGER member_update ON member INSTEAD OF UPDATE AS BEGIN UPDATE member SET member_no\\=member_no FROM inserted; END;#Incorrecto. Esto reemplazaría el UPDATE pero no previene el cambio de member_no.
+~CREATE TRIGGER member_update ON member FOR UPDATE AS BEGIN IF EXISTS(SELECT * FROM inserted) ROLLBACK; END;#Incorrecto. Esto revertiría CUALQUIER UPDATE, no solo cambios en member_no.
+####Función UPDATE(columna)\: Retorna TRUE si la columna fue incluida en la instrucción UPDATE (incluso si el valor no cambió). Ejemplo\: UPDATE member SET lastname\='Smith' WHERE member_no\=123; → UPDATE(member_no) retorna FALSE. UPDATE member SET member_no\=456 WHERE member_no\=123; → UPDATE(member_no) retorna TRUE, trigger dispara error. UPDATE en triggers\: tabla DELETED contiene valores ANTIGUOS, tabla INSERTED contiene valores NUEVOS.
+}
+
+// [tag:Bloom-Aplicar] [tag:Triggers] [tag:Auditoria]
+::TR012-Trigger-Auditoria-Completa::¿Cuál trigger implementa correctamente auditoría para INSERT, UPDATE y DELETE en la tabla 'employees'?{
+=CREATE TRIGGER emp_audit ON employees FOR INSERT,UPDATE,DELETE AS BEGIN INSERT INTO audit SELECT COALESCE(i.emp_id,d.emp_id), CASE WHEN i.emp_id IS NOT NULL AND d.emp_id IS NOT NULL THEN 'UPDATE' WHEN i.emp_id IS NOT NULL THEN 'INSERT' ELSE 'DELETE' END, GETDATE() FROM inserted i FULL OUTER JOIN deleted d ON i.emp_id\\=d.emp_id; END;#¡Correcto! FULL OUTER JOIN cubre los 3 casos; COALESCE obtiene ID de la tabla disponible; CASE determina operación.
+~CREATE TRIGGER emp_audit ON employees FOR INSERT,UPDATE,DELETE AS BEGIN INSERT INTO audit SELECT *, 'CHANGE' FROM inserted; END;#Incorrecto. Solo captura INSERT y UPDATE (inserted vacía en DELETE), no distingue operación.
+~CREATE TRIGGER emp_audit ON employees FOR INSERT AS BEGIN INSERT INTO audit SELECT *, 'INSERT' FROM inserted; END;#Incorrecto. Solo maneja INSERT; se necesita un trigger por cada operación o uno combinado.
+~CREATE TRIGGER emp_audit ON employees FOR INSERT,UPDATE,DELETE AS BEGIN INSERT INTO audit VALUES(1, 'CHANGE', GETDATE()); END;#Incorrecto. No captura información de las filas afectadas.
+####Explicación lógica\: FULL OUTER JOIN entre inserted y deleted garantiza capturar todas las filas sin importar la operación. INSERT\: solo inserted tiene datos (i.emp_id NOT NULL, d.emp_id NULL). UPDATE\: ambas tienen datos (i.emp_id NOT NULL, d.emp_id NOT NULL). DELETE\: solo deleted tiene datos (i.emp_id NULL, d.emp_id NOT NULL). COALESCE(i.emp_id, d.emp_id) obtiene el ID de la tabla que tenga datos.
+}
+
+// [tag:Bloom-Aplicar] [tag:Triggers] [tag:INSTEAD-OF]
+::TR013-INSTEAD-OF-Vista::Para permitir eliminar desde una vista que une tablas 'tabla_1' y 'tabla_2', ¿cuál es la implementación correcta de trigger INSTEAD OF?{
+=CREATE TRIGGER del_vista ON vista_union INSTEAD OF DELETE AS BEGIN DELETE FROM tabla_1 WHERE a IN (SELECT a1 FROM deleted); DELETE FROM tabla_2 WHERE a IN (SELECT a2 FROM deleted); END;#¡Correcto! INSTEAD OF DELETE permite eliminar de ambas tablas base cuando se ejecuta DELETE en la vista.
+~CREATE TRIGGER del_vista ON vista_union FOR DELETE AS BEGIN DELETE FROM tabla_1; DELETE FROM tabla_2; END;#Incorrecto. FOR (AFTER) no funciona en vistas; además, eliminaría TODAS las filas, no solo las especificadas.
+~CREATE TRIGGER del_vista ON vista_union INSTEAD OF DELETE AS BEGIN SELECT * FROM deleted; END;#Incorrecto. Solo consulta las filas eliminadas; no realiza eliminación real de tablas base.
+~CREATE TRIGGER del_vista ON tabla_1 INSTEAD OF DELETE AS BEGIN DELETE FROM vista_union; END;#Incorrecto. El trigger debe estar EN LA VISTA, no en tabla_1, y la lógica está invertida.
+####Razón de INSTEAD OF\: Las vistas que unen múltiples tablas NO son actualizables directamente. Sin trigger\: DELETE FROM vista_union → Error. Con trigger INSTEAD OF\: DELETE FROM vista_union WHERE a1\=100; → 1) SQL Server NO ejecuta el DELETE original, 2) Trigger se ejecuta, 3) Trigger elimina de tabla_1 y tabla_2 usando información de DELETED. Tabla deleted contiene las filas de la vista que se intentaron eliminar\: |a1|b|c|a2|message|.
+}
+
+// [tag:Bloom-Aplicar] [tag:Triggers] [tag:Validacion-Compleja]
+::TR014-Validar-Regla-Negocio::Un empleado no puede tener más de 3 proyectos activos. ¿Cuál trigger valida correctamente esta regla?{
+=CREATE TRIGGER tr_LimiteProyectos ON emp_proyectos FOR INSERT,UPDATE AS BEGIN IF EXISTS(SELECT emp_id FROM emp_proyectos WHERE status\\='Activo' GROUP BY emp_id HAVING COUNT(*)>3) BEGIN RAISERROR('Máximo 3 proyectos activos',16,1); ROLLBACK; END; END;#¡Correcto! Cuenta proyectos activos por empleado después del INSERT/UPDATE y revierte si excede 3.
+~CREATE TRIGGER tr_LimiteProyectos ON emp_proyectos FOR INSERT AS BEGIN IF (SELECT COUNT(*) FROM inserted)>3 ROLLBACK; END;#Incorrecto. Cuenta filas insertadas en una transacción, no proyectos totales por empleado.
+~CREATE TRIGGER tr_LimiteProyectos ON emp_proyectos FOR INSERT AS BEGIN IF EXISTS(SELECT * FROM emp_proyectos WHERE status\\='Activo') ROLLBACK; END;#Incorrecto. Revertiría cualquier INSERT si hay proyectos activos, sin validar el límite de 3.
+~CREATE TRIGGER tr_LimiteProyectos ON empleados FOR UPDATE AS BEGIN UPDATE emp_proyectos SET status\\='Inactivo' WHERE emp_id IN (SELECT emp_id FROM inserted); END;#Incorrecto. El trigger está en tabla equivocada y la lógica no valida el límite, solo desactiva proyectos.
+####Lógica del trigger\: 1) INSERT o UPDATE se ejecuta en emp_proyectos, 2) Trigger cuenta proyectos activos por empleado en TODA la tabla (incluye nuevos de inserted), 3) Si algún empleado tiene >3 activos, RAISERROR y ROLLBACK deshacen el cambio. Validación debe hacerse DESPUÉS de la operación (FOR/AFTER) para contar el estado resultante. Ejemplo\: Empleado 100 tiene 3 proyectos activos → INSERT proyecto 4 → Trigger cuenta 4 → Error y ROLLBACK.
+}
+
+// [tag:Bloom-Aplicar] [tag:Triggers] [tag:Cascada]
+::TR015-Trigger-Eliminacion-Cascada::Para eliminar automáticamente reservas cuando se registra un préstamo del mismo libro para el mismo miembro, ¿cuál es el trigger correcto?{
+=CREATE TRIGGER tr_EliminarReserva ON loan FOR INSERT AS BEGIN DELETE r FROM reservation r INNER JOIN inserted i ON r.member_no\\=i.member_no AND r.isbn\\=i.isbn; END;#¡Correcto! Al insertar préstamo, elimina reservas coincidentes usando JOIN con inserted.
+~CREATE TRIGGER tr_EliminarReserva ON reservation FOR DELETE AS BEGIN DELETE FROM loan WHERE isbn IN (SELECT isbn FROM deleted); END;#Incorrecto. El trigger debe estar en loan (dispara al prestar), no en reservation, y la lógica está invertida.
+~CREATE TRIGGER tr_EliminarReserva ON loan FOR INSERT AS BEGIN DELETE FROM reservation; END;#Incorrecto. Esto eliminaría TODAS las reservas, no solo las del libro prestado.
+~CREATE TRIGGER tr_EliminarReserva ON loan INSTEAD OF INSERT AS BEGIN INSERT INTO loan SELECT * FROM inserted; END;#Incorrecto. INSTEAD OF no es apropiado aquí; además, no elimina reservas.
+####Escenario completo\: Usuario ejecuta\: INSERT INTO loan (isbn, member_no, ...) VALUES ('978-1234', 101, ...); Tablas antes\: reservation |isbn|member_no| → |978-1234|101|. Proceso\: 1) INSERT se ejecuta → fila en loan, fila en inserted, 2) Trigger se ejecuta, 3) JOIN encuentra match entre reservation e inserted, 4) DELETE elimina la reserva. Resultado\: Préstamo registrado Y reserva eliminada automáticamente.
+}
+
+// ==========================================
+// NIVEL 5-6: ANALIZAR Y EVALUAR (TRIGGERS)
+// ==========================================
+
+// [tag:Bloom-Analizar] [tag:Triggers] [tag:Performance]
+::TR016-Performance-Triggers::¿Cuáles son los factores que afectan el rendimiento de los triggers? (Seleccione todas las correctas){
+~%20%Número de tablas referenciadas en JOINs dentro del trigger#Correcto. Más JOINs aumentan tiempo de ejecución; los índices en columnas de JOIN son críticos.
+~%20%Número de filas afectadas por la operación DML#Correcto. Los triggers procesan conjuntos; más filas \= mayor tiempo (aunque eficiente con operaciones de conjunto).
+~%20%Complejidad de la lógica implementada (subconsultas, cursores, etc.)#Correcto. Lógica innecesariamente compleja degrada rendimiento; preferir operaciones de conjunto.
+~%20%Uso de cursores fila-por-fila en lugar de operaciones de conjunto#Correcto. Cursores en triggers son muy ineficientes; siempre procesar inserted/deleted como conjuntos.
+~%20%Las tablas INSERTED y DELETED están en caché de memoria (factor positivo)#Correcto. Aspecto que MEJORA rendimiento; acceso a estas tablas es muy rápido.
+~%-100%Los triggers siempre son más lentos que constraints sin excepción#Incorrecto. Si bien constraints son preferibles cuando aplican, triggers bien diseñados pueden ser eficientes.
+~%-100%La cantidad de código en líneas determina el rendimiento#Incorrecto. La eficiencia depende de las operaciones, no de la cantidad de líneas.
+####Comparación rendimiento\: ❌ LENTO (cursor)\: DECLARE cur CURSOR FOR SELECT * FROM inserted; OPEN cur; FETCH... WHILE @@FETCH_STATUS\=0 BEGIN UPDATE... FETCH... END; ✅ RÁPIDO (conjunto)\: UPDATE tabla SET columna\=valor FROM tabla INNER JOIN inserted i ON tabla.id\=i.id; Mejores prácticas\: 1) Usar índices en columnas de JOIN, 2) Evitar cursores, 3) Minimizar lógica compleja, 4) Usar EXISTS en lugar de COUNT(*).
+}
+
+// [tag:Bloom-Analizar] [tag:Triggers] [tag:Diseno-Conjunto]
+::TR017-Diseno-Conjuntos-vs-Filas::¿Por qué es crítico diseñar triggers para procesar conjuntos de filas en lugar de filas individuales?{
+=Los triggers se ejecutan UNA VEZ por transacción, no por fila; una operación puede insertar/actualizar/eliminar múltiples filas simultáneamente#¡Correcto! Si el trigger asume una fila, fallará o producirá resultados incorrectos con operaciones multi-fila.
+~SQL Server requiere sintaxis especial para procesar múltiples filas en triggers#Incorrecto. SQL Server procesa conjuntos naturalmente; el problema es asumir una sola fila.
+~Las tablas INSERTED y DELETED solo pueden almacenar una fila a la vez#Incorrecto. Estas tablas pueden contener múltiples filas (todas las afectadas).
+~Es solo una recomendación de rendimiento sin impacto funcional#Incorrecto. Tiene impacto FUNCIONAL; un trigger diseñado para una fila puede producir errores o resultados incorrectos.
+####Ejemplo de error común\: ❌ INCORRECTO\: CREATE TRIGGER tr_Error ON ventas FOR INSERT AS BEGIN DECLARE @prod_id INT; SELECT @prod_id \= producto_id FROM inserted; -- ¡Solo toma UNA fila! UPDATE inventario SET stock \= stock - 1 WHERE producto_id \= @prod_id; END; Problema\: Si se insertan 10 ventas, solo procesa 1. ✅ CORRECTO\: CREATE TRIGGER tr_Correcto ON ventas FOR INSERT AS BEGIN UPDATE inv SET stock \= stock - i.cantidad FROM inventario inv INNER JOIN inserted i ON inv.producto_id \= i.producto_id; END; Solución\: JOIN procesa TODAS las filas de inserted.
+}
+
+// [tag:Bloom-Evaluar] [tag:Triggers] [tag:Triggers-vs-Constraints]
+::TR018-Cuando-Preferir-Constraints::En los siguientes escenarios, ¿cuándo se debe preferir constraints en lugar de triggers? (Seleccione todas las correctas){
+~%25%Validar que una columna de email tenga formato específico#Correcto. CHECK constraint con patrón es más eficiente\: CHECK (email LIKE '%@%.%').
+~%25%Garantizar unicidad de una columna#Correcto. UNIQUE constraint es declarativo y más eficiente que trigger.
+~%25%Establecer relación padre-hijo con eliminación en cascada#Correcto. FOREIGN KEY con ON DELETE CASCADE es preferible.
+~%25%Asignar valor por defecto a una columna al insertar#Correcto. DEFAULT constraint es más simple y eficiente.
+~%-100%Auditar todos los cambios registrando quién, cuándo y qué cambió#Incorrecto. Esto requiere lógica compleja que constraints no pueden manejar; se necesita trigger.
+~%-100%Validar que un empleado no tenga más de 3 proyectos activos (requiere consulta)#Incorrecto. Esta validación requiere agregación; constraints simples no pueden hacerlo; se necesita trigger.
+~%-100%Actualizar automáticamente la fecha de última modificación de un cliente cuando cambia#Incorrecto. Aunque podría usarse DEFAULT con GETDATE(), actualizar en UPDATE requiere trigger.
+####Orden de preferencia\: 1) CONSTRAINTS → Integridad declarativa (PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, DEFAULT). 2) COMPUTED COLUMNS → Derivaciones simples. 3) TRIGGERS → Validaciones complejas multi-tabla, auditoría, cascadas complejas. Ventajas constraints\: Más rápidos, verificados antes de triggers, sintaxis declarativa clara, mejor optimización.
+}
+
+// [tag:Bloom-Evaluar] [tag:Triggers] [tag:Recursividad]
+::TR019-Triggers-Recursivos::¿Qué problema pueden causar los triggers recursivos y cómo se controlan?{
+=Un trigger puede activarse a sí mismo indirectamente causando bucle infinito; se controla con ALTER DATABASE SET RECURSIVE_TRIGGERS OFF#¡Correcto! La recursividad puede causar bucles; SQL Server permite deshabilitarla a nivel de base de datos.
+~Los triggers recursivos siempre mejoran el rendimiento al reutilizar código#Incorrecto. La recursividad generalmente es NO deseada y puede causar problemas graves.
+~SQL Server previene automáticamente cualquier recursión en triggers#Incorrecto. Por defecto RECURSIVE_TRIGGERS puede estar ON; debe verificarse y configurarse.
+~Los triggers no pueden ser recursivos bajo ninguna circunstancia#Incorrecto. Sí pueden ser recursivos si la configuración lo permite (aunque no es recomendable).
+####Ejemplo de recursividad\: CREATE TRIGGER tr_UpdateA ON TablaA FOR UPDATE AS UPDATE TablaB SET valor \= valor + 1; CREATE TRIGGER tr_UpdateB ON TablaB FOR UPDATE AS UPDATE TablaA SET valor \= valor + 1; Resultado\: UPDATE TablaA → trigger A actualiza B → trigger B actualiza A → trigger A actualiza B → ... BUCLE INFINITO. Solución\: ALTER DATABASE MiDB SET RECURSIVE_TRIGGERS OFF; Verificar\: SELECT is_recursive_triggers_on FROM sys.databases WHERE name\='MiDB';
+}
+
+// [tag:Bloom-Evaluar] [tag:Triggers] [tag:Debugging]
+::TR020-Manejo-Errores-Triggers::¿Cuál es la mejor práctica para manejar errores en triggers?{
+=Usar TRY-CATCH, registrar error en tabla de log, ROLLBACK TRANSACTION, y re-lanzar con THROW#¡Correcto! Manejo estructurado de errores con registro y propagación.
+~No manejar errores; dejar que SQL Server los procese automáticamente#Incorrecto. Sin manejo, los errores pueden no registrarse adecuadamente y dificultar debugging.
+~Usar solo RAISERROR sin ROLLBACK para no afectar la transacción#Incorrecto. Si hay error, generalmente se debe revertir la transacción completa.
+~Capturar errores con @@ERROR y continuar procesamiento normal#Incorrecto. @@ERROR se resetea rápidamente; TRY-CATCH es más robusto.
+####Patrón recomendado\: CREATE TRIGGER tr_ConManejoErrores ON tabla_critica FOR UPDATE AS BEGIN SET NOCOUNT ON; BEGIN TRY -- Lógica del trigger IF (condición_error) BEGIN RAISERROR('Mensaje descriptivo', 16, 1); ROLLBACK TRANSACTION; RETURN; END; -- Más lógica... END TRY BEGIN CATCH -- Registrar error INSERT INTO error_log (error_msg, error_date, trigger_name) VALUES (ERROR_MESSAGE(), GETDATE(), 'tr_ConManejoErrores'); ROLLBACK TRANSACTION; THROW; -- Re-lanzar para que aplicación lo detecte END CATCH END; Componentes\: TRY-CATCH captura errores, INSERT registra para auditoría, ROLLBACK deshace cambios, THROW propaga error.
+}
+
+// [tag:Bloom-Evaluar] [tag:Triggers] [tag:Mejores-Practicas]
+::TR021-Mejores-Practicas-Triggers::¿Cuáles son mejores prácticas al implementar triggers? (Seleccione todas las correctas){
+~%16%Usar SET NOCOUNT ON al inicio para evitar mensajes innecesarios de filas afectadas#Correcto. Mejora rendimiento ligeramente y evita ruido en output.
+~%16%Documentar claramente el propósito, tablas afectadas y lógica del trigger#Correcto. Los triggers son "invisibles" en el código de aplicación; documentación es crítica.
+~%16%Validar existencia de datos en INSERTED/DELETED antes de procesar#Correcto. En triggers multi-evento (INSERT,UPDATE,DELETE) es esencial detectar qué operación ocurrió.
+~%16%Limitar lógica compleja; preferir operaciones de conjunto sobre cursores#Correcto. La eficiencia de triggers depende de diseño orientado a conjuntos.
+~%16%Probar exhaustivamente con operaciones multi-fila, no solo inserts de una fila#Correcto. Los triggers deben funcionar correctamente con 1 o 1000 filas.
+~%16%Evitar triggers recursivos mediante configuración RECURSIVE_TRIGGERS OFF#Correcto. Previene bucles infinitos accidentales.
+~%-100%Usar WITH ENCRYPTION en todos los triggers para mayor seguridad#Incorrecto. Encryption dificulta mantenimiento; solo usar cuando sea estrictamente necesario.
+~%-100%Crear triggers para todas las tablas de la base de datos#Incorrecto. Solo usar triggers cuando sean realmente necesarios; no por default.
+####Documentación recomendada\: /* Trigger\: tr_AuditarVentas Tabla\: Ventas Evento\: FOR INSERT, UPDATE Descripción\: Registra todas las ventas en tabla de auditoría con usuario y fecha Tablas afectadas\: AuditoriaVentas Autor\: [Nombre] Fecha creación\: 2025-12-01 Última modificación\: 2025-12-15 - Agregada validación de stock */ CREATE TRIGGER tr_AuditarVentas ON Ventas FOR INSERT, UPDATE AS BEGIN...
+}
+
+// ==========================================
+// RELACIONAR COLUMNAS (TRIGGERS)
+// ==========================================
+
+// [tag:Bloom-Aplicar] [tag:Triggers] [tag:Sintaxis-Componentes]
+::TR022-Relacionar-Sintaxis-Triggers::Relacione cada componente de sintaxis con su descripción.{
+=CREATE TRIGGER nombre -> Declara el inicio de definición del trigger
+=ON tabla_o_vista -> Especifica sobre qué objeto se define el trigger
+=FOR | AFTER -> Indica que el trigger se ejecuta después de la operación
+=INSTEAD OF -> Indica que el trigger se ejecuta en lugar de la operación
+=INSERT | UPDATE | DELETE -> Define qué eventos DML disparan el trigger
+=WITH ENCRYPTION -> Encripta el código del trigger en catálogos del sistema
+####Sintaxis completa\: CREATE TRIGGER nombre ON objeto [WITH ENCRYPTION] FOR|AFTER|INSTEAD OF eventos AS BEGIN sentencias; END; Ejemplo\: CREATE TRIGGER tr_Ejemplo ON MiTabla WITH ENCRYPTION FOR INSERT, UPDATE AS BEGIN SET NOCOUNT ON; -- código END;
+}
+
+// [tag:Bloom-Comprender] [tag:Triggers] [tag:Tipos-Operaciones]
+::TR023-Relacionar-Tablas-Especiales::Relacione el tipo de operación con el contenido de las tablas INSERTED y DELETED.{
+=INSERT -> INSERTED contiene nuevas filas | DELETED vacía
+=UPDATE -> INSERTED contiene valores nuevos | DELETED contiene valores antiguos
+=DELETE -> INSERTED vacía | DELETED contiene filas eliminadas
+####Visualización\: INSERT\: User → INSERT INTO tabla → [INSERTED\: nuevas filas] [DELETED\: vacía] → Trigger. UPDATE\: User → UPDATE tabla → [INSERTED\: nuevos valores] [DELETED\: antiguos valores] → Trigger. DELETE\: User → DELETE FROM tabla → [INSERTED\: vacía] [DELETED\: filas eliminadas] → Trigger. UPDATE internamente\: Un UPDATE es DELETE + INSERT; por eso ambas tablas están disponibles.
+}
+
+// [tag:Bloom-Aplicar] [tag:Triggers] [tag:Funciones-Sistema]
+::TR024-Relacionar-Funciones-Triggers::Relacione cada función o característica con su uso en triggers.{
+=UPDATE(columna) -> Detecta si una columna específica fue modificada en UPDATE
+=COLUMNS_UPDATED() -> Retorna bitmask de columnas actualizadas
+=RAISERROR() -> Lanza error personalizado con mensaje
+=ROLLBACK TRANSACTION -> Deshace la transacción incluyendo la operación que disparó el trigger
+=@@ROWCOUNT -> Retorna número de filas afectadas por la última instrucción
+=SET NOCOUNT ON -> Suprime mensajes de conteo de filas afectadas
+####Ejemplos de uso\: IF UPDATE(Salario) → Detecta cambios en columna Salario. IF (COLUMNS_UPDATED() & 4) > 0 → Detecta cambio en 3ra columna (bitmask). RAISERROR('Stock insuficiente', 16, 1) → Error personalizado severidad 16. ROLLBACK TRANSACTION → Deshace todo incluido INSERT/UPDATE/DELETE original. IF @@ROWCOUNT \= 0 RETURN → Sale si no hay filas afectadas. SET NOCOUNT ON → Primera línea recomendada en triggers.
+}
+
+// [tag:Bloom-Evaluar] [tag:Triggers] [tag:Casos-Uso]
+::TR025-Relacionar-Escenarios-Soluciones::Relacione cada escenario con la solución más apropiada.{
+=Validar formato de email -> CHECK constraint con LIKE
+=Auditar todos los cambios en tabla sensible -> Trigger FOR INSERT, UPDATE, DELETE con registro en tabla de auditoría
+=Garantizar relación padre-hijo con eliminación en cascada -> FOREIGN KEY constraint con ON DELETE CASCADE
+=Actualizar automáticamente stock al registrar venta -> Trigger FOR INSERT en tabla de ventas que actualiza inventario
+=Hacer vista multi-tabla actualizable -> Trigger INSTEAD OF en la vista
+=Prevenir eliminación si existen registros relacionados -> Trigger FOR DELETE con validación y ROLLBACK
+####Análisis de selección\: CHECK constraint\: Validaciones simples de formato/rango en una columna. FOREIGN KEY\: Relaciones estándar entre tablas. Trigger AFTER/FOR\: Auditoría, actualizaciones cascada complejas, validaciones multi-tabla. Trigger INSTEAD OF\: Vistas no actualizables, lógica personalizada completa. Regla\: Preferir constraints cuando sea posible, triggers para casos complejos.
+}

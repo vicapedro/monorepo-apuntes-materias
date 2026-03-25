@@ -1,0 +1,2541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- ========================================
+     CATEGORÍA: 3.2 Requerimientos de Instalación - Nivel 1: Recordar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.2 Requerimientos de Instalación/Nivel 1 - Recordar</text>
+    </category>
+</question>
+
+<!-- Pregunta 1: Recordar - Arquitecturas soportadas -->
+<question type="multichoice">
+    <name>
+        <text>3.2-R-001: Arquitecturas de Debian</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles son las arquitecturas de procesador mencionadas para Debian en los requisitos generales?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Debian soporta múltiples arquitecturas. Las principales son x86 (32 bits) con procesador Intel 486 o superior, y amd64 (64 bits) compatible con AMD64 o Intel 64.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="50" format="html">
+        <text><![CDATA[x86 (32 bits)]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! x86 es una de las arquitecturas soportadas, requiere Intel 486 o superior.]]></text></feedback>
+    </answer>
+    <answer fraction="50" format="html">
+        <text><![CDATA[amd64 (64 bits)]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! amd64 es compatible con procesadores AMD64 e Intel 64.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[ARM Cortex-A exclusivamente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque Debian soporta ARM, no es exclusivo ni está en los requisitos generales principales.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[Solo Intel Core i7 o superior]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Debian puede funcionar desde procesadores Intel 486 en adelante para x86.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Arquitecturas</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 2: Recordar - RAM mínima -->
+<question type="multichoice">
+    <name>
+        <text>3.2-R-002: RAM mínima Debian</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la cantidad MÍNIMA de memoria RAM requerida para una instalación estándar de Debian en modo texto o servidor sin interfaz gráfica?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Para una instalación básica de Debian sin entorno gráfico, el requisito mínimo es 256 MB de RAM, aunque se recomienda 512 MB o más.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[256 MB]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! 256 MB es el mínimo para instalación en modo texto o servidor sin interfaz gráfica.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[128 MB]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 128 MB es el mínimo solo para servidores muy básicos, no para instalación estándar.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[512 MB]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 512 MB es la cantidad RECOMENDADA, no el mínimo absoluto.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[1 GB]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 1 GB es el mínimo para entornos gráficos ligeros, no para instalación básica.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Memoria</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 3: Recordar - Almacenamiento mínimo -->
+<question type="multichoice">
+    <name>
+        <text>3.2-R-003: Almacenamiento mínimo servidor</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Para instalar Debian como servidor sin entorno gráfico, ¿cuál es el espacio MÍNIMO de almacenamiento requerido?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Para una instalación mínima de servidor Debian sin entorno gráfico, se requieren 2 GB de almacenamiento, aunque se recomienda 10 GB o más.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[2 GB]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! 2 GB es el mínimo para una instalación básica sin entorno gráfico.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[1 GB]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 1 GB es insuficiente incluso para una instalación mínima de Debian.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[10 GB]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 10 GB es la cantidad RECOMENDADA, no el mínimo absoluto.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[20 GB]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 20 GB es recomendado para instalaciones con entorno gráfico y software adicional.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Almacenamiento</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.2 Requerimientos de Instalación - Nivel 2: Comprender
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.2 Requerimientos de Instalación/Nivel 2 - Comprender</text>
+    </category>
+</question>
+
+<!-- Pregunta 4: Comprender - Diferencias entre entornos -->
+<question type="multichoice">
+    <name>
+        <text>3.2-C-001: Diferencias de requisitos por entorno</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Por qué los requisitos de RAM aumentan cuando se instala un entorno gráfico en Debian en comparación con una instalación de servidor sin interfaz gráfica?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los entornos gráficos requieren más RAM porque deben cargar el servidor X (Xorg), el gestor de ventanas, aplicaciones gráficas y efectos visuales, todo lo cual consume memoria adicional que no se necesita en servidores de solo texto.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Porque los entornos gráficos deben cargar el servidor X, gestor de ventanas y aplicaciones gráficas que consumen más memoria]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Los componentes gráficos (Xorg, gestores de ventanas, etc.) requieren memoria adicional significativa.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Porque los servidores sin GUI utilizan compresión automática de RAM]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los servidores no usan "compresión automática de RAM" como característica estándar.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Porque Debian limita artificialmente la RAM en instalaciones de servidor]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Debian no limita artificialmente la RAM. La diferencia se debe al software que se ejecuta.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Porque los entornos gráficos requieren procesadores de 64 bits exclusivamente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los entornos gráficos pueden funcionar en 32 bits, el aumento de RAM se debe a los componentes gráficos.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Entornos</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 5: Comprender - Relación entorno/recursos -->
+<question type="multichoice">
+    <name>
+        <text>3.2-C-002: Entornos gráficos ligeros vs pesados</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Según los requisitos de Debian, ¿qué entornos gráficos se consideran "ligeros" y cuál es su requisito mínimo de RAM?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Xfce y LXDE son entornos gráficos ligeros que requieren mínimo 1 GB de RAM, mientras que GNOME y KDE Plasma son más pesados y requieren 2 GB o más.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Xfce requiere mínimo 1 GB de RAM]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Xfce es un entorno ligero con requisito mínimo de 1 GB.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[LXDE requiere mínimo 1 GB de RAM]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! LXDE es un entorno ligero con requisito mínimo de 1 GB.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Los entornos ligeros son ideales para hardware antiguo]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Xfce y LXDE son especialmente útiles para revivir hardware antiguo.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[GNOME es un entorno ligero que requiere 512 MB de RAM]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. GNOME es un entorno pesado que requiere 2 GB o más de RAM.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[KDE Plasma requiere solo 256 MB de RAM]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. KDE Plasma es un entorno pesado que requiere 2 GB o más de RAM.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Entornos_Gráficos</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 6: Comprender - Arquitecturas alternativas -->
+<question type="multichoice">
+    <name>
+        <text>3.2-C-003: Requisitos en arquitecturas alternativas</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Para dispositivos como Raspberry Pi que utilizan arquitectura ARM, ¿cuáles son los requisitos mínimos de Debian mencionados en el documento?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Para arquitectura ARM (como Raspberry Pi), Debian requiere mínimo 512 MB de RAM y 4 GB de almacenamiento, dependiendo del uso específico del sistema.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="50" format="html">
+        <text><![CDATA[Memoria RAM: 512 MB o más]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! ARM requiere mínimo 512 MB de RAM según los requisitos de Debian.]]></text></feedback>
+    </answer>
+    <answer fraction="50" format="html">
+        <text><![CDATA[Almacenamiento: 4 GB o más]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! ARM requiere mínimo 4 GB de almacenamiento, aunque varía según el uso.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[Memoria RAM: 128 MB es suficiente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 128 MB es insuficiente; ARM requiere mínimo 512 MB para Debian.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[Almacenamiento: 1 GB es adecuado]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Se requieren mínimo 4 GB, dependiendo del uso específico.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Arquitecturas_ARM</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.2 Requerimientos de Instalación - Nivel 3: Aplicar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.2 Requerimientos de Instalación/Nivel 3 - Aplicar</text>
+    </category>
+</question>
+
+<!-- Pregunta 7: Aplicar - Selección de entorno según recursos -->
+<question type="multichoice">
+    <name>
+        <text>3.2-A-001: Selección de configuración apropiada</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Tienes una computadora con las siguientes características: Intel Pentium 4, 768 MB de RAM y 40 GB de disco duro. ¿Qué configuración de Debian sería la MÁS APROPIADA para este equipo?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Con 768 MB de RAM (menos de 1 GB), lo más apropiado es instalar un entorno gráfico ligero como Xfce o LXDE. GNOME o KDE requerirían 2 GB o más. Un servidor sin GUI desperdiciaría la capacidad del sistema de ofrecer interfaz gráfica.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Debian con entorno gráfico ligero (Xfce o LXDE)]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Con 768 MB de RAM, un entorno ligero es la opción ideal. Cumple el mínimo de 1 GB con margen ajustado pero funcional.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Debian con GNOME completo]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. GNOME requiere 2 GB o más de RAM. Con solo 768 MB el sistema sería muy lento.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Debian servidor sin interfaz gráfica]]></text>
+        <feedback format="html"><text><![CDATA[Aunque funcionaría, no aprovecharía la capacidad del hardware. Con 768 MB se puede usar un entorno gráfico ligero.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Debian con KDE Plasma completo]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. KDE Plasma requiere 2 GB o más de RAM. El sistema sería extremadamente lento.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Aplicar</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Selección_Configuración</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 8: Aplicar - Servidor con requisitos específicos -->
+<question type="multichoice">
+    <name>
+        <text>3.2-A-002: Configuración para servidor web</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Necesitas instalar Debian como servidor web que ejecutará Apache, MySQL y PHP (stack LAMP). El servidor tendrá tráfico moderado. ¿Qué configuración mínima recomendarías?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Para un servidor LAMP con tráfico moderado, se recomienda al menos 1-2 GB de RAM (considerando que MySQL consume memoria significativa), sin entorno gráfico, y al menos 20 GB de almacenamiento para el sistema, bases de datos y logs.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[RAM: 1-2 GB o más (MySQL requiere memoria adicional)]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Aunque el mínimo de servidor es 512 MB, MySQL con tráfico moderado requiere más memoria.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Instalación sin entorno gráfico (servidor puro)]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Los servidores web no necesitan interfaz gráfica, lo que libera recursos.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Almacenamiento: 20 GB o más (para bases de datos y logs)]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Aunque el mínimo es 10 GB, las bases de datos y logs requieren espacio adicional.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[RAM: 256 MB es suficiente para LAMP]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 256 MB es el mínimo absoluto, pero MySQL con tráfico moderado requiere significativamente más.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[Instalar GNOME para administración remota gráfica]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Los servidores web se administran por línea de comandos o interfaces web, no requieren entorno gráfico.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Aplicar</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Servidores</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.2 Requerimientos de Instalación - Nivel 4: Analizar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.2 Requerimientos de Instalación/Nivel 4 - Analizar</text>
+    </category>
+</question>
+
+<!-- Pregunta 9: Analizar - Comparación de escenarios -->
+<question type="multichoice">
+    <name>
+        <text>3.2-AN-001: Análisis comparativo de requisitos</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Compara los requisitos de tres escenarios de instalación de Debian:</p>
+        <ul>
+        <li><strong>Escenario A:</strong> Servidor web sin GUI - 512 MB RAM, 10 GB HDD</li>
+        <li><strong>Escenario B:</strong> Estación de trabajo con GNOME - 2 GB RAM, 50 GB HDD</li>
+        <li><strong>Escenario C:</strong> Sistema embebido ARM - 512 MB RAM, 4 GB SD</li>
+        </ul>
+        <p>¿Cuál(es) análisis es/son CORRECTO(S) sobre estos escenarios?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>El Escenario A cumple exactamente los requisitos recomendados para servidor. El Escenario B cumple los mínimos para GNOME pero podría beneficiarse de más almacenamiento. El Escenario C cumple los mínimos para ARM pero el almacenamiento es justo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[El Escenario A cumple los requisitos recomendados para un servidor básico]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! 512 MB y 10 GB son exactamente los requisitos recomendados para servidor sin GUI.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[El Escenario B cumple el mínimo para GNOME pero está ajustado en almacenamiento]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! 2 GB es el mínimo para GNOME. Aunque 50 GB es adecuado, más espacio permitiría instalar más software.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[El Escenario C cumple los requisitos mínimos de ARM pero el almacenamiento es limitado]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! 512 MB y 4 GB son los mínimos para ARM, pero 4 GB es justo dependiendo del uso.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[El Escenario A tiene RAM insuficiente y no puede funcionar como servidor]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 512 MB es exactamente el requisito recomendado para servidores sin GUI.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[El Escenario B no puede ejecutar GNOME con solo 2 GB de RAM]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 2 GB es el requisito mínimo para GNOME según la documentación.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Analizar</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Comparación_Escenarios</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 10: Analizar - Identificación de problema -->
+<question type="multichoice">
+    <name>
+        <text>3.2-AN-002: Diagnóstico de problemas de rendimiento</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un usuario instala Debian con KDE Plasma en un equipo con las siguientes características:</p>
+        <ul>
+        <li>Procesador: Intel Core 2 Duo 2.4 GHz</li>
+        <li>RAM: 1 GB</li>
+        <li>Disco: 80 GB HDD</li>
+        <li>Gráfica: Intel GMA 950 integrada</li>
+        </ul>
+        <p>El sistema es extremadamente lento y se congela frecuentemente. ¿Cuál es la causa MÁS PROBABLE del problema?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>KDE Plasma requiere mínimo 2 GB de RAM. Con solo 1 GB, el sistema entra constantemente en swap, causando lentitud extrema. La solución es cambiar a un entorno ligero (Xfce/LXDE) o agregar más RAM.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[RAM insuficiente: KDE Plasma requiere 2 GB mínimo, el sistema tiene solo 1 GB]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Esta es la causa principal. KDE Plasma necesita 2 GB o más, causando swap constante con 1 GB.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[El procesador Core 2 Duo es demasiado antiguo para Debian]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El Core 2 Duo es más que suficiente para Debian. El problema es la RAM insuficiente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[80 GB de disco es insuficiente para KDE Plasma]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. 80 GB es más que suficiente. El problema es la RAM, no el almacenamiento.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[La tarjeta gráfica Intel GMA 950 no es compatible con Debian]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Intel GMA 950 es compatible con Debian. El problema real es la RAM insuficiente.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Analizar</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Diagnóstico</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.2 Requerimientos de Instalación - Nivel 5: Evaluar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.2 Requerimientos de Instalación/Nivel 5 - Evaluar</text>
+    </category>
+</question>
+
+<!-- Pregunta 11: Evaluar - Justificación de decisiones -->
+<question type="essay">
+    <name>
+        <text>3.2-E-001: Evaluación de decisión de arquitectura</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Una escuela primaria tiene 30 computadoras antiguas con las siguientes características:</p>
+        <ul>
+        <li>Procesador: Intel Pentium 4 (2.8 GHz)</li>
+        <li>RAM: 512 MB</li>
+        <li>Disco: 40 GB HDD</li>
+        <li>Uso: Navegación web, procesador de textos, hojas de cálculo</li>
+        </ul>
+        <p>Te piden recomendar una distribución y configuración de Linux. <strong>Evalúa y justifica tu recomendación</strong> considerando:</p>
+        <ol>
+        <li>¿Es viable instalar Debian? ¿Por qué?</li>
+        <li>¿Qué entorno gráfico recomendarías?</li>
+        <li>¿Qué alternativas considerarías si el hardware fuera aún más limitado?</li>
+        <li>¿Cómo optimizarías la instalación para este contexto educativo?</li>
+        </ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p><strong>Respuesta modelo:</strong></p>
+        <p><strong>1. Viabilidad:</strong> Debian es viable pero ajustado. 512 MB está por debajo del mínimo recomendado (1 GB) para entornos gráficos ligeros.</p>
+        <p><strong>2. Entorno gráfico:</strong> LXDE o Xfce (sin efectos 3D), o considerar distribuciones ultra-ligeras como Lubuntu, antiX o Puppy Linux basadas en Debian.</p>
+        <p><strong>3. Alternativas:</strong> Si el hardware fuera más limitado: servidor sin GUI con acceso remoto, o distribuciones minimalistas como Damn Small Linux.</p>
+        <p><strong>4. Optimización:</strong> Desactivar servicios innecesarios, usar navegador ligero (Firefox ESR con extensiones mínimas), LibreOffice Base + Writer solamente, deshabilitar efectos visuales, crear imagen maestra para clonación.</p>]]></text>
+    </generalfeedback>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+        <text><![CDATA[<p><strong>Criterios de evaluación:</strong></p>
+        <ul>
+        <li><strong>Análisis técnico (30%):</strong> Considera requisitos mínimos y recomendados correctamente</li>
+        <li><strong>Justificación (30%):</strong> Argumenta decisiones con base en el contexto educativo</li>
+        <li><strong>Alternativas (20%):</strong> Propone soluciones viables y creativas</li>
+        <li><strong>Optimización (20%):</strong> Sugiere configuraciones prácticas y específicas</li>
+        </ul>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+        <text><![CDATA[<p>1. Viabilidad de Debian:</p>
+        <p></p>
+        <p>2. Entorno gráfico recomendado:</p>
+        <p></p>
+        <p>3. Alternativas para hardware más limitado:</p>
+        <p></p>
+        <p>4. Optimizaciones para contexto educativo:</p>
+        <p></p>]]></text>
+    </responsetemplate>
+    <tags>
+        <tag><text>Bloom:Evaluar</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Toma_Decisiones</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 12: Evaluar - Comparación y recomendación -->
+<question type="multichoice">
+    <name>
+        <text>3.2-E-002: Evaluación de mejor configuración</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Una empresa de desarrollo de software necesita configurar estaciones de trabajo para programadores. Tienen presupuesto limitado y consideran estas opciones:</p>
+        <ul>
+        <li><strong>Opción A:</strong> CPU i5, 4 GB RAM, 256 GB SSD, Debian + GNOME</li>
+        <li><strong>Opción B:</strong> CPU i5, 8 GB RAM, 128 GB SSD, Debian + Xfce</li>
+        <li><strong>Opción C:</strong> CPU i3, 8 GB RAM, 256 GB SSD, Debian + KDE</li>
+        </ul>
+        <p>Considerando que los programadores usarán IDEs pesados (IntelliJ, VS Code), múltiples navegadores, contenedores Docker y bases de datos locales, ¿cuál configuración es la MÁS APROPIADA y por qué?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La Opción B es la más apropiada. Para desarrollo con IDEs pesados, Docker y bases de datos, la RAM es el recurso más crítico (8 GB). Un entorno ligero como Xfce libera más memoria para las aplicaciones de desarrollo. El SSD de 128 GB es suficiente con buena gestión de espacio.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Opción B: 8 GB RAM es crítico para IDEs y Docker; Xfce libera memoria que GNOME consumiría]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! 8 GB de RAM es fundamental para desarrollo moderno. Xfce consume menos memoria que GNOME, dejando más recursos disponibles para IDEs, Docker y bases de datos. 128 GB SSD es manejable con buena organización.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Opción A: GNOME ofrece mejor experiencia de usuario y 256 GB es necesario]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque GNOME es visualmente atractivo y 256 GB útil, 4 GB de RAM es insuficiente para desarrollo moderno con Docker e IDEs pesados. El sistema usaría swap constantemente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Opción C: El balance entre recursos es mejor con KDE moderno]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque tiene 8 GB de RAM y buen almacenamiento, el CPU i3 + KDE Plasma (que es pesado) crearían cuellos de botella. Xfce con i5 es mejor combinación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Ninguna opción es adecuada; se necesitan mínimo 16 GB de RAM]]></text>
+        <feedback format="html"><text><![CDATA[Aunque 16 GB sería ideal, 8 GB es suficiente para desarrollo. Con Xfce y buena gestión de recursos, la Opción B es viable y apropiada para presupuesto limitado.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Evaluar</text></tag>
+        <tag><text>Tema:3.2</text></tag>
+        <tag><text>Subtema:Casos_Uso_Real</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.3 Configuración Básica - Nivel 1: Recordar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.3 Configuración Básica/Nivel 1 - Recordar</text>
+    </category>
+</question>
+
+<!-- Pregunta 1: Recordar - Métodos de instalación -->
+<question type="multichoice">
+    <name>
+        <text>3.3-R-001: Métodos de instalación de Linux</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles de los siguientes son métodos válidos para instalar un sistema operativo Linux según el documento?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los métodos válidos incluyen: instalación desde medio físico (CD/DVD/USB), instalación desde la red, instalación desde imagen ISO y instalación en máquina virtual.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Instalación desde un medio físico (USB, CD, DVD)]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Este es un método tradicional y común de instalación.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Instalación desde la red]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Permite descargar archivos directamente desde los servidores.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Instalación desde una imagen ISO]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La imagen ISO puede montarse en VM o grabarse en medio físico.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Instalación en una máquina virtual]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Software como VirtualBox, VMware o KVM permite instalación virtual.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[Instalación telefónica mediante modem analógico]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Este no es un método moderno ni mencionado en el documento.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Métodos_Instalación</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 2: Recordar - Comandos de actualización -->
+<question type="multichoice">
+    <name>
+        <text>3.3-R-002: Comandos de actualización del sistema</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles son los comandos que deben ejecutarse para actualizar el sistema Debian después de la instalación?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los comandos correctos son <code>sudo apt update</code> (actualiza la lista de paquetes) seguido de <code>sudo apt upgrade</code> (actualiza los paquetes instalados).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="50" format="html">
+        <text><![CDATA[sudo apt update]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Este comando actualiza la lista de paquetes disponibles.]]></text></feedback>
+    </answer>
+    <answer fraction="50" format="html">
+        <text><![CDATA[sudo apt upgrade]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Este comando actualiza los paquetes instalados a sus versiones más recientes.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[sudo apt install update]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Este no es un comando válido. Se usa <code>apt update</code>, no <code>apt install update</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[sudo yum update]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. <code>yum</code> es el gestor de paquetes de Red Hat/CentOS, no de Debian.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Actualización_Sistema</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 3: Verdadero/Falso - UFW -->
+<question type="truefalse">
+    <name>
+        <text>3.3-R-003: UFW para firewall</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>UFW (Uncomplicated Firewall) es la herramienta recomendada en el documento para configurar reglas de firewall básicas en Debian.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Verdadero. UFW (Uncomplicated Firewall) es mencionado específicamente como la herramienta para configurar reglas de firewall básicas, por ejemplo <code>sudo ufw allow ssh</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! UFW es la herramienta mencionada para configurar el firewall.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El documento menciona específicamente UFW como herramienta de firewall.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Firewall</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.3 Configuración Básica - Nivel 2: Comprender
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.3 Configuración Básica/Nivel 2 - Comprender</text>
+    </category>
+</question>
+
+<!-- Pregunta 4: Comprender - Orden de pasos de instalación -->
+<question type="ordering">
+    <name>
+        <text>3.3-C-001: Orden correcto de pasos de instalación</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Ordena correctamente los pasos para instalar un sistema operativo Linux según el documento:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>El orden correcto es: 1) Preparación del medio, 2) Configuración BIOS/UEFI, 3) Inicio del instalador, 4) Particionado del disco, 5) Selección de software, 6) Configuración de usuarios, 7) Finalización.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <answer format="html">
+        <text><![CDATA[Preparación del medio de instalación (descargar ISO y crear medio)]]></text>
+        <AnswerFormat>1</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Configuración del BIOS/UEFI (orden de arranque)]]></text>
+        <AnswerFormat>2</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Inicio del instalador (arrancar desde el medio)]]></text>
+        <AnswerFormat>3</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Particionado del disco (automático o manual)]]></text>
+        <AnswerFormat>4</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Selección de software (paquetes y entornos de escritorio)]]></text>
+        <AnswerFormat>5</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Configuración de usuarios (cuenta de usuario y contraseña root)]]></text>
+        <AnswerFormat>6</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Finalización de la instalación y reinicio]]></text>
+        <AnswerFormat>7</AnswerFormat>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Proceso_Instalación</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 5: Comprender - Diferencia entre comandos apt -->
+<question type="multichoice">
+    <name>
+        <text>3.3-C-002: Diferencia entre apt update y apt upgrade</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la diferencia principal entre los comandos <code>sudo apt update</code> y <code>sudo apt upgrade</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p><code>apt update</code> actualiza la lista de paquetes disponibles desde los repositorios, mientras que <code>apt upgrade</code> actualiza los paquetes instalados a sus versiones más recientes.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[<code>update</code> actualiza la lista de paquetes disponibles; <code>upgrade</code> instala las versiones más recientes de los paquetes]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! <code>update</code> sincroniza la información de paquetes, <code>upgrade</code> los actualiza.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[<code>update</code> instala actualizaciones de seguridad; <code>upgrade</code> instala nuevas versiones mayores]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. <code>update</code> no instala nada, solo actualiza la lista de paquetes disponibles.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Ambos comandos hacen lo mismo, son sinónimos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Tienen funciones diferentes: uno actualiza listas, el otro actualiza paquetes.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[<code>update</code> actualiza el kernel; <code>upgrade</code> actualiza aplicaciones de usuario]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. <code>update</code> no actualiza el kernel, solo refresca la lista de paquetes disponibles.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Gestión_Paquetes</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 6: Relacionar columnas - Configuraciones con propósito -->
+<question type="matching">
+    <name>
+        <text>3.3-C-003: Relacionar configuraciones básicas</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada configuración básica post-instalación con su propósito principal:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Cada configuración tiene un propósito específico en la administración del sistema Linux.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+        <text><![CDATA[<p>Configuración del hostname</p>]]></text>
+        <answer>
+            <text>Identificar el sistema en la red</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>Configuración del firewall (ufw)</p>]]></text>
+        <answer>
+            <text>Controlar el tráfico de red entrante y saliente</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>Configuración de SSH</p>]]></text>
+        <answer>
+            <text>Permitir acceso remoto seguro al sistema</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>Desactivación de servicios innecesarios</p>]]></text>
+        <answer>
+            <text>Reducir la superficie de ataque</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>Configuración de SELinux/AppArmor</p>]]></text>
+        <answer>
+            <text>Aplicar políticas de seguridad estrictas</text>
+        </answer>
+    </subquestion>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Configuración_Sistema</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.3 Configuración Básica - Nivel 3: Aplicar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.3 Configuración Básica/Nivel 3 - Aplicar</text>
+    </category>
+</question>
+
+<!-- Pregunta 7: Aplicar - Configuración de firewall -->
+<question type="multichoice">
+    <name>
+        <text>3.3-A-001: Configuración práctica de UFW</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Acabas de instalar un servidor Debian que ejecutará servicios web (HTTP/HTTPS) y permitirá administración remota vía SSH. ¿Qué comandos UFW debes ejecutar para configurar el firewall correctamente?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Debes permitir SSH (puerto 22), HTTP (puerto 80) y HTTPS (puerto 443). UFW debe habilitarse después de configurar las reglas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>1</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+        <text><![CDATA[sudo ufw allow ssh]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Permite conexiones SSH (puerto 22) para administración remota.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[sudo ufw allow http]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Permite tráfico web HTTP (puerto 80).]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[sudo ufw allow https]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Permite tráfico web HTTPS (puerto 443).]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[sudo ufw enable]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Activa el firewall después de configurar las reglas.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[sudo ufw allow all]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Esto permitiría todo el tráfico, anulando el propósito del firewall.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Aplicar</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Firewall_Práctica</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 8: Aplicar - Orden de configuración inicial -->
+<question type="ordering">
+    <name>
+        <text>3.3-A-002: Secuencia correcta de configuración post-instalación</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Has instalado Debian en un servidor nuevo. Ordena correctamente las siguientes tareas de configuración básica según las mejores prácticas:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La secuencia lógica es: 1) Actualizar el sistema, 2) Configurar red, 3) Establecer hostname, 4) Configurar seguridad (firewall y SSH), 5) Instalar software adicional.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <answer format="html">
+        <text><![CDATA[Actualizar el sistema (apt update && apt upgrade)]]></text>
+        <AnswerFormat>1</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Configurar la red (DHCP o IP estática)]]></text>
+        <AnswerFormat>2</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Establecer el hostname del servidor]]></text>
+        <AnswerFormat>3</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Configurar firewall y SSH para seguridad]]></text>
+        <AnswerFormat>4</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Instalar software adicional necesario]]></text>
+        <AnswerFormat>5</AnswerFormat>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Aplicar</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Configuración_Inicial</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 9: Verdadero/Falso - Seguridad SSH -->
+<question type="truefalse">
+    <name>
+        <text>3.3-A-003: Seguridad SSH - acceso root</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Como buena práctica de seguridad, el documento recomienda deshabilitar el acceso root directo por SSH y utilizar autenticación basada en claves.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Verdadero. El documento menciona específicamente "utilizando autenticación basada en claves y deshabilitando el acceso root directo" como parte de la configuración segura de SSH.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>1</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Deshabilitar el acceso root directo y usar autenticación por claves son prácticas de seguridad recomendadas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El documento recomienda explícitamente estas prácticas de seguridad para SSH.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Aplicar</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Seguridad_SSH</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.3 Configuración Básica - Nivel 4: Analizar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.3 Configuración Básica/Nivel 4 - Analizar</text>
+    </category>
+</question>
+
+<!-- Pregunta 10: Analizar - Problemas de configuración -->
+<question type="multichoice">
+    <name>
+        <text>3.3-AN-001: Análisis de problema de conectividad</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un administrador instaló un servidor web Debian y configuró Apache. Sin embargo, los usuarios externos no pueden acceder al sitio web, aunque internamente funciona correctamente. El servidor tiene IP estática configurada. ¿Cuál es la causa MÁS PROBABLE del problema?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La causa más probable es que el firewall (UFW) no tenga reglas que permitan tráfico HTTP/HTTPS desde el exterior. Si funciona internamente pero no externamente, indica que el servicio funciona pero está bloqueado por el firewall.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>1</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[El firewall (UFW) no tiene reglas para permitir tráfico HTTP/HTTPS desde el exterior]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Si funciona internamente pero no externamente, el firewall está bloqueando las conexiones entrantes. Se necesita <code>sudo ufw allow http</code> y <code>sudo ufw allow https</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Apache no está instalado correctamente en el servidor]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Si funciona internamente, Apache está instalado y funcionando correctamente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[La configuración de red está mal, no tiene IP estática]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El problema indica que la IP estática está configurada y funciona internamente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[El hostname no está configurado correctamente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Un hostname mal configurado no impediría el acceso externo si el servidor es accesible internamente.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Analizar</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Resolución_Problemas</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 11: Analizar - Comparación de métodos de instalación -->
+<question type="multichoice">
+    <name>
+        <text>3.3-AN-002: Análisis comparativo de métodos de instalación</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Una empresa necesita instalar Debian en 50 servidores idénticos. Analiza las siguientes opciones y selecciona las ventajas reales de cada método:</p>
+        <ul>
+        <li><strong>Método A:</strong> Instalación desde USB en cada servidor</li>
+        <li><strong>Método B:</strong> Instalación desde la red (PXE boot)</li>
+        <li><strong>Método C:</strong> Instalación automatizada con preseeding</li>
+        </ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Para 50 servidores: la instalación desde la red (PXE) permite instalación simultánea sin medios físicos. El preseeding permite automatización y configuración uniforme. La instalación USB manual es la menos eficiente para gran escala.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Método B permite instalación simultánea en múltiples servidores sin medios físicos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La instalación desde la red permite arranque PXE y despliegue masivo eficiente.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Método C garantiza configuración uniforme y reduce errores humanos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! El preseeding automatiza respuestas y asegura configuración consistente.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Método B + C combinados es la solución óptima para despliegue masivo]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! PXE + preseeding permite instalación automatizada, simultánea y uniforme.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[Método A es el más rápido para 50 servidores porque no requiere configuración de red]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La instalación USB manual en 50 servidores es la opción MÁS LENTA y propensa a errores.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[Método C no es compatible con instalación desde la red]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El preseeding es perfectamente compatible con instalación de red (PXE).]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Analizar</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Despliegue_Masivo</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.3 Configuración Básica - Nivel 5: Evaluar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.3 Configuración Básica/Nivel 5 - Evaluar</text>
+    </category>
+</question>
+
+<!-- Pregunta 12: Evaluar - Evaluación de configuración de seguridad -->
+<question type="multichoice">
+    <name>
+        <text>3.3-E-001: Evaluación de configuración de seguridad</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un administrador junior configuró un servidor Debian con las siguientes medidas de seguridad:</p>
+        <ul>
+        <li>Firewall UFW habilitado con reglas para SSH, HTTP y HTTPS</li>
+        <li>SSH configurado con acceso root habilitado mediante contraseña</li>
+        <li>Todos los servicios del sistema habilitados por defecto</li>
+        <li>Sin configuración de SELinux/AppArmor</li>
+        <li>Actualizaciones de seguridad manuales</li>
+        </ul>
+        <p>Evalúa esta configuración: ¿Qué mejoras de seguridad son CRÍTICAS según las recomendaciones del documento?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Las mejoras críticas son: deshabilitar acceso root directo por SSH y usar autenticación por claves, desactivar servicios innecesarios para reducir superficie de ataque, y configurar actualizaciones automáticas de seguridad.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[CRÍTICO: Deshabilitar acceso root por SSH y usar autenticación basada en claves]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! El documento menciona explícitamente "deshabilitando el acceso root directo" y "utilizando autenticación basada en claves".]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[CRÍTICO: Desactivar servicios innecesarios para reducir superficie de ataque]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! El documento indica "Revisa y desactiva cualquier servicio que no sea necesario para reducir la superficie de ataque".]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[IMPORTANTE: Configurar actualizaciones automáticas de seguridad]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! El documento recomienda "Configura actualizaciones automáticas de seguridad para mantener el sistema protegido".]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[La configuración es óptima, no requiere cambios]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Hay múltiples vulnerabilidades críticas: acceso root por contraseña, servicios innecesarios activos, y falta de automatización de actualizaciones.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[El único problema es la falta de SELinux/AppArmor, lo demás está correcto]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque SELinux/AppArmor son importantes, hay vulnerabilidades más críticas: acceso root por contraseña y servicios innecesarios activos.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Evaluar</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Auditoría_Seguridad</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 13: Evaluar - Relacionar columnas de seguridad -->
+<question type="matching">
+    <name>
+        <text>3.3-E-002: Evaluar herramientas de seguridad y su propósito</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Evalúa y relaciona cada herramienta de seguridad con su función principal en la configuración de un servidor Debian:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Cada herramienta tiene un rol específico en la estrategia de seguridad en capas (defensa en profundidad).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+        <text><![CDATA[<p>UFW (Uncomplicated Firewall)</p>]]></text>
+        <answer>
+            <text>Control de tráfico de red en capa de red/transporte</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>SSH con autenticación por claves</p>]]></text>
+        <answer>
+            <text>Acceso remoto seguro sin contraseñas vulnerables</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>SELinux/AppArmor</p>]]></text>
+        <answer>
+            <text>Control de acceso obligatorio y políticas de seguridad estrictas</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>Actualizaciones automáticas de seguridad</p>]]></text>
+        <answer>
+            <text>Protección continua contra vulnerabilidades conocidas</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>Desactivación de servicios innecesarios</p>]]></text>
+        <answer>
+            <text>Minimización de la superficie de ataque del sistema</text>
+        </answer>
+    </subquestion>
+    <tags>
+        <tag><text>Bloom:Evaluar</text></tag>
+        <tag><text>Tema:3.3</text></tag>
+        <tag><text>Subtema:Estrategia_Seguridad</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.4 Comandos Básicos y Aplicaciones - Nivel 1: Recordar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.4 Comandos Básicos y Aplicaciones/Nivel 1 - Recordar</text>
+    </category>
+</question>
+
+<!-- Pregunta 1: Recordar - Comandos básicos de archivos -->
+<question type="matching">
+    <name>
+        <text>3.4-R-001: Relacionar comandos básicos con su función</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada comando de Linux con su función principal:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Estos son comandos básicos esenciales para el manejo de archivos y directorios en Linux.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>ls</code></p>]]></text>
+        <answer>
+            <text>Lista los archivos y directorios en el directorio actual</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>pwd</code></p>]]></text>
+        <answer>
+            <text>Muestra la ruta del directorio actual</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>mkdir</code></p>]]></text>
+        <answer>
+            <text>Crea un nuevo directorio</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>rm</code></p>]]></text>
+        <answer>
+            <text>Elimina archivos o directorios</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>cp</code></p>]]></text>
+        <answer>
+            <text>Copia archivos o directorios</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>mv</code></p>]]></text>
+        <answer>
+            <text>Mueve o renombra archivos o directorios</text>
+        </answer>
+    </subquestion>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Comandos_Básicos</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 2: Recordar - Directorios principales -->
+<question type="multichoice">
+    <name>
+        <text>3.4-R-002: Directorios del sistema de archivos Linux</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles de los siguientes directorios son parte de la estructura estándar del sistema de archivos Linux?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Linux utiliza una estructura jerárquica de directorios con funciones específicas para cada directorio principal.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="20" format="html">
+        <text><![CDATA[/etc - Archivos de configuración del sistema]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! /etc contiene los archivos de configuración del sistema.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[/home - Directorios de los usuarios]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! /home contiene los directorios personales de los usuarios.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[/var - Archivos variables como registros y bases de datos]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! /var almacena datos que cambian constantemente.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[/bin - Programas binarios esenciales]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! /bin contiene comandos esenciales del sistema.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[/tmp - Archivos temporales]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! /tmp almacena archivos temporales que se borran al reiniciar.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[/windows - Compatibilidad con Windows]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. No existe un directorio /windows en la estructura estándar de Linux.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Sistema_Archivos</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 3: Verdadero/Falso - Runlevels -->
+<question type="truefalse">
+    <name>
+        <text>3.4-R-003: Runlevel 5 predeterminado</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En Debian, el nivel de ejecución (runlevel) 5 es el predeterminado para modo multiusuario.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Verdadero. Según el documento, los niveles 2-5 son modos multiusuario, siendo el nivel 5 el predeterminado en Debian.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>1</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! El nivel 5 es el predeterminado en Debian para modo multiusuario.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El documento indica que el nivel 5 es el predeterminado en Debian.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Runlevels</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 4: Recordar - Comandos apt -->
+<question type="multichoice">
+    <name>
+        <text>3.4-R-004: Comandos apt básicos</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles son comandos válidos del gestor de paquetes <code>apt</code> en Debian?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>apt es el gestor de paquetes de Debian que permite instalar, actualizar y eliminar software.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+        <text><![CDATA[sudo apt update]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Actualiza la lista de paquetes disponibles.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[sudo apt upgrade]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Actualiza todos los paquetes instalados.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[sudo apt install <paquete>]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Instala un paquete específico.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[sudo apt autoremove]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Elimina paquetes no necesarios (dependencias huérfanas).]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[sudo apt download-all]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Este no es un comando válido de apt.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Gestor_Paquetes</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.4 Comandos Básicos y Aplicaciones - Nivel 2: Comprender
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.4 Comandos Básicos y Aplicaciones/Nivel 2 - Comprender</text>
+    </category>
+</question>
+
+<!-- Pregunta 5: Comprender - Importancia de /var -->
+<question type="multichoice">
+    <name>
+        <text>3.4-C-001: Importancia de la partición /var</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Por qué es recomendable hacer de <code>/var</code> una partición separada en servidores Linux?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Separar /var como partición dedicada evita que logs y bases de datos llenen el sistema raíz, mejora el rendimiento y facilita la administración.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Evita que el sistema se bloquee si los logs o bases de datos crecen demasiado]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Si /var se llena, no afectará a / (raíz), evitando que el sistema se vuelva inusable.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Mejora el rendimiento usando discos rápidos (SSD) o RAID para /var]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Se pueden optimizar bases de datos y logs con hardware específico.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Facilita la administración y recuperación al poder formatear /var sin afectar el sistema]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Útil en servidores con grandes volúmenes de datos dinámicos.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[Es obligatorio por la especificación POSIX de Unix]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. No es obligatorio, es una recomendación de buenas prácticas.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[/var no debe ser una partición separada, debe estar en /]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El documento recomienda explícitamente separar /var en servidores.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Partición_Var</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 6: Comprender - Contenido de /var -->
+<question type="matching">
+    <name>
+        <text>3.4-C-002: Relacionar subdirectorios de /var con su contenido</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada subdirectorio de <code>/var</code> con el tipo de datos que almacena:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La partición /var contiene diferentes tipos de datos variables del sistema organizados en subdirectorios específicos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+        <text><![CDATA[<p>/var/log/</p>]]></text>
+        <answer>
+            <text>Registros del sistema y aplicaciones (logs)</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>/var/spool/</p>]]></text>
+        <answer>
+            <text>Archivos de cola y procesos en espera (impresión, correos)</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>/var/cache/</p>]]></text>
+        <answer>
+            <text>Caché de paquetes y actualizaciones (apt archives)</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>/var/tmp/</p>]]></text>
+        <answer>
+            <text>Archivos temporales que persisten después de un reinicio</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>/var/lib/</p>]]></text>
+        <answer>
+            <text>Bases de datos y servicios dinámicos (MySQL, PostgreSQL)</text>
+        </answer>
+    </subquestion>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Estructura_Var</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 7: Comprender - Diferencia entre comandos de visualización -->
+<question type="multichoice">
+    <name>
+        <text>3.4-C-003: Diferencia entre comandos de visualización de archivos</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la diferencia principal entre los comandos <code>cat</code>, <code>less</code> y <code>head</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>cat muestra todo el contenido, less lo muestra página por página de forma interactiva, y head muestra solo las primeras líneas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[cat muestra todo el contenido; less lo muestra página por página; head muestra solo las primeras líneas]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Cada comando tiene un propósito específico para diferentes necesidades de visualización.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Son comandos idénticos, solo cambia el nombre]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Cada comando tiene una función diferente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[cat es para archivos pequeños; less para medianos; head para grandes]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La diferencia está en cómo muestran el contenido, no en el tamaño del archivo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[cat edita archivos; less y head solo los leen]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. cat no edita archivos, solo muestra su contenido completo.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Visualización_Archivos</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 8: Ordenar - Runlevels -->
+<question type="ordering">
+    <name>
+        <text>3.4-C-004: Ordenar runlevels por función</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Ordena los siguientes niveles de ejecución (runlevels) desde el más restrictivo hasta el reinicio del sistema:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>El orden correcto es: 0 (apagado), 1 (usuario único/rescate), 2-5 (multiusuario), 6 (reinicio).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>1</hidden>
+    <answer format="html">
+        <text><![CDATA[Runlevel 0 - Apagado del sistema]]></text>
+        <AnswerFormat>1</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Runlevel 1 - Modo de usuario único (rescate)]]></text>
+        <AnswerFormat>2</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Runlevels 2-5 - Modos multiusuario]]></text>
+        <AnswerFormat>3</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Runlevel 6 - Reinicio del sistema]]></text>
+        <AnswerFormat>4</AnswerFormat>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Runlevels</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.4 Comandos Básicos y Aplicaciones - Nivel 3: Aplicar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.4 Comandos Básicos y Aplicaciones/Nivel 3 - Aplicar</text>
+    </category>
+</question>
+
+<!-- Pregunta 9: Aplicar - Uso de comandos -->
+<question type="multichoice">
+    <name>
+        <text>3.4-A-001: Aplicar comandos para tareas específicas</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Necesitas realizar las siguientes tareas en Linux. ¿Qué comandos son los CORRECTOS para cada tarea?</p>
+        <ul>
+        <li>Ver las últimas 20 líneas de un archivo de log</li>
+        <li>Crear un directorio llamado "proyecto"</li>
+        <li>Copiar recursivamente un directorio "datos" a "respaldo"</li>
+        </ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los comandos correctos son: tail -n 20 archivo.log, mkdir proyecto, y cp -r datos respaldo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[tail -n 20 archivo.log]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! tail muestra las últimas líneas de un archivo.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[mkdir proyecto]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! mkdir crea un nuevo directorio.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[cp -r datos respaldo]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! cp -r copia recursivamente directorios y su contenido.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[head -n 20 archivo.log (para ver las últimas líneas)]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. head muestra las PRIMERAS líneas, no las últimas. Use tail.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[mv datos respaldo (para copiar directorio)]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. mv MUEVE/renombra, no copia. Use cp -r para copiar.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Aplicar</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Uso_Comandos</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 10: Aplicar - Mantenimiento de /var -->
+<question type="ordering">
+    <name>
+        <text>3.4-A-002: Secuencia para limpiar /var lleno</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Tu partición <code>/var</code> está al 95% de capacidad. Ordena los siguientes pasos para liberar espacio de forma segura:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La secuencia correcta es: 1) Verificar uso de espacio, 2) Identificar qué consume más espacio, 3) Limpiar cachés de APT, 4) Rotar logs antiguos, 5) Verificar espacio liberado.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <answer format="html">
+        <text><![CDATA[Verificar el uso actual con df -h /var]]></text>
+        <AnswerFormat>1</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Identificar subdirectorios que más espacio consumen con du -sh /var/*]]></text>
+        <AnswerFormat>2</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Limpiar cachés de paquetes con sudo apt clean]]></text>
+        <AnswerFormat>3</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Rotar logs antiguos con sudo logrotate -f /etc/logrotate.conf]]></text>
+        <AnswerFormat>4</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Verificar espacio liberado con df -h /var]]></text>
+        <AnswerFormat>5</AnswerFormat>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Aplicar</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Mantenimiento_Var</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 11: Verdadero/Falso - Comportamiento de /tmp vs /var/tmp -->
+<question type="truefalse">
+    <name>
+        <text>3.4-A-003: Diferencia entre /tmp y /var/tmp</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>A diferencia de <code>/tmp</code> que se borra al reiniciar, los archivos en <code>/var/tmp</code> persisten después de un reinicio del sistema.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Verdadero. El documento indica que /var/tmp almacena "datos temporales que deben persistir después de un reinicio", diferente de /tmp que se borra al reiniciar.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>1</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! /var/tmp persiste después del reinicio, a diferencia de /tmp.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. /var/tmp está diseñado para persistir datos temporales tras el reinicio.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Aplicar</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Directorios_Temporales</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.4 Comandos Básicos y Aplicaciones - Nivel 4: Analizar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.4 Comandos Básicos y Aplicaciones/Nivel 4 - Analizar</text>
+    </category>
+</question>
+
+<!-- Pregunta 12: Analizar - Problema con /var lleno -->
+<question type="multichoice">
+    <name>
+        <text>3.4-AN-001: Análisis de problema con /var lleno</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un servidor web Debian deja de funcionar. Al investigar encuentras:</p>
+        <ul>
+        <li>df -h muestra /var al 100%</li>
+        <li>du -sh /var/* indica que /var/log/ usa 18 GB de 20 GB totales</li>
+        <li>Los servicios Apache y MySQL fallaron hace 2 horas</li>
+        <li>/var/log/apache2/access.log tiene 15 GB</li>
+        </ul>
+        <p>¿Cuál es el análisis CORRECTO de la situación?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>El problema es que /var se llenó por logs excesivos, causando fallos en servicios. Se necesita implementar logrotate y monitoreo preventivo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>1</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Los logs sin rotación llenaron /var, causando que los servicios fallen al no poder escribir]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Sin espacio en /var, los servicios no pueden escribir logs ni datos temporales.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Se debe implementar logrotate para comprimir y eliminar logs antiguos automáticamente]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Logrotate previene este problema rotando logs periódicamente.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Es recomendable aumentar el tamaño de /var o hacer /var/log una partición separada]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Para servidores con mucho tráfico, /var necesita más espacio o separación.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Se debe monitorear /var proactivamente con alertas antes de llegar al 90%]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! El monitoreo preventivo evita interrupciones del servicio.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[El problema es un ataque de denegación de servicio, no relacionado con /var]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La evidencia claramente muestra que /var lleno causó los fallos de servicio.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Analizar</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Resolución_Problemas</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 13: Analizar - Comparación de comandos -->
+<question type="multichoice">
+    <name>
+        <text>3.4-AN-002: Análisis de eficiencia de comandos</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Necesitas buscar la palabra "ERROR" en un archivo de log de 5 GB. Analiza cuál comando es MÁS EFICIENTE y por qué:</p>
+        <ul>
+        <li><strong>Opción A:</strong> cat /var/log/app.log | grep "ERROR"</li>
+        <li><strong>Opción B:</strong> grep "ERROR" /var/log/app.log</li>
+        <li><strong>Opción C:</strong> less /var/log/app.log (y buscar manualmente)</li>
+        </ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La Opción B es la más eficiente porque grep lee directamente el archivo sin crear procesos adicionales ni cargar todo en memoria. La Opción A usa un pipe innecesario, y la Opción C es manual e ineficiente.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Opción B: grep lee directamente el archivo sin procesos adicionales ni carga completa en memoria]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! grep "PATTERN" archivo es más eficiente que usar cat con pipe, especialmente en archivos grandes.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Opción A: cat con pipe es la forma estándar y más rápida]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. cat con pipe crea un proceso adicional innecesario. grep puede leer directamente el archivo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Opción C: less permite control total y es más eficiente con archivos grandes]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque less es eficiente para navegación, buscar manualmente en 5 GB es extremadamente ineficiente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Todas las opciones son igualmente eficientes en archivos de 5 GB]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Hay diferencias significativas de eficiencia, especialmente en archivos grandes.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Analizar</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Eficiencia_Comandos</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.4 Comandos Básicos y Aplicaciones - Nivel 5: Evaluar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.4 Comandos Básicos y Aplicaciones/Nivel 5 - Evaluar</text>
+    </category>
+</question>
+
+<!-- Pregunta 14: Evaluar - Estrategia de particionamiento -->
+<question type="multichoice">
+    <name>
+        <text>3.4-E-001: Evaluación de estrategia de particionamiento</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Una empresa planea implementar un servidor de base de datos PostgreSQL que manejará 500 GB de datos y generará aproximadamente 10 GB de logs diarios. El servidor tiene un disco de 1 TB. Evalúa las siguientes estrategias de particionamiento:</p>
+        <ul>
+        <li><strong>Estrategia A:</strong> Todo en una sola partición /</li>
+        <li><strong>Estrategia B:</strong> / (50 GB), /var (200 GB), /var/lib/postgresql (partición separada 700 GB)</li>
+        <li><strong>Estrategia C:</strong> / (50 GB), /var (950 GB sin subdivisiones)</li>
+        </ul>
+        <p>¿Qué estrategia es la MÁS APROPIADA y por qué?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La Estrategia B es óptima porque separa bases de datos de logs, permite gestión independiente, y protege contra llenado accidental. Facilita backups, optimización de I/O y recuperación.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Estrategia B: Separa BD de logs, permite gestión independiente y protege contra llenado accidental]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Separar PostgreSQL de logs permite: backups independientes, optimización de I/O específica, y protección contra logs que llenen todo /var. Los 200 GB de /var permiten ~20 días de logs antes de rotación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Estrategia A: Más simple de administrar y no tiene desventajas significativas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Una sola partición es riesgosa: si logs o BD llenan el disco, TODO el sistema falla. No permite optimización independiente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Estrategia C: Un /var grande es suficiente, subdividirlo complica innecesariamente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Sin separación, logs excesivos pueden llenar /var y afectar PostgreSQL. No permite backups selectivos ni optimización de I/O diferenciada.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Ninguna estrategia es apropiada; se necesitan múltiples discos físicos]]></text>
+        <feedback format="html"><text><![CDATA[Aunque múltiples discos serían ideales, la Estrategia B es apropiada para un disco de 1 TB con el uso especificado.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Evaluar</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Estrategia_Particionamiento</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 15: Evaluar - Relacionar impactos de /var lleno -->
+<question type="matching">
+    <name>
+        <text>3.4-E-002: Evaluar impactos de subdirectorios llenos en /var</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Evalúa y relaciona qué sucede cuando cada subdirectorio de <code>/var</code> se llena completamente:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Cada subdirectorio de /var tiene un impacto específico cuando se llena, afectando diferentes aspectos del sistema.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+        <text><![CDATA[<p>/var/log/ lleno</p>]]></text>
+        <answer>
+            <text>Sistema puede no arrancar o servicios críticos fallan</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>/var/spool/ lleno</p>]]></text>
+        <answer>
+            <text>Correos y trabajos de impresión fallan</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>/var/cache/ lleno</p>]]></text>
+        <answer>
+            <text>Actualizaciones de paquetes se bloquean y rendimiento disminuye</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>/var/lib/mysql/ o /var/lib/postgresql/ lleno</p>]]></text>
+        <answer>
+            <text>Bases de datos se corrompen o dejan de funcionar</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>/var/tmp/ lleno</p>]]></text>
+        <answer>
+            <text>Aplicaciones que requieren archivos temporales persistentes fallan</text>
+        </answer>
+    </subquestion>
+    <tags>
+        <tag><text>Bloom:Evaluar</text></tag>
+        <tag><text>Tema:3.4</text></tag>
+        <tag><text>Subtema:Impacto_Var</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.5 Administración del Sistema - Nivel 1: Recordar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.5 Administración del Sistema/Nivel 1 - Recordar</text>
+    </category>
+</question>
+
+<!-- Pregunta 1: Recordar - Tipos de recursos del sistema -->
+<question type="multichoice">
+    <name>
+        <text>3.5-R-001: Tipos de recursos del sistema</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles de los siguientes son tipos de recursos del sistema que un administrador debe gestionar según el documento?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los recursos principales del sistema incluyen: CPU, Memoria (RAM y swap), Almacenamiento, Red, y Dispositivos de Entrada/Salida.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="20" format="html">
+        <text><![CDATA[CPU - Unidad central de procesamiento]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! CPU es un recurso esencial que ejecuta instrucciones de programas.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[Memoria - RAM y almacenamiento swap]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! La memoria almacena datos y programas en ejecución.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[Almacenamiento - Discos duros y SSDs]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Almacenamiento permanente para datos y sistema operativo.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[Red - Interfaces de red y configuraciones]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Permite comunicación con otros sistemas.]]></text></feedback>
+    </answer>
+    <answer fraction="20" format="html">
+        <text><![CDATA[Dispositivos de E/S - Teclados, ratones, impresoras]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Periféricos conectados al sistema.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[Navegador web - Aplicación de usuario]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El navegador es una aplicación, no un recurso del sistema.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Recursos_Sistema</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 2: Recordar - Relacionar comandos con recursos -->
+<question type="matching">
+    <name>
+        <text>3.5-R-002: Relacionar comandos con recursos monitoreados</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada comando con el tipo de recurso del sistema que monitorea o administra:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Diferentes comandos de Linux están especializados en monitorear o administrar recursos específicos del sistema.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>ps, top, htop</code></p>]]></text>
+        <answer>
+            <text>Procesos - Listar y monitorear procesos en ejecución</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>free, vmstat</code></p>]]></text>
+        <answer>
+            <text>Memoria - Mostrar uso de RAM y swap</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>df, du</code></p>]]></text>
+        <answer>
+            <text>Sistemas de archivos - Mostrar uso de espacio en disco</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>ifconfig, ip</code></p>]]></text>
+        <answer>
+            <text>Red - Configurar y mostrar interfaces de red</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>systemctl, service</code></p>]]></text>
+        <answer>
+            <text>Servicios - Administrar servicios del sistema</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>chmod, chown</code></p>]]></text>
+        <answer>
+            <text>Permisos - Cambiar permisos y propietarios de archivos</text>
+        </answer>
+    </subquestion>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Comandos_Administración</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 3: Verdadero/Falso - systemctl -->
+<question type="truefalse">
+    <name>
+        <text>3.5-R-003: systemctl para administrar servicios</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>El comando <code>systemctl</code> es la herramienta estándar para administrar servicios en sistemas Linux con <code>systemd</code>.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Verdadero. systemctl es el comando principal para administrar servicios en sistemas que utilizan systemd como sistema de inicialización.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! systemctl es el comando estándar para administrar servicios en sistemas con systemd.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El documento indica que systemctl es la herramienta para administrar servicios en sistemas con systemd.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Recordar</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Gestión_Servicios</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.5 Administración del Sistema - Nivel 2: Comprender
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.5 Administración del Sistema/Nivel 2 - Comprender</text>
+    </category>
+</question>
+
+<!-- Pregunta 4: Comprender - Diferencia entre comandos de proceso -->
+<question type="multichoice">
+    <name>
+        <text>3.5-C-001: Diferencia entre kill, pkill y killall</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la diferencia principal entre los comandos <code>kill</code>, <code>pkill</code> y <code>killall</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>kill termina procesos por PID, pkill por nombre de proceso (puede usar patrones), y killall termina todos los procesos con un nombre específico.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[kill usa PID numérico; pkill usa nombre del proceso con patrones; killall termina todos con nombre exacto]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Cada comando tiene un método diferente para identificar procesos a terminar.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Son comandos idénticos, solo cambia el nombre por compatibilidad]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Cada comando tiene una forma diferente de identificar los procesos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[kill es para usuarios normales; pkill y killall solo para root]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. La diferencia no está en permisos sino en cómo identifican procesos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[kill termina procesos; pkill y killall los pausan temporalmente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Todos estos comandos terminan procesos, no los pausan.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Gestión_Procesos</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 5: Comprender - Propósito de nice y renice -->
+<question type="multichoice">
+    <name>
+        <text>3.5-C-002: Propósito de nice y renice</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el propósito de los comandos <code>nice</code> y <code>renice</code> en la administración del sistema?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>nice y renice ajustan la prioridad de los procesos, controlando cuánta CPU reciben en relación con otros procesos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>1</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Ajustar la prioridad de los procesos para controlar el uso de CPU]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! nice inicia procesos con prioridad específica; renice cambia la prioridad de procesos en ejecución.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Detener y reiniciar procesos automáticamente]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Estos comandos ajustan prioridad, no detienen ni reinician procesos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Mejorar la interfaz gráfica de los procesos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. "nice" no tiene relación con interfaces gráficas, sino con prioridad de CPU.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Asignar más memoria RAM a procesos específicos]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. nice/renice afectan prioridad de CPU, no asignación de memoria.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Prioridad_Procesos</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 6: Ordenar - Comandos de diagnóstico de red -->
+<question type="ordering">
+    <name>
+        <text>3.5-C-003: Secuencia lógica de diagnóstico de red</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Ordena los siguientes pasos para diagnosticar un problema de conectividad de red de forma lógica:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La secuencia lógica es: 1) Verificar configuración de interfaz, 2) Verificar conectividad local (ping), 3) Rastrear ruta (traceroute), 4) Revisar conexiones activas (netstat/ss).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <answer format="html">
+        <text><![CDATA[Verificar configuración de interfaz con ifconfig o ip]]></text>
+        <AnswerFormat>1</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Probar conectividad básica con ping]]></text>
+        <AnswerFormat>2</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Rastrear la ruta de paquetes con traceroute]]></text>
+        <AnswerFormat>3</AnswerFormat>
+    </answer>
+    <answer format="html">
+        <text><![CDATA[Revisar conexiones activas con netstat o ss]]></text>
+        <AnswerFormat>4</AnswerFormat>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Comprender</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Diagnóstico_Red</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.5 Administración del Sistema - Nivel 3: Aplicar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.5 Administración del Sistema/Nivel 3 - Aplicar</text>
+    </category>
+</question>
+
+<!-- Pregunta 7: Aplicar - Gestión de usuarios -->
+<question type="multichoice">
+    <name>
+        <text>3.5-A-001: Aplicar comandos de gestión de usuarios</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Necesitas realizar las siguientes tareas de administración de usuarios. ¿Qué comandos son los CORRECTOS?</p>
+        <ul>
+        <li>Crear un nuevo usuario "desarrollador"</li>
+        <li>Cambiar la contraseña del usuario "desarrollador"</li>
+        <li>Agregar el usuario "desarrollador" al grupo "sudo"</li>
+        <li>Eliminar el usuario "invitado"</li>
+        </ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los comandos correctos son: useradd desarrollador, passwd desarrollador, usermod -aG sudo desarrollador, userdel invitado.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+        <text><![CDATA[useradd desarrollador]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! useradd crea un nuevo usuario.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[passwd desarrollador]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! passwd cambia la contraseña de un usuario.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[usermod -aG sudo desarrollador]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! usermod -aG agrega el usuario a un grupo sin removerlo de otros.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[userdel invitado]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! userdel elimina un usuario del sistema.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[adduser --group sudo desarrollador (para agregar a grupo)]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Para agregar usuario a grupo se usa usermod -aG, no adduser --group.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Aplicar</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Gestión_Usuarios</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 8: Aplicar - Permisos de archivos -->
+<question type="matching">
+    <name>
+        <text>3.5-A-002: Relacionar comandos de permisos con acciones</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada comando con la acción que realiza sobre archivos y directorios:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Los comandos chmod, chown y chgrp modifican diferentes aspectos de permisos y propiedad de archivos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>chmod 755 archivo.sh</code></p>]]></text>
+        <answer>
+            <text>Cambiar permisos de lectura, escritura y ejecución</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>chown usuario:grupo archivo.txt</code></p>]]></text>
+        <answer>
+            <text>Cambiar propietario y grupo simultáneamente</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>chgrp desarrollo proyecto/</code></p>]]></text>
+        <answer>
+            <text>Cambiar solo el grupo propietario</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>chmod +x script.sh</code></p>]]></text>
+        <answer>
+            <text>Agregar permiso de ejecución</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>chown -R admin directorio/</code></p>]]></text>
+        <answer>
+            <text>Cambiar propietario recursivamente</text>
+        </answer>
+    </subquestion>
+    <tags>
+        <tag><text>Bloom:Aplicar</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Permisos_Archivos</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 9: Verdadero/Falso - Monitoreo de memoria -->
+<question type="truefalse">
+    <name>
+        <text>3.5-A-003: Herramientas de monitoreo de memoria</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Los comandos <code>free</code> y <code>vmstat</code> pueden utilizarse para mostrar el uso de la memoria RAM y swap del sistema.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Verdadero. free y vmstat son comandos para mostrar el uso de la memoria del sistema.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! free y vmstat son herramientas estándar para monitorear el uso de memoria.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Ambos comandos están diseñados específicamente para mostrar información de memoria.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Aplicar</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Monitoreo_Memoria</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.5 Administración del Sistema - Nivel 4: Analizar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.5 Administración del Sistema/Nivel 4 - Analizar</text>
+    </category>
+</question>
+
+<!-- Pregunta 10: Analizar - Problema de rendimiento -->
+<question type="multichoice">
+    <name>
+        <text>3.5-AN-001: Análisis de problema de rendimiento del sistema</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un servidor web presenta lentitud extrema. Al ejecutar comandos de monitoreo encuentras:</p>
+        <ul>
+        <li><code>top</code> muestra que un proceso de Apache consume 95% de CPU constantemente</li>
+        <li><code>free -h</code> indica que queda menos de 100 MB de RAM disponible</li>
+        <li><code>df -h</code> muestra que el disco está al 45% de capacidad</li>
+        <li><code>ss -tuln</code> revela 5000 conexiones TCP establecidas</li>
+        </ul>
+        <p>¿Qué análisis y acciones son CORRECTOS?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>El problema es un ataque de denegación de servicio o configuración inadecuada. Se necesita analizar el proceso Apache con nice/renice, aumentar memoria, configurar límites de conexiones y usar herramientas de monitoreo continuo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+        <text><![CDATA[El alto número de conexiones TCP (5000) sugiere posible ataque DDoS o configuración inadecuada]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! 5000 conexiones simultáneas es anormal y puede sobrecargar el sistema.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[La memoria RAM insuficiente causa swap excesivo, reduciendo rendimiento drásticamente]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Con menos de 100 MB disponibles, el sistema usa swap intensivamente, afectando rendimiento.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Se debe limitar conexiones simultáneas en Apache y considerar aumentar recursos (RAM)]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Configurar MaxClients/MaxRequestWorkers en Apache y aumentar RAM resolverían el problema.]]></text></feedback>
+    </answer>
+    <answer fraction="25" format="html">
+        <text><![CDATA[Usar htop/top para identificar el proceso específico y considerar nice/renice para ajustar prioridad]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Identificar el proceso problemático y ajustar su prioridad puede ayudar temporalmente.]]></text></feedback>
+    </answer>
+    <answer fraction="-100" format="html">
+        <text><![CDATA[El problema es falta de espacio en disco, necesita limpieza inmediata]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. El disco está solo al 45%, no es el problema. El cuello de botella es CPU y RAM.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Analizar</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Resolución_Problemas_Rendimiento</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 11: Analizar - Comandos de red -->
+<question type="multichoice">
+    <name>
+        <text>3.5-AN-002: Análisis de herramientas de red</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un administrador necesita diagnosticar problemas de conectividad. Analiza cuál herramienta es MÁS APROPIADA para cada situación:</p>
+        <ul>
+        <li><strong>Situación A:</strong> Ver si un servidor remoto responde</li>
+        <li><strong>Situación B:</strong> Identificar en qué punto de la ruta falla la conexión</li>
+        <li><strong>Situación C:</strong> Ver qué puertos están escuchando en el servidor local</li>
+        </ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>ping verifica conectividad básica, traceroute rastrea la ruta de paquetes, netstat/ss muestran puertos y conexiones locales.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Situación A: ping es la herramienta apropiada para verificar respuesta del servidor]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! ping envía paquetes ICMP para verificar si un host responde.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Situación B: traceroute identifica en qué salto falla la conexión]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! traceroute muestra la ruta completa y dónde se detiene o ralentiza.]]></text></feedback>
+    </answer>
+    <answer fraction="33.33333" format="html">
+        <text><![CDATA[Situación C: netstat o ss muestran puertos en escucha y conexiones activas]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! netstat -tuln o ss -tuln listan puertos abiertos localmente.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[Situación A: traceroute es mejor que ping para verificar respuesta]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. ping es más directo y eficiente para verificar simple conectividad.]]></text></feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+        <text><![CDATA[Situación C: ifconfig muestra puertos en escucha del servidor]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. ifconfig muestra interfaces de red, no puertos en escucha. Use netstat/ss.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Analizar</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Herramientas_Red</text></tag>
+    </tags>
+</question>
+
+<!-- ========================================
+     CATEGORÍA: 3.5 Administración del Sistema - Nivel 5: Evaluar
+     ======================================== -->
+
+<question type="category">
+    <category>
+        <text>$course$/3.5 Administración del Sistema/Nivel 5 - Evaluar</text>
+    </category>
+</question>
+
+<!-- Pregunta 12: Evaluar - Estrategia de monitoreo -->
+<question type="multichoice">
+    <name>
+        <text>3.5-E-001: Evaluación de estrategia de monitoreo del sistema</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Una empresa necesita implementar monitoreo continuo para 20 servidores de producción. Evalúa las siguientes estrategias:</p>
+        <ul>
+        <li><strong>Estrategia A:</strong> Ejecutar top/htop manualmente cada hora en cada servidor</li>
+        <li><strong>Estrategia B:</strong> Configurar scripts con cron que ejecuten ps, free, df y guarden resultados cada 5 minutos</li>
+        <li><strong>Estrategia C:</strong> Implementar herramientas de monitoreo centralizado (Nagios, Zabbix, Prometheus)</li>
+        </ul>
+        <p>¿Cuál estrategia es la MÁS APROPIADA para producción?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>La Estrategia C es óptima para producción porque proporciona monitoreo continuo, centralizado, con alertas automáticas, análisis histórico y escalabilidad para múltiples servidores.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>1</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+        <text><![CDATA[Estrategia C: Monitoreo centralizado con alertas automáticas, históricos y dashboards para 20 servidores]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Herramientas como Nagios/Zabbix/Prometheus ofrecen: monitoreo en tiempo real, alertas automáticas, análisis de tendencias, dashboards visuales, escalabilidad y menor carga operativa. Esencial para 20 servidores de producción.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Estrategia A: Monitoreo manual es suficiente y más confiable]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Monitoreo manual cada hora en 20 servidores es inviable, propenso a errores humanos y no detecta problemas en tiempo real.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Estrategia B: Scripts con cron son la mejor opción por su simplicidad]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Aunque funcionan, los scripts no ofrecen alertas automáticas, visualización centralizada ni análisis histórico eficiente. No escalan bien para 20 servidores.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+        <text><![CDATA[Combinar A y B es mejor que usar herramientas especializadas]]></text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Combinar métodos manuales y scripts es más complejo y menos eficiente que usar herramientas especializadas de monitoreo centralizado.]]></text></feedback>
+    </answer>
+    <tags>
+        <tag><text>Bloom:Evaluar</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Estrategia_Monitoreo</text></tag>
+    </tags>
+</question>
+
+<!-- Pregunta 13: Evaluar - Relacionar herramientas con propósitos -->
+<question type="matching">
+    <name>
+        <text>3.5-E-002: Evaluar herramientas según propósito de administración</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Evalúa y relaciona cada herramienta con el escenario donde es MÁS APROPIADA utilizarla:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+        <text><![CDATA[<p>Cada herramienta de administración tiene casos de uso específicos donde ofrece mayor valor.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>top/htop</code></p>]]></text>
+        <answer>
+            <text>Monitoreo interactivo en tiempo real de procesos y recursos</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>systemctl</code></p>]]></text>
+        <answer>
+            <text>Gestión de servicios del sistema (iniciar, detener, habilitar)</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>fsck</code></p>]]></text>
+        <answer>
+            <text>Verificación y reparación de sistemas de archivos corruptos</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>nice/renice</code></p>]]></text>
+        <answer>
+            <text>Ajuste de prioridad de CPU para optimizar rendimiento</text>
+        </answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p><code>mount/umount</code></p>]]></text>
+        <answer>
+            <text>Montaje y desmontaje de sistemas de archivos y dispositivos</text>
+        </answer>
+    </subquestion>
+    <tags>
+        <tag><text>Bloom:Evaluar</text></tag>
+        <tag><text>Tema:3.5</text></tag>
+        <tag><text>Subtema:Selección_Herramientas</text></tag>
+    </tags>
+</question>
+
+</quiz>

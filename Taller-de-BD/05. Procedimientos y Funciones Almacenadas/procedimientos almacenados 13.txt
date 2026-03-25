@@ -1,0 +1,396 @@
+Slide 1:
+ Procedimientos Almacenados
+
+Slide 2:
+Introducción a los procedimientos almacenados
+Procedimientos almacenados con parámetros
+Creación de funciones
+Manejo de errores
+Controlando el contexto de ejecución
+ Introducción a los Stored Procedures
+
+Slide 3:
+Procedimientos almacenados
+Qué es un procedimiento almacenado (SP)?.
+Sintaxis para crear un SP.
+Guía para crear un SP.
+Sintaxis para modificar y borrar un SP.
+
+Slide 4:
+Qué es un procedimiento almacenado?
+
+Es un grupo de instrucciones del lenguaje Transact-SQL. Las instrucciones son compiladas en un solo plan de ejecución.
+Acepta parámetros de entrada.
+Regresa valores por medio de la instrucción RETURN.
+Puede modificar las tablas de la BD.
+Regresa múltiples valores a los usuarios por medio de los parámetros de salida.
+
+
+
+
+
+Slide 5:
+Ventajas de los procedimientos almacenados 
+Encapsulate business functionality and create reusable application logic. Business rules or policies encapsulated in stored procedures can be changed in a single location. All clients can use the same stored procedures to ensure onsistent data access and modification. 
+Shield users from exposure to the details of the tables in the database. If a set of stored  procedures supports all the business functions that users need to perform, users never need to access the tables directly.
+Provide security mechanisms. Users can be granted permission to execute a stored procedure even if they do not have permission to access the tables or views to which the stored procedure refers.
+
+
+Slide 6:
+Ventajas de los procedimientos almacenados
+Improve performance. Stored procedures implement many tasks as a series of Transact- SQL statements. Conditional logic can be applied to the results of the first Transact-SQL statements to determine which subsequent Transact-SQL statements are executed. All these Transact-SQL statements and conditional logic become part of a single execution plan on the server.
+Reduce network traffic. Rather than send hundreds of Transact-SQL statements over the network, users can perform a complex operation by sending a single statement, which reduces the number of requests that pass between client and server.
+
+
+Slide 7:
+Proceso inicial de Stored Procedures
+
+
+Entrada a  sysobjects
+ y syscomments tables
+ Plan Compilado es ALmacenado
+en cache
+
+
+Compilación
+Optimización
+Creación
+Execución
+(Primera vez
+o recompilación)
+
+
+Parsing
+
+
+
+
+
+
+
+Slide 8:
+Ventajas de los Stored Procedures 
+Compartir la lógica de las aplicaciones 
+Proporciona mecanismos de seguridad
+Proporciona performance
+Reduce el tráfico de la red
+
+Slide 9:
+Creación de Stored Procedures
+Crear un procedimiento con la clauusula CREATE PROCEDURE
+
+
+
+
+
+Usa sp_help para desplegar información sobre los procedimientos almacenados
+Use pubs
+GO
+CREATE PROC dbo.overdue_books
+AS
+  SELECT * 
+  FROM dbo.loan
+  WHERE due_date < GETDATE()
+GO
+
+Slide 10:
+Sintaxis
+CREATE PROC [ EDURE ] procedure_name [ ; number ] 
+    [ { @parameter data_type }  [ OUTPUT ] 
+    ] [ ,...n ] 
+
+[ WITH 
+    { RECOMPILE | ENCRYPTION | RECOMPILE , ENCRYPTION } ] 
+
+
+
+
+
+Slide 11:
+Ejecución de Stored Procedures
+Ejecutando un Stored Procedure por si mismo
+
+
+
+Ejecutando un Stored Procedure dentro de la Instrucción  INSERT 
+
+EXEC overdue_books
+
+
+INSERT INTO customers
+EXEC employee_customer
+
+
+Slide 12:
+Guia para Crear procedimientos almacenados
+El Usuario dbo es el propietario de todos los SP
+Usar un  SP para una tarea
+Crea, prueba y depura los SP en el Servidor
+No Uses el prefijo SP en los nombre de los Stored Procedure –confunde--
+Minimiza el uso de SP temporales
+
+Slide 13:
+Alterando y borrando un  Stored Procedures
+Modificando Stored Procedures
+Incluye cualquier opción  ALTER PROCEDURE
+
+
+
+
+
+
+
+ALTER PROC overdue_books
+AS
+SELECT CONVERT(char(8), due_date, 1) date_due, 
+  isbn, copy_no, 
+  SUBSTRING(title, 1, 30)title, member_no, lastname
+FROM OverdueView
+ORDER BY due_date 
+DROP PROC overdue_book
+
+Slide 14:
+Procedimientos Almacenados con Parámetros 
+Parámetros de entrada (INPUT)
+Parámetros de salida (OUTPUT)
+
+Slide 15:
+Parámetros de entrada
+valores adecuados por DEFAULT para los parámetros de entrada
+CREATE PROC dbo.find_isbn 
+   @title longstring = null, 
+   @translation char(8) = 'English'
+AS
+IF @title is null 
+   BEGIN
+     PRINT "Please provide a title
+ 	(or partial title) and the translation"
+     PRINT "find_isbn 'Oliver%', 'Japanese'"
+…
+…
+
+Slide 16:
+Parámetros de entrada 
+Paso de valores por Referencia
+
+
+
+
+
+
+Paso de valores por Posición
+EXEC altas 'LaBrie', 'Linda', null,
+'Dogwood Drive', 'Sacramento', 'CA',
+'94203', null
+ 
+EXEC altas
+  @firstname = 'Linda',
+  @lastname = 'LaBrie',
+  @street = 'Dogwood Drive',
+  @city = 'Sacramento',
+  @state = 'CA',
+  @zip = '94203'
+  
+
+Slide 17:
+Parámetros de salida 
+CREATE PROCEDURE dbo.mathtutor
+@m1 smallint,
+	@m2 smallint,
+	@result smallint OUTPUT
+AS
+SET @result = @m1 * @m2
+
+DECLARE @answer smallint
+EXECUTE mathtutor 5, 6, @answer OUTPUT
+SELECT 'The result is: ' , @answer
+
+
+The result is:  30
+
+Resultado del SP
+
+Ejecutando SP
+Creacion del SP
+
+Slide 18:
+Manejo de errores y valores de retorno
+RETURN
+sp_addmessage
+@@error 
+RAISERROR
+
+Slide 19:
+RETURN
+Puede ser usado parea generar un código y salir de un grupo de instrucciones.
+Su uso principal es para el manejo de errores, ya que interrumpe el flujo del programa.
+
+Sintaxis
+RETURN [ integer_expression ]  
+DECLARE @return_status int 
+EXEC @return_status = checkstate '648-92-1872' SELECT 'Return Status' = @return_status   
+
+Slide 20:
+@@ERROR
+Devuelve el número de error de la última instrucción Transact-SQL ejecutada. 
+@@ERROR =0 , no existe error.
+@@ERROR <> 0, existe un error.
+Ver los códigos  de errores en la ayuda (errores)
+
+UPDATE authors SET au_id = '172 32 1176' WHERE au_id = "172-32-1176" 
+
+IF @@ERROR = 547 
+
+print “Violación del constraint" 
+
+Slide 21:
+Raiserror
+Devuelve un mensaje de error definido por el usuario y establece un indicador del sistema para registrar que se ha producido un error 
+Sintaxis
+RAISERROR ( { msg_id | msg_str } { , severity , state 
+    [ , argument [ ,...n ] ]} ) 
+    [ WITH option [ ,...n ] ]
+
+Option :: NOWAIT, LOG
+
+Slide 22:
+Raiserror
+La sintaxis se compone por cuatro elementos:
+Número de error
+Severidad
+Estado
+Mensaje 
+
+
+Slide 23:
+ Número de error
+Número entero. Se encuentra en el rango 5001 y 2,147,483,647 (231 -1).
+El número de error es atrapado en la aplicación cliente.
+
+
+Slide 24:
+Severidad
+Describe el tipo de error en términos generales. 
+Errores  0 y 10 son los mas comunes.
+Errores del 11 al 16, son errores que el usuario puede corregir.
+Errores del 17 al 19, indican problemas del hardware.
+…..
+
+Slide 25:
+Estado 
+Informa en que parte del código se encuentra el error.
+Se corresponde con un valor entero del 1 al 127.
+
+Slide 26:
+Mensaje 
+Es un texto que describe el error.
+No puede exceder de 255 caracteres.
+
+Slide 27:
+RAISERROR
+RAISERROR (‘Este es un Error.', 10, 1) 
+Sintaxis
+RAISERROR ( { msg_id | msg_str } { , severity , state 
+    [ , argument [ ,...n ] ]} ) 
+    [ WITH option [ ,...n ] ]
+
+Option :: NOWAIT, LOG
+RAISERROR(52001, 10, 1) 
+Debe de existir en la tabla sysmessages
+
+Slide 28:
+RAISERROR
+RAISERROR (“El empleado %s no existe.”, 10, 1, “A1”) 
+Sintaxis
+RAISERROR ( { msg_id | msg_str } { , severity , state 
+    [ , argument [ ,...n ] ]} ) 
+    [ WITH option [ ,...n ] ]
+
+Option :: NOWAIT, LOG
+%d y %i 	 Enteros con signo 
+%s 		 cadenas 
+
+Slide 29:
+Sp_addmessage
+Sintaxis
+sp_addmessage [ @msgnum = ] msg_id , 
+    [ @severity = ] severity , 
+    [ @msgtext = ] 'msg' 
+    [ , [ @lang = ] 'language' ]  
+    [ , [ @with_log = ] ‘true|false' ]    
+Sp_addmessage 52001, 16, ‘cliente invalido’
+RAISERROR(52001, 16, 1) 
+Sp_addmessage 52001, 16, ‘cliente % s invalido’
+RAISERROR(52001, 16, 1, ‘juan’) 
+
+Slide 30:
+Funciones definidas por el usuario
+Regresan un valor
+Regresan una tabla
+Pueden ser llamadas desde un select
+Pueden utilizarse como constraints
+
+Slide 31:
+
+CREATE FUNCTION dbo.fn_ConcatOrders
+  (@cid AS NCHAR(5)) RETURNS VARCHAR(8000)
+AS
+BEGIN
+  DECLARE @orders AS VARCHAR(8000);
+  SET @orders = '';
+  SELECT @orders = @orders +
+                  CAST(OrderID AS VARCHAR(10)) + ';'
+  FROM dbo.Orders
+  WHERE CustomerID = @cid;
+
+  RETURN @orders;
+END
+
+
+-- PRUEBA DE LA FUNCION
+SELECT CustomerID, dbo.fn_ConcatOrders(CustomerID) AS Orders
+FROM dbo.Customers;
+
+Slide 32:
+
+
+CREATE FUNCTION dbo.fn_T1_getkey() RETURNS INT
+AS
+BEGIN
+  RETURN
+    CASE
+      WHEN NOT EXISTS
+           (SELECT * FROM dbo.T1 WHERE keycol = 1)   	THEN 1
+      ELSE (SELECT MAX(T1.keycol + 1)
+            FROM dbo.T1)   
+  END;
+END
+
+Slide 33:
+Constraints y funciones
+
+CREATE TABLE dbo.T1
+(
+  keycol INT NOT NULL CONSTRAINT PK_T1 PRIMARY KEY CHECK (keycol > 0),
+  datacol VARCHAR(10) NOT NULL
+);
+
+ALTER TABLE dbo.T1 ADD DEFAULT(dbo.fn_T1_getkey()) FOR keycol;
+
+INSERT INTO dbo.T1(datacol) VALUES('a');
+DELETE FROM dbo.T1 WHERE keycol = 2;
+INSERT INTO dbo.T1(datacol) VALUES('d');
+
+Slide 34:
+Funciones y tablas
+
+CREATE FUNCTION dbo.fn_GetCustOrders
+  (@cid AS NCHAR(5)) RETURNS TABLE
+AS
+RETURN
+  SELECT OrderID, CustomerID, EmployeeID, OrderDate, RequiredDate,
+    ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity,
+    ShipRegion, ShipPostalCode, ShipCountry
+  FROM dbo.Orders
+  WHERE CustomerID = @cid
+GO
