@@ -34,6 +34,59 @@ When creating any educational content, instructional design, or assessment instr
 Assessment and its instruments in an educational context based on the development of competencies in students. Offer initial prototypes of different types of evidence along with their instruments supported by the impact indicators.
 Each evidence has different impact indicators distributed across activities according to  "correspondencia_evidencia_indicadores.md"
 
+## Academic Rigor and Quality Standards
+
+### Bibliographic Requirements
+
+**ALWAYS maintain academic rigor in course notes and materials:**
+
+- ✅ **Verify with authoritative sources** - Every technical concept should be backed by reliable bibliography
+- 📚 **3-5 bibliographic sources per unit** is sufficient - Avoid excessive citations while ensuring credibility
+- 👨‍🏫 **Prefer recognized authors** - Select books and authors with highest authority in the field
+- 🏭 **Technology documentation** - For technical content, ALWAYS prioritize official manufacturer/vendor documentation
+- ⚖️ **Check for contradictions** - Review content to ensure consistency and accuracy across all materials
+- ✂️ **Be concise** - Do NOT create excessively long texts; maintain clarity and focus
+
+### Content Quality Guidelines
+
+1. **Authoritative Sources Priority:**
+   - Academic textbooks: Choose seminal works and latest editions from recognized authors
+   - Technology/Software: Official documentation from Microsoft, Oracle, Cisco, etc.
+   - Standards: ISO, IEEE, RFC, W3C official documents when applicable
+
+2. **Citation Standards:**
+   - Include author, title, edition, publisher, year in References section
+   - Format: APA or IEEE style as appropriate for technical content
+   - Place references at end of each unit or document
+
+3. **Content Verification:**
+   - Cross-check technical specifications against official documentation
+   - Verify version compatibility and currency of information
+   - Ensure no conflicting information between sections
+
+4. **Conciseness:**
+   - Focus on essential concepts and practical application
+   - Avoid redundancy and excessive elaboration
+   - Use examples and diagrams to clarify complex topics efficiently
+   - Target 3,000-5,000 words per unit for theory content (adjust based on complexity)
+
+### Reference Format Example
+
+```markdown
+## Referencias
+
+### Bibliografía Principal
+1. Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). *Operating System Concepts* (10th ed.). Wiley.
+2. Tanenbaum, A. S., & Bos, H. (2015). *Modern Operating Systems* (4th ed.). Pearson.
+
+### Documentación Oficial
+3. Microsoft. (2024). *SQL Server Documentation*. https://learn.microsoft.com/en-us/sql/
+4. Oracle. (2024). *MySQL 8.0 Reference Manual*. https://dev.mysql.com/doc/refman/8.0/
+
+### Complementaria
+5. Date, C. J. (2012). *Database Design and Relational Theory*. O'Reilly Media.
+```
+
 ## Critical Patterns
 
 ### Practice File Structure (ALWAYS follow exactly):

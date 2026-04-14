@@ -1,0 +1,464 @@
+Slide 1:
+ 
+Vistas
+
+Slide 2:
+Contenido 
+Qué es un vista?
+Ventajas de las vistas
+Definiendo vistas
+Modificando datos por medio de las vistas
+Consideraciones de desempeño 
+
+Slide 3:
+Qué es una vista?
+Es una tabla virtual. 
+Es una instrucción SELECT con nombre que produce dinámicamente un conjunto de resultados sobre los que se puede seguir operando.
+Realmente, No guarda datos.
+Sirve como filtro de las tablas que guardan los datos.
+
+Slide 4:
+Qué es un vista?
+TitleView
+ title 
+ author
+Last of the Mohicans
+The Village Watch-Tower
+Poems
+James Fenimore Cooper
+Kate Douglas Wiggin
+Wilfred Owen
+title
+title_no
+ title 
+ author
+synopsis
+1
+2
+3
+Last of the Mohicans
+The Village Watch-Tower
+Poems
+James Fenimore Cooper
+Kate Douglas Wiggin
+Wilfred Owen
+~~~
+~~~
+~~~
+
+
+Vista del usuario
+USE library
+GO
+CREATE VIEW dbo.TitleView
+AS 
+SELECT title, author
+FROM title
+
+Slide 5:
+Ejemplos típicos de vistas
+Un subconjunto de renglones o columnas de una tabla base
+La unión de dos o mas tablas base
+Un join de dos o mas tablas base
+La sumatoria de los datos de una tabla base
+
+
+Slide 6:
+Para qué se utilizan las vistas?
+Permite a los usuarios enfocarse a datos específicos que son utilizados para tareas especificas. Los datos innecesarios, no se incluyen en la vista.
+Simplifica el trabajo del usuario. Pueden definirse las consultas complejas y frecuentes como UNION, joins como vistas de tal forma que el usuario no tiene que especificar todas las condiciones.
+Mejora la seguridad permitiendo al usuario acceder los datos a través de la vista, sin tener que otorgar a los usuarios los permisos sobre las tablas base. 
+
+
+Slide 7:
+Tipos de vistas
+Vistas estándar.
+ combinan datos de una o mas tablas.
+Vistas indexadas. 
+Materializa la vista con la construcción de un índice clustered
+Vistas particionadas.
+La información proviene de uno o mas servidores.
+
+Slide 8:
+Ventajas de las vistas
+
+El usuario se enfoca a los datos apropiados
+Delimita el acceso a los datos importantes
+Oculta complejidad de la base de datos
+Simplifica consultas complejas
+Simplifica el manejo de los permisos
+
+
+Slide 9:
+CREATE VIEW –sintaxis--
+Sintaxis
+
+
+
+
+
+
+
+CREATE VIEW 
+[ < database_name > . ] [ < owner > . ] view_name [ ( column [ ,...n ] ) ] 
+[ WITH < view_attribute > [ ,...n ] ] 
+AS 
+select_statement 
+[ WITH CHECK OPTION ] 
+
+< view_attribute > ::= 
+    { ENCRYPTION | SCHEMABINDING | VIEW_METADATA } GO
+
+Slide 10:
+Creación de vistas
+Creación de vistas
+
+
+
+
+
+
+Restricciones en la definición de vistas
+No puede incluir cláusulas ORDER BY sin TOP
+No puede tener la cláusula INTO, COMPUTE O COMPUTE BY 
+USE pubs 
+IF EXISTS (SELECT TABLE_NAME 
+FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_NAME = 'titles_view')
+ DROP VIEW titles_view
+ GO 
+CREATE VIEW titles_view 
+AS 
+SELECT title, type, price, pubdate FROM titles 
+
+Slide 11:
+Ejemplo de una vista con joins
+member_no
+11
+12
+13
+14
+
+lastname
+Thomas	
+Thomas	
+Funk 	
+Rudd	
+
+firstname
+Gary	
+Clair	
+Frank	
+Clair	
+
+middleinitial
+~~~
+~~~
+~~~
+~~~
+
+photograph
+~~~
+~~~
+~~~
+~~~
+
+Lastname
+Thomas
+Funk
+
+Firstname
+Clair
+Frank
+	
+
+
+Birth Date
+92.01.16
+84.01.18
+member
+juvenile
+BirthdayView
+USE library
+GO
+CREATE VIEW dbo.BirthdayView
+	(Lastname, Firstname, [Birth Date])
+AS
+SELECT lastname, firstname,
+	CONVERT(char(8), birth_date, 2)
+FROM member JOIN juvenile
+ON member.member_no = juvenile.member_no
+member_no
+12
+13
+
+
+
+adult_no
+11
+6
+
+	
+
+birth_date
+1992-01-16 00:00:00.000
+1984-01-18 00:00:00.000
+
+
+
+
+
+
+Slide 12:
+Requisitos para crear una vista
+La instrucción ORDER BY, no puede ser usada en la consulta de la vista.
+No puede tener un compute.
+No puede tener un select…into
+Todos las columnas de resultados deben tener nombre.
+Es posible definir vistas sobre otras vistas (32 niveles máximo).
+No se puede asociar un TRIGGER AFTER triggers con vistas, sólo triggers INSTEAD OF
+
+Slide 13:
+Sintaxis para modificar y borrar vistas
+Alterar Vistas
+
+
+
+
+
+
+Eliminar Vistas
+ALTER VIEW view_name [ ( column [ ,...n ] ) ] 
+[ WITH < view_attribute > [ ,...n ] ] 
+AS 
+    select_statement 
+[ WITH CHECK OPTION ]
+
+< view_attribute > ::= 
+    { ENCRYPTION | SCHEMABINDING } 
+DROP VIEW UnpaidFinesView
+
+Slide 14:
+Fuentes de informacion sobre las vistas
+
+Slide 15:
+Alterar y eliminar Vistas
+Alterar Vistas
+
+
+
+Conserva los permisos
+La nueva cláusula SELECT remplaza la anterior
+Eliminar  Vistas
+USE library
+GO
+ALTER VIEW dbo.TitleView
+AS 
+SELECT title, authors, synopsis
+FROM title
+DROP VIEW UnpaidFinesView
+
+Slide 16:
+Fuentes de información sobre las vistas
+Select * from sys.views
+Exec sp_helptext ‘alumnos_vista’
+
+Slide 17:
+Modificar datos en una vista
+Las vistas no mantienen una copia separada de los datos ( a excepción de las vistas indexadas).
+Los cambios realizados sobre las vistas, modifican la tabla base.
+Restricciones:
+No puede afectar más de una tabla base.
+No puede modificarse columnas derivadas de cálculos.
+No puede modificar columnas  afectadas por GROUP BY, HAVING o DISTINCT
+
+
+Slide 18:
+Modificación de datos a través de las vistas
+Los datos insertados o modificados en una vista, son verificadas si la opción  WITH CHECK OPTION ha sido especificada
+Se considera actualizable si no contiene GROUP BY, TOP, UNION o  DISTINCT.
+Si no se especifica WITH CKECK OPTION puede darse la alta en la tabla, pero no aparecer en la vista.
+
+Slide 19:
+Modificación de datos a través de las vistas
+No se permiten DELETE en vistas formadas por varias tablas. Sólo INSERT y UPDATE.
+No se aceptan INSERT, a menos que en la vista mediante la que se están insertando nuevas filas se incluyan todas las columnas NOT NULL.
+Todas las columnas que se estén modificando deben de cumplir con las restricciones para la instrucción de modificación de datos, como si se estuviera ejecutando directamente sobre la tabla.
+
+
+Slide 20:
+Opciones de las vistas
+Encryption
+SchemaBinding
+Check option
+
+
+Slide 21:
+Encryption
+Si se especifica esta opción, el código SQL será cifrado.
+Se aplica a triggers, procedimientos almacenados, vistas y tipos definidos por el usuario.
+Se protege la lógica de la vista. 
+USE library
+GO
+CREATE VIEW dbo.UnpaidFinesView (Member, TotalUnpaidFines)
+WITH ENCRYPTION
+AS
+SELECT member_no, (sum(fine_assessed-fine_paid))
+FROM loanhist
+GROUP BY member_no, fine_assessed, fine_paid
+HAVING SUM(fine_assessed-fine_paid) > 0
+GO
+
+Slide 22:
+SchemaBinding
+Liga el esquema de la vista o el tipo de dato al esquema de los objetos. 
+Si se especifica esta opción, no se podrán borrar objetos  o realizar cambios al esquema.
+Si se especifica esta opción no se podrá utilizar el * en a cláusula select y se debe de poner user.nombre, como nombre de la vista.
+
+Slide 23:
+Check option
+Previene que se realicen inserciones o actualizaciones que tengan conflicto con la cláusula where de la vista.
+
+Slide 24:
+Sin Check option
+TitleView
+ title 
+ año
+Last of the Mohicans
+Poems
+1997
+1998
+title
+ title 
+ año
+synopsis
+Last of the Mohicans
+The Village Watch-Tower
+Poems
+1997
+2000
+1998
+~~~
+NULL
+~~~
+
+
+Vista del usuario
+USE library
+GO
+CREATE VIEW dbo.TitleView
+AS 
+SELECT title, año
+FROM title
+WHERE año < 2000
+Insert into Title_View VALUES (‘BD’, 2003)
+
+BD                 2003               NULL
+
+Slide 25:
+Con Check option
+TitleView
+ title 
+ año
+Last of the Mohicans
+Poems
+1997
+1998
+title
+ title 
+ año
+synopsis
+Last of the Mohicans
+The Village Watch-Tower
+Poems
+1997
+2000
+1998
+~~~
+NULL
+~~~
+
+
+Vista del usuario
+USE library
+GO
+CREATE VIEW dbo.TitleView
+WITH CHEK OPTION
+AS 
+SELECT title, año
+FROM title
+WHERE año < 2000
+Insert into Title_View VALUES (‘BD’, 2003)
+
+ERROR NO SE PUEDE DAR DE ALTA
+
+Slide 26:
+Vistas  indexadas –Materializadas-
+Es una vista con un índice único, tipo clusterd.
+Una vista materializada mejora el performance.
+Permite al optimizador de consultas usar la vista.
+Usa la vista cuando:
+Los datos son modificados con poca frecuencia
+Las consultas involucran un gran numero de JOINs y agregaciones
+
+
+Slide 27:
+Restricciones sobre las vistas materializadas
+La vista no debe hacer referencia a ninguna otra vista, sólo a tablas base.
+La vista se debe crear con la opción SCHEMABINDING. Mediante la opción SCHEMABINDING se asocia la vista al esquema de las tablas base.
+
+
+
+
+Slide 28:
+Vistas materializadas
+
+USE northwind
+GO
+CREATE VIEW product_totals
+ WITH SCHEMABINDING
+AS
+SELECT productid, total_volume= sum (unitprice*quantity),
+Total_qty=SUM (Quantity), number=count_big(*)
+FROM dbo. [order details]
+GROUP BY productid
+GO
+
+
+Slide 29:
+Vistas materializadas
+-- Error: El indice debe ser clustered
+CREATE UNIQUE INDEX pv_idx ON 
+product_totals(productid)
+
+-- Indice Correcto.
+CREATE UNIQUE CLUSTERED  INDEX pv_idx ON 
+product_totals(productid)
+El índice deber ser tipo clustered
+
+Slide 30:
+Vistas divididas (particionadas)
+Las vistas divididas permiten ver conjuntos de datos disjuntos en tablas independientes.
+Una vista será considerada particionada si:
+Las columnas de las posiciones correspondientes de cada SELECT son del mismo tipo exacto.
+Una columna de cada tabla, en la misma posición debe tener una cláusula check definiendo sobre ellas restricciones mutuamente excluyente. Por ejemplo: una tabla puede tener un check región=‘norte, otra región=‘sur’, etc.
+
+Slide 31:
+Vistas divididas
+
+Create table vetas_norte
+(ordernum int, 
+  total,
+ region check (region =‘norte’)
+)
+
+CREATE VIEW VENTAS_GLOBALES
+AS
+SELECT * FROM VENTAS_NORTE
+UNION ALL 
+SELECT * FROM VENTAS_SUR
+Create table vetas_sur
+(ordernum int,
+  total,
+ region check (region =‘norte’)
+)
+
