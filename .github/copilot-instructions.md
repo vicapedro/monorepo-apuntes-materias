@@ -1,5 +1,29 @@
 # GitHub Copilot Instructions
 
+## Writing Style Guidelines
+
+**CRITICAL: Do NOT use emojis in any generated content.** Use plain text markers instead:
+- Instead of 📋, use: **[Official]**
+- Instead of ✅, use: **[Required]** or simply list items
+- Instead of ⚠️, use: **WARNING:** or **NOTE:**
+- Instead of 🆕, use: **NEW:** or **Updated:**
+
+Use clear, professional academic language without decorative symbols.
+
+**Diagrams and Visual Aids:**
+- **ALWAYS prefer Mermaid diagrams** over ASCII art when creating visualizations
+- Use Mermaid for: flowcharts, sequence diagrams, class diagrams, ER diagrams, network diagrams
+- ASCII art only when Mermaid syntax is not suitable for the specific use case
+- Mermaid example:
+  ```mermaid
+  graph TD
+      A[Client] --> B[Load Balancer]
+      B --> C[Server 1]
+      B --> D[Server 2]
+  ```
+
+---
+
 ## Repository Architecture
 [Subject]/
 ├── [Subject].txt/.md             # Official program reference (USE THIS)
@@ -17,18 +41,18 @@
 
 **ALWAYS consult the official program file `[Subject].txt` or `[Subject].md` in each subject directory** for:
 
-- 📋 **Official competencies to develop** - Use exact competencies from TecNM program
-- 🎯 **Required prerequisite competencies** - Ensure proper curricular articulation  
-- 📚 **Suggested bibliography** - Include recommended and complementary sources
-- 🎓 **Suggested learning activities** - Align with official pedagogical approach
-- ⏱️ **SATCA hours distribution** - Theory, practice, and autonomous work hours
-- 🔗 **Curricular articulation** - How the subject connects with others in the curriculum
+- **Official competencies to develop** - Use exact competencies from TecNM program
+- **Required prerequisite competencies** - Ensure proper curricular articulation  
+- **Suggested bibliography** - Include recommended and complementary sources
+- **Suggested learning activities** - Align with official pedagogical approach
+- **SATCA hours distribution** - Theory, practice, and autonomous work hours
+- **Curricular articulation** - How the subject connects with others in the curriculum
 
 When creating any educational content, instructional design, or assessment instrument, reference this official program to ensure:
-- ✅ **Competency alignment** with TecNM standards
-- ✅ **Proper prerequisite validation** 
-- ✅ **Bibliographic consistency** with institutional requirements
-- ✅ **Activity alignment** with official learning objectives
+- **Competency alignment** with TecNM standards
+- **Proper prerequisite validation** 
+- **Bibliographic consistency** with institutional requirements
+- **Activity alignment** with official learning objectives
 
 ## Assessment and its instruments
 Assessment and its instruments in an educational context based on the development of competencies in students. Offer initial prototypes of different types of evidence along with their instruments supported by the impact indicators.
@@ -40,12 +64,12 @@ Each evidence has different impact indicators distributed across activities acco
 
 **ALWAYS maintain academic rigor in course notes and materials:**
 
-- ✅ **Verify with authoritative sources** - Every technical concept should be backed by reliable bibliography
-- 📚 **3-5 bibliographic sources per unit** is sufficient - Avoid excessive citations while ensuring credibility
-- 👨‍🏫 **Prefer recognized authors** - Select books and authors with highest authority in the field
-- 🏭 **Technology documentation** - For technical content, ALWAYS prioritize official manufacturer/vendor documentation
-- ⚖️ **Check for contradictions** - Review content to ensure consistency and accuracy across all materials
-- ✂️ **Be concise** - Do NOT create excessively long texts; maintain clarity and focus
+- **Verify with authoritative sources** - Every technical concept should be backed by reliable bibliography
+- **3-5 bibliographic sources per unit** is sufficient - Avoid excessive citations while ensuring credibility
+- **Prefer recognized authors** - Select books and authors with highest authority in the field
+- **Technology documentation** - For technical content, ALWAYS prioritize official manufacturer/vendor documentation
+- **Check for contradictions** - Review content to ensure consistency and accuracy across all materials
+- **Be concise** - Do NOT create excessively long texts; maintain clarity and focus
 
 ### Content Quality Guidelines
 
@@ -267,10 +291,10 @@ When splitting `Practicas.md` → create individual `Practica-##-Topic.md` + `Pr
 ```
 | Criterio | Excelente (3) | Bueno (2) | Aceptable (1) | Insuficiente (0) |
 |----------|---------------|-----------|---------------|------------------|
-| Organización | Estructura clara y lógica | Estructura adecuada | Estructura básica | Sin estructura |
-| Contenido técnico | Dominio completo | Dominio satisfactorio | Dominio básico | Sin dominio |
-| Evidencias visuales | Capturas completas y relevantes | Capturas adecuadas | Capturas básicas | Sin capturas |
-| Reflexión | Análisis profundo del aprendizaje | Reflexión adecuada | Reflexión básica | Sin reflexión |
+| Organización | Estructura clara y lógica | Estructura adecuada | Estructura básica | Intento de organización insuficiente o incoherente |
+| Contenido técnico | Dominio completo | Dominio satisfactorio | Dominio básico | Contenido presente pero inadecuado o con errores graves |
+| Evidencias visuales | Capturas completas y relevantes | Capturas adecuadas | Capturas básicas | Capturas presentes pero irrelevantes o incompletas |
+| Reflexión | Análisis profundo del aprendizaje | Reflexión adecuada | Reflexión básica | Reflexión presente pero superficial o sin relación al aprendizaje |
 ```
 
 **Lista de Cotejo Template:**
@@ -617,7 +641,7 @@ Create matrix with **10 columns** for each unit (unit total must equal 100%):
 - **Excelente (3)**: Exceeds expectations
 - **Bueno (2)**: Meets expectations
 - **Aceptable (1)**: Basic level achieved
-- **Insuficiente (0)**: Below minimum standard
+- **Insuficiente (0)**: Attempted but does not meet minimum standard — the student made an effort but the result is inadequate, incomplete, or incorrect to the point of not demonstrating the expected competency
 
 **Secondary Instruments:**
 - **Lista de Cotejo**: For specific requirement verification

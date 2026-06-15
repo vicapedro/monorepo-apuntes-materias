@@ -1,6 +1,3 @@
-```markdown
-// filepath: /home/pedro/Documentos/monorepo-apuntes/Taller-de-BD/03. Seguridad en Bases de Datos/Vistas.md
-
 # Vistas en SQL Server
 
 **Taller de Base de Datos - Seguridad en Bases de Datos**
@@ -1294,7 +1291,7 @@ WHERE Persona1 = 'Juan';
 ### ❌ Evitar
 
 1. **No abusar de vistas anidadas:** Máximo 2-3 niveles
-2. **No usar SELECT *:** Especificar columnas explícitamente
+2. **No usar SELECT \*:** Especificar columnas explícitamente
 3. **No crear vistas sin propósito:** Cada vista debe tener una razón clara
 4. **No ignorar impacto de vistas indexadas:** Considerar impacto en escrituras
 5. **No olvidar WITH ENCRYPTION sin respaldo:** Mantener código fuente separado

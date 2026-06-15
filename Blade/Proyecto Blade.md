@@ -9,10 +9,12 @@ Alcance: Uso académico multi-materia de un servidor tipo blade con 8 nodos
 - Seguridad y facilidad de uso: Acceso por roles, plantillas con cloud-init, redes por curso (VLAN), autoservicio limitado para docentes.
 - Escenarios didácticos: Soporte a BD distribuidas, SO con contenedores/Kubernetes, Redes y servicios, Web/Móvil y Pruebas de software.
 - Migración: De VMware 6.5 a Proxmox con ventana controlada, importación OVA/OVF y validación progresiva.
+- **Infraestructura eléctrica:** 2 bancos de baterías + 1 UPS para garantizar continuidad operativa ante cortes eléctricos.
 
 ## 2) Objetivos
 - Pedagógicos: Aprendizajes prácticos con escenarios realistas (multi-nodo, alto nivel de disponibilidad, CI/CD).
 - Técnicos: Aislar entornos por curso, reducir riesgo operativo, facilitar despliegues a docentes vía plantillas y automatización.
+- **Continuidad:** Garantizar operación ininterrumpida durante cortes eléctricos mediante respaldo energético adecuado.
 
 ## 3) Decisión de plataforma
 - Opción recomendada: Proxmox VE 8
@@ -40,6 +42,448 @@ Alcance: Uso académico multi-materia de un servidor tipo blade con 8 nodos
   - Nodo 7: Servicios de plataforma (PBS, Registry, GitLab Runner, Mirror repos)
   - Nodo 8: Bastión/Firewall virtual (pfSense/OPNsense), monitoreo
 
+## **4.5) Infraestructura Eléctrica y Continuidad**
+
+### **Configuración de Respaldo Energético**
+
+**Equipamiento disponible:**
+- 2 bancos de baterías externos
+- 1 UPS (Sistema de Alimentación Ininterrumpida)
+
+### **Arquitectura Eléctrica Recomendada**
+
+```mermaid
+graph TD
+    A[Red Eléctrica Principal] --> B[UPS Principal]
+    B --> C[Banco de Baterías 1]
+    B --> D[Banco de Baterías 2]
+    C --> E[PDU 1 - Nodos 1-4]
+    D --> F[PDU 2 - Nodos 5-8]
+    E --> G[Switches de Red]
+    F --> H[Almacenamiento Externo]
+    
+    B -.Monitoreo NUT.-> I[Servidor Monitoreo]
+    I -.Señales Shutdown.-> E
+    I -.Señales Shutdown.-> F
+```
+
+### **Distribución de Cargas**
+
+**Configuración A: Redundancia Total (Recomendada)**
+- **UPS → Banco 1:** Nodos 1-4 + Switch Core + PBS
+- **UPS → Banco 2:** Nodos 5-8 + Switch Backup + Servicios Críticos
+- **Ventaja:** Tolerancia a fallo de un banco sin pérdida total del clúster
+
+**Configuración B: Capacidad Extendida**
+- **UPS → Banco 1 + Banco 2 en serie:** Todos los nodos + infraestructura de red
+- **Ventaja:** Mayor autonomía temporal (mayor tiempo de respaldo)
+- **Desventaja:** Punto único de falla en el UPS principal
+
+### **Autonomía Estimada y Cálculos**
+
+**Datos requeridos para dimensionamiento:**
+```
+Consumo blade típico: 200-400W por nodo
+Consumo total cluster (8 nodos): 1.6 - 3.2 kW
+Consumo switches + storage: +300-500W
+Consumo total estimado: 2-4 kW
+
+Capacidad UPS: [PENDIENTE: especificar kVA/kW]
+Capacidad bancos baterías: [PENDIENTE: especificar Ah y voltaje]
+
+Autonomía estimada = (Capacidad baterías × Voltaje × 0.8) / Consumo total
+```
+
+**Escenarios típicos de autonomía:**
+- **Sin bancos externos:** 5-15 minutos (solo UPS interno)
+- **Con 1 banco externo (100Ah/48V):** 30-60 minutos adicionales
+- **Con 2 bancos externos:** 60-120 minutos de autonomía total
+
+### **Integración con Proxmox - Network UPS Tools (NUT)**
+
+**Instalación y configuración en todos los nodos:**
+
+```bash
+# Instalar NUT en nodo maestro (conectado al UPS por USB/SNMP)
+apt update && apt install nut nut-client nut-server -y
+
+# Configurar UPS en nodo maestro (/etc/nut/ups.conf)
+cat > /etc/nut/ups.conf << 'EOF'
+[apc-campus]
+    driver = usbhid-ups
+    port = auto
+    desc = "UPS Campus Principal"
+    pollinterval = 2
+EOF
+
+# Configurar modo servidor (/etc/nut/upsd.conf)
+cat > /etc/nut/upsd.conf << 'EOF'
+LISTEN 0.0.0.0 3493
+EOF
+
+# Usuarios y permisos (/etc/nut/upsd.users)
+cat > /etc/nut/upsd.users << 'EOF'
+[monuser]
+    password = SecurePassword123
+    upsmon master
+
+[admin]
+    password = AdminPassword456
+    actions = SET
+    instcmds = ALL
+EOF
+
+# Configurar modo (/etc/nut/nut.conf)
+echo "MODE=netserver" > /etc/nut/nut.conf
+
+# Reiniciar servicios
+systemctl restart nut-server nut-monitor
+systemctl enable nut-server nut-monitor
+```
+
+**Configuración en nodos esclavos (clientes NUT):**
+
+```bash
+# Instalar cliente NUT
+apt install nut-client -y
+
+# Configurar monitoreo (/etc/nut/upsmon.conf)
+cat > /etc/nut/upsmon.conf << 'EOF'
+MONITOR apc-campus@192.168.10.1 1 monuser SecurePassword123 slave
+MINSUPPLIES 1
+SHUTDOWNCMD "/sbin/shutdown -h +0"
+NOTIFYCMD /usr/sbin/upssched
+POLLFREQ 5
+POLLFREQALERT 2
+HOSTSYNC 15
+DEADTIME 25
+POWERDOWNFLAG /etc/killpower
+
+NOTIFYMSG ONLINE    "UPS %s: Alimentación eléctrica restaurada"
+NOTIFYMSG ONBATT    "UPS %s: Funcionando con baterías"
+NOTIFYMSG LOWBATT   "UPS %s: Batería baja - Shutdown inminente"
+NOTIFYMSG SHUTDOWN  "UPS %s: Iniciando apagado del sistema"
+
+NOTIFYFLAG ONLINE   SYSLOG+WALL+EXEC
+NOTIFYFLAG ONBATT   SYSLOG+WALL+EXEC
+NOTIFYFLAG LOWBATT  SYSLOG+WALL+EXEC
+NOTIFYFLAG SHUTDOWN SYSLOG+WALL+EXEC
+EOF
+
+# Configurar modo cliente
+echo "MODE=netclient" > /etc/nut/nut.conf
+
+# Reiniciar servicio
+systemctl restart nut-monitor
+systemctl enable nut-monitor
+```
+
+### **Script de Apagado Ordenado del Clúster**
+
+```bash
+# /usr/local/bin/proxmox-ups-shutdown.sh
+#!/bin/bash
+
+# Script de apagado ordenado para clúster Proxmox ante fallo eléctrico
+
+LOG_FILE="/var/log/ups-shutdown.log"
+CRITICAL_BATTERY_LEVEL=20  # Porcentaje crítico de batería
+
+log_message() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
+}
+
+get_battery_charge() {
+    upsc apc-campus@localhost battery.charge 2>/dev/null || echo "0"
+}
+
+shutdown_vms_gracefully() {
+    log_message "Iniciando apagado ordenado de VMs..."
+    
+    # Listar todas las VMs en ejecución
+    for vmid in $(qm list | awk 'NR>1 {print $1}'); do
+        vm_name=$(qm config "$vmid" | grep '^name:' | cut -d' ' -f2)
+        log_message "Apagando VM $vmid ($vm_name)..."
+        
+        # Intentar apagado limpio (ACPI)
+        qm shutdown "$vmid" --timeout 60
+        
+        # Si no responde en 60s, forzar apagado
+        sleep 65
+        if qm status "$vmid" | grep -q "running"; then
+            log_message "VM $vmid no respondió - Forzando apagado"
+            qm stop "$vmid"
+        fi
+    done
+}
+
+shutdown_containers() {
+    log_message "Apagando contenedores LXC..."
+    
+    for ctid in $(pct list | awk 'NR>1 {print $1}'); do
+        ct_name=$(pct config "$ctid" | grep '^hostname:' | cut -d' ' -f2)
+        log_message "Apagando CT $ctid ($ct_name)..."
+        pct shutdown "$ctid" --timeout 30
+    done
+}
+
+notify_admins() {
+    local message="$1"
+    
+    # Notificar por syslog
+    logger -t UPS-SHUTDOWN "$message"
+    
+    # Notificar por correo (si está configurado)
+    if command -v mail &> /dev/null; then
+        echo "$message" | mail -s "URGENTE: UPS Campus - Apagado de Emergencia" admin@campus.edu.mx
+    fi
+    
+    # Notificar por Teams webhook (opcional)
+    if [ -n "$TEAMS_WEBHOOK_URL" ]; then
+        curl -H "Content-Type: application/json" -d "{\"text\":\"$message\"}" "$TEAMS_WEBHOOK_URL"
+    fi
+}
+
+# MAIN EXECUTION
+battery_level=$(get_battery_charge)
+
+log_message "========================================"
+log_message "UPS Shutdown Script Iniciado"
+log_message "Nivel de batería: ${battery_level}%"
+
+if [ "$battery_level" -lt "$CRITICAL_BATTERY_LEVEL" ]; then
+    notify_admins "CRÍTICO: Batería UPS al ${battery_level}% - Iniciando apagado de emergencia del clúster Proxmox"
+    
+    # Fase 1: Apagar VMs no críticas primero
+    shutdown_vms_gracefully
+    
+    # Fase 2: Apagar contenedores
+    shutdown_containers
+    
+    # Fase 3: Sincronizar discos
+    log_message "Sincronizando sistemas de archivos..."
+    sync
+    
+    # Fase 4: Apagar nodo
+    log_message "Apagando nodo Proxmox..."
+    notify_admins "Nodo $(hostname) apagándose ahora"
+    
+    /sbin/shutdown -h now "UPS battery critical - Emergency shutdown"
+else
+    log_message "Batería en nivel aceptable (${battery_level}%) - No se requiere acción"
+fi
+```
+
+**Hacer ejecutable y configurar en NUT:**
+
+```bash
+chmod +x /usr/local/bin/proxmox-ups-shutdown.sh
+
+# Configurar en /etc/nut/upssched.conf
+cat > /etc/nut/upssched.conf << 'EOF'
+CMDSCRIPT /usr/local/bin/proxmox-ups-shutdown.sh
+PIPEFN /run/nut/upssched.pipe
+LOCKFN /run/nut/upssched.lock
+
+AT ONBATT * START-TIMER onbatt 30
+AT ONLINE * CANCEL-TIMER onbatt
+AT LOWBATT * EXECUTE shutdown-critical
+AT SHUTDOWN * EXECUTE shutdown-now
+EOF
+```
+
+### **Monitoreo y Alertas - Dashboard Grafana**
+
+**Configurar datasource Prometheus para métricas UPS:**
+
+```yaml
+# /etc/prometheus/prometheus.yml
+scrape_configs:
+  - job_name: 'nut_exporter'
+    static_configs:
+      - targets: ['localhost:9199']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'UPS-Campus-Principal'
+```
+
+**Instalar NUT Exporter para Prometheus:**
+
+```bash
+# En nodo con UPS conectado
+wget https://github.com/DRuggeri/nut_exporter/releases/download/v2.3.2/nut_exporter_2.3.2_linux_amd64.tar.gz
+tar xvf nut_exporter_2.3.2_linux_amd64.tar.gz
+cp nut_exporter /usr/local/bin/
+
+# Crear servicio systemd
+cat > /etc/systemd/system/nut-exporter.service << 'EOF'
+[Unit]
+Description=NUT Exporter for Prometheus
+After=network.target
+
+[Service]
+Type=simple
+User=prometheus
+ExecStart=/usr/local/bin/nut_exporter --nut.server=localhost
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl daemon-reload
+systemctl enable --now nut-exporter
+```
+
+**Panel Grafana (JSON snippet):**
+
+```json
+{
+  "panels": [
+    {
+      "title": "Estado UPS Campus",
+      "targets": [
+        {
+          "expr": "network_ups_tools_ups_status{ups=\"apc-campus\"}"
+        }
+      ]
+    },
+    {
+      "title": "Nivel de Batería (%)",
+      "targets": [
+        {
+          "expr": "network_ups_tools_battery_charge{ups=\"apc-campus\"}"
+        }
+      ],
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [30],
+              "type": "lt"
+            },
+            "query": {
+              "datasourceId": 1,
+              "model": {
+                "expr": "network_ups_tools_battery_charge"
+              }
+            }
+          }
+        ],
+        "message": "Batería UPS por debajo del 30%"
+      }
+    },
+    {
+      "title": "Carga del UPS (W)",
+      "targets": [
+        {
+          "expr": "network_ups_tools_ups_load{ups=\"apc-campus\"}"
+        }
+      ]
+    },
+    {
+      "title": "Tiempo Restante Estimado (min)",
+      "targets": [
+        {
+          "expr": "network_ups_tools_battery_runtime{ups=\"apc-campus\"} / 60"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### **Políticas de Operación con Respaldo Energético**
+
+**Procedimientos operativos estándar:**
+
+1. **Operación Normal (Red Eléctrica Estable)**
+   - UPS en modo línea (pass-through)
+   - Bancos de baterías en carga flotante
+   - Monitoreo cada 5 minutos
+   - Cluster en operación completa
+
+2. **Evento: Corte Eléctrico (Batería 100-50%)**
+   - UPS cambia a modo batería automáticamente
+   - Notificación inmediata a administradores
+   - Sistema continúa operación normal
+   - Monitoreo cada 1 minuto
+   - NO se interrumpen prácticas académicas en curso
+
+3. **Batería Baja (50-30%)**
+   - Alerta a todos los docentes activos
+   - Advertencia en consolas de VMs
+   - Preparación para apagado ordenado
+   - Guardar trabajos en progreso
+
+4. **Batería Crítica (<30%)**
+   - Inicio automático de apagado ordenado
+   - VMs no críticas se apagan primero (5 min)
+   - VMs de servicios (DNS, LDAP, PBS) al final (2 min)
+   - Shutdown de nodos en secuencia inversa (nodo 8→1)
+
+5. **Recuperación de Energía**
+   - Arranque automático de nodos (Wake-on-LAN o IPMI)
+   - Inicio de servicios críticos primero
+   - Validación de integridad de almacenamiento (scrub ZFS)
+   - Notificación de restablecimiento completo
+
+### **Mantenimiento Preventivo del Sistema Eléctrico**
+
+**Calendario de mantenimiento:**
+
+**Mensual:**
+- Inspección visual de conexiones UPS y baterías
+- Revisión de logs de eventos eléctricos
+- Prueba de autonomía (simulación de corte 5 min)
+
+**Trimestral:**
+- Calibración de baterías (descarga controlada 50%)
+- Limpieza de ventiladores UPS
+- Verificación de voltajes en PDUs
+
+**Semestral:**
+- Prueba completa de autonomía (hasta 30% batería)
+- Revisión de script de apagado ordenado
+- Actualización de procedimientos operativos
+
+**Anual:**
+- Reemplazo preventivo de baterías (según fabricante)
+- Inspección termográfica de conexiones eléctricas
+- Auditoría de capacidad vs consumo real
+
+### **Métricas Clave a Monitorear**
+
+```
+- ups.status                  # OL (Online), OB (On Battery), LB (Low Battery)
+- battery.charge              # Porcentaje de carga (%)
+- battery.runtime             # Tiempo restante estimado (segundos)
+- battery.voltage             # Voltaje de batería (V)
+- input.voltage               # Voltaje de entrada (V)
+- output.voltage              # Voltaje de salida (V)
+- ups.load                    # Carga actual del UPS (%)
+- ups.temperature             # Temperatura interna (°C)
+- battery.date                # Fecha de instalación de baterías
+- ups.test.result             # Resultado última prueba automática
+```
+
+### **Costos Operativos Estimados**
+
+**Inversión inicial (ya adquirida):**
+- 2 Bancos de baterías externos: Adquiridos
+- 1 UPS: Adquirido
+- Cableado y PDUs: A confirmar
+
+**Costos operativos anuales:**
+- Consumo eléctrico cluster (24/7 @ 3kW): ~$35,000-45,000 MXN/año
+- Reemplazo baterías (cada 3-5 años): ~$15,000-25,000 MXN
+- Mantenimiento preventivo: ~$5,000 MXN/año
+
+**Costo por hora de inactividad evitada:**
+- Valor estimado: $2,000-5,000 MXN/hora (considerando pérdida académica, re-programación)
+- ROI del sistema UPS: 6-12 meses
+
 ## 5) Identidad, acceso y seguridad
 - Autenticación: LDAP/AD institucional (si existe) o Keycloak (SSO).
 - Autorización: Pools por curso en Proxmox y roles por perfil:
@@ -58,7 +502,7 @@ Alcance: Uso académico multi-materia de un servidor tipo blade con 8 nodos
 - Windows Server (si hay licenciamiento académico)
 - K3s/Kubernetes worker preconfigurado
 - Base de datos (PostgreSQL/MySQL) pre-endurecido
-- NGINX reverse proxy con TLS (Let’s Encrypt interno)
+- NGINX reverse proxy con TLS (Let's Encrypt interno)
 
 ## 7) Automatización y CI/CD
 - Terraform (provider Proxmox) para VMs por curso
@@ -71,12 +515,14 @@ Alcance: Uso académico multi-materia de un servidor tipo blade con 8 nodos
 - Monitoreo: Prometheus + Grafana, alertas (hooks a Teams/Email).
 - Logs: Loki/ELK opcional por curso.
 - DR básico: Exportación periódica de VMs críticas y snapshots de infraestructura.
+- **UPS Monitoring:** NUT (Network UPS Tools) integrado con apagado ordenado automático.
 
 ## 9) Política de uso y calendario
 - Pools por curso (Unidad/Periodo). Cuotas por docente (vCPU/RAM/Disco).
 - Ventana de mantenimiento: semanal (domingos 02:00-05:00).
 - Solicitudes por issue en repositorio interno (plantilla de solicitud).
 - Apagado automático de VMs inactivas (etiquetas y TTL).
+- **Procedimiento de emergencia eléctrica:** Apagado ordenado automático <30% batería, notificación a docentes activos.
 
 ---
 
@@ -270,10 +716,16 @@ resource "proxmox_vm_qemu" "u3_db_equipo01" {
 - Definir si habrá acceso externo público (DMZ)
 - Licenciamiento Windows (si aplica)
 - Integración con SSO institucional
+- **Especificaciones técnicas del UPS:** Capacidad en kVA/kW, tipo (online/line-interactive), conexión (USB/SNMP/serie)
+- **Especificaciones bancos de baterías:** Capacidad (Ah), voltaje (V), tipo (plomo-ácido/litio), conexión con UPS
+- **Certificación eléctrica:** Revisar instalación eléctrica del cuarto de servidores (tierra física, reguladores, PDUs)
 
 ## Riesgos y mitigación
 - Carga excesiva en períodos pico → cuotas y escalado horizontal por pools
 - Exposición de servicios → DMZ controlada, WAF/reverse proxy, VPN
 - Fallos de disco → PBS + ZFS/Ceph con redundancia
+- **Cortes eléctricos prolongados (>autonomía UPS):** Generar protocolo de comunicación con CFE para mantenimientos programados, considerar generador diésel de respaldo para implementación futura
+- **Fallo del UPS principal:** Evaluar adquisición de segundo UPS para configuración redundante N+1
+- **Degradación de baterías:** Monitoreo proactivo con reemplazo preventivo cada 3-5 años
 
 Fin del documento.

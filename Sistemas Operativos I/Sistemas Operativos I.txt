@@ -1,0 +1,365 @@
+                                                        TECNOLÓGICO NACIONAL DE MÉXICO
+                                                   Secretaría Académica, de Investigación e Innovación
+                                                                  Dirección de Docencia e Innovación Educativa
+1.      Datos Generales de la asignatura
+                         Nombre de la asignatura: Sistemas Operativos I
+                            Clave de la asignatura: AEC-1061
+                                           SATCA1: 2-2-4
+                                           Carrera: Ingeniería        en      Sistemas      Computacionales,
+                                                       Ingeniería Informática e Ingeniería en Tecnologías
+                                                       de la Información y Comunicaciones
+2. Presentación
+Caracterización de la asignatura
+La asignatura aporta al perfil del egresado, los conocimientos y habilidades necesarios para el uso y
+administración de sistemas operativos, así como para diseñar, configurar y administrar redes de
+computadoras para crear soluciones de conectividad en la organización, aplicando las normas y
+estándares vigentes.
+Los sistemas operativos son la plataforma base a través de la cual el software puede funcionar y los
+usuarios pueden manipular las computadoras. Por este motivo, es importante que el estudiante conozca
+a detalle el diseño de un sistema operativo para entender su funcionamiento.
+Ésta asignatura se requiere de las competencias adquiridas en asignaturas que contengan temas como:
+estructura y organización de datos, arquitectura de computadoras, computación distribuida y
+virtualización de sistemas operativos.
+Intención didáctica
+Los conjuntos de conocimientos organizados en esta asignatura se encuentran divididos en seis temas,
+mismas que pretenden guiar a los estudiantes en la comprensión de los fundamentos teóricos sobre los
+sistemas operativos y lo orientan capacitándolo para analizar y construir procesos que realicen sus
+actividades de forma correcta, así como la capacidad de desarrollar elementos que se integren al
+software de sistema (módulos, drivers, etc.).
+En el tema uno se encuentran los contenidos básicos: los conceptos fundamentales y terminologías
+asociadas al sistema operativo.
+En el tema dos se establecen los conceptos que se relacionan con el análisis, diseño y desarrollo de
+procesos, así como el manejo de comunicación y sincronización entre procesos, empleando técnicas y
+métodos disponibles tanto en el sistema operativo como las disponibles en los lenguajes de
+programación utilizados. Se analizan las técnicas que emplea el sistema operativo para la planificación
+y ejecución de tareas en el mismo.
+En el tema tres, el estudiante adquiere los conocimientos necesarios para comprender, como el sistema
+operativo administra la memoria, a su vez, comprende las técnicas que emplea el sistema operativo
+para controlar la memoria real y la memoria virtual.
+1
+  Sistema de Asignación y Transferencia de Créditos Académicos
+©TecNM mayo 2016                                                                                     Página | 1
+                                                       TECNOLÓGICO NACIONAL DE MÉXICO
+                                                 Secretaría Académica, de Investigación e Innovación
+                                                                Dirección de Docencia e Innovación Educativa
+En el tema cuatro se orienta al estudiante, sobre como el sistema operativo gestiona los dispositivos de
+entrada/salida y la capacidad de evolución e integración de módulos (drivers) que controlan dichos
+dispositivos.
+En el tema cinco se orienta al estudiante sobre como están estructurados los sistemas de archivos, sus
+características, ventajas y desventajas. Además, se presentan los conceptos y técnicas que emplea el
+sistema operativo, para acceder al sistema de archivos.
+En el tema seis se proporcionan los conocimientos de seguridad indispensables que emplea el sistema
+operativo en la protección orientada a los procesos, memoria y archivos, así como control de usuarios y
+permisos de acceso a diferentes recursos.
+3. Participantes en el diseño y seguimiento curricular del programa
+Lugar y fecha de elaboración o
+                                              Participantes                            Evento
+              revisión
+                                    Representantes de los Institutos
+                                    Tecnológicos de:
+                                    Centro Interdisciplinario de
+                                    Investigación y Docencia en
+                                    Educación Técnica, Acapulco,
+                                    Aguascalientes, Apizaco, Boca
+                                    Río,      Celaya,      Chetumal,
+                                    Chihuahua,         Chilpancingo,
+                                    Chiná, Cd. Cuauhtémoc, Cd.
+                                    Juárez, Cd. Madero, Cd.
+                                    Victoria, Colima, Comitán,
+                                    Cuautla, Durango, El Llano de Elaboración del programa de
+                                    Aguascalientes, Huixquilucan, estudio equivalente en la
+     Instituto Tecnológico de       Valle      Bravo,      Guaymas, Reunión               Nacional          de
+ Aguascalientes del 15 al 18 de Huatabampo, Huejutla, Iguala, Implementación Curricular y
+           junio de 2010.           La Laguna, La Paz, La Zona Fortalecimiento Curricular de las
+                                    Maya, León, Lerma, Linares, asignaturas comunes por área de
+                                    Los      Mochis,     Matamoros, conocimiento para los planes de
+                                    Mazatlán, Mérida, Mexicali, estudio actualizados del SNEST.
+                                    Minatitlán,    Nuevo     Laredo,
+                                    Orizaba,     Pachuca,     Puebla,
+                                    Querétaro, Reynosa, Roque,
+                                    Salina Cruz, Saltillo, San Luis
+                                    Potosí,     Tehuacán,      Tepic,
+                                    Tijuana,    Tlaxiaco,     Toluca,
+                                    Torreón, Tuxtepec, Valle de
+                                    Oaxaca,                Veracruz,
+                                    Villahermosa,          Zacatecas,
+                                    Zacatepec,      Altiplano      de
+                                    Tlaxcala,         Coatzacoalcos,
+©TecNM mayo 2016                                                                                   Página | 2
+                                                       TECNOLÓGICO NACIONAL DE MÉXICO
+                                                 Secretaría Académica, de Investigación e Innovación
+                                                               Dirección de Docencia e Innovación Educativa
+                                    Cuautitlán Izcalli, Fresnillo,
+                                    Irapuato, La Sierra Norte
+                                    Puebla, Macuspana, Naranjos,
+                                    Pátzcuaro, Poza Rica, Progreso,
+                                    Puerto Vallarta, Tacámbaro,
+                                    Tamazula Gordiano, Tlaxco,
+                                    Venustiano             Carranza,
+                                    Zacapoaxtla,     Zongólica      y
+                                    Oriente del Estado Hidalgo.
+                                    Representantes de los Institutos
+                                    Tecnológicos de:
+                                    Aguascalientes, Apizaco, Boca
+                                    del Río, Celaya, CRODE
+                                    Celaya, Cerro Azul, Chihuahua,
+                                    Cd. Cuauhtémoc, Cd. Hidalgo,
+                                    Cd. Juárez, Cd. Madero, Cd.
+                                    Valles,    Coacalco,     Colima,
+                                    Iguala, La Laguna, Lerdo, Los
+                                                                        Reunión          Nacional          de
+Instituto Tecnológico de Morelia Cabos, Matamoros, Mérida,
+                                                                        Seguimiento Curricular de las
+  del 10 al 13 de septiembre de     Morelia,     Motúl,     Múzquiz,
+                                                                        Asignaturas Equivalentes del
+              2013.                 Nuevo Laredo, Nuevo León,
+                                                                        SNIT.
+                                    Oriente del Estado de México,
+                                    Orizaba, Pachuca, Progreso,
+                                    Purhepecha, Salvatierra, San
+                                    Juan     del    Río,    Santiago
+                                    Papasquiaro, Tantoyuca, Tepic,
+                                    Tlatlauquitpec,     Valle     de
+                                    Morelia, Venustiano Carranza,
+                                    Veracruz,          Villahermosa,
+                                    Zacatecas y Zacatepec.
+4. Competencia(s) a desarrollar
+                              Competencia(s)específica(s)de la asignatura
+Aplica los paradigmas de diseño de los sistemas operativos actuales y emergentes, para el manejo de
+los recursos del sistema.
+5. Competencias previas
+      Selecciona, diseña, implementa y manipula estructuras de datos que optimicen el rendimiento
+     de aplicaciones de software, considerando la complejidad de los algoritmos utilizados.
+      Comprende las distintas arquitecturas de computadoras, así como las filosofías de diseño para
+     desarrollar aplicaciones compatibles con la tecnología más avanzada en sistemas de cómputo
+©TecNM mayo 2016                                                                                  Página | 3
+                                                   TECNOLÓGICO NACIONAL DE MÉXICO
+                                              Secretaría Académica, de Investigación e Innovación
+                                                             Dirección de Docencia e Innovación Educativa
+6. Temario
+No.                     Temas                                            Subtemas
+                                                  1.1. Definición y concepto
+                                                  1.2. Funciones y características
+                                                  1.3. Evolución histórica
+ 1.     Introducción a los Sistemas Operativos
+                                                  1.4. Clasificación
+                                                       1.5. Estructura: niveles o estratos de diseño
+                                                  1.6. Núcleo
+                                                  2.1. Concepto de proceso
+                                                  2.2. Estados y transiciones de los procesos
+                                                  2.3. Procesos ligeros: Hilos o hebras
+           Administración de Procesos y del       2.4. Concurrencia y secuenciabilidad
+ 2.
+                      procesador                       2.5. Niveles, objetivos y criterios de
+                                                       planificación
+                                                       2.6. Técnicas de administración del
+                                                       planificador
+                                                  3.1. Política y filosofía
+                                                  3.2. Memoria real
+ 3.           Administración de memoria
+                                                  3.3. Organización de memoria virtual
+                                                  3.4. Administración de memoria virtual
+                                                       4.1. Dispositivos y manejadores de
+                                                       dispositivos
+                                                       4.2. Mecanismos y funciones de los
+ 4.        Administración de entrada/salida            manejadores de dispositivos
+                                                       4.3. Estructuras de datos para manejo de
+                                                       dispositivos
+                                                  4.4. Operaciones de Entrada /salida
+                                                  5.1. Concepto
+                                                  5.2. Noción de archivo real y virtual
+                                                       5.3. Componentes de un sistema de archivos
+                                                  5.4. Organización lógica y física
+                                                  5.5. Mecanismos de acceso a los archivos
+ 5.              Sistemas de archivos
+                                                       5.6. Manejo de espacio en memoria
+                                                       secundaria
+                                                  5.7. Modelo jerárquico
+                                                       5.8. Mecanismos de recuperación en caso de
+                                                       falla
+                                                       6.1. Concepto y objetivos de protección y
+                                                       seguridad
+                                                  6.2. Clasificación aplicada a la seguridad
+                                                  6.3. Funciones del sistema de protección
+ 6.             Protección y seguridad
+                                                  6.4. Implantación de matrices de acceso
+                                                  6.5. Protección basada en el lenguaje
+                                                  6.6. Validación y amenazas al sistema
+                                                  6.7. Cifrado
+©TecNM mayo 2016                                                                                Página | 4
+                                                       TECNOLÓGICO NACIONAL DE MÉXICO
+                                                  Secretaría Académica, de Investigación e Innovación
+                                                                 Dirección de Docencia e Innovación Educativa
+7. Actividades de aprendizaje de los temas
+                                 Introducción a los Sistemas Operativos
+                   Competencias                                   Actividades de aprendizaje
+Específica(s):                                          Describir en una línea del tiempo avances
+Conoce los componentes, el objetivo, la función y          importantes en la historia de los sistemas
+las características de los sistemas operativos para        operativos, con el propósito de interpretar la
+comprender la estructura general de un sistema             complejidad actual de los mismos.
+operativo.                                              Investigar y exponer los sistemas operativos
+                                                           vigentes en la industria.
+Genéricas:                                              Identificar, en equipo, las estructuras de
+               Capacidad de análisis y síntesis           diferentes       sistemas       operativos,       su
+               Capacidad de comunicación oral y           clasificación, funciones y características.
+        escrita                                            Elaborar conclusiones por equipo y
+               Capacidad de investigación.                presentarlas al grupo.
+               Capacidad de trabajo en equipo          Hacer una lista de conceptos básicos de los
+                                                           sistemas operativos.
+                               Administración de procesos y del procesador
+                   Competencias                                   Actividades de aprendizaje
+Específica(s):                                          Elaborar un diagrama las transiciones de
+Comprende las técnicas de administración de                estado de los procesos para reconocer las
+procesos para crear procesos empleando los                 características que los distinguen.
+mecanismos que presenta el sistema operativo  Representar mediante ejemplos de la vida real
+para la comunicación y sincronización.                     el concepto de proceso, programa y
+                                                           procesador, y trasladarlo al contexto de las
+Genéricas:                                                 computadoras.
+               Capacidad de análisis y síntesis.       Diferenciar los conceptos de: algoritmo,
+               Capacidad de investigación.                programa, proceso, tarea o job, sesión y lote,
+               Habilidad para buscar, procesar y          valorando la utilidad de cada uno de ellos
+        analizar información procedente de fuentes         mediante un glosario.
+        diversas                                        Definir las diferencias fundamentales y
+                                                           específicas de proceso, thread y multi-thread
+                                                        Investigar los mecanismos empleados para la
+                                                           sincronización       y    comunicación        entre
+                                                           procesos, así como diferenciar los Threads y
+                                                           Procesos.
+                                                        Definir el concepto de interbloqueo
+                                                           (deadlock) y analizar su detección,
+                                                           prevención y recuperación.
+                                       Administración de memoria
+                   Competencias                                   Actividades de aprendizaje
+Específica(s):                                          Investigar y discutir el concepto de
+Analiza las técnicas de administración de                  administración de memoria, su clasificación y
+memoria y sus implicaciones para identificar el            jerarquía basados en el estado del arte actual
+desempeño de un sistema operativo                          de los sistemas operativos.
+©TecNM mayo 2016                                                                                    Página | 5
+                                                      TECNOLÓGICO NACIONAL DE MÉXICO
+                                                 Secretaría Académica, de Investigación e Innovación
+                                                                Dirección de Docencia e Innovación Educativa
+Genéricas:                                               Definir las ventajas y desventajas de la
+              Capacidad de análisis y síntesis           memoria virtual
+              Capacidad de aplicar los                  Resumir las funciones de un administrador de
+       conocimientos en la practica                       memoria y los requisitos de la administración
+              Habilidad para buscar, procesar y         Elaborar un mapa conceptual de las diferentes
+       analizar información procedente de fuentes         técnicas de la administración de memoria
+       diversas                                           real.
+              Capacidad de comunicación oral y          Analizar los problemas que presenta la
+       escrita                                            asignación de memoria.
+                                                         Diferenciar entre partición, segmento, página
+                                                          de memoria y sus características.
+                                                         Investigar y discutir en grupo los mecanismos
+                                                          de optimización de memoria.
+                                    Administración de entrada/salida
+                  Competencias                           Actividades de aprendizaje
+Específica(s):                                         Investigar y comentar los aspectos de diseño
+Conoce los mecanismos de manejo de dispositivos           sobre dispositivos de entrada/salida y la
+de entrada/salida en los sistemas operativos para         organización de sus funciones en el sistema
+su administración y control.                              operativo.
+                                                       Documentar y exponer los problemas más
+Genéricas:                                                comunes para el manejo de los dispositivos de
+              Capacidad de aplicar los                   entrada/salida y que estrategias se siguen para
+       conocimientos en la practica                       el control de dispositivos periféricos.
+              Capacidad de comunicación oral y        Explicar la gestión de almacenamiento
+       escrita                                            secundario
+              Habilidades en el uso de las            Resumir las estrategias de búsqueda en disco.
+       tecnologías de la información y
+       comunicación
+              Capacidad de investigación.
+              Habilidad para buscar, procesar y
+       analizar información procedente de fuentes
+       diversas
+                                          Sistemas de archivos
+                  Competencias                           Actividades de aprendizaje
+Específica(s):                                         Definir la composición genérica, funciones y
+Comprende e identifica las estructuras de los             atributos de los sistemas de archivos
+sistemas de archivos y las interfaces de acceso           empleados en la industria.
+para gestionar información almacenada en  Documentar la arquitectura que siguen los
+memoria secundaria.                                       sistemas de archivos y establecer semejanzas
+                                                          y diferencias.
+Genéricas:                                             Identificar        las    interfaces       empleadas
+              Capacidad de aplicar los                   (funciones o llamada a sistema), para crear,
+       conocimientos en la practica                       escribir y leer archivos.
+              Capacidad de conocimiento de una
+©TecNM mayo 2016                                                                                   Página | 6
+                                                         TECNOLÓGICO NACIONAL DE MÉXICO
+                                                  Secretaría Académica, de Investigación e Innovación
+                                                                  Dirección de Docencia e Innovación Educativa
+        segunda lengua                                     Identificar y documentar los problemas que se
+               Habilidad para buscar, procesar y           presentan en la gestión de memoria aplicados
+        analizar información procedente de fuentes          a los sistemas de archivos, así como sus
+        diversas                                            mecanismos de optimización.
+               Capacidad para identificar, plantear       Plantear un caso de recuperación de datos en
+        y resolver problemas                                caso de falla en el sistema de archivos y
+                                                            analizar las diferentes soluciones propuestas.
+                                          Protección y seguridad
+                    Competencias                           Actividades de aprendizaje
+Específica(s):                                           Investigar y comentar en clase el concepto de
+Conoce y analiza los mecanismos de protección y             seguridad, vulnerabilidad, protección y los
+como éstos son empleados para proteger la                   mecanismos que emplean los sistemas
+integridad del sistema.                                     operativos.
+                                                         Documentar las amenazas más comunes que
+Genéricas:                                                  se aplican a los sistemas operativos en la
+               Capacidad de análisis y síntesis            actualidad.
+               Habilidad para buscar, procesar y        Elaborar una tabla comparativa de los
+          analizar información procedente de                diferentes tipos de seguridad y técnicas de
+          fuentes diversas                                  cifrado incluyendo las ventajas y desventajas.
+               Capacidad para identificar, plantear
+          y resolver problemas
+8. Práctica(s)
+     Realizar una práctica de monitoreo de memoria de un proceso.
+     Realizar una práctica para la administración de entrada/salida.
+     Realizar una práctica de introducción de una nueva llamada al sistema en el kernel.
+     Realizar una práctica de gestión de archivos (creación, lectura, escritura e identificación de
+        permisos).
+     Desarrollar una práctica de recompilación del núcleo de un sistema operativo.
+     Elaborar algunas llamadas al sistema y distinguir el mecanismo de las interrupciones en el
+        contexto de los Procesos.
+     Realizar una práctica de simulación total del sistema operativo.
+9. Proyecto de asignatura
+El objetivo del proyecto que planteé el docente que imparta esta asignatura, es demostrar el desarrollo y
+alcance de la(s) competencia(s) de la asignatura, considerando las siguientes fases:
+     Fundamentación: marco referencial (teórico, conceptual, contextual, legal) en el cual se
+    fundamenta el proyecto de acuerdo con un diagnóstico realizado, mismo que permite a los
+    estudiantes lograr la comprensión de la realidad o situación objeto de estudio para definir un
+    proceso de intervención o hacer el diseño de un modelo.
+     Planeación: con base en el diagnóstico en esta fase se realiza el diseño del proyecto por parte
+    de los estudiantes con asesoría del docente; implica planificar un proceso: de intervención
+    empresarial, social o comunitario, el diseño de un modelo, entre otros, según el tipo de proyecto, las
+    actividades a realizar los recursos requeridos y el cronograma de trabajo.
+©TecNM mayo 2016                                                                                     Página | 7
+                                                          TECNOLÓGICO NACIONAL DE MÉXICO
+                                                   Secretaría Académica, de Investigación e Innovación
+                                                                  Dirección de Docencia e Innovación Educativa
+      Ejecución: consiste en el desarrollo de la planeación del proyecto realizada por parte de los
+     estudiantes con asesoría del docente, es decir en la intervención (social, empresarial), o
+     construcción del modelo propuesto según el tipo de proyecto, es la fase de mayor duración que
+     implica el desempeño de las competencias genéricas y especificas a desarrollar.
+      Evaluación: es la fase final que aplica un juicio de valor en el contexto laboral-profesión, social
+     e investigativo, ésta se debe realizar a través del reconocimiento de logros y aspectos a mejorar se
+     estará promoviendo el concepto de “evaluación para la mejora continua”, la metacognición, el
+     desarrollo del pensamiento crítico y reflexivo en los estudiantes.
+ 10. Evaluación por competencias
+ Para evaluar las actividades de aprendizaje se recomienda solicitar: mapas conceptuales, reportes de
+ investigación, estudios de casos, exposiciones en clase, reportes de visitas, portafolio de evidencias,
+ tablas comparativas, glosarios, entre otros.
+ Para verificar el nivel del logro de las competencias del estudiante se recomienda utilizar: listas de
+ cotejo, listas de verificación, matrices de valoración, rúbricas, entre otros, mediante la
+ heteroevaluación, coevaluación y autoevaluación.
+ 11. Fuentes de información
+     1. Carretero, J., De Miguel, P., García, F. y Pérez, F. (2001). Sistemas Operativos una visión
+         aplicada. Mc. Graw Hill.
+     2. Dhamdhere, D. (2008). Sistemas Operativos. Mc Graw Hill.
+     3. Love, R. (2010). Linux Kernel Development. Addison-Wesley.
+     4. Nutt, G., y Tanenbaum, A. (2004). Sistemas Operativos (Tercera ed.). Pearson. Addison-
+         Wesley.
+     5. Silberschatz, A., Baer, P. y Gagne, G. (2006). Fundamentos de Sistemas Operativos (Séptima
+         ed.). Mc Graw Hill.
+     6. Stallings, W. (2005). Sistemas Operativos (Quinta ed.). Pearson. Prentice-Hall.
+     7. Tanenbaum, A. y Escalona, R. (2009). Sistemas Operativos Modernos (3ra ed.) Madrid España.
+         Prentice Hall.
+     8. Tanenbaum, A. y Woodhull, A. (2009). Sistemas Operativos: Diseño e Implementación (2da
+         ed). México. Pearson Educación
+* American Psychological Association (APA)
+ ©TecNM mayo 2016                                                                                    Página | 8
