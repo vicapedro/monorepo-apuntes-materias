@@ -96,14 +96,14 @@ Implementar una plataforma Moodle de alto desempeño y alta disponibilidad media
 
 ### Objetivos Específicos
 
-1. Diseñar la arquitectura de alta disponibilidad para la plataforma Moodle, definiendo roles, VMs, red y almacenamiento compartido.
-2. Implementar un clúster de base de datos MariaDB Galera con tres nodos para replicación síncrona y failover automático.
-3. Configurar almacenamiento compartido NFS para el directorio `moodledata` accesible desde todos los nodos de aplicación.
-4. Desplegar dos instancias de la aplicación Moodle con PHP-FPM y Nginx, optimizadas con OPcache y Redis para gestión de sesiones y caché.
+1. Diseñar la arquitectura de alta disponibilidad para la plataforma Moodle, definiendo VMs, red y almacenamiento compartido.
+2. Implementar un clúster de base de datos.
+3. Configurar almacenamiento compartido NFS para todos los nodos de aplicación.
+4. Desplegar al menos dos instancias de la aplicación Moodle con PHP-FPM y Nginx, optimizadas con OPcache y Redis para gestión de sesiones y caché.
 5. Implementar balanceo de carga con HAProxy y alta disponibilidad de IP virtual con Keepalived.
 6. Integrar monitoreo activo con Prometheus y Grafana para visualización de métricas de disponibilidad y desempeño.
 7. Realizar pruebas de carga con un mínimo de 200 usuarios concurrentes simulados y documentar los resultados.
-8. Elaborar la documentación técnica completa del sistema implementado.
+
 
 ---
 
@@ -124,7 +124,6 @@ Desde la perspectiva de formación de competencias, este proyecto permite que lo
 - Monitoreo de infraestructura y análisis de desempeño
 - Seguridad en servidores y servicios web
 
-El uso de la infraestructura blade existente en el plantel optimiza la inversión institucional ya realizada, sin requerir adquisición de equipamiento adicional. La solución propuesta es replicable y documentada, lo que permite que futuras generaciones de residentes o alumnos de materias afines continúen su evolución.
 
 ---
 
@@ -132,7 +131,7 @@ El uso de la infraestructura blade existente en el plantel optimiza la inversió
 
 ### Alcances
 
-- La implementación se realizará como prueba de concepto (PoC) sobre la infraestructura blade del plantel
+- La implementación se realizará como prueba de concepto (PoC) sobre la infraestructura del plantel
 - Se configurarán un mínimo de 6 máquinas virtuales: 3 nodos de BD, 2 nodos de aplicación, 1 balanceador
 - Las pruebas de disponibilidad incluirán simulación de caída de nodos individuales
 - El sistema quedará documentado y funcional al término de la residencia
@@ -142,7 +141,7 @@ El uso de la infraestructura blade existente en el plantel optimiza la inversió
 
 - No se migrará el contenido de la instancia Moodle de producción actual durante la residencia; la implementación será un ambiente paralelo de PoC
 - El acceso a la infraestructura física depende de la disponibilidad del cuarto de servidores y los permisos del Departamento de TI
-- Las pruebas de carga se realizarán en horario de baja demanda para no afectar otros servicios en el blade
+- Las pruebas de carga se realizarán en horario de baja demanda para no afectar otros servicios 
 - La integración con el SSO institucional (si existe) queda fuera del alcance de esta residencia
 
 ---
