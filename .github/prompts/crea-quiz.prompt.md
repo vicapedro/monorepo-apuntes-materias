@@ -28,7 +28,7 @@ Crea o actualiza un quiz para Moodle a partir de los patrones del repositorio.
 - Prioriza tipos autocalificables del repositorio.
 - Distribuye dificultad de forma gradual.
 - Incluye retroalimentación útil para cada reactivo cuando el formato lo permita.
-- Para quizzes de conocimiento, usa solo los indicadores que correspondan al instrumento según la tabla compartida; por ejemplo, opción múltiple y falso/verdadero usan A y F, y análisis de casos usa A, B, D y F.
+- Para quizzes de conocimiento, usa solo los indicadores que correspondan al instrumento según la tabla compartida y evita asignar indicadores fuera de esa correspondencia oficial.
 - Si el formato es XML, genera un `<quiz>` válido con preguntas completas.
 - Si el formato es GIFT, usa categorías y sintaxis correctas.
 

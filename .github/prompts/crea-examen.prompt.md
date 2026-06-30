@@ -29,6 +29,7 @@ Crea o actualiza un examen para este repositorio.
   - 20-30% recordar/comprender
   - 40-50% aplicar/analizar
   - 20-30% evaluar/crear
+- Si necesitas una distribución concreta, usa una válida como 25%, 45% y 30%, respectivamente.
 - Incluye retroalimentación útil por reactivo cuando el formato lo soporte.
 - Favorece contextos auténticos y casos aplicados en niveles medios y altos.
 
