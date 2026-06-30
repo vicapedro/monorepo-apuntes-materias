@@ -26,10 +26,12 @@ Crea o actualiza una instrumentación didáctica para una materia o unidad de es
 ## Requisitos de contenido
 
 - Extrae competencias, temas y bibliografía del programa oficial.
-- Mantén coherencia entre metodología, evidencias, instrumentos e indicadores A-F, validando la asignación con `shared/correspondencia_evidencia_indicadores.md`.
+- Mantén coherencia entre metodología, evidencias, instrumentos e indicadores A-F.
 - Haz que cada matriz de evidencias sume 100% por unidad.
 - Usa descripciones de actividades a alto nivel dentro del diseño.
-- Propón instrumentos pertinentes según el tipo de evidencia: conocimiento con sus indicadores aplicables, producto con rúbrica o lista de cotejo, y desempeño o actitud con guía de observación, verificando en `shared/correspondencia_evidencia_indicadores.md` la distribución exacta de indicadores por instrumento.
+- Propón instrumentos pertinentes según el tipo de evidencia: conocimiento con sus indicadores aplicables, producto con rúbrica o lista de cotejo, y desempeño o actitud con guía de observación.
+- Verifica en `shared/correspondencia_evidencia_indicadores.md` la distribución exacta de indicadores por instrumento.
+- Usa esa validación para asegurar la coherencia entre evidencias e instrumentos.
 - Si falta información administrativa, usa marcadores claros para completarla sin inventar datos sensibles.
 
 ## Estructura mínima esperada

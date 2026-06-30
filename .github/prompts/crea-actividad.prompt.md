@@ -28,7 +28,7 @@ Crea o actualiza una actividad de aprendizaje para este repositorio.
 - Incluye duración estimada y modalidad de trabajo.
 - Usa un caso, problema o reto auténtico cuando corresponda.
 - Mantén coherencia con la evaluación por competencias del repositorio.
-- Si propones instrumento, usa rúbrica para evidencias de producto o desempeño, lista de cotejo para verificación de producto y guía de observación para desempeño o actitud.
+- Si propones instrumento, usa rúbrica para evidencias de producto o desempeño, lista de cotejo para requisitos específicos de producto y guía de observación para desempeño o actitud.
 
 ## Patrón esperado
 

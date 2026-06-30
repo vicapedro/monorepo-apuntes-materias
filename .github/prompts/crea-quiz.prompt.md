@@ -9,7 +9,7 @@ Crea o actualiza un quiz para Moodle a partir de los patrones del repositorio.
 
 ## Entradas
 
-- Materia o ruta base: ${input:materia_ruta:Ruta de la materia o nombre de la asignatura}
+- Materia o ruta base: ${input:materia_ruta:Nombre de la asignatura o ruta base de la materia}
 - Tema evaluado: ${input:tema:Tema, subtema o unidad}
 - Formato: ${input:formato:XML o GIFT}
 - Archivo de salida: ${input:archivo_salida:Ruta del archivo a crear o actualizar}
@@ -20,7 +20,7 @@ Crea o actualiza un quiz para Moodle a partir de los patrones del repositorio.
 
 1. Consulta el programa oficial de la materia.
 2. Revisa quizzes, bancos de preguntas o exámenes cercanos de la misma asignatura.
-3. Usa el cuadro `shared/correspondencia_evidencia_indicadores.md` para mapear correctamente la evidencia de conocimiento del quiz a sus indicadores aplicables.
+3. Consulta la tabla de correspondencia en `shared/correspondencia_evidencia_indicadores.md` para mapear correctamente la evidencia de conocimiento del quiz a sus indicadores aplicables.
 
 ## Requisitos de contenido
 
@@ -28,7 +28,7 @@ Crea o actualiza un quiz para Moodle a partir de los patrones del repositorio.
 - Prioriza tipos autocalificables del repositorio.
 - Distribuye dificultad de forma gradual.
 - Incluye retroalimentación útil para cada reactivo cuando el formato lo permita.
-- Para quizzes de conocimiento, usa solo los indicadores que correspondan al instrumento según la tabla compartida y evita asignar indicadores fuera de esa correspondencia oficial.
+- Para quizzes de conocimiento, usa solo los indicadores que correspondan al instrumento según `shared/correspondencia_evidencia_indicadores.md` y evita asignar indicadores fuera de esa correspondencia oficial.
 - Si el formato es XML, genera un `<quiz>` válido con preguntas completas.
 - Si el formato es GIFT, usa categorías y sintaxis correctas.
 
