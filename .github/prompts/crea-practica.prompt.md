@@ -28,7 +28,7 @@ Crea o actualiza una práctica de laboratorio para este repositorio.
 - Mantén coherencia con competencias, prerequisitos y bibliografía oficial.
 - Usa un contexto profesional o caso aplicado cuando aporte valor.
 - Incluye recursos, herramientas y entregables realistas.
-- Si propones evaluación, sugiere evidencia e instrumento compatibles con el repositorio.
+- Si propones evaluación, sugiere instrumentos que el repositorio ya usa, por ejemplo rúbrica de 4 niveles o lista de cotejo.
 
 ## Estructura obligatoria
 

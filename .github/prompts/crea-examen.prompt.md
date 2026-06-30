@@ -25,7 +25,7 @@ Crea o actualiza un examen para este repositorio.
 ## Requisitos de contenido
 
 - Alinea la evaluación con competencias, temas y prerrequisitos oficiales.
-- Usa la distribución de Bloom del repositorio:
+- Usa la distribución de Bloom del repositorio como rango de referencia y ajústala para que el total del examen sume 100%:
   - 20-30% recordar/comprender
   - 40-50% aplicar/analizar
   - 20-30% evaluar/crear

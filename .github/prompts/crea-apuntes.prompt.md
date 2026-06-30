@@ -26,7 +26,7 @@ Crea o actualiza apuntes teóricos para una materia de este repositorio.
 - Explica conceptos con precisión académica y ejemplos útiles.
 - Prioriza documentación oficial y bibliografía reconocida.
 - Mantén un texto conciso, evitando redundancias.
-- Usa terminología técnica en inglés solo cuando sea estándar y explíquela en español.
+- Usa terminología técnica en inglés solo cuando sea estándar y explícala en español.
 - Cierra con una sección de referencias cuando el contenido la requiera.
 
 ## Criterios de salida
