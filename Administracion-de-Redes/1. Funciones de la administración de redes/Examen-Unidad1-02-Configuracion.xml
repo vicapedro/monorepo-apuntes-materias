@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- EXAMEN UNIDAD 1 - ADMINISTRACION DE REDES (SCA-1002) -->
+<!-- Area funcional 2 de 6: Gestion de Configuracion (Configuration Management) -->
+<!-- 20 reactivos alineados a la Taxonomia de Bloom, etiquetados en <tags> y en el nombre de cada reactivo -->
+<!-- Distribucion Bloom: Recordar 3, Comprender 3, Aplicar 5, Analizar 5, Evaluar 2, Crear 2 -->
+
+<question type="category">
+  <category><text>$course$/Unidad 1 - Administracion de Redes/02 Configuracion (Configuration Management)</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>CF01 [Recordar] Configuration Item</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué significa <strong>CI</strong> en el contexto de la Gestión de Configuración?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>CI (Configuration Item) es cualquier componente de la infraestructura que debe gestionarse para entregar un servicio de TI.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Configuration Item / Elemento de configuración]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Continuous Integration]]></text><feedback format="html"><text><![CDATA[Ese es un concepto de desarrollo de software, no de Gestión de Configuración de redes.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Change Index]]></text><feedback format="html"><text><![CDATA[No corresponde a ningún concepto revisado en la unidad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Critical Incident]]></text><feedback format="html"><text><![CDATA[Ese concepto pertenece a la Gestión de Fallas, no a Configuración.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF02 [Recordar] Funcion de la CMDB</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál es la función principal de una <strong>CMDB</strong> (Configuration Management Database)?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La CMDB es la fuente única de verdad (Single Source of Truth) que almacena todos los CIs y sus relaciones.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Facturar el uso de recursos de red a los departamentos]]></text><feedback format="html"><text><![CDATA[Esa es una función de Accounting Management (chargeback), no de la CMDB.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Ser la fuente única de verdad del inventario de TI y sus relaciones]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Detectar intrusiones en tiempo real]]></text><feedback format="html"><text><![CDATA[Esa es una función de IDS/IPS, dentro de Security Management.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Medir la latencia y el throughput de la red]]></text><feedback format="html"><text><![CDATA[Esa es una función de Performance Management.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF03 [Recordar] Ventana de mantenimiento</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué es una <strong>ventana de mantenimiento</strong>?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Es un periodo previamente autorizado y comunicado para ejecutar actividades planificadas de mantenimiento o cambio, aceptando interrupciones controladas.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Un periodo previamente autorizado y comunicado para ejecutar cambios planificados, aceptando interrupciones controladas]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cualquier momento en que un técnico decide intervenir un equipo]]></text><feedback format="html"><text><![CDATA[Sin autorización ni planificación, no se considera una ventana de mantenimiento formal.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El tiempo que tarda un dispositivo en reiniciarse]]></text><feedback format="html"><text><![CDATA[Eso es solo un tiempo técnico de reinicio, no el concepto de ventana de mantenimiento.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Un reporte mensual de disponibilidad de la red]]></text><feedback format="html"><text><![CDATA[Ese reporte se relaciona con SLA, no con la ventana de mantenimiento.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF04 [Comprender] Baseline configuration</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué es una <strong>configuración base</strong> (baseline configuration)?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Es una configuración estándar aprobada que sirve como punto de referencia para dispositivos del mismo tipo, facilitando consistencia y despliegues rápidos.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[La última configuración aplicada, sin importar si fue aprobada]]></text><feedback format="html"><text><![CDATA[Una baseline debe ser aprobada y estandarizada, no simplemente la más reciente.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Una configuración estándar aprobada que sirve como referencia para dispositivos del mismo tipo]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Un respaldo cifrado usado únicamente en caso de emergencia]]></text><feedback format="html"><text><![CDATA[La baseline se usa de forma regular como referencia, no solo en emergencias.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Una configuración temporal creada solo para pruebas de laboratorio]]></text><feedback format="html"><text><![CDATA[La baseline se aplica en producción como estándar, no es exclusiva de pruebas.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF05 [Comprender] Funcion del CAB</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál es la función principal del <strong>CAB</strong> (Change Advisory Board)?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El CAB analiza, prioriza y recomienda la aprobación, rechazo o diferimiento de solicitudes de cambio (RFC) según impacto, riesgo y viabilidad del plan de rollback.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Ejecutar directamente todos los cambios en la red]]></text><feedback format="html"><text><![CDATA[El CAB no necesariamente ejecuta los cambios, esa es responsabilidad de la persona implementadora.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Analizar, priorizar y recomendar la aprobación, rechazo o diferimiento de solicitudes de cambio (RFC)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Realizar el inventario físico de los equipos de red]]></text><feedback format="html"><text><![CDATA[Esa tarea corresponde a la gestión de inventario/CMDB, no específicamente al CAB.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Monitorear el desempeño de la red en tiempo real]]></text><feedback format="html"><text><![CDATA[Esa es una función de Performance Management, no del CAB.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF06 [Comprender] Elementos minimos de una ventana de mantenimiento</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué elementos debe indicar, como mínimo, una ventana de mantenimiento correctamente documentada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Debe indicar fecha/hora de inicio y término, servicios o dispositivos incluidos, cambios autorizados, responsables, medios de comunicación y criterios de continuar, pausar o revertir.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Únicamente la fecha de inicio de la intervención]]></text><feedback format="html"><text><![CDATA[Es insuficiente; faltan responsables, alcance y criterios de rollback.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Fecha y hora de inicio/término, servicios incluidos, cambios autorizados, responsables y criterios de rollback]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Únicamente el nombre del técnico que ejecuta el cambio]]></text><feedback format="html"><text><![CDATA[Es insuficiente para una planificación formal de la ventana.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El costo del equipo a intervenir]]></text><feedback format="html"><text><![CDATA[El costo no es un elemento obligatorio de la ventana de mantenimiento.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF07 [Aplicar] Auditoria con versionamiento</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un auditor pregunta quién modificó una ACL de firewall y por qué. La empresa cuenta con control de versiones (por ejemplo, Git) para sus configuraciones. ¿Qué le permite responder de inmediato?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El historial de versionamiento (commits) registra autor, fecha, ticket asociado y descripción del cambio, permitiendo una respuesta de auditoría inmediata.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Revisar el historial de commits con autor, fecha, ticket y descripción del cambio]]></text><feedback format="html"><text><![CDATA[Correcto, ese es el beneficio directo del versionamiento y la auditoría.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Preguntar de memoria a todo el equipo de redes]]></text><feedback format="html"><text><![CDATA[Sin versionamiento, esta sería la única opción, lenta y poco confiable.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Revisar únicamente el manual del fabricante del firewall]]></text><feedback format="html"><text><![CDATA[El manual no contiene el historial de cambios realizados por el equipo interno.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Esperar el reporte financiero mensual del área de TI]]></text><feedback format="html"><text><![CDATA[Ese reporte no documenta cambios técnicos de configuración.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF08 [Aplicar] Estandarizacion de hostname</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se detecta el hostname "Switch1" en la red, que no sigue la convención [SITIO]-[TIPO]-[FUNCIÓN]-[NÚMERO]. ¿Qué acción corresponde según la gestión de estandarización?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Los hostnames deben corregirse siguiendo la convención aprobada y el cambio debe documentarse formalmente.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Dejarlo así porque el dispositivo funciona correctamente]]></text><feedback format="html"><text><![CDATA[El funcionamiento técnico no exime del cumplimiento de la convención de nombres corporativa.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Renombrarlo siguiendo la convención aprobada y documentar el cambio]]></text><feedback format="html"><text><![CDATA[Correcto, corrige el incumplimiento y mantiene la trazabilidad del cambio.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Eliminar el dispositivo de la red]]></text><feedback format="html"><text><![CDATA[Un nombre no conforme no justifica retirar el equipo de la red.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ignorar la convención si el dispositivo es antiguo]]></text><feedback format="html"><text><![CDATA[La antigüedad del equipo no exime del cumplimiento del estándar corporativo.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF09 [Aplicar] RTO con respaldo versionado</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un core switch sufre una falla catastrófica de hardware. La organización cuenta con las configuraciones respaldadas en un repositorio Git/RANCID. ¿Cuál es el impacto esperado en el RTO comparado con no tener este proceso?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Contar con configuraciones respaldadas y versionadas reduce el RTO de horas/días a minutos, ya que la configuración puede restaurarse casi de inmediato.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[El RTO no cambia respecto a no tener respaldo]]></text><feedback format="html"><text><![CDATA[El respaldo versionado sí tiene un impacto directo y significativo en el RTO.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[El RTO se reduce significativamente porque la configuración puede restaurarse en minutos en lugar de horas]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El RTO aumenta porque hay que validar el repositorio antes de usarlo]]></text><feedback format="html"><text><![CDATA[La validación es rápida y automatizable; el efecto neto es una reducción del RTO.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El RTO depende únicamente del proveedor de internet]]></text><feedback format="html"><text><![CDATA[El RTO de este escenario depende de la disponibilidad de hardware y configuración, no solo del ISP.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF10 [Aplicar] Primer paso del control de cambios</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un técnico desea modificar una ACL en un firewall de producción. Según el proceso de control de cambios, ¿cuál es el primer paso correcto?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El proceso formal inicia con una solicitud de cambio (RFC) que será evaluada antes de su implementación.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Modificar la ACL directamente y notificar después]]></text><feedback format="html"><text><![CDATA[Ese es exactamente el escenario "sin control" que genera incidentes no documentados.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Solicitar un RFC (Request for Change) para que sea evaluado antes de implementarse]]></text><feedback format="html"><text><![CDATA[Correcto, es el primer paso del proceso formal de control de cambios.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Esperar a que un usuario reporte un problema]]></text><feedback format="html"><text><![CDATA[Eso convertiría un cambio planificado en una reacción ante un incidente, lo cual no es control de cambios.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Documentar el cambio únicamente después de un incidente]]></text><feedback format="html"><text><![CDATA[La documentación debe preceder o acompañar la implementación, no solo ocurrir tras un incidente.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF11 [Aplicar] Clasificacion de un CI</text></name>
+  <questiontext format="html"><text><![CDATA[<p>En la CMDB de una organización se registra el elemento "running-config v2.3" de un router. ¿A qué categoría de Configuration Item (CI) corresponde este elemento?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Una configuración versionada (running-config/startup-config) corresponde a la categoría de CI de "Configuraciones", diferente de hardware, software o documentación.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Hardware]]></text><feedback format="html"><text><![CDATA[Hardware corresponde a los equipos físicos (routers, switches), no a un archivo de configuración.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Software]]></text><feedback format="html"><text><![CDATA[Software corresponde a versiones de firmware/OS o aplicaciones, no a un archivo de configuración específico.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Configuraciones]]></text><feedback format="html"><text><![CDATA[Correcto, running-config/startup-config son CIs de tipo configuración.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Documentación]]></text><feedback format="html"><text><![CDATA[La documentación incluye diagramas, runbooks y políticas, no archivos de configuración de dispositivo.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF12 [Analizar] Riesgo de inventario desactualizado</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una empresa no tiene inventario actualizado y necesita identificar cuántos switches tienen una versión vulnerable de IOS. ¿Qué consecuencia es más probable?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Sin una CMDB o inventario actualizado, la identificación de dispositivos vulnerables toma mucho más tiempo y existe riesgo real de omitir equipos afectados.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[La respuesta será inmediata gracias a la memoria del equipo técnico]]></text><feedback format="html"><text><![CDATA[Depender de la memoria del personal es poco confiable y lento en infraestructuras grandes.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[La identificación tomará mucho más tiempo y existe riesgo de omitir dispositivos vulnerables]]></text><feedback format="html"><text><![CDATA[Correcto, es la consecuencia directa de no contar con inventario actualizado.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No representa ningún riesgo adicional para la organización]]></text><feedback format="html"><text><![CDATA[Sí representa un riesgo de seguridad al no poder parchear dispositivos vulnerables a tiempo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El firewall identificará automáticamente los switches afectados]]></text><feedback format="html"><text><![CDATA[Un firewall no realiza inventario ni identifica versiones de IOS de otros dispositivos.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF13 [Analizar] Cambios sin control e incidentes</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Por qué la falta de Gestión de Configuración se asocia con una mayor cantidad de incidentes causados por cambios en la red?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Sin control, documentación ni plan de rollback, los cambios se implementan con mayor riesgo de error y sin capacidad de reversión rápida.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Porque los cambios se implementan sin control, documentación ni plan de rollback, aumentando el riesgo de error]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque los CAB generan más fallas que beneficios para la red]]></text><feedback format="html"><text><![CDATA[El CAB reduce el riesgo al evaluar los cambios antes de aprobarlos, no lo aumenta.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque las CMDB introducen vulnerabilidades de seguridad]]></text><feedback format="html"><text><![CDATA[Una CMDB bien gestionada reduce el riesgo al dar visibilidad del entorno, no lo aumenta.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque el versionamiento ralentiza el funcionamiento de la red]]></text><feedback format="html"><text><![CDATA[El versionamiento se aplica a los archivos de configuración, no afecta el rendimiento operativo de la red.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF14 [Analizar] Ventana insuficiente para un cambio aprobado</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un cambio de alto riesgo se aprueba en un CAB, pero la ventana de mantenimiento asignada solo permite 30 minutos y el plan de implementación y validación requiere 90 minutos. ¿Qué debe ocurrir?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La duración disponible es una restricción de planificación: si no alcanza para implementar, validar y revertir si es necesario, la ventana debe reprogramarse o ampliarse antes de ejecutar el cambio.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Ejecutar el cambio de todas formas dentro del tiempo disponible]]></text><feedback format="html"><text><![CDATA[Ejecutar sin tiempo suficiente para validar o revertir aumenta gravemente el riesgo operativo.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Reprogramar o ampliar la ventana antes de ejecutar, ya que la duración es una restricción de planificación]]></text><feedback format="html"><text><![CDATA[Correcto, la aprobación del CAB no elimina la necesidad de tiempo suficiente para ejecutar con seguridad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Omitir la validación posterior para ahorrar tiempo]]></text><feedback format="html"><text><![CDATA[Omitir la validación aumenta el riesgo de dejar un cambio fallido sin detectar.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cancelar el cambio de forma permanente]]></text><feedback format="html"><text><![CDATA[No es necesario cancelar el cambio, solo reprogramarlo con una ventana adecuada.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF15 [Analizar] Elemento comun entre ISO 27001 y PCI-DSS</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Comparando los requisitos de ISO 27001 y PCI-DSS en el contexto de Gestión de Configuración, ¿qué elemento es común a ambos marcos?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Ambos marcos requieren evidencia de control de cambios documentado, respaldos y auditoría, elementos que la Gestión de Configuración provee.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Ambos requieren evidencia de control de cambios documentado y auditoría]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ambos prohíben el uso de VLANs]]></text><feedback format="html"><text><![CDATA[Ninguno de los dos marcos prohíbe el uso de VLANs.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ambos eliminan la necesidad de respaldos]]></text><feedback format="html"><text><![CDATA[Ambos marcos, al contrario, exigen respaldos periódicos documentados.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ambos se enfocan únicamente en el desempeño de la red]]></text><feedback format="html"><text><![CDATA[Ninguno de los dos marcos se limita al desempeño; ambos abordan control y seguridad de la configuración.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF16 [Analizar] Relacion entre versionamiento y RTO</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Analice por qué el versionamiento de configuraciones tiene una relación directa con la reducción del RTO (Recovery Time Objective) ante un desastre.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Al contar con versiones validadas y accesibles de la configuración, se elimina el tiempo de reconstrucción manual y de búsqueda, acelerando la restauración del servicio.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[No existe relación entre ambos conceptos]]></text><feedback format="html"><text><![CDATA[Sí existe una relación directa y documentada en la unidad.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Porque elimina el tiempo de reconstrucción manual y de búsqueda de la última configuración conocida]]></text><feedback format="html"><text><![CDATA[Correcto, permite restaurar en minutos en lugar de horas o días.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque el versionamiento reemplaza la necesidad de tener hardware de repuesto]]></text><feedback format="html"><text><![CDATA[El versionamiento no sustituye la necesidad de hardware, solo acelera la restauración de la configuración.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque el versionamiento reduce el costo del enlace WAN]]></text><feedback format="html"><text><![CDATA[El versionamiento no tiene relación con el costo de los enlaces WAN.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF17 [Evaluar] RFC y CAB frente a cambios directos</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una organización debe decidir entre aplicar cambios directamente en producción sin aprobación formal, o establecer un proceso de RFC con evaluación del CAB. ¿Qué opción reduce mejor el riesgo operativo y por qué?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El proceso de RFC con CAB evalúa impacto, riesgo, dependencias y plan de rollback antes de autorizar, reduciendo la probabilidad y el impacto de incidentes causados por cambios.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar cambios directamente, porque es más rápido]]></text><feedback format="html"><text><![CDATA[La rapidez no compensa el riesgo de incidentes no evaluados ni documentados.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Establecer el proceso de RFC con CAB, porque evalúa impacto, riesgo y plan de rollback antes de autorizar]]></text><feedback format="html"><text><![CDATA[Correcto, es la práctica que reduce el riesgo operativo de forma sostenida.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ambas opciones son equivalentes en riesgo]]></text><feedback format="html"><text><![CDATA[No son equivalentes; el proceso formal reduce significativamente el riesgo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ninguna opción reduce el riesgo, este depende solo de la suerte]]></text><feedback format="html"><text><![CDATA[El riesgo de un cambio puede gestionarse activamente mediante evaluación y planificación, no depende del azar.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF18 [Evaluar] Estrategias de recuperacion ante desastres</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al evaluar dos estrategias de recuperación ante desastres —reconstruir configuraciones de memoria versus restaurarlas desde un repositorio versionado— ¿cuál recomendaría para minimizar el RTO y por qué?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Restaurar desde un repositorio versionado garantiza una configuración validada y reduce drásticamente el tiempo de recuperación frente a reconstruir de memoria, que es lento y propenso a errores.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Reconstruir de memoria, porque no depende de sistemas externos]]></text><feedback format="html"><text><![CDATA[Reconstruir de memoria es lento, propenso a errores y aumenta el RTO.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Restaurar desde repositorio versionado, porque garantiza una configuración validada y reduce el tiempo de recuperación]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ambas estrategias producen el mismo RTO]]></text><feedback format="html"><text><![CDATA[El RTO difiere considerablemente entre ambas estrategias, como se muestra en los escenarios comparados en la unidad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ninguna estrategia es válida; se debe comprar siempre hardware nuevo idéntico]]></text><feedback format="html"><text><![CDATA[La disponibilidad de hardware es un factor aparte; el RTO de configuración depende de tener o no un respaldo versionado.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF19 [Crear] Diseno de baseline con controles de seguridad</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Diseñe una plantilla de <em>baseline configuration</em> para switches de acceso que incluya al menos cuatro elementos de seguridad estándar. ¿Cuál de las siguientes opciones representa un diseño adecuado?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Una baseline robusta incluye hostname estandarizado, autenticación centralizada, acceso remoto seguro (SSH) y logging/SNMP con credenciales protegidas.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Definir solo el hostname, sin más controles]]></text><feedback format="html"><text><![CDATA[Un solo elemento no constituye una baseline de seguridad completa.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Incluir hostname estandarizado, autenticación centralizada (AAA/TACACS+), acceso remoto solo por SSH, y logging/SNMP con credenciales seguras]]></text><feedback format="html"><text><![CDATA[Correcto, cubre identificación, control de acceso, acceso remoto seguro y trazabilidad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Configurar Telnet como acceso remoto por simplicidad]]></text><feedback format="html"><text><![CDATA[Telnet transmite en texto claro y no cumple con controles de seguridad estándar.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Omitir el logging para ahorrar espacio de almacenamiento]]></text><feedback format="html"><text><![CDATA[El logging es esencial para trazabilidad y auditoría; omitirlo va en contra de la baseline de seguridad.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CF20 [Crear] Flujo completo de control de cambios</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Proponga un flujo completo de control de cambios para una organización que actualmente no documenta ningún cambio. ¿Cuál de las siguientes secuencias es la más adecuada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un flujo adecuado inicia con un RFC, pasa por evaluación del CAB, define ventana y plan de rollback, ejecuta con respaldo previo, y concluye con validación y documentación de la versión final.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>configuracion</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Cambiar directamente en producción y documentar solo si algo falla]]></text><feedback format="html"><text><![CDATA[Esto reproduce el escenario "sin control" que la unidad identifica como riesgoso.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Solicitar RFC, evaluación por el CAB, definir ventana de mantenimiento y plan de rollback, ejecutar con respaldo previo, validar y documentar la versión final]]></text><feedback format="html"><text><![CDATA[Correcto, integra todos los elementos del control de cambios revisados en la unidad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar el cambio y notificar al CAB una semana después]]></text><feedback format="html"><text><![CDATA[La evaluación del CAB debe ocurrir antes de la implementación, no después.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Delegar todos los cambios únicamente al fabricante del equipo]]></text><feedback format="html"><text><![CDATA[El fabricante no gestiona el proceso interno de control de cambios de la organización.]]></text></feedback></answer>
+</question>
+
+</quiz>

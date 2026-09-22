@@ -1,5 +1,22 @@
 # GitHub Copilot Instructions
 
+## Contexto del Usuario
+
+El usuario es un **profesor universitario** con experiencia en:
+- **Diseño de cursos y programas** por competencias, alineados al modelo TecNM
+- **Instrumentación didáctica** y diseño instruccional basado en el modelo de Gagné
+- **Instrumentos de evaluación** (rúbricas, listas de cotejo, guías de observación, exámenes)
+- **Plataformas de gestión del aprendizaje (LMS)**: especialista en **Moodle 4.0 y 5.0**, incluyendo banco de preguntas, actividades H5P, cuestionarios adaptativos y configuración de calificaciones
+- **Diseño Universal para el Aprendizaje (DUA/UDL)**: principios de representación múltiple, acción y expresión, e implicación
+
+Al generar cualquier contenido educativo, considerar siempre este perfil:
+- Las propuestas de actividades y evaluaciones deben ser **implementables en Moodle** cuando sea relevante
+- Los instrumentos de evaluación deben seguir las **convenciones TecNM** y estar listos para usar
+- El lenguaje y los ejemplos deben ser apropiados para **educación superior técnica**
+- Cuando se diseñen recursos digitales, considerar **accesibilidad y DUA**
+
+---
+
 ## Writing Style Guidelines
 
 **CRITICAL: Do NOT use emojis in any generated content.** Use plain text markers instead:
@@ -554,6 +571,17 @@ Design learning experiences integrating active methodologies, collaborative proj
 - **Educational context**: Face-to-face classes, Moodle as LMS, Teams for communication
 - **Course duration**: Standard academic period of 16 weeks, sessions typically 1 hour (60 minutes), 4-6 sessions per week, according to Satca hours
 - **Session duration**: 1 hour (60 minutes)
+
+**ALWAYS ask the following question before generating any complete course, unit, or set of practices:**
+
+> "¿Deseas que los ejercicios, ejemplos y prácticas incorporen entornos socioculturales diversos, lenguas o culturas originarias, y principios de inclusividad (DUA)? De ser así, ¿qué contextos, comunidades o lenguas son relevantes para tu grupo?"
+
+If the answer is yes, apply the following guidelines throughout all generated content:
+- **Sociocultural diversity**: Use contexts, names, locations, and scenarios that reflect the regional and cultural diversity of Mexico (urban, rural, indigenous communities, border regions, etc.)
+- **Indigenous languages and cultures**: When appropriate, include references to indigenous contexts, traditional knowledge, or bilingual scenarios (e.g., Nahuatl, Zapotec, Maya, Mixtec) without stereotyping
+- **Inclusivity (DUA)**: Design activities with multiple means of representation (visual, textual, oral), multiple means of expression (written, oral, hands-on), and multiple means of engagement (individual, team, self-paced)
+- **Gender-inclusive language**: Use inclusive forms in Spanish (e.g., "estudiantes" instead of "alumnos") where natural and unforced
+- **Accessible contexts**: Avoid assumptions about economic level, access to technology, or urban settings; offer alternatives when activities require specific resources
 
 ### Instructional Design Process (Gagné Model-Based):
 

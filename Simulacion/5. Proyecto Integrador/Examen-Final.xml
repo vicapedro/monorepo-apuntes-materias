@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- Examen Final: Unidades 1-5 | Simulación SCD-1022 -->
+<!-- Bloom: 20% Recordar/Comprender | 50% Aplicar/Analizar | 30% Evaluar/Crear -->
+
+<!-- SECCIÓN A: Recordar / Comprender (4 preguntas, 20%) -->
+
+<question type="multichoice">
+  <name><text>EF-01: Definición de simulación</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué diferencia fundamental existe entre un modelo de simulación y un modelo analítico (como la teoría de colas M/M/c)?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Los modelos analíticos dan soluciones exactas pero requieren supuestos restrictivos (distribuciones Markovianas, estado estacionario, etc.). La simulación acepta distribuciones y condiciones arbitrarias pero da estimaciones estadísticas con variabilidad.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[La simulación acepta distribuciones y condiciones arbitrarias; los modelos analíticos requieren supuestos restrictivos y dan soluciones exactas]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Esta es la ventaja fundamental de la simulación frente a los modelos analíticos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[La simulación siempre da resultados más precisos que los modelos analíticos]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Los modelos analíticos dan resultados exactos (cuando se cumplen sus supuestos); la simulación da estimaciones con error estadístico.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Los modelos analíticos son más costosos computacionalmente]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Los modelos analíticos son fórmulas matemáticas; la simulación requiere ejecuciones computacionales.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[La simulación solo aplica a sistemas de manufactura]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La simulación aplica a cualquier sistema: salud, logística, finanzas, telecomunicaciones, etc.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-02: Metodología de simulación — etapas</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿En qué etapa de la metodología de simulación se determina si el simulador funciona correctamente como se diseñó (bugs, errores de lógica)?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La <strong>verificación</strong> pregunta: "¿el código hace lo que el modelo conceptual dice?" Se detectan errores de implementación. La <strong>validación</strong> pregunta: "¿el modelo representa adecuadamente el sistema real?" Son etapas distintas y ambas necesarias.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Verificación: comprueba que el simulador implementa correctamente el modelo conceptual]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Verificación = código correcto. Validación = modelo fiel al sistema real.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Validación: comprueba que el simulador corresponde al sistema real]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La validación compara el simulador con el sistema real, no detecta errores de código.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Análisis de sensibilidad: detecta si el modelo es robusto ante cambios de parámetros]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El análisis de sensibilidad evalúa la robustez, no la corrección del código.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Formulación del problema: define los objetivos del estudio]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La formulación del problema es la primera etapa, anterior a la implementación.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="truefalse">
+  <name><text>EF-03: Período de calentamiento y estado estacionario</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En una simulación de estado estacionario, se deben eliminar los datos del período inicial (warm-up) porque el sistema comienza en un estado artificial (generalmente vacío) que sesga las estadísticas.</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Verdadero. El sistema real raramente comienza vacío; si la simulación empieza sin entidades, las primeras observaciones tienen tiempos de espera artificialmente bajos. El warm-up period se descarta para estimar el comportamiento en estado estacionario.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html">
+    <text>true</text>
+    <feedback format="html"><text><![CDATA[Correcto. El warm-up elimina el sesgo del estado transitorio inicial.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text>false</text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El estado inicial artificial sí sesga las estadísticas de estado estacionario.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-04: Ley de Little — aplicación</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En un sistema de colas en estado estacionario se observa que hay en promedio L=4.5 clientes en el sistema y la tasa de llegada es λ=9 clientes/hora. Por la Ley de Little, el tiempo promedio en el sistema W es:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Ley de Little: L = λ·W → W = L/λ = 4.5/9 = 0.5 horas = 30 minutos. La Ley de Little es universal (aplica a cualquier sistema estable, sin importar distribuciones).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[W = 0.5 horas (30 minutos)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. L = λ·W → W = 4.5/9 = 0.5 hr.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[W = 40.5 horas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Se invierte la fórmula: W = L/λ, no L·λ.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[W = 2 horas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. 4.5/9 = 0.5, no 2. Se confunde L con λ en el cociente.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No se puede calcular sin conocer la distribución del tiempo de servicio]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La Ley de Little es independiente de las distribuciones; solo requiere estado estacionario.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- SECCIÓN B: Aplicar / Analizar (10 preguntas, 50%) -->
+
+<question type="multichoice">
+  <name><text>EF-05: Cadena de generadores — orden de uso</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En el proyecto del curso, la cadena de dependencias entre prácticas es: P2 genera `generador_config.json` → P3 agrega pruebas de uniformidad → P4 agrega pruebas de independencia → P5-P9 usan el generador. ¿Qué sucede si se detecta en P9 que la distribución Normal no pasa la prueba KS?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>El error está en la implementación de `normal_polar()` o `normal_box_muller()` en la Práctica 8. Se debe corregir ese método y reejecutar la validación en P9. No es necesario rehacir P2-P7 (los parámetros del generador LCG están validados).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Corregir el método Normal en P8 (variables_aleatorias.py) y re-ejecutar la validación en P9]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. El error está en la implementación de la distribución Normal específica, no en el generador LCG base.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Rehacer todo desde P2 con una semilla diferente]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El problema no es la semilla; el generador LCG ya está validado. El error está en la transformación Normal.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Aceptar los resultados y continuar; la prueba KS tiene un 5% de error tipo I]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Un error tipo I con p<0.05 es posible, pero un fallo consistente indica error real en la implementación.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Usar numpy.random.normal() en lugar del generador propio para la distribución Normal]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El objetivo del proyecto es usar el generador propio; hay que corregir la implementación.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-06: LCG — selección de parámetros</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un generador LCG con a=1, c=0, m=2³² y semilla=1 produce la secuencia: 1, 1, 1, 1... ¿Cuál es el problema?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Con a=1 y c=0: Xₙ = 1·Xₙ₋₁ + 0 mod m = Xₙ₋₁. El generador es constante (período=1). Para un LCG con c=0 (multiplicativo), se requiere que 'a' sea un multiplicador primitivo módulo m. Con a=1, no hay variación.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[El multiplicador a=1 hace que Xₙ=Xₙ₋₁ siempre; período=1 (secuencia constante)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. a=1 con c=0 produce Xₙ = Xₙ₋₁ mod m = Xₙ₋₁ siempre.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El módulo m=2³² es demasiado grande para el LCG]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. m=2³² es un tamaño común y válido para LCGs.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[La semilla=1 es un valor prohibido para LCGs multiplicativos]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La semilla=1 es perfectamente válida; el problema es el valor de 'a'.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[c=0 solo es válido para LCGs con m primo]]></text>
+    <feedback format="html"><text><![CDATA[Parcialmente incorrecto. c=0 requiere que m y a satisfagan otras condiciones (teorema de Hull-Dobell), pero el problema principal es a=1.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-07: SimPy — diagnóstico de código</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un estudiante implementa el siguiente código SimPy y observa que los clientes nunca esperan en cola (Wq≈0 siempre). ¿Cuál es el error?</p>
+<pre>
+def cliente(env, servidor):
+    with servidor.request() as req:
+        # Error aquí
+        pass  # olvidó el yield req
+    yield env.timeout(random.expovariate(mu))
+</pre>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Sin <code>yield req</code>, el proceso no espera a que el servidor esté disponible; simplemente solicita y continúa de inmediato, independientemente de si el servidor está ocupado. Los clientes no esperan nunca, dando Wq≈0 artificialmente.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Falta <code>yield req</code>: el proceso no espera al servidor, por lo que nunca hay tiempo de espera]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Sin yield req, la solicitud al Resource no bloquea el proceso.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El tiempo de servicio está fuera del bloque <code>with</code>]]></text>
+    <feedback format="html"><text><![CDATA[Parcialmente incorrecto: el tiempo de servicio debe estar dentro del with para que el recurso se libere al terminar. Pero el principal problema es el yield req faltante.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[La distribución Exponencial está parametrizada incorrectamente]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El problema no está en la distribución sino en el flujo de control del proceso.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Se necesita un entorno SimPy separado por cliente]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Todos los procesos comparten el mismo entorno (env) por diseño.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-08: Análisis de escenarios — comparación estadística</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Se comparan dos escenarios de inventario con 20 réplicas cada uno. Escenario Base: Wq_media=2.45, s=0.38. Escenario A (mejora): Wq_media=1.82, s=0.41. Aplicando la prueba t de dos muestras independientes con α=0.05, el estadístico t es aproximadamente:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>t = (x̄₁ − x̄₂) / √(s₁²/n₁ + s₂²/n₂) = (2.45−1.82) / √(0.38²/20 + 0.41²/20) = 0.63 / √(0.00722 + 0.00841) = 0.63 / √0.01563 = 0.63 / 0.125 ≈ 5.04. Con gl≈38, t_crítico≈2.024. Se rechaza H₀.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[t ≈ 5.04 — se rechaza H₀; la mejora es estadísticamente significativa]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. t≈5.04 >> t_crítico≈2.024; la diferencia de 0.63 entre escenarios es significativa.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[t ≈ 1.53 — no se puede rechazar H₀; la mejora podría ser aleatoria]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Revisar el cálculo: el denominador es √(s₁²/n₁ + s₂²/n₂), no (s₁+s₂)/n.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[t ≈ 0.63 — no es significativo porque t < 1]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. 0.63 es la diferencia de medias (numerador), no el estadístico t completo.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No se puede calcular sin distribución conocida de los datos]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La prueba t no requiere conocer la distribución subyacente (solo que las réplicas son independientes, por TCL).]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-09: Proyecto — métricas de desempeño</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En el simulador de una farmacia con 2 farmacéuticos (servidores), una simulación de 300 horas (con warm-up de 20 hr) da: 1200 clientes atendidos, tiempo total de ocupación del Farmacéutico 1 = 232 hr, Farmacéutico 2 = 218 hr. La utilización del sistema es:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Tiempo efectivo = 300−20 = 280 hr. Utilización = (232+218) / (2 × 280) = 450/560 = 0.804 = 80.4%. Significa que los farmacéuticos están ocupados el 80.4% del tiempo de estado estacionario.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[ρ ≈ 80.4% (tiempo ocupación total / tiempo disponible total del período estacionario)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. ρ = (232+218) / (2×280) = 450/560 ≈ 0.804.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[ρ ≈ 75% (232+218 dividido entre 2×300)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Se usa el tiempo de estado estacionario (300−20=280 hr), no el total.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[ρ ≈ 77.3% (media de 232/300 y 218/300)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. No se descuenta el warm-up; el período efectivo es 280 hr, no 300.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No se puede calcular sin conocer λ y μ]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La utilización puede calcularse directamente del tiempo de ocupación observado en la simulación.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-10: Escenario de mejora — diseño de experimento</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un simulador M/M/1 con λ=8/hr, μ=10/hr da Wq=0.40 hr. Se evalúa si contratar un segundo servidor (M/M/2) o aumentar la velocidad del servidor actual a μ=12/hr (M/M/1 mejorado). ¿Qué información adicional se necesita para recomendar cuál es mejor desde la perspectiva de costo-beneficio?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Para comparar costo-beneficio se necesita: (1) el costo de contratar un segundo servidor vs. mejorar el hardware/capacitación del actual, (2) el valor económico de reducir Wq (costo de espera por cliente), (3) los valores simulados de Wq para ambas alternativas con sus IC al 95%.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Costo de cada alternativa, valor económico de reducir Wq, y los Wq simulados con IC para ambas]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. La recomendación requiere comparar el ahorro en tiempos de espera con el costo de implementación.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Solo los valores teóricos de Wq para M/M/1 y M/M/2]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Los valores teóricos no consideran el costo de cada alternativa.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Nada adicional: la alternativa con menor Wq siempre es la mejor]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Menor Wq puede implicar mayor costo; la decisión requiere análisis costo-beneficio.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Solo la distribución empírica de los tiempos de espera de los clientes actuales]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Los datos empíricos son para calibrar el modelo, no para comparar alternativas.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-11: GeneradorVariables — depuración</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El método <code>erlang(k=3, lam=2.0)</code> genera valores con media ≈ 1.5, pero la media teórica es k/λ = 3/2 = 1.5. La prueba KS da p=0.003 (rechaza H₀). ¿Cuál es la causa más probable?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Si la media es correcta pero la distribución no pasa KS, el problema es la varianza o la forma. Una causa común: usar la fórmula suma de exponenciales (correcta: X = -ln(∏Uᵢ)/λ) vs. simplemente generar -ln(U)·k/λ (una sola exponencial escalada). La segunda tiene media correcta pero NO es Erlang.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Se usa −ln(U)·k/λ (una Exponencial escalada) en lugar de −ln(∏ᵢ Uᵢ)/λ (suma de k Exponenciales)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Una exponencial escalada tiene la misma media pero varianza diferente (no es Erlang).]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[La semilla del generador LCG es incorrecta]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Una semilla incorrecta afectaría todas las distribuciones, no solo Erlang.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[La prueba KS no es válida para Erlang; hay que usar chi-cuadrada]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. KS es válida para Erlang (distribución continua). El fallo indica error real.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[n es insuficiente; con más muestras pasaría la prueba]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Un p=0.003 con suficientes muestras indica error real en la implementación, no variabilidad aleatoria.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-12: Validación del proyecto — comparación con datos reales</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un equipo simula una cafetería universitaria y obtiene Wq_sim=4.2 min (IC 95%: [3.8, 4.6]). Los datos reales (100 observaciones) dan Wq_real=5.1 min. ¿El simulador está validado?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>El IC del simulador [3.8, 4.6] no incluye el valor real 5.1. Existe una diferencia sistemática. El simulador NO está validado: probablemente subestima la variabilidad real o las distribuciones de entrada no capturan bien el comportamiento del sistema.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[No: el IC simulado [3.8, 4.6] no incluye el valor real 5.1; hay diferencia sistemática a investigar]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Validación falla cuando el valor real no cae dentro del IC del simulador.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Sí: la diferencia (0.9 min) es pequeña en términos prácticos]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La validación estadística es independiente de la relevancia práctica de la diferencia.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No se puede concluir: se necesitan más datos reales para comparar]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Con 100 datos reales y el IC del simulador, la conclusión es clara.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Sí: el IC simulado tiene razón y los datos reales pueden tener sesgo de medición]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Se debe considerar que el simulador tiene el problema, no los datos reales.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-13: Monte Carlo — estimación de integral</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Para estimar ∫₀¹ √(1−x²) dx ≈ π/4 por Monte Carlo, se generan n=10000 puntos (x,y) uniformes en [0,1]². La estimación es el área bajo la curva. ¿Cuántos puntos deben caer DENTRO del cuarto de círculo para que la estimación sea π/4?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>π/4 ≈ 0.7854. De 10000 puntos, se esperan 10000 × π/4 ≈ 7854 puntos con x²+y²≤1. La estimación de π/4 = (puntos dentro) / n. Con n=10000, la precisión es σ/√n ≈ 0.0041 (SE para estimación de proporción).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Aproximadamente 7854 (10000 × π/4); la estimación converge con E[X_dentro/n] = π/4]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. El método estima π/4 como la fracción de puntos dentro del cuarto de círculo.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Exactamente π × 10000/4 = 7853.98... (el número es determinista)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El número de puntos es una variable aleatoria; solo en promedio se esperan ≈7854.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[5000: la mitad de los puntos, por simetría]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El área del cuarto de círculo es π/4 ≈ 78.5% del cuadrado, no el 50%.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No se puede estimar sin conocer la semilla del generador]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El valor esperado es determinista (π/4 × n); la semilla solo afecta la variación aleatoria alrededor del esperado.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-14: Comparación DES vs continua — sistema híbrido</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Una planta manufacturera tiene máquinas que fallan aleatoriamente (eventos discretos) y producción continua de fluidos entre fallos. ¿Qué enfoque de modelado es más apropiado?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Este es un sistema híbrido que requiere simulación combinada: DES para los eventos de fallo/reparación (discretos) y ecuaciones diferenciales o simulación continua para el flujo de producción entre eventos. AnyLogic soporta este tipo de modelos híbridos.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Simulación híbrida: DES para eventos de fallo/reparación + dinámica continua para el flujo entre eventos]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Los sistemas industriales reales frecuentemente requieren modelos híbridos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Solo DES: discretizar el tiempo en intervalos pequeños para aproximar el flujo continuo]]></text>
+    <feedback format="html"><text><![CDATA[Posible pero ineficiente. La discretización del tiempo continuo pierde precisión o requiere pasos muy pequeños.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Solo dinámica de sistemas: modelar el fallo como tasa de rotura en un diagrama de flujo]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La dinámica de sistemas no captura bien la aleatoriedad discreta de los eventos individuales de fallo.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[SimPy es suficiente con el módulo de Container para el fluido]]></text>
+    <feedback format="html"><text><![CDATA[Parcialmente incorrecto. SimPy.Container modela fluidos en forma discreta (niveles), no dinámica continua con ecuaciones diferenciales.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- SECCIÓN C: Evaluar / Crear (5 preguntas, 30%) -->
+
+<question type="multichoice">
+  <name><text>EF-15: Diseño del simulador — decisión de arquitectura</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un equipo diseña el simulador de su proyecto y debate: ¿se debe usar una clase por tipo de entidad o usar funciones sueltas en SimPy? ¿Cuál es el criterio técnico para decidir?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Si el sistema tiene un solo tipo de entidad (todos los clientes se comportan igual), las funciones sueltas son suficientes. Si hay múltiples tipos con comportamiento diferente (clientes VIP, clientes regulares, urgentes), las clases permiten encapsular el estado y comportamiento de cada tipo, facilitando la extensión y el mantenimiento.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Usar clases cuando hay múltiples tipos de entidades con comportamiento diferente; funciones para sistemas homogéneos]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. El principio de diseño es encapsular solo cuando hay variabilidad de comportamiento.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Siempre usar clases; es mejor práctica orientada a objetos]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Sobre-ingeniería: si el sistema es simple, las clases agregan complejidad innecesaria.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Siempre usar funciones; las clases no son compatibles con SimPy]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. SimPy es perfectamente compatible con diseño orientado a objetos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[La decisión no importa; el rendimiento es idéntico]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El criterio no es rendimiento sino mantenibilidad y claridad del modelo.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-16: Recomendación ejecutiva basada en simulación</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Dos escenarios tienen IC 95% solapados para Wq: Escenario A: [1.2, 1.8] min, Escenario B: [1.5, 2.1] min. El Escenario B tiene mayor costo. ¿Qué recomienda?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Si los IC se solapan, no hay evidencia estadística de que A sea mejor que B. Antes de recomendar A (que parece mejor pero cuesta menos o igual), se necesita: (1) más réplicas para estrechar los IC, o (2) prueba t formal. Si la diferencia no es significativa y B cuesta más, se recomienda A provisionalmente, documentando la incertidumbre.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Recomendar A provisionalmente (menor costo, no hay diferencia estadística significativa) e indicar la incertidumbre]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Con IC solapados y mayor costo de B, A es la opción dominante bajo incertidumbre.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Recomendar B porque tiene mayor cobertura de IC (intervalo más amplio)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Mayor amplitud del IC indica menos precisión, no mejor resultado.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No recomendar ninguna hasta ejecutar más réplicas para que los IC no se solapen]]></text>
+    <feedback format="html"><text><![CDATA[Parcialmente válido pero excesivamente conservador. En la práctica, se puede recomendar A con la advertencia de incertidumbre.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Recomendar A porque su Wq media es menor (1.5 < 1.8 min)]]></text>
+    <feedback format="html"><text><![CDATA[Parcialmente correcto pero incompleto. Hay que mencionar que la diferencia no es estadísticamente significativa.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-17: Evaluación del generador LCG del proyecto</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Al finalizar el curso, un estudiante reflexiona: "Mi generador LCG pasó todas las pruebas estadísticas (chi², KS, corridas), pero en el simulador M/M/1 de 1000 hr de duración, las correlaciones seriales entre tiempos de espera son más altas que con numpy. ¿Es esto un problema?"</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Sí es un problema potencial. Las correlaciones seriales en los U producidos por el LCG se traducen en correlaciones entre los inputs de la simulación (tiempos entre llegadas, tiempos de servicio). Esto viola la independencia requerida teóricamente y puede sesgar las estadísticas de salida, especialmente en simulaciones largas donde el período del LCG puede verse afectado.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Sí: correlaciones seriales en el LCG se propagan a los inputs del simulador y pueden sesgar los resultados]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Las pruebas estadísticas estándar no detectan correlaciones de orden alto que sí afectan simulaciones largas.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No: si pasó todas las pruebas estadísticas, el generador es estadísticamente correcto]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Las pruebas estándar no capturan todas las formas de correlación serial de alto orden.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No: las correlaciones en los tiempos de espera son propias del sistema M/M/1, no del generador]]></text>
+    <feedback format="html"><text><![CDATA[Parcialmente verdadero (M/M/1 sí tiene correlaciones internas), pero el efecto del LCG es adicional y puede amplificarlas.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Sí, pero solo importa para simulaciones de más de 10000 horas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El umbral de impacto depende del período del LCG y los parámetros elegidos, no de un número fijo.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-18: Contribución del curso — reflexión integradora</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un estudiante argumenta que hubiera sido más eficiente usar directamente `numpy.random` y `scipy.stats` para todo el proyecto en lugar de implementar el LCG y la clase GeneradorVariables. Evalúe este argumento.</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>El argumento tiene validez práctica pero ignora los objetivos de aprendizaje. Implementar el LCG y GeneradorVariables desarrolla: comprensión profunda de la generación estocástica, habilidad para adaptar generadores en entornos sin numpy (sistemas embebidos, servidores restringidos), y capacidad de depuración cuando los generadores comerciales fallan o no están disponibles.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Válido en producción, pero implementar desde cero desarrolla comprensión profunda y habilidades de depuración que numpy oculta]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. El valor pedagógico de implementar el generador está en la comprensión, no en el resultado final.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Completamente correcto: numpy es siempre superior y el proyecto debió usarlo desde el inicio]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Ignora los objetivos de aprendizaje y situaciones donde numpy no está disponible.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Completamente incorrecto: el LCG implementado es estadísticamente superior a Mersenne Twister]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Mersenne Twister (numpy) tiene período 2^19937-1, muy superior al LCG con período ≤ m.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El argumento no aplica: numpy no tiene funciones equivalentes a las implementadas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. numpy.random y scipy.stats tienen todas las distribuciones implementadas en el curso y más.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-19: Caso final — diseño completo de estudio de simulación</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un hospital quiere reducir el tiempo de espera en urgencias. Se cuenta con datos de 6 meses (llegadas, tiempos de servicio, personal por turno). ¿Cuál es el orden correcto de las etapas del estudio?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>El orden correcto según Law (2015): (1) Formulación del problema y objetivos, (2) Recolección y análisis de datos (ajuste de distribuciones), (3) Modelo conceptual, (4) Verificación + Validación del simulador, (5) Diseño de experimentos (escenarios), (6) Análisis estadístico de resultados, (7) Recomendaciones e implementación.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Formulación → Datos/distribuciones → Modelo conceptual → Verificación/Validación → Experimentos → Análisis → Recomendaciones]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Este es el ciclo de vida estándar de un estudio de simulación (Law, 2015, Cap. 2).]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Implementación → Verificación → Datos → Modelo conceptual → Análisis → Recomendaciones]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Implementar antes de diseñar el modelo conceptual es el error más común y costoso en simulación.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Datos → Implementación → Validación → Experimentos → Modelo conceptual (si es necesario)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El modelo conceptual debe preceder a la implementación para guiar el diseño.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Experimentos → Análisis → Modelo conceptual → Validación → Datos → Recomendaciones]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Sin datos y modelo conceptual, no hay base para diseñar experimentos.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EF-20: Síntesis — integración de los componentes del curso</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de los siguientes enunciados describe mejor la relación entre los componentes del simulador desarrollado a lo largo del curso?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La cadena completa es: GeneradorLCG (U~U(0,1)) → GeneradorVariables (transforma U en variables con distribuciones específicas) → Motor SimPy (usa esas variables para simular el sistema) → Análisis estadístico (interpreta los resultados). Cada componente encapsula su responsabilidad.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[GeneradorLCG produce U~U(0,1) → GeneradorVariables transforma U en distribuciones → SimPy usa esas distribuciones para simular el sistema → el análisis estadístico interpreta los resultados]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Esta cadena de responsabilidades encapsuladas es el núcleo del diseño del curso.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[SimPy genera los números aleatorios directamente, GeneradorVariables los valida, y el LCG sirve como respaldo]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. SimPy no genera números aleatorios; los recibe de GeneradorVariables.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Todos los componentes son independientes; se pueden usar en cualquier orden según la necesidad]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Los componentes tienen dependencias claras (GeneradorVariables necesita GeneradorLCG; SimPy necesita GeneradorVariables).]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[GeneradorVariables es opcional si se usa AnyLogic, que genera sus propias distribuciones]]></text>
+    <feedback format="html"><text><![CDATA[Verdadero para AnyLogic, pero el punto central del curso es comprender la cadena completa de generación estocástica.]]></text></feedback>
+  </answer>
+</question>
+
+</quiz>

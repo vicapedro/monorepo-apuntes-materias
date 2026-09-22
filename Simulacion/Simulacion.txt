@@ -1,0 +1,447 @@
+                                                               TECNOLÓGICO NACIONAL DE MÉXICO
+                                                         Secretaría Académica, de Investigación e Innovación
+                                                                        Dirección de Docencia e Innovación Educativa
+1. Datos Generales de la asignatura
+                          Nombre de la asignatura: Simulación
+                            Clave de la asignatura: SCD-1022
+                                           SATCA1: 2 – 3 – 5
+                                            Carrera: Ingeniería en Sistemas Computacionales
+2. Presentación
+  Caracterización de la asignatura
+  La asignatura de Simulación aporta al perfil del Ingeniero en Sistemas Computacionales la habilidad
+  de establecer modelos de simulación que le permitan analizar el comportamiento de un sistema real,
+  así como la capacidad de seleccionar y aplicar herramientas matemáticas para el modelado, diseño y
+  desarrollo de tecnología computacional.
+  La importancia de esta materia para un Ingeniero en Sistemas Computacionales es la de aplicar los
+  conocimientos adquiridos para plantear modelos matemáticos a sistemas reales complejos lineales para
+  la toma de decisiones y la solución a estos, empleando herramientas matemáticas y computacionales,
+  dado que las tendencias actuales exigen realizar la simulación en áreas como la ciencia, la industria y
+  los negocios.
+  Esta asignatura agrupa los conocimientos necesarios para modelar y simular sistemas discretos y
+  lineales, abarcando desde la generación de números aleatorios y métodos para la generación de
+  variables aleatorias, hasta la construcción de modelos de simulación.
+  Simulación, es una asignatura que requiere la aplicación de métodos de probabilidad y la habilidad de
+  realizar pruebas estadísticas, así como resolver modelos de Investigación de Operaciones como
+  sistemas de inventarios y de líneas de espera, incluyendo la competencia de programar en un lenguaje
+  de alto nivel.
+  Intención didáctica
+  La asignatura está integrada por cinco temas dentro de las cuales el estudiante deberá realizar análisis,
+  modelado, desarrollo y experimentación de sistemas reales.
+  En las actividades de aprendizaje sugeridas, se propone la formalización de los conceptos a partir de
+  experiencias; se busca que el estudiante tenga el primer contacto con el concepto en forma concreta y
+  sea a través de la observación, la reflexión y la discusión, que se dé la formalización, la resolución de
+  problemas se hará después de este proceso.
+  En el primer tema, se abordan conceptos básicos y la metodología empleada en la simulación.
+  En el segundo tema, el estudiante será capaz de generar números aleatorios uniformemente distribuidos
+  utilizando los métodos y pruebas estadísticas más pertinentes para ello.
+  El tercer tema, conocerá y comprenderá métodos y procedimientos especiales para generar variables
+  aleatorias, siguiendo las distribuciones estadísticas más conocidas utilizando los algoritmos obtenidos
+  para generarlas.
+1
+  Sistema de Asignación y Transferencia de Créditos Académicos
+©TecNM mayo 2016                                                                       Página | 1
+                                                               TECNOLÓGICO NACIONAL DE MÉXICO
+                                                          Secretaría Académica, de Investigación e Innovación
+                                                                         Dirección de Docencia e Innovación Educativa
+ En el cuarto tema el estudiante aprenderá a manejar, por lo menos, un simulador de eventos discretos
+ o lineales, para que reconozca los elementos que los integran y utilizarlos en la simulación modelos
+ matemáticos.
+ Además, aplicará métodos estadísticos para la validación de los resultados y del modelo de simulación
+ para garantizar los resultados de la simulación.
+ En el quinto tema el estudiante analizará, modelará y simulará un sistema o subsistema, utilizando las
+ técnicas aprendidas con anterioridad.
+ En el transcurso de las actividades programadas es muy importante que el estudiante aprenda a valorar
+ las actividades que lleva a cabo y entienda que está construyendo su quehacer futuro y en consecuencia
+ actúe de una manera profesional; de igual manera, aprecie la importancia del conocimiento y los
+ hábitos de trabajo; desarrolle la precisión y la curiosidad, la puntualidad, el entusiasmo y el interés, la
+ tenacidad, la flexibilidad y la autonomía.
+ Es necesario que el profesor ponga atención y cuidado en estos aspectos en el desarrollo de las
+ actividades de aprendizaje de esta asignatura, que promueva el establecimiento de relaciones objetivas
+ entre los conocimientos que el estudiante va construyendo y la realidad social y profesional de su
+ entorno y así vaya ampliando su cultura.
+3. Participantes en el diseño y seguimiento curricular del programa
+        Lugar y fecha de
+                                            Participantes                              Evento
+     elaboración o revisión
+                                 Representantes de los Institutos
+                                 Tecnológicos de:
+                                 Alvarado, Arandas, Campeche,
+                                 Celaya, Centla, Cerro Azul,
+                                 Champotón, Ciudad Acuña, Ciudad
+                                 Cuauhtémoc, Ciudad Juárez, Ciudad
+                                 Madero,        Ciudad        Valles,  Reunión Nacional de Diseño e
+                                 Coatzacoalcos, Cocula, Colima,        Innovación Curricular para el
+                                 Comitán, Durango, El Istmo,           Desarrollo      y     Formación       de
+    Instituto Tecnológico de
+                                 Huetamo, La Laguna, La Paz, Lázaro    Competencias Profesionales de las
+  Saltillo del 5 al 9 de octubre
+                                 Cárdenas, Lerdo, Libres, Linares,     Carreras de Ingeniería en Sistemas
+             de 2009.
+                                 Macuspana, Matamoros, Mérida,         Computacionales,              Ingeniería
+                                 Mexicali, Morelia, Nuevo Laredo,      Informática      e     Ingeniería     en
+                                 Nuevo León, Occidente del Estado      Geociencias.
+                                 de Hidalgo, Ocotlán, Orizaba,
+                                 Oriente del Estado de Hidalgo,
+                                 Parral, Piedras Negras, Pinotepa,
+                                 Saltillo, San Luis Potosí, Sur de
+                                 Guanajuato, Sur del Estado de
+                                 Yucatán, Tapachula, Tepexi de
+                                 Rodríguez,    Teziutlán,    Tijuana,
+©TecNM mayo 2016                                                                        Página | 2
+                                                             TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                       Dirección de Docencia e Innovación Educativa
+                              Toluca,     Tuxtepec,       Veracruz,
+                              Villahermosa, Xalapa, Zacatecas y
+                              Zacatepec.
+                              Representantes de los Institutos
+                              Tecnológicos de:
+                              Alvarado, Arandas, Campeche,
+                              Celaya, Centla, Cerro Azul,
+                              Champotón, Ciudad Acuña, Ciudad
+                              Cuauhtémoc, Ciudad Juárez, Ciudad
+                              Madero,         Ciudad        Valles,
+                              Coatzacoalcos, Cocula, Colima,
+                              Comitán, Durango, El Istmo,            Reunión Nacional de Consolidación de
+                              Huetamo, La Laguna, La Paz, Lázaro     los Programas en Competencias
+     Instituto Tecnológico    Cárdenas, Lerdo, Libres, Macuspana,    Profesionales de las Carreras de
+ Superior de Poza Rica del 22 Matamoros,      Mérida,     Mexicali,  Ingeniería         en          Sistemas
+   al 26 de febrero de 2010.  Morelia, Nuevo Laredo, Nuevo           Computacionales,              Ingeniería
+                              León, Occidente del Estado de          Informática e Ingeniería Petrolera del
+                              Hidalgo, Orizaba, Oriente del Estado   SNEST.
+                              de Hidalgo, Parral, Piedras Negras,
+                              Pinotepa, Saltillo, San Luis Potosí,
+                              Sur de Guanajuato, Sur del Estado de
+                              Yucatán, Tapachula, Tepexi de
+                              Rodríguez,     Teziutlán,    Tijuana,
+                              Toluca,     Tuxtepec,       Veracruz,
+                              Villahermosa, Xalapa, Zacatecas y
+                              Zacatepec.
+                              Representantes de los Institutos
+                              Tecnológicos de:
+                              Acayucan,      Altamira,     Cajeme,
+                              Campeche, Cananea, Cd. Acuña, Cd.      Reunión Nacional de Seguimiento
+                              Cuauhtémoc, Cd. Juárez, Cd.            Curricular de los Programas en
+                              Madero, Cd. Valles, Celaya, Centla,    Competencias Profesionales de las
+   Instituto Tecnológico de
+                              Cerro Azul, Chetumal, Chihuahua II,    Carreras de Ingeniería en Sistemas
+  Querétaro del 22 al 25 de
+                              Chilpancingo,             Coalcomán,   Computacionales,              Ingeniería
+       octubre de 2012.
+                              Coatzacoalcos, Cocula, Colima,         Informática      e     Ingeniería     en
+                              Comalcalco, Delicias, Durango,         Tecnologías de la Información y
+                              Ébano, Escárcega, Huixquilucan, La     Comunicaciones.
+                              Paz, León, Lerdo, Los Ríos,
+                              Macuspana, Mante, Milpa Alta,
+                              Minatitlán, Morelia, Nuevo Laredo,
+                              Nuevo León, Oaxaca, Oriente del
+©TecNM mayo 2016                                                                      Página | 3
+                                                               TECNOLÓGICO NACIONAL DE MÉXICO
+                                                          Secretaría Académica, de Investigación e Innovación
+                                                                         Dirección de Docencia e Innovación Educativa
+                                  Estado de México, Oriente del
+                                  Estado de Hidalgo, Pachuca, Piedras
+                                  Negras, Progreso, Puerto Vallarta,
+                                  Purhepecha, Tacámbaro, Tehuacán,
+                                  Tepexi de Rodríguez, Tepic,
+                                  Teposcolula,    Teziutlán,   Tierra
+                                  Blanca, Tijuana, Tlaxiaco, Toluca,
+                                  Tuxtepec, Uruapan, Valladolid,
+                                  Veracruz, Villahermosa, Zacatecas,
+                                  Zacatecas     Norte,     Zacatepec,
+                                  Zapopan, Zitácuaro y Zongólica.
+                                  Representantes de los Institutos Reunión de Seguimiento Curricular de
+    Instituto Tecnológico de      Tecnológicos de:                     los    Programas      Educativos      de
+     Toluca, del 10 al 13 de
+        febrero de 2014.          Cerro Azul, Colima, Lerdo, Toluca y Ingenierías,       Licenciaturas        y
+                                  Veracruz.                            Asignaturas Comunes del SNIT.
+4. Competencia(s) a desarrollar
+                              Competencia(s) específica(s) de la asignatura
+         Analiza, modela, desarrolla y experimenta sistemas productivos y de servicios, reales o
+          hipotéticos, a través de la simulación de eventos discretos, para dar servicio al usuario que
+          necesite tomar decisiones, con el fin de describir con claridad su funcionamiento, aplicando
+          herramientas matemáticas.
+5. Competencias previas
+ Investigación de operaciones:
+ Formula soluciones óptimas para generar una mejor alternativa para la toma de decisiones
+ aplicando conceptos de los modelos matemáticos, técnicas y algoritmos.
+ Estructura de datos:
+ Identifica, selecciona y aplica eficientemente tipos de datos abstractos, métodos de ordenamiento y
+ búsqueda para la optimización del rendimiento de soluciones de problemas del mundo real.
+©TecNM mayo 2016                                                                        Página | 4
+                                                      TECNOLÓGICO NACIONAL DE MÉXICO
+                                                Secretaría Académica, de Investigación e Innovación
+                                                               Dirección de Docencia e Innovación Educativa
+6. Temario
+ No.                  Temas                                      Subtemas
+                                         1.1. Definición e importancia de la simulación en la
+                                               Ingeniería.
+                                         1.2. Conceptos básicos de la simulación.
+                                         1.3. Metodología de la simulación.
+  1.                                     1.4. Estructura y etapas de un estudio de simulación.
+      Introducción a la simulación.      1.5. Etapas de un proyectos de simulación
+                                         1.6 Elementos básicos de un simulador de eventos
+                                               discretos
+                                         1.7 Ventajas y desventajas de la simulación.
+                                         2.1 Métodos de generación de números
+                                               Pseudoaleatorios.
+                                         2.2 Pruebas estadísticas.
+                                              2.2.1 De uniformidad.
+  2.  Números pseudoaleatorios.               2.2.2 De aleatoriedad.
+                                              2.2.3 De independencia.
+                                         2.3 Método de Monte Carlo
+                                              2.3.1 Características.
+                                              2.3.2 Aplicaciones.
+                                              2.3.3 Solución de problemas..
+                                         3.1 Conceptos básicos
+                                         3.2 Variables aleatorias discretas
+                                         3.3 Variables aleatorias continuas
+  3.                                     3.4 Métodos para generar variables aleatorias
+      Generación de variables aleatorias    3.4.1 Método de la transformada inversa.
+                                            3.4.2 Método de convolución.
+                                            3.4.3 Método de composición.
+                                         3.5 Procedimientos especiales.
+                                         3.6 Pruebas estadísticas.
+                                         4.1 Lenguaje de simulación y simuladores
+                                         4.2 Aprendizaje y uso lenguaje de simulación o un
+                                               simulador
+                                         4.3 Casos prácticos de simulación
+  4.
+      Lenguajes de simulación                 4.3.1 Problemas con líneas de espera.
+                                              4.3.2 Problemas con sistemas de Inventarios.
+                                         4.4 Validación de un simulador
+                                              4.4.1 Pruebas paramétricas
+                                              4.4.2 Pruebas no paramétricas.
+                                         5.1 Análisis, modelado y simulación de un sistema o
+                                             subsistema de servicios o productivo, de una
+  5.
+      Proyecto Integrador                    empresa para detectar las mejoras posibles a
+                                             realizar.
+©TecNM mayo 2016                                                              Página | 5
+                                                              TECNOLÓGICO NACIONAL DE MÉXICO
+                                                       Secretaría Académica, de Investigación e Innovación
+                                                                        Dirección de Docencia e Innovación Educativa
+7. Actividades de aprendizaje de los temas
+                                       Introducción a la simulación
+                    Competencias                                   Actividades de aprendizaje
+         Interpreta el uso y limitaciones de la        Realizar búsqueda en diferentes fuentes sobre
+         simulación computacional en el ámbito             la definición de simulación y de conceptos
+         de una empresa real para apoyar la toma           tales como: modelo, proceso, tipos de
+         de decisiones de forma eficaz.                    modelos, sistema, de los subtemas, y elabora
+                                                           un resumen de forma individual.
+                                                       Formar equipos para que en aula se discuta
+                                                           estos conceptos y se llegue a un consenso
+                                                           sobre la terminología que se requiere en el
+                                                           curso, construir un glosario.
+                                                       En equipo construir un mapa conceptual
+                                                           sobre la metodología de la simulación y
+                                                           presentarla al grupo.
+                                                       Construir un diagrama de las etapas de un
+                                                           proyecto de simulación, en equipo y
+                                                           presentarlo al grupo
+                                                       Investigar las ventajas y desventajas de la
+                                                           simulación y contrastar con el uso de la
+                                                           simulación en las empresas, hacer un reporte
+                                                           o una tabla comparativa.
+                                        Números pseudoaleatorios
+                    Competencias                                   Actividades de aprendizaje
+ Desarrolla programas para generar números             Investigar en diferentes fuentes, las
+ pseudoaleatorios utilizando diferentes métodos y          características de los números aleatorios y
+ aplica pruebas estadísticas para garantizar que           pseudoaleatorios y discutir en el aula, listar
+ sean uniformemente distribuidos e                         las características.
+ independientes con el fin de utilizarlos en la        Elaborar en equipo, ejercicios de generación
+ solución de problemas.                                    de números pseudoaleatorios para construir el
+                                                           algoritmo elegido y desarrollar el programa
+                                                           de computadora.
+                                                       Realizar ejercicios usando las principales
+                                                           pruebas estadísticas de uniformidad,
+                                                           aleatoriedad e independencia con las series
+                                                           de números generados en la actividad
+                                                           anterior.
+                                                       Utilizar un software estadístico y/o construir
+                                                           los algoritmos necesarios para aplicar las
+                                                           pruebas a los números pseudoaleatorios
+                                                           generados.
+                                                       Hacer ejercicios manuales aplicando el
+                                                           método de Montecarlo a diversos problemas
+                                                           matemáticos
+©TecNM mayo 2016                                                                       Página | 6
+                                                             TECNOLÓGICO NACIONAL DE MÉXICO
+                                                       Secretaría Académica, de Investigación e Innovación
+                                                                      Dirección de Docencia e Innovación Educativa
+                                                        Elaborar en equipo un programa que aplique
+                                                         el método de Montecarlo a un problema
+                                                         matemático en un lenguaje de propósito
+                                                         general.
+                                    Generación de variables aleatorias
+                   Competencias                                  Actividades de aprendizaje
+ Aplica métodos para la generación de variables        Realizar en equipo la investigación y
+ aleatorias que definan el comportamiento de los         exposición, de las diferencias existentes entre
+ sistemas, para implementar programas que                variables aleatorias discretas y continuas.
+ simulen situaciones reales eficientemente.            Elaborar en equipo, prácticas donde se
+                                                         identifiquen variables discretas y continuas
+                                                         dentro de un sistema real, presentando un
+                                                         reporte.
+                                                       Realizar un programa que genere variables
+                                                         aleatorias discretas utilizando un lenguaje de
+                                                         programación de alto nivel y el generador de
+                                                         números aleatorios obtenido en el tema
+                                                         anterior.
+                                                       Desarrollar un programa que genere variables
+                                                         aleatorias continuas utilizando un lenguaje de
+                                                         programación de alto nivel y el generador de
+                                                         números aleatorios obtenido en el tema
+                                                         anterior.
+                                                       Investigar en equipo el tipo de pruebas
+                                                         estadísticas que se requieren para probar que
+                                                         las variables generadas se comportan como
+                                                         tales y aplicar a las variables aleatorias una
+                                                         de ellas, presentarla al grupo
+                                         Lenguajes de Simulación
+                   Competencias                          Actividades de aprendizaje
+ Distingue las características de los lenguajes de     Investigar las características, aplicación y uso
+ simulación y de los simuladores para simular un         de los principales lenguajes de simulación
+ sistema de líneas de espera o sistemas de               existentes y elaborar un cuadro comparativo.
+ inventario, aplicando en forma pertinente los         Probar un simulador de acuerdo a su uso,
+ componentes obtenidos en los temas anteriores.          observar sus características y consensar con
+                                                         sus compañeros en el aula.
+                                                       Realizar prácticas de simulación manuales y
+                                                         en computadora de problemas aplicados a
+                                                         servicio de inventarios, económicos, entre
+                                                         otros, entregar reporte.
+                                                       Investigar las pruebas de validación más
+                                                         utilizadas y probarlas mediante ejercicios
+                                                         manuales para construir un programa de
+                                                         validación.
+                                           Proyecto integrador
+©TecNM mayo 2016                                                                     Página | 7
+                                                              TECNOLÓGICO NACIONAL DE MÉXICO
+                                                        Secretaría Académica, de Investigación e Innovación
+                                                                       Dirección de Docencia e Innovación Educativa
+                    Competencias                           Actividades de aprendizaje
+ Desarrolla un programa que implemente el              En equipo realizar un programa con un lenguaje
+ modelo matemático del sistema estudiado,              de alto nivel que implemente el modelo
+ experimenta con él, y obtiene un reporte              matemático del sistema estudiado, para facilitar
+ estadístico para que éste apoye en la toma de         la toma de decisiones aplicando el conocimiento
+ decisiones.                                           adquirido en los temas del programa y un análisis
+                                                       estadístico adecuado. Entregar los manuales
+                                                       correspondientes.
+8. Práctica(s)
+ Práctica 1.- Determine las características que se requieren para simular un sistema como: un
+ aeropuerto, una bodega de distribución de productos, un sistema de control de tránsito para la ciudad,
+ una máquina dobladora de lámina, una computadora, un sistema de cobranza, la recepción de un
+ hotel, un sistema de inspección de calidad, un sistema de mantenimiento de equipo, etc. entregar un
+ reporte.
+ Práctica 2.- Utilice uno de los métodos de generación vistos y construya un programa en un lenguaje
+ de alto nivel en que, dados los datos que requiera, genere un período completo de al menos 4096
+ números pseudoaleatorios. Guarde en un archivo la semilla, las constantes y el módulo utilizado.
+ Entregar reporte.
+ Práctica 3.- Con el archivo obtenido en la práctica anterior y el generador utilizado, implemente un
+ programa que aplique las pruebas estadísticas para demostrar la uniformidad de los números
+ pseudoaleatorios generados (una de bondad de ajuste, la de medias y la de varianza). Guarde en un
+ archivo la semilla, las constantes y el módulo utilizados que pasen todas estas pruebas. Hacer un
+ reporte.
+ Práctica 4: Con el archivo obtenido en la práctica anterior y el generador utilizado, implemente un
+ programa que aplique las pruebas estadísticas para demostrar la independencia de los números
+ pseudoaleatorios generados (una prueba de corridas, la de póquer y una prueba de series). Guarde
+ en un archivo la semilla, las constantes y el módulo utilizados que pasen todas estas pruebas. Hacer
+ un reporte.
+ Práctica 5: Con el archivo obtenido en la práctica anterior y el generador utilizado, resuelva un
+ problema aplicando el método de Monte Carlo implementándolo en un lenguaje de alto nivel. Hacer
+ un reporte de la práctica.
+ Práctica 6: Con el archivo obtenido en la práctica cuatro y el generador utilizado aplique a un
+ problema donde no se conoce su distribución, el método de la transformada inversa, impleméntelo
+ con un lenguaje de alto nivel. Hacer un reporte de la práctica.
+ Práctica 7.- Implemente en un lenguaje de alto nivel los algoritmos de las variables aleatorias
+ discretas utilizando el archivo de la práctica cuatro y el generador de la práctica dos. Incluya todas
+ las variables en una clase. Hacer un reporte de la práctica.
+©TecNM mayo 2016                                                                      Página | 8
+                                                               TECNOLÓGICO NACIONAL DE MÉXICO
+                                                         Secretaría Académica, de Investigación e Innovación
+                                                                        Dirección de Docencia e Innovación Educativa
+ Práctica 8.- Implemente en un lenguaje de alto nivel los algoritmos de las variables aleatorias
+ continuas utilizando el archivo de la práctica cuatro y el generador de la práctica dos. Incluya todas
+ las variables en la clase de la práctica anterior. Hacer un reporte de la práctica.
+ Práctica 9.- Desarrolle un programa en lenguaje de alto nivel que compruebe las variables aleatorias
+ generadas en la clase final de la práctica ocho; si la hipótesis es rechazada en alguna, regrese a la
+ práctica correspondiente y revise el algoritmo. Hacer un reporte de la práctica.
+ Práctica 10.- Utilice un simulador o un lenguaje de simulación comercial como Arena, Promodel,
+ WebGPSS, etc. (versión escolar si no se tiene el profesional) para resolver un problema real o
+ hipotético. Hacer un reporte de la práctica.
+ Práctica 11.- Utilice un lenguaje de alto nivel para simular un sistema de inventarios o de líneas de
+ espera utilizando todos los elementos que requiera de los obtenidos en las prácticas anteriores. Hacer
+ un reporte de la práctica.
+9. Proyecto de asignatura
+ El objetivo del proyecto que planteé el docente que imparta esta asignatura, es demostrar el desarrollo
+ y alcance de la(s) competencia(s) de la asignatura, considerando las siguientes fases:
+  Fundamentación: marco referencial (teórico, conceptual, contextual, legal) en el cual se
+     fundamenta el proyecto de acuerdo con un diagnóstico realizado, mismo que permite a los
+     estudiantes lograr la comprensión de la realidad o situación objeto de estudio para definir un
+     proceso de intervención o hacer el diseño de un modelo.
+  Planeación: con base en el diagnóstico en esta fase se realiza el diseño del proyecto por parte de
+     los estudiantes con asesoría del docente; implica planificar un proceso: de intervención
+     empresarial, social o comunitario, el diseño de un modelo, entre otros, según el tipo de proyecto,
+     las actividades a realizar los recursos requeridos y el cronograma de trabajo.
+  Ejecución: consiste en el desarrollo de la planeación del proyecto realizada por parte de los
+     estudiantes con asesoría del docente, es decir en la intervención (social, empresarial), o
+     construcción del modelo propuesto según el tipo de proyecto, es la fase de mayor duración que
+     implica el desempeño de las competencias genéricas y especificas a desarrollar.
+  Evaluación: es la fase final que aplica un juicio de valor en el contexto laboral-profesión, social e
+     investigativo, ésta se debe realizar a través del reconocimiento de logros y aspectos a mejorar se
+     estará promoviendo el concepto de “evaluación para la mejora continua”, la metacognición, el
+     desarrollo del pensamiento crítico y reflexivo en los estudiantes.
+©TecNM mayo 2016                                                                       Página | 9
+                                                           TECNOLÓGICO NACIONAL DE MÉXICO
+                                                      Secretaría Académica, de Investigación e Innovación
+                                                                    Dirección de Docencia e Innovación Educativa
+10. Evaluación por competencias
+ La evaluación debe ser permanente y continua. Se debe hacer una evaluación diagnóstica, formativa
+ y sumativa. Se debe aplicar la autoevaluación, coevaluación y heteroevaluación.
+ Se debe generar un portafolio de evidencias, de preferencia en formato digital.
+ Instrumentos:
+      Síntesis.
+      Mapa conceptual.
+      Tablas comparativas.
+      Examen escrito.
+      Glosario.
+      Resumen.
+      Exposición.
+      Reporte de conclusiones grupales.
+      Reporte de prácticas de laboratorio.
+      Portafolio de evidencias.
+ Herramientas:
+      Rúbricas.
+      Lista de cotejo.
+      Matriz de valoración.
+ Guía de proyecto.
+©TecNM mayo 2016                                                                  Página | 10
+                                                            TECNOLÓGICO NACIONAL DE MÉXICO
+                                                      Secretaría Académica, de Investigación e Innovación
+                                                                     Dirección de Docencia e Innovación Educativa
+11. Fuentes de información
+ 1. Kelton W.D., et al. (2008). Simulación con software Arena. México: Mc Graw-Hill.
+ 2. Pierá M.A. et al. (2007). Como mejorar la logística de su empresa mediante la simulación.
+    Madrid: Díaz de Santos.
+ 3.Dunna García E.et al.(2006). Simulación y análisis de sistemas con ProModel. Madrid: Pearson-
+    Prentice Hall.
+ 4.Robinson Stewart. (2003). Simulation: the practice of model development an use. New York. John
+    Wiley & Sons Ltd.
+ 5.Barceló H., J. (1996). Simulación de sistemas discretos. En J. Barceló, Simulación de sistemas
+    discretos. Madrid: Isdefe.
+ 6.Coss Bu, R. (1992). Simulación un enfoque práctico. En R. C. Bu, Simulación: un enfoque
+    práctico. México: LIMUSA.
+ 7.Law A.M & Kelton W.D., (1991). Simulation Modeling & Analysis. New York: Mc Graw-Hill.
+ 8. Davidson Frame J. (2005).La nueva dirección de proyectos. México. Ediciones Garnica México
+    S.A. de C.V.
+ Fuentes electrónicas
+ 9. http://www.euclides.dia.uned.es/aurquia/Files/PFC_AlbertoIbanezBrillas.pdf (acceso: octubre
+    2012)
+ 10.http://books.google.com.mx/books/about/Modelado_y_simulaci%C3%B3n_Aplicaci%C3%B3n_
+    a_pro.html?id=KZDPoE0uWTkC (acceso: octubre 2012)
+ 11. www.sce.carleton.ca/faculty/wainer/papers/96-005.ps(acceso: octubre 2012)
+ 12. Industrial data _ Software de simulación en:
+    http://sisbib.unmsm.edu.pe/bibvirtualdata/publicaciones/indata/Vol2_n1/pdf/software.pdf (acceso:
+    octubre 2012).
+ 13. Presentación de la Universidad de Loja por Cueva                          A. y Rojas S. en:
+    http://www.slideshare.net/SagFenix/proyecto-de-simulacion-de-sistemas (acceso: octubre 2012).
+©TecNM mayo 2016                                                                   Página | 11

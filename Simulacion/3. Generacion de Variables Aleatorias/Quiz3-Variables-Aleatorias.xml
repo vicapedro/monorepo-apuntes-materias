@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- Quiz 3: Generación de Variables Aleatorias | Simulación SCD-1022 | Unidad 3 -->
+
+<question type="multichoice">
+  <name><text>Q3-01: Transformada inversa — principio</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si <em>U</em> ~ Uniforme(0,1) y <em>F</em> es la FDA de una variable aleatoria <em>X</em>, entonces la variable obtenida como <em>X</em> = F⁻¹(<em>U</em>) tiene distribución:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Este es el <strong>Teorema de la Transformada Inversa</strong>. Se demuestra que P(F⁻¹(U) ≤ x) = P(U ≤ F(x)) = F(x), por lo que X tiene exactamente la distribución con FDA F.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[La distribución con FDA igual a <em>F</em>]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Este es el fundamento del método de la transformada inversa.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Siempre distribución Uniforme(0,1)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. U ~ U(0,1), no X.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Distribución Normal estándar]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El resultado depende de F, no siempre es Normal.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Distribución Exponencial estándar]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Solo sería Exponencial si F corresponde a esa distribución.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q3-02: Transformada inversa — Exponencial</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>La FDA de una variable Exponencial con media <em>β</em> es F(x) = 1 − e<sup>−x/β</sup>. ¿Cuál es su inversa para generar X a partir de U ~ U(0,1)?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Despejando: U = 1 − e^(−X/β) → e^(−X/β) = 1−U → X = −β·ln(1−U). Como 1−U también es U(0,1), se simplifica a X = −β·ln(U).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[X = −β·ln(U)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Se usa −ln(U) ya que 1−U ~ U(0,1) también.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[X = β·ln(U)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. ln(U) es negativo, lo que daría valores negativos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[X = e<sup>−β·U</sup>]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Eso no es la inversa de la FDA Exponencial.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[X = 1 − e<sup>−β·U</sup>]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Eso es F(U), no F⁻¹(U).]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q3-03: Distribución Poisson — contexto</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un banco recibe en promedio 12 clientes por hora. ¿Qué distribución describe el número de clientes que llegan en un intervalo de 5 minutos?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Poisson(λ·t) con λ = 12/hora = 0.2/min, t = 5 min → λ·t = 1. Los conteos de eventos Poisson en sub-intervalos también siguen Poisson con el parámetro escalado.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Poisson(λ = 1)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. 12 clientes/hora = 1 cliente/5 min → Poisson(1).]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Binomial(n=12, p=1/12)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La Binomial modela éxitos en ensayos independientes, no conteos en intervalos continuos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Exponencial(media=5 min)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Exponencial modela el tiempo entre llegadas, no el conteo.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Normal(12, √12)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Normal no modela conteos discretos de eventos raros en un intervalo.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q3-04: Convolución — Distribución Erlang</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si X₁, X₂, X₃ son variables Exponenciales(λ = 0.5) independientes, entonces Y = X₁ + X₂ + X₃ sigue una distribución:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La suma de k variables Exponenciales(λ) independientes sigue una distribución Erlang(k, λ), con media k/λ = 3/0.5 = 6 y varianza k/λ² = 3/0.25 = 12.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Erlang(k=3, λ=0.5) con media=6]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Erlang es la suma de k Exponenciales con el mismo λ.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Exponencial(λ=1.5) con media≈0.67]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La suma de Exponenciales no es Exponencial.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Normal(media=6, σ=√12) por el TCL]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto para n=3. La Normal es una aproximación solo para n grande (TCL).]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Gamma(α=3, β=0.5) con media=1.5]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto en el cálculo. Erlang(k=3,λ=0.5) tiene media k/λ = 6, no 1.5.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q3-05: Box-Muller — insumos</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El método de Box-Muller genera variables Normales estándar. ¿Cuántas variables U ~ U(0,1) consume para generar <strong>una</strong> variable Normal?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Box-Muller usa U₁ y U₂ para generar Z₁ = √(−2 ln U₁)·cos(2πU₂) y Z₂ = √(−2 ln U₁)·sin(2πU₂). Se consumen 2 U por cada par de Normales, es decir, 1 U por Normal generada en promedio.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Consume 2 U para generar 2 Normales (1 U por Normal en promedio)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Box-Muller es eficiente: un par (U₁,U₂) produce dos normales independientes.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Consume 1 U para generar 1 Normal]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Box-Muller requiere siempre dos U.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Consume 3 U para generar 1 Normal]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Solo se usan 2 U en la fórmula de Box-Muller.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Variable: depende de la semilla del generador]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El número de U consumidos es fijo: 2 por par de Normales.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Q3-06: FDA acumulada — propiedad</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Para cualquier variable aleatoria continua X con FDA F, la variable Y = F(X) sigue siempre una distribución Uniforme(0,1).</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Verdadero. Este resultado (integral de probabilidad) establece que P(F(X) ≤ u) = P(X ≤ F⁻¹(u)) = F(F⁻¹(u)) = u, por lo que F(X) ~ U(0,1). Es el fundamento del método de la transformada inversa.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html">
+    <text>true</text>
+    <feedback format="html"><text><![CDATA[Correcto. Este resultado es el "Probability Integral Transform Theorem".]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text>false</text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Para distribuciones continuas con FDA estrictamente creciente, Y = F(X) ~ U(0,1) siempre.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q3-07: Selección de distribución — tiempo de servicio</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un técnico tarda entre 2 y 10 minutos en reparar un componente, con mayor frecuencia alrededor de los 4 minutos. Sin más información, ¿qué distribución es más apropiada para modelar el tiempo de reparación?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La distribución Triangular es apropiada cuando se conocen el mínimo (a=2), el máximo (b=10) y el valor más probable (c=4), pero no se tienen datos suficientes para ajustar una distribución más precisa.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Triangular(a=2, b=10, c=4)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Triangular se usa cuando se conocen mínimo, máximo y moda, pero hay escasos datos empíricos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Exponencial(media=4)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Exponencial no tiene límite superior y tiene moda en 0, lo que no coincide con los datos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Normal(μ=6, σ=2)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Normal no tiene límites acotados y su moda es la media, no 4 en este caso.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Uniforme(2, 10)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Uniforme implica que todos los valores entre 2 y 10 son igualmente probables, pero se especificó mayor frecuencia en 4.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q3-08: Prueba KS — decisión</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Se genera una muestra de n=1000 valores con el método Erlang(k=3, λ=0.5) y se aplica la prueba KS contra la distribución teórica. El resultado es D=0.032, p-valor=0.27. Con α=0.05, la decisión es:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Como p-valor (0.27) > α (0.05), no hay evidencia estadística para rechazar H₀. La muestra es consistente con la distribución Erlang(3, 0.5) teórica.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[No rechazar H₀: la muestra es consistente con Erlang(3, 0.5)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. p=0.27 > α=0.05 → no se rechaza la hipótesis nula.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Rechazar H₀: la muestra NO sigue Erlang(3, 0.5)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Solo se rechaza cuando p-valor < α.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No hay información suficiente para decidir]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Con p-valor y α definidos, la decisión es clara.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Aumentar la muestra a n=10000 antes de decidir]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Con n=1000 y p=0.27 la prueba es concluyente.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q3-09: Método polar — ventaja</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El método polar de Marsaglia para generar variables Normales tiene una ventaja sobre Box-Muller. ¿Cuál es?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>El método polar evita calcular funciones trigonométricas (cos, sin), que son computacionalmente costosas. Usa un bucle de rechazo para proyectar sobre un círculo unitario, pero cada iteración solo usa operaciones aritméticas básicas.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Evita calcular funciones trigonométricas (cos, sin), más eficiente en hardware antiguo]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. El método polar usa solo sqrt y log en lugar de cos y sin.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Siempre consume menos U que Box-Muller]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El método polar tiene una tasa de aceptación de π/4 ≈ 0.785, por lo que en promedio consume 2/0.785 ≈ 2.55 U por par de Normales.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Genera distribuciones más precisas estadísticamente]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Ambos métodos son exactos; solo difieren en implementación.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No requiere generador de números pseudoaleatorios]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Ambos métodos requieren U ~ U(0,1) como insumo.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Q3-10: Erlang como suma de exponenciales</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Una variable Erlang(k, λ) tiene la misma distribución que la suma de k variables Exponenciales(λ) independientes, y su media es k/λ.</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Verdadero. Esta es la definición de la distribución Erlang. Su media es k/λ (suma de k medias 1/λ) y su varianza es k/λ². El método de convolución para generar Erlang explota directamente esta propiedad.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html">
+    <text>true</text>
+    <feedback format="html"><text><![CDATA[Correcto. Erlang(k,λ) = ΣExp(λ), media = k/λ.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text>false</text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La relación entre Erlang y Exponencial es exactamente esta.]]></text></feedback>
+  </answer>
+</question>
+
+</quiz>

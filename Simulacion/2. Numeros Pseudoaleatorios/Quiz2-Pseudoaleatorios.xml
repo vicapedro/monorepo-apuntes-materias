@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <!-- Quiz 2: Números Pseudoaleatorios — Unidad 2 -->
+  <!-- Simulación (SCD-1022) | Moodle XML | 10 preguntas -->
+
+  <question type="multichoice">
+    <name><text>Q2-U2-01 LCG - Recurrencia</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un generador congruencial lineal (LCG) usa los parámetros: <em>a</em> = 5, <em>c</em> = 3, <em>m</em> = 16, <em>X</em><sub>0</sub> = 7. ¿Cuál es el valor de <em>X</em><sub>1</sub>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>X<sub>1</sub> = (a·X<sub>0</sub> + c) mod m = (5·7 + 3) mod 16 = 38 mod 16 = 6</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[6 (38 mod 16 = 6)]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. X₁ = (5×7 + 3) mod 16 = 38 mod 16 = 6.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[38]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Falta aplicar la operación mod m: 38 mod 16 = 6.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[2 (7 mod 5 = 2)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La fórmula es (a·X + c) mod m, no X mod a.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[10]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Verificar: (5×7 + 3) mod 16 = 38 mod 16 = 6.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q2-U2-02 Periodo del LCG</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Cuál es el <strong>periodo máximo posible</strong> de un LCG con módulo <em>m</em>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El periodo máximo de un LCG es <em>m</em> (el valor del módulo), alcanzable bajo las condiciones del Teorema de Hull-Dobell. El generador MINSTD con m = 2³¹-1 tiene periodo m-1 ≈ 2×10⁹.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[m (el valor del módulo)]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. El Teorema de Hull-Dobell establece las condiciones para que el LCG alcance el periodo máximo de m.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[a × m (multiplicador por módulo)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El periodo depende de m y de las propiedades de a, c según Hull-Dobell, pero el máximo es m.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Infinito, si los parámetros son primos entre sí]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Todos los LCG tienen periodo finito acotado por m.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[m/2]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El periodo máximo es m, no m/2. Con parámetros incorrectos el periodo puede ser menor que m.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q2-U2-03 Prueba chi-cuadrada</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Al aplicar la prueba chi-cuadrada de bondad de ajuste a 1000 números pseudoaleatorios en 10 intervalos, se obtiene χ² = 15.2. Con α = 0.05 y 9 grados de libertad, el valor crítico es χ²<sub>0.05,9</sub> = 16.92. ¿Cuál es la decisión correcta?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Como χ² calculada (15.2) ≤ χ² crítica (16.92), NO se rechaza H₀. Los datos son consistentes con una distribución Uniforme[0,1].</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[No se rechaza H₀: los números son consistentes con distribución Uniforme[0,1]]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. 15.2 < 16.92, por lo que no hay evidencia suficiente para rechazar la uniformidad.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Se rechaza H₀: los números no siguen distribución Uniforme]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Se rechaza H₀ solo si χ² calculada > χ² crítica. Aquí 15.2 < 16.92.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[No se puede concluir nada con solo 10 intervalos]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. 10 intervalos con 1000 datos (100 esperados por intervalo) es suficiente para la prueba.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Se acepta definitivamente que los números son perfectamente uniformes]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La prueba estadística no "acepta" H₀; solo "no la rechaza". Además, ninguna muestra puede ser perfectamente uniforme.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="truefalse">
+    <name><text>Q2-U2-04 Reproducibilidad</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En simulación, la reproducibilidad de los números pseudoaleatorios (misma semilla → misma secuencia) es una <strong>desventaja</strong> porque significa que los resultados no son verdaderamente aleatorios.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Falso. La reproducibilidad es una VENTAJA en simulación: permite replicar experimentos, depurar código, comparar alternativas de diseño bajo las mismas condiciones estocásticas, y verificar resultados. Solo sería una desventaja en aplicaciones criptográficas.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+    <answer fraction="0" format="html">
+      <text>true</text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La reproducibilidad es una ventaja clave en simulación, no una desventaja.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>false</text>
+      <feedback format="html"><text><![CDATA[Correcto. La reproducibilidad permite replicar y comparar experimentos de simulación, lo cual es fundamental para la validación científica de los resultados.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q2-U2-05 Monte Carlo — convergencia</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el método de Monte Carlo, si se duplica el número de muestras de 10,000 a 20,000, ¿en qué factor se reduce aproximadamente el error estándar de la estimación?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El error estándar es SE = σ/√n. Al duplicar n, SE se reduce por un factor √2 ≈ 1.41. Para reducir el error a la mitad, se necesita cuadruplicar n. Esta es la "maldición" del Monte Carlo: converge lentamente.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Se reduce por un factor √2 ≈ 1.41 (el error es inversamente proporcional a √n)]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. SE = σ/√n. Al duplicar n: SE_nuevo = σ/√(2n) = SE_original/√2.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Se reduce a la mitad (el error es inversamente proporcional a n)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El error es proporcional a 1/√n, no a 1/n. Para reducir a la mitad se necesita multiplicar n por 4.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Se reduce por un factor 2 (el error es proporcional a n)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El error DISMINUYE al aumentar n. La relación correcta es SE ∝ 1/√n.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[No cambia: el error es constante independientemente de n]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El error sí disminuye al aumentar n, aunque lentamente (∝ 1/√n).]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q2-U2-06 Mersenne Twister</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Cuál de las siguientes afirmaciones sobre el <strong>Mersenne Twister (MT19937)</strong> es correcta?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El Mersenne Twister tiene un periodo de 2¹⁹⁹³⁷-1, pasa pruebas estadísticas rigurosas, y es el generador por defecto de Python (random) y numpy. Su única desventaja relevante es que NO es criptográficamente seguro.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Tiene un periodo de 2¹⁹⁹³⁷-1 y es el generador por defecto de Python, pero no es criptográficamente seguro]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. MT19937 tiene un periodo astronómicamente largo y pasa todas las pruebas estadísticas estándar, pero no debe usarse para criptografía.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Fue el primer generador pseudoaleatorio propuesto por Von Neumann en 1946]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Von Neumann propuso el método de cuadrados medios en 1946. El Mersenne Twister fue desarrollado por Matsumoto y Nishimura en 1998.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Su periodo es idéntico al del LCG MINSTD (2³¹-2)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El MT tiene un periodo de 2¹⁹⁹³⁷-1, incomparablemente mayor que el MINSTD.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Es recomendado para aplicaciones de ciberseguridad por su largo periodo]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El MT no es criptográficamente seguro. Para criptografía se usan generadores específicos como ChaCha20.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q2-U2-07 Prueba de corridas</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>La prueba de corridas arriba y abajo evalúa:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La prueba de corridas verifica la independencia entre números consecutivos. Si hay muy pocas corridas, la secuencia es demasiado monótona (tendencias); si hay demasiadas, alterna demasiado (oscilaciones regulares). Ambos son signos de dependencia.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[La independencia entre números consecutivos, verificando que el número de secuencias monótonas sea estadísticamente consistente con aleatoriedad]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. La prueba de corridas detecta patrones de dependencia (tendencias o alternaciones regulares) en la secuencia.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[La uniformidad de la distribución, comparando frecuencias observadas en intervalos con las esperadas]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Eso es la prueba chi-cuadrada de bondad de ajuste. La prueba de corridas verifica independencia, no uniformidad.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Si todos los números generados son distintos entre sí (sin repeticiones)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Los generadores pseudoaleatorios sí repiten números; la prueba de corridas no verifica repeticiones sino patrones de dependencia.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Si el periodo del generador es suficientemente largo para la simulación requerida]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El periodo se analiza teóricamente (fórmulas del generador), no con la prueba de corridas.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q2-U2-08 Generador RANDU</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>El generador RANDU (a=65539, c=0, m=2³¹) fue ampliamente usado en los años 60-70 pero resultó ser deficiente. ¿Cuál es su principal problema?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El problema del RANDU es que las tripletas (U_i, U_{i+1}, U_{i+2}) no llenan el espacio tridimensional [0,1]³ sino que caen sobre solo 15 planos paralelos (estructura lattice), lo que evidencia fuerte dependencia entre números no adyacentes. Fue descubierto por Marsaglia en 1968.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Las tripletas consecutivas caen sobre solo 15 planos en el espacio 3D, evidenciando fuerte correlación entre números separados por 2 posiciones]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Este "problema de los planos" del RANDU fue descubierto por Marsaglia. Visualmente se observa al graficar (U_i, U_{i+1}, U_{i+2}) en 3D.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Tiene un periodo muy corto (menos de 1000 números antes de repetirse)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El periodo del RANDU es 2²⁹ ≈ 500 millones, que es largo. Su problema es la estructura lattice, no el periodo corto.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Genera números en [0,2] en lugar de [0,1], causando errores sistemáticos]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Los números sí se normalizan a [0,1]. El problema es la estructura de dependencia entre consecutivos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Falla la prueba de medias porque su media es 0.6 en lugar de 0.5]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. RANDU pasa las pruebas univariadas básicas como medias y varianza; su problema es de dependencia multidimensional.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q2-U2-09 heapq en simulador</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el contexto de implementar un simulador de eventos discretos en Python, ¿para qué se usa <code>heapq</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>heapq implementa un min-heap que siempre extrae el elemento mínimo. En un simulador DES, la lista de eventos futuros se ordena por tiempo, y heapq permite extraer eficientemente el próximo evento (el de menor tiempo) para procesarlo.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Para implementar la lista de eventos futuros ordenada por tiempo, extrayendo siempre el evento con el menor tiempo de ocurrencia]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. heapq.heappop() extrae el evento con el menor tiempo, que es el próximo a ocurrir en la simulación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Para generar números pseudoaleatorios con distribución normal]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Para distribución normal se usa el método de Box-Muller o scipy.stats. heapq es una cola de prioridad.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Para almacenar las entidades que esperan en cola (FIFO)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Las colas FIFO se implementan con collections.deque. heapq es para prioridad por tiempo de evento.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Para calcular estadísticas de desempeño al final de la simulación]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Las estadísticas se calculan con numpy o acumuladores simples. heapq es una estructura de datos de cola de prioridad.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q2-U2-10 Transformada inversa preview</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Si se desea generar una variable aleatoria Exponencial con media 5 (λ = 0.2) a partir de un número U ~ Uniforme(0,1), la fórmula de la transformada inversa es:</p>
+      <p><em>Recuerde: la FDA de la Exponencial es F(x) = 1 - e<sup>-λx</sup></em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Igualando F(X) = U: 1 - e<sup>-λX</sup> = U → e<sup>-λX</sup> = 1-U → -λX = ln(1-U) → X = -ln(1-U)/λ = -(1/λ)·ln(1-U). Como U ~ Uniforme(0,1), también 1-U ~ Uniforme(0,1), por lo que X = -(1/λ)·ln(U) es equivalente y más común en código.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[X = -(1/λ)·ln(U) = -5·ln(U)]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Esta es la fórmula de transformada inversa para la distribución Exponencial. Se usará extensamente en la Unidad 3.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[X = U / λ = U / 0.2 = 5U]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Esa fórmula daría una distribución Uniforme(0,5), no Exponencial. La transformada inversa de la Exponencial involucra logaritmo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[X = e<sup>-λU</sup> = e<sup>-0.2U</sup>]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Esa es la FDA evaluada en U, no su inversa. La transformada inversa despeja X de F(X) = U.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[X = λ·ln(U) = 0.2·ln(U)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El signo es negativo y la fórmula usa 1/λ, no λ: X = -(1/λ)·ln(U).]]></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- EXAMEN UNIDAD 1 - ADMINISTRACION DE REDES (SCA-1002) -->
+<!-- Area 6 de 6: Niveles de Servicio (SLA/SLO/SLI) -->
+<!-- 20 reactivos alineados a la Taxonomia de Bloom, etiquetados en <tags> y en el nombre de cada reactivo -->
+<!-- Distribucion Bloom: Recordar 3, Comprender 3, Aplicar 5, Analizar 5, Evaluar 2, Crear 2 -->
+
+<question type="category">
+  <category><text>$course$/Unidad 1 - Administracion de Redes/06 Niveles de Servicio (SLA)</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA01 [Recordar] Definicion de SLA</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué es un <strong>SLA</strong> (Service Level Agreement)?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un SLA es un acuerdo formal entre proveedor y cliente sobre el nivel de servicio esperado, que incluye métricas, responsabilidades y consecuencias.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Un acuerdo formal entre proveedor y cliente sobre el nivel de servicio esperado, con métricas, responsabilidades y consecuencias]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Una métrica técnica medida automáticamente por un sistema de monitoreo]]></text><feedback format="html"><text><![CDATA[Esa es la definición de SLI, no de SLA.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Un objetivo técnico cuantificable dentro de un acuerdo]]></text><feedback format="html"><text><![CDATA[Esa es la definición de SLO, no de SLA.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Un reporte de incidentes generado por el área de soporte]]></text><feedback format="html"><text><![CDATA[Un reporte de incidentes no constituye por sí mismo un acuerdo de nivel de servicio.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA02 [Recordar] Definicion de SLO</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué es un <strong>SLO</strong> (Service Level Objective)?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El SLO es un objetivo técnico específico y cuantificable dentro de un SLA, definido por el área de operaciones de TI.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[El acuerdo legal completo entre proveedor y cliente]]></text><feedback format="html"><text><![CDATA[Ese es el SLA, no el SLO.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Un objetivo técnico específico y cuantificable dentro de un SLA]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La métrica real medida por el sistema de monitoreo]]></text><feedback format="html"><text><![CDATA[Esa es la definición de SLI, no de SLO.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El presupuesto asignado al área de TI]]></text><feedback format="html"><text><![CDATA[El presupuesto no forma parte de la definición de SLO.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA03 [Recordar] Definicion de SLI</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué representa un <strong>SLI</strong> (Service Level Indicator)?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El SLI es la métrica real y observable que se mide para verificar el cumplimiento de un SLO.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[El compromiso legal firmado entre las partes]]></text><feedback format="html"><text><![CDATA[Ese es el SLA, no el SLI.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[La métrica real y observable que se mide para verificar el cumplimiento de un SLO]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El nombre del servicio contratado]]></text><feedback format="html"><text><![CDATA[El nombre del servicio es solo un dato de identificación, no el SLI.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La penalización económica por incumplimiento]]></text><feedback format="html"><text><![CDATA[La penalización es una consecuencia del SLA, no la métrica medida (SLI).]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA04 [Comprender] Cumplimiento de SLO con SLI dado</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Si el SLO de disponibilidad es "≥ 99.9% mensual" y el SLI medido es "99.92%", ¿cuál es el resultado?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El SLI (99.92%) supera el objetivo del SLO (99.9%), por lo que el SLO se considera cumplido.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Incumplido]]></text><feedback format="html"><text><![CDATA[El SLI medido es mayor al objetivo mínimo requerido, por lo que sí se cumple.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Cumplido, ya que el SLI supera el objetivo del SLO]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No se puede determinar sin más información]]></text><feedback format="html"><text><![CDATA[Con el SLO y el SLI dados, es suficiente para determinar el cumplimiento.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El SLA queda automáticamente cancelado]]></text><feedback format="html"><text><![CDATA[El cumplimiento de un SLO no cancela el SLA; al contrario, lo respalda.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA05 [Comprender] Relacion jerarquica SLA-SLO-SLI</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál es la relación jerárquica correcta entre SLA, SLO y SLI?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El SLA contiene uno o varios SLO, y cada SLO se verifica mediante uno o varios SLI.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[El SLA contiene uno o varios SLO, y cada SLO se verifica mediante uno o varios SLI]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El SLI contiene al SLA y al SLO]]></text><feedback format="html"><text><![CDATA[La jerarquía es inversa: el SLI es la métrica más específica, no la que contiene a los demás.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[SLA, SLO y SLI son sinónimos intercambiables]]></text><feedback format="html"><text><![CDATA[No son sinónimos; cada uno cumple un rol distinto en la jerarquía.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El SLO contiene al SLA]]></text><feedback format="html"><text><![CDATA[Es al revés: el SLA es el acuerdo que contiene a los SLO.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA06 [Comprender] Concepto de credito en penalizaciones</text></name>
+  <questiontext format="html"><text><![CDATA[<p>En el esquema de penalizaciones de un SLA, ¿qué representa un <strong>crédito</strong>?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un crédito es un descuento aplicado al costo del servicio cuando no se cumple el nivel de disponibilidad u otro SLO comprometido.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Un bono adicional que se paga al proveedor cuando cumple el SLA]]></text><feedback format="html"><text><![CDATA[El crédito es una compensación al cliente por incumplimiento, no un bono al proveedor.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Un descuento aplicado al costo del servicio cuando no se cumple el SLO comprometido]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Una certificación de calidad otorgada al proveedor]]></text><feedback format="html"><text><![CDATA[No se relaciona con una certificación de calidad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El tiempo adicional otorgado para resolver un incidente]]></text><feedback format="html"><text><![CDATA[El crédito es una compensación económica, no una extensión de tiempo.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA07 [Aplicar] Minutos de downtime permitidos</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un SLA de disponibilidad mensual es del 99.9% sobre 43,200 minutos totales del mes. ¿Cuántos minutos de downtime están permitidos aproximadamente?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>43,200 minutos × 0.1% = 43.2 minutos de downtime permitido al mes.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Aproximadamente 43 minutos]]></text><feedback format="html"><text><![CDATA[Correcto, 43,200 × 0.001 = 43.2 minutos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[432 minutos]]></text><feedback format="html"><text><![CDATA[Ese valor correspondería a un 1% de downtime, no a 0.1%.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[4.3 minutos]]></text><feedback format="html"><text><![CDATA[Ese valor es diez veces menor al resultado correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[4,320 minutos]]></text><feedback format="html"><text><![CDATA[Ese valor correspondería a un 10% de downtime, muy por encima del 0.1% permitido.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA08 [Aplicar] Exclusion de mantenimiento planificado</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Durante un mes, un servicio tuvo 120 minutos de falla de router y 30 minutos de mantenimiento planificado notificado con 48 horas de anticipación. Según el esquema típico de exclusiones, ¿cuántos minutos cuentan como downtime real para el cálculo del SLA?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El mantenimiento planificado y notificado con anticipación suele excluirse del cálculo de penalización, por lo que solo cuentan los 120 minutos de falla.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[150 minutos]]></text><feedback format="html"><text><![CDATA[Esa suma incluye incorrectamente el mantenimiento planificado, que suele estar excluido.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[120 minutos, ya que el mantenimiento planificado y notificado no cuenta como downtime]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[30 minutos]]></text><feedback format="html"><text><![CDATA[Esos son los minutos excluidos, no los que sí cuentan como downtime real.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[0 minutos]]></text><feedback format="html"><text><![CDATA[La falla del router sí cuenta como downtime real, no debe ignorarse.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA09 [Aplicar] Revision de SLOs ante queja de lentitud</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un cliente reporta lentitud, pero el SLA solo compromete disponibilidad (uptime), no throughput ni latencia. ¿Qué debe hacer el proveedor según el principio de SLOs SMART?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Debe revisar si existen SLOs adicionales pactados; si no existen, proponer incluir métricas como throughput o latencia para cubrir la expectativa real del cliente.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Negar cualquier problema porque el SLA de disponibilidad se cumple]]></text><feedback format="html"><text><![CDATA[Negar el problema ignora que puede existir una brecha real no cubierta por el SLA actual.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Revisar si existen SLOs adicionales pactados; si no existen, proponer incluirlos para cubrir la expectativa real del cliente]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cancelar el SLA de inmediato]]></text><feedback format="html"><text><![CDATA[Cancelar el SLA no resuelve el problema reportado ni mejora el servicio.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar automáticamente una penalización sin verificar los SLOs pactados]]></text><feedback format="html"><text><![CDATA[No corresponde aplicar una penalización sobre un SLO que nunca fue comprometido en el SLA.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA10 [Aplicar] Calculo de credito por incumplimiento</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un servicio tuvo una disponibilidad mensual de 98.5% y la tabla de penalizaciones indica 10% de crédito para el rango 98.0%-98.99%. Si el costo mensual del servicio es de $10,000, ¿cuál es el crédito a aplicar?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Crédito = Costo mensual × % de penalización = $10,000 × 10% = $1,000.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[$500]]></text><feedback format="html"><text><![CDATA[Ese valor correspondería a un 5% de crédito, no al 10% indicado.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[$1,000]]></text><feedback format="html"><text><![CDATA[Correcto, 10% de $10,000 es $1,000.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[$2,500]]></text><feedback format="html"><text><![CDATA[Ese valor correspondería a un 25% de crédito, no al 10% indicado.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[$0]]></text><feedback format="html"><text><![CDATA[Sí corresponde un crédito, ya que la disponibilidad quedó por debajo del 99.9% de referencia.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA11 [Aplicar] Clasificacion de un SLO por metrica</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un documento de SLA establece: "El jitter promedio en el tráfico de VoIP debe ser menor a 10 ms, medido de forma continua mediante monitoreo SIP". ¿Qué elemento de este enunciado corresponde al SLI?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El SLI es el valor medido de forma continua (el jitter real observado por el monitoreo SIP), mientras que "menor a 10 ms" es el SLO (objetivo).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[El valor objetivo "menor a 10 ms"]]></text><feedback format="html"><text><![CDATA[Ese valor objetivo corresponde al SLO, no al SLI.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[El jitter real medido de forma continua mediante el monitoreo SIP]]></text><feedback format="html"><text><![CDATA[Correcto, el dato observable y medido es el SLI.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El documento de SLA en su totalidad]]></text><feedback format="html"><text><![CDATA[El documento completo es el SLA, no específicamente el SLI.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El nombre del servicio de VoIP]]></text><feedback format="html"><text><![CDATA[El nombre del servicio es solo un dato de identificación, no una métrica medida.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA12 [Analizar] Importancia de que el SLO sea medible</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Por qué es importante que un SLO sea "medible" (la M de SMART) y esté vinculado a un SLI concreto?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Sin una métrica medible y vinculada a un SLI, no es posible verificar objetivamente si el compromiso se cumple o no.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Porque sin una métrica medible no es posible verificar objetivamente si el compromiso se cumple]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque los SLO no necesitan verificarse nunca]]></text><feedback format="html"><text><![CDATA[Los SLO sí requieren verificación continua mediante el SLI correspondiente.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque la medición solo es relevante para fines de marketing]]></text><feedback format="html"><text><![CDATA[La medición es relevante para la gestión operativa y el cumplimiento contractual, no solo marketing.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque el SLI sustituye la necesidad de un SLA]]></text><feedback format="html"><text><![CDATA[El SLI no sustituye al SLA; ambos cumplen roles complementarios dentro del acuerdo.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA13 [Analizar] SLA sin sistema de monitoreo</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Analice qué ocurre en una organización que define SLAs pero no tiene un sistema de monitoreo (SLI) que los mida de forma continua.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El SLA se vuelve difícil de verificar objetivamente, generando conflictos entre TI y el negocio ante percepciones subjetivas del servicio.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[El SLA se cumple automáticamente sin necesidad de datos]]></text><feedback format="html"><text><![CDATA[Sin datos, no hay forma de afirmar que el SLA se está cumpliendo.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[El SLA se vuelve difícil de verificar objetivamente, generando conflictos entre TI y el negocio]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No hay ningún problema, el SLA es solo un documento legal sin necesidad de datos]]></text><feedback format="html"><text><![CDATA[El valor del SLA depende de poder verificarlo con datos reales (SLI), no es solo un documento.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El SLI no tiene relación con el cumplimiento del SLA]]></text><feedback format="html"><text><![CDATA[El SLI es precisamente el mecanismo que permite verificar el cumplimiento del SLA.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA14 [Analizar] Incentivo del esquema de penalizaciones</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Compare un esquema de SLA con penalización de crédito 0% cuando la disponibilidad es ≥99.9% frente a un esquema sin penalizaciones. ¿Qué incentivo adicional aporta el primero?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El esquema con penalizaciones genera un incentivo económico y de reputación para que el proveedor cumpla los objetivos comprometidos.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Ninguno, ambos esquemas son equivalentes]]></text><feedback format="html"><text><![CDATA[No son equivalentes: el esquema con penalización agrega una consecuencia real ante el incumplimiento.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Genera un incentivo económico y de reputación para que el proveedor cumpla los objetivos comprometidos]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Solo beneficia al cliente, sin ningún efecto sobre el proveedor]]></text><feedback format="html"><text><![CDATA[También influye en el comportamiento del proveedor, al existir una consecuencia económica por incumplir.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Elimina la necesidad de monitoreo continuo]]></text><feedback format="html"><text><![CDATA[El esquema de penalizaciones requiere, no elimina, el monitoreo continuo para calcular el cumplimiento.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA15 [Analizar] Rol de las exclusiones en la evaluacion justa</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Por qué las exclusiones bien definidas en un SLA (por ejemplo, fallas del ISP fuera del control del proveedor de TI) contribuyen a una evaluación justa del desempeño del proveedor?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Las exclusiones evitan penalizar al proveedor por eventos fuera de su control directo, enfocando la penalización únicamente en fallas atribuibles a su gestión.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Porque evitan penalizar al proveedor por eventos fuera de su control directo]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque eliminan por completo la posibilidad de aplicar penalizaciones]]></text><feedback format="html"><text><![CDATA[Las exclusiones no eliminan las penalizaciones, solo delimitan qué eventos sí cuentan para el cálculo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque hacen innecesario el monitoreo del servicio]]></text><feedback format="html"><text><![CDATA[El monitoreo sigue siendo necesario para diferenciar qué eventos están o no excluidos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque transfieren toda la responsabilidad al cliente]]></text><feedback format="html"><text><![CDATA[Las exclusiones no transfieren la responsabilidad al cliente, solo delimitan causas fuera del control del proveedor.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA16 [Analizar] Riesgo de medir solo el promedio</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un SLO de latencia establece "promedio menor a 50 ms" y el SLI mensual reporta un promedio de 42 ms, aunque el percentil 95 (p95) es de 68 ms. ¿Qué riesgo de análisis se identifica en este caso?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Medir solo el promedio puede ocultar que una parte significativa de las conexiones (p95) experimenta una latencia más alta, afectando la experiencia de ciertos usuarios aunque el SLO "se cumpla" en promedio.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Ningún riesgo, el promedio siempre representa fielmente la experiencia de todos los usuarios]]></text><feedback format="html"><text><![CDATA[El promedio puede ocultar variabilidad importante que sí afecta a un subconjunto de usuarios.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[El promedio puede ocultar que una parte significativa de las conexiones (p95) experimenta latencia más alta]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El p95 es una métrica irrelevante que no debería registrarse]]></text><feedback format="html"><text><![CDATA[El p95 es relevante precisamente porque expone lo que el promedio no muestra.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Significa que el SLO está mal definido y debe eliminarse]]></text><feedback format="html"><text><![CDATA[No implica eliminar el SLO, sino considerar complementarlo con un SLO adicional basado en percentiles.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA17 [Evaluar] Exclusion de un ataque DDoS en el SLA</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Evalúe si es razonable que un ataque DDoS dirigido a la empresa se excluya del cálculo de penalización de un SLA. Justifique.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Puede ser razonable si el ataque está fuera del control directo del proveedor de TI, siempre que esta exclusión esté explícitamente definida en el SLA.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[No es razonable bajo ninguna circunstancia]]></text><feedback format="html"><text><![CDATA[Puede ser razonable si está documentado como exclusión y el evento está fuera del control del proveedor.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Puede ser razonable si el ataque está fuera del control directo del proveedor de TI y está definido como exclusión en el SLA]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Es razonable solo si el cliente lo autoriza después de ocurrido el incidente]]></text><feedback format="html"><text><![CDATA[La exclusión debe estar pactada previamente en el SLA, no autorizada después del hecho.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Es irrelevante, los ataques DDoS nunca afectan la disponibilidad]]></text><feedback format="html"><text><![CDATA[Un DDoS sí puede afectar significativamente la disponibilidad del servicio.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA18 [Evaluar] Nivel de disponibilidad para servicio no critico</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una organización debe decidir si negociar un SLA de 99.9% o uno de 99.99% de disponibilidad para un servicio no crítico. ¿Qué factor debe pesar más en la decisión?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Debe balancearse el costo de alcanzar mayor disponibilidad contra el impacto real de negocio de una interrupción de un servicio no crítico.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Elegir siempre el valor más alto sin importar el costo]]></text><feedback format="html"><text><![CDATA[Para un servicio no crítico, exigir el nivel más alto puede no justificar el costo adicional.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Balancear el costo de alcanzar mayor disponibilidad contra el impacto real de negocio de una interrupción]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El nivel de disponibilidad no tiene relación con el costo del servicio]]></text><feedback format="html"><text><![CDATA[Existe una relación directa: a mayor disponibilidad exigida, generalmente mayor costo de infraestructura y redundancia.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Elegir el valor más bajo posible sin ninguna justificación]]></text><feedback format="html"><text><![CDATA[La decisión debe basarse en el análisis costo-impacto, no en elegir arbitrariamente el valor más bajo.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA19 [Crear] Diseno de la seccion de SLOs de un SLA</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Diseñe la sección de SLOs de un SLA para un servicio de internet corporativo, incluyendo al menos cuatro métricas con objetivo y método de medición.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un diseño completo incluye Disponibilidad (≥99.9%, monitoreo ICMP), Latencia (&lt;50ms, ping periódico), Throughput (≥950 Mbps, speedtest) y Packet Loss (&lt;0.1%, SNMP).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Un único SLO que indique "la red debe funcionar bien"]]></text><feedback format="html"><text><![CDATA[Un SLO ambiguo no es medible ni verificable, incumpliendo el principio SMART.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Disponibilidad (≥99.9%, monitoreo ICMP), Latencia (<50ms, ping periódico), Throughput (≥950 Mbps, speedtest) y Packet Loss (<0.1%, SNMP)]]></text><feedback format="html"><text><![CDATA[Correcto, incluye métricas cuantificables con método de medición definido.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Solo el costo mensual del servicio]]></text><feedback format="html"><text><![CDATA[El costo es un dato comercial, no un SLO técnico medible del servicio.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Únicamente el nombre del proveedor]]></text><feedback format="html"><text><![CDATA[El nombre del proveedor es un dato de identificación, no un objetivo de nivel de servicio.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>SLA20 [Crear] Esquema escalonado de penalizaciones</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Proponga un esquema de penalizaciones escalonado para un SLA de disponibilidad, coherente con las buenas prácticas revisadas en la unidad.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un esquema adecuado define rangos de disponibilidad con créditos crecientes (por ejemplo, 5% para 99.0%-99.89%, 10% para 98.0%-98.99%, hasta 50% para menos de 95%), incluyendo exclusiones documentadas.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>sla</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar la misma penalización sin importar el nivel de incumplimiento]]></text><feedback format="html"><text><![CDATA[Una penalización fija no refleja la gravedad proporcional del incumplimiento.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Definir rangos de disponibilidad con créditos crecientes, incluyendo exclusiones documentadas]]></text><feedback format="html"><text><![CDATA[Correcto, refleja la gravedad proporcional del incumplimiento y delimita causas fuera de control.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No aplicar ninguna penalización bajo ninguna circunstancia]]></text><feedback format="html"><text><![CDATA[Sin penalizaciones, se pierde el incentivo de cumplimiento que aporta el esquema.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar penalización solo si el cliente presenta una queja formal]]></text><feedback format="html"><text><![CDATA[La penalización debe calcularse con base en el SLI medido, no depender de que el cliente se queje.]]></text></feedback></answer>
+</question>
+
+</quiz>

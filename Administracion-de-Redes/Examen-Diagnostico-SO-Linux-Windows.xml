@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- EXAMEN DIAGNÓSTICO - ADMINISTRACIÓN DE REDES -->
+<!-- Evalúa competencias previas de Linux y Windows básico (Taller de Sistemas Operativos) -->
+<!-- 25 reactivos agrupados en 5 categorías por competencia, etiquetados por nivel de Bloom -->
+
+<!-- ==================== CATEGORÍA 1: FUNDAMENTOS DE SO Y VIRTUALIZACIÓN ==================== -->
+<question type="category">
+  <category><text>$course$/Diagnostico SO/Cat1 Fundamentos de SO y Virtualizacion</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C1-01 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué componente del sistema operativo administra directamente los recursos de hardware y actúa como intermediario entre el hardware y las aplicaciones?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El kernel es el núcleo del sistema operativo, responsable de gestionar memoria, procesos, dispositivos y llamadas al sistema.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[El kernel]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El shell]]></text><feedback format="html"><text><![CDATA[El shell es la interfaz de línea de comandos, no administra el hardware directamente.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El sistema de archivos]]></text><feedback format="html"><text><![CDATA[Es solo un componente gestionado por el kernel.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El bootloader]]></text><feedback format="html"><text><![CDATA[Su función es cargar el sistema operativo al inicio, no administrar recursos en ejecución.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C1-02 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se requiere ejecutar varias máquinas virtuales directamente sobre el hardware físico, sin un sistema operativo anfitrión, maximizando el rendimiento. ¿Qué tipo de hypervisor debe utilizar?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El hypervisor tipo 1 (bare-metal) se instala directamente sobre el hardware, sin necesidad de un SO anfitrión.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Hypervisor tipo 1 (bare-metal)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Hypervisor tipo 2 (hosted)]]></text><feedback format="html"><text><![CDATA[Requiere un sistema operativo anfitrión, reduciendo el rendimiento.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Un contenedor Docker]]></text><feedback format="html"><text><![CDATA[Los contenedores comparten el kernel del host, no son hypervisors.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Una máquina virtual anidada]]></text><feedback format="html"><text><![CDATA[Introduce una capa adicional de virtualización, reduciendo el rendimiento.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C1-03 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un servidor presenta lentitud al ejecutar múltiples procesos simultáneamente y el administrador sospecha de sobrecarga en la conmutación entre procesos. ¿Qué concepto describe mejor esta situación?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El context switching (conmutación de contexto) genera overhead cuando el SO cambia frecuentemente de un proceso a otro.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[El sistema operativo cambia frecuentemente entre procesos, generando sobrecarga (overhead) por context switching]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El disco duro está dañado físicamente]]></text><feedback format="html"><text><![CDATA[No hay evidencia de una falla física en el escenario.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El firewall bloquea los procesos]]></text><feedback format="html"><text><![CDATA[Un firewall no interviene en la ejecución de procesos locales.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La tarjeta de red está desconectada]]></text><feedback format="html"><text><![CDATA[No relacionado con el rendimiento de procesamiento local.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C1-04 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una empresa necesita desplegar rápidamente un servidor de pruebas de bajo costo, sin adquirir hardware dedicado ni administrar un hipervisor completo. ¿Qué solución es más adecuada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un VPS (Virtual Private Server) ofrece un servidor virtualizado administrado por un proveedor externo.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Contratar un VPS (Virtual Private Server)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Comprar un servidor físico dedicado]]></text><feedback format="html"><text><![CDATA[Implica mayor costo e inversión en hardware.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Instalar un hypervisor tipo 1 en un equipo nuevo]]></text><feedback format="html"><text><![CDATA[Requiere administrar hardware e hipervisor propios.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Usar exclusivamente hardware local sin virtualización]]></text><feedback format="html"><text><![CDATA[No resuelve el requerimiento de bajo costo y rapidez de despliegue.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C1-05 [Evaluar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al evaluar la migración de una carga de trabajo desde un servidor físico hacia un entorno virtualizado, ¿cuál es la ventaja principal a considerar?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La virtualización permite consolidar múltiples cargas de trabajo, aprovechando mejor los recursos físicos disponibles.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Mejor aprovechamiento de los recursos de hardware mediante la consolidación de servidores]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Eliminación total de la necesidad de sistemas operativos]]></text><feedback format="html"><text><![CDATA[Incorrecto, cada máquina virtual sigue requiriendo un SO.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Incremento garantizado en la velocidad de red]]></text><feedback format="html"><text><![CDATA[La virtualización no garantiza mejoras en la red.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Reducción a cero del consumo de memoria RAM]]></text><feedback format="html"><text><![CDATA[Incorrecto, las máquinas virtuales también consumen RAM.]]></text></feedback></answer>
+</question>
+
+<!-- ==================== CATEGORÍA 2: WINDOWS - ADMINISTRACIÓN BÁSICA ==================== -->
+<question type="category">
+  <category><text>$course$/Diagnostico SO/Cat2 Windows Administracion Basica</text></category>
+</question>
+
+<question type="truefalse">
+  <name><text>Diag-SO-C2-06 [Comprender]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>En Windows, el comando <code>ipconfig</code> permite consultar la configuración IP de los adaptadores de red del equipo.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Correcto, ipconfig muestra la dirección IP, máscara de subred y puerta de enlace de cada adaptador.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html"><text>true</text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text>false</text><feedback format="html"><text><![CDATA[Incorrecto, la afirmación es verdadera.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C2-07 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué comando de PowerShell se utiliza para crear un nuevo usuario local en un equipo Windows?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>New-LocalUser crea una cuenta de usuario local en Windows mediante PowerShell.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[New-LocalUser]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Get-LocalUser]]></text><feedback format="html"><text><![CDATA[Se utiliza para consultar usuarios existentes, no para crearlos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Set-LocalUser]]></text><feedback format="html"><text><![CDATA[Se utiliza para modificar un usuario ya existente.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Remove-LocalUser]]></text><feedback format="html"><text><![CDATA[Se utiliza para eliminar un usuario, no para crearlo.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C2-08 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un usuario reporta que no puede modificar un archivo en una carpeta compartida en Windows Server, aunque puede leerlo. ¿Cuál es la causa más probable?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Los permisos NTFS del archivo o carpeta probablemente solo otorgan lectura a ese usuario o grupo.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Los permisos NTFS asignados solo permiten lectura para ese usuario o grupo]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El archivo está en un disco de solo lectura físicamente]]></text><feedback format="html"><text><![CDATA[No es la causa más común, ya que otros usuarios sí pueden escribir.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El antivirus bloquea todos los archivos]]></text><feedback format="html"><text><![CDATA[No explicaría por qué sí puede leer el archivo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El nombre del archivo contiene caracteres inválidos]]></text><feedback format="html"><text><![CDATA[No relacionado con el problema descrito.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C2-09 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué herramienta gráfica de Windows Server se utiliza para administrar usuarios y grupos locales?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Administración de equipos (Computer Management) incluye el módulo de Usuarios y grupos locales.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Administración de equipos (Usuarios y grupos locales)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Administrador de tareas]]></text><feedback format="html"><text><![CDATA[Sirve para gestionar procesos y rendimiento, no usuarios.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Visor de eventos]]></text><feedback format="html"><text><![CDATA[Sirve para consultar registros del sistema, no administrar usuarios.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Símbolo del sistema únicamente]]></text><feedback format="html"><text><![CDATA[No es una herramienta gráfica dedicada a esta tarea.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C2-10 [Evaluar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al evaluar qué sistema de archivos utilizar en un servidor Windows que requiere permisos granulares, cifrado y cuotas de disco, ¿cuál es la mejor opción?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>NTFS soporta permisos detallados, cifrado (EFS) y cuotas de disco, a diferencia de FAT32 o exFAT.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[NTFS]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[FAT32]]></text><feedback format="html"><text><![CDATA[No soporta permisos granulares ni cifrado nativo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[exFAT]]></text><feedback format="html"><text><![CDATA[Diseñado para medios extraíbles, sin permisos NTFS.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No usar sistema de archivos, solo RAID]]></text><feedback format="html"><text><![CDATA[RAID no sustituye la función de un sistema de archivos.]]></text></feedback></answer>
+</question>
+
+<!-- ==================== CATEGORÍA 3: LINUX - SISTEMA DE ARCHIVOS Y PERMISOS ==================== -->
+<question type="category">
+  <category><text>$course$/Diagnostico SO/Cat3 Linux Sistema de Archivos y Permisos</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C3-11 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué comando de Linux muestra el directorio de trabajo actual?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>pwd (print working directory) muestra la ruta absoluta del directorio actual.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[pwd]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[ls]]></text><feedback format="html"><text><![CDATA[Lista el contenido del directorio, no muestra la ruta actual.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[cd]]></text><feedback format="html"><text><![CDATA[Sirve para cambiar de directorio.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[whoami]]></text><feedback format="html"><text><![CDATA[Muestra el usuario actual, no el directorio.]]></text></feedback></answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Diag-SO-C3-12 [Comprender]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>En Linux, una ruta relativa comienza a partir del directorio actual, mientras que una ruta absoluta comienza desde la raíz <code>/</code>.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Correcto, esta es la diferencia fundamental entre rutas relativas y absolutas en el sistema de archivos Linux.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html"><text>true</text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text>false</text><feedback format="html"><text><![CDATA[Incorrecto, la afirmación es verdadera.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C3-13 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué comando otorga permisos de lectura, escritura y ejecución al propietario, y solo lectura al grupo y a otros, sobre un archivo?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>chmod 744 asigna rwx al propietario (7) y r-- al grupo y otros (4 y 4).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[chmod 744 archivo]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[chmod 777 archivo]]></text><feedback format="html"><text><![CDATA[Otorga permisos totales a todos, no solo al propietario.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[chmod 000 archivo]]></text><feedback format="html"><text><![CDATA[Elimina todos los permisos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[chmod 644 archivo]]></text><feedback format="html"><text><![CDATA[No otorga permiso de ejecución al propietario.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C3-14 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un usuario no puede ejecutar un script <code>.sh</code> en Linux aunque tiene permisos de lectura y escritura sobre el archivo. ¿Cuál es la causa más probable?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Falta el permiso de ejecución (x); debe otorgarse con chmod +x.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Falta el permiso de ejecución (x) en el archivo]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El archivo no existe]]></text><feedback format="html"><text><![CDATA[Si tiene permisos de lectura y escritura, el archivo existe.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El disco está lleno]]></text><feedback format="html"><text><![CDATA[No relacionado con el problema de ejecución.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El usuario no pertenece al sistema]]></text><feedback format="html"><text><![CDATA[Si puede leer y escribir el archivo, es un usuario válido del sistema.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C3-15 [Crear]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se le encarga diseñar la estructura de permisos para una carpeta compartida <code>/proyectos</code> donde todo el equipo debe poder leer y escribir, pero solo el propietario de cada archivo debe poder eliminarlo. ¿Qué mecanismo debe implementar?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Configurar el grupo con permisos rwx y activar el bit "sticky" en el directorio (ej. chmod 1770) impide que otros usuarios eliminen archivos que no les pertenecen.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Configurar el grupo con permisos rwx y activar el bit "sticky" sobre el directorio]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Otorgar permisos 777 sin restricciones adicionales]]></text><feedback format="html"><text><![CDATA[Permitiría que cualquiera elimine archivos ajenos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Asignar la carpeta únicamente al usuario root]]></text><feedback format="html"><text><![CDATA[Impediría que el equipo pueda leer y escribir libremente.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Deshabilitar los permisos de grupo por completo]]></text><feedback format="html"><text><![CDATA[Impediría la colaboración requerida entre el equipo.]]></text></feedback></answer>
+</question>
+
+<!-- ==================== CATEGORÍA 4: LINUX - USUARIOS, PAQUETES Y SERVICIOS ==================== -->
+<question type="category">
+  <category><text>$course$/Diagnostico SO/Cat4 Linux Usuarios Paquetes y Servicios</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C4-16 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué comando se utiliza en Linux para crear una nueva cuenta de usuario?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>useradd crea una nueva cuenta de usuario en el sistema.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[useradd]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[userdel]]></text><feedback format="html"><text><![CDATA[Se utiliza para eliminar un usuario.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[passwd]]></text><feedback format="html"><text><![CDATA[Se utiliza para establecer o cambiar la contraseña de un usuario existente.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[usermod]]></text><feedback format="html"><text><![CDATA[Se utiliza para modificar un usuario ya existente.]]></text></feedback></answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Diag-SO-C4-17 [Comprender]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>El comando <code>systemctl enable</code> inicia un servicio inmediatamente, mientras que <code>systemctl start</code> lo configura para iniciar automáticamente en el arranque.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Falso: es al revés. `systemctl start` inicia el servicio de inmediato; `systemctl enable` lo configura para iniciar automáticamente en el arranque del sistema.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="0" format="html"><text>true</text><feedback format="html"><text><![CDATA[Incorrecto, las funciones están invertidas.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text>false</text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C4-18 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué comando permite iniciar un servicio de forma inmediata en un sistema Linux con systemd?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>systemctl start inicia el servicio inmediatamente en la sesión actual.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[systemctl start nombre_servicio]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[systemctl enable nombre_servicio]]></text><feedback format="html"><text><![CDATA[Solo configura el inicio automático, no inicia el servicio de inmediato.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[systemctl status nombre_servicio]]></text><feedback format="html"><text><![CDATA[Solo consulta el estado del servicio.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[systemctl list-units]]></text><feedback format="html"><text><![CDATA[Lista las unidades activas, no inicia ningún servicio.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C4-19 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un servicio en Linux falla al iniciar y el administrador necesita revisar los mensajes de error recientes del sistema. ¿Qué comando debe utilizar?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>journalctl -xe muestra los mensajes de registro más recientes con detalles de errores del sistema y servicios.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[journalctl -xe]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[useradd -D]]></text><feedback format="html"><text><![CDATA[Muestra valores por defecto para creación de usuarios, no logs de servicios.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[chmod 755]]></text><feedback format="html"><text><![CDATA[Modifica permisos, no muestra registros de errores.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[ls -la /var/log]]></text><feedback format="html"><text><![CDATA[Solo lista archivos de registro, no muestra su contenido reciente de forma práctica.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C4-20 [Evaluar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al evaluar qué gestor de paquetes utilizar en un servidor Linux basado en Debian, ¿cuál es la herramienta apropiada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>apt es el gestor de paquetes nativo de las distribuciones basadas en Debian (Debian, Ubuntu, etc.).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[apt]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[yum]]></text><feedback format="html"><text><![CDATA[Es el gestor de paquetes de distribuciones basadas en Red Hat.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[dnf]]></text><feedback format="html"><text><![CDATA[Es el sucesor de yum en Fedora/RHEL, no en Debian.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[rpm únicamente]]></text><feedback format="html"><text><![CDATA[rpm gestiona paquetes individuales sin resolver dependencias automáticamente, y es propio de distribuciones basadas en Red Hat.]]></text></feedback></answer>
+</question>
+
+<!-- ==================== CATEGORÍA 5: INTEROPERABILIDAD WINDOWS/LINUX ==================== -->
+<question type="category">
+  <category><text>$course$/Diagnostico SO/Cat5 Interoperabilidad Windows-Linux</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C5-21 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué protocolo permite compartir archivos entre sistemas Unix/Linux a través de la red, montando directorios remotos como si fueran locales?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>NFS (Network File System) permite montar directorios remotos como parte del sistema de archivos local.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[NFS (Network File System)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[DHCP]]></text><feedback format="html"><text><![CDATA[Asigna direcciones IP, no comparte archivos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[DNS]]></text><feedback format="html"><text><![CDATA[Resuelve nombres de dominio, no comparte archivos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[SNMP]]></text><feedback format="html"><text><![CDATA[Es un protocolo de administración y monitoreo de red.]]></text></feedback></answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Diag-SO-C5-22 [Comprender]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>RPC (Remote Procedure Call) permite que un proceso ejecute una función en otro sistema remoto como si fuera una llamada local.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Correcto, RPC abstrae la comunicación de red para que las llamadas remotas se comporten como llamadas de función locales.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html"><text>true</text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text>false</text><feedback format="html"><text><![CDATA[Incorrecto, la afirmación es verdadera.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C5-23 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué comando se utiliza en Linux para montar un recurso compartido NFS en un directorio local?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>mount -t nfs servidor:/recurso /punto_montaje monta el recurso remoto NFS en el punto de montaje local.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[mount -t nfs servidor:/recurso /punto_montaje]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[useradd nfs]]></text><feedback format="html"><text><![CDATA[Crearía un usuario llamado "nfs", no monta ningún recurso.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[chmod nfs 755]]></text><feedback format="html"><text><![CDATA[No es una sintaxis válida de chmod.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[systemctl nfs start]]></text><feedback format="html"><text><![CDATA[Sintaxis incorrecta; sería systemctl start nfs-server.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C5-24 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una empresa requiere un servidor de archivos que sea accedido de forma nativa tanto por equipos Windows como Linux. ¿Qué solución de interoperabilidad es más adecuada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Samba implementa el protocolo SMB en Linux, permitiendo que equipos Windows accedan a los recursos compartidos de forma nativa.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Implementar Samba en el servidor Linux para compartir recursos compatibles con el protocolo SMB de Windows]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Instalar NFS únicamente y esperar que Windows lo reconozca de forma nativa]]></text><feedback format="html"><text><![CDATA[Windows no soporta NFS de forma nativa sin componentes adicionales.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Usar solo FTP como única alternativa]]></text><feedback format="html"><text><![CDATA[FTP no ofrece la integración de sistema de archivos que se requiere.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No es posible compartir archivos entre ambos sistemas]]></text><feedback format="html"><text><![CDATA[Incorrecto, existen soluciones de interoperabilidad como Samba.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-SO-C5-25 [Crear]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se le encarga diseñar una solución para que procesos ejecutados en un servidor Linux y en un servidor Windows puedan intercambiar información en tiempo real. ¿Qué mecanismo de interoperabilidad debe proponer?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La comunicación mediante sockets TCP/IP es independiente del sistema operativo, permitiendo el intercambio de datos entre procesos de plataformas distintas.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Implementar comunicación mediante sockets de red (TCP/IP) entre los procesos de ambos sistemas]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Copiar archivos manualmente mediante USB de forma periódica]]></text><feedback format="html"><text><![CDATA[No permite intercambio en tiempo real.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Deshabilitar la red y usar solo almacenamiento local]]></text><feedback format="html"><text><![CDATA[Imposibilita cualquier intercambio entre servidores distintos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ejecutar ambos procesos en el mismo sistema operativo obligatoriamente]]></text><feedback format="html"><text><![CDATA[No resuelve el requerimiento de interoperabilidad entre plataformas distintas.]]></text></feedback></answer>
+</question>
+
+</quiz>

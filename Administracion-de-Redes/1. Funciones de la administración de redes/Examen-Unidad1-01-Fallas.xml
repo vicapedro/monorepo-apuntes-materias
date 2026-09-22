@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- EXAMEN UNIDAD 1 - ADMINISTRACION DE REDES (SCA-1002) -->
+<!-- Area funcional 1 de 6: Gestion de Fallas (Fault Management) -->
+<!-- 20 reactivos alineados a la Taxonomia de Bloom, etiquetados en <tags> y en el nombre de cada reactivo -->
+<!-- Distribucion Bloom: Recordar 3, Comprender 3, Aplicar 5, Analizar 5, Evaluar 2, Crear 2 -->
+
+<question type="category">
+  <category><text>$course$/Unidad 1 - Administracion de Redes/01 Fallas (Fault Management)</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>F01 [Recordar] Definicion de Falla</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál es la definición correcta de <strong>falla</strong> (failure/outage) en la gestión de fallas de red, a diferencia de un <em>error</em>?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Una falla causa pérdida completa o degradación significativa de un servicio, con impacto directo en usuarios finales; un error es un evento puntual que no necesariamente afecta el servicio.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Evento puntual que no afecta el servicio de forma perceptible]]></text><feedback format="html"><text><![CDATA[Esa es la definición de <em>error</em>, no de falla.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Evento que causa pérdida completa o degradación significativa de un servicio, afectando a usuarios finales]]></text><feedback format="html"><text><![CDATA[Correcto. La falla tiene impacto directo y visible en el servicio.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Patrón recurrente de errores relacionados que aún no impacta el servicio]]></text><feedback format="html"><text><![CDATA[Esa es la definición de <em>problema</em>.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Registro histórico de incidentes ya cerrados]]></text><feedback format="html"><text><![CDATA[Eso corresponde a la bitácora o historial de tickets, no a la definición de falla.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F02 [Recordar] MTTR</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué significa la métrica <strong>MTTR</strong> utilizada en la gestión de fallas?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>MTTR (Mean Time To Repair/Resolve) mide el tiempo promedio que se tarda en reparar o resolver una falla.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Mean Time To Repair/Resolve: tiempo promedio de reparación o resolución de una falla]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Maximum Time To Respond: tiempo máximo permitido de respuesta]]></text><feedback format="html"><text><![CDATA[Ese concepto corresponde más a un SLO de tiempo de respuesta, no a MTTR.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Mean Traffic Transfer Rate: tasa promedio de transferencia de tráfico]]></text><feedback format="html"><text><![CDATA[MTTR no es una métrica de throughput.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Minimum Time To Recovery Report: tiempo mínimo para generar un reporte]]></text><feedback format="html"><text><![CDATA[MTTR no se refiere a la generación de reportes.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F03 [Recordar] Herramientas de deteccion pasiva</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál de las siguientes herramientas se reconoce principalmente por su fortaleza en el <strong>análisis de logs centralizado</strong> (monitoreo pasivo)?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>ELK Stack (Elasticsearch, Logstash, Kibana) se especializa en la centralización y análisis de logs, una técnica de monitoreo pasivo.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[ELK Stack]]></text><feedback format="html"><text><![CDATA[Correcto, ELK Stack centraliza y analiza logs de múltiples fuentes.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Nagios/Icinga]]></text><feedback format="html"><text><![CDATA[Se destacan por monitoreo activo de disponibilidad de servicios.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Prometheus+Grafana]]></text><feedback format="html"><text><![CDATA[Se especializan en métricas de series temporales mediante monitoreo activo (scraping).]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[PRTG]]></text><feedback format="html"><text><![CDATA[Se destaca por su interfaz gráfica de monitoreo activo/pasivo combinado, no específicamente por análisis de logs.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F04 [Comprender] Caracteristica del monitoreo pasivo</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál de las siguientes es una característica del <strong>monitoreo pasivo</strong>?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>En el monitoreo pasivo, el sistema de gestión escucha notificaciones enviadas por los dispositivos (traps, syslog) en lugar de generar tráfico de prueba.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[El sistema de gestión genera tráfico de prueba constante hacia los dispositivos]]></text><feedback format="html"><text><![CDATA[Eso describe al monitoreo activo.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[El sistema escucha notificaciones (traps, syslog) enviadas por los dispositivos]]></text><feedback format="html"><text><![CDATA[Correcto, es la esencia del monitoreo pasivo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Requiere polling SNMP periódico programado]]></text><feedback format="html"><text><![CDATA[El polling SNMP es una técnica de monitoreo activo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Simula transacciones de usuario como un login web]]></text><feedback format="html"><text><![CDATA[Las synthetic transactions son una técnica de monitoreo activo.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F05 [Comprender] Deteccion basada en usuarios</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Varios usuarios reportan al Help Desk que "la red está lenta" antes de que el sistema de monitoreo automatizado genere alguna alerta. ¿Qué método de detección corresponde a este caso?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La detección basada en usuarios ocurre cuando el personal o los usuarios finales reportan degradación antes que el monitoreo técnico.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Monitoreo activo]]></text><feedback format="html"><text><![CDATA[El monitoreo activo hubiera generado una alerta automatizada antes del reporte.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Monitoreo pasivo]]></text><feedback format="html"><text><![CDATA[El monitoreo pasivo depende de notificaciones de dispositivos, no de reportes de personas usuarias.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Detección basada en usuarios]]></text><feedback format="html"><text><![CDATA[Correcto, el reporte proviene de las personas usuarias antes que del monitoreo técnico.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Correlación de eventos]]></text><feedback format="html"><text><![CDATA[La correlación de eventos analiza múltiples alertas técnicas, no reportes de usuarios.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F06 [Comprender] Proposito de la correlacion de eventos</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál es el propósito principal del <strong>Análisis de Correlación de Eventos</strong> en la gestión de fallas?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La correlación de eventos analiza múltiples alertas relacionadas para identificar la causa raíz común y reducir la fatiga de alertas.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Generar tráfico sintético de prueba hacia los servicios críticos]]></text><feedback format="html"><text><![CDATA[Eso corresponde a una técnica de monitoreo activo (synthetic transactions).]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Reducir el ruido y la fatiga de alertas identificando la causa raíz común]]></text><feedback format="html"><text><![CDATA[Correcto, ese es el objetivo principal de la correlación de eventos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Registrar el uso de ancho de banda por usuario]]></text><feedback format="html"><text><![CDATA[Eso corresponde a la Gestión de Contabilidad (Accounting), no a Fallas.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Calcular el costo económico de un incidente]]></text><feedback format="html"><text><![CDATA[Eso no es función de la correlación de eventos.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F07 [Aplicar] Matriz impacto-urgencia P1</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un incidente afecta al 60% de las personas usuarias de un edificio (impacto alto) y requiere atención inmediata (urgencia crítica). Según la matriz impacto-urgencia, ¿qué prioridad le corresponde?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Impacto Alto + Urgencia Crítica corresponde a Prioridad P1 - Crítico.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[P1 - Crítico]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[P2 - Alto]]></text><feedback format="html"><text><![CDATA[P2 correspondería a un impacto medio con urgencia alta, no a este caso.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[P3 - Medio]]></text><feedback format="html"><text><![CDATA[P3 correspondería a impacto medio/bajo con urgencia media.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[P4 - Bajo]]></text><feedback format="html"><text><![CDATA[P4 es para impacto bajo y urgencia baja/media.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F08 [Aplicar] Matriz impacto-urgencia P4</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un puerto de switch individual deja de funcionar y afecta a una sola persona usuaria (impacto bajo), con urgencia media. Según la matriz impacto-urgencia, ¿qué prioridad corresponde?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Impacto Bajo + Urgencia Media corresponde a Prioridad P4 - Bajo.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[P1 - Crítico]]></text><feedback format="html"><text><![CDATA[P1 requiere impacto alto combinado con urgencia crítica o alta.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[P2 - Alto]]></text><feedback format="html"><text><![CDATA[P2 requiere un impacto medio o mayor urgencia que en este caso.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[P3 - Medio]]></text><feedback format="html"><text><![CDATA[Con impacto bajo y urgencia media, la matriz asigna P4, no P3.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[P4 - Bajo]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F09 [Aplicar] Clasificacion de errores CRC crecientes</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se detecta un incremento progresivo de errores CRC en un puerto específico durante varias semanas, sin que el servicio se haya interrumpido todavía. ¿Cómo debe clasificarse esta situación?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un patrón recurrente de errores correlacionados en el tiempo, con tendencia creciente, se clasifica como un problema que requiere análisis de causa raíz (RCA).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Error aislado]]></text><feedback format="html"><text><![CDATA[Un error aislado es puntual; aquí existe una tendencia creciente y recurrente.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Problema, que requiere un análisis de causa raíz (RCA)]]></text><feedback format="html"><text><![CDATA[Correcto, es un patrón recurrente que aún no interrumpe el servicio pero requiere investigación.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Falla]]></text><feedback format="html"><text><![CDATA[Aún no hay interrupción significativa del servicio, por lo que no se clasifica todavía como falla.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Evento de seguridad]]></text><feedback format="html"><text><![CDATA[No hay evidencia de una amenaza de seguridad en el escenario descrito.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F10 [Aplicar] Polling SNMP</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un ingeniero de redes configura una herramienta para que consulte cada 60 segundos el estado de las interfaces de un router y genere una alerta si detecta un cambio a "down". ¿Qué técnica de detección está aplicando?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Consultar periódicamente el estado de un dispositivo es polling SNMP, una técnica de monitoreo activo.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[SNMP Trap]]></text><feedback format="html"><text><![CDATA[Un trap es enviado por el dispositivo de forma asíncrona (pasivo), no consultado periódicamente.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Polling SNMP (monitoreo activo)]]></text><feedback format="html"><text><![CDATA[Correcto, la consulta periódica programada es polling SNMP activo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Syslog]]></text><feedback format="html"><text><![CDATA[Syslog son mensajes enviados por el dispositivo, no consultas periódicas.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[NetFlow]]></text><feedback format="html"><text><![CDATA[NetFlow analiza flujos de tráfico, no el estado de una interfaz mediante consultas periódicas.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F11 [Aplicar] Nivel de escalado adecuado</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una persona usuaria reporta "no tengo Internet". El técnico de primer contacto verifica la conexión física y reinicia el equipo, resolviendo el problema. ¿En qué nivel de escalado funcional se atendió este caso?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La recepción inicial y resolución de problemas básicos corresponde al Nivel 1 (Service Desk / Help Desk).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Nivel 1 (Service Desk / Help Desk)]]></text><feedback format="html"><text><![CDATA[Correcto, es un problema básico resuelto en el primer contacto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Nivel 2 (Soporte técnico especializado)]]></text><feedback format="html"><text><![CDATA[Este nivel se reserva para configuración avanzada de switches, routers o firewalls.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Nivel 3 (Ingeniería / Arquitectura)]]></text><feedback format="html"><text><![CDATA[Este nivel atiende problemas de diseño o arquitectura, no un reinicio básico.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Nivel 4 (Vendor / Fabricante)]]></text><feedback format="html"><text><![CDATA[Este nivel se reserva para bugs de firmware o fallas de hardware confirmadas.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F12 [Analizar] Correlacion de eventos como causa raiz</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un router core falla y en pocos segundos se generan cientos de alertas de dispositivos downstream. ¿Qué mecanismo permite identificar al router core como causa raíz y suprimir las alertas secundarias?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La correlación topológica y temporal de eventos permite identificar la causa raíz común y evitar la fatiga de alertas duplicadas.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Monitoreo activo]]></text><feedback format="html"><text><![CDATA[El monitoreo activo detecta el evento, pero no correlaciona múltiples alertas para hallar la causa raíz.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Correlación de eventos]]></text><feedback format="html"><text><![CDATA[Correcto, analiza la relación topológica/temporal entre las alertas.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Detección basada en usuarios]]></text><feedback format="html"><text><![CDATA[No participan reportes de usuarios en este mecanismo automatizado.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Escalado funcional]]></text><feedback format="html"><text><![CDATA[El escalado ocurre después de identificar el incidente, no es el mecanismo de correlación en sí.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F13 [Analizar] Limitacion del monitoreo activo exclusivo</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una organización solo usa monitoreo activo mediante <code>ping</code> cada 5 minutos hacia sus servidores críticos. ¿Qué limitación es más probable que enfrente?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El monitoreo activo con intervalos de polling amplios puede no detectar problemas intermitentes que ocurren y se resuelven entre dos consultas.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Generará tráfico excesivo que saturará la red]]></text><feedback format="html"><text><![CDATA[Un ping cada 5 minutos genera un tráfico mínimo, no representa saturación.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[No detectará problemas intermitentes que ocurran entre los intervalos de polling]]></text><feedback format="html"><text><![CDATA[Correcto, esa es la principal desventaja del monitoreo activo con intervalos amplios.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No podrá medir la latencia de la red]]></text><feedback format="html"><text><![CDATA[El ping sí mide latencia; el problema es la frecuencia del muestreo, no la métrica en sí.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No podrá clasificar la severidad de un incidente]]></text><feedback format="html"><text><![CDATA[La clasificación de severidad depende del proceso de registro y escalado, no del tipo de monitoreo.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F14 [Analizar] Clasificacion de perdida sostenida de paquetes</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un analista identifica una pérdida de paquetes sostenida del 5% durante una semana, sin que exista una interrupción total del servicio. ¿Qué clasificación y qué proceso de gestión corresponde aplicar?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un patrón sostenido de degradación, sin pérdida total del servicio, se clasifica como problema y se gestiona mediante un análisis de causa raíz (RCA).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Falla, gestionada mediante respuesta inmediata a incidentes]]></text><feedback format="html"><text><![CDATA[No hay interrupción total del servicio, por lo que no corresponde a una falla.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Problema, gestionado mediante análisis de causa raíz (RCA)]]></text><feedback format="html"><text><![CDATA[Correcto, es un patrón recurrente que requiere investigación estructurada.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Error, gestionado mediante monitoreo pasivo]]></text><feedback format="html"><text><![CDATA[Un error es puntual; una pérdida sostenida durante una semana es un patrón, no un evento aislado.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Evento de seguridad, gestionado mediante un SIEM]]></text><feedback format="html"><text><![CDATA[No hay evidencia de una amenaza de seguridad en el escenario descrito.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F15 [Analizar] Escalado a Nivel 3</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un incidente requiere el rediseño de la topología de una red debido a problemas recurrentes de convergencia, y no puede resolverse en el Nivel 2 de soporte. ¿A qué nivel de escalado funcional debe transferirse y por qué?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El Nivel 3 (Ingeniería / Arquitectura) atiende problemas complejos de diseño o arquitectura que superan la configuración estándar del Nivel 2.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Nivel 1, porque tiene el primer contacto con el cliente]]></text><feedback format="html"><text><![CDATA[El Nivel 1 no cuenta con la especialización técnica para un rediseño de topología.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Nivel 3, porque involucra ingeniería y arquitectura de red]]></text><feedback format="html"><text><![CDATA[Correcto, el rediseño de topología corresponde a ingeniería/arquitectura.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Nivel 4, porque siempre requiere al fabricante del equipo]]></text><feedback format="html"><text><![CDATA[El Nivel 4 se reserva para bugs de firmware o fallas de hardware confirmadas, no para rediseño de topología.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ningún nivel; debe cerrarse como no resuelto]]></text><feedback format="html"><text><![CDATA[Un problema complejo se escala, no se cierra sin resolución.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F16 [Evaluar] Estrategia de monitoreo con presupuesto limitado</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una red pequeña con presupuesto limitado necesita reducir el tiempo de detección de fallas, minimizando el tráfico adicional generado en la red. ¿Qué estrategia de monitoreo es más adecuada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Combinar monitoreo pasivo (bajo overhead) con monitoreo activo de baja frecuencia solo en servicios críticos ofrece buena cobertura sin generar tráfico excesivo ni requerir gran presupuesto.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Solo monitoreo activo con polling muy frecuente en todos los dispositivos]]></text><feedback format="html"><text><![CDATA[Generaría tráfico adicional considerable y no aprovecha las notificaciones de bajo costo del monitoreo pasivo.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Combinar monitoreo pasivo (traps/syslog) con monitoreo activo de baja frecuencia en servicios críticos]]></text><feedback format="html"><text><![CDATA[Correcto, equilibra cobertura, costo y tráfico generado.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Depender únicamente de reportes de las personas usuarias]]></text><feedback format="html"><text><![CDATA[Es un método reactivo que aumenta el MTTR al detectar la falla después de que ya impactó a los usuarios.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Eliminar el monitoreo y confiar en revisiones manuales diarias]]></text><feedback format="html"><text><![CDATA[Aumenta drásticamente el tiempo de detección y el riesgo de incidentes no identificados.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F17 [Evaluar] Decision ante riesgo de incumplir SLA</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un ticket permanece "En Progreso" más tiempo del acordado en el SLA y el problema tiene alta complejidad técnica. ¿Qué decisión de gestión es más apropiada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El escalado oportuno permite aprovechar mayor especialización técnica y reduce el riesgo de incumplir el SLA comprometido.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Cerrar el ticket para cumplir con las métricas de tiempo]]></text><feedback format="html"><text><![CDATA[Cerrar sin resolver el problema real es una práctica incorrecta y puede generar reapertura del ticket.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Escalar el ticket para evitar incumplir el SLA y aprovechar mayor especialización]]></text><feedback format="html"><text><![CDATA[Correcto, es la acción recomendada ante alta complejidad y riesgo de SLA.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Reasignarlo al mismo técnico sin ningún cambio]]></text><feedback format="html"><text><![CDATA[No aporta una solución si la complejidad supera el nivel de soporte actual.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Reclasificarlo como P4 para reducir la presión sobre el equipo]]></text><feedback format="html"><text><![CDATA[Reclasificar la prioridad de forma artificial no resuelve el problema ni respeta el compromiso de SLA original.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F18 [Crear] Procedimiento de escalado para incidentes P1</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se pide diseñar un procedimiento de escalado para incidentes clasificados como P1. ¿Cuál de las siguientes secuencias refleja un diseño adecuado?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un procedimiento de escalado sólido incluye registro inmediato, notificación temprana a niveles especializados, escalado a gestión si no hay avance, y documentación completa de cada acción.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Registrar el ticket, notificar solo al Nivel 1, y esperar disponibilidad]]></text><feedback format="html"><text><![CDATA[Un incidente P1 requiere notificación inmediata a niveles especializados, no solo al Nivel 1.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Registrar el ticket, notificar de inmediato a Nivel 2/3, escalar a gestión si no hay avance en el tiempo comprometido, y documentar cada acción]]></text><feedback format="html"><text><![CDATA[Correcto, este diseño cubre registro, especialización, control del SLA y trazabilidad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ignorar el registro formal y resolver directamente sin documentar]]></text><feedback format="html"><text><![CDATA[Omitir el registro formal impide la trazabilidad y el cumplimiento de SLA.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Escalar directamente al fabricante sin ningún diagnóstico previo]]></text><feedback format="html"><text><![CDATA[Saltar los niveles intermedios sin diagnóstico desperdicia recursos y no sigue el proceso de escalado funcional.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F19 [Crear] Plan de mejora ante tendencia de errores CRC</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al diseñar un plan de mejora continua tras detectar una tendencia creciente de errores CRC en un enlace, ¿qué conjunto de acciones es más completo?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un plan de mejora continua adecuado documenta el patrón, investiga la causa raíz, corrige el componente defectuoso y da seguimiento con monitoreo de tendencia.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Ignorar la tendencia mientras no cause una falla total]]></text><feedback format="html"><text><![CDATA[La gestión de fallas es proactiva; ignorar un patrón creciente aumenta el riesgo de una falla mayor.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Documentar el patrón, realizar un RCA, reemplazar el componente sospechoso (cable/transceptor) y dar seguimiento con monitoreo de tendencia]]></text><feedback format="html"><text><![CDATA[Correcto, es un plan estructurado de mejora continua.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Reiniciar el dispositivo cada semana sin investigar la causa]]></text><feedback format="html"><text><![CDATA[Es una solución temporal que no atiende la causa raíz del problema.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aumentar el umbral de alerta para dejar de recibir notificaciones]]></text><feedback format="html"><text><![CDATA[Ocultar la alerta no resuelve el problema subyacente y aumenta el riesgo de una falla no detectada.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>F20 [Crear] Combinacion de metodos de deteccion</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se solicita diseñar una estrategia de detección integral para el core de una red institucional, combinando distintos métodos revisados en la unidad. ¿Cuál de las siguientes propuestas es la más completa?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Una estrategia integral combina monitoreo activo (polling/health checks) y pasivo (traps/syslog) con correlación de eventos para reducir falsos positivos, complementada con un canal de reporte de usuarios como respaldo.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>fallas</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Usar únicamente reportes de usuarios como método principal de detección]]></text><feedback format="html"><text><![CDATA[Es un método reactivo insuficiente para el core de la red, donde se requiere detección proactiva.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Combinar monitoreo activo y pasivo con correlación de eventos, y un canal de reporte de usuarios como respaldo]]></text><feedback format="html"><text><![CDATA[Correcto, integra detección proactiva, notificaciones de bajo overhead, reducción de falsos positivos y un respaldo humano.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar solo monitoreo pasivo, sin ningún tipo de correlación]]></text><feedback format="html"><text><![CDATA[Sin correlación, un solo evento de core puede generar cientos de alertas duplicadas y confusas.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar solo monitoreo activo con polling cada 24 horas]]></text><feedback format="html"><text><![CDATA[Un intervalo tan amplio es insuficiente para un componente crítico como el core de la red.]]></text></feedback></answer>
+</question>
+
+</quiz>

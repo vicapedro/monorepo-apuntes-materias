@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- EXAMEN UNIDAD 1 - ADMINISTRACION DE REDES (SCA-1002) -->
+<!-- Area funcional 3 de 6: Gestion de Contabilidad (Accounting Management) -->
+<!-- 20 reactivos alineados a la Taxonomia de Bloom, etiquetados en <tags> y en el nombre de cada reactivo -->
+<!-- Distribucion Bloom: Recordar 3, Comprender 3, Aplicar 5, Analizar 5, Evaluar 2, Crear 2 -->
+
+<question type="category">
+  <category><text>$course$/Unidad 1 - Administracion de Redes/03 Contabilidad (Accounting Management)</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>CT01 [Recordar] Definicion ITU-T de Accounting Management</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Según la definición ITU-T M.3400, ¿qué registra principalmente la <strong>Gestión de Contabilidad</strong> (Accounting Management)?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Accounting Management registra el uso de recursos de red y servicios para análisis de tendencias, planificación de capacidad, facturación y distribución de costos.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[El uso de recursos de red por usuarios, aplicaciones y departamentos]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Las vulnerabilidades de seguridad detectadas en la red]]></text><feedback format="html"><text><![CDATA[Eso corresponde a Security Management, no a Accounting Management.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El tiempo de resolución de los incidentes reportados]]></text><feedback format="html"><text><![CDATA[Eso corresponde a métricas de Fault Management (MTTR), no de Accounting.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La topología física y lógica de los dispositivos]]></text><feedback format="html"><text><![CDATA[Eso corresponde a la Gestión de Configuración (CMDB), no a Accounting.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT02 [Recordar] Tecnologia de medicion de ancho de banda</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué tecnología se utiliza típicamente para medir el consumo de ancho de banda por usuario, IP o aplicación?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>NetFlow y sFlow exportan registros de flujos (IP origen/destino, puertos, bytes) que permiten el análisis de consumo por usuario o aplicación.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[NetFlow/sFlow]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[OSPF]]></text><feedback format="html"><text><![CDATA[OSPF es un protocolo de enrutamiento, no una tecnología de medición de consumo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[STP (Spanning Tree Protocol)]]></text><feedback format="html"><text><![CDATA[STP evita bucles en redes conmutadas, no mide consumo de ancho de banda.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[DHCP]]></text><feedback format="html"><text><![CDATA[DHCP asigna direcciones IP, no mide el consumo de recursos de red.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT03 [Recordar] Significado de AAA</text></name>
+  <questiontext format="html"><text><![CDATA[<p>En el contexto de la interpretación "Accounts Management" de la letra A de FCAPS, ¿qué significa la sigla <strong>AAA</strong>?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>AAA significa Authentication, Authorization, Accounting: autenticación, autorización y registro de uso/actividad de usuarios.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Authentication, Authorization, Accounting]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Availability, Accuracy, Auditability]]></text><feedback format="html"><text><![CDATA[Esa no es la definición estándar de AAA en redes.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Analysis, Assessment, Accounting]]></text><feedback format="html"><text><![CDATA[Esa no es la definición estándar de AAA en redes.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Access, Assignment, Administration]]></text><feedback format="html"><text><![CDATA[Esa no es la definición estándar de AAA en redes.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT04 [Comprender] Diferencia entre Chargeback y Showback</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál es la diferencia principal entre <strong>Chargeback</strong> y <strong>Showback</strong>?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Chargeback factura realmente el consumo, afectando el presupuesto departamental; Showback solo muestra el costo equivalente de forma informativa.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Chargeback factura realmente el consumo al presupuesto departamental; Showback solo lo muestra de forma informativa]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Chargeback es solo informativo y Showback cobra directamente]]></text><feedback format="html"><text><![CDATA[Es al revés: Showback es el informativo y Chargeback el que factura.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ambos términos son sinónimos exactos]]></text><feedback format="html"><text><![CDATA[No son sinónimos; tienen implicaciones financieras distintas.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Showback se aplica únicamente a proveedores externos]]></text><feedback format="html"><text><![CDATA[Showback se aplica típicamente de forma interna, entre departamentos de una misma organización.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT05 [Comprender] Accounting vs Accounts Management</text></name>
+  <questiontext format="html"><text><![CDATA[<p>En el contexto de FCAPS, ¿qué diferencia existe entre la interpretación "Accounting Management" y "Accounts Management" de la letra A?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Accounting Management se enfoca en el uso de recursos y su costo (ITU-T); Accounts Management se enfoca en la gestión de identidades, cuentas y control de acceso (AAA).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Accounting se enfoca en el uso de recursos y costos; Accounts se enfoca en la gestión de usuarios y control de acceso]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ambas interpretaciones se refieren únicamente a la facturación externa]]></text><feedback format="html"><text><![CDATA[Accounts Management no se relaciona con facturación, sino con identidades y acceso.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Accounts se enfoca en el desempeño de la red y Accounting en la seguridad]]></text><feedback format="html"><text><![CDATA[Esa relación está invertida y no corresponde a ninguna de las dos interpretaciones.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No existe diferencia, es solo un error de traducción]]></text><feedback format="html"><text><![CDATA[Ambas interpretaciones son válidas según el contexto (telecomunicaciones vs seguridad de TI), no es un error.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT06 [Comprender] Objetivo del Capacity Planning</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál es el objetivo principal de la <strong>Planificación de Capacidad</strong> (Capacity Planning)?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Predecir cuándo se alcanzarán los límites de capacidad, con base en tendencias históricas, para planificar expansiones antes de que ocurran problemas.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Detectar ataques DDoS en tiempo real]]></text><feedback format="html"><text><![CDATA[Eso corresponde a Security Management, no a Capacity Planning.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Predecir cuándo se alcanzarán los límites de capacidad para planificar expansiones a tiempo]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cifrar el tráfico de red sensible]]></text><feedback format="html"><text><![CDATA[Eso corresponde a controles de confidencialidad de Security Management.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Clasificar incidentes según su prioridad]]></text><feedback format="html"><text><![CDATA[Eso corresponde a la matriz impacto-urgencia de Fault Management.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT07 [Aplicar] Modelo Showback para universidad</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una universidad desea que las facultades conozcan su consumo de red sin generarles un cargo real en su presupuesto. ¿Qué modelo de Accounting Management deben implementar?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El Showback muestra el consumo y su costo equivalente sin generar una facturación real, cumpliendo el objetivo descrito.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Chargeback]]></text><feedback format="html"><text><![CDATA[El Chargeback sí generaría un cargo real en el presupuesto, lo cual no se desea en este caso.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Showback]]></text><feedback format="html"><text><![CDATA[Correcto, es visibilidad sin facturación real.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Accounts Management]]></text><feedback format="html"><text><![CDATA[Accounts Management se enfoca en usuarios y accesos, no en mostrar el costo de consumo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Capacity Planning]]></text><feedback format="html"><text><![CDATA[Capacity Planning proyecta necesidades futuras, no reporta el consumo actual por facultad.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT08 [Aplicar] Accion ante tendencia de saturacion</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un enlace WAN de 1 Gbps crece en promedio 25 Mbps mensuales y se encuentra actualmente en 730 Mbps (73%). Si el umbral de alerta es 80% (800 Mbps), ¿qué acción corresponde según la metodología de capacity planning?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Dado el tiempo de provisión típico de un upgrade (2-3 meses) y que el umbral se alcanzará en pocos meses, se debe iniciar el proceso de upgrade con anticipación.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Ignorar la tendencia porque aún no llega al 100%]]></text><feedback format="html"><text><![CDATA[Esperar al 100% de saturación implica actuar demasiado tarde, dado el tiempo de provisión de un upgrade.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Iniciar el proceso de upgrade con anticipación, dado el tiempo de provisión típico de 2-3 meses]]></text><feedback format="html"><text><![CDATA[Correcto, es una acción proactiva basada en la proyección de tendencia.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Reducir de inmediato el ancho de banda contratado]]></text><feedback format="html"><text><![CDATA[Reducir la capacidad cuando la tendencia es de crecimiento agravaría el problema.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Esperar a que el enlace se sature por completo antes de actuar]]></text><feedback format="html"><text><![CDATA[Esa es precisamente la práctica reactiva que el capacity planning busca evitar.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT09 [Aplicar] Optimizacion de costos por bajo uso</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una sucursal contrata 500 Mbps pero su uso promedio es de 50 Mbps (10%) y su pico es de 120 Mbps (24%). ¿Qué estrategia de optimización de costos es más adecuada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Con un margen tan amplio incluso en horas pico, se justifica evaluar un downgrade de capacidad para reducir el costo sin afectar el servicio.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Aumentar la capacidad contratada]]></text><feedback format="html"><text><![CDATA[No se justifica un aumento cuando el uso pico apenas alcanza el 24% de la capacidad actual.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Evaluar un downgrade de capacidad, ya que existe un margen amplio incluso en horas pico]]></text><feedback format="html"><text><![CDATA[Correcto, es una oportunidad clara de optimización de costos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Mantener la capacidad actual sin ningún análisis adicional]]></text><feedback format="html"><text><![CDATA[Los datos de uso justifican analizar una posible reducción de costos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Eliminar el monitoreo de uso del enlace]]></text><feedback format="html"><text><![CDATA[Eliminar el monitoreo impediría detectar cambios futuros en el patrón de consumo.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT10 [Aplicar] Fuente de datos para top consumidores</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un administrador necesita identificar quién consumió más ancho de banda hacia redes sociales durante el horario laboral. ¿Qué fuente de datos debe consultar?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Los registros de flujos NetFlow/IPFIX contienen IP origen/destino, puertos y bytes transferidos, permitiendo identificar el consumo por usuario y aplicación.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Registros de flujos NetFlow/IPFIX con IP origen, destino, puertos y bytes transferidos]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La tabla de enrutamiento OSPF]]></text><feedback format="html"><text><![CDATA[La tabla de enrutamiento no registra el consumo de ancho de banda por usuario o aplicación.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El árbol de Spanning Tree]]></text><feedback format="html"><text><![CDATA[STP gestiona la topología libre de bucles, no el consumo de recursos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El archivo de configuración baseline]]></text><feedback format="html"><text><![CDATA[La baseline es una referencia de configuración, no una fuente de datos de tráfico.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT11 [Aplicar] Clasificacion Accounting vs Accounts</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un administrador revisa los registros de un servidor RADIUS para saber quién inició sesión, a qué hora y con qué privilegios en los switches de la red. ¿A qué interpretación de la "A" de FCAPS corresponde esta actividad?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Revisar quién accedió, cuándo y con qué privilegios corresponde a Accounts Management (gestión de identidades y AAA), distinto de medir cuánto ancho de banda se consumió.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Accounting Management, porque mide el uso de recursos de red]]></text><feedback format="html"><text><![CDATA[No se está midiendo consumo de ancho de banda, sino identidad y acceso de usuarios.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Accounts Management, porque se enfoca en el control de acceso y auditoría de usuarios]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Capacity Planning, porque proyecta el crecimiento de usuarios]]></text><feedback format="html"><text><![CDATA[No se está haciendo ninguna proyección de crecimiento en este escenario.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Chargeback, porque genera una factura interna]]></text><feedback format="html"><text><![CDATA[No se menciona ninguna facturación en este escenario, solo auditoría de acceso.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT12 [Analizar] Resistencia organizacional al Chargeback</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Por qué el modelo de Chargeback suele generar mayor resistencia organizacional que el Showback?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El Chargeback afecta directamente el presupuesto departamental, generando resistencia; el Showback es solo informativo y por ello genera menor fricción.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Porque el Chargeback afecta directamente el presupuesto departamental, mientras que el Showback es solo informativo]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque el Showback es más costoso de implementar que el Chargeback]]></text><feedback format="html"><text><![CDATA[Es al contrario: el Showback suele ser de complejidad media y el Chargeback de complejidad alta.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque el Chargeback no requiere aprobación financiera]]></text><feedback format="html"><text><![CDATA[El Chargeback sí requiere aprobación financiera, precisamente por afectar presupuestos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque ambos generan el mismo nivel de resistencia organizacional]]></text><feedback format="html"><text><![CDATA[No generan el mismo nivel; el Chargeback genera mayor resistencia al tener impacto financiero real.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT13 [Analizar] Relevancia del R2 en proyeccion de capacidad</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Analice por qué un coeficiente de correlación (R²) cercano a 1 en una proyección de capacidad basada en regresión lineal es relevante para la toma de decisiones.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un R² cercano a 1 indica que la tendencia histórica se ajusta muy bien al modelo utilizado, dando mayor confianza a la proyección de saturación futura.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Indica que la tendencia histórica se ajusta muy bien al modelo, dando mayor confianza a la proyección]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Indica que no hay suficientes datos para el análisis]]></text><feedback format="html"><text><![CDATA[Un R² alto no indica falta de datos, sino un buen ajuste del modelo a los datos disponibles.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Es irrelevante para la planificación de capacidad]]></text><feedback format="html"><text><![CDATA[Es relevante porque determina la confiabilidad de la proyección usada para planificar upgrades.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Indica que el enlace está saturado en ese momento]]></text><feedback format="html"><text><![CDATA[El R² mide el ajuste del modelo, no el nivel de saturación actual del enlace.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT14 [Analizar] Investigacion antes de decidir sobre consumo</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un reporte de Accounting muestra que el departamento de Ventas consume el 40% del ancho de banda total de la organización. ¿Qué acción de análisis es más apropiada antes de tomar una decisión de negocio?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Antes de actuar, se debe investigar el desglose por aplicación para determinar si el consumo es tráfico legítimo o prescindible.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Reducir de inmediato el ancho de banda de Ventas sin más análisis]]></text><feedback format="html"><text><![CDATA[Actuar sin investigar el desglose podría afectar tráfico legítimo y necesario para el negocio.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Investigar qué aplicaciones específicas generan ese consumo para determinar si es tráfico legítimo o prescindible]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ignorar el reporte porque Ventas es un área importante para la organización]]></text><feedback format="html"><text><![CDATA[Ignorar el dato desperdicia información valiosa para la toma de decisiones.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar Chargeback de inmediato sin revisar el desglose por aplicación]]></text><feedback format="html"><text><![CDATA[Aplicar una facturación sin análisis previo puede generar conflictos si el consumo resulta ser legítimo.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT15 [Analizar] Relacion Accounting y Capacity Planning</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué relación existe entre Accounting Management y Capacity Planning dentro de FCAPS?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Los datos de uso registrados por Accounting alimentan el análisis de tendencias que Capacity Planning utiliza para proyectar necesidades futuras de capacidad.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[No tienen relación, son áreas completamente independientes]]></text><feedback format="html"><text><![CDATA[Sí tienen una relación directa, ya que Capacity Planning depende de los datos históricos de Accounting.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Los datos de uso de Accounting alimentan el análisis de tendencias usado en Capacity Planning]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Capacity Planning sustituye completamente a Accounting Management]]></text><feedback format="html"><text><![CDATA[Son complementarias, Capacity Planning no reemplaza el registro de uso de Accounting.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Accounting solo se usa para facturación externa, nunca para planificación interna]]></text><feedback format="html"><text><![CDATA[Accounting también se usa internamente para análisis de tendencias y capacity planning.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT16 [Evaluar] Eleccion entre Chargeback y Showback</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una empresa debe decidir entre implementar Chargeback o Showback para fomentar el uso eficiente de la red sin generar conflictos financieros inmediatos. ¿Qué opción recomendaría en una primera etapa y por qué?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El Showback crea conciencia de costos con menor complejidad y resistencia organizacional, pudiendo evolucionar a Chargeback en una etapa posterior.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Chargeback, porque genera ingresos inmediatos]]></text><feedback format="html"><text><![CDATA[El Chargeback tiene mayor complejidad y resistencia; no es lo más prudente como primer paso.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Showback, porque crea conciencia de costos con menor complejidad y resistencia, pudiendo evolucionar a Chargeback después]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ninguna de las dos, porque no aportan valor a la organización]]></text><feedback format="html"><text><![CDATA[Ambas aportan visibilidad o control de costos según el objetivo buscado.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ambas simultáneamente sin ninguna evaluación previa]]></text><feedback format="html"><text><![CDATA[Implementar ambas sin evaluación puede generar confusión y resistencia innecesaria.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT17 [Evaluar] Evidencia para justificar un upgrade</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una organización debe justificar ante la dirección una inversión en upgrade de enlace WAN. ¿Qué evidencia de Accounting Management sería más contundente?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un análisis de tendencias de uso con proyección de saturación, principales consumidores y comparación de costos aporta evidencia objetiva y cuantificable para justificar la inversión.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Una opinión informal del equipo de soporte técnico]]></text><feedback format="html"><text><![CDATA[Una opinión informal no constituye evidencia objetiva y cuantificable.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Un análisis de tendencias de uso con proyección de saturación, top consumidores y comparación de costos de upgrade vs riesgo de incidentes]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Un comentario aislado de un usuario sobre lentitud]]></text><feedback format="html"><text><![CDATA[Un comentario aislado no es evidencia suficiente ni representativa.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El manual del fabricante del router]]></text><feedback format="html"><text><![CDATA[El manual no aporta datos de uso real de la organización.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT18 [Crear] Diseno de esquema de Chargeback</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Diseñe un esquema simple de Chargeback para tres departamentos con diferentes niveles de consumo de red. ¿Qué elementos mínimos debe incluir el diseño?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un esquema de Chargeback debe definir el recurso medido, la unidad de medida, el periodo, la tarifa por unidad, el consumo validado y el costo resultante por departamento.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Solo el nombre del departamento]]></text><feedback format="html"><text><![CDATA[No es suficiente para calcular ni justificar un cobro interno.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Recurso medido, unidad de medida, periodo, tarifa por unidad, consumo validado y costo resultante por departamento]]></text><feedback format="html"><text><![CDATA[Correcto, cubre todos los elementos necesarios para un esquema de Chargeback funcional.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Únicamente el costo total de la red sin desglose]]></text><feedback format="html"><text><![CDATA[Sin desglose por departamento no es posible aplicar un Chargeback justo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La topología física de la red]]></text><feedback format="html"><text><![CDATA[La topología no es un elemento necesario para calcular el costo de consumo por departamento.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT19 [Crear] Proceso trimestral de Capacity Planning</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Proponga un proceso de Capacity Planning trimestral para un enlace WAN institucional. ¿Cuál de las siguientes secuencias es más completa?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El proceso debe recolectar datos históricos, identificar tendencias, proyectar uso futuro, definir umbrales de alerta/crítico y planificar acciones con anticipación.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Revisar el enlace únicamente cuando se sature por completo]]></text><feedback format="html"><text><![CDATA[Es una práctica reactiva contraria al principio proactivo del capacity planning.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Recolectar datos históricos, identificar tendencias, proyectar uso futuro, definir umbrales de alerta/crítico y planificar acciones con anticipación]]></text><feedback format="html"><text><![CDATA[Correcto, es la metodología completa revisada en la unidad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aumentar la capacidad cada trimestre sin importar el uso real]]></text><feedback format="html"><text><![CDATA[Aumentar sin analizar datos reales puede generar gastos innecesarios.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Delegar la decisión únicamente al proveedor de internet]]></text><feedback format="html"><text><![CDATA[La planificación de capacidad es responsabilidad de la organización, con base en sus propios datos de uso.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>CT20 [Analizar] Integracion de Accounting y Accounts</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Analice por qué medir en conjunto "quién" accede a la red (Accounts, vía AAA) y "cuánto" consume cada quién (Accounting, vía NetFlow) da una visibilidad más completa que medir solo uno de los dos aspectos.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Combinar la identidad del usuario (Accounts) con el consumo real de recursos (Accounting) permite atribuir el uso a una persona o cuenta específica, en lugar de solo a una dirección IP o volumen agregado.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>contabilidad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[No aporta ninguna ventaja adicional combinar ambos enfoques]]></text><feedback format="html"><text><![CDATA[Sí aporta una ventaja significativa: permite atribuir el consumo a una identidad concreta.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Permite atribuir el consumo de recursos a una identidad o cuenta específica, en lugar de solo a una IP o volumen agregado]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Solo sirve para acelerar el enrutamiento de paquetes]]></text><feedback format="html"><text><![CDATA[No tiene relación con el enrutamiento, sino con la trazabilidad de uso y acceso.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Elimina la necesidad de un sistema de monitoreo de desempeño]]></text><feedback format="html"><text><![CDATA[No sustituye al monitoreo de desempeño; son áreas complementarias distintas.]]></text></feedback></answer>
+</question>
+
+</quiz>

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Quiz 1: Diseño Algorítmico — Fundamentos de Programación AED-1285 -->
+<!-- Ponderación: 30% de Unidad 1 | Tiempo sugerido: 30 minutos -->
+<!-- Distribución Bloom: 30% Recordar/Comprender (Q1-Q3) | 50% Aplicar/Analizar (Q4-Q8) | 20% Evaluar (Q9-Q10) -->
+<quiz>
+
+  <!-- ===================== SECCIÓN A: RECORDAR / COMPRENDER ===================== -->
+
+  <!-- Q1: Recordar — Propiedades del algoritmo -->
+  <question type="multichoice">
+    <name><text>Q1-Propiedades-Algoritmo</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Cuál de las siguientes opciones describe correctamente la propiedad de <strong>finitud</strong> de un algoritmo?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Finitud</strong> significa que el algoritmo debe terminar después de un número finito de pasos. Un proceso que nunca termina (bucle infinito) no es un algoritmo válido. Las demás propiedades son: <em>precisión</em> (sin ambigüedad), <em>efectividad</em> (operaciones ejecutables) y <em>entradas/salidas</em> definidas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[El algoritmo debe terminar después de ejecutar un número finito de instrucciones.]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Un algoritmo que no termina no puede considerarse válido.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[El algoritmo debe producir exactamente un dato de salida.]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Eso describe la propiedad de salida, no de finitud. Un algoritmo puede tener múltiples salidas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[El algoritmo debe escribirse con notación matemática formal.]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Los algoritmos pueden expresarse en pseudocódigo, DFD, lenguaje natural o código; la finitud no tiene relación con la notación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[El algoritmo puede ejecutarse indefinidamente mientras haya datos de entrada.]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Eso viola la propiedad de finitud. Un proceso que no termina no es un algoritmo.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q2: Comprender — Tipos de datos -->
+  <question type="multichoice">
+    <name><text>Q2-Tipos-Datos</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Citlali lleva el registro de su puesto en el tianguis de Tlacolula. Para cada producto anota: el nombre del artículo, su precio en pesos con centavos, la cantidad disponible en piezas enteras, y si ya fue exhibido o no.</p><p>¿Qué tipos de datos corresponden correctamente a: nombre, precio, cantidad y estado de exhibición?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El <strong>nombre</strong> es texto → Cadena (string). El <strong>precio con centavos</strong> tiene parte decimal → Real (float). La <strong>cantidad en piezas enteras</strong> no tiene decimales → Entero (integer). El <strong>estado de exhibición</strong> es verdadero/falso → Lógico (boolean). Elegir el tipo correcto evita errores y desperdicio de memoria.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Cadena, Real, Entero, Lógico]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Cada tipo refleja con precisión la naturaleza del dato.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Cadena, Entero, Entero, Lógico]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El precio tiene centavos (parte decimal), por lo que debe ser Real, no Entero.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Real, Real, Entero, Cadena]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El nombre es texto (Cadena) y el estado de exhibición es un valor lógico (Verdadero/Falso), no una cadena.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Cadena, Real, Real, Entero]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La cantidad en piezas enteras es de tipo Entero, y el estado de exhibición es Lógico, no Entero.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q3: Comprender — Símbolo DFD -->
+  <question type="truefalse">
+    <name><text>Q3-Simbolo-Rombo-Decision</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En un diagrama de flujo con simbología ISO 5807, el rombo (diamante) se utiliza exclusivamente para representar operaciones de entrada y salida de datos.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Falso.</strong> El rombo representa un punto de <strong>decisión</strong> (condición con dos posibles caminos: Sí o No). El símbolo que representa entrada/salida de datos es el <strong>paralelogramo</strong>. El rectángulo se usa para procesos o cálculos, y el óvalo para el inicio/fin del algoritmo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="0" format="html">
+      <text>true</text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El rombo representa una decisión (condición). El paralelogramo es el símbolo de entrada/salida.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>false</text>
+      <feedback format="html"><text><![CDATA[Correcto. El rombo es para decisiones; la entrada/salida se representa con el paralelogramo.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- ===================== SECCIÓN B: APLICAR / ANALIZAR ===================== -->
+
+  <!-- Q4: Aplicar — Traza de pseudocódigo -->
+  <question type="multichoice">
+    <name><text>Q4-Traza-Pseudocodigo-Lineal</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Analiza el siguiente fragmento de pseudocódigo y determina qué valor muestra la instrucción <code>Escribir</code> cuando se ejecuta con <code>kilos = 40</code> y <code>precio = 15</code>:</p>
+<pre>
+Leer kilos, precio
+total &lt;- kilos * precio
+descuento &lt;- total * 0.10
+neto &lt;- total - descuento
+Escribir neto
+</pre>
+<p><em>Contexto: La cooperativa pesquera calcula el pago neto descontando 10% para el fondo comunitario.</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Traza: total = 40 × 15 = 600 | descuento = 600 × 0.10 = 60 | neto = 600 − 60 = <strong>540</strong>. La instrucción <code>Escribir neto</code> muestra 540.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[540]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. 40×15 = 600; descuento = 60; neto = 540.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[600]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. 600 es el total bruto antes de aplicar el descuento del 10%.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[60]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. 60 es solo el valor del descuento, no el neto final.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[504]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Revisa los cálculos paso a paso: total = 600, descuento = 10% de 600 = 60, neto = 540.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q5: Aplicar — Traza con condición -->
+  <question type="multichoice">
+    <name><text>Q5-Traza-Condicional</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>El siguiente pseudocódigo calcula el pago de un jornalero cafetalero. ¿Qué imprime cuando <code>kilos = 45</code>?</p>
+<pre>
+Leer kilos
+Si kilos >= 50 Entonces
+    pago &lt;- kilos * 180
+SiNo
+    pago &lt;- kilos * 150
+FinSi
+Escribir "Pago: $", pago
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>kilos = 45, que es <strong>menor que 50</strong>, por lo que se ejecuta el bloque <code>SiNo</code>: pago = 45 × 150 = <strong>6750</strong>. Se imprime "Pago: $6750".</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Pago: $6750]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Como 45 < 50, se aplica la tarifa de $150 por kilo: 45 × 150 = 6750.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Pago: $8100]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. $8100 resulta de 45 × 180, pero esa tarifa solo aplica cuando kilos >= 50.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Pago: $9000]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Revisa la condición: 45 NO es mayor o igual a 50, por lo que usa la tarifa de $150.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[El algoritmo no imprime nada porque 45 no cumple ninguna condición.]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La estructura Si-SiNo siempre ejecuta una de las dos ramas; en este caso el bloque SiNo con pago = 45×150.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q6: Analizar — Error en pseudocódigo -->
+  <question type="multichoice">
+    <name><text>Q6-Identificar-Error-Pseudocodigo</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Rosalinda escribió el siguiente pseudocódigo para calcular el promedio de calificaciones de 3 estudiantes. Identifica el error principal:</p>
+<pre>
+Definir cal1, cal2, cal3 Como Entero
+Definir promedio Como Entero
+Leer cal1, cal2, cal3
+promedio &lt;- cal1 + cal2 + cal3
+Escribir "Promedio:", promedio
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Hay <strong>dos errores</strong>: (1) <strong>No divide entre 3</strong> — la línea correcta es <code>promedio ← (cal1 + cal2 + cal3) / 3</code>. (2) El tipo de dato de <code>promedio</code> debería ser <strong>Real</strong>, no Entero, porque la división puede producir decimales (ej. (8+7+9)/3 = 8). El error más grave es el de la fórmula: sin la división, <code>promedio</code> almacena la suma, no el promedio.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[La fórmula no divide entre 3, así que la variable guarda la suma y no el promedio.]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Además, el tipo de promedio debería ser Real para capturar decimales.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[El algoritmo no tiene instrucción de Inicio y Fin.]]></text>
+      <feedback format="html"><text><![CDATA[Parcialmente correcto, pero no es el error principal que afecta el resultado. El error lógico grave es que la fórmula calcula la suma, no el promedio.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Las variables cal1, cal2 y cal3 no están definidas correctamente.]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Están definidas como Entero, lo cual es válido para calificaciones sin decimales. El error es en la fórmula del promedio.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[La instrucción Leer no puede leer tres variables al mismo tiempo.]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. En pseudocódigo es válido leer múltiples variables en una instrucción. El error está en la fórmula del cálculo.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q7: Analizar — EPP -->
+  <question type="multichoice">
+    <name><text>Q7-Analisis-EPP</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>El herbolario comunitario quiere un programa que calcule el valor total de su inventario: dado el nombre de una planta medicinal, su precio por gramo y los gramos disponibles, calcula el valor total y muestra si el valor supera los $500 (producto "de alto valor").</p>
+<p>¿Cuál de las siguientes tablas EPP describe <strong>correctamente</strong> este problema?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La <strong>entrada</strong> son los datos que el usuario proporciona: nombre de la planta, precio por gramo, gramos disponibles. El <strong>proceso</strong> incluye el cálculo (valor = precio × gramos) y la comparación (valor > 500). La <strong>salida</strong> es el valor calculado y la categoría (alto valor o no). La condición de comparación es proceso, no entrada ni salida.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Entrada: nombre, precio/gramo, gramos. Proceso: valor=precio×gramos; Si valor>500 → "alto valor". Salida: valor total, categoría.]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. El EPP está bien distribuido: los datos del usuario son entrada, los cálculos y decisiones son proceso, y los resultados son salida.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Entrada: nombre, precio/gramo, gramos, valor>500. Proceso: valor=precio×gramos. Salida: categoría.]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La condición "valor>500" es parte del proceso (una decisión), no un dato de entrada del usuario.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Entrada: nombre. Proceso: precio×gramos; Si valor>500. Salida: precio/gramo, gramos, valor, categoría.]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El precio por gramo y los gramos disponibles son datos de entrada que el usuario proporciona, no salidas del algoritmo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Entrada: valor total. Proceso: Si valor>500 → "alto valor". Salida: nombre, precio, gramos.]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El "valor total" es una salida que el algoritmo calcula, no un dato de entrada. El nombre, precio y gramos son entradas.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q8: Aplicar — Identificar algoritmo correcto -->
+  <question type="multichoice">
+    <name><text>Q8-Algoritmo-Correcto-Cambio</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Don Francisco en el tianguis de Uruapan necesita un algoritmo que calcule el cambio a devolver. Si el cliente paga menos del precio, debe mostrar un mensaje de "Pago insuficiente". ¿Cuál de los siguientes pseudocódigos resuelve <strong>correctamente</strong> el problema?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La opción A es correcta: verifica primero si el pago es suficiente (pago >= precio), calcula el cambio correctamente como pago − precio, y en el caso contrario muestra el mensaje de error. Las demás tienen errores de lógica: la opción B calcula precio − pago como cambio (que sería un número negativo cuando el pago es mayor), la C no tiene la condición de pago insuficiente, y la D invierte la condición.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Leer precio, pago<br>Si pago >= precio Entonces<br>&nbsp;&nbsp;cambio <- pago - precio<br>&nbsp;&nbsp;Escribir "Cambio: $", cambio<br>SiNo<br>&nbsp;&nbsp;Escribir "Pago insuficiente"<br>FinSi]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. La condición es correcta y el cambio se calcula como pago − precio.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Leer precio, pago<br>Si pago >= precio Entonces<br>&nbsp;&nbsp;cambio <- precio - pago<br>&nbsp;&nbsp;Escribir "Cambio: $", cambio<br>SiNo<br>&nbsp;&nbsp;Escribir "Pago insuficiente"<br>FinSi]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La fórmula está invertida: cambio = precio − pago daría un valor negativo cuando el pago es mayor. Lo correcto es pago − precio.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Leer precio, pago<br>cambio <- pago - precio<br>Escribir "Cambio: $", cambio]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. No hay validación: si el pago es insuficiente, el algoritmo calculará un cambio negativo sin avisar al usuario.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Leer precio, pago<br>Si precio >= pago Entonces<br>&nbsp;&nbsp;cambio <- pago - precio<br>&nbsp;&nbsp;Escribir "Cambio: $", cambio<br>SiNo<br>&nbsp;&nbsp;Escribir "Pago insuficiente"<br>FinSi]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La condición está invertida: "precio >= pago" es verdadera cuando el cliente pagó menos, no cuando pagó suficiente.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- ===================== SECCIÓN C: EVALUAR ===================== -->
+
+  <!-- Q9: Evaluar — Juzgar calidad de un algoritmo -->
+  <question type="truefalse">
+    <name><text>Q9-Evaluar-Algoritmo-Finito</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Analiza el siguiente pseudocódigo:</p>
+<pre>
+contador <- 0
+Mientras contador < 10 Hacer
+    Escribir "Registro ", contador
+    // (no hay instrucción que modifique contador)
+FinMientras
+</pre>
+<p>Este fragmento cumple con todas las propiedades de un algoritmo válido.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Falso.</strong> Este fragmento viola la propiedad de <strong>finitud</strong>: como <code>contador</code> nunca se modifica dentro del ciclo, la condición <code>contador < 10</code> siempre será verdadera y el ciclo se ejecutará <em>indefinidamente</em> (bucle infinito). Para corregirlo se necesita agregar <code>contador ← contador + 1</code> dentro del cuerpo del ciclo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="0" format="html">
+      <text>true</text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El ciclo es infinito porque contador nunca se incrementa; viola la propiedad de finitud.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>false</text>
+      <feedback format="html"><text><![CDATA[Correcto. El algoritmo viola la finitud: es un bucle infinito. Se debe agregar contador ← contador + 1 dentro del ciclo.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q10: Evaluar — Comparar dos soluciones -->
+  <question type="multichoice">
+    <name><text>Q10-Evaluar-Comparar-Soluciones</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Tláloc necesita calcular el promedio de calificaciones de <strong>n</strong> estudiantes (donde n lo ingresa el usuario). Se proponen dos soluciones:</p>
+<p><strong>Solución A</strong>:</p>
+<pre>
+Leer n
+suma <- 0
+Para i <- 1 Hasta n Hacer
+    Leer calificacion
+    suma <- suma + calificacion
+FinPara
+promedio <- suma / n
+Escribir promedio
+</pre>
+<p><strong>Solución B</strong>:</p>
+<pre>
+Leer cal1, cal2, cal3, cal4, cal5
+promedio <- (cal1+cal2+cal3+cal4+cal5) / 5
+Escribir promedio
+</pre>
+<p>¿Cuál solución es <strong>más general y robusta</strong> para resolver el problema? Justifica.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>La Solución A es superior</strong> porque: (1) es <strong>general</strong> — funciona para cualquier valor de n, no solo para 5 estudiantes; (2) es <strong>escalable</strong> — si el grupo crece o decrece, el código no cambia; (3) usa correctamente un <strong>ciclo Para</strong> que es la estructura adecuada cuando se conoce el número de iteraciones. La Solución B es <em>rígida</em>: solo funciona para exactamente 5 estudiantes y requiere modificar el código para cualquier otro número.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[La Solución A, porque usa un ciclo que se adapta a cualquier número de estudiantes (n), mientras que la B solo funciona para exactamente 5.]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. La Solución A aplica la propiedad de generalidad: el mismo algoritmo resuelve el problema para cualquier valor de n.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[La Solución B, porque es más corta y fácil de leer.]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La brevedad no equivale a calidad. La Solución B es rígida: falla para cualquier grupo que no tenga exactamente 5 estudiantes.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Ambas son igualmente válidas porque producen el mismo resultado.]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Producen el mismo resultado solo cuando n=5. Para n=10 o n=3, la Solución B no funciona sin modificarse; la A sí.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[La Solución A, porque usa más variables y por lo tanto es más completa.]]></text>
+      <feedback format="html"><text><![CDATA[Parcialmente correcto, pero la razón es incorrecta. La ventaja no es el número de variables sino la generalidad y escalabilidad del ciclo.]]></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

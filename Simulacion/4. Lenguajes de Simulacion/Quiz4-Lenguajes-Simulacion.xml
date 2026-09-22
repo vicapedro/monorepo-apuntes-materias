@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- Quiz 4: Lenguajes de Simulación | SCD-1022 | Unidad 4 -->
+
+<question type="multichoice">
+  <name><text>Q4-01: SimPy — paradigma</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>SimPy implementa el paradigma de simulación de eventos discretos orientado a:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>SimPy usa el paradigma de <strong>Interacción de Procesos</strong> (Process Interaction). Los procesos son corrutinas Python que se suspenden con <code>yield env.timeout()</code> o <code>yield resource.request()</code>, modelando el comportamiento activo de entidades en el sistema.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Procesos (Process Interaction) usando corrutinas de Python]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. SimPy modela entidades como procesos que interactúan con recursos y el entorno.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Eventos (Event Scheduling) con lista de eventos futura]]></text>
+    <feedback format="html"><text><![CDATA[Parcialmente incorrecto. Internamente SimPy usa una lista de eventos, pero el paradigma de programación expuesto al usuario es orientado a procesos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Actividades (Activity Scanning) con barrido periódico]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Activity Scanning barrería el estado del sistema periódicamente; SimPy no hace eso.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Agentes autónomos con reglas de comportamiento]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Los agentes son un paradigma diferente, usado en NetLogo o AnyLogic modo agentes.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q4-02: AnyLogic — paradigmas</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Una de las ventajas distintivas de AnyLogic respecto a herramientas como SimPy o Arena es:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>AnyLogic es la única herramienta comercial importante que soporta los tres paradigmas de simulación: DES (Process Modeling Library), Dinámica de Sistemas (System Dynamics) y Simulación Basada en Agentes (Agent-Based), permitiendo modelos híbridos.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Soporta DES, Dinámica de Sistemas y Agentes en un mismo modelo (multi-paradigma)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Esta capacidad multi-paradigma es la principal ventaja competitiva de AnyLogic.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Es completamente de código abierto y sin restricciones de uso]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. AnyLogic PLE es gratuita con restricciones; la versión completa es comercial.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Permite integración nativa con bibliotecas de Python como NumPy y Pandas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. AnyLogic usa Java/Jython internamente; la integración con NumPy no es directa.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Requiere menos recursos de hardware que SimPy para modelos grandes]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. AnyLogic como aplicación Java/Swing generalmente consume más recursos que SimPy.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q4-03: SimPy — Resource</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En SimPy, al usar <code>with servidor.request() as req: yield req</code>, ¿qué sucede si el servidor ya está ocupado?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>El proceso se suspende (bloquea) hasta que el servidor quede libre. SimPy mantiene una cola interna de solicitudes pendientes. Cuando el servidor se libera, el primer proceso en espera recibe el recurso automáticamente.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[El proceso se suspende y espera en cola hasta que el servidor se libere]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. SimPy gestiona automáticamente la cola de solicitudes pendientes.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Se genera una excepción ResourceUnavailable]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. SimPy no lanza excepción; simplemente suspende el proceso.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El proceso se ejecuta en paralelo con el proceso actual del servidor]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Un Resource con capacity=1 solo puede ser usado por un proceso a la vez.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El proceso termina y el cliente se pierde (balking automático)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Para modelar balking se requiere código adicional (usar Resource.request() con timeout).]]></text></feedback>
+  </answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Q4-04: NetLogo vs SimPy</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>NetLogo es más apropiado que SimPy para modelar un sistema de colas bancario M/M/3 con métricas de tiempo en cola y utilización.</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Falso. NetLogo está diseñado para simulación basada en agentes con comportamiento emergente (epidemias, tráfico, ecología). SimPy (DES) es mucho más apropiado para sistemas de colas donde se requieren métricas de desempeño estadísticas precisas.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="0" format="html">
+    <text>true</text>
+    <feedback format="html"><text><![CDATA[Incorrecto. NetLogo es para sistemas multi-agente con comportamiento emergente, no para colas bancarias.]]></text></feedback>
+  </answer>
+  <answer fraction="100" format="html">
+    <text>false</text>
+    <feedback format="html"><text><![CDATA[Correcto. SimPy (DES) es la herramienta apropiada para modelar sistemas de colas con métricas estadísticas.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q4-05: AnyLogic — bloque Source</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En AnyLogic Process Modeling Library, para modelar llegadas Poisson con tasa λ=10 entidades/hora, el bloque Source debe configurarse con:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>AnyLogic usa la función <code>exponential(media)</code> para la distribución Exponencial. Con λ=10/hr, la media entre llegadas es 1/λ = 0.1 horas. La función <code>exponential(0.1)</code> genera tiempos Exponenciales con esa media.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Arrival type: Interarrival time = <code>exponential(0.1)</code> (horas entre llegadas)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. 1/λ = 1/10 = 0.1 horas entre llegadas; exponential(media) en AnyLogic.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Arrival type: Rate = <code>poisson(10)</code>]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Poisson(10) daría el número de llegadas, no la tasa de llegadas del bloque Source.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Arrival type: Rate = <code>exponential(10)</code>]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. exponential(10) daría tiempos entre llegadas de media=10 (muy lento), no tasa=10.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Arrival type: Rate = 10 (constante, sin distribución)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Rate=10 constante crea llegadas determinísticas, no Poisson.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q4-06: Política de inventario (s,Q)</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En un sistema de inventario con política (s=15, Q=40), si el inventario actual es 16 y la demanda del día es 3, ¿se emite una orden?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Inventario después de demanda = 16 − 3 = 13. Como 13 ≤ s=15, sí se emite una orden de Q=40 unidades. El inventario quedará en 13 hasta que llegue el pedido (tras el lead time).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Sí: inventario queda en 13 ≤ s=15, se emite orden de Q=40]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. La condición de reorden es inventario ≤ s, que se cumple tras la demanda.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No: el inventario inicial era 16 > s=15, no se emite orden]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La revisión es DESPUÉS de descontar la demanda, no antes.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Sí, y el inventario sube inmediatamente a 13+40=53]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El inventario no sube inmediatamente; hay un lead time antes de recibir el pedido.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No se puede determinar sin saber el lead time]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La decisión de emitir la orden es independiente del lead time; el lead time afecta cuándo se recibe.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q4-07: Selección de herramienta por contexto</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un consultor necesita modelar la propagación de una epidemia en una ciudad donde cada persona toma decisiones de contacto basadas en su estado de salud y el de sus vecinos. ¿Qué herramienta es más apropiada?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La simulación basada en agentes (NetLogo, AnyLogic modo agentes) es ideal para modelar comportamientos emergentes a partir de interacciones individuales. Las epidemias son el caso canónico de esta clase de modelos.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[NetLogo o AnyLogic en modo Agentes (comportamiento emergente de individuos)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Las epidemias son el ejemplo paradigmático de sistemas multi-agente con comportamiento emergente.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[SimPy (DES con corrutinas)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. SimPy modela flujos de entidades en sistemas de colas, no redes de interacción entre agentes.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Arena con bloques de cola FIFO]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Arena es para DES (colas, manufactura), no para comportamiento emergente de agentes.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Vensim con dinámica de sistemas]]></text>
+    <feedback format="html"><text><![CDATA[Parcialmente válido: los modelos SIR/SEIR de epidemias pueden implementarse en SD, pero no capturan la heterogeneidad individual.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q4-08: SimPy — avance del reloj</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En SimPy, el método de avance del reloj es:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>SimPy usa <strong>Next-Event Time Advance (NETA)</strong>: el reloj salta directamente al tiempo del siguiente evento programado, sin pasos intermedios. Esto es más eficiente que el avance por incremento fijo cuando los eventos son escasos en el tiempo.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Avance por siguiente evento (NETA): el reloj salta al tiempo del próximo evento]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. SimPy es un simulador de eventos discretos puro con avance NETA.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Avance por incremento fijo Δt configurable por el usuario]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Ese sería el método de simulación continua o de diferencia finita.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Avance por ticks de reloj con frecuencia en Hz]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. SimPy no usa reloj en tiempo real; el tiempo de simulación es lógico (unitless).]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Avance continuo determinado por ecuaciones diferenciales]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Las ecuaciones diferenciales son para simulación continua (Vensim, MATLAB/Simulink).]]></text></feedback>
+  </answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Q4-09: Integración GeneradorVariables con SimPy</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Al usar el generador de variables aleatorias propio (GeneradorVariables de Práctica 8) en lugar de <code>random.expovariate()</code> en SimPy, los resultados estadísticos de la simulación deberían ser equivalentes si ambos generadores tienen propiedades estadísticas correctas.</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Verdadero. Si ambos generadores producen variables con la misma distribución teórica (exponencial con el mismo parámetro) y pasan las pruebas estadísticas, los resultados de la simulación convergerán a los mismos valores esperados con muestras grandes. La ventaja del generador propio es la reproducibilidad controlada por semilla.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html">
+    <text>true</text>
+    <feedback format="html"><text><![CDATA[Correcto. La equivalencia estadística de los generadores garantiza resultados equivalentes en la simulación.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text>false</text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Los resultados convergen si los generadores son estadísticamente equivalentes.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q4-10: Número de réplicas en simulación</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Por qué es necesario ejecutar múltiples réplicas (runs) de una simulación estocástica con diferentes semillas?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Cada ejecución con diferente semilla produce un resultado diferente (variabilidad aleatoria). Con una sola réplica no se puede distinguir el comportamiento promedio del sistema del ruido estadístico de esa ejecución. Múltiples réplicas permiten calcular intervalos de confianza y estadísticas precisas.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Para estimar el comportamiento promedio con intervalos de confianza, eliminando la variabilidad de una sola ejecución]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Las réplicas permiten tratar la simulación como un experimento estadístico.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Porque SimPy no es determinista y puede dar resultados diferentes con la misma semilla]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Con la misma semilla, SimPy da siempre los mismos resultados (reproducibilidad).]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Para detectar errores en el código de la simulación]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La verificación del código se hace de otras formas (casos límite, comparación analítica); las réplicas son para análisis estadístico.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Para reducir el tiempo de cómputo distribuyendo la carga]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Múltiples réplicas aumentan el tiempo de cómputo; el beneficio es estadístico, no de rendimiento.]]></text></feedback>
+  </answer>
+</question>
+
+</quiz>

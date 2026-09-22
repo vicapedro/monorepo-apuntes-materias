@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- Examen Parcial 3: Unidades 3-4 | Simulación SCD-1022 -->
+<!-- Bloom: 30% Recordar/Comprender | 50% Aplicar/Analizar | 20% Evaluar -->
+
+<!-- SECCIÓN A: Recordar / Comprender (5 preguntas) -->
+
+<question type="multichoice">
+  <name><text>EP3-01: Ventajas DES vs continua</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿En qué tipo de sistema es más apropiado usar simulación de eventos discretos (DES) en lugar de simulación continua?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>DES es apropiado cuando los cambios del sistema ocurren en instantes discretos de tiempo (llegadas, salidas, fallos). La simulación continua es para sistemas donde las variables cambian en forma continua (fluidos, circuitos, dinámica de poblaciones).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Sistema bancario con llegadas de clientes y tiempos de servicio variables]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Los cambios (llegada, inicio servicio, salida) ocurren en instantes discretos: DES es ideal.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Llenado de un tanque de agua con flujo continuo]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El flujo continuo es un sistema de variables continuas, mejor modelado con EDOs.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Crecimiento de una población de bacterias en un medio de cultivo]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El crecimiento bacteriano es continuo (ecuación logística), no discreto.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Variación del precio de un activo financiero en tiempo continuo]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Los precios en tiempo continuo se modelan con procesos estocásticos continuos (movimiento Browniano).]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP3-02: SimPy — Resource vs Container</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En SimPy, ¿qué diferencia a un <code>Resource</code> de un <code>Container</code>?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Resource modela recursos discretos que se solicitan y liberan (servidores, máquinas, empleados). Container modela recursos continuos con nivel (tanque de gasolina, inventario en unidades). Store modela un buffer de items discretos.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Resource es para recursos discretos (servidores); Container es para recursos con nivel continuo (inventario)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Esta distinción es fundamental para seleccionar el componente adecuado en SimPy.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Resource tiene capacidad ilimitada; Container tiene capacidad fija]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Ambos tienen capacidad configurable; la diferencia es el tipo de recurso.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Resource es para SimPy v2; Container es para SimPy v3]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Ambos existen en la versión actual de SimPy.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Son sinónimos: Resource y Container hacen lo mismo]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Tienen semánticas distintas según el tipo de recurso a modelar.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP3-03: Costo de agotamiento</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En un modelo de inventario, el "costo por agotamiento" (stockout cost) representa:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>El costo por agotamiento incluye ventas perdidas, penalizaciones contractuales, pérdida de imagen y sustituciones de emergencia. Es el costo de NO tener inventario disponible cuando se necesita.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[El costo de no poder satisfacer la demanda cuando el inventario llega a cero]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Incluye ventas perdidas, penalizaciones y daño a la reputación.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El costo de almacenar cada unidad en el inventario por unidad de tiempo]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Eso es el costo de mantenimiento (holding cost), no el de agotamiento.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El costo fijo de emitir cada orden de reabastecimiento]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Eso es el costo de ordenar (ordering cost).]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El costo de compra de las unidades al proveedor]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Ese es el costo unitario de adquisición, distinto del agotamiento.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="truefalse">
+  <name><text>EP3-04: AnyLogic PLE — restricciones</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>AnyLogic Personal Learning Edition (PLE) permite exportar modelos como ejecutables independientes para compartir con clientes o publicar en producción.</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Falso. AnyLogic PLE tiene restricciones de uso: no permite exportar ejecutables independientes para distribución comercial. Solo puede ejecutarse en computadoras con AnyLogic instalado. Para producción se requiere la licencia completa.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="0" format="html">
+    <text>true</text>
+    <feedback format="html"><text><![CDATA[Incorrecto. PLE solo permite uso educativo; no incluye exportación para producción.]]></text></feedback>
+  </answer>
+  <answer fraction="100" format="html">
+    <text>false</text>
+    <feedback format="html"><text><![CDATA[Correcto. PLE tiene restricciones que prohíben el uso comercial y la distribución de ejecutables.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP3-05: Métricas M/M/1 — relación Little</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En un sistema M/M/1 con λ=6/hr y μ=10/hr, el tiempo promedio en el sistema W es:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>ρ = λ/μ = 0.6. L = ρ/(1−ρ) = 0.6/0.4 = 1.5 clientes. Por Ley de Little: W = L/λ = 1.5/6 = 0.25 horas = 15 minutos.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[W = 0.25 horas (15 minutos)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. L=1.5, W=L/λ=1.5/6=0.25 hr.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[W = 0.10 horas (6 minutos)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. 1/μ = 0.1 es el tiempo de servicio, no el tiempo en sistema.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[W = 0.15 horas (9 minutos)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Revisar el cálculo: W = L/λ = 1.5/6 = 0.25, no 0.15.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[W = 0.40 horas (24 minutos)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Se confunde con Wq + tiempo de servicio sin el cálculo correcto.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- SECCIÓN B: Aplicar / Analizar (7 preguntas) -->
+
+<question type="multichoice">
+  <name><text>EP3-06: SimPy — código cola M/M/1</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En el siguiente fragmento de SimPy, ¿qué línea genera correctamente el tiempo de servicio Exponencial con μ=8/hr?</p>
+<pre>
+def cliente(env, servidor):
+    with servidor.request() as req:
+        yield req
+        # AQUÍ va el tiempo de servicio
+        yield env.timeout( ??? )
+</pre>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Para Exponencial con tasa μ=8 (media=1/8 hr), se usa <code>random.expovariate(8)</code> (en horas) o equivalentemente <code>gen.exponencial(1/8)</code> con el generador propio (donde el argumento es la media).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<code>random.expovariate(8)</code> — tasa=8 implica media=1/8 horas]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. expovariate recibe la TASA λ; genera X ~ Exp(λ) con media 1/λ.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<code>random.expovariate(1/8)</code> — media=1/8 horas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. expovariate(1/8) daría media=8 horas (demasiado lento). Se confunde tasa con media.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<code>random.uniform(0, 1/8)</code> — tiempo uniforme entre 0 y media]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Uniforme no modela tiempos de servicio Exponenciales.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<code>8</code> — tiempo de servicio fijo igual a la tasa]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Un valor constante crea un modelo D/M/1, no M/M/1.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP3-07: Inventario — cálculo costo diario</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un sistema de inventario tiene: inventario al inicio del día = 25 unidades, demanda = 8 unidades, costo de mantenimiento = $3/unidad/día, costo de agotamiento = $12/unidad/día. ¿Cuál es el costo del día?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Inventario final = 25 − 8 = 17 unidades. Sin agotamiento. Costo = 17 × $3 = $51. (Se aplica costo de mantenimiento al inventario DESPUÉS de la demanda, o al promedio según la convención del modelo.)</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[$51 (solo mantenimiento: 17 unidades × $3)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. No hay agotamiento; costo = (25−8) × 3 = 17 × 3 = $51.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[$75 (mantenimiento sobre inventario inicial: 25 × $3)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El costo se aplica al inventario al final del día, no al inicial.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[$96 (mantenimiento + agotamiento: 17×3 + 8×12)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. No hay agotamiento porque 25 > 8; no se aplica costo de agotamiento.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[$24 (solo el costo de la demanda: 8 × $3)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El costo de mantenimiento aplica al inventario final, no a la demanda.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP3-08: AnyLogic — bloque Delay con múltiples servidores</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En AnyLogic PML, para modelar un sistema M/M/3 (3 servidores idénticos), se configura el bloque Delay con:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>En AnyLogic, la capacidad del bloque Delay determina el número de servidores paralelos. Con capacity=3, tres entidades pueden estar en servicio simultáneamente, modelando M/M/3.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Capacity = 3 en el bloque Delay, con tiempo de servicio Exponencial]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Capacity del Delay define el número de servidores paralelos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Tres bloques Delay en paralelo, cada uno con Capacity = 1]]></text>
+    <feedback format="html"><text><![CDATA[Funciona pero es más complejo innecesariamente. AnyLogic permite simplificar con Capacity = 3.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Un bloque Queue con MaxCapacity = 3]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Queue controla la cola de espera, no el número de servidores.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Tres bloques Source independientes que alimentan un solo Delay]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Source genera entidades; no modela servidores paralelos.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP3-09: Análisis de resultados — réplicas</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Se ejecutan 20 réplicas de una simulación M/M/1 de 500 horas cada una. Los tiempos promedio en sistema W obtenidos tienen media muestral = 0.248 hr y desviación estándar = 0.031 hr. El intervalo de confianza al 95% para W es aproximadamente:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Con n=20 réplicas y usando t₀.₀₂₅,₁₉ ≈ 2.093: IC = x̄ ± t·s/√n = 0.248 ± 2.093·(0.031/√20) = 0.248 ± 2.093·0.00693 = 0.248 ± 0.0145 ≈ [0.234, 0.262].</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[[0.234, 0.262] horas]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. IC = 0.248 ± 2.093·(0.031/√20) ≈ 0.248 ± 0.0145.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[[0.217, 0.279] horas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Ese intervalo usaría s directamente (sin dividir por √n), que no es correcto.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[[0.246, 0.250] horas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Ese intervalo sería demasiado estrecho.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[[0.186, 0.310] horas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Intervalo demasiado amplio; revisar el cálculo del error estándar.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP3-10: Warm-up period</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En una simulación de estado estacionario, se incluye un "período de calentamiento" (warm-up). ¿Por qué y cuándo se eliminan los datos de este período?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Al inicio de la simulación, el sistema comienza vacío (estado transitorio), lo que sesga las estadísticas. El warm-up period es el tiempo inicial que se descarta; las estadísticas se recolectan DESPUÉS del warm-up, cuando el sistema alcanzó el estado estacionario.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Se descartan datos del inicio (sistema vacío) para evitar sesgo; estadísticas desde el estado estacionario]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. El método de Welch o inspección visual de la serie temporal ayuda a determinar el warm-up.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Se descartan los últimos datos de la simulación (el sistema puede desestabilizarse al final)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El sesgo es al INICIO, no al final.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Se ejecuta una corrida adicional sin recolectar estadísticas para "calentar" la CPU]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El warm-up es estadístico (del sistema simulado), no del hardware.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Solo se necesita warm-up en AnyLogic, no en SimPy]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El warm-up es un concepto independiente de la herramienta; aplica a toda simulación de estado estacionario.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP3-11: Inventario — política óptima</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Al optimizar la política (s, Q) de inventario mediante simulación, se obtienen los siguientes costos diarios promedio:<br/>
+(s=10, Q=30): $45.20<br/>(s=15, Q=40): $38.60<br/>(s=20, Q=40): $41.10<br/>(s=15, Q=50): $39.80<br/>
+¿Cuál es la política óptima y cuál es el riesgo de seleccionarla con solo una réplica por combinación?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La política óptima aparente es (s=15, Q=40) con $38.60. Sin embargo, con una sola réplica por combinación, la diferencia de $1.20 entre (15,40) y (15,50) puede no ser estadísticamente significativa. Se necesitan réplicas para calcular intervalos de confianza.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[(s=15, Q=40) parece óptima, pero se necesitan más réplicas para confirmar la diferencia estadística]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. La variabilidad aleatoria puede cambiar el ranking con una sola réplica por configuración.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[(s=15, Q=40) es definitivamente la óptima con el dato disponible]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. "Definitivamente" es incorrecto; con una réplica no se puede afirmar esto con confianza.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No se puede determinar ninguna política óptima sin teoría analítica]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La simulación sí puede encontrar la política óptima con suficientes réplicas.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[(s=10, Q=30) es la óptima porque minimiza el stock mantenido]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. (s=10, Q=30) tiene el mayor costo; no considera el balance correcto entre costo de mantenimiento y agotamiento.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP3-12: SimPy — tiempo de simulación adecuado</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Se simula un sistema M/M/1 con λ=2/hr y μ=3/hr (ρ=0.667). ¿Cuánto tiempo de simulación es razonablemente suficiente para estimar Wq con precisión aceptable?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Con λ=2 clientes/hr, en 500 hr se procesan ≈1000 clientes. La varianza muestral de Wq disminuye con más clientes. Para ρ=0.667 (utilización moderada), 500 hr es razonablemente suficiente. Para ρ cercano a 1, se necesita más tiempo (colas más largas y correlaciones más fuertes).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[500 horas (≈1000 clientes procesados): razonablemente suficiente para ρ=0.667]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Para utilización moderada, 500 hr provee suficientes observaciones estadísticas.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[10 horas: suficiente si el sistema alcanza estado estacionario rápido]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Con λ=2, en 10 hr llegan ≈20 clientes: muestra insuficiente para estimación precisa.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El tiempo no importa; SimPy automáticamente determina cuándo parar]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. SimPy para cuando se le indica (env.run(until=T)); el analista decide T.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[1 hora exacta: para estimar en las mismas unidades que λ y μ]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. 1 hr ≈ 2 clientes: completamente insuficiente para estimación estadística.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- SECCIÓN C: Evaluar (3 preguntas) -->
+
+<question type="multichoice">
+  <name><text>EP3-13: Selección de herramienta para proyecto complejo</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un hospital necesita simular el flujo de pacientes (DES) considerando también el impacto en los inventarios de medicamentos (dinámica de sistemas) y el comportamiento de cada médico según su especialidad (agentes). ¿Qué herramienta recomienda y por qué?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>AnyLogic es la única herramienta que combina DES + SD + Agentes en un modelo integrado. Para este caso multi-paradigma, es claramente superior a SimPy (solo DES) o NetLogo (principalmente agentes sin DES robusto).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[AnyLogic: único que combina DES + Dinámica de Sistemas + Agentes en un modelo integrado]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. La capacidad multi-paradigma de AnyLogic es exactamente lo que este problema requiere.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[SimPy: suficiente si se programa todo en Python con bibliotecas adicionales]]></text>
+    <feedback format="html"><text><![CDATA[Técnicamente posible pero extremadamente costoso en desarrollo. AnyLogic tiene todo integrado nativamente.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[NetLogo: ideal para el componente de agentes (médicos) y los demás se añaden]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. NetLogo carece de capacidades DES robustas y dinámica de sistemas integrada.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Tres herramientas separadas (SimPy + Vensim + NetLogo) conectadas por archivos]]></text>
+    <feedback format="html"><text><![CDATA[Posible pero impráctica. La integración entre herramientas es muy compleja y propensa a errores.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP3-14: Evaluación de GeneradorVariables vs numpy</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un estudiante argumenta: "El generador LCG que implementé pasa la prueba KS para la Exponencial, pero los resultados del simulador M/M/1 son más variables que con numpy.random. Por lo tanto, el LCG es inferior." ¿Es correcto este razonamiento?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>El razonamiento es incompleto. La mayor variabilidad puede deberse a: (1) diferente semilla (aleatoriedad inherente), (2) número insuficiente de réplicas, (3) período del LCG más corto. Para comparar correctamente, se necesitan múltiples réplicas con ambos generadores y comparar las distribuciones de Wq, no solo una ejecución.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Incompleto: la mayor variabilidad puede ser aleatoria; se necesitan réplicas para comparar distribuciones de resultados]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Una sola comparación no es suficiente; se necesitan réplicas y pruebas estadísticas.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Correcto: si el LCG produce más variabilidad, es estadísticamente inferior]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La variabilidad de UNA ejecución no permite comparar generadores; se necesitan réplicas.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Incorrecto: el LCG siempre es superior porque es reproducible]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. numpy también es reproducible con semilla fija (np.random.seed()). La reproducibilidad no implica superioridad.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Correcto: los resultados de la prueba KS no garantizan buen comportamiento en simulación]]></text>
+    <feedback format="html"><text><![CDATA[Parcialmente válido pero incompleto. El argumento del estudiante mezcla dos problemas distintos.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP3-15: Validación del simulador M/M/1</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un simulador M/M/1 produce Wq_sim=0.198 hr vs Wq_teórico=0.250 hr (error del 20.8%). ¿Cuál es la estrategia de diagnóstico más apropiada?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Un error del 20% puede tener varias causas: (1) sesgo por warm-up no eliminado, (2) tiempo de simulación insuficiente (estado transitorio vs estacionario), (3) error en la lógica de la cola (confundir W con Wq), (4) error en los parámetros de la distribución. El primer paso es verificar la lógica del código y luego aumentar el tiempo de simulación.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Verificar la lógica (confusión Wq vs W), eliminar warm-up y aumentar tiempo de simulación]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Estas tres acciones cubren las causas más probables del error sistemático de 20%.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El error es aceptable; un 20% es normal en simulación estocástica]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Para M/M/1 con mucho tiempo de simulación, el error debería ser < 5%.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Cambiar la distribución de llegadas a Normal para reducir la variabilidad]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Cambiar la distribución no resuelve el error; desviría el modelo de M/M/1.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[La teoría está equivocada; los resultados de simulación son más confiables]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La teoría M/M/1 es exacta; si la simulación difiere significativamente, el error está en el código.]]></text></feedback>
+  </answer>
+</question>
+
+</quiz>

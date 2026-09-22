@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- ==================== CATEGORÍA 1: MODELO OSI Y TCP/IP ==================== -->
+<question type="category">
+  <category><text>$course$/Diagnostico AR/Cat1 Modelo OSI y TCP-IP</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C1-01 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuántas capas tiene el modelo de referencia OSI?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El modelo OSI se compone de 7 capas: Física, Enlace, Red, Transporte, Sesión, Presentación y Aplicación.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[7]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[4]]></text><feedback format="html"><text><![CDATA[Ese es el número de capas del modelo TCP/IP, no OSI.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[5]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[6]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C1-02 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿En qué capa del modelo OSI opera el protocolo IP?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>IP es un protocolo de la capa de Red (capa 3), responsable del direccionamiento lógico y enrutamiento.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Red]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Transporte]]></text><feedback format="html"><text><![CDATA[Incorrecto, ahí operan TCP y UDP.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Enlace de datos]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicación]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Diag-C1-03 [Comprender]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>El modelo TCP/IP tiene 4 capas, mientras que el modelo OSI tiene 7.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Correcto: TCP/IP agrupa varias funciones del modelo OSI en menos capas.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html"><text>true</text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text>false</text><feedback format="html"><text><![CDATA[Incorrecto, la afirmación es verdadera.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C1-04 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un switch no administrable opera principalmente en la capa ___ del modelo OSI.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Los switches conmutan tramas basándose en direcciones MAC, función de la capa de Enlace de datos.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Enlace de datos]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Red]]></text><feedback format="html"><text><![CDATA[Esa es la capa de los routers.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Transporte]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Física]]></text><feedback format="html"><text><![CDATA[Incorrecto, esa es la capa de los hubs y repetidores.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C1-05 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál de los siguientes es un protocolo de la capa de Aplicación?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>HTTP es un protocolo de aplicación usado para la Web.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[HTTP]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[TCP]]></text><feedback format="html"><text><![CDATA[TCP es de la capa de Transporte.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[IP]]></text><feedback format="html"><text><![CDATA[IP es de la capa de Red.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ethernet]]></text><feedback format="html"><text><![CDATA[Ethernet es de la capa de Enlace.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C1-06 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al encapsular datos en TCP/IP desde la capa de Aplicación hacia la Física, ¿cuál es el orden correcto de las unidades de datos?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Datos → Segmento (Transporte) → Paquete (Red) → Trama (Enlace) → Bits (Física).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Datos - Segmento - Paquete - Trama - Bits]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Datos - Paquete - Segmento - Trama - Bits]]></text><feedback format="html"><text><![CDATA[Orden incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Bits - Trama - Paquete - Segmento - Datos]]></text><feedback format="html"><text><![CDATA[Ese es el orden de desencapsulamiento, no encapsulamiento.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Datos - Trama - Paquete - Segmento - Bits]]></text><feedback format="html"><text><![CDATA[Orden incorrecto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C1-07 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un usuario no puede acceder a ningún recurso de red y el LED de enlace de su tarjeta de red está apagado. ¿En qué capa OSI se ubica más probablemente la falla?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un LED apagado indica ausencia de señal física, es decir, falla en la capa Física.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Física]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicación]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Transporte]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Sesión]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C1-08 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuáles de las siguientes son capas del modelo TCP/IP? (Seleccione todas las correctas)</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>TCP/IP se compone de: Acceso a la red, Internet, Transporte y Aplicación. "Presentación" pertenece solo al modelo OSI.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>false</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="33.33333" format="html"><text><![CDATA[Acceso a la red]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="33.33333" format="html"><text><![CDATA[Internet]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="33.33333" format="html"><text><![CDATA[Transporte]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="-100" format="html"><text><![CDATA[Presentación]]></text><feedback format="html"><text><![CDATA[Incorrecto, esta capa solo existe en el modelo OSI.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C1-09 [Evaluar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al comparar el modelo OSI y el modelo TCP/IP para la resolución de problemas de red, ¿cuál afirmación es más precisa?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La mayor granularidad de capas del modelo OSI facilita aislar en qué nivel se origina una falla.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[El modelo OSI ofrece mayor granularidad de capas, facilitando el aislamiento de fallas]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El modelo TCP/IP siempre es más preciso porque tiene menos capas]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ambos modelos son idénticos en número de capas y funciones]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El modelo OSI no se utiliza en el diagnóstico de redes reales]]></text><feedback format="html"><text><![CDATA[Incorrecto, es ampliamente usado como referencia de diagnóstico.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C1-10 [Crear]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se le pide diseñar un procedimiento de diagnóstico de conectividad para una empresa. Siguiendo un enfoque por capas, ¿cuál sería el primer paso más adecuado?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El diagnóstico eficiente inicia verificando la capa Física antes de avanzar a capas superiores.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Verificar la conectividad física (cableado, enlace) antes de revisar capas superiores]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Revisar directamente la configuración de la aplicación]]></text><feedback format="html"><text><![CDATA[Incorrecto, se omiten capas inferiores.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Reiniciar todos los servidores sin diagnóstico previo]]></text><feedback format="html"><text><![CDATA[Incorrecto, no es un procedimiento sistemático.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Analizar el tráfico de la capa de aplicación primero]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+</question>
+
+<!-- ==================== CATEGORÍA 2: DIRECCIONAMIENTO IP Y SUBNETEO ==================== -->
+<question type="category">
+  <category><text>$course$/Diagnostico AR/Cat2 Direccionamiento IP y Subneteo</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C2-01 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuántos bits tiene una dirección IPv4?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Una dirección IPv4 se compone de 32 bits, organizados en 4 octetos.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[32]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[64]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[128]]></text><feedback format="html"><text><![CDATA[Ese es el número de bits de IPv6.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[16]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C2-02 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>La máscara de subred /24 corresponde a:</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>/24 equivale a 255.255.255.0.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[255.255.255.0]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[255.255.0.0]]></text><feedback format="html"><text><![CDATA[Esa es /16.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[255.0.0.0]]></text><feedback format="html"><text><![CDATA[Esa es /8.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[255.255.255.128]]></text><feedback format="html"><text><![CDATA[Esa es /25.]]></text></feedback></answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Diag-C2-03 [Comprender]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una dirección IP clase C tiene por defecto una máscara /24.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Correcto, las redes clase C utilizan por defecto la máscara 255.255.255.0.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html"><text>true</text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text>false</text><feedback format="html"><text><![CDATA[Incorrecto, la afirmación es verdadera.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C2-04 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuántos hosts utilizables existen en una red con máscara /28?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>/28 deja 4 bits de host: 2^4 - 2 = 14 hosts utilizables.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[14]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[16]]></text><feedback format="html"><text><![CDATA[Ese es el total de direcciones, no las utilizables.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[30]]></text><feedback format="html"><text><![CDATA[Ese valor corresponde a /27.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[62]]></text><feedback format="html"><text><![CDATA[Ese valor corresponde a /26.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C2-05 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Dada la IP 192.168.10.45/26, ¿cuál es la dirección de red correspondiente?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Con /26 los bloques son de 64 en 64 (0, 64, 128, 192). La IP 45 pertenece al bloque 192.168.10.0.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[192.168.10.0]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[192.168.10.32]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[192.168.10.64]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[192.168.10.1]]></text><feedback format="html"><text><![CDATA[Esa no es una dirección de red válida.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C2-06 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál de las siguientes es una dirección IP privada según el RFC 1918?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El rango 10.0.0.0/8 es privado según RFC 1918.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[10.20.30.40]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[8.8.8.8]]></text><feedback format="html"><text><![CDATA[Es una IP pública (DNS de Google).]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[172.32.1.1]]></text><feedback format="html"><text><![CDATA[El rango privado es 172.16.0.0 - 172.31.255.255, 172.32 queda fuera.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[200.1.1.1]]></text><feedback format="html"><text><![CDATA[Es una IP pública.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C2-07 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una organización requiere 5 subredes a partir de 192.168.1.0/24, cada una con al menos 20 hosts. ¿Qué máscara es la más adecuada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>/27 permite 8 subredes con 30 hosts utilizables cada una, cumpliendo ambos requisitos.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[/27]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[/26]]></text><feedback format="html"><text><![CDATA[Solo permite 4 subredes, insuficiente.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[/28]]></text><feedback format="html"><text><![CDATA[Solo permite 14 hosts, insuficiente.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[/25]]></text><feedback format="html"><text><![CDATA[Solo permite 2 subredes, insuficiente.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C2-08 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un host 172.16.5.10/20 no puede comunicarse con un host 172.16.20.15/20 dentro de la misma VLAN. ¿Cuál es la causa más probable?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Con /20, ambos hosts pertenecen a subredes IP distintas aunque compartan VLAN física.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Los hosts están en subredes IP diferentes debido a la máscara /20]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El cable de red está dañado]]></text><feedback format="html"><text><![CDATA[No hay evidencia de esto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El firewall bloquea todo el tráfico]]></text><feedback format="html"><text><![CDATA[No es la causa más probable en este escenario.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La dirección MAC es incorrecta]]></text><feedback format="html"><text><![CDATA[No es la causa más probable.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C2-09 [Evaluar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al evaluar un esquema de direccionamiento IP para una empresa en crecimiento, ¿qué estrategia es más recomendable?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>VLSM permite asignar el tamaño de subred adecuado a cada segmento, optimizando el espacio de direcciones.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Implementar VLSM para optimizar el uso de direcciones según el tamaño de cada subred]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Asignar la misma máscara /24 a todas las subredes sin importar su tamaño]]></text><feedback format="html"><text><![CDATA[Desperdicia direcciones IP.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Usar direcciones públicas para toda la red interna]]></text><feedback format="html"><text><![CDATA[Innecesario y costoso.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Evitar el uso de subneteo para simplificar la administración]]></text><feedback format="html"><text><![CDATA[Genera desperdicio de direcciones y dominios de broadcast grandes.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C2-10 [Crear]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se le solicita diseñar el direccionamiento para 3 departamentos con 50, 25 y 10 hosts respectivamente, a partir de 10.0.0.0/24. ¿Cuál es la asignación más eficiente?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Aplicando VLSM: /26 (62 hosts) para 50, /27 (30 hosts) para 25, /28 (14 hosts) para 10.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[/26 para 50 hosts, /27 para 25 hosts, /28 para 10 hosts]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[/24 para los tres departamentos]]></text><feedback format="html"><text><![CDATA[Desperdicia direcciones IP.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[/30 para todos los departamentos]]></text><feedback format="html"><text><![CDATA[Insuficiente, /30 solo permite 2 hosts.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[/25 para todos por igual]]></text><feedback format="html"><text><![CDATA[No optimiza el espacio según necesidades reales.]]></text></feedback></answer>
+</question>
+
+<!-- ==================== CATEGORÍA 3: CABLEADO ESTRUCTURADO Y NORMAS TIA/EIA-568 ==================== -->
+<question type="category">
+  <category><text>$course$/Diagnostico AR/Cat3 Cableado Estructurado</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C3-01 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué norma define los estándares de cableado estructurado en edificios comerciales?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La norma ANSI/TIA-568 regula el cableado estructurado comercial.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[ANSI/TIA-568]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[IEEE 802.3]]></text><feedback format="html"><text><![CDATA[Esa norma define Ethernet, no cableado estructurado.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[RFC 791]]></text><feedback format="html"><text><![CDATA[Ese RFC define el protocolo IP.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[ISO 9001]]></text><feedback format="html"><text><![CDATA[Es una norma de gestión de calidad, no de cableado.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C3-02 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál es la categoría mínima de cable UTP recomendada para Gigabit Ethernet?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La categoría 5e soporta velocidades de hasta 1 Gbps.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Categoría 5e]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Categoría 3]]></text><feedback format="html"><text><![CDATA[Solo soporta hasta 10 Mbps.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Categoría 1]]></text><feedback format="html"><text><![CDATA[No apta para datos de red moderna.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Categoría 2]]></text><feedback format="html"><text><![CDATA[No apta para Gigabit Ethernet.]]></text></feedback></answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Diag-C3-03 [Comprender]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Los estándares T568A y T568B definen el mismo orden de colores de los pines del conector RJ-45.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Falso: T568A y T568B intercambian el orden de los pares verde y naranja.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="0" format="html"><text>true</text><feedback format="html"><text><![CDATA[Incorrecto, difieren en el orden de los pares.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text>false</text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C3-04 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Para conectar dos computadoras directamente sin switch usando cobre, ¿qué tipo de cable se requiere tradicionalmente?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El cable cruzado (crossover) conecta directamente dos dispositivos del mismo tipo.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Cable cruzado (crossover)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cable directo (straight-through)]]></text><feedback format="html"><text><![CDATA[Se usa entre dispositivos distintos, ej. PC-Switch.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cable coaxial]]></text><feedback format="html"><text><![CDATA[No es el estándar actual para esta conexión.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Fibra óptica monomodo]]></text><feedback format="html"><text><![CDATA[No es necesario para esta distancia.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C3-05 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál es la distancia máxima recomendada para un cable UTP horizontal según la norma TIA-568?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La norma establece un máximo de 90 metros para el cableado horizontal permanente.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[90 metros]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[500 metros]]></text><feedback format="html"><text><![CDATA[Incorrecto, muy superior al límite permitido.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[10 metros]]></text><feedback format="html"><text><![CDATA[Muy por debajo del límite permitido.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[1000 metros]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C3-06 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Si un cable de par trenzado presenta la secuencia T568A en ambos extremos, se trata de un cable:</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Cuando ambos extremos usan el mismo estándar de conexión, el cable es directo (patch cable).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Directo (patch cable)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cruzado]]></text><feedback format="html"><text><![CDATA[Requeriría T568A en un extremo y T568B en el otro.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Coaxial]]></text><feedback format="html"><text><![CDATA[No aplica a este tipo de cable.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[De consola]]></text><feedback format="html"><text><![CDATA[Incorrecto, ese usa un pinout distinto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C3-07 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al certificar un enlace de cableado horizontal se detecta atenuación fuera de norma. ¿Qué se debe revisar primero?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La atenuación fuera de rango suele deberse a longitud excesiva o terminaciones defectuosas.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[La longitud del cable y la calidad de las terminaciones]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El sistema operativo del servidor]]></text><feedback format="html"><text><![CDATA[No relacionado con atenuación física.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La configuración del firewall]]></text><feedback format="html"><text><![CDATA[No relacionado con atenuación física.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La versión del navegador web]]></text><feedback format="html"><text><![CDATA[No relacionado.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C3-08 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se reporta pérdida intermitente de señal en un cable UTP cercano a motores eléctricos. ¿Cuál es la causa más probable?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Los motores eléctricos generan interferencia electromagnética (EMI) que afecta al cableado de cobre.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Interferencia electromagnética (EMI)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Configuración incorrecta de VLAN]]></text><feedback format="html"><text><![CDATA[No explica el patrón físico del problema.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Direccionamiento IP duplicado]]></text><feedback format="html"><text><![CDATA[No relacionado con el entorno físico descrito.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Error de DNS]]></text><feedback format="html"><text><![CDATA[No relacionado.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C3-09 [Evaluar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al evaluar entre fibra óptica y cable UTP para un enlace troncal entre edificios de 300 metros, ¿cuál es la mejor opción?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El UTP está limitado a 100 metros; la fibra óptica soporta distancias mayores y es inmune a EMI.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Fibra óptica, porque supera las limitaciones de distancia y es inmune a EMI]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cable UTP, porque es más barato sin importar la distancia]]></text><feedback format="html"><text><![CDATA[Excede el límite de 100 metros del UTP.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cable coaxial, porque es el estándar actual]]></text><feedback format="html"><text><![CDATA[No es el estándar actual para troncales de datos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ninguno, se debe usar solo Wi-Fi]]></text><feedback format="html"><text><![CDATA[No es adecuado para un enlace troncal fijo entre edificios.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C3-10 [Crear]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se le encarga diseñar el cableado estructurado de un edificio de 3 pisos. ¿Cuál es el enfoque más adecuado según la norma TIA-568?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La norma recomienda un diseño jerárquico con cuarto de telecomunicaciones por piso y cableado troncal vertical.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Diseñar un sistema jerárquico con cuarto de telecomunicaciones por piso y cableado troncal vertical]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Conectar todos los equipos directamente al cuarto principal sin importar la distancia]]></text><feedback format="html"><text><![CDATA[Excedería el límite de 90-100 metros de cableado horizontal.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Utilizar únicamente cables cruzados en todo el edificio]]></text><feedback format="html"><text><![CDATA[No corresponde al diseño de cableado estructurado.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Omitir el cableado vertical y usar solo Wi-Fi]]></text><feedback format="html"><text><![CDATA[No cumple con la norma de cableado estructurado.]]></text></feedback></answer>
+</question>
+
+<!-- ==================== CATEGORÍA 4: DISPOSITIVOS Y TOPOLOGÍAS DE RED ==================== -->
+<question type="category">
+  <category><text>$course$/Diagnostico AR/Cat4 Dispositivos y Topologias</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C4-01 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué dispositivo de red opera principalmente en la capa 3 del modelo OSI?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El router toma decisiones de reenvío basadas en direcciones IP (capa de Red).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Router]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Switch no administrable]]></text><feedback format="html"><text><![CDATA[Opera en la capa de Enlace.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Hub]]></text><feedback format="html"><text><![CDATA[Opera en la capa Física.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Repetidor]]></text><feedback format="html"><text><![CDATA[Opera en la capa Física.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C4-02 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué topología de red conecta todos los dispositivos a un punto central?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La topología en estrella conecta todos los nodos a un dispositivo central (switch o hub).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Estrella]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Bus]]></text><feedback format="html"><text><![CDATA[Usa un solo cable troncal compartido.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Anillo]]></text><feedback format="html"><text><![CDATA[Cada nodo se conecta a los dos adyacentes.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Malla]]></text><feedback format="html"><text><![CDATA[Los nodos se interconectan entre sí, no a un único punto central.]]></text></feedback></answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Diag-C4-03 [Comprender]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un hub envía las tramas a todos los puertos, mientras que un switch las envía únicamente al puerto de destino.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Correcto, el switch aprende direcciones MAC y conmuta de forma dirigida, a diferencia del hub.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html"><text>true</text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text>false</text><feedback format="html"><text><![CDATA[Incorrecto, la afirmación es verdadera.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C4-04 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>En una topología en estrella, si el nodo central (switch) falla, ¿qué ocurre con la red?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Al ser un punto único de falla, toda la red conectada a ese switch queda sin comunicación.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Toda la red queda sin comunicación]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Solo un nodo se ve afectado]]></text><feedback format="html"><text><![CDATA[Incorrecto, todos los nodos dependen del punto central.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No hay ningún impacto]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Solo mejora el rendimiento]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C4-05 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué dispositivo divide una red en múltiples dominios de colisión, manteniendo un mismo dominio de broadcast?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El switch crea un dominio de colisión por puerto, pero conserva un único dominio de broadcast.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Switch]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Hub]]></text><feedback format="html"><text><![CDATA[El hub mantiene un único dominio de colisión.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Repetidor]]></text><feedback format="html"><text><![CDATA[No segmenta dominios de colisión.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Amplificador de señal]]></text><feedback format="html"><text><![CDATA[No aplica a redes de datos Ethernet.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C4-06 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué dispositivo permite interconectar redes con diferentes direccionamientos IP?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El router enruta tráfico entre redes distintas basándose en direcciones IP.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Router]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Switch]]></text><feedback format="html"><text><![CDATA[Opera dentro de la misma red (capa 2).]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Hub]]></text><feedback format="html"><text><![CDATA[No realiza enrutamiento.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Access Point]]></text><feedback format="html"><text><![CDATA[Provee acceso inalámbrico, no enrutamiento entre redes.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C4-07 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una red presenta un dominio de broadcast excesivamente grande que degrada el rendimiento. ¿Qué solución es más adecuada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Segmentar mediante VLANs y enrutamiento entre ellas reduce el tamaño de los dominios de broadcast.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Segmentar la red mediante VLANs y routers]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Agregar más hubs a la red]]></text><feedback format="html"><text><![CDATA[Empeoraría el problema al aumentar colisiones.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Eliminar todos los switches]]></text><feedback format="html"><text><![CDATA[No resuelve el problema de broadcast.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aumentar la velocidad del cable sin segmentar]]></text><feedback format="html"><text><![CDATA[No resuelve la causa raíz.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C4-08 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>En una topología de malla completa con 5 dispositivos, ¿cuántos enlaces punto a punto se requieren?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Aplicando n(n-1)/2 = 5(4)/2 = 10 enlaces.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[10]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[5]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[15]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[4]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C4-09 [Evaluar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al evaluar topologías para un centro de datos que requiere alta disponibilidad y redundancia, ¿cuál es la mejor opción?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La topología en malla (parcial o completa) ofrece múltiples rutas redundantes.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Topología en malla parcial o completa]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Topología en bus]]></text><feedback format="html"><text><![CDATA[Un fallo en el troncal afecta a toda la red.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Topología en anillo simple sin redundancia]]></text><feedback format="html"><text><![CDATA[Un solo enlace roto puede afectar la comunicación.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Topología de un solo punto central sin respaldo]]></text><feedback format="html"><text><![CDATA[Representa un punto único de falla.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C4-10 [Crear]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se le solicita diseñar la topología de una sucursal pequeña con alta necesidad de disponibilidad pero presupuesto limitado. ¿Cuál es la propuesta más razonable?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Una estrella con switch de respaldo ofrece un balance adecuado entre costo y redundancia parcial.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Topología en estrella con un switch de respaldo (redundancia parcial)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Topología en malla completa sin importar el costo]]></text><feedback format="html"><text><![CDATA[No es razonable con presupuesto limitado.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Topología en bus por ser la más económica sin considerar fallas]]></text><feedback format="html"><text><![CDATA[No prioriza la disponibilidad requerida.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Sin topología definida, conexiones aleatorias]]></text><feedback format="html"><text><![CDATA[No es una propuesta técnica válida.]]></text></feedback></answer>
+</question>
+
+<!-- ==================== CATEGORÍA 5: PROTOCOLOS Y SERVICIOS BÁSICOS DE RED ==================== -->
+<question type="category">
+  <category><text>$course$/Diagnostico AR/Cat5 Protocolos y Servicios Basicos</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C5-01 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué protocolo se utiliza para la resolución de nombres de dominio a direcciones IP?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>DNS traduce nombres de dominio en direcciones IP.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[DNS]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[DHCP]]></text><feedback format="html"><text><![CDATA[Asigna direcciones IP automáticamente, no resuelve nombres.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[FTP]]></text><feedback format="html"><text><![CDATA[Es un protocolo de transferencia de archivos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[SNMP]]></text><feedback format="html"><text><![CDATA[Es un protocolo de administración de red.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C5-02 [Recordar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué protocolo asigna automáticamente direcciones IP a los dispositivos de una red?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>DHCP automatiza la asignación de direcciones IP y otros parámetros de red.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[DHCP]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[DNS]]></text><feedback format="html"><text><![CDATA[Resuelve nombres, no asigna IPs.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[HTTP]]></text><feedback format="html"><text><![CDATA[Protocolo de transferencia web.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[ARP]]></text><feedback format="html"><text><![CDATA[Traduce IP a MAC, no asigna direcciones IP.]]></text></feedback></answer>
+</question>
+
+<question type="truefalse">
+  <name><text>Diag-C5-03 [Comprender]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>El protocolo ARP traduce direcciones IP a direcciones MAC dentro de una red local.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Correcto, ARP (Address Resolution Protocol) resuelve IP a MAC en redes locales.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html"><text>true</text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text>false</text><feedback format="html"><text><![CDATA[Incorrecto, la afirmación es verdadera.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C5-04 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un técnico necesita verificar la conectividad básica entre dos hosts en una red IP. ¿Qué comando utilizaría?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El comando ping envía solicitudes ICMP echo para verificar conectividad básica.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[ping]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[ipconfig]]></text><feedback format="html"><text><![CDATA[Muestra la configuración local, no verifica conectividad remota.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[nslookup]]></text><feedback format="html"><text><![CDATA[Consulta registros DNS, no verifica conectividad IP directa.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[netstat]]></text><feedback format="html"><text><![CDATA[Muestra conexiones activas, no realiza pruebas de conectividad.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C5-05 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué protocolo de la capa de Transporte garantiza la entrega ordenada y confiable de datos?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>TCP es orientado a conexión y garantiza entrega confiable y ordenada.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[TCP]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[UDP]]></text><feedback format="html"><text><![CDATA[No orientado a conexión, no garantiza entrega.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[IP]]></text><feedback format="html"><text><![CDATA[Protocolo de capa de Red, no garantiza confiabilidad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[ICMP]]></text><feedback format="html"><text><![CDATA[Usado para mensajes de control y diagnóstico.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C5-06 [Aplicar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué comando permite visualizar la ruta que siguen los paquetes hacia un destino remoto?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>tracert (Windows) / traceroute (Linux) muestra los saltos intermedios hacia un destino.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[tracert / traceroute]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[ping]]></text><feedback format="html"><text><![CDATA[Verifica conectividad, pero no muestra la ruta completa.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[ipconfig]]></text><feedback format="html"><text><![CDATA[Muestra configuración local únicamente.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[netstat]]></text><feedback format="html"><text><![CDATA[Muestra conexiones activas, no la ruta.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C5-07 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un usuario puede hacer ping a la puerta de enlace pero no puede acceder a sitios web por nombre de dominio. ¿Cuál es la causa más probable?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Si la conectividad IP funciona pero falla el acceso por nombre, el problema suele estar en la resolución DNS.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Fallo en la resolución DNS]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cable de red desconectado]]></text><feedback format="html"><text><![CDATA[Si el ping funciona, el cable está conectado.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Dirección MAC incorrecta]]></text><feedback format="html"><text><![CDATA[No explicaría que el ping funcione.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Switch apagado]]></text><feedback format="html"><text><![CDATA[Si el ping funciona, el switch está operativo.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C5-08 [Analizar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Varios dispositivos presentan conflicto de direcciones IP en la red. ¿Qué servicio probablemente esté mal configurado?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Los conflictos de IP suelen originarse por una mala configuración del servidor DHCP (rangos superpuestos, reservas incorrectas).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[El servidor DHCP]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El servidor DNS]]></text><feedback format="html"><text><![CDATA[No asigna direcciones IP.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El servicio de impresión]]></text><feedback format="html"><text><![CDATA[No relacionado con direccionamiento IP.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El protocolo HTTP]]></text><feedback format="html"><text><![CDATA[No relacionado con direccionamiento IP.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C5-09 [Evaluar]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al evaluar la implementación de DHCP en una red empresarial, ¿qué ventaja principal ofrece frente a la configuración manual?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>DHCP centraliza y automatiza la asignación de IPs, reduciendo errores de configuración manual.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Reduce errores de configuración y facilita la administración centralizada de direcciones]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Elimina por completo la necesidad de direccionamiento IP]]></text><feedback format="html"><text><![CDATA[Incorrecto, sigue requiriendo direccionamiento IP.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Hace innecesario el uso de máscaras de subred]]></text><feedback format="html"><text><![CDATA[Incorrecto, las máscaras se siguen utilizando.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Impide el acceso a Internet]]></text><feedback format="html"><text><![CDATA[Incorrecto.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Diag-C5-10 [Crear]</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se le encarga proponer una solución para que los usuarios accedan a recursos internos usando nombres amigables en lugar de direcciones IP. ¿Qué debe implementar?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un servidor DNS interno con los registros correspondientes resuelve nombres a direcciones IP dentro de la organización.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html"><text><![CDATA[Un servidor DNS interno con los registros correspondientes]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Un servidor DHCP adicional]]></text><feedback format="html"><text><![CDATA[DHCP asigna IPs, no resuelve nombres.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Deshabilitar el protocolo TCP/IP]]></text><feedback format="html"><text><![CDATA[Eliminaría la conectividad de red.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cambiar todas las direcciones IP a estáticas sin DNS]]></text><feedback format="html"><text><![CDATA[No resuelve el requerimiento de nombres amigables.]]></text></feedback></answer>
+</question>
+
+</quiz>

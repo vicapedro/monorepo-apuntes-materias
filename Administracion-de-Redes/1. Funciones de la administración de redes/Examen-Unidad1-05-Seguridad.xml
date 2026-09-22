@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- EXAMEN UNIDAD 1 - ADMINISTRACION DE REDES (SCA-1002) -->
+<!-- Area funcional 5 de 6: Gestion de la Seguridad (Security Management) -->
+<!-- 20 reactivos alineados a la Taxonomia de Bloom, etiquetados en <tags> y en el nombre de cada reactivo -->
+<!-- Distribucion Bloom: Recordar 3, Comprender 3, Aplicar 5, Analizar 5, Evaluar 2, Crear 2 -->
+
+<question type="category">
+  <category><text>$course$/Unidad 1 - Administracion de Redes/05 Seguridad (Security Management)</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>S01 [Recordar] Triangulo CIA</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué representan las siglas <strong>CIA</strong> en el contexto de seguridad de redes?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>CIA representa Confidencialidad, Integridad y Disponibilidad, el fundamento clásico de la seguridad de la información.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Confidencialidad, Integridad y Disponibilidad]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Control, Inspección y Auditoría]]></text><feedback format="html"><text><![CDATA[Esos no son los tres pilares clásicos de la seguridad de la información.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cifrado, Identidad y Autenticación]]></text><feedback format="html"><text><![CDATA[Esos son mecanismos de seguridad, no el modelo CIA en sí.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Configuración, Inventario y Accounting]]></text><feedback format="html"><text><![CDATA[Esos corresponden a otras áreas de FCAPS, no al triángulo CIA.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S02 [Recordar] Diferencia IDS vs IPS</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál es la diferencia fundamental entre un <strong>IDS</strong> y un <strong>IPS</strong>?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El IDS detecta y alerta de forma pasiva (fuera de línea); el IPS detecta y bloquea de forma activa, en línea con el tráfico.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[El IDS detecta y alerta de forma pasiva; el IPS detecta y bloquea de forma activa en línea]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El IDS bloquea el tráfico y el IPS solo lo registra]]></text><feedback format="html"><text><![CDATA[Es al revés: el IPS es el que bloquea activamente.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Ambos son exactamente iguales, solo cambia el nombre comercial]]></text><feedback format="html"><text><![CDATA[Difieren en ubicación (inline vs fuera de banda) y capacidad de bloqueo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El IDS se usa solo en la nube y el IPS solo en hardware físico]]></text><feedback format="html"><text><![CDATA[Ambos pueden implementarse en hardware físico o en la nube; esa no es la diferencia fundamental.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S03 [Recordar] Significado de SIEM</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué significa la sigla <strong>SIEM</strong>?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>SIEM significa Security Information and Event Management: gestión de información y eventos de seguridad.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Security Information and Event Management]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[System Integration and Efficiency Monitoring]]></text><feedback format="html"><text><![CDATA[No corresponde a la sigla SIEM utilizada en seguridad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Secure Internet Encryption Module]]></text><feedback format="html"><text><![CDATA[No corresponde a la sigla SIEM utilizada en seguridad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Service Incident Escalation Management]]></text><feedback format="html"><text><![CDATA[Ese concepto se acerca más al escalado de incidentes de Fault Management, no a SIEM.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S04 [Comprender] Ventaja del NGFW</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Por qué se dice que un <strong>Next-Generation Firewall</strong> (NGFW) ofrece mayor seguridad que un firewall de packet filtering tradicional?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El NGFW combina inspección profunda de contenido (DPI), reconocimiento de aplicaciones, IPS integrado e inspección SSL/TLS, mientras que el packet filtering solo revisa IP, puerto y protocolo.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Porque es más barato de implementar que un firewall tradicional]]></text><feedback format="html"><text><![CDATA[Los NGFW suelen ser más costosos, no más baratos, que un firewall de packet filtering.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Porque combina inspección de contenido (DPI), reconocimiento de aplicaciones, IPS integrado e inspección SSL/TLS]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque no requiere ninguna configuración previa]]></text><feedback format="html"><text><![CDATA[Un NGFW requiere configuración detallada de políticas y reglas, igual o más compleja que un firewall tradicional.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque solo funciona en la capa física de la red]]></text><feedback format="html"><text><![CDATA[El NGFW opera en múltiples capas, incluyendo la capa de aplicación, no solo en la física.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S05 [Comprender] Principio de defensa en capas</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuál es el principio del modelo de <strong>Defensa en Capas</strong> (Defense in Depth)?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Si un atacante atraviesa una capa de seguridad, las demás capas continúan protegiendo el sistema, evitando depender de un único control.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Concentrar toda la seguridad en un único dispositivo perimetral]]></text><feedback format="html"><text><![CDATA[Eso es contrario al principio de defensa en capas, que evita depender de un solo control.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Si un atacante atraviesa una capa, las demás capas continúan protegiendo el sistema]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Eliminar todas las capas de seguridad excepto la física]]></text><feedback format="html"><text><![CDATA[El modelo propone múltiples capas complementarias, no eliminar la mayoría de ellas.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar controles de seguridad únicamente a nivel de aplicación]]></text><feedback format="html"><text><![CDATA[El modelo abarca desde la capa física hasta políticas y procedimientos, no solo la capa de aplicación.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S06 [Comprender] Funcion de un SIEM</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué función cumple un <strong>SIEM</strong> en la Gestión de Seguridad?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un SIEM centraliza, correlaciona y analiza logs de seguridad provenientes de múltiples fuentes, generando alertas y reportes.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Centralizar, correlacionar y analizar logs de seguridad de múltiples fuentes]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cifrar el tráfico de una VPN]]></text><feedback format="html"><text><![CDATA[Esa es una función de la tecnología VPN, no del SIEM.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Configurar VLANs de forma automática]]></text><feedback format="html"><text><![CDATA[Esa es una tarea de configuración de red, no una función del SIEM.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Medir el consumo de ancho de banda por departamento]]></text><feedback format="html"><text><![CDATA[Esa es una función de Accounting Management, no del SIEM.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S07 [Aplicar] Deteccion basada en firmas</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una empresa detecta un patrón de tráfico correspondiente a una firma conocida de un exploit específico (por ejemplo, MS17-010). ¿Qué método de detección de IDS/IPS está identificando esta amenaza?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La detección basada en firmas (signature-based) compara el tráfico contra una base de datos de patrones conocidos de ataques.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Basado en anomalías]]></text><feedback format="html"><text><![CDATA[La detección de anomalías se basa en desviaciones de un comportamiento normal, no en una firma específica conocida.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Basado en firmas (signature-based)]]></text><feedback format="html"><text><![CDATA[Correcto, se compara con un patrón específico y conocido.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Heurístico/comportamental]]></text><feedback format="html"><text><![CDATA[El método heurístico analiza comportamiento general, no una firma específica de un exploit conocido.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Basado en accounting]]></text><feedback format="html"><text><![CDATA[Ese no es un método de detección de intrusiones, sino un concepto de otra área de FCAPS.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S08 [Aplicar] Deteccion basada en anomalias</text></name>
+  <questiontext format="html"><text><![CDATA[<p>El tráfico normal de una red es de 1,000 conexiones por hora y súbitamente se eleva a 50,000 conexiones por hora, sin que exista una firma conocida asociada. ¿Qué método de detección identificaría mejor esta situación?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La detección basada en anomalías aprende el comportamiento normal de la red y alerta ante desviaciones significativas, incluso sin una firma conocida.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Basado en firmas]]></text><feedback format="html"><text><![CDATA[Sin una firma conocida, este método no identificaría el evento.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Basado en anomalías (anomaly-based)]]></text><feedback format="html"><text><![CDATA[Correcto, detecta la desviación del comportamiento normal aunque no exista una firma.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Autenticación AAA]]></text><feedback format="html"><text><![CDATA[AAA gestiona identidad y acceso, no detección de anomalías de tráfico.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[NetFlow accounting]]></text><feedback format="html"><text><![CDATA[NetFlow puede aportar los datos, pero el método de detección descrito es el análisis de anomalías.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S09 [Aplicar] WAF para SQL injection</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un equipo de seguridad necesita bloquear intentos de SQL injection dirigidos específicamente a una aplicación web pública. ¿Qué tecnología es la más adecuada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El WAF (Web Application Firewall) se especializa en inspeccionar peticiones y respuestas HTTP/HTTPS para proteger aplicaciones web contra SQL injection, XSS y CSRF.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Firewall de packet filtering básico]]></text><feedback format="html"><text><![CDATA[Este tipo de firewall no inspecciona el contenido de las peticiones HTTP.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[WAF (Web Application Firewall)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Switch de capa 2]]></text><feedback format="html"><text><![CDATA[Un switch de capa 2 no inspecciona contenido de aplicación.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Router con ACL estándar]]></text><feedback format="html"><text><![CDATA[Una ACL estándar filtra por IP origen, no inspecciona el contenido de las peticiones web.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S10 [Aplicar] Despliegue inline de IPS</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una organización requiere que el tráfico atraviese obligatoriamente un dispositivo capaz de bloquear ataques en tiempo real, aceptando cierta latencia adicional. ¿Qué tecnología deben desplegar en línea (inline)?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El IPS se despliega inline, de modo que todo el tráfico pasa a través de él y puede bloquear paquetes maliciosos en tiempo real.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[IDS conectado a un puerto SPAN]]></text><feedback format="html"><text><![CDATA[El IDS en un puerto SPAN recibe solo una copia del tráfico y no puede bloquearlo en tiempo real.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[IPS desplegado inline entre el firewall y la red interna]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Un analizador de protocolos pasivo]]></text><feedback format="html"><text><![CDATA[Un analizador pasivo solo observa el tráfico, no puede bloquearlo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Un servidor de contabilidad NetFlow]]></text><feedback format="html"><text><![CDATA[NetFlow registra flujos de tráfico, no bloquea ataques en tiempo real.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S11 [Aplicar] Seleccion de firewall segun requerimiento</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se necesita bloquear tráfico de aplicaciones P2P que utilizan el puerto 443 (HTTPS) para disfrazarse, mediante inspección profunda del contenido y reconocimiento de la aplicación real. ¿Qué tipo de firewall es el más adecuado?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El Next-Generation Firewall (NGFW) identifica la aplicación real mediante Deep Packet Inspection (DPI), independientemente del puerto utilizado.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Packet Filtering Firewall]]></text><feedback format="html"><text><![CDATA[Este tipo de firewall solo revisa IP, puerto y protocolo, sin identificar la aplicación real detrás del puerto 443.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Stateful Inspection Firewall]]></text><feedback format="html"><text><![CDATA[Este tipo agrega el estado de la conexión, pero no realiza reconocimiento de aplicaciones mediante DPI.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Next-Generation Firewall (NGFW)]]></text><feedback format="html"><text><![CDATA[Correcto, el NGFW cuenta con application awareness y DPI para este caso.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Firewall de capa 2 basado únicamente en direcciones MAC]]></text><feedback format="html"><text><![CDATA[Un filtro por MAC no tiene capacidad de inspección de aplicaciones.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S12 [Analizar] Limitacion del IDS en puerto SPAN</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Analice por qué un IDS conectado a un puerto SPAN no puede prevenir un ataque en tiempo real.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El IDS recibe solo una copia del tráfico y no está en la ruta de datos (out of band), por lo que solo puede alertar después de detectar el evento, no bloquearlo.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Porque recibe solo una copia del tráfico y no está en la ruta de datos, por lo que solo puede alertar después del evento]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque los IDS no tienen ninguna capacidad de análisis de tráfico]]></text><feedback format="html"><text><![CDATA[Los IDS sí analizan el tráfico; su limitación es la incapacidad de bloquearlo en tiempo real.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque los puertos SPAN bloquean automáticamente el tráfico malicioso]]></text><feedback format="html"><text><![CDATA[Los puertos SPAN solo replican tráfico, no bloquean nada.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque el IDS siempre está desconectado de la red, sin excepción]]></text><feedback format="html"><text><![CDATA[El IDS sí está conectado a la red, mediante el puerto SPAN, pero fuera de la ruta de datos principal.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S13 [Analizar] Riesgo de no contar con SIEM</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un ataque combina intentos de SSH fallidos, escaneo de puertos y un login exitoso desde la misma IP en un lapso de 45 minutos, detectados por dispositivos distintos. Sin un SIEM, ¿qué problema es más probable que ocurra?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Sin correlación centralizada, cada evento se analiza de forma aislada, dificultando identificar a tiempo que se trata de un ataque coordinado.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[El administrador correlacionará automáticamente los eventos sin esfuerzo adicional]]></text><feedback format="html"><text><![CDATA[Sin una herramienta de correlación, esta tarea manual es lenta y propensa a pasar desapercibida.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Cada evento se analizará de forma aislada, dificultando identificar el ataque coordinado a tiempo]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El firewall bloqueará el ataque automáticamente sin intervención humana]]></text><feedback format="html"><text><![CDATA[Un firewall estándar no correlaciona múltiples eventos de distintas fuentes por sí mismo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No existe ningún riesgo porque los eventos ocurren en dispositivos diferentes]]></text><feedback format="html"><text><![CDATA[Precisamente el riesgo surge de no poder relacionar eventos de distintos dispositivos.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S14 [Analizar] Valor de la segmentacion interna</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Por qué la segmentación de red (VLANs, ACLs internas) se considera parte de la capa de "Red Interna" en el modelo de defensa en capas, y qué aporta si el perímetro es comprometido?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La segmentación limita el movimiento lateral de un atacante que ya superó el perímetro, conteniendo el impacto del incidente.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[No aporta nada si el perímetro ya fue comprometido]]></text><feedback format="html"><text><![CDATA[La segmentación sigue siendo útil precisamente cuando el perímetro ha sido superado.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Limita el movimiento lateral de un atacante que ya superó el perímetro, conteniendo el impacto]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Solo sirve para mejorar el desempeño de la red]]></text><feedback format="html"><text><![CDATA[Aunque puede tener beneficios de desempeño, su propósito principal aquí es de contención de seguridad.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Sustituye completamente al firewall perimetral]]></text><feedback format="html"><text><![CDATA[La segmentación complementa al firewall perimetral, no lo sustituye.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S15 [Analizar] Areas de FCAPS ante exfiltracion y DDoS</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Compare un ataque de exfiltración de datos por una persona empleada con un ataque DDoS externo, en términos de las áreas de FCAPS involucradas. ¿Qué relación es correcta?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Ambos pueden detectarse combinando Seguridad (auditoría de accesos/anomalías) con Desempeño (variaciones de tráfico) y Contabilidad (patrones de consumo inusuales).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Solo involucran Seguridad, ninguna otra área de FCAPS participa]]></text><feedback format="html"><text><![CDATA[Ambos escenarios se apoyan también en datos de Desempeño y Contabilidad para su detección integral.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Ambos pueden detectarse combinando Seguridad, Desempeño (variaciones de tráfico) y Contabilidad (patrones de consumo inusuales)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Solo se relacionan con la Gestión de Configuración]]></text><feedback format="html"><text><![CDATA[La Configuración puede ayudar a aplicar controles, pero no es el área principal de detección de estos ataques.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No tienen relación con ninguna otra área de FCAPS]]></text><feedback format="html"><text><![CDATA[FCAPS está diseñado para que sus áreas se complementen en la detección y respuesta a incidentes.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S16 [Analizar] Costo-beneficio de un NGFW frente a un firewall simple</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una PyME con tráfico mayormente HTTP/HTTPS simple analiza si adoptar un NGFW o mantener un firewall stateful tradicional. ¿Qué factor de análisis es más relevante para la decisión?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Debe compararse el nivel de riesgo real (tipo de amenazas, exposición de aplicaciones críticas) contra el costo y la complejidad adicional que introduce un NGFW, evitando adoptar tecnología sobredimensionada sin justificación.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Elegir siempre el NGFW, sin importar el costo o la complejidad]]></text><feedback format="html"><text><![CDATA[Adoptar tecnología sobredimensionada sin análisis de riesgo real puede no justificar el costo y la complejidad adicional.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Comparar el nivel de riesgo real y la exposición de aplicaciones críticas contra el costo y la complejidad adicional del NGFW]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Elegir el firewall más barato sin evaluar el tipo de amenazas]]></text><feedback format="html"><text><![CDATA[Ignorar el análisis de riesgo puede dejar expuestas aplicaciones críticas ante amenazas de capa de aplicación.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El tipo de firewall no influye en el nivel de seguridad alcanzado]]></text><feedback format="html"><text><![CDATA[El tipo de firewall sí influye directamente en las capacidades de inspección y bloqueo disponibles.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S17 [Evaluar] Decision entre IDS e IPS con recursos limitados</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una organización con recursos limitados debe decidir entre desplegar un IDS o un IPS en su perímetro, sabiendo que un falso positivo podría bloquear tráfico legítimo crítico. ¿Qué recomendación es más prudente inicialmente?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Iniciar con un IDS permite calibrar reglas y reducir falsos positivos antes de migrar a un IPS, minimizando el riesgo de bloquear tráfico legítimo mientras se valida el comportamiento.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Desplegar IPS de inmediato, sin ningún periodo de ajuste]]></text><feedback format="html"><text><![CDATA[Sin un periodo de calibración, el riesgo de falsos positivos que bloqueen tráfico legítimo es alto.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Iniciar con IDS para calibrar reglas y reducir falsos positivos, migrando a IPS una vez validado el comportamiento]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No implementar ninguna solución de detección de intrusiones]]></text><feedback format="html"><text><![CDATA[No implementar ninguna solución deja a la organización sin capacidad de detección o prevención.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Desplegar IDS e IPS simultáneamente sin ninguna configuración previa]]></text><feedback format="html"><text><![CDATA[Desplegar sin configuración previa mantiene el riesgo de falsos positivos que se buscaba evitar.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S18 [Evaluar] Riesgo de depender solo del perimetro</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Evalúe por qué depender únicamente de un firewall perimetral, sin defensa en capas adicionales, representa un riesgo alto para una organización.</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Si el perímetro es vulnerado, no existen controles adicionales (segmentación, endpoint, políticas) que contengan el incidente, permitiendo que el atacante se mueva libremente dentro de la red.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Porque un firewall perimetral es infalible y no requiere respaldo adicional]]></text><feedback format="html"><text><![CDATA[Ningún control de seguridad es infalible; por eso se recomienda la defensa en capas.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Porque si el perímetro es vulnerado, no existen controles adicionales que contengan el incidente]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque los firewalls perimetrales no existen en redes modernas]]></text><feedback format="html"><text><![CDATA[Los firewalls perimetrales siguen siendo un componente común en redes modernas.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque el firewall perimetral afecta negativamente el desempeño sin aportar seguridad]]></text><feedback format="html"><text><![CDATA[El firewall perimetral sí aporta seguridad; el riesgo descrito es la falta de capas adicionales, no su existencia.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S19 [Crear] Diseno de defensa en capas para servidor web critico</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Diseñe un esquema de defensa en capas para proteger un servidor de aplicación web crítico. ¿Qué combinación de controles sería más adecuada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un esquema robusto combina firewall perimetral, WAF para la aplicación, segmentación de red, hardening del servidor y políticas de acceso con auditoría.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Solo instalar un antivirus en el servidor]]></text><feedback format="html"><text><![CDATA[Un único control es insuficiente para un servidor crítico según el modelo de defensa en capas.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Firewall perimetral, WAF para la aplicación, segmentación de red, hardening del servidor y políticas de acceso con auditoría]]></text><feedback format="html"><text><![CDATA[Correcto, cubre múltiples capas complementarias.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Únicamente definir una contraseña robusta para el servidor]]></text><feedback format="html"><text><![CDATA[Una contraseña robusta es solo un control entre muchos necesarios, no una defensa en capas completa.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[No aplicar ningún control adicional si el servidor está en la nube]]></text><feedback format="html"><text><![CDATA[Estar en la nube no elimina la necesidad de controles de seguridad en capas.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>S20 [Crear] Flujo de respuesta ante alerta correlacionada del SIEM</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Proponga un flujo de respuesta ante un incidente de seguridad detectado por el SIEM que correlaciona múltiples eventos sospechosos de una misma IP. ¿Qué secuencia es la más completa?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un flujo adecuado valida la alerta, contiene el acceso de la IP sospechosa, investiga el alcance del incidente, lo documenta y aplica medidas correctivas.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>seguridad</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Ignorar la alerta si no hay un ataque confirmado al 100%]]></text><feedback format="html"><text><![CDATA[Ignorar alertas correlacionadas sin validarlas puede permitir que un ataque avance sin control.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Validar la alerta, contener el acceso de la IP sospechosa, investigar el alcance, documentar el incidente y aplicar medidas correctivas]]></text><feedback format="html"><text><![CDATA[Correcto, es un flujo de respuesta a incidentes completo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Eliminar los logs para evitar confusión en el análisis]]></text><feedback format="html"><text><![CDATA[Eliminar los logs destruye evidencia necesaria para la investigación y el análisis forense.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Notificar únicamente al final del mes en el reporte general]]></text><feedback format="html"><text><![CDATA[Un incidente de seguridad activo requiere respuesta inmediata, no un reporte diferido.]]></text></feedback></answer>
+</question>
+
+</quiz>

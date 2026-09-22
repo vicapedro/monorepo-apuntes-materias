@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- EXAMEN UNIDAD 1 - ADMINISTRACION DE REDES (SCA-1002) -->
+<!-- Area funcional 4 de 6: Gestion del Desempeno (Performance Management) -->
+<!-- 20 reactivos alineados a la Taxonomia de Bloom, etiquetados en <tags> y en el nombre de cada reactivo -->
+<!-- Distribucion Bloom: Recordar 3, Comprender 3, Aplicar 5, Analizar 5, Evaluar 2, Crear 2 -->
+
+<question type="category">
+  <category><text>$course$/Unidad 1 - Administracion de Redes/04 Desempeno (Performance Management)</text></category>
+</question>
+
+<question type="multichoice">
+  <name><text>D01 [Recordar] Metricas fundamentales de desempeno</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuáles son las cuatro métricas fundamentales de desempeño de red revisadas en la unidad?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Las cuatro métricas críticas son Latencia, Throughput, Packet Loss y Jitter.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Latencia, Throughput, Packet Loss y Jitter]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[CPU, RAM, Disco y Red]]></text><feedback format="html"><text><![CDATA[Esas son métricas de un servidor, no las métricas críticas de desempeño de red revisadas.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Confidencialidad, Integridad, Disponibilidad y Autenticidad]]></text><feedback format="html"><text><![CDATA[Esas corresponden al ámbito de Security Management, no de Performance Management.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[SLA, SLO, SLI y OLA]]></text><feedback format="html"><text><![CDATA[Esos son conceptos de Niveles de Servicio, no las métricas técnicas de desempeño.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D02 [Recordar] Definicion de Jitter</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué mide específicamente el <strong>Jitter</strong>?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El Jitter mide la variación en el tiempo entre la llegada de paquetes consecutivos, crítico para VoIP y videoconferencia.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[La variación en el tiempo entre la llegada de paquetes]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El porcentaje de paquetes perdidos]]></text><feedback format="html"><text><![CDATA[Eso corresponde a Packet Loss, no a Jitter.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El tiempo de ida y vuelta de un paquete]]></text><feedback format="html"><text><![CDATA[Eso corresponde a la Latencia/RTT, no al Jitter.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La cantidad de datos transmitidos por segundo]]></text><feedback format="html"><text><![CDATA[Eso corresponde al Throughput, no al Jitter.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D03 [Recordar] Golden Signals de Google SRE</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Cuáles son los cuatro <strong>Golden Signals</strong> propuestos por Google SRE para monitorear un servicio?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Los Golden Signals son Latencia, Tráfico (Traffic), Errores (Errors) y Saturación (Saturation).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_recordar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Latencia, Tráfico, Errores y Saturación]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Confidencialidad, Integridad, Disponibilidad y Trazabilidad]]></text><feedback format="html"><text><![CDATA[Esos son principios de seguridad, no los Golden Signals de SRE.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Costo, Uso, Cuota y Facturación]]></text><feedback format="html"><text><![CDATA[Esos son conceptos de Accounting Management, no de los Golden Signals.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Impacto, Urgencia, Prioridad y Severidad]]></text><feedback format="html"><text><![CDATA[Esos corresponden a la matriz de clasificación de incidentes de Fault Management.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D04 [Comprender] Por que QoS no aumenta el ancho de banda</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Por qué QoS no aumenta el ancho de banda total de un enlace?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>QoS redistribuye el ancho de banda disponible priorizando cierto tráfico sobre otro; no crea capacidad adicional en el enlace.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Porque solo redistribuye el ancho de banda disponible priorizando cierto tráfico sobre otro]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque QoS solo funciona en enlaces de fibra óptica]]></text><feedback format="html"><text><![CDATA[QoS puede aplicarse en cualquier tipo de enlace, no está limitado a fibra óptica.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque QoS elimina por completo el tráfico de baja prioridad]]></text><feedback format="html"><text><![CDATA[QoS limita o retrasa el tráfico de baja prioridad, no lo elimina necesariamente por completo.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque QoS solo se aplica a tráfico UDP]]></text><feedback format="html"><text><![CDATA[QoS se aplica tanto a tráfico TCP como UDP, según la clasificación definida.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D05 [Comprender] Problema que resuelve Traffic Shaping</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué problema específico resuelve el <strong>Traffic Shaping</strong> que QoS por sí solo no resuelve?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El Traffic Shaping suaviza las ráfagas de tráfico, evitando el desbordamiento de buffers (bufferbloat), algo que la sola priorización de QoS no controla.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[La priorización de tráfico crítico sobre el resto]]></text><feedback format="html"><text><![CDATA[Esa es la función de QoS, no la que aporta específicamente el Traffic Shaping.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[El suavizado de ráfagas de tráfico para evitar el desbordamiento de buffers (bufferbloat)]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La autenticación de usuarios en la red]]></text><feedback format="html"><text><![CDATA[La autenticación corresponde a Security Management, no a Traffic Shaping.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El balanceo de carga entre enlaces redundantes]]></text><feedback format="html"><text><![CDATA[Ese es el propósito del Load Balancing/ECMP, no del Traffic Shaping.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D06 [Comprender] Concepto de Baselining</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Qué es el <strong>baselining</strong> en el contexto de la Gestión del Desempeño?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El baselining consiste en establecer una línea base del comportamiento normal de la red, que sirve como referencia para comparar mediciones posteriores.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_comprender</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[El proceso de facturar el consumo de red a los departamentos]]></text><feedback format="html"><text><![CDATA[Eso corresponde a Chargeback, un concepto de Accounting Management.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Establecer una línea base del comportamiento normal de la red para comparar mediciones futuras]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Configurar la seguridad perimetral de la red]]></text><feedback format="html"><text><![CDATA[Eso corresponde a Security Management, no al baselining de desempeño.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Registrar el inventario de dispositivos de red]]></text><feedback format="html"><text><![CDATA[Eso corresponde a la CMDB de Configuration Management.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D07 [Aplicar] Calculo de throughput maximo con ventana TCP</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un enlace tiene una ventana TCP de 64 KB y un RTT de 100 ms. ¿Cuál es el throughput máximo teórico aproximado?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Throughput máximo = Window Size / RTT = 64 KB / 0.1 s = 640 KB/s ≈ 5.12 Mbps.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[5.12 Mbps]]></text><feedback format="html"><text><![CDATA[Correcto: 64 KB / 0.1 s = 640 KB/s = 5.12 Mbps.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[100 Mbps]]></text><feedback format="html"><text><![CDATA[Ese valor no se obtiene de la fórmula Window Size / RTT con estos datos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[640 Mbps]]></text><feedback format="html"><text><![CDATA[Ese resultado confunde KB con Kb o aplica mal la conversión de unidades.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[1 Gbps]]></text><feedback format="html"><text><![CDATA[Ese valor no corresponde al cálculo con una ventana de 64 KB y RTT de 100 ms.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D08 [Aplicar] Comportamiento de ECMP</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se configuran dos enlaces WAN de igual costo OSPF con <code>maximum-paths 4</code>. ¿Qué comportamiento de balanceo de carga se espera?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Con ECMP, el tráfico se distribuye entre ambos enlaces por flujo, según un hash de 5-tuplas (IP origen/destino, puertos y protocolo).</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Todo el tráfico usará un solo enlace de forma exclusiva]]></text><feedback format="html"><text><![CDATA[Con rutas de igual costo y maximum-paths mayor a 1, OSPF habilita el uso de ambos enlaces.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[El tráfico se distribuirá entre ambos enlaces por flujo, según hash de 5-tuplas]]></text><feedback format="html"><text><![CDATA[Correcto, así opera el balanceo ECMP.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Los enlaces se desactivarán automáticamente por conflicto de costo]]></text><feedback format="html"><text><![CDATA[Un mismo costo no genera conflicto; es precisamente la condición necesaria para ECMP.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[OSPF ignorará ambos enlaces y usará una ruta estática]]></text><feedback format="html"><text><![CDATA[No hay ninguna razón para que OSPF ignore rutas de igual costo válidas.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D09 [Aplicar] Priorizacion de videoconferencia</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Una aplicación de videoconferencia presenta cortes durante horas de saturación del enlace WAN, mientras que las transferencias de archivos no son críticas. ¿Qué técnica de optimización aplicaría primero?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>QoS permite priorizar el tráfico de videoconferencia sobre las transferencias de archivos, garantizando ancho de banda al tráfico crítico.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Traffic Shaping en el equipo receptor]]></text><feedback format="html"><text><![CDATA[El Shaping suaviza ráfagas, pero no prioriza específicamente un tipo de tráfico sobre otro.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[QoS, priorizando el tráfico de videoconferencia sobre las transferencias de archivos]]></text><feedback format="html"><text><![CDATA[Correcto, es la técnica diseñada específicamente para este escenario.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aumentar el MTU de la interfaz]]></text><feedback format="html"><text><![CDATA[El MTU afecta la eficiencia de transmisión, no la priorización entre aplicaciones.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cambiar el protocolo de enrutamiento a RIP]]></text><feedback format="html"><text><![CDATA[Cambiar de protocolo de enrutamiento no resuelve un problema de priorización de tráfico.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D10 [Aplicar] Shaping para evitar bufferbloat</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un enlace de acceso a Internet permite ráfagas por encima de la tasa contratada, generando bufferbloat en el proveedor. ¿Qué técnica debe aplicarse en el equipo propio (CPE) para mitigar esto?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Aplicar Traffic Shaping con una tasa promedio (shape average) igual a la tasa contratada evita que las ráfagas generen bufferbloat en el ISP.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Traffic Shaping con una tasa promedio (shape average) igual a la tasa contratada]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aumentar el MTU a 9000 bytes]]></text><feedback format="html"><text><![CDATA[El MTU no controla las ráfagas por encima de la tasa contratada.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Configurar un área OSPF stub]]></text><feedback format="html"><text><![CDATA[Las áreas stub reducen LSAs de enrutamiento, no controlan ráfagas de tráfico de usuario.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar NAT dinámico]]></text><feedback format="html"><text><![CDATA[NAT traduce direcciones, no controla la tasa de tráfico saliente.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D11 [Aplicar] Golden Signal ante alta saturacion de CPU</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un servicio muestra un uso de CPU cercano al 95% mientras el volumen de peticiones (tráfico) se mantiene estable y sin errores. Según los Golden Signals, ¿qué señal está indicando el problema principal?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>La Saturación mide qué tan "lleno" está un recurso (CPU, memoria, colas); un uso de CPU al 95% es un indicador directo de saturación del recurso.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_aplicar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Latencia]]></text><feedback format="html"><text><![CDATA[La latencia mide el tiempo de respuesta, no el nivel de uso de un recurso.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Tráfico]]></text><feedback format="html"><text><![CDATA[El tráfico mide la demanda del servicio, y en este caso se mantiene estable.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Errores]]></text><feedback format="html"><text><![CDATA[No se reportan errores en el escenario descrito.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Saturación]]></text><feedback format="html"><text><![CDATA[Correcto, el 95% de uso de CPU refleja saturación del recurso.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D12 [Analizar] Importancia de medir RTT antes de tuning</text></name>
+  <questiontext format="html"><text><![CDATA[<p>¿Por qué es importante medir el RTT real (con <code>ping</code>/<code>mtr</code>) antes de aplicar TCP tuning en un servidor?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un tamaño de ventana mal calculado, sin considerar el RTT real del enlace, puede desperdiciar memoria o seguir limitando el throughput efectivo.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="100" format="html"><text><![CDATA[Porque un tamaño de ventana mal calculado, sin considerar el RTT real, puede desperdiciar memoria o seguir limitando el throughput]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque el RTT no tiene relación con el tamaño de ventana TCP]]></text><feedback format="html"><text><![CDATA[El RTT es precisamente una variable clave en la fórmula de throughput máximo (Window/RTT).]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque TCP tuning solo aplica a redes inalámbricas]]></text><feedback format="html"><text><![CDATA[El TCP tuning aplica a cualquier tipo de enlace, especialmente los de alta latencia como WAN.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Porque el RTT determina el número de VLANs necesarias]]></text><feedback format="html"><text><![CDATA[El RTT no tiene relación con el diseño de VLANs.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D13 [Analizar] Sumarizacion OSPF y convergencia</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al aplicar sumarización de rutas y áreas stub en OSPF, se observa una reducción de 1,250 a 380 rutas en la tabla de enrutamiento. ¿Qué relación existe entre esta reducción y el desempeño de la red?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Una tabla de enrutamiento más pequeña reduce el procesamiento de LSA y el tamaño de las actualizaciones, lo que puede mejorar el tiempo de convergencia.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[No existe relación con el desempeño de la red]]></text><feedback format="html"><text><![CDATA[Sí existe una relación directa con el tiempo de convergencia y el procesamiento de LSA.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Una tabla de enrutamiento más pequeña reduce el procesamiento de LSA y puede mejorar el tiempo de convergencia]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La reducción de rutas siempre degrada el desempeño de la red]]></text><feedback format="html"><text><![CDATA[Al contrario, la sumarización suele mejorar el desempeño al reducir la carga de procesamiento.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La sumarización elimina la necesidad de monitoreo de desempeño]]></text><feedback format="html"><text><![CDATA[La sumarización no elimina la necesidad de monitoreo continuo del desempeño.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D14 [Analizar] Baja perdida con bajo throughput</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Un enlace muestra baja pérdida de paquetes pero throughput muy por debajo de la tasa contratada. ¿Qué causa es más probable según los conceptos de tuning de TCP?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Una ventana TCP inadecuada para el RTT del enlace es una causa típica de throughput bajo aun con pérdida mínima de paquetes.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Un ataque DDoS activo]]></text><feedback format="html"><text><![CDATA[Un DDoS típicamente se asocia con saturación y pérdida elevada, no con baja pérdida y bajo throughput.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Una ventana TCP inadecuada para el RTT del enlace, limitando el throughput efectivo]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Un problema de autenticación AAA]]></text><feedback format="html"><text><![CDATA[Un problema de autenticación impediría la conexión, no limitaría gradualmente el throughput.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Una mala configuración de VLANs]]></text><feedback format="html"><text><![CDATA[Un error de VLAN normalmente impide la conectividad, no limita específicamente el throughput con baja pérdida.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D15 [Analizar] Necesidad de una linea base para comparar</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Sin una línea base (baseline) establecida previamente, ¿qué dificultad surge al evaluar si una técnica de optimización realmente mejoró el desempeño de la red?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Sin datos previos de referencia, no es posible comparar objetivamente el "antes" y "después", dificultando demostrar si la optimización tuvo un efecto real.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_analizar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Ninguna, la percepción del usuario siempre es suficiente evidencia]]></text><feedback format="html"><text><![CDATA[La percepción subjetiva no constituye evidencia objetiva de mejora.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[No es posible comparar objetivamente el estado anterior y posterior, dificultando demostrar si hubo una mejora real]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[La optimización se vuelve automáticamente inválida sin una línea base]]></text><feedback format="html"><text><![CDATA[La optimización puede funcionar igual, pero no podrá demostrarse ni cuantificarse su efecto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[El enlace se satura de inmediato sin una línea base]]></text><feedback format="html"><text><![CDATA[La saturación del enlace no depende de si existe o no una línea base documentada.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D16 [Evaluar] Acciones previas a solicitar upgrade</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Antes de solicitar un upgrade de capacidad para un enlace WAN saturado, ¿qué acciones de optimización deberían evaluarse primero y por qué?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Se debe verificar la utilización real, identificar los principales consumidores, aplicar QoS/Shaping y revisar TCP/MTU, ya que su costo de implementación es mucho menor que el de un upgrade de capacidad.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Ninguna, se debe solicitar el upgrade de inmediato]]></text><feedback format="html"><text><![CDATA[Solicitar el upgrade sin analizar alternativas de optimización puede generar un gasto innecesario.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Verificar utilización real, identificar top consumidores, aplicar QoS/Shaping y revisar TCP/MTU, ya que su costo es mucho menor que un upgrade]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Solo cambiar el protocolo de enrutamiento utilizado]]></text><feedback format="html"><text><![CDATA[Cambiar de protocolo de enrutamiento no aborda directamente un problema de saturación de ancho de banda.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar cifrado a todo el tráfico del enlace]]></text><feedback format="html"><text><![CDATA[El cifrado no resuelve un problema de capacidad o saturación del enlace.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D17 [Evaluar] ECMP vs PBR</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Al comparar ECMP y PBR (Policy-Based Routing) para balanceo de carga, ¿en qué escenario sería más adecuado usar PBR en lugar de ECMP?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>PBR es más adecuado cuando se necesita dirigir tráfico crítico específico por un enlace con mejores características, en lugar de dejar la decisión únicamente al costo de enrutamiento.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_evaluar</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Cuando los dos enlaces tienen el mismo costo y no hay requisitos de tráfico diferenciado]]></text><feedback format="html"><text><![CDATA[En ese escenario, ECMP es suficiente y más simple de mantener.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Cuando se necesita dirigir tráfico crítico específico por un enlace con mejores características, distinto del que usaría el costo por defecto]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Cuando no existen enlaces redundantes disponibles]]></text><feedback format="html"><text><![CDATA[Sin enlaces redundantes no hay nada que balancear, ni con ECMP ni con PBR.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[PBR y ECMP son equivalentes en todos los escenarios]]></text><feedback format="html"><text><![CDATA[No son equivalentes; difieren en el criterio usado para decidir la ruta de salida.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D18 [Crear] Diseno de politica QoS con tres clases</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Diseñe una política de QoS con al menos tres clases de tráfico para un enlace WAN compartido por VoIP, aplicaciones de negocio y navegación general. ¿Qué diseño es más adecuado?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Un diseño adecuado define una clase crítica con prioridad garantizada para VoIP, una clase de ancho de banda garantizado para aplicaciones de negocio, y una clase best-effort para navegación general.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Una sola clase para todo el tráfico sin distinción]]></text><feedback format="html"><text><![CDATA[Sin distinción de clases no hay priorización real de QoS.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Clase crítica con prioridad garantizada para VoIP, clase de ancho de banda garantizado para aplicaciones de negocio, y clase best-effort para navegación general]]></text><feedback format="html"><text><![CDATA[Correcto, cubre los tres niveles de criticidad descritos.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Bloquear todo el tráfico excepto VoIP]]></text><feedback format="html"><text><![CDATA[Bloquear por completo otros servicios no es priorización, sino una restricción excesiva.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar la misma prioridad a todas las aplicaciones]]></text><feedback format="html"><text><![CDATA[Aplicar la misma prioridad anula el propósito de clasificar el tráfico con QoS.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D19 [Crear] Procedimiento de validacion de una optimizacion</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Proponga un procedimiento de validación para comprobar que una optimización de desempeño (QoS, Shaping o ECMP) realmente mejoró la red. ¿Qué secuencia es la más adecuada?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>El procedimiento correcto establece una línea base antes del cambio, aplica la técnica, mide las mismas métricas después y compara los resultados documentados.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar el cambio y asumir que mejoró sin medir nada]]></text><feedback format="html"><text><![CDATA[Sin medición, no hay forma objetiva de confirmar la mejora.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Establecer una línea base antes del cambio, aplicar la técnica, medir las mismas métricas después y comparar resultados documentados]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Preguntar a los usuarios si notan alguna diferencia, sin medir nada]]></text><feedback format="html"><text><![CDATA[La percepción de los usuarios es útil como complemento, pero no sustituye la medición objetiva.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar varias técnicas simultáneamente sin poder aislar el efecto de cada una]]></text><feedback format="html"><text><![CDATA[Aplicar varios cambios a la vez impide determinar cuál de ellos produjo la mejora observada.]]></text></feedback></answer>
+</question>
+
+<question type="multichoice">
+  <name><text>D20 [Crear] Combinacion de QoS y Shaping en un mismo enlace</text></name>
+  <questiontext format="html"><text><![CDATA[<p>Se requiere diseñar una configuración que combine QoS y Traffic Shaping en el mismo enlace WAN, de forma que el tráfico se limite a la tasa contratada y, dentro de ese límite, se priorice el tráfico crítico. ¿Qué diseño es el más adecuado?</p>]]></text></questiontext>
+  <generalfeedback format="html"><text><![CDATA[<p>Se debe aplicar una política de shaping sobre la interfaz que invoque, como política anidada (child policy), la clasificación y priorización de QoS, de modo que primero se limite la tasa total y luego se priorice dentro de ese límite.</p>]]></text></generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden><single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <tags><tag><text>bloom_crear</text></tag><tag><text>desempeno</text></tag></tags>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar QoS y Shaping en interfaces distintas, sin relación entre ambas políticas]]></text><feedback format="html"><text><![CDATA[Aplicarlas de forma aislada no garantiza que la priorización opere dentro del límite moldeado.]]></text></feedback></answer>
+  <answer fraction="100" format="html"><text><![CDATA[Aplicar una política de shaping en la interfaz que invoque, de forma anidada, la política de QoS para priorizar dentro de la tasa moldeada]]></text><feedback format="html"><text><![CDATA[Correcto, es el diseño que integra ambas técnicas de forma coherente.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar solo QoS y asumir que también limitará la tasa de salida]]></text><feedback format="html"><text><![CDATA[QoS por sí solo no limita la tasa total de salida del enlace; esa es la función del shaping.]]></text></feedback></answer>
+  <answer fraction="0" format="html"><text><![CDATA[Aplicar solo Shaping y asumir que también priorizará el tráfico crítico]]></text><feedback format="html"><text><![CDATA[El Shaping por sí solo no distingue clases de tráfico; para priorizar se requiere QoS.]]></text></feedback></answer>
+</question>
+
+</quiz>

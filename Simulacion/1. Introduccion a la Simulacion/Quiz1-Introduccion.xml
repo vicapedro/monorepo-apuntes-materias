@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <!-- Quiz 1: Introducción a la Simulación — Unidad 1 -->
+  <!-- Asignatura: Simulación (SCD-1022) | Moodle XML -->
+
+  <question type="multichoice">
+    <name><text>Q1-U1-01 Definición de simulación</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Cuál de las siguientes definiciones describe mejor a la <strong>simulación</strong> en el contexto de la ingeniería?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La simulación es la imitación de la operación de un proceso o sistema del mundo real a lo largo del tiempo (Law, 2015). No produce soluciones óptimas; es una herramienta de análisis y experimentación.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[La imitación de la operación de un proceso o sistema del mundo real a lo largo del tiempo mediante un modelo computacional]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Esta es la definición de Law (2015), el autor de referencia del curso.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Un método matemático que garantiza encontrar la solución óptima a un problema de optimización]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La simulación no garantiza soluciones óptimas; esa es la función de la Investigación de Operaciones con métodos como programación lineal.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[La predicción exacta del comportamiento futuro de un sistema basada en datos históricos]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La simulación trabaja con modelos estocásticos; sus resultados son estimaciones estadísticas, no predicciones exactas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Un lenguaje de programación especializado para modelar sistemas industriales]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La simulación es una metodología, no un lenguaje de programación. Existen lenguajes y herramientas de simulación (Arena, SimPy, AnyLogic), pero no son la simulación en sí.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q1-U1-02 Verificación vs Validación</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un equipo construyó un simulador de un banco. Al ejecutarlo, observaron que la lógica de asignación de cajeros funciona exactamente como la especificaron en su modelo conceptual. ¿Qué proceso acaban de realizar?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Verificación</strong>: ¿El programa fue construido correctamente? (¿el código implementa correctamente el modelo conceptual?)<br><strong>Validación</strong>: ¿Se construyó el programa correcto? (¿el modelo representa adecuadamente el sistema real?)</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Verificación, porque comprobaron que el programa implementa correctamente el modelo conceptual]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. La verificación responde a la pregunta: ¿el modelo fue construido correctamente?]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Validación, porque compararon el comportamiento del simulador con el sistema real]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La validación compara el modelo con el sistema real, no el código con el modelo conceptual.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Calibración, porque ajustaron los parámetros del modelo para que coincidan con datos observados]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La calibración implica ajustar parámetros. Lo descrito es verificación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Experimentación, porque ejecutaron el simulador y observaron su comportamiento]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La experimentación implica variar parámetros para analizar escenarios. Lo descrito corresponde a verificación.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q1-U1-03 Tipos de modelos</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un sistema bancario donde los clientes llegan, esperan en fila y son atendidos por cajeros se modela mejor como un sistema de:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Los sistemas donde el estado cambia solo en instantes discretos (llegada de cliente, fin de servicio) son <strong>sistemas de eventos discretos</strong>. Los sistemas continuos modelan variables que cambian continuamente (temperatura, presión, nivel de fluido).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Eventos discretos, porque el estado del sistema cambia solo cuando ocurren eventos específicos (llegada o salida de clientes)]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Entre eventos, el número de clientes en el banco no cambia; solo cambia en el instante de una llegada o una salida.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Continuo, porque el tiempo avanza continuamente mientras los clientes esperan en fila]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Aunque el tiempo es continuo, el estado del sistema (número de clientes) solo cambia en eventos discretos. Un sistema continuo modelaría variables como temperatura o presión.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Estático, porque el número promedio de clientes no cambia a lo largo del día]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El sistema es dinámico; el número de clientes cambia con el tiempo. Un modelo estático no incluye tiempo explícito (ej. Monte Carlo para estimación de π).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Determinístico, porque el banco tiene horarios y reglas de operación fijas]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El sistema es estocástico porque los tiempos de llegada y de servicio son aleatorios. Las reglas de operación no eliminan la aleatoriedad.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q1-U1-04 Cuándo NO simular</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿En cuál de las siguientes situaciones sería <strong>menos apropiado</strong> usar simulación?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Cuando existe una solución analítica exacta y sus supuestos son válidos (como el modelo M/M/1 para colas con llegadas Poisson y servicios Exponenciales con un servidor), la simulación agrega complejidad innecesaria. Se debe simular cuando no hay solución analítica viable.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Un sistema de cola con un servidor, llegadas Poisson y servicios Exponenciales, para el cual existe fórmula analítica M/M/1]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Si el modelo M/M/1 es válido, la solución analítica es más rápida y exacta. La simulación es innecesaria en este caso.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Un aeropuerto con múltiples terminales, vuelos con retrasos variables y políticas de asignación de puertas complejas]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto (como respuesta incorrecta). Este sistema es demasiado complejo para solución analítica; la simulación es la herramienta apropiada.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Una cadena de suministro con demanda estocástica, múltiples proveedores y tiempos de entrega variables]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto (como respuesta incorrecta). La complejidad y estocasticidad de este sistema hacen de la simulación la herramienta indicada.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Un sistema de producción que aún no existe y cuyos diseños alternativos se quieren evaluar antes de construirlo]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto (como respuesta incorrecta). Evaluar diseños antes de construirlos es una de las aplicaciones más valiosas de la simulación.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="truefalse">
+    <name><text>Q1-U1-05 Ley de Little</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>La Ley de Little establece que el número promedio de entidades en un sistema (<em>L</em>) es igual a la tasa de llegada (<em>λ</em>) multiplicada por el tiempo promedio que una entidad pasa en el sistema (<em>W</em>): <em>L = λW</em>. Esta relación es válida para cualquier sistema estable, independientemente de las distribuciones de llegada y servicio.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Verdadero. La Ley de Little (<em>L = λW</em>) es una de las relaciones más poderosas en la teoría de colas porque aplica a cualquier sistema estable, sin importar las distribuciones de llegada, de servicio, ni el número de servidores.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+      <text>true</text>
+      <feedback format="html"><text><![CDATA[Correcto. La Ley de Little es universal para sistemas estables y es fundamental para interpretar los resultados de una simulación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>false</text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La Ley de Little sí aplica a cualquier sistema estable, independientemente de las distribuciones. Es una de sus propiedades más importantes.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q1-U1-06 Componente del simulador</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En un simulador de eventos discretos, ¿cuál es la función de la <strong>lista de eventos</strong> (event list)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La lista de eventos (o lista de eventos futuros) es una estructura de datos ordenada por tiempo que contiene todos los eventos que ocurrirán en el futuro. El mecanismo de avance del tiempo extrae siempre el evento con el menor tiempo (el próximo a ocurrir) para procesarlo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Mantener ordenados por tiempo todos los eventos futuros programados, para que el mecanismo de avance del tiempo sepa cuál procesar a continuación]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. La lista de eventos es la estructura central que permite al simulador avanzar de evento en evento en orden cronológico.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Registrar todos los eventos que ya ocurrieron para generar el reporte final de estadísticas]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El registro histórico de eventos es para propósitos de depuración o análisis. La lista de eventos contiene eventos FUTUROS, no pasados.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Controlar el tiempo real de ejecución del programa para evitar que la simulación sea demasiado lenta]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La lista de eventos controla el tiempo de SIMULACIÓN, no el tiempo real de ejecución del programa.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Almacenar las entidades que están esperando en cola para ser atendidas por un recurso]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Las entidades en espera se almacenan en colas (estructuras separadas). La lista de eventos contiene eventos futuros programados.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q1-U1-07 Ventaja de la simulación</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Una empresa de manufactura quiere evaluar si debe agregar una máquina adicional a su línea de producción. ¿Cuál es la ventaja más relevante de usar simulación para tomar esta decisión?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La simulación permite experimentar con el diseño del sistema antes de invertir en él, evaluando múltiples alternativas sin costo real y sin interrumpir las operaciones actuales.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Permite evaluar el impacto de agregar la máquina sin invertir en ella realmente, comparando el desempeño del sistema actual vs. el sistema modificado]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Esta es una de las ventajas más valiosas de la simulación: experimentar con alternativas de diseño antes de implementarlas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Garantiza que agregar la máquina maximizará la producción al menor costo posible]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La simulación no garantiza optimalidad. Para eso se requieren métodos de optimización. La simulación muestra el comportamiento esperado, no el óptimo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Elimina la incertidumbre sobre el comportamiento futuro del sistema]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La simulación trabaja con incertidumbre (modelos estocásticos); no la elimina, sino que permite cuantificarla y analizarla.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Produce resultados exactos sobre el tiempo promedio que tardará en recuperarse la inversión]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Los resultados de simulación son estimaciones estadísticas con intervalos de confianza, no valores exactos.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="truefalse">
+    <name><text>Q1-U1-08 Reloj de simulación</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En una simulación de eventos discretos, el reloj de simulación avanza continuamente segundo a segundo, igual que un reloj en tiempo real.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Falso. En la simulación de eventos discretos, el reloj avanza de un evento al siguiente (mecanismo de avance por próximo evento). Entre eventos no hay cambio de estado, por lo que "saltar" al tiempo del próximo evento es equivalente a avanzar continuamente, pero mucho más eficiente computacionalmente.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="0" format="html">
+      <text>true</text>
+      <feedback format="html"><text><![CDATA[Incorrecto. En DES, el reloj salta de un evento al siguiente. Avanzar segundo a segundo es el mecanismo de incremento fijo, que es menos eficiente.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>false</text>
+      <feedback format="html"><text><![CDATA[Correcto. El mecanismo de avance por próximo evento es el estándar en DES: el reloj salta al tiempo del siguiente evento en la lista, ignorando el tiempo entre eventos donde nada cambia.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q1-U1-09 Etapas de la metodología</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En la metodología de simulación, ¿cuál es el orden correcto de las primeras cuatro etapas?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El orden correcto según Law (2015) es: (1) Formulación del problema, (2) Definición del sistema, (3) Construcción del modelo conceptual, (4) Recopilación de datos. No se puede construir un modelo válido sin definir bien el sistema, y no se puede implementar el código sin el modelo conceptual.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Formulación del problema → Definición del sistema → Modelo conceptual → Recopilación de datos]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Primero se define el problema y el sistema, luego se construye el modelo conceptual, y al mismo tiempo se recopilan los datos necesarios.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Implementación del modelo → Verificación → Validación → Experimentación]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Estas son etapas posteriores del proceso. Antes de implementar debe existir un modelo conceptual y datos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Recopilación de datos → Formulación del problema → Modelo conceptual → Verificación]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La formulación del problema debe ser el primer paso; sin definir el problema no se sabe qué datos recopilar.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Validación → Verificación → Implementación → Experimentación]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. No se puede validar antes de implementar y verificar.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q1-U1-10 Medida de desempeño</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En un sistema de atención al cliente, se observa que en promedio hay 4 clientes en el sistema y la tasa de llegada es de 2 clientes por minuto. Aplicando la Ley de Little, ¿cuánto tiempo promedio pasa un cliente en el sistema?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Ley de Little: <em>L = λW</em>, por lo tanto <em>W = L/λ = 4/2 = 2 minutos</em>. Esta relación es fundamental para interpretar los resultados de cualquier simulación de sistemas de colas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[2 minutos (W = L/λ = 4/2)]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Aplicando W = L/λ = 4 clientes / (2 clientes/min) = 2 minutos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[8 minutos (W = L × λ = 4 × 2)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La fórmula correcta es L = λW, por lo que W = L/λ, no L × λ.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[0.5 minutos (W = λ/L = 2/4)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La fórmula es W = L/λ = 4/2 = 2, no λ/L.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[No se puede determinar sin conocer el tiempo de servicio]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La Ley de Little permite calcular W directamente a partir de L y λ, sin necesidad del tiempo de servicio.]]></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

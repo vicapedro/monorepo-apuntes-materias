@@ -33,7 +33,8 @@ user-invocable: true
    - Instrucciones.
    - Notas.
 4. Incluir evidencia esperada y criterios de evaluacion.
-5. Agregar instrumento sugerido (rubrica o lista de cotejo) segun evidencia.
+5. En las instrucciones agregar preguntas de reflexión o verificación.
+6. Agregar instrumento sugerido (rubrica o lista de cotejo) segun evidencia.
 
 ## Salida esperada
 - Archivo `Practica-XX-Tema.md` o `Practica-Tema.md` en la unidad correspondiente.

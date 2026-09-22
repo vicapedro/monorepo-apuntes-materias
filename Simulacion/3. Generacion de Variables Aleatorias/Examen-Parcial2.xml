@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- Examen Parcial 2: Unidades 1-3 | Simulación SCD-1022 -->
+<!-- Bloom: 30% Recordar/Comprender | 50% Aplicar/Analizar | 20% Evaluar -->
+
+<!-- ===== SECCIÓN A: Recordar / Comprender (5 preguntas, 30%) ===== -->
+
+<question type="multichoice">
+  <name><text>EP2-01: Propiedades de la FDA</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de las siguientes es una propiedad necesaria de la función de distribución acumulada F(x) de cualquier variable aleatoria?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>F(x) debe ser no decreciente (monotónica), con F(−∞)=0 y F(+∞)=1. Además, es continua por la derecha para variables discretas.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Es monótonamente no decreciente, con límites F(−∞)=0 y F(+∞)=1]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Estas son las condiciones necesarias y suficientes para que F sea una FDA válida.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Es siempre diferenciable en todos los puntos]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Las distribuciones discretas tienen FDA en escalera, no diferenciable en los puntos de masa.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Su imagen (rango de valores) está en [−1, 1]]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. F(x) ∈ [0, 1] siempre (es una probabilidad acumulada).]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Es simétrica respecto a su media]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La simetría es una propiedad de distribuciones específicas (como la Normal), no de todas.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP2-02: Distribución apropiada — llegadas</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En un proceso de Poisson con tasa λ, el tiempo entre llegadas consecutivas sigue:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La conexión Poisson-Exponencial es fundamental en simulación: si el número de llegadas por unidad de tiempo sigue Poisson(λ), el tiempo entre llegadas sigue Exponencial con media 1/λ.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Exponencial con media 1/λ]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. La propiedad de falta de memoria de la Exponencial es equivalente al proceso de Poisson.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Poisson con parámetro λ]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Poisson modela el conteo de eventos, no el tiempo entre ellos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Uniforme entre 0 y 1/λ]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Los tiempos entre llegadas Poisson no son Uniformes.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Normal con media λ y desviación estándar √λ]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Eso aproxima la distribución Poisson para λ grande, no el tiempo entre llegadas.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP2-03: Método de Box-Muller</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El método de Box-Muller genera variables aleatorias con distribución Normal a partir de dos uniformes U₁ y U₂. ¿Qué tipo de método es?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Box-Muller es un método de convolución: combina dos variables U(0,1) mediante una transformación exacta para obtener dos variables N(0,1) independientes. No usa transformada inversa (que no tiene forma cerrada para la Normal).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Método de convolución (transformación exacta de dos uniformes)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Box-Muller transforma (U₁,U₂) → (Z₁,Z₂) usando ln y funciones trigonométricas.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Método de transformada inversa de la FDA Normal]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La FDA Normal no tiene inversa en forma cerrada; de ahí la necesidad de métodos alternativos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Método de aceptación-rechazo]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El método polar (Marsaglia) sí usa aceptación-rechazo, pero Box-Muller es una transformación directa sin rechazo.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Método de composición de mezclas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Composición combina distribuciones con pesos; Box-Muller no hace eso.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="truefalse">
+  <name><text>EP2-04: Distribución Geométrica — sin memoria</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>La distribución Geométrica es la única distribución discreta con la propiedad de falta de memoria, análoga a la Exponencial en el caso continuo.</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Verdadero. La propiedad de falta de memoria: P(X > m+n | X > m) = P(X > n). En el caso discreto, solo la Geométrica la satisface; en continuo, solo la Exponencial.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+  <answer fraction="100" format="html">
+    <text>true</text>
+    <feedback format="html"><text><![CDATA[Correcto. La falta de memoria es la característica definitoria de la Geométrica entre las distribuciones discretas.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text>false</text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La Geométrica es efectivamente la única distribución discreta con esta propiedad.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP2-05: Erlang — media y varianza</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Una variable Erlang(k=4, λ=0.25) tiene media y varianza iguales a:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Erlang(k,λ): media = k/λ = 4/0.25 = 16. Varianza = k/λ² = 4/0.0625 = 64. Desviación estándar = 8.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Media = 16, Varianza = 64]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Media = 4/0.25 = 16; Varianza = 4/0.25² = 4/0.0625 = 64.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Media = 4, Varianza = 16]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Se confunde con Erlang(k=4, λ=1) donde media=4 y varianza=4.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Media = 1, Varianza = 4]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Eso correspondería a Exponencial(λ=4) con media=0.25.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Media = 16, Varianza = 256]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Varianza = k/λ² = 64, no 256. Se confunde con la desviación estándar al cuadrado de un error de cálculo.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- ===== SECCIÓN B: Aplicar / Analizar (7 preguntas, 50%) ===== -->
+
+<question type="multichoice">
+  <name><text>EP2-06: Cálculo transformada inversa Exponencial</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un proceso de simulación genera U = 0.3679 (≈ e⁻¹). Si el tiempo entre llegadas sigue Exp(λ=2 clientes/min), el tiempo generado X = −(1/λ)·ln(U) es:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>X = −(1/2)·ln(0.3679) = −(0.5)·(−1) = 0.5 minutos. Nota: ln(e⁻¹) = −1.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[X = 0.5 minutos]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. −(1/2)·ln(e⁻¹) = −(1/2)·(−1) = 0.5 min.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[X = 1.0 minuto]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Se obtiene si se olvida dividir por λ=2 (o media=0.5).]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[X = 0.25 minutos]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Revisar el cálculo: −(1/2)·(−1) = 0.5, no 0.25.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[X = 2.0 minutos]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Eso resultaría si se multiplica por λ en lugar de dividir.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP2-07: Identificación de distribución por forma de datos</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Se registran los tiempos de fallo de 200 componentes electrónicos. El histograma muestra una distribución muy asimétrica a la derecha (cola larga hacia valores altos), con moda cerca del origen. ¿Qué distribución se ajusta mejor?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La distribución Exponencial tiene exactamente esta forma: moda en 0 (o cerca), cola larga a la derecha. Es típica para tiempos de vida de componentes sin desgaste (proceso Markoviano).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Exponencial(λ) — asimétrica con moda en el origen]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Exponencial modela tiempos de fallo para tasas de fallo constantes.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Normal(μ,σ) — simétrica, campana]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Normal es simétrica; no se ajusta a datos con moda en 0 y cola larga.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Uniforme(a,b) — frecuencia constante]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Uniforme tiene frecuencia constante entre a y b, sin moda preferida.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Triangular(a,b,c) — forma de triángulo]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Triangular tiene límites acotados (a y b) y no tiene cola infinita.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP2-08: Cálculo Box-Muller</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En el método de Box-Muller, con U₁ = 0.1353 (≈ e⁻²) y U₂ = 0.25, el valor de la magnitud R = √(−2·ln(U₁)) es:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>R = √(−2·ln(e⁻²)) = √(−2·(−2)) = √4 = 2.0. Luego Z₁ = R·cos(2πU₂) = 2·cos(π/2) = 0 y Z₂ = R·sin(2πU₂) = 2·sin(π/2) = 2.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[R = 2.0]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. √(−2·ln(e⁻²)) = √(4) = 2.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[R = √2 ≈ 1.414]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. −2·ln(e⁻²) = 4, no 2.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[R = 4.0]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. R = √4 = 2, no 4. Se olvidó aplicar la raíz cuadrada.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[R = 0.5]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Revisar la fórmula: R = √(−2·ln(U₁)), no −2·ln(U₁)/4.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP2-09: Prueba KS — tamaño de muestra</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Se generan n=50 muestras de una variable Exponencial y se aplica la prueba KS: D₅₀=0.19, p=0.04. Con n=1000 y el mismo generador, la prueba da D₁₀₀₀=0.025, p=0.60. ¿Cuál es la interpretación correcta?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Con n=50, p=0.04 < 0.05 → se rechaza H₀ (puede ser error tipo I con muestra pequeña). Con n=1000, p=0.60 >> 0.05 → no se rechaza H₀. El generador es válido; el rechazo con n=50 probablemente fue un error estadístico (falso positivo).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[El generador es válido; el rechazo con n=50 fue probablemente un falso positivo (error tipo I)]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Con más muestras el generador pasa la prueba holgadamente; el rechazo con n=50 es sospechoso.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El generador definitivamente tiene un error que se ocultó al aumentar n]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Si el generador tuviera un error sistemático, sería más fácil detectarlo con n mayor, no más difícil.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Ambas pruebas son correctas: el generador falla con n=50 pero funciona con n=1000]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. El generador es el mismo en ambos casos; la diferencia es la potencia de la prueba.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Se debe usar siempre n=50 para ser conservador]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Muestras más grandes dan pruebas más confiables, no más conservadoras.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP2-10: Erlang como convolución — código</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de los siguientes fragmentos de código Python genera correctamente una variable Erlang(k=3, λ=0.5)?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La fórmula eficiente: X = −(1/λ)·ln(∏ᵢ Uᵢ). El código correcto multiplica k valores U y aplica log al producto, dividiendo por λ.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<pre>prod = 1.0
+for _ in range(3):
+    prod *= random.uniform(0, 1)
+X = -math.log(prod) / 0.5</pre>]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Usa la identidad ln(∏Uᵢ) = Σln(Uᵢ) de forma eficiente.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<pre>X = sum(-math.log(random.uniform(0,1))*0.5 for _ in range(3))</pre>]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Multiplica cada término por 0.5 en lugar de dividir la suma por λ=0.5 al final.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<pre>X = -math.log(random.uniform(0,1)) * 3 / 0.5</pre>]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Usa un solo U y multiplica por k; eso no produce Erlang.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<pre>X = sum(random.uniform(0,1) for _ in range(3)) / 0.5</pre>]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Suma U sin aplicar logaritmo; eso genera una distribución Irwin-Hall escalada, no Erlang.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP2-11: Simulación de sistema M/M/1 — distribuciones</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En un sistema de colas M/M/1 con λ=5 clientes/hora y μ=8 clientes/hora, los tiempos entre llegadas y de servicio se modelan como:</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La notación M/M/1 especifica: primera M = llegadas Markovianas (Poisson → tiempos Exponencial(λ)), segunda M = servicio Markoviano (Exponencial(μ)), 1 = un servidor. Media entre llegadas = 1/λ = 12 min; media de servicio = 1/μ = 7.5 min.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Exponencial(media=12 min) para llegadas; Exponencial(media=7.5 min) para servicio]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. M implica proceso de Poisson → tiempos Exponenciales. Media=1/λ=1/5 h=12 min; 1/μ=1/8 h=7.5 min.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Poisson(5) para llegadas; Poisson(8) para servicio]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Poisson modela el conteo de eventos por unidad de tiempo, no los tiempos entre eventos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Normal(5,1) para llegadas; Normal(8,2) para servicio]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Normal no es la distribución que implica la notación M/M/1.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Erlang(5,1) para llegadas; Erlang(8,1) para servicio]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Erlang(k>1) se usa cuando hay múltiples fases de servicio, no en M/M/1.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP2-12: Chi-cuadrada — agrupación de celdas</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Al aplicar la prueba chi-cuadrada de bondad de ajuste con n=100 muestras de una distribución Poisson(λ=0.3), las frecuencias esperadas para k=2,3,4,... son 1.35, 0.14, 0.01... ¿Qué se debe hacer con estas celdas?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La regla general es que las frecuencias esperadas deben ser ≥ 5 en cada celda. Las celdas con esperado < 5 se agrupan en una celda "k≥2" (o similar), acumulando sus frecuencias esperadas y observadas.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Agrupar las celdas k=2,3,4,... en una sola celda "k≥2" hasta que el esperado agrupado ≥ 5]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. La regla de Cochran requiere frecuencias esperadas ≥ 5 para la validez del estadístico chi-cuadrada.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Ignorar las celdas con esperado < 5 y aplicar la prueba solo con las celdas válidas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Ignorar celdas viola el balance observado-esperado y sesga el estadístico.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Aumentar la muestra a n=1000 antes de aplicar la prueba]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto aunque razonable. La solución inmediata es agrupar celdas; no siempre es posible conseguir más datos.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Aplicar la prueba KS en lugar de chi-cuadrada para distribuciones discretas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La prueba KS es para distribuciones continuas; la chi-cuadrada es la apropiada para discretas.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- ===== SECCIÓN C: Evaluar (3 preguntas, 20%) ===== -->
+
+<question type="multichoice">
+  <name><text>EP2-13: Evaluación de métodos de generación Normal</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un simulador de alta frecuencia genera millones de variables Normales por segundo. ¿Qué método de generación es preferible y por qué?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>El método polar (Marsaglia) evita las funciones trigonométricas que Box-Muller requiere (cos, sin), las cuales son computacionalmente costosas. Para simulaciones masivas, esta diferencia es significativa. El incon­veniente del método polar (bucle de rechazo) es menor porque acepta el 78.5% de los intentos.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Método polar (Marsaglia): evita cos y sin, más eficiente en CPUs modernas]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. Para alto rendimiento, el método polar supera a Box-Muller en la mayoría de arquitecturas.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Box-Muller: siempre genera exactamente 2 normales por par de U, sin rechazo]]></text>
+    <feedback format="html"><text><![CDATA[Parcialmente correcto pero no el mejor para alta frecuencia. El costo de cos/sin supera el beneficio de no tener rechazo.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Transformada inversa de la FDA Normal usando tablas interpoladas]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto para este caso. La interpolación de tablas es costosa; se usa numpy.random.normal() que internamente usa Ziggurat, más eficiente.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Suma de 12 uniformes por el Teorema Central del Límite (aproximación)]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La suma de 12 uniformes es una aproximación Normal muy burda y consume 12 U por muestra.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP2-14: Decisión sobre distribución con datos limitados</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un analista necesita modelar el tiempo de atención de un call center. Solo dispone de entrevistas con los operadores, que indican: "el tiempo mínimo es 1 minuto, el máximo es 15 minutos, y la mayoría de llamadas dura alrededor de 5 minutos". Sin datos históricos, ¿qué distribución y parámetros recomienda?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>Con solo mínimo (a=1), máximo (b=15) y moda (c=5), la distribución Triangular(1,15,5) es la elección estándar. Es apropiada cuando no hay datos para ajustar una distribución más precisa pero se conocen los extremos y el valor más probable (estimación por expertos).</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[Triangular(a=1, b=15, c=5): diseñada exactamente para este escenario de datos mínimos]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. La Triangular es el modelo de referencia cuando solo se conocen mínimo, máximo y moda.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Exponencial(media=5): asume falta de memoria en el servicio]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Exponencial tiene cola infinita y moda en 0, incompatible con mínimo=1 y máximo=15.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Normal(μ=8, σ=2.3): aproximación simétrica entre mínimo y máximo]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Normal es ilimitada (puede dar negativos) y la moda indicada (5) no es el punto medio (8).]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[Uniforme(1, 15): sin información suficiente para elegir otra distribución]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Se tiene información adicional (moda=5) que la Triangular aprovecha; Uniforme descarta esa información.]]></text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>EP2-15: Impacto de la distribución en resultados del simulador</text></name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Un simulador de fábrica modela tiempos de servicio con Normal(10, 2) pero los datos reales muestran alta asimetría positiva (muchos valores bajos, algunos muy altos). ¿Cuál es el efecto más probable sobre los resultados?</p>]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[<p>La Normal subestima la variabilidad de tiempos altos (cola derecha). Al no modelar los eventos extremos (tiempos muy largos de servicio), el simulador subestimará las colas y los tiempos de espera reales. La Lognormal o Weibull serían más apropiadas para datos asimétricos positivos.</p>]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+  <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[El simulador subestimará las colas y tiempos de espera al no capturar eventos de servicio largo]]></text>
+    <feedback format="html"><text><![CDATA[Correcto. La cola derecha delgada de la Normal ignora los tiempos largos que generan congestión real.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El simulador sobreestimará las colas porque Normal tiene mayor varianza]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. Normal con misma media y σ=2 tiene menor variabilidad en la cola que una distribución asimétrica real.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[No hay efecto; lo importante es que la media del simulador coincida con la real]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto. La varianza y forma de la distribución afectan crítica­mente el comportamiento de las colas.]]></text></feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[El simulador generará valores negativos de tiempo de servicio]]></text>
+    <feedback format="html"><text><![CDATA[Incorrecto para Normal(10,2): P(X<0) ≈ 0.0000003%. El problema es la cola derecha, no los negativos.]]></text></feedback>
+  </answer>
+</question>
+
+</quiz>

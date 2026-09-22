@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <!-- Examen Parcial 1: Unidades 1 y 2 — Simulación (SCD-1022) -->
+  <!-- 15 preguntas | Distribución Bloom: 30% Recordar/Comprender, 50% Aplicar/Analizar, 20% Evaluar -->
+
+  <!-- SECCIÓN A: Recordar y Comprender (4 preguntas) -->
+
+  <question type="multichoice">
+    <name><text>EP1-A01 Componentes del simulador DES</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Cuáles son los <strong>tres componentes mínimos</strong> que debe tener todo simulador de eventos discretos?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Todo simulador DES requiere: (1) un reloj de simulación para rastrear el tiempo virtual, (2) una lista de eventos futuros ordenada cronológicamente, y (3) variables de estado que describan la condición actual del sistema.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Reloj de simulación, lista de eventos futuros y variables de estado del sistema]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Estos tres componentes son el núcleo de cualquier simulador DES, independientemente del lenguaje o herramienta usada.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Base de datos, interfaz gráfica y módulo de reportes]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Esos son componentes de software de apoyo, no los componentes fundamentales de un simulador DES.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Generador de números aleatorios, estadísticas y cronómetro real]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El generador es importante pero no es uno de los tres componentes mínimos del mecanismo DES. El cronómetro es de tiempo real, no de simulación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Entidades, recursos y colas únicamente]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Entidades, recursos y colas son elementos del modelo del sistema, no los componentes del mecanismo de simulación.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>EP1-A02 Propiedad Markoviana</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>La distribución Exponencial se usa frecuentemente para modelar tiempos entre llegadas porque tiene la <strong>propiedad de falta de memoria (Markoviana)</strong>. ¿Qué significa esta propiedad?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La propiedad de falta de memoria significa que P(X > s+t | X > s) = P(X > t). Es decir, dado que ya han pasado s unidades de tiempo desde el último evento, la probabilidad de que el próximo tarde t más no depende de s. Cada instante es "nuevo".</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[La probabilidad de que el próximo evento ocurra en el tiempo t no depende de cuánto tiempo ha pasado desde el último evento]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Esta propiedad es lo que hace al proceso de Poisson (y la distribución Exponencial) matemáticamente tratable y es el fundamento de los modelos M/M/c.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[La distribución no tiene media ni varianza definidas]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La Exponencial con parámetro λ tiene media 1/λ y varianza 1/λ².]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Los tiempos entre llegadas son perfectamente iguales (determinísticos)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La distribución Exponencial es aleatoria; la "falta de memoria" no implica determinismo sino independencia respecto al tiempo transcurrido.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[El generador pseudoaleatorio no necesita semilla para esta distribución]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Todo generador de variables aleatorias requiere una fuente de aleatoriedad (pseudoaleatorios con semilla).]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="truefalse">
+    <name><text>EP1-A03 LCG - Semilla cero</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el generador congruencial multiplicativo (c=0), usar la semilla X₀ = 0 produce una secuencia válida de números pseudoaleatorios.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Falso. Con c=0 (multiplicativo) y X₀=0: X₁ = a·0 mod m = 0. La secuencia queda atrapada en 0 y produce solo ceros. Para el congruencial multiplicativo, la semilla debe ser X₀ > 0 y MCD(X₀, m) = 1.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>1.0000000</penalty><hidden>0</hidden>
+    <answer fraction="0" format="html">
+      <text>true</text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Con c=0 y semilla 0: X₁ = a×0 mod m = 0. El generador queda atrapado en cero permanentemente.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>false</text>
+      <feedback format="html"><text><![CDATA[Correcto. La semilla cero hace que todos los valores subsiguientes sean cero. En el congruencial multiplicativo la semilla debe ser > 0.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>EP1-A04 Validación vs Verificación</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se desarrolló un simulador de una farmacia. Al ejecutarlo con datos reales históricos de 30 días, el tiempo promedio de espera simulado fue 8.2 minutos, mientras que el observado en la farmacia real fue 8.5 minutos (diferencia estadísticamente no significativa). ¿Qué proceso se acaba de realizar?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Al comparar los resultados del simulador con datos del sistema real y encontrar que no hay diferencia significativa, se está VALIDANDO el modelo. La validación responde: ¿el modelo representa adecuadamente al sistema real?</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Validación: el modelo representa adecuadamente el comportamiento del sistema real]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. La comparación de resultados del simulador con el sistema real es el proceso de validación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Verificación: el código implementa correctamente el modelo conceptual]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La verificación compara el código con el modelo conceptual, no con el sistema real.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Calibración: se ajustaron los parámetros para que coincida con los datos observados]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La calibración implicaría modificar parámetros. Aquí se está verificando el modelo sin ajustarlo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Experimentación: se probaron diferentes escenarios del sistema]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La experimentación implica variar parámetros para analizar escenarios. Aquí se comparó con datos reales históricos.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- SECCIÓN B: Aplicar y Analizar (7 preguntas) -->
+
+  <question type="multichoice">
+    <name><text>EP1-B01 Cálculo LCG completo</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un LCG con a=3, c=1, m=8, X₀=5 genera la secuencia. ¿Cuáles son X₁, X₂ y U₂?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>X₁ = (3×5 + 1) mod 8 = 16 mod 8 = 0<br>X₂ = (3×0 + 1) mod 8 = 1 mod 8 = 1<br>U₂ = X₂/m = 1/8 = 0.125</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[X₁=0, X₂=1, U₂=0.125]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. X₁=(3×5+1) mod 8=16 mod 8=0; X₂=(3×0+1) mod 8=1; U₂=1/8=0.125.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[X₁=6, X₂=3, U₂=0.375]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Verificar el cálculo: X₁=(3×5+1) mod 8 = 16 mod 8 = 0.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[X₁=16, X₂=49, U₂=6.125]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Falta aplicar mod m. Los valores deben estar en [0, m-1].]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[X₁=5, X₂=5, U₂=0.625]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La recurrencia usa los parámetros a, c y m correctamente.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>EP1-B02 Ley de Little aplicada</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Una simulación de un banco muestra que en promedio hay 6 clientes en el sistema, con una tasa de llegada de 3 clientes/minuto. ¿Cuánto tiempo promedio pasa un cliente en el sistema (en minutos) y cuánto en la cola (si el tiempo promedio de servicio es 1.5 min)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Ley de Little: W = L/λ = 6/3 = 2 minutos en el sistema.<br>Tiempo en cola: Wq = W - E[S] = 2 - 1.5 = 0.5 minutos = 30 segundos.<br>Clientes promedio en cola: Lq = λ×Wq = 3×0.5 = 1.5 clientes.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[W = 2 min en el sistema; Wq = 0.5 min en la cola]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. W = L/λ = 6/3 = 2 min. Wq = W - E[S] = 2 - 1.5 = 0.5 min.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[W = 18 min en el sistema; Wq = 16.5 min en la cola]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La Ley de Little es W = L/λ, no W = L×λ.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[W = 2 min en el sistema; Wq = 1.5 min en la cola]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Wq = W - tiempo_servicio = 2 - 1.5 = 0.5 min, no 1.5 min.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[W = 0.5 min en el sistema; Wq = 0 min en la cola]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. W = L/λ = 6/3 = 2, no 0.5.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>EP1-B03 Transformada inversa Exponencial</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se generó U = 0.7823 (número pseudoaleatorio). Usando la transformada inversa, ¿cuál es el valor de una variable Exponencial con media 10 minutos?</p>
+      <p><em>Fórmula: X = -(1/λ)·ln(U), donde λ = 1/media</em></p>
+      <p><em>Dato: ln(0.7823) ≈ -0.2457</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>λ = 1/10 = 0.1. X = -(1/λ)·ln(U) = -10·ln(0.7823) = -10·(-0.2457) = 2.457 minutos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Aproximadamente 2.457 minutos]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. X = -10·ln(0.7823) = -10·(-0.2457) = 2.457 min.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Aproximadamente 7.823 minutos (U × media = 0.7823 × 10)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Esa sería una variable Uniforme(0,10), no Exponencial. La transformada inversa de la Exponencial usa logaritmo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Aproximadamente 0.2457 minutos]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Falta multiplicar por (1/λ) = media = 10. X = -10·(-0.2457) = 2.457.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[No se puede calcular sin conocer la varianza]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Para la distribución Exponencial la media es suficiente (varianza = media² es automática).]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>EP1-B04 Análisis prueba chi-cuadrada</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Al aplicar la prueba chi-cuadrada de uniformidad con k=5 intervalos y n=500 números, se obtiene χ² = 22.1. Con α=0.05 y gl=4, el valor crítico es 9.49. ¿Qué acción debe tomarse?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Como χ²=22.1 > χ²crítica=9.49, se RECHAZA H₀. Los números no son uniformes, lo que indica un problema con el generador. Se debe revisar los parámetros (a, c, m) o la semilla, y volver a generar.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Rechazar H₀ y revisar los parámetros del generador, ya que la secuencia no es uniforme]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. 22.1 > 9.49 indica falla de uniformidad. Se debe corregir el generador antes de usarlo en simulación.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Aceptar H₀ porque el valor crítico (9.49) es menor que el estadístico (22.1)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Se rechaza H₀ cuando el estadístico SUPERA el valor crítico. El hecho de que 22.1 > 9.49 es evidencia en contra de la uniformidad.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Continuar con la simulación porque el p-valor seguramente es mayor que 0.05]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Si χ² > valor crítico, el p-valor es menor que α = 0.05. No se debe continuar con un generador que falla uniformidad.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Aumentar k a 20 intervalos y repetir la prueba hasta obtener el resultado deseado]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Cambiar k para obtener un resultado diferente es manipulación estadística. Si el generador falla, se debe corregir, no ajustar la prueba.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>EP1-B05 Diagrama de estados</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un cajero automático tiene capacidad para 3 clientes (1 siendo atendido + 2 en cola). Si llega un 4° cliente cuando el sistema está lleno, es rechazado. Cuando un cliente llega y hay capacidad, ¿qué evento se programa?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Si el cajero está libre, el cliente entra directamente al servicio y se programa el evento FIN_DE_SERVICIO. Si el cajero está ocupado y hay espacio en cola, el cliente entra a la cola y NO se programa ningún evento nuevo hasta que el cajero se libere.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Si el cajero está libre: se genera un tiempo de servicio y se programa FIN_DE_SERVICIO. Si está ocupado: el cliente entra a la cola sin programar nuevo evento]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Esta es la lógica estándar del evento LLEGADA en un simulador DES de sistema M/M/1/3.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Siempre se programan dos eventos: INICIO_DE_SERVICIO y FIN_DE_SERVICIO]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El INICIO_DE_SERVICIO no siempre es inmediato; depende de si el servidor está libre.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[El evento LLEGADA programa automáticamente la siguiente LLEGADA]]></text>
+      <feedback format="html"><text><![CDATA[Parcialmente correcto pero incompleto. La rutina de llegada también decide si el cliente entra al servicio o a la cola.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[No se programa ningún evento; el simulador espera a que ocurra algo]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Los simuladores DES son orientados a eventos; siempre deben tener el próximo evento programado en la lista.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>EP1-B06 Análisis de método Monte Carlo</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se usó Monte Carlo con n=10,000 muestras para estimar el valor esperado de una función, obteniendo una estimación de 3.142 con error estándar SE = 0.025. ¿Cuántas muestras se necesitarían para <strong>reducir el error a la mitad</strong> (SE ≤ 0.0125)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>SE = σ/√n. Para reducir SE a la mitad, se necesita aumentar n por un factor de 4 (ya que √4=2). Por lo tanto: n_nuevo = 4 × 10,000 = 40,000 muestras.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[40,000 muestras (cuadruplicar n)]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. SE ∝ 1/√n. Para SE_nuevo = SE_original/2, se necesita n_nuevo = 4 × n_original = 40,000.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[20,000 muestras (duplicar n)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Duplicar n reduce SE por √2 ≈ 1.41, no a la mitad. Para la mitad se necesita cuadruplicar n.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[5,000 muestras (reducir n a la mitad)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Reducir n aumenta el error, no lo disminuye.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[100,000 muestras (multiplicar n por 10)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Multiplicar por 10 reduciría SE por √10 ≈ 3.16, más de lo necesario. Solo se requiere cuadruplicar n.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>EP1-B07 Python: implementación de evento</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En Python, ¿cuál de las siguientes opciones implementa correctamente la lógica de un evento de <strong>llegada</strong> en un sistema M/M/1?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La rutina de llegada debe: (1) programar la próxima llegada, (2) verificar si el servidor está libre, (3a) si está libre: iniciar servicio y programar fin de servicio, (3b) si está ocupado: agregar a la cola.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<pre>def llegada(reloj, eventos, cola, servidor_ocupado, gen):
+    # Programar próxima llegada
+    t_entre = gen.exponencial(media=5)
+    heapq.heappush(eventos, (reloj + t_entre, 'LLEGADA'))
+    # Procesar llegada actual
+    if not servidor_ocupado[0]:
+        servidor_ocupado[0] = True
+        t_servicio = gen.exponencial(media=3)
+        heapq.heappush(eventos, (reloj + t_servicio, 'FIN_SERVICIO'))
+    else:
+        cola.append(reloj)  # guardar tiempo de llegada</pre>]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Esta implementación sigue la lógica correcta: programa la próxima llegada, verifica servidor libre, y decide entre iniciar servicio o agregar a cola.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<pre>def llegada(reloj):
+    time.sleep(5)  # esperar 5 segundos
+    print("Cliente llegó")</pre>]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. time.sleep() usa tiempo real, no tiempo de simulación. Los simuladores DES avanzan el tiempo virtualmente, no esperando tiempo real.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<pre>def llegada():
+    clientes_totales += 1
+    return clientes_totales</pre>]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Solo cuenta llegadas pero no programa el próximo evento ni maneja la lógica servidor/cola.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<pre>def llegada(reloj):
+    heapq.heappush(eventos, reloj + random.random())</pre>]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Incompleto: no especifica el tipo de evento, no maneja el servidor ni la cola.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- SECCIÓN C: Evaluar (3 preguntas) -->
+
+  <question type="multichoice">
+    <name><text>EP1-C01 Evaluación de generadores</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un estudiante usa el LCG con parámetros a=1, c=1, m=8 (Generador A) y otro usa a=5, c=3, m=8 (Generador B), ambos con semilla X₀=1. ¿Cuál generador es preferible para simulación y por qué?</p>
+      <p><em>Dato: Generador A produce la secuencia: 2,3,4,5,6,7,0,1,2,3... | Generador B: 0,3,2,5,4,7,6,1,0...</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El Generador A (a=1, c=1) produce números consecutivos 2,3,4,5... que son ALTAMENTE correlacionados y no parecen aleatorios. El Generador B mezcla mejor los valores. Para simulación se prefiere B porque los números consecutivos deben ser estadísticamente independientes.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Generador B: aunque ambos tienen el mismo periodo (8), el A produce números consecutivos que evidencian correlación total, mientras B los mezcla mejor]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Tener el mismo periodo máximo no garantiza buena calidad. El multiplicador a=1 hace que A sea determinístico y altamente correlacionado.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Generador A: al producir todos los valores posibles en orden, garantiza uniformidad perfecta]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La uniformidad es solo una propiedad; también se requiere independencia. A produce números perfectamente correlacionados (cada uno es el anterior + 1), lo que falla independencia.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Son equivalentes: ambos tienen el mismo periodo y la misma media]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El periodo y la media son solo dos criterios. La independencia entre consecutivos es fundamental y A falla gravemente en esto.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Ninguno es adecuado: ambos deben usar m > 2³¹ para ser válidos]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. m=8 es pequeño para uso real, pero para el análisis de la pregunta, B es claramente mejor que A independientemente del tamaño de m.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>EP1-C02 Decisión de herramienta</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Una empresa quiere analizar si debe abrir una segunda línea de atención en su call center. El sistema tiene llegadas no Poisson (los clientes llaman más en horario de comida), tiempos de servicio con distribución Erlang, y diferentes prioridades según el tipo de cliente. ¿Qué herramienta es más apropiada?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Las fórmulas analíticas de la teoría de colas (M/M/c) requieren llegadas Poisson y servicios Exponenciales. Este sistema viola ambos supuestos (llegadas no Poisson, servicios Erlang, prioridades). La simulación de eventos discretos es la herramienta correcta.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Simulación de eventos discretos: el sistema viola los supuestos de las fórmulas analíticas M/M/c]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Cuando el sistema no cumple los supuestos de los modelos analíticos, la simulación es la herramienta apropiada.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Fórmulas analíticas M/M/2: es más rápido y exacto que simular]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Las fórmulas M/M/2 requieren llegadas Poisson y servicios Exponenciales. Este sistema tiene llegadas no Poisson y servicios Erlang.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Programación lineal: optimiza el número de agentes minimizando costos]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La programación lineal optimiza variables de decisión con restricciones, pero no modela la dinámica estocástica del sistema de colas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Hoja de cálculo Excel: suficiente para este análisis con promedio de llamadas por hora]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Los promedios no capturan la variabilidad y las prioridades del sistema. Se necesita modelar la dinámica temporal completa.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>EP1-C03 Diseño del proyecto integrador</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Para el proyecto integrador, un equipo seleccionó simular el sistema de cobranza de una tienda departamental. Al analizar el sistema, identificaron que los tiempos entre llegadas varían según la hora del día (mañana vs. tarde). ¿Cómo deben modelar esto en su simulador?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Los tiempos entre llegadas no estacionarios (que varían según la hora) se modelan con un proceso de Poisson no homogéneo: la tasa λ(t) varía con el tiempo. En la implementación, se puede usar diferentes parámetros del generador para diferentes periodos del día, o una función λ(t) que cambie según el horario.]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade><penalty>0.3333333</penalty><hidden>0</hidden>
+    <single>true</single><shuffleanswers>true</shuffleanswers><answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Usar diferentes tasas de llegada (λ) según el período del día, implementando un proceso de Poisson no homogéneo]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. El proceso de Poisson no homogéneo modela llegadas cuya tasa varía con el tiempo, que es exactamente este caso.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Usar solo el promedio de llegadas del día completo, ignorando la variación horaria]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Usar solo el promedio ignora información relevante y puede llevar a resultados incorrectos en horas pico.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Simular solo la mañana (el período más sencillo) y extrapolar para la tarde]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La extrapolación no capta la dinámica real de las horas pico. Se debe modelar ambos periodos.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Descartar el sistema y elegir uno con llegadas estacionarias para simplificar]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Los sistemas con llegadas no estacionarias son comunes en la realidad. Modelarlos correctamente es parte de la competencia del curso.]]></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

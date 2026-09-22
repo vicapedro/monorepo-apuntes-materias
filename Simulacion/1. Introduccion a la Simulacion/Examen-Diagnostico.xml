@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <!-- Examen Diagnóstico: Simulación (SCD-1022) -->
+  <!-- Evalúa conocimientos previos de: estadística, probabilidad, programación Python, IO -->
+  <!-- Moodle XML — No es calificado, es formativo para el docente -->
+
+  <question type="multichoice">
+    <name><text>DIAG-01 Distribución Exponencial</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Si el tiempo entre llegadas de clientes a una tienda sigue una <strong>distribución Exponencial</strong> con media de 5 minutos, ¿cuál es la probabilidad de que el próximo cliente llegue en menos de 3 minutos?</p>
+      <p><em>Recuerde: P(X &lt; x) = 1 - e<sup>-λx</sup>, donde λ = 1/media</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>λ = 1/5 = 0.2 clientes/min. P(X < 3) = 1 - e<sup>-0.2×3</sup> = 1 - e<sup>-0.6</sup> ≈ 1 - 0.5488 ≈ 0.4512 ≈ 45.1%</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Aproximadamente 45.1% (usando P(X < 3) = 1 - e<sup>-0.6</sup>)]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Este cálculo es fundamental para la Unidad 3 donde se generarán variables con distribución Exponencial.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[60% (3/5 minutos de probabilidad)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La distribución Exponencial no es lineal. Se calcula con la función 1 - e<sup>-λx</sup>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Aproximadamente 30.1% (usando P(X < 3) = e<sup>-0.6</sup>)]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. P(X < x) = 1 - e<sup>-λx</sup>. El valor e<sup>-0.6</sup> ≈ 0.549 corresponde a P(X ≥ 3), no a P(X < 3).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[No se puede calcular sin conocer la varianza]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Para la distribución Exponencial, la media es suficiente para calcular cualquier probabilidad.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>DIAG-02 Distribución Poisson</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>La distribución de <strong>Poisson</strong> se usa comúnmente en simulación para modelar:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La distribución de Poisson modela el número de ocurrencias de un evento en un intervalo de tiempo fijo, cuando los eventos ocurren de forma independiente y a una tasa promedio constante. Es el modelo clásico para el número de llegadas en sistemas de colas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[El número de llegadas a un sistema en un intervalo de tiempo dado]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Si las llegadas siguen un proceso de Poisson, los tiempos entre llegadas siguen una distribución Exponencial (relación clave en la teoría de colas).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[El tiempo que tarda en atenderse a un cliente]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Los tiempos de servicio generalmente se modelan con distribuciones continuas como Exponencial, Normal o Erlang.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[La proporción de clientes satisfechos respecto al total]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Las proporciones se modelan con distribuciones Binomial o Beta, no con Poisson.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[El tiempo total de operación del sistema durante un día]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Un tiempo de operación total fijo no se modela con Poisson.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>DIAG-03 Python — Listas y estructuras</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En Python, ¿cuál de las siguientes opciones implementa correctamente una cola <strong>FIFO</strong> (First In, First Out) para manejar entidades en un simulador?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><code>collections.deque</code> con <code>append()</code> para agregar al final y <code>popleft()</code> para extraer del frente es la implementación eficiente de FIFO en Python. Una lista con <code>pop(0)</code> también funciona pero es O(n), mientras que deque es O(1).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>from collections import deque; cola = deque(); cola.append(entidad); entidad = cola.popleft()</code>]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. deque.append() agrega al final y deque.popleft() extrae del frente, implementando FIFO de forma eficiente O(1).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>cola = []; cola.append(entidad); entidad = cola.pop()</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. list.pop() sin argumento extrae el ÚLTIMO elemento, implementando LIFO (pila), no FIFO.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>import heapq; cola = []; heapq.heappush(cola, entidad); entidad = heapq.heappop(cola)</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. heapq implementa una cola de prioridad (min-heap), no una cola FIFO. Es útil para la lista de eventos del simulador, no para la cola de entidades.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>cola = {}; cola['frente'] = entidad; entidad = cola.pop('frente')</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Un diccionario no mantiene el orden FIFO de inserción para este propósito.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>DIAG-04 Python — Clases</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Cuál es la salida del siguiente código Python?</p>
+<pre><code>class Entidad:
+    def __init__(self, id, tiempo_llegada):
+        self.id = id
+        self.tiempo_llegada = tiempo_llegada
+
+    def tiempo_espera(self, tiempo_actual):
+        return tiempo_actual - self.tiempo_llegada
+
+e = Entidad(1, 10.5)
+print(e.tiempo_espera(15.0))
+</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El método <code>tiempo_espera</code> retorna <code>tiempo_actual - self.tiempo_llegada = 15.0 - 10.5 = 4.5</code>. Entender clases en Python es esencial para la Unidad 3 donde se implementa la clase <code>GeneradorVariables</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[4.5]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. 15.0 - 10.5 = 4.5. Las clases Python son el mecanismo principal para encapsular la lógica del simulador.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[10.5]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El método retorna la diferencia, no el tiempo de llegada original.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[15.0]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El método retorna tiempo_actual - tiempo_llegada, no tiempo_actual.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Error de ejecución]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. El código es sintácticamente correcto y se ejecuta sin errores.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>DIAG-05 Investigación de Operaciones — Líneas de espera</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el modelo de colas <strong>M/M/1</strong>, ¿qué representan las letras M/M/1 respectivamente?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La notación de Kendall A/B/c describe: A = distribución de llegadas (M = Markoviana = Exponencial = Poisson), B = distribución de tiempos de servicio (M = Exponencial), c = número de servidores (1 = un servidor). Esta notación es estándar en la teoría de colas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Distribución de llegadas Markoviana (Exponencial) / Distribución de servicios Markoviana (Exponencial) / 1 servidor]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. La notación de Kendall (A/B/c) es la base para clasificar modelos de colas. Se usará ampliamente en las Unidades 4 y 5.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Múltiples servidores / Múltiples colas / 1 tipo de cliente]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La M en la notación de Kendall se refiere a la distribución Markoviana (Exponencial), no a "múltiples".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Media de llegadas / Media de servicios / 1 cola]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Las letras representan distribuciones, no medias. La notación de Kendall es A/B/c donde A y B son tipos de distribución.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Modelo / Método / 1 iteración]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. M es la abreviatura de "Markoviano", referido a la propiedad de que la distribución Exponencial no tiene memoria.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="truefalse">
+    <name><text>DIAG-06 Python — heapq para lista de eventos</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>El módulo <code>heapq</code> de Python implementa una cola de mínimos (min-heap), por lo que <code>heapq.heappop()</code> siempre extrae el elemento con el <strong>menor valor</strong>. Esto lo hace adecuado para implementar la lista de eventos futuros en un simulador de eventos discretos.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Verdadero. En la lista de eventos de un simulador DES, siempre queremos procesar el evento con el menor tiempo (el próximo a ocurrir). <code>heapq</code> extrae siempre el elemento mínimo, lo que coincide exactamente con este requerimiento.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+      <text>true</text>
+      <feedback format="html"><text><![CDATA[Correcto. heapq es la estructura de datos natural para la lista de eventos en un simulador DES implementado en Python.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>false</text>
+      <feedback format="html"><text><![CDATA[Incorrecto. heapq sí implementa un min-heap; heappop() extrae el elemento mínimo, que en el contexto del simulador corresponde al evento con el menor tiempo (el próximo).]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>DIAG-07 Estadística — Chi-cuadrada</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>La prueba <strong>chi-cuadrada de bondad de ajuste</strong> se utiliza para:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La prueba chi-cuadrada de bondad de ajuste verifica si un conjunto de datos observados sigue una distribución teórica específica (Uniforme, Normal, Exponencial, etc.). Es fundamental en la Unidad 2 para verificar que los números pseudoaleatorios generados son uniformemente distribuidos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Determinar si un conjunto de datos observados sigue una distribución estadística teórica específica]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. Esta prueba es fundamental para verificar que los números pseudoaleatorios tienen distribución Uniforme (Unidad 2) y para validar las variables aleatorias generadas (Unidad 3).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Comparar las medias de dos grupos independientes]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Comparar medias de dos grupos es el objetivo de la prueba t de Student, no de la chi-cuadrada de bondad de ajuste.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Calcular la correlación entre dos variables aleatorias]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. La correlación se mide con coeficientes como Pearson o Spearman, no con chi-cuadrada.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Estimar el intervalo de confianza de una media poblacional]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Los intervalos de confianza para medias se construyen con la distribución t o Normal, no con chi-cuadrada de bondad de ajuste.]]></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>DIAG-08 IO — Modelo de inventario</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En un modelo de inventario con política <strong>(s, Q)</strong>, ¿cuándo se coloca una orden?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>En la política (s, Q): se ordena una cantidad fija Q cuando el nivel de inventario cae al punto de reorden s. Esta política se estudiará en la Unidad 4 al simular sistemas de inventario con AnyLogic y SimPy.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Cuando el nivel de inventario cae al punto de reorden s, se ordena una cantidad fija Q]]></text>
+      <feedback format="html"><text><![CDATA[Correcto. En (s,Q): s = punto de reorden, Q = cantidad fija de orden. Es la política más común en simulación de inventarios.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Cuando el inventario llega a cero, se ordena hasta llenar la capacidad máxima]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Esa describe aproximadamente una política (0, S). La política (s, Q) ordena al llegar a s, no a cero.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Se ordena una cantidad variable para llegar a un nivel S cada vez que el inventario cae a s]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Esa es la política (s, S), donde la cantidad ordenada varía para alcanzar el nivel S. En (s, Q) la cantidad Q es fija.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Se ordena periódicamente cada Q unidades de tiempo, independientemente del nivel de inventario]]></text>
+      <feedback format="html"><text><![CDATA[Incorrecto. Eso describe una política de revisión periódica. La política (s, Q) es de revisión continua.]]></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

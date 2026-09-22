@@ -26,7 +26,7 @@ user-invocable: true
 5. Verificar consistencia tecnica y sintaxis del formato.
 
 ## Salida esperada
-- Archivo de examen en XML o GIFT, listo para LMS.
+- Archivo de examen en GIFT (por default a menos que el tipo de pregunta no sea soportado) o Moodle XML , listo para LMS.
 - Tabla de especificaciones resumida en Markdown cuando se solicite.
 
 ## Verificacion

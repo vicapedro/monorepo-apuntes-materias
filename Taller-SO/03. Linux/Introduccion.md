@@ -8,6 +8,66 @@ En el mundo de los sistemas operativos libres el mas conocido es, sin lugar a du
 
 Además de las distribuciones de Linux, existen varios sistemas operativos libres y de código abierto que no están basados en Linux o que son derivados de él pero con enfoques únicos. 
 
+### Extracto y síntesis de *La catedral y el bazar*
+
+En el ensayo *The Cathedral and the Bazaar* (1997), Eric S. Raymond compara dos formas de organizar el desarrollo de software. El modelo de la **catedral** representa un proyecto coordinado por un grupo reducido, con decisiones centralizadas y entregas espaciadas. El **bazar** representa un proyecto abierto, con participación distribuida, iteraciones frecuentes, revisión entre pares y publicación temprana de versiones.
+
+> “Given enough eyeballs, all bugs are shallow.”
+
+La idea puede traducirse como: **“Con suficientes ojos, todos los errores son fáciles de encontrar”**. El autor sostiene que la revisión de muchas personas puede detectar y corregir problemas con mayor rapidez que un proceso cerrado, siempre que exista comunicación, coordinación y un mecanismo para integrar las contribuciones. En este modelo, las personas usuarias también pueden actuar como probadoras y aportar reportes, correcciones o mejoras.
+
+El texto no afirma que todo proyecto deba ser completamente descentralizado. Su aporte principal es mostrar que, para ciertos proyectos de software, la colaboración abierta y la publicación frecuente pueden favorecer la calidad, la innovación y la velocidad de respuesta. La licencia del proyecto sigue siendo indispensable: participar en un modelo de bazar no elimina las obligaciones legales de redistribución, atribución o publicación del código que establezca la licencia elegida.
+
+**Relación con Linux:** el desarrollo del kernel de Linux suele estudiarse como un ejemplo de coordinación distribuida a gran escala. Sin embargo, la organización técnica de un proyecto y la licencia de sus componentes son asuntos diferentes: el modelo de colaboración explica cómo se desarrolla, mientras que la licencia define qué pueden hacer otras personas con el resultado.
+
+## Licencias de software libre y de código abierto
+
+El acceso al código fuente no elimina las condiciones legales de uso. Una licencia de software define qué puede hacer una persona u organización con el programa, por ejemplo, usarlo, estudiarlo, modificarlo, incorporarlo en otro producto y redistribuirlo. Por ello, antes de copiar una biblioteca, una imagen de contenedor, un controlador o un fragmento de código, se debe identificar su licencia y conservar la información correspondiente.
+
+### Familias principales de licencias
+
+| Licencia | Lo que permite | Obligaciones habituales al redistribuir o derivar un producto |
+|---|---|---|
+| **MIT** | Usar, copiar, modificar, combinar y distribuir el software; también permite productos propietarios y uso comercial. | Conservar el aviso de copyright y el texto de la licencia. Incluir la cláusula de ausencia de garantía. |
+| **BSD de 2 cláusulas** | Usar, modificar y redistribuir el código, incluso dentro de productos propietarios y comerciales. | Mantener los avisos de copyright, las condiciones de la licencia y la renuncia de garantía. |
+| **BSD de 3 cláusulas** | Lo mismo que BSD-2-Clause. | Además de lo anterior, no se puede usar el nombre de las personas autoras o de la organización para promocionar un producto derivado sin permiso. |
+| **Apache License 2.0** | Uso, modificación, combinación, distribución y explotación comercial. Incluye una concesión expresa de patentes de las personas contribuyentes, bajo sus condiciones. | Conservar la licencia y los avisos de copyright; incluir el archivo `NOTICE` cuando exista; indicar los archivos modificados; no eliminar las marcas o avisos exigidos. La licencia no concede derechos sobre marcas registradas y contiene condiciones relacionadas con patentes. |
+| **GPLv2/GPLv3** | Usar, estudiar, modificar y distribuir el programa. Permite uso comercial, pero la distribución de una obra derivada está sujeta al copyleft. | Distribuir el código fuente correspondiente o una oferta válida para obtenerlo, conservar avisos y licencia, y licenciar la obra derivada bajo la GPL compatible. GPLv3 añade disposiciones sobre patentes, medidas tecnológicas y, en ciertos dispositivos, la información necesaria para instalar versiones modificadas. |
+| **LGPLv2.1/LGPLv3** | Permite enlazar una biblioteca con aplicaciones que usan otras licencias, incluso propietarias, bajo las condiciones de la LGPL. | Las modificaciones a la biblioteca deben mantenerse bajo la LGPL correspondiente. La redistribución debe permitir reemplazar o relinkar la biblioteca conforme a la licencia y conservar avisos y textos legales. |
+| **MPL 2.0** | Permite combinar archivos bajo MPL con archivos bajo otras licencias, incluso propietarias. | Los archivos modificados que estaban bajo MPL deben seguir bajo MPL al redistribuirse; se deben conservar avisos y poner a disposición el código fuente de esos archivos cubiertos. |
+| **AGPLv3** | Similar a GPLv3 para programas que se ejecutan como servicios de red. | Además de las obligaciones de GPLv3, si se ofrece a terceros una versión modificada mediante una red, se debe proporcionar a esos usuarios el código fuente correspondiente de la versión que ejecuta el servicio. |
+
+Las licencias MIT, BSD y Apache se denominan generalmente **permisivas**: permiten una amplia reutilización y no obligan, por regla general, a publicar como código abierto el producto completo. GPL, LGPL, MPL y AGPL pertenecen a modelos de **copyleft**, aunque sus obligaciones y el alcance de la reciprocidad son diferentes. No se debe asumir que una licencia copyleft se aplica igual a un programa independiente, una biblioteca enlazada, un archivo modificado o un servicio accesible por red; el tipo de integración y la forma de distribución son determinantes.
+
+### ¿Qué ocurre al generar un producto con software open source?
+
+La obligación principal aparece cuando se **redistribuye** el software o una obra derivada. El uso interno de una herramienta no siempre activa las mismas obligaciones que entregar un instalador, una imagen Docker, un dispositivo o una aplicación a otras personas. Como regla práctica:
+
+1. **Inventariar dependencias.** Registrar nombre, versión, autoría, licencia, URL de origen y forma de integración de cada componente.
+2. **Leer el texto de la licencia.** La etiqueta del repositorio o del gestor de paquetes es un indicador, no sustituye al texto legal de la licencia.
+3. **Conservar avisos.** Incluir los archivos `LICENSE`, `COPYING`, `NOTICE` y los avisos de copyright que correspondan en la documentación, el instalador o el apartado de atribuciones del producto.
+4. **Marcar cambios.** Indicar qué archivos o componentes fueron modificados cuando la licencia lo exige, especialmente Apache, MPL y las licencias GPL.
+5. **Entregar el código exigido.** Si se distribuye una obra cubierta por GPL, LGPL, MPL o AGPL, cumplir la forma de entrega del código fuente correspondiente y las condiciones de la licencia aplicable.
+6. **Revisar compatibilidad.** Una licencia permisiva no autoriza a ignorar las obligaciones de una dependencia GPL, y dos licencias copyleft no siempre son compatibles entre sí. También deben revisarse las licencias de fuentes, iconos, documentación, modelos y datos, porque pueden ser distintas de la del código.
+7. **Separar marcas y patentes.** El permiso para copiar código no concede automáticamente permiso para usar nombres, logotipos o marcas. Apache 2.0 incluye una licencia de patentes con condiciones específicas, pero no una licencia general de marcas.
+8. **Documentar el cumplimiento.** Conservar el inventario, los avisos entregados, las versiones de los componentes y la evidencia de cómo se proporcionó el código fuente cuando era obligatorio.
+
+### Ejemplos de aplicación
+
+- Una aplicación propietaria que incorpora una biblioteca MIT puede distribuirse comercialmente si conserva el aviso de copyright y la licencia.
+- Una empresa que modifica un componente GPL y distribuye el programa debe ofrecer el código fuente correspondiente y respetar la GPL para la obra derivada.
+- Una imagen de servidor que contiene paquetes Apache, MIT y GPL debe incluir los avisos de todos ellos; el hecho de que la imagen sea un producto propio no elimina las condiciones de sus componentes.
+- Un servicio web basado en una modificación de AGPL puede activar la obligación de ofrecer el código fuente a quienes interactúan con ese servicio por red.
+
+Esta explicación es una guía técnica y educativa, no sustituye la revisión de una persona especialista en propiedad intelectual. En proyectos reales, la decisión debe considerar la versión exacta de cada licencia, la arquitectura del producto, el modo de distribución y la legislación aplicable.
+
+### Fuentes oficiales para consulta
+
+- [Open Source Initiative: Licenses](https://opensource.org/licenses), textos y categorías de licencias aprobadas.
+- [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), texto oficial y condiciones de redistribución.
+- [Free Software Foundation: Licenses](https://www.gnu.org/licenses/), textos oficiales de GPL, LGPL y AGPL.
+- [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/), texto oficial y preguntas frecuentes.
+
 ## 3.1. Características y Análisis de los Sistemas Operativos Libres
 En esta sección, se analizarán las características más destacadas de los sistemas operativos libres mencionados anteriormente, así como sus ventajas y desventajas en diferentes contextos de uso.
 
